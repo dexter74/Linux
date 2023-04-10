@@ -25,4 +25,3 @@ mesa-utils
 opencl-mesa
 systemd-ui
 ```
-yay -Sy --noconfirm xfce4-panel-profiles;
