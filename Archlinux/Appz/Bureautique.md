@@ -19,6 +19,12 @@ pacman -Sy --noconfirm numlockx;
 yay -Sy --noconfirm blivet-gui;
 yay -Sy --noconfirm gnome-disk-utility;
 ```
+
+##### Gestionnaire de fichier compréssé
+```bash
+pacman -Sy --noconfirm file-roller;
+```
+
 ##### Gestionnaire de Tâches
 ```bash
 yay -Sy --noconfirm sysmontask;
