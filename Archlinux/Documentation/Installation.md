@@ -66,7 +66,11 @@ pacstrap /mnt base linux linux-lts;
 ``` 
 #### Pilotes
 ```bash
-pacstrap /mnt amd-ucode broadcom-wl linux-firmware linux-headers ntfs-3g;
+pacstrap /mnt amd-ucode;
+pacstrap /mnt broadcom-wl;
+pacstrap /mnt linux-firmware;
+pacstrap /mnt linux-headers;
+pacstrap /mnt ntfs-3g;
 ```
 #### Réseaux
 ```bash
@@ -104,7 +108,7 @@ arch-chroot /mnt
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------
-#### Préparation du Système
+#### Préparation du Système (Partie I)
 ##### Installation du démarrage EFI avec SystemD
 ```bash
 # ---------------------------------------------------------------------------------------------
@@ -194,31 +198,96 @@ EndSection' > /etc/X11/xorg.conf.d/00-keyboard.conf;
 sed -i -e "s/HOOKS\=(base udev autodetect modconf kms keyboard keymap consolefont block filesystems fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems udev resume keyboard keymap sd-vconsole fsck)/g" /etc/mkinitcpio.conf;
 mkinitpcio -p linux;
 ```
+<br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------
-#### Installation de l'environnement Utilisateur
+#### Préparation du Système (Partie II)
+
+##### Yay
+```bash
+runuser -l $USERNAME -c 'git clone https://aur.archlinux.org/yay.git /tmp/yay;'
+runuser -l $USERNAME -c 'cd /tmp/yay && makepkg -si --noconfirm;'
+```
+##### Pilotes (Drthrax74)
+```
+runuser -l $USERNAME -c 'yay -Sy --noconfirm aic94xx-firmware ast-firmware upd72020x-fw linux-firmware-qlogic wd719x-firmware;'
+```
 ##### Serveur d'affichage
 ```bash
 pacman -Sy --noconfirm xorg-server xorg-xinit xf86-video-amdgpu;
 ```
-##### Gestion de la session
+##### Gestion de la session (+ thème Lightdm-evo)
 ```bash
 pacman -Sy --noconfirm lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings lightdm-webkit2-greeter;
 pacman -Sy --noconfirm libgsf libopenraw ffmpeg ffmpegthumbnailer libgepub poppler poppler-glib;
+
+git clone https://github.com/AlphaNecron/lightdm-evo.git; mv -r lightdm-evo /usr/share/lightdm-webkit/themes/lightdm-evo;
+sed -i 's/^webkit_theme\s*=\s*\(.*\)/webkit_theme = lightdm-evo #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf;
+sed -i 's/^\(#?greeter\)-session\s*=\s*\(.*\)/greeter-session = lightdm-webkit2-greeter #\1/ #\2g' /etc/lightdm/lightdm.conf;
 ```
 ##### Environnement Graphique
 ```bash
 pacman -Sy --noconfirm xfce4 xfce4-dev-tools xfce4-goodies xfce4-datetime-plugin xfce4-whiskermenu-plugin;
+pacman -Sy --noconfirm plank;
+
+
+rm -r /tmp/xfce4-docklike-plugin-0.4.0*
+wget --inet4-only https://archive.xfce.org/src/panel-plugins/xfce4-docklike-plugin/0.4/xfce4-docklike-plugin-0.4.0.tar.bz2 -O /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 && tar xf /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 -C /tmp
+sed -i '22  s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
+sed -i '177 s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
+sed -i '26  s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
+sed -i '190 s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
+cd /tmp/xfce4-docklike-plugin-0.4.0/; ./configure; make -$(nproc); sudo make install;
 ```
 
 ##### Applets
 ```bash
 pacman -Sy --noconfirm networkmanager-pptp networkmanager-qt network-manager-applet
 pacman -Sy --noconfirm pavucontrol;
-
-##### Logiciels Utilisateur
+```
+##### Logiciels
 ```bash
-pacman -Sy --noconfirm discord file-roller gnome-{calculator,calendar,font-viewer,terminal} numlockx plank rhythmbox seahorse smplayer virtualbox virtualbox-guest-iso virtualbox-host-modules-arch
+pacman -Sy --noconfirm discord;
+pacman -Sy --noconfirm file-roller;
+pacman -Sy --noconfirm gnome-{calculator,calendar,font-viewer,terminal};
+pacman -Sy --noconfirm numlockx;
+pacman -Sy --noconfirm rhythmbox;
+pacman -Sy --noconfirm seahorse;
+pacman -Sy --noconfirm smplayer;
+pacman -Sy --noconfirm virtualbox virtualbox-guest-iso virtualbox-host-modules-arch;
+echo "* 192.168.1.0/24
+* 192.168.2.0/24
+* 192.168.3.0/24
+* 192.168.4.0/24
+* 192.168.5.0/24" > /etc/vbox/networks.conf;
+
+runuser -l $USERNAME -c 'yay -Sy --noconfirm blivet-gui;'
+runuser -l $USERNAME -c 'yay -Sy --noconfirm menulibre;'
+runuser -l $USERNAME -c 'yay -Sy --noconfirm microsoft-edge-stable-bin;'
+runuser -l $USERNAME -c 'yay -Sy --noconfirm mugshot;'
+runuser -l $USERNAME -c 'yay -Sy --noconfirm mpc-qt;'
+runuser -l $USERNAME -c 'yay -Sy --noconfirm pamac-aur;'
+runuser -l $USERNAME -c 'yay -Sy --noconfirm protonup-qt;'
+runuser -l $USERNAME -c 'yay -Sy --noconfirm rhythmbox-plugin-hide-git;'
+runuser -l $USERNAME -c 'yay -Sy --noconfirm rhythmbox-plugin-tray-icon;'
+runuser -l $USERNAME -c 'yay -Sy --noconfirm rhythmbox-tray-icon;'
+runuser -l $USERNAME -c 'yay -Sy --noconfirm sysmontask;'
+runuser -l $USERNAME -c 'yay -Sy --noconfirm timeshift;'
+runuser -l $USERNAME -c 'yay -Sy --noconfirm virtualbox-ext-oracle;'
+runuser -l $USERNAME -c 'yay -Sy --noconfirm xfce4-panel-profiles;'
+```
+
+##### Themes
+```bash
+runuser -l $USERNAME -c 'yay -Sy --noconfirm dracula-gtk-theme;'
+runuser -l $USERNAME -c 'yay -Sy --noconfirm papirus-icon-theme-git;'
+runuser -l $USERNAME -c 'yay -Sy --noconfirm papirus-smplayer-theme-git;'
+```
+
+##### Polices
+```bash
+curl https://fonts.google.com/download?family=Roboto --output /tmp/roboto.zip; unzip /tmp/roboto.zip -d /usr/share/fonts;
+runuser -l $USERNAME -c 'yay -Sy --noconfirm ttf-ms-win10-auto;'
 ```
 
 ##### Non Classé
@@ -229,5 +298,7 @@ mesa-utils
 opencl-mesa
 systemd-ui
 ```
+
+
 
 
