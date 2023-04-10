@@ -179,8 +179,8 @@ console-mode max
 editor no" > /boot/loader/loader.conf;
 # ---------------------------------------------------------------------------------------------
 echo "title Arch Linux (Normal)
-linux   /vmlinuz-linux-lts
-initrd  /initramfs-linux-lts.img
+linux   /vmlinuz-linux
+initrd  /initramfs-linux.img
 initrd  /amd-ucode.img
 options root=UUID=$UUID_SYSTEM rw quiet splash loglevel=3" > /boot/loader/entries/arch01.conf;
 # ---------------------------------------------------------------------------------------------
