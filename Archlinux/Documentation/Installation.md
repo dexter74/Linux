@@ -89,32 +89,7 @@ pacstrap /mnt bash-completion curl git gvfs gvfs-gphoto2 gvfs-mtpgvfs-nfs gvfs-s
 ```bash
 pacstrap /mnt logrotate ntp openssh samba tlp tlp-rdw;
 ```
-#### Serveur d'affichage
-```bash
-pacstrap /mnt xorg-server xorg-xinit xf86-video-amdgpu;
-```
-#### Gestion de la session
-```bash
-pacstrap /mnt lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings lightdm-webkit2-greeter;
-pacstrap /mnt libgsf libopenraw ffmpeg ffmpegthumbnailer libgepub poppler poppler-glib;
-```
-#### Environnement Graphique
-```bash
-pacstrap /mnt xfce4 xfce4-dev-tools xfce4-goodies xfce4-datetime-plugin xfce4-whiskermenu-plugin;
-```
 
-#### Logiciels Utilisateur
-```bash
-pacstrap /mnt discord file-roller gnome-{calculator,calendar,font-viewer,terminal} numlockx plank rhythmbox seahorse smplayer virtualbox virtualbox-guest-iso virtualbox-host-modules-arch
-```
-#### Non Classé
-```bash
-amdvlk
-dpkg
-mesa-utils
-opencl-mesa
-systemd-ui
-```
 #### FSTAB (Boot, Swap, Home, System)
 ```bash
 clear;
@@ -219,3 +194,34 @@ EndSection' > /etc/X11/xorg.conf.d/00-keyboard.conf;
 sed -i -e "s/HOOKS\=(base udev autodetect modconf kms keyboard keymap consolefont block filesystems fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems udev resume keyboard keymap sd-vconsole fsck)/g" /etc/mkinitcpio.conf;
 mkinitpcio -p linux;
 ```
+
+----------------------------------------------------------------------------------------------------------------------------------------
+#### Installation de l'environnement Utilisateur
+##### Serveur d'affichage
+```bash
+pacman -Sy --noconfirm xorg-server xorg-xinit xf86-video-amdgpu;
+```
+##### Gestion de la session
+```bash
+pacman -Sy --noconfirm lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings lightdm-webkit2-greeter;
+pacman -Sy --noconfirm libgsf libopenraw ffmpeg ffmpegthumbnailer libgepub poppler poppler-glib;
+```
+##### Environnement Graphique
+```bash
+pacman -Sy --noconfirm xfce4 xfce4-dev-tools xfce4-goodies xfce4-datetime-plugin xfce4-whiskermenu-plugin;
+```
+
+##### Logiciels Utilisateur
+```bash
+pacman -Sy --noconfirm discord file-roller gnome-{calculator,calendar,font-viewer,terminal} numlockx plank rhythmbox seahorse smplayer virtualbox virtualbox-guest-iso virtualbox-host-modules-arch
+```
+##### Non Classé
+```bash
+amdvlk
+dpkg
+mesa-utils
+opencl-mesa
+systemd-ui
+```
+
+
