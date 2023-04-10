@@ -11,7 +11,7 @@ pacman -Sy --noconfirm smplayer;
 pacman -Sy --noconfirm mplayer;
 ```
 
-### Configurer Smplayer
+##### Configurer Smplayer
 ```
 Préférences > Options
   > Général:
@@ -37,6 +37,16 @@ Clique droit dans le blanc > Décocher les cases
 <br />
 
 ------------------------------------------------------------------------------------------------------------------
+
+##### Lecteur Musique
+```bash
+yay -Sy --noconfirm rhythmbox;
+yay -Sy --noconfirm rhythmbox-plugin-hide-git;
+yay -Sy --noconfirm rhythmbox-plugin-tray-icon;
+yay -Sy --noconfirm rhythmbox-tray-icon;
+yay -Sy --noconfirm papirus-smplayer-theme-git;
+```
+
 
 ##### Navigateurs
 ```bash
