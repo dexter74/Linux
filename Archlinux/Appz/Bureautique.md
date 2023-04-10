@@ -51,3 +51,10 @@ yay -Sy --noconfirm papirus-smplayer-theme-git;
 ```bash
 yay -Sy --noconfirm microsoft-edge-stable-bin;
 ```
+
+------------------------------------------------------------------------------------------------------------------
+###### Gestionnaire de Disque-dur
+```bash
+yay -Sy --noconfirm blivet-gui;
+yay -Sy --noconfirm gnome-disk-utility;
+```
