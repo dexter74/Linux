@@ -133,8 +133,8 @@ pacstrap /mnt base-devel fakeroot go;
 pacstrap /mnt gtk-engine-murrine gtk-engines;
 ```
 #### Utilitaires (Ligne de commandes)
-``` bash
-pacstrap /mnt bash-completion curl git gvfs gvfs-gphoto2 gvfs-mtpgvfs-nfs gvfs-smb lsb-release lvm2 man nano neofetch p7zip smbclient sudo unzip usbutils wget zip;
+``` bash 
+pacstrap /mnt bash-completion curl git gvfs gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb lsb-release lvm2 man nano neofetch p7zip smbclient sudo unzip usbutils wget zip;
 ```
 #### Fonctions
 ```bash
