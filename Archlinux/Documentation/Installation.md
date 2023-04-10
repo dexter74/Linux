@@ -63,6 +63,7 @@ mkdir -p /mnt/home && mount /dev/$LVM_NAMEVG/HOME /mnt/home;
 mkdir -p /mnt/boot && mount ${DISK}p1  /mnt/boot;
 df -h | grep "/mnt"; swapon -s | tail -n 1;
 ```
+<br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 #### Installation du Système
