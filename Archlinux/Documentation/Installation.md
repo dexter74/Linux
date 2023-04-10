@@ -69,37 +69,38 @@ df -h | grep "/mnt"; swapon -s | tail -n 1;
 
 ##### Paquets de Base
 ```bash
-pacstrap /mnt base linux linux-lts
+pacstrap /mnt base linux linux-lts;
 ```
 
 #### Pilotes
 ```bash
-pacstrap /mnt amd-ucode broadcom-wl linux-firmware linux-headers ntfs-3g
+pacstrap /mnt amd-ucode broadcom-wl linux-firmware linux-headers ntfs-3g;
 ```
 
 #### Réseaux
 ```bash
-pacstrap /mnt dhclient dhcpcd dnsutils iw iwd net-tools networkmanager networkmanager-pptp networkmanager-qt network-manager-applet wireless-regdb
+pacstrap /mnt dhclient dhcpcd dnsutils iw iwd net-tools networkmanager networkmanager-pptp networkmanager-qt network-manager-applet wireless-regdb;
 ```
 
 #### Le Son
 ```bash
-pacstrap /mnt pulseaudio pulseaudio-alsa pavucontrol
+pacstrap /mnt pulseaudio pulseaudio-alsa pavucontrol;
 ```
 
 #### Librairies
 ``` bash
-pacstrap /mnt base-devel fakeroot go
+pacstrap /mnt base-devel fakeroot go;
+pacstrap /mnt gtk-engine-murrine gtk-engines;
 ```
 
 #### Utilitaires (Ligne de commandes)
 ``` bash
-pacstrap /mnt bash-completion curl git gvfs gvfs-gphoto2 gvfs-mtpgvfs-nfs gvfs-smb lsb-release lvm2 man nano neofetch p7zip smbclient sudo unzip usbutils wget zip
+pacstrap /mnt bash-completion curl git gvfs gvfs-gphoto2 gvfs-mtpgvfs-nfs gvfs-smb lsb-release lvm2 man nano neofetch p7zip smbclient sudo unzip usbutils wget zip;
 ```
 
 #### Fonctions
 ```bash
-pacstrap /mnt logrotate ntp openssh samba tlp tlp-rdw
+pacstrap /mnt logrotate ntp openssh samba tlp tlp-rdw;
 ```
 
 #### Serveur d'affichage
@@ -109,14 +110,14 @@ pacstrap /mnt xorg-server xorg-xinit xf86-video-amdgpu;
 
 #### Gestion de la session
 ```bash
-pacstrap /mnt lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings lightdm-webkit2-greeter
+pacstrap /mnt lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings lightdm-webkit2-greeter;
+pacstrap /mnt libgsf libopenraw ffmpeg ffmpegthumbnailer libgepub poppler poppler-glib;
 ```
 
 #### Environnement Graphique
 ```bash
-pacstrap /mnt xfce4 xfce4-dev-tools xfce4-goodies xfce4-datetime-plugin xfce4-whiskermenu-plugin
+pacstrap /mnt xfce4 xfce4-dev-tools xfce4-goodies xfce4-datetime-plugin xfce4-whiskermenu-plugin;
 ```
-
 
 #### Logiciels Utilisateur
 ```bash
@@ -132,4 +133,19 @@ opencl-mesa
 systemd-ui
 ```
 
+#### FSTAB (Boot, Swap, Home, System)
+```bash
+clear;
+UUID_ESP=$(blkid  | grep vfat | grep -v "EFI system partition" | cut -d '"' -f 2)
+genfstab -U /mnt >> /mnt/etc/fstab;
 
+echo "$UUID_ESP /boot	auto rw,relatime 0 0" >> /mnt/etc/fstab;
+```
+
+#### Chroot
+```bash
+arch-chroot /mnt
+```
+<br />
+
+----------------------------------------------------------------------------------------------------------------------------------------
