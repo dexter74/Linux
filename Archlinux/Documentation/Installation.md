@@ -79,12 +79,12 @@ pacstrap /mnt amd-ucode broadcom-wl linux-firmware linux-headers ntfs-3g
 
 #### Réseaux
 ```bash
-pacstrap /mnt dhclient dhcpcd dnsutils iw iwd networkmanager networkmanager-pptp networkmanager-qt network-manager-applet
+pacstrap /mnt dhclient dhcpcd dnsutils iw iwd net-tools networkmanager networkmanager-pptp networkmanager-qt network-manager-applet wireless-regdb
 ```
 
 #### Le Son
 ```bash
-pacstrap /mnt pulseaudio pulseaudio-alsa
+pacstrap /mnt pulseaudio pulseaudio-alsa pavucontrol
 ```
 
 #### Librairies
@@ -94,12 +94,12 @@ pacstrap /mnt base-devel fakeroot go
 
 #### Utilitaires (Ligne de commandes)
 ``` bash
-pacstrap /mnt bash-completion curl git gvfs gvfs-gphoto2 gvfs-mtpgvfs-nfs gvfs-smb lsb-release lvm2 man nano neofetch net-tools
+pacstrap /mnt bash-completion curl git gvfs gvfs-gphoto2 gvfs-mtpgvfs-nfs gvfs-smb lsb-release lvm2 man nano neofetch p7zip smbclient sudo unzip usbutils wget zip
 ```
 
 #### Fonctions
 ```bash
-pacstrap /mnt logrotate ntp
+pacstrap /mnt logrotate ntp openssh samba tlp tlp-rdw
 ```
 
 #### Serveur d'affichage
@@ -117,35 +117,19 @@ pacstrap /mnt lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings lightdm-w
 pacstrap /mnt xfce4 xfce4-dev-tools xfce4-goodies xfce4-datetime-plugin xfce4-whiskermenu-plugin
 ```
 
+
 #### Logiciels Utilisateur
 ```bash
-pacstrap /mnt discord file-roller gnome-{calculator,calendar,font-viewer,terminal} numlockx
+pacstrap /mnt discord file-roller gnome-{calculator,calendar,font-viewer,terminal} numlockx plank rhythmbox seahorse smplayer virtualbox virtualbox-guest-iso virtualbox-host-modules-arch
 ```
 
-
+#### Non Classé
+```bash
 amdvlk
 dpkg
 mesa-utils
-
 opencl-mesa
-openssh
-p7zip
-pavucontrol
-plank
-rhythmbox
-samba
-seahorse
-smbclient
-smplayer
 systemd-ui
-sudo
-tlp
-tlp-rdw
-unzip
-usbutils
-virtualbox virtualbox-guest-iso virtualbox-host-modules-arch
-wget
-wireless-regdb
+```
 
-zip
 
