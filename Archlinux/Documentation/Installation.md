@@ -14,11 +14,8 @@ server 0.fr.pool.ntp.org
 server 1.fr.pool.ntp.org
 server 2.fr.pool.ntp.org
 server 3.fr.pool.ntp.org
-
 systemctl restart ntpd
-
 ```
-
 
 #### Bug
 ```
