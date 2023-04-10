@@ -243,3 +243,13 @@ cd /tmp/xfce4-docklike-plugin-0.4.0/; ./configure; make -$(nproc); sudo make ins
 pacman -Sy --noconfirm networkmanager-pptp networkmanager-qt network-manager-applet
 pacman -Sy --noconfirm pavucontrol;
 ```
+
+##### Les services
+```bash
+systemctl enable avahi-daemon.service
+systemctl enable avahi-dnsconfd.service
+systemctl enable lightdm;
+systemctl enable NetworkManager;
+systemctl enable ssh;
+systemctl enable ntpd;
+```
