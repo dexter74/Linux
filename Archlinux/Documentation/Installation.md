@@ -30,6 +30,7 @@ loadkeys fr;
 ```
 #### Pacman
 ```bash
+clear;
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf;
 sed -i -e "s/\#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf;
 pacman -Sy --noconfirm archlinux-keyring;
@@ -39,16 +40,18 @@ pacman -Sy --noconfirm archlinux-keyring;
 ----------------------------------------------------------------------------------------------------------------------------------------
 #### Partitionnement (HDD)
 ```
+clear;
 DISK=/dev/sda
 SIZE_BOOT=+512M
 SIZE_SWAP=+2G
 SIZE_SYST=+10G
-SIZE_HOME=+19.5G
+SIZE_HOME=+19.49G
 LVM_NAMEVG=Vg0
 ```
 
 ##### Création des partitions
 ```bash
+clear;
 dd if=/dev/zero of=${DISK} bs=512 count=1;
 (echo "g"; echo "w") | fdisk ${DISK};
 (echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT" ; echo "t" ; echo "1" ; echo "w") | fdisk $DISK;
@@ -58,6 +61,7 @@ dd if=/dev/zero of=${DISK} bs=512 count=1;
 
 #### Création du LVM
 ```bash
+clear;
 echo "yes" | lvremove HOME $LVM_NAMEVG;
 echo "yes" | lvremove SYSTEM $LVM_NAMEVG;
 echo "yes" | lvremove SWAP $LVM_NAMEVG;
@@ -72,6 +76,7 @@ echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP $LVM_NAMEVG;
 ```
 #### Formatage des partitions
 ```bash
+clear;
 echo "yes" | mkfs.fat -F32 ${DISK}1;
 echo "yes" | mkswap /dev/$LVM_NAMEVG/SWAP;
 echo "yes" | mkfs -t ext4 /dev/$LVM_NAMEVG/SYSTEM;
@@ -79,6 +84,7 @@ echo "yes" | mkfs -t ext4 /dev/$LVM_NAMEVG/HOME;
 ```
 #### Montage des partitions
 ```bash
+clear;
 swapon /dev/$LVM_NAMEVG/SWAP;
 mount /dev/$LVM_NAMEVG/SYSTEM /mnt;
 mkdir -p /mnt/home && mount /dev/$LVM_NAMEVG/HOME /mnt/home;
@@ -90,6 +96,7 @@ df -h | grep "/mnt"; swapon -s | tail -n 1;
 #### Partitionnement (NVME)
 ##### Déclaration des variables (Remplacer X par le Disque)
 ```
+clear;
 DISK=/dev/nvmeXn1
 SIZE_BOOT=+512M
 SIZE_SWAP=+4G
@@ -99,6 +106,7 @@ LVM_NAMEVG=Vg0
 ```
 ##### Création des partitions
 ```bash
+clear;
 dd if=/dev/zero of=${DISK} bs=512 count=1;
 (echo "g"; echo "w") | fdisk ${DISK};
 (echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT" ; echo "t" ; echo "1" ; echo "w") | fdisk $DISK;
@@ -107,6 +115,7 @@ dd if=/dev/zero of=${DISK} bs=512 count=1;
 ```
 #### Création du LVM
 ```bash
+clear;
 echo "yes" | pvcreate ${DISK}p2;
 echo "yes" | vgcreate $LVM_NAMEVG ${DISK}p2;
 echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP $LVM_NAMEVG;
@@ -115,6 +124,7 @@ echo "yes" | lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG;
 ```
 #### Formatage des partitions
 ```bash
+clear;
 echo "yes" | mkfs.fat -F32 ${DISK}p1;
 echo "yes" | mkswap /dev/$LVM_NAMEVG/SWAP;
 echo "yes" | mkfs -t ext4 /dev/$LVM_NAMEVG/SYSTEM;
@@ -122,6 +132,7 @@ echo "yes" | mkfs -t ext4 /dev/$LVM_NAMEVG/HOME;
 ```
 #### Montage des partitions
 ```bash
+clear;
 swapon /dev/$LVM_NAMEVG/SWAP;
 mount /dev/$LVM_NAMEVG/SYSTEM /mnt;
 mkdir -p /mnt/home && mount /dev/$LVM_NAMEVG/HOME /mnt/home;
@@ -137,10 +148,12 @@ df -h | grep "/mnt"; swapon -s | tail -n 1;
 #### Installation des paquets
 ##### Paquets de Base
 ```bash
+clear;
 pacstrap /mnt base linux linux-lts;
 ``` 
 #### Pilotes
 ```bash
+clear;
 pacstrap /mnt amd-ucode;
 pacstrap /mnt broadcom-wl;
 pacstrap /mnt linux-firmware;
@@ -150,6 +163,7 @@ pacstrap /mnt virtualbox-guest-utils;
 ```
 #### Réseaux
 ```bash
+clear;
 pacstrap /mnt dhclient dhcpcd dnsutils iw iwd net-tools networkmanager wireless-regdb;
 ```
 #### Le Son
@@ -158,15 +172,18 @@ pacstrap /mnt pulseaudio pulseaudio-alsa;
 ```
 #### Librairies
 ``` bash
+clear;
 pacstrap /mnt base-devel fakeroot go;
 pacstrap /mnt gtk-engine-murrine gtk-engines;
 ```
 #### Utilitaires (Ligne de commandes)
-``` bash 
-pacstrap /mnt bash-completion curl git gvfs gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb lsb-release lvm2 man nano neofetch p7zip smbclient sudo unzip; usbutils wget zip;
+``` bash
+clear;
+pacstrap /mnt bash-completion curl git gvfs gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb lsb-release lvm2 man nano neofetch p7zip smbclient sudo unzi usbutils wget zip;
 ```
 #### Fonctions
 ```bash
+clear;
 pacstrap /mnt logrotate ntp openssh samba tlp tlp-rdw;
 ```
 
