@@ -297,6 +297,6 @@ systemctl enable avahi-daemon.service;
 systemctl enable avahi-dnsconfd.service;
 systemctl enable lightdm;
 systemctl enable NetworkManager;
-systemctl enable ssh;
+systemctl enable sshd;
 systemctl enable ntpd;
 ```
