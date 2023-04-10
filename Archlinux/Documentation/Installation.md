@@ -243,7 +243,7 @@ EndSection' > /etc/X11/xorg.conf.d/00-keyboard.conf;
 ##### MKinitCPIO
 ```
 sed -i -e "s/HOOKS\=(base udev autodetect modconf kms keyboard keymap consolefont block filesystems fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems udev resume keyboard keymap sd-vconsole fsck)/g" /etc/mkinitcpio.conf;
-mkinitpcio -p linux;
+mkinitcpio -p linux;
 ```
 <br />
 
