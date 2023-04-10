@@ -1,10 +1,8 @@
 ##### Logiciels
 ```bash
-pacman -Sy --noconfirm file-roller;
 yay -Sy --noconfirm menulibre;
 yay -Sy --noconfirm mpc-qt;
 yay -Sy --noconfirm protonup-qt;
-yay -Sy --noconfirm xfce4-panel-profiles;
 ```
 
 ##### Themes
@@ -27,3 +25,4 @@ mesa-utils
 opencl-mesa
 systemd-ui
 ```
+yay -Sy --noconfirm xfce4-panel-profiles;
