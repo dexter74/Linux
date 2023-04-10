@@ -34,6 +34,7 @@ loadkeys fr;
 
 #### Connexion au WIFI
 ```bash
+iwctl station wlen0 connexion <SSID> --passphrase <KEY WEP>
 ```
 
 
