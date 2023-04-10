@@ -55,13 +55,20 @@ dd if=/dev/zero of=${DISK} bs=512 count=1;
 (echo "n"; echo "2"; echo ""; echo "" ; echo "t"; echo "2" ; echo "43"; echo "w") | fdisk $DISK;
 (echo "p") | fdisk $DISK | grep $DISK;
 ```
+
 #### Création du LVM
 ```bash
+echo "yes" | lvremove HOME $LVM_NAMEVG;
+echo "yes" | lvremove SYSTEM $LVM_NAMEVG;
+echo "yes" | lvremove SWAP $LVM_NAMEVG;
+echo "yes" | vgremove $LVM_NAMEVG;
+echo "yes" | pvremove ${DISK}2;
+
 echo "yes" | pvcreate ${DISK}2;
 echo "yes" | vgcreate $LVM_NAMEVG ${DISK}2;
-echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP $LVM_NAMEVG;
-echo "yes" | lvcreate -n SYSTEM -L $SIZE_SYST $LVM_NAMEVG;
 echo "yes" | lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG;
+echo "yes" | lvcreate -n SYSTEM -L $SIZE_SYST $LVM_NAMEVG;
+echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP $LVM_NAMEVG;
 ```
 #### Formatage des partitions
 ```bash
