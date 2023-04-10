@@ -94,7 +94,17 @@ pacstrap /mnt base-devel fakeroot go
 
 #### Utilitaires (Ligne de commandes)
 ``` bash
-pacstrap /mnt bash-completion curl git lsb-release lvm2 man nano neofetch net-tools
+pacstrap /mnt bash-completion curl git gvfs gvfs-gphoto2 gvfs-mtpgvfs-nfs gvfs-smb lsb-release lvm2 man nano neofetch net-tools
+```
+
+#### Fonctions
+```bash
+pacstrap /mnt logrotate ntp
+```
+
+#### Serveur d'affichage
+```bash
+pacstrap /mnt xorg-server xorg-xinit xf86-video-amdgpu;
 ```
 
 #### Gestion de la session
@@ -107,21 +117,17 @@ pacstrap /mnt lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings lightdm-w
 pacstrap /mnt xfce4 xfce4-dev-tools xfce4-goodies xfce4-datetime-plugin xfce4-whiskermenu-plugin
 ```
 
-
 #### Logiciels Utilisateur
 ```bash
-pacstrap /mnt discord file-roller gnome-{calculator,calendar,font-viewer,terminal}
+pacstrap /mnt discord file-roller gnome-{calculator,calendar,font-viewer,terminal} numlockx
 ```
 
 
+amdvlk
 dpkg
-
-
-gvfs gvfs-gphoto2 gvfs-mtpgvfs-nfs gvfs-smb
-logrotate
 mesa-utils
-ntp
-numlockx
+
+opencl-mesa
 openssh
 p7zip
 pavucontrol
@@ -140,8 +146,6 @@ usbutils
 virtualbox virtualbox-guest-iso virtualbox-host-modules-arch
 wget
 wireless-regdb
-xf86-video-amdgpu xorg-server xorg-xinit
 
 zip
-amdvlk
-opencl-mesa
+
