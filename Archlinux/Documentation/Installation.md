@@ -138,7 +138,6 @@ systemd-ui
 clear;
 UUID_ESP=$(blkid  | grep vfat | grep -v "EFI system partition" | cut -d '"' -f 2)
 genfstab -U /mnt >> /mnt/etc/fstab;
-
 echo "$UUID_ESP /boot	auto rw,relatime 0 0" >> /mnt/etc/fstab;
 ```
 
@@ -149,3 +148,32 @@ arch-chroot /mnt
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------
+#### Préparation du Système
+##### Installation du démarrage EFI avec SystemD
+```bash
+# ---------------------------------------------------------------------------------------------
+UUID_SYSTEM=$(blkid | grep 'SYSTEM: UUID=' | cut -d '"' -f 2);
+# ---------------------------------------------------------------------------------------------
+bootctl --path=/boot install;
+# ---------------------------------------------------------------------------------------------
+echo "default arch01.conf
+timeout 5
+console-mode max
+editor no" > /boot/loader/loader.conf;
+# ---------------------------------------------------------------------------------------------
+echo "title Arch Linux (Normal)
+linux   /vmlinuz-linux-lts
+initrd  /initramfs-linux-lts.img
+initrd  /amd-ucode.img
+options root=UUID=$UUID_SYSTEM rw quiet splash loglevel=3" > /boot/loader/entries/arch01.conf;
+# ---------------------------------------------------------------------------------------------
+echo "title Arch Linux (Recovery)
+linux   /vmlinuz-linux
+initrd  /initramfs-linux-fallback.img
+initrd  /amd-ucode.img
+options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch02.conf;
+# ---------------------------------------------------------------------------------------------
+bootctl update;
+bootctl;
+# ---------------------------------------------------------------------------------------------
+```
