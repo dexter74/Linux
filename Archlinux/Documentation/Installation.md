@@ -134,7 +134,7 @@ pacstrap /mnt gtk-engine-murrine gtk-engines;
 ```
 #### Utilitaires (Ligne de commandes)
 ``` bash 
-pacstrap /mnt bash-completion curl git gvfs gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb lsb-release lvm2 man nano neofetch p7zip smbclient sudo unzip usbutils wget zip;
+pacstrap /mnt bash-completion curl git gvfs gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb lsb-release lvm2 man nano neofetch p7zip smbclient sudo unzip; usbutils wget zip;
 ```
 #### Fonctions
 ```bash
@@ -278,7 +278,7 @@ pacman -Sy --noconfirm xfce4 xfce4-dev-tools xfce4-goodies xfce4-datetime-plugin
 pacman -Sy --noconfirm plank;
 
 rm -r /tmp/xfce4-docklike-plugin-0.4.0*
-wget --inet4-only https://archive.xfce.org/src/panel-plugins/xfce4-docklike-plugin/0.4/xfce4-docklike-plugin-0.4.0.tar.bz2 -O /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 && tar xf /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 -C /tmp
+wget --inet4-only https://archive.xfce.org/src/panel-plugins/xfce4-docklike-plugin/0.4/xfce4-docklike-plugin-0.4.0.tar.bz2 -O /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 && tar xf /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 -C /tmp;
 sed -i '22  s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
 sed -i '177 s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
 sed -i '26  s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
@@ -287,14 +287,14 @@ cd /tmp/xfce4-docklike-plugin-0.4.0/; ./configure; make -$(nproc); sudo make ins
 ```
 ##### Applets
 ```bash
-pacman -Sy --noconfirm networkmanager-pptp networkmanager-qt network-manager-applet
+pacman -Sy --noconfirm networkmanager-pptp networkmanager-qt network-manager-applet;
 pacman -Sy --noconfirm pavucontrol;
 ```
 
 ##### Les services
 ```bash
-systemctl enable avahi-daemon.service
-systemctl enable avahi-dnsconfd.service
+systemctl enable avahi-daemon.service;
+systemctl enable avahi-dnsconfd.service;
 systemctl enable lightdm;
 systemctl enable NetworkManager;
 systemctl enable ssh;
