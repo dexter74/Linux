@@ -1,12 +1,12 @@
 #### XFCE4
 ```bash
 pacman -Sy --noconfirm xfce4 xfce4-dev-tools xfce4-goodies xfce4-datetime-plugin xfce4-whiskermenu-plugin;
-pacman -Sy --noconfirm plank;
 ```
 
 #### Suppléments
 ```bash
 yay -Sy --noconfirm xfce4-panel-profiles;
+pacman -Sy --noconfirm libgsf libopenraw ffmpeg ffmpegthumbnailer libgepub poppler poppler-glib;
 ```
 
 #### Docklike
