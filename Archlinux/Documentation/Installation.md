@@ -230,7 +230,6 @@ sed -i 's/^\(#?greeter\)-session\s*=\s*\(.*\)/greeter-session = lightdm-webkit2-
 pacman -Sy --noconfirm xfce4 xfce4-dev-tools xfce4-goodies xfce4-datetime-plugin xfce4-whiskermenu-plugin;
 pacman -Sy --noconfirm plank;
 
-
 rm -r /tmp/xfce4-docklike-plugin-0.4.0*
 wget --inet4-only https://archive.xfce.org/src/panel-plugins/xfce4-docklike-plugin/0.4/xfce4-docklike-plugin-0.4.0.tar.bz2 -O /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 && tar xf /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 -C /tmp
 sed -i '22  s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
@@ -239,66 +238,8 @@ sed -i '26  s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.
 sed -i '190 s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
 cd /tmp/xfce4-docklike-plugin-0.4.0/; ./configure; make -$(nproc); sudo make install;
 ```
-
 ##### Applets
 ```bash
 pacman -Sy --noconfirm networkmanager-pptp networkmanager-qt network-manager-applet
 pacman -Sy --noconfirm pavucontrol;
 ```
-##### Logiciels
-```bash
-pacman -Sy --noconfirm discord;
-pacman -Sy --noconfirm file-roller;
-pacman -Sy --noconfirm gnome-{calculator,calendar,font-viewer,terminal};
-pacman -Sy --noconfirm numlockx;
-pacman -Sy --noconfirm rhythmbox;
-pacman -Sy --noconfirm seahorse;
-pacman -Sy --noconfirm smplayer;
-pacman -Sy --noconfirm virtualbox virtualbox-guest-iso virtualbox-host-modules-arch;
-echo "* 192.168.1.0/24
-* 192.168.2.0/24
-* 192.168.3.0/24
-* 192.168.4.0/24
-* 192.168.5.0/24" > /etc/vbox/networks.conf;
-
-runuser -l $USERNAME -c 'yay -Sy --noconfirm blivet-gui;'
-runuser -l $USERNAME -c 'yay -Sy --noconfirm menulibre;'
-runuser -l $USERNAME -c 'yay -Sy --noconfirm microsoft-edge-stable-bin;'
-runuser -l $USERNAME -c 'yay -Sy --noconfirm mugshot;'
-runuser -l $USERNAME -c 'yay -Sy --noconfirm mpc-qt;'
-runuser -l $USERNAME -c 'yay -Sy --noconfirm pamac-aur;'
-runuser -l $USERNAME -c 'yay -Sy --noconfirm protonup-qt;'
-runuser -l $USERNAME -c 'yay -Sy --noconfirm rhythmbox-plugin-hide-git;'
-runuser -l $USERNAME -c 'yay -Sy --noconfirm rhythmbox-plugin-tray-icon;'
-runuser -l $USERNAME -c 'yay -Sy --noconfirm rhythmbox-tray-icon;'
-runuser -l $USERNAME -c 'yay -Sy --noconfirm sysmontask;'
-runuser -l $USERNAME -c 'yay -Sy --noconfirm timeshift;'
-runuser -l $USERNAME -c 'yay -Sy --noconfirm virtualbox-ext-oracle;'
-runuser -l $USERNAME -c 'yay -Sy --noconfirm xfce4-panel-profiles;'
-```
-
-##### Themes
-```bash
-runuser -l $USERNAME -c 'yay -Sy --noconfirm dracula-gtk-theme;'
-runuser -l $USERNAME -c 'yay -Sy --noconfirm papirus-icon-theme-git;'
-runuser -l $USERNAME -c 'yay -Sy --noconfirm papirus-smplayer-theme-git;'
-```
-
-##### Polices
-```bash
-curl https://fonts.google.com/download?family=Roboto --output /tmp/roboto.zip; unzip /tmp/roboto.zip -d /usr/share/fonts;
-runuser -l $USERNAME -c 'yay -Sy --noconfirm ttf-ms-win10-auto;'
-```
-
-##### Non Classé
-```bash
-amdvlk
-dpkg
-mesa-utils
-opencl-mesa
-systemd-ui
-```
-
-
-
-
