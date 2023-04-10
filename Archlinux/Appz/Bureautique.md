@@ -10,6 +10,15 @@ pacman -Sy --noconfirm smplayer;
 pacman -Sy --noconfirm mplayer;
 ```
 
+##### Lecteur Musique
+```bash
+yay -Sy --noconfirm rhythmbox;
+yay -Sy --noconfirm rhythmbox-plugin-hide-git;
+yay -Sy --noconfirm rhythmbox-plugin-tray-icon;
+yay -Sy --noconfirm rhythmbox-tray-icon;
+yay -Sy --noconfirm papirus-smplayer-theme-git;
+```
+
 ##### Configurer Smplayer
 ```
 Préférences > Options
@@ -36,25 +45,21 @@ Clique droit dans le blanc > Décocher les cases
 <br />
 
 ------------------------------------------------------------------------------------------------------------------
-
-##### Lecteur Musique
-```bash
-yay -Sy --noconfirm rhythmbox;
-yay -Sy --noconfirm rhythmbox-plugin-hide-git;
-yay -Sy --noconfirm rhythmbox-plugin-tray-icon;
-yay -Sy --noconfirm rhythmbox-tray-icon;
-yay -Sy --noconfirm papirus-smplayer-theme-git;
-```
-
-
 ##### Navigateurs
 ```bash
 yay -Sy --noconfirm microsoft-edge-stable-bin;
 ```
 
 ------------------------------------------------------------------------------------------------------------------
-###### Gestionnaire de Disque-dur
+##### Gestionnaire de Disque-dur
 ```bash
 yay -Sy --noconfirm blivet-gui;
 yay -Sy --noconfirm gnome-disk-utility;
+```
+
+
+------------------------------------------------------------------------------------------------------------------
+##### Editer profil
+```bash
+yay -Sy --noconfirm mugshot;
 ```
