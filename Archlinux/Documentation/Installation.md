@@ -117,6 +117,7 @@ pacstrap /mnt broadcom-wl;
 pacstrap /mnt linux-firmware;
 pacstrap /mnt linux-headers;
 pacstrap /mnt ntfs-3g;
+pacstrap /mnt virtualbox-guest-utils;
 ```
 #### Réseaux
 ```bash
