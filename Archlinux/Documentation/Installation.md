@@ -210,7 +210,7 @@ USERNAME=marc
 ID=1000
 PASSWORD=admin
 COMMENT="Marc"
-/usr/sbin/useradd --home-dir /home/$USERNAME --base-dir /home/$USERNAME --uid $ID --groups wheel,storage,power --no-user-group --shell /bin/bash --comment '''$COMMENT''' --create-home $USERNAME;
+/usr/sbin/useradd --home-dir /home/$USERNAME --base-dir /home/$USERNAME --uid $ID --groups wheel,storage,power --no-user-group --shell /bin/bash --comment\"$COMMENT\" --create-home $USERNAME;
 (echo "$USERNAME:$PASSWORD") | chpasswd;
 (echo "root:$PASSWORD") | chpasswd;
 echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/admin;
