@@ -13,7 +13,6 @@ sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf;
 sed -i -e "s/\#ParallelDownloads = 5/ParallelDownloads = 10/g" /etc/pacman.conf;
 pacman -Sy --noconfirm archlinux-keyring;
 ```
-
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------
@@ -66,7 +65,83 @@ df -h | grep "/mnt"; swapon -s | tail -n 1;
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------
-#### Installation du Système
+#### Installation des paquets
+
+##### Paquets de Base
+```bash
+pacstrap /mnt base linux linux-lts
+```
+
+#### Pilotes
+```bash
+pacstrap /mnt amd-ucode broadcom-wl linux-firmware linux-headers ntfs-3g
+```
+
+#### Réseaux
+```bash
+pacstrap /mnt dhclient dhcpcd dnsutils iw iwd networkmanager networkmanager-pptp networkmanager-qt network-manager-applet
+```
+
+#### Le Son
+```bash
+pacstrap /mnt pulseaudio pulseaudio-alsa
+```
+
+#### Librairies
+``` bash
+pacstrap /mnt base-devel fakeroot go
+```
+
+#### Utilitaires (Ligne de commandes)
+``` bash
+pacstrap /mnt bash-completion curl git lsb-release lvm2 man nano neofetch net-tools
+```
+
+#### Gestion de la session
+```bash
+pacstrap /mnt lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings lightdm-webkit2-greeter
+```
+
+#### Environnement Graphique
+```bash
+pacstrap /mnt xfce4 xfce4-dev-tools xfce4-goodies xfce4-datetime-plugin xfce4-whiskermenu-plugin
+```
 
 
+#### Logiciels Utilisateur
+```bash
+pacstrap /mnt discord file-roller gnome-{calculator,calendar,font-viewer,terminal}
+```
 
+
+dpkg
+
+
+gvfs gvfs-gphoto2 gvfs-mtpgvfs-nfs gvfs-smb
+logrotate
+mesa-utils
+ntp
+numlockx
+openssh
+p7zip
+pavucontrol
+plank
+rhythmbox
+samba
+seahorse
+smbclient
+smplayer
+systemd-ui
+sudo
+tlp
+tlp-rdw
+unzip
+usbutils
+virtualbox virtualbox-guest-iso virtualbox-host-modules-arch
+wget
+wireless-regdb
+xf86-video-amdgpu xorg-server xorg-xinit
+
+zip
+amdvlk
+opencl-mesa
