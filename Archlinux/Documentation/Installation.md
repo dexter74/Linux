@@ -163,25 +163,24 @@ bootctl;
 clear;
 NAME=Drthrax74
 DOM=home
-
 echo "127.0.0.1       localhost
 127.0.1.1       $NAME        $NAME
 #127.0.1.1      $NAME.$DOM        $NAME" > /etc/hosts;
 echo "$NAME" > /etc/hostname;
 ```
-#### Gestions des utilisateurs
+##### Gestions des utilisateurs
 ```bash
 USERNAME=marc
 ID=1000
 PASSWORD=admin
 COMMENT="Marc"
-
 /usr/sbin/useradd --home-dir /home/$USERNAME --base-dir /home/$USERNAME --uid $ID --groups wheel,storage,power --no-user-group --shell /bin/bash --comment '''$COMMENT''' --create-home $USERNAME;
-
 (echo "$USERNAME:$PASSWORD") | chpasswd;
-(echo "root:$PASSWORD")      | chpasswd;
+(echo "root:$PASSWORD") | chpasswd;
+echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/admin;
 ```
-#### Environnement de l'utilisateur
+
+##### Environnement de l'utilisateur
 ```bash
 runuser -l $USERNAME -c "mkdir -p ~/.config/";
 runuser -l $USERNAME -c 'echo "
@@ -197,13 +196,12 @@ XDG_VIDEOS_DIR=\"\$HOME/Videos\" " > $HOME/.config/user-dirs.dirs';
 runuser -l $USERNAME -c "mkdir Bureau Documents Telechargements Templates Musiques Images Public Videos";
 ```
 
-#### Langue en Français
+##### Langue en Français
 ```bash
-echo 'LANG=fr_FR.UTF-8' > /etc/locale.conf;
-
-echo 'KEYMAP=fr-latin9'                 > /etc/vconsole.conf;
-echo 'FONT=eurlatgr'                   >> /etc/vconsole.conf;
-echo 'fr_FR.UTF-8 UTF-8'                > /etc/locale.gen;
+echo 'LANG=fr_FR.UTF-8'   > /etc/locale.conf;
+echo 'KEYMAP=fr-latin9'   > /etc/vconsole.conf;
+echo 'FONT=eurlatgr'     >> /etc/vconsole.conf;
+echo 'fr_FR.UTF-8 UTF-8'  > /etc/locale.gen;
 locale-gen;
 
 mkdir -p /etc/X11/xorg.conf.d/;
@@ -214,4 +212,10 @@ echo 'Section "InputClass"
     Option "XkbVariant"    "oss"
     Option "XkbOptions"    "compose:menu,terminate:ctrl_alt_bksp"
 EndSection' > /etc/X11/xorg.conf.d/00-keyboard.conf;
+```
+
+##### MKinitCPIO
+```
+sed -i -e "s/HOOKS\=(base udev autodetect modconf kms keyboard keymap consolefont block filesystems fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems udev resume keyboard keymap sd-vconsole fsck)/g" /etc/mkinitcpio.conf;
+mkinitpcio -p linux;
 ```
