@@ -36,7 +36,14 @@ yay -Sy --noconfirm timeshift;
 
 ##### Virtualbox
 ```
-yay -Sy --noconfirm virtualbox-ext-oracle;
+pacman -Sy --noconfirm virtualbox virtualbox-guest-iso virtualbox-host-modules-arch;
+yay    -Sy --noconfirm virtualbox-ext-oracle;
+
+echo "* 192.168.1.0/24
+* 192.168.2.0/24
+* 192.168.3.0/24
+* 192.168.4.0/24
+* 192.168.5.0/24" > /etc/vbox/networks.conf;
 ```
 
 ------------------------------------------------------------------------------------------------------------------
@@ -91,6 +98,7 @@ yay -Sy --noconfirm microsoft-edge-stable-bin;
 ------------------------------------------------------------------------------------------------------------------
 ##### Divers
 ```bash
+pacman -Sy --noconfirm discord;
 pacman -Sy --noconfirm gnome-calculator;
 pacman -Sy --noconfirm gnome-calendar;
 pacman -Sy --noconfirm gnome-connections;
