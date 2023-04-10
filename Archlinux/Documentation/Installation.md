@@ -146,7 +146,7 @@ pacstrap /mnt logrotate ntp openssh samba tlp tlp-rdw;
 clear;
 UUID_ESP=$(blkid  | grep vfat | grep -v "EFI system partition" | cut -d '"' -f 2)
 genfstab -U /mnt >> /mnt/etc/fstab;
-echo "$UUID_ESP /boot	auto rw,relatime 0 0" >> /mnt/etc/fstab;
+echo "UUID=$UUID_ESP /boot	auto rw,relatime 0 0" >> /mnt/etc/fstab;
 ```
 #### Chroot
 ```bash
