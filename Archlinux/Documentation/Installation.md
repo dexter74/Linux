@@ -14,6 +14,9 @@ sed -i -e "s/\#ParallelDownloads = 5/ParallelDownloads = 10/g" /etc/pacman.conf;
 pacman -Sy --noconfirm archlinux-keyring;
 ```
 
+<br />
+
+----------------------------------------------------------------------------------------------------------------------------------------
 #### Partitionnement
 ##### NVME
 ```
@@ -51,5 +54,13 @@ echo "yes" | mkfs -t ext4 /dev/$LVM_NAMEVG/SYSTEM;
 echo "yes" | mkfs -t ext4 /dev/$LVM_NAMEVG/HOME;
 ```
 
+#### Montage des partitions
+```bash
+swapon /dev/$LVM_NAMEVG/SWAP;
+mount /dev/$LVM_NAMEVG/SYSTEM /mnt;
+mkdir -p /mnt/home && mount /dev/$LVM_NAMEVG/HOME /mnt/home;
+mkdir -p /mnt/boot && mount ${DISK}p1  /mnt/boot;
+df -h | grep "/mnt"; swapon -s | tail -n 1;
+```
 
 
