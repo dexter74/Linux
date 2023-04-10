@@ -5,6 +5,9 @@
 
 #### A ajouter
 ```
+Connexion au Wifi au début 
+
+
 Fuseau Horaire + Synchronisation
 > timedatectl set-timezone Europe/Paris
 > timedatectl set-ntp no
@@ -28,6 +31,12 @@ systemctl restart ntpd
 ```bash
 loadkeys fr;
 ```
+
+#### Connexion au WIFI
+```bash
+```
+
+
 #### Pacman
 ```bash
 clear;
