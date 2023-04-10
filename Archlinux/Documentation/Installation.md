@@ -277,41 +277,6 @@ mkinitcpio -p linux;
 runuser -l $USERNAME -c 'git clone https://aur.archlinux.org/yay.git /tmp/yay;'
 runuser -l $USERNAME -c 'cd /tmp/yay && makepkg -si --noconfirm;'
 ```
-##### Pilotes (Drthrax74)
-```
-runuser -l $USERNAME -c 'yay -Sy --noconfirm aic94xx-firmware ast-firmware upd72020x-fw linux-firmware-qlogic wd719x-firmware;'
-```
-##### Serveur d'affichage
-```bash
-pacman -Sy --noconfirm xorg-server xorg-xinit xf86-video-amdgpu;
-```
-##### Gestion de la session (+ thème Lightdm-evo)
-```bash
-pacman -Sy --noconfirm lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings lightdm-webkit2-greeter;
-pacman -Sy --noconfirm libgsf libopenraw ffmpeg ffmpegthumbnailer libgepub poppler poppler-glib;
-
-git clone https://github.com/AlphaNecron/lightdm-evo.git; mv -r lightdm-evo /usr/share/lightdm-webkit/themes/lightdm-evo;
-sed -i 's/^webkit_theme\s*=\s*\(.*\)/webkit_theme = lightdm-evo #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf;
-sed -i 's/^\(#?greeter\)-session\s*=\s*\(.*\)/greeter-session = lightdm-webkit2-greeter #\1/ #\2g' /etc/lightdm/lightdm.conf;
-```
-##### Environnement Graphique
-```bash
-pacman -Sy --noconfirm xfce4 xfce4-dev-tools xfce4-goodies xfce4-datetime-plugin xfce4-whiskermenu-plugin;
-pacman -Sy --noconfirm plank;
-
-rm -r /tmp/xfce4-docklike-plugin-0.4.0*;
-wget --inet4-only https://archive.xfce.org/src/panel-plugins/xfce4-docklike-plugin/0.4/xfce4-docklike-plugin-0.4.0.tar.bz2 -O /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 && tar xf /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 -C /tmp;
-sed -i '22  s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
-sed -i '177 s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
-sed -i '26  s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
-sed -i '190 s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
-cd /tmp/xfce4-docklike-plugin-0.4.0/; ./configure; make -$(nproc); sudo make install;
-```
-##### Applets
-```bash
-pacman -Sy --noconfirm networkmanager-pptp networkmanager-qt network-manager-applet;
-pacman -Sy --noconfirm pavucontrol;
-```
 
 ##### Les services
 ```bash
