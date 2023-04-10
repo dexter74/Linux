@@ -17,10 +17,11 @@ pacman -Sy --noconfirm archlinux-keyring;
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------
-#### Partitionnement
-##### NVME
+#### Partitionnement (NVME)
+
+##### Déclaration des variables (Remplacer X par le Disque)
 ```
-DISK=/dev/nvme1n1
+DISK=/dev/nvmeXn1
 SIZE_BOOT=+512M
 SIZE_SWAP=+4G
 SIZE_SYST=+10G
@@ -62,5 +63,9 @@ mkdir -p /mnt/home && mount /dev/$LVM_NAMEVG/HOME /mnt/home;
 mkdir -p /mnt/boot && mount ${DISK}p1  /mnt/boot;
 df -h | grep "/mnt"; swapon -s | tail -n 1;
 ```
+
+----------------------------------------------------------------------------------------------------------------------------------------
+#### Installation du Système
+
 
 
