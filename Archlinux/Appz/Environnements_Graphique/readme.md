@@ -1,3 +1,4 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------
 #### XFCE4
 ```bash
 pacman -Sy --noconfirm xfce4 xfce4-dev-tools xfce4-goodies xfce4-datetime-plugin xfce4-whiskermenu-plugin;
@@ -19,6 +20,6 @@ sed -i '26  s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.
 sed -i '190 s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
 cd /tmp/xfce4-docklike-plugin-0.4.0/; ./configure; make -$(nproc); sudo make install;
 ```
+<br />
 
-
-pacman -Sy --noconfirm plank;
+---------------------------------------------------------------------------------------------------------------------------------------------------
