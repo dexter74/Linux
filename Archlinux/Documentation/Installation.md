@@ -5,8 +5,6 @@
 
 #### Bug
 ```
-Bootctl
-Variable Comment
 ```
 
 <br />
