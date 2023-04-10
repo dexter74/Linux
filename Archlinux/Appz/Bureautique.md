@@ -1,16 +1,53 @@
+------------------------------------------------------------------------------------------------------------------
+### Administration
+
 ##### Coffre-fort
 ```bash
 pacman -Sy --noconfirm seahorse;
 ```
+##### Editeur de profil
+```bash
+yay -Sy --noconfirm mugshot;
+```
+
+##### Pavé-Numérique
+```bash
+pacman -Sy --noconfirm numlockx;
+```
+##### Gestionnaire de Disque-dur
+```bash
+yay -Sy --noconfirm blivet-gui;
+yay -Sy --noconfirm gnome-disk-utility;
+```
+##### Gestionnaire de Tâches
+```bash
+yay -Sy --noconfirm sysmontask;
+```
+
+##### Magasin Applicatif
+```bash
+yay -Sy --noconfirm pamac-aur;
+```
+
+##### Sauvegarde et Restauration
+```bash
+yay -Sy --noconfirm timeshift;
+```
+
+##### Virtualbox
+```
+yay -Sy --noconfirm virtualbox-ext-oracle;
+```
 
 ------------------------------------------------------------------------------------------------------------------
-##### Lecteur Multimédias
+### Multimédias
+##### Lecteur de Film
 ```bash
 pacman -Sy --noconfirm smplayer;
 pacman -Sy --noconfirm mplayer;
 ```
 
-##### Lecteur Musique
+##### Lecteur de Musique
 ```bash
 yay -Sy --noconfirm rhythmbox;
 yay -Sy --noconfirm rhythmbox-plugin-hide-git;
@@ -49,17 +86,14 @@ Clique droit dans le blanc > Décocher les cases
 ```bash
 yay -Sy --noconfirm microsoft-edge-stable-bin;
 ```
+<br />
 
 ------------------------------------------------------------------------------------------------------------------
-##### Gestionnaire de Disque-dur
+##### Divers
 ```bash
-yay -Sy --noconfirm blivet-gui;
-yay -Sy --noconfirm gnome-disk-utility;
-```
-
-
-------------------------------------------------------------------------------------------------------------------
-##### Editer profil
-```bash
-yay -Sy --noconfirm mugshot;
+pacman -Sy --noconfirm gnome-calculator;
+pacman -Sy --noconfirm gnome-calendar;
+pacman -Sy --noconfirm gnome-connections;
+pacman -Sy --noconfirm gnome-font-viewer;
+pacman -Sy --noconfirm gnome-terminal;
 ```
