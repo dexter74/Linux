@@ -70,11 +70,11 @@ pacstrap /mnt amd-ucode broadcom-wl linux-firmware linux-headers ntfs-3g;
 ```
 #### Réseaux
 ```bash
-pacstrap /mnt dhclient dhcpcd dnsutils iw iwd net-tools networkmanager networkmanager-pptp networkmanager-qt network-manager-applet wireless-regdb;
+pacstrap /mnt dhclient dhcpcd dnsutils iw iwd net-tools networkmanager wireless-regdb;
 ```
 #### Le Son
 ```bash
-pacstrap /mnt pulseaudio pulseaudio-alsa pavucontrol;
+pacstrap /mnt pulseaudio pulseaudio-alsa;
 ```
 #### Librairies
 ``` bash
@@ -211,10 +211,16 @@ pacman -Sy --noconfirm libgsf libopenraw ffmpeg ffmpegthumbnailer libgepub poppl
 pacman -Sy --noconfirm xfce4 xfce4-dev-tools xfce4-goodies xfce4-datetime-plugin xfce4-whiskermenu-plugin;
 ```
 
+##### Applets
+```bash
+pacman -Sy --noconfirm networkmanager-pptp networkmanager-qt network-manager-applet
+pacman -Sy --noconfirm pavucontrol;
+
 ##### Logiciels Utilisateur
 ```bash
 pacman -Sy --noconfirm discord file-roller gnome-{calculator,calendar,font-viewer,terminal} numlockx plank rhythmbox seahorse smplayer virtualbox virtualbox-guest-iso virtualbox-host-modules-arch
 ```
+
 ##### Non Classé
 ```bash
 amdvlk
