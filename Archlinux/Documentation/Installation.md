@@ -149,7 +149,7 @@ df -h | grep "/mnt"; swapon -s | tail -n 1;
 ##### Paquets de Base
 ```bash
 clear;
-pacstrap /mnt base linux linux-lts;
+pacstrap /mnt base linux;
 ``` 
 #### Pilotes
 ```bash
