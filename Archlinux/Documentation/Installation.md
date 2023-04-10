@@ -6,6 +6,17 @@
 #### A ajouter
 ```
 Fuseau Horaire + Synchronisation
+> timedatectl set-timezone Europe/Paris
+> timedatectl set-ntp no
+
+nano /etc/ntp.conf
+server 0.fr.pool.ntp.org
+server 1.fr.pool.ntp.org
+server 2.fr.pool.ntp.org
+server 3.fr.pool.ntp.org
+
+systemctl restart ntpd
+
 ```
 
 
