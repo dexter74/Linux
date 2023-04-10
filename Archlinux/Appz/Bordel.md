@@ -2,7 +2,7 @@
 ```bash
 pacman -Sy --noconfirm discord;
 pacman -Sy --noconfirm file-roller;
-pacman -Sy --noconfirm gnome-{calculator,calendar,font-viewer,terminal};
+pacman -Sy --noconfirm gnome-{calculator,calendar,connections,font-viewer,terminal};
 pacman -Sy --noconfirm numlockx;
 pacman -Sy --noconfirm virtualbox virtualbox-guest-iso virtualbox-host-modules-arch;
 echo "* 192.168.1.0/24
