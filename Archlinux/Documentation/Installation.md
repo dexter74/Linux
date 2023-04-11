@@ -219,6 +219,7 @@ arch-chroot /mnt
 #### Préparation du Système (Partie I)
 ##### Installation du démarrage EFI avec SystemD
 ```bash
+clear;
 # ---------------------------------------------------------------------------------------------
 UUID_SYSTEM=$(blkid | grep 'SYSTEM: UUID=' | cut -d '"' -f 2);
 # ---------------------------------------------------------------------------------------------
@@ -277,6 +278,7 @@ EndSection' > /etc/X11/xorg.conf.d/00-keyboard.conf;
 
 ##### Fuseau Horaire + Synchronisation
 ```bash
+clear;
 timedatectl set-timezone Europe/Paris;
 timedatectl set-ntp no;
 ```
