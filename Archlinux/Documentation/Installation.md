@@ -328,12 +328,14 @@ pacman -Sy --noconfirm archlinux-keyring;
 ```
 ##### Yay
 ```bash
+clear;
 runuser -l $USERNAME -c 'git clone https://aur.archlinux.org/yay.git /tmp/yay;'
 runuser -l $USERNAME -c 'cd /tmp/yay && makepkg -si --noconfirm;'
 ```
 
 ##### Les services
 ```bash
+clear
 systemctl enable avahi-daemon.service;
 systemctl enable avahi-dnsconfd.service;
 systemctl enable NetworkManager;
