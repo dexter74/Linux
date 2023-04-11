@@ -7,6 +7,7 @@ pacman -Sy --noconfirm xfce4 xfce4-dev-tools xfce4-goodies xfce4-datetime-plugin
 #### Suppléments
 ```bash
 yay -Sy --noconfirm xfce4-panel-profiles;
+yay -Sy --noconfirm dbus-x11;
 pacman -Sy --noconfirm libgsf libopenraw ffmpeg ffmpegthumbnailer libgepub poppler poppler-glib;
 ```
 
