@@ -6,19 +6,8 @@
 #### A ajouter
 ```
 Connexion au Wifi au début 
-
-
-Fuseau Horaire + Synchronisation
-> timedatectl set-timezone Europe/Paris
-> timedatectl set-ntp no
-
-nano /etc/ntp.conf
-server 0.fr.pool.ntp.org
-server 1.fr.pool.ntp.org
-server 2.fr.pool.ntp.org
-server 3.fr.pool.ntp.org
-systemctl restart ntpd
 ```
+
 
 #### Bug
 ```
@@ -250,6 +239,7 @@ bootctl update;
 bootctl;
 # ---------------------------------------------------------------------------------------------
 ```
+
 ##### Nom de la machine
 ```bash
 clear;
@@ -260,6 +250,37 @@ echo "127.0.0.1       localhost
 #127.0.1.1      $NAME.$DOM        $NAME" > /etc/hosts;
 echo "$NAME" > /etc/hostname;
 ```
+
+##### Langue en Français
+```bash
+echo 'LANG=fr_FR.UTF-8'   > /etc/locale.conf;
+echo 'KEYMAP=fr-latin9'   > /etc/vconsole.conf;
+echo 'FONT=eurlatgr'     >> /etc/vconsole.conf;
+echo 'fr_FR.UTF-8 UTF-8'  > /etc/locale.gen;
+locale-gen;
+
+mkdir -p /etc/X11/xorg.conf.d/;
+echo 'Section "InputClass"
+    Identifier             "Keyboard Defaults"
+    MatchIsKeyboard        "yes"
+    Option "XkbLayout"     "fr"
+    Option "XkbVariant"    "oss"
+    Option "XkbOptions"    "compose:menu,terminate:ctrl_alt_bksp"
+EndSection' > /etc/X11/xorg.conf.d/00-keyboard.conf;
+```
+
+##### Fuseau Horaire + Synchronisation
+```bash
+timedatectl set-timezone Europe/Paris;
+timedatectl set-ntp no;
+```
+
+##### MKinitCPIO
+```
+sed -i -e "s/HOOKS\=(base udev autodetect modconf kms keyboard keymap consolefont block filesystems fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems udev resume keyboard keymap sd-vconsole fsck)/g" /etc/mkinitcpio.conf;
+mkinitcpio -p linux;
+```
+
 ##### Gestions des utilisateurs
 ```bash
 USERNAME=marc
@@ -284,33 +305,9 @@ XDG_MUSIC_DIR=\"\$HOME/Musiques\"
 XDG_PICTURES_DIR=\"\$HOME/Images\"
 XDG_PUBLICSHARE_DIR=\"\$HOME/Public\"
 XDG_VIDEOS_DIR=\"\$HOME/Videos\" " > $HOME/.config/user-dirs.dirs';
-
 runuser -l $USERNAME -c "mkdir Bureau Documents Telechargements Templates Musiques Images Public Videos";
 ```
 
-##### Langue en Français
-```bash
-echo 'LANG=fr_FR.UTF-8'   > /etc/locale.conf;
-echo 'KEYMAP=fr-latin9'   > /etc/vconsole.conf;
-echo 'FONT=eurlatgr'     >> /etc/vconsole.conf;
-echo 'fr_FR.UTF-8 UTF-8'  > /etc/locale.gen;
-locale-gen;
-
-mkdir -p /etc/X11/xorg.conf.d/;
-echo 'Section "InputClass"
-    Identifier             "Keyboard Defaults"
-    MatchIsKeyboard        "yes"
-    Option "XkbLayout"     "fr"
-    Option "XkbVariant"    "oss"
-    Option "XkbOptions"    "compose:menu,terminate:ctrl_alt_bksp"
-EndSection' > /etc/X11/xorg.conf.d/00-keyboard.conf;
-```
-
-##### MKinitCPIO
-```
-sed -i -e "s/HOOKS\=(base udev autodetect modconf kms keyboard keymap consolefont block filesystems fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems udev resume keyboard keymap sd-vconsole fsck)/g" /etc/mkinitcpio.conf;
-mkinitcpio -p linux;
-```
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------
