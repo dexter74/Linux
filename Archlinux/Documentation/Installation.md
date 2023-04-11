@@ -36,17 +36,15 @@ loadkeys fr;
 ```bash
 clear;
 iwctl adapter list;
-iwctl adapter phy0 set-property Powered on;
-
 iwctl device list;
 
+iwctl adapter phy0 set-property Powered on;
 iwctl device wlan0 set-property Powered on;
 
 iwctl station wlan0 scan;
 iwctl station wlan0 get-networks;
 
-iwctl station wlan0 connect Livebox-F28A --passphrase u7yCLyQED26nXW7EP7
-iwctl station wlan0 show;
+iwctl station wlan0 connect Livebox-F28A --passphrase u7yCLyQED26nXW7EP7;
 ```
 
 
