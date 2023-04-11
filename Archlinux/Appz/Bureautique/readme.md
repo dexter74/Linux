@@ -30,10 +30,10 @@ pacman -Sy --noconfirm file-roller;
 yay -Sy --noconfirm sysmontask;
 ```
 
-##### Magasin Applicatif (Conflit: archlinux-appstream-data)
+##### Magasin Applicatif 
 ```bash
 yay -R --noconfirm archlinux-appstream-data;
-yay -Sy --noconfirm pamac-aur-git;
+yay -Sy --noconfirm pamac-all;
 ```
 
 ##### Sauvegarde et Restauration
