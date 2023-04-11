@@ -5,9 +5,9 @@ pacman -Sy --noconfirm lightdm;
 
 ##### Suppléments
 ```bash
-pacman -Sy --noconfirmlightdm-gtk-greeter;
-pacman -Sy --noconfirmlightdm-gtk-greeter-settings;
-pacman -Sy --noconfirmlightdm-webkit2-greeter;
+pacman -Sy --noconfirm lightdm-gtk-greeter;
+pacman -Sy --noconfirm lightdm-gtk-greeter-settings;
+pacman -Sy --noconfirm lightdm-webkit2-greeter;
 ```
 
 ##### Thèmes 
