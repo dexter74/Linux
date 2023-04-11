@@ -14,7 +14,7 @@ Connexion au Wifi au début
 ```
 
 <br />
-
+7
 ----------------------------------------------------------------------------------------------------------------------------------------
 #### Clavier en Azerty
 ```bash
@@ -327,3 +327,12 @@ systemctl enable NetworkManager;
 systemctl enable sshd;
 systemctl enable ntpd;
 ```
+
+----------------------------------------------------------------------------------------------------------------------------------------
+#### Inteface Utilisateur
+
+[Xorg](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Serveur_Affichage/readme.md)
+[XFCE](https://github.com/dexter74/Linux/blob/main/Archlinux/Appz/Environnements_Graphique/readme.md) ([Profil](https://github.com/dexter74/Linux/blob/main/Archlinux/Appz/Environnements_Graphique/XFCE4_Profile.tar.bz2))
+[Lightdm](https://github.com/dexter74/Linux/blob/main/Archlinux/Appz/Gestionnaire_de_connexion/readme.md)
+[Applets](https://github.com/dexter74/Linux/blob/main/Archlinux/Appz/Applets/readme.md)
+
