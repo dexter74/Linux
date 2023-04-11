@@ -206,8 +206,8 @@ pacstrap /mnt logrotate ntp openssh samba tlp tlp-rdw;
 clear;
 genfstab -U /mnt > /mnt/etc/fstab;
 cat /mnt/etc/fstab;
-
 ```
+
 #### Chroot
 ```bash
 arch-chroot /mnt
@@ -321,6 +321,13 @@ runuser -l $USERNAME -c "mkdir Bureau Documents Telechargements Templates Musiqu
 ----------------------------------------------------------------------------------------------------------------------------------------
 #### Préparation du Système (Partie II)
 
+#### Pacman
+```bash
+clear;
+sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf;
+sed -i -e "s/\#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf;
+pacman -Sy --noconfirm archlinux-keyring;
+```
 ##### Yay
 ```bash
 runuser -l $USERNAME -c 'git clone https://aur.archlinux.org/yay.git /tmp/yay;'
