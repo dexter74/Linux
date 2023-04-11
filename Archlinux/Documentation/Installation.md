@@ -277,7 +277,7 @@ EndSection' > /etc/X11/xorg.conf.d/00-keyboard.conf;
 ```
 
 
-####### OLD
+###### OLD
 ```bash
 clear;
 export LANG=fr_FR.UTF-8;
@@ -375,17 +375,17 @@ timedatectl set-timezone Europe/Paris;
 timedatectl set-ntp no;
 ```
 
-####### TimeZone (OlD)
+###### TimeZone (OlD)
 ```bash
 clear; ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime;
 ```
 
-####### Synchronisation Heure (old)
+###### Synchronisation Heure (old)
 ```bash
 clear; hwclock --systohc;
 ```
 
-####### Autoriser connexion SSH (Root)
+###### Autoriser connexion SSH (Root)
 ```bash
 clear;
 sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ssh/sshd_config;
