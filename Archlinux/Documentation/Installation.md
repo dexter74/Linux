@@ -156,6 +156,10 @@ pacman -Sy --noconfirm archlinux-keyring;
 ```
 <br />
 
+##### Purger
+```bash
+rm -rf /mnt;
+```
 
 ##### Paquets de Base
 ```bash
