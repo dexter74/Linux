@@ -6,5 +6,5 @@ sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.ta
 
 echo "[chaotic-aur]
 Include = /etc/pacman.d/chaotic-mirrorlist" >> /etc/pacman.conf
-pacman -Sy
+sudo pacman -Syu --noconfirm pamac-aur;
 ```
