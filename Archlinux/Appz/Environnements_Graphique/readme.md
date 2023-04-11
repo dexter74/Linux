@@ -43,7 +43,7 @@ cat -n /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
 ```
 
 ```bash
-nano -n /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
+# 
 <property name="Client2_Command" type="array">
 <value type="string" value="xfce4-panel"/>
 </property>
