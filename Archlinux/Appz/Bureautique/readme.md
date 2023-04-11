@@ -1,10 +1,12 @@
 ------------------------------------------------------------------------------------------------------------------
-### Administration
 
+### Administration
 ##### Coffre-fort
 ```bash
 pacman -Sy --noconfirm seahorse;
 ```
+
+
 ##### Editeur de profil
 ```bash
 yay -Sy --noconfirm mugshot;
@@ -30,7 +32,7 @@ pacman -Sy --noconfirm file-roller;
 yay -Sy --noconfirm sysmontask;
 ```
 
-##### Magasin Applicatif 
+##### Magasin Applicatif (KO)
 ```bash
 yay -Sy --noconfirm pamac-all;
 ```
