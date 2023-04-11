@@ -145,8 +145,6 @@ df -h | grep "/mnt"; swapon -s | tail -n 1;
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 #### Installation des paquets
-
-
 #### Pacman
 ```bash
 clear;
@@ -154,12 +152,10 @@ sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf;
 sed -i -e "s/\#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf;
 pacman -Sy --noconfirm archlinux-keyring;
 ```
-
 ##### Purger
 ```bash
 rm -rf /mnt;
 ```
-
 ##### Paquets de Base
 ```bash
 clear;
@@ -180,9 +176,13 @@ pacstrap /mnt virtualbox-guest-utils;
 clear;
 pacstrap /mnt dhclient dhcpcd dnsutils iw iwd net-tools networkmanager wireless-regdb;
 ```
-#### Le Son
+#### Son
 ```bash
-pacstrap /mnt pulseaudio pulseaudio-alsa;
+pacstrap /mnt pulseaudio pulseaudio-alsa pulseaudio-equalizer;
+```
+#### Bluetooth
+```bash
+pacstrap /mnt --noconfirm blueman pulseaudio-bluetooth
 ```
 #### Librairies
 ``` bash
@@ -193,21 +193,21 @@ pacstrap /mnt gtk-engine-murrine gtk-engines;
 #### Utilitaires (Ligne de commandes)
 ``` bash
 clear;
-pacstrap /mnt bash-completion curl git gvfs gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb lsb-release lvm2 man nano neofetch p7zip smbclient sudo unzip usbutils wget zip;
+pacstrap /mnt bash-completion binutils curl git gvfs gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb lsb-release lvm2 man nano neofetch p7zip smbclient sudo unzip usbutils wget zip;
+
+# cabextract lha lsof mtools reflector pacman-contrib nm-connection-editor
 ```
 #### Fonctions
 ```bash
 clear;
 pacstrap /mnt logrotate ntp openssh samba tlp tlp-rdw;
 ```
-
 #### FSTAB (Boot, Swap, Home, System)
 ```bash
 clear;
 genfstab -U /mnt > /mnt/etc/fstab;
 cat /mnt/etc/fstab;
 ```
-
 #### Chroot
 ```bash
 clear;
@@ -276,6 +276,31 @@ echo 'Section "InputClass"
 EndSection' > /etc/X11/xorg.conf.d/00-keyboard.conf;
 ```
 
+
+####### OLD
+```bash
+clear;
+export LANG=fr_FR.UTF-8;
+echo 'LANG=fr_FR.UTF-8'                 > /etc/locale.conf;
+echo 'LC_CTYPE="fr_FR.UTF-8"'          >> /etc/locale.conf;
+echo 'LC_NUMERIC="fr_FR.UTF-8"'        >> /etc/locale.conf;
+echo 'LC_TIME="fr_FR.UTF-8"'           >> /etc/locale.conf;
+echo 'LC_COLLATE="fr_FR.UTF-8"'        >> /etc/locale.conf;
+echo 'LC_MONETARY="fr_FR.UTF-8"'       >> /etc/locale.conf;
+echo 'LC_MESSAGES='                    >> /etc/locale.conf;
+echo 'LC_PAPER="fr_FR.UTF-8"'          >> /etc/locale.conf;
+echo 'LC_NAME="fr_FR.UTF-8"'           >> /etc/locale.conf;
+echo 'LC_ADDRESS="fr_FR.UTF-8"'        >> /etc/locale.conf;
+echo 'LC_TELEPHONE="fr_FR.UTF-8"'      >> /etc/locale.conf;
+echo 'LC_MEASUREMENT="fr_FR.UTF-8"'    >> /etc/locale.conf;
+echo 'LC_IDENTIFICATION="fr_FR.UTF-8"' >> /etc/locale.conf;
+echo 'LC_ALL='                         >> /etc/locale.conf;
+echo 'LANGUAGE="fr_FR"'                >> /etc/locale.conf;
+echo 'KEYMAP=fr-latin9'                 > /etc/vconsole.conf;
+echo 'FONT=eurlatgr'                   >> /etc/vconsole.conf;
+echo 'fr_FR.UTF-8 UTF-8'                > /etc/locale.gen;
+locale-gen;
+```
 
 
 ##### MKinitCPIO
@@ -349,6 +374,23 @@ clear;
 timedatectl set-timezone Europe/Paris;
 timedatectl set-ntp no;
 ```
+
+####### TimeZone (OlD)
+```bash
+clear; ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime;
+```
+
+####### Synchronisation Heure (old)
+```bash
+clear; hwclock --systohc;
+```
+
+####### Autoriser connexion SSH (Root)
+```bash
+clear;
+sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ssh/sshd_config;
+```
+
 ----------------------------------------------------------------------------------------------------------------------------------------
 #### Inteface Utilisateur
 
