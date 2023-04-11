@@ -276,12 +276,7 @@ echo 'Section "InputClass"
 EndSection' > /etc/X11/xorg.conf.d/00-keyboard.conf;
 ```
 
-##### Fuseau Horaire + Synchronisation
-```bash
-clear;
-timedatectl set-timezone Europe/Paris;
-timedatectl set-ntp no;
-```
+
 
 ##### MKinitCPIO
 ```
@@ -346,6 +341,12 @@ systemctl enable sshd;
 systemctl enable ntpd;
 ```
 
+##### Fuseau Horaire + Synchronisation
+```bash
+clear;
+timedatectl set-timezone Europe/Paris;
+timedatectl set-ntp no;
+```
 ----------------------------------------------------------------------------------------------------------------------------------------
 #### Inteface Utilisateur
 
