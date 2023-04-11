@@ -254,6 +254,7 @@ echo "$NAME" > /etc/hostname;
 
 ##### Langue en Français
 ```bash
+clear;
 echo 'LANG=fr_FR.UTF-8'   > /etc/locale.conf;
 echo 'KEYMAP=fr-latin9'   > /etc/vconsole.conf;
 echo 'FONT=eurlatgr'     >> /etc/vconsole.conf;
@@ -299,6 +300,7 @@ locale-gen;
 
 ##### MKinitCPIO
 ```
+clear;
 sed -i -e "s/HOOKS\=(base udev autodetect modconf kms keyboard keymap consolefont block filesystems fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems udev resume keyboard keymap sd-vconsole fsck)/g" /etc/mkinitcpio.conf;
 mkinitcpio -p linux;
 ```
