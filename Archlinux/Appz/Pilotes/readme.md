@@ -6,7 +6,3 @@ yay -Sy --noconfirm upd72020x-fw;
 yay -Sy --noconfirm linux-firmware-qlogic;
 yay -Sy --noconfirm wd719x-firmware;
 ```
-##### Virtualbox
-```bash
-yay -Sy --noconfirm 
-```
