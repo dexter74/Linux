@@ -277,7 +277,7 @@ EndSection' > /etc/X11/xorg.conf.d/00-keyboard.conf;
 ```
 
 
-###### OLD
+###### Langue en Français (old)
 ```bash
 clear;
 export LANG=fr_FR.UTF-8;
@@ -375,7 +375,7 @@ timedatectl set-timezone Europe/Paris;
 timedatectl set-ntp no;
 ```
 
-###### TimeZone (OlD)
+###### TimeZone (old)
 ```bash
 clear; ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime;
 ```
