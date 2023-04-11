@@ -158,12 +158,10 @@ rm -rf /mnt;
 ```
 ##### Paquets de Base
 ```bash
-clear;
 pacstrap /mnt base linux;
 ``` 
 #### Pilotes
 ```bash
-clear;
 pacstrap /mnt amd-ucode;
 pacstrap /mnt broadcom-wl;
 pacstrap /mnt linux-firmware;
@@ -173,7 +171,6 @@ pacstrap /mnt virtualbox-guest-utils;
 ```
 #### Réseaux
 ```bash
-clear;
 pacstrap /mnt dhclient dhcpcd dnsutils iw iwd net-tools networkmanager wireless-regdb;
 ```
 #### Son
@@ -186,20 +183,17 @@ pacstrap /mnt --noconfirm blueman pulseaudio-bluetooth
 ```
 #### Librairies
 ``` bash
-clear;
 pacstrap /mnt base-devel fakeroot go;
 pacstrap /mnt gtk-engine-murrine gtk-engines;
 ```
 #### Utilitaires (Ligne de commandes)
 ``` bash
-clear;
 pacstrap /mnt bash-completion binutils curl git gvfs gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb lsb-release lvm2 man nano neofetch p7zip smbclient sudo unzip usbutils wget zip;
 
 # cabextract lha lsof mtools reflector pacman-contrib nm-connection-editor
 ```
 #### Fonctions
 ```bash
-clear;
 pacstrap /mnt logrotate ntp openssh samba tlp tlp-rdw;
 ```
 #### FSTAB (Boot, Swap, Home, System)
