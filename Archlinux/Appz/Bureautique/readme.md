@@ -1,17 +1,12 @@
-------------------------------------------------------------------------------------------------------------------
-
 ### Administration
 ##### Coffre-fort
 ```bash
 pacman -Sy --noconfirm seahorse;
 ```
-
-
 ##### Editeur de profil
 ```bash
 yay -Sy --noconfirm mugshot;
 ```
-
 ##### Pavé-Numérique
 ```bash
 pacman -Sy --noconfirm numlockx;
@@ -21,27 +16,22 @@ pacman -Sy --noconfirm numlockx;
 yay -Sy --noconfirm blivet-gui;
 yay -Sy --noconfirm gnome-disk-utility;
 ```
-
 ##### Gestionnaire de fichier compréssé
 ```bash
 pacman -Sy --noconfirm file-roller;
 ```
-
 ##### Gestionnaire de Tâches
 ```bash
 yay -Sy --noconfirm sysmontask;
 ```
-
 ##### Magasin Applicatif (KO)
 ```bash
 yay -Sy --noconfirm pamac-all;
 ```
-
 ##### Sauvegarde et Restauration
 ```bash
 yay -Sy --noconfirm timeshift;
 ```
-
 ##### Virtualbox
 ```
 pacman -Sy --noconfirm virtualbox virtualbox-guest-iso virtualbox-host-modules-arch;
@@ -61,7 +51,6 @@ echo "* 192.168.1.0/24
 pacman -Sy --noconfirm smplayer;
 pacman -Sy --noconfirm mplayer;
 ```
-
 ##### Lecteur de Musique
 ```bash
 yay -Sy --noconfirm rhythmbox;
@@ -70,7 +59,6 @@ yay -Sy --noconfirm rhythmbox-plugin-tray-icon;
 yay -Sy --noconfirm rhythmbox-tray-icon;
 yay -Sy --noconfirm papirus-smplayer-theme-git;
 ```
-
 ##### Configurer Smplayer
 ```
 Préférences > Options
@@ -93,7 +81,6 @@ Préférences > Options
 La liste de lecture:
 Clique droit dans le blanc > Décocher les cases
 ```
-
 <br />
 
 ------------------------------------------------------------------------------------------------------------------
@@ -113,6 +100,7 @@ pacman -Sy --noconfirm xed;
 ```bash
 pacman -Sy --noconfirm libreoffice-fresh libreoffice-fresh-fr
 ```
+<br />
 
 ------------------------------------------------------------------------------------------------------------------
 
@@ -125,3 +113,4 @@ pacman -Sy --noconfirm gnome-connections;
 pacman -Sy --noconfirm gnome-font-viewer;
 pacman -Sy --noconfirm gnome-terminal;
 ```
+<br />
