@@ -36,16 +36,6 @@ iwctl station wlan0 get-networks;
 iwctl station wlan0 connect Livebox-F28A --passphrase u7yCLyQED26nXW7EP7;
 ```
 
-
-#### Pacman
-```bash
-clear;
-sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf;
-sed -i -e "s/\#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf;
-pacman -Sy --noconfirm archlinux-keyring;
-```
-<br />
-
 ----------------------------------------------------------------------------------------------------------------------------------------
 #### Partitionnement (HDD)
 ```
@@ -155,6 +145,18 @@ df -h | grep "/mnt"; swapon -s | tail -n 1;
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 #### Installation des paquets
+
+
+#### Pacman
+```bash
+clear;
+sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf;
+sed -i -e "s/\#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf;
+pacman -Sy --noconfirm archlinux-keyring;
+```
+<br />
+
+
 ##### Paquets de Base
 ```bash
 clear;
