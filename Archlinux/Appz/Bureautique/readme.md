@@ -102,6 +102,18 @@ yay -Sy --noconfirm microsoft-edge-stable-bin;
 <br />
 
 ------------------------------------------------------------------------------------------------------------------
+##### Editeur de Texte
+```bash
+pacman -Sy --noconfirm xed;
+```
+
+##### Suite Bureautique
+```bash
+pacman -Sy --noconfirm libreoffice-fresh libreoffice-fresh-fr
+```
+
+------------------------------------------------------------------------------------------------------------------
+
 ##### Divers
 ```bash
 pacman -Sy --noconfirm discord;
