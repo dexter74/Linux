@@ -16,6 +16,11 @@ git clone https://github.com/AlphaNecron/lightdm-evo.git; mv -r lightdm-evo /usr
 sed -i 's/^webkit_theme\s*=\s*\(.*\)/webkit_theme = lightdm-evo #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf;
 sed -i 's/^\(#?greeter\)-session\s*=\s*\(.*\)/greeter-session = lightdm-webkit2-greeter #\1/ #\2g' /etc/lightdm/lightdm.conf;
 ```
-<br />
+
+##### Services
+```bash
+systemctl enable --now lightdm;
+```
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
