@@ -43,9 +43,8 @@ cat -n /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
 ```
 
 ```bash
-# 
 <property name="Client2_Command" type="array">
 <value type="string" value="xfce4-panel"/>
 </property>
 ```
-
+[Fichier Original](https://github.com/GalliumOS/xubuntu-default-settings/blob/master/etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml)
