@@ -210,6 +210,7 @@ cat /mnt/etc/fstab;
 
 #### Chroot
 ```bash
+clear;
 arch-chroot /mnt
 ```
 <br />
