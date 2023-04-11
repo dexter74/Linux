@@ -19,7 +19,8 @@ sed -i 's/^\(#?greeter\)-session\s*=\s*\(.*\)/greeter-session = lightdm-webkit2-
 
 ##### Services
 ```bash
-systemctl enable --now lightdm;
+systemctl disable --now lightdm;
+systemctl enable  --now lightdm;
 ```
 
 
