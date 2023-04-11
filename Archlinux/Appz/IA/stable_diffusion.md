@@ -20,7 +20,7 @@ source venv/bin/activate;
 pip install -r requirements.txt;
 
 # Fix:
-# - [Bouton] yay -Sy --noconfirm ttf-ms-win10-auto;
+# - [Bouton] yay -Sy --noconfirm ttf-ms-win10-auto; | yay -Sy --noconfirm noto-fonts ttf-droid
 # - [Xformers] pip uninstall xformers
 ```
 
