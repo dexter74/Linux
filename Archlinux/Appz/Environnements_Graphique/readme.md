@@ -25,6 +25,8 @@ cd /tmp/xfce4-docklike-plugin-0.4.0/; ./configure; make -$(nproc); sudo make ins
 #### Profil XFCE
 ```
 runuser -l marc -c 'wget "https://github.com/dexter74/Linux/raw/main/Archlinux/Appz/Environnements_Graphique/XFCE4_Profile.tar.bz2" -O /home/marc/Bureau/XFCE4_Profile.tar.bz2'
+
+xfce4-panel-profiles load /home/marc/Bureau/XFCE4_Profile.tar.bz2 
 ```
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -39,8 +41,6 @@ sed -i '23d' /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml;
 sed -i '22d' /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml;
 cat -n /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
 ```
-
-
 
 ```bash
 nano -n /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
