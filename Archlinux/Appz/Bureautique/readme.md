@@ -32,7 +32,6 @@ yay -Sy --noconfirm sysmontask;
 
 ##### Magasin Applicatif 
 ```bash
-yay -R --noconfirm archlinux-appstream-data;
 yay -Sy --noconfirm pamac-all;
 ```
 
