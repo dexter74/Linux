@@ -7,10 +7,6 @@ pacman -Sy --noconfirm seahorse;
 ```bash
 yay -Sy --noconfirm mugshot;
 ```
-##### Pavé-Numérique
-```bash
-pacman -Sy --noconfirm numlockx;
-```
 ##### Gestionnaire de Disque-dur
 ```bash
 yay -Sy --noconfirm blivet-gui;
@@ -23,6 +19,11 @@ pacman -Sy --noconfirm file-roller;
 ##### Gestionnaire de Tâches
 ```bash
 yay -Sy --noconfirm sysmontask;
+```
+
+##### Pavé-Numérique
+```bash
+pacman -Sy --noconfirm numlockx;
 ```
 ##### Magasin Applicatif (KO)
 ```bash
