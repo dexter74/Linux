@@ -1,2 +1,2 @@
 
-[NTFS≠(https://docs.kernel.org/filesystems/ntfs3.html)
+[NTFS](https://docs.kernel.org/filesystems/ntfs3.html)
