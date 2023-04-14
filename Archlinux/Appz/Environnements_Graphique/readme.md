@@ -36,6 +36,7 @@ xfce4-panel-profiles load /home/marc/Bureau/XFCE4_Profile.tar.bz2
 Pour supprimer tout les tableaux de bord, il faut supprimer les lignes suivantes.
 
 ```bash
+sudo cp /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml.old
 sudo sed -i '24d' /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml;
 sudo sed -i '23d' /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml;
 sudo sed -i '22d' /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml;
