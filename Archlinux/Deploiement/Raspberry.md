@@ -58,5 +58,5 @@ pacman -Sy xorg;
 pacman -Sy networkmanager networkmanager-pptp networkmanager-qt network-manager-applet;
 pacman -Sy pulseaudio pavucontrol;
 pacman -Sy xfce4 xfce4-goodies;
-pacman -Sy lightdm;
+pacman -Sy lightdm lightdm-gtk-greeter;
 ```
