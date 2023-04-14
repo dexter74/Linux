@@ -328,7 +328,7 @@ ID=1000
 PASSWORD=admin
 COMMENT='Marc Jaffré'
 
-/usr/sbin/userdel -r $USERNAME
+/usr/sbin/userdel -r $USERNAME 2>/dev/null;
 /usr/sbin/useradd --home-dir /home/$USERNAME --base-dir /home/$USERNAME --uid $ID --groups wheel,storage,power --no-user-group --shell /bin/bash --comment "$COMMENT" --create-home $USERNAME;
 
 (echo "$USERNAME:$PASSWORD") | chpasswd;
