@@ -53,35 +53,35 @@ LVM_NAMEVG=vg0
 clear;
 umount -R /mnt 2>/dev/null;
 swapoff /dev/$LVM_NAMEVG/SWAP 2>/dev/null;
-dd if=/dev/zero of=${DISK} bs=512 count=1;
-(echo "g"; echo "w") | fdisk ${DISK};
-(echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT" ; echo "t" ; echo "1" ; echo "w") | fdisk $DISK;
-(echo "n"; echo "2"; echo ""; echo "" ; echo "t"; echo "2" ; echo "43"; echo "w") | fdisk $DISK;
+dd if=/dev/zero of=${DISK} bs=512 count=1 1>/dev/null;
+(echo "g"; echo "w") | fdisk ${DISK} 1>/dev/null;
+(echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT" ; echo "t" ; echo "1" ; echo "w") | fdisk $DISK 1>/dev/null;
+(echo "n"; echo "2"; echo ""; echo "" ; echo "t"; echo "2" ; echo "43"; echo "w") | fdisk $DISK 1>/dev/null;
 (echo "p") | fdisk $DISK | grep $DISK;
 ```
 
 #### Création du LVM
 ```bash
 clear;
-echo "yes" | lvremove HOME $LVM_NAMEVG;
-echo "yes" | lvremove SYSTEM $LVM_NAMEVG;
-echo "yes" | lvremove SWAP $LVM_NAMEVG;
-echo "yes" | vgremove $LVM_NAMEVG;
-echo "yes" | pvremove ${DISK}2;
+echo "yes" | lvremove HOME $LVM_NAMEVG 1>/dev/null;
+echo "yes" | lvremove SYSTEM $LVM_NAMEVG 1>/dev/null;
+echo "yes" | lvremove SWAP $LVM_NAMEVG 1>/dev/null;
+echo "yes" | vgremove $LVM_NAMEVG 1>/dev/null;
+echo "yes" | pvremove ${DISK}2 1>/dev/null;
 
 echo "yes" | pvcreate ${DISK}2;
 echo "yes" | vgcreate $LVM_NAMEVG ${DISK}2;
-echo "yes" | lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG;
-echo "yes" | lvcreate -n SYSTEM -L $SIZE_SYST $LVM_NAMEVG;
-echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP $LVM_NAMEVG;
+echo "yes" | lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG 1>/dev/null;
+echo "yes" | lvcreate -n SYSTEM -L $SIZE_SYST $LVM_NAMEVG 1>/dev/null;
+echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP $LVM_NAMEVG 1>/dev/null;
 ```
 #### Formatage des partitions
 ```bash
 clear;
-echo "yes" | mkfs.fat -F32 ${DISK}1;
-echo "yes" | mkswap /dev/$LVM_NAMEVG/SWAP;
-echo "yes" | mkfs -t ext4 /dev/$LVM_NAMEVG/SYSTEM;
-echo "yes" | mkfs -t ext4 /dev/$LVM_NAMEVG/HOME;
+echo "yes" | mkfs.fat -F32 ${DISK}1 1>/dev/null;
+echo "yes" | mkswap /dev/$LVM_NAMEVG/SWAP 1>/dev/null;
+echo "yes" | mkfs -t ext4 /dev/$LVM_NAMEVG/SYSTEM 1>/dev/null;
+echo "yes" | mkfs -t ext4 /dev/$LVM_NAMEVG/HOME 1>/dev/null;
 ```
 #### Montage des partitions
 ```bash
