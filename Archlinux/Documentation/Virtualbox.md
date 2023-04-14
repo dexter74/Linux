@@ -9,5 +9,5 @@ Nom         : SSH
 Protocole   : TCP
 IP Hôte     : 127.0.0.1
 Port Hôte   : 27015 (22 réserver à l'hôte)
-IP Invité   : 10.0.2.15
+IP Invité   : 0.0.0.0
 Port invité : 22
