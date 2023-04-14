@@ -68,8 +68,11 @@ pacman -Sy pulseaudio pavucontrol;
 pacman -Sy xfce4 xfce4-goodies;
 pacman -Sy lightdm lightdm-gtk-greeter;
 pacman -Sy accountsservice;
+pacman -Sy pambase;
 ```
 
 #### Log
 ```
-cat /vat/log/Xorg.0.log | grep "EE\|WW"
+cat /var/log/Xorg.0.log | grep "EE\|WW"
+```
+
