@@ -36,6 +36,13 @@ sync;
 #### Etape 4: Partition Boot
 ```bash
 mv /mnt/root/boot/* /mnt/boot
+
+echo 'LANG=fr_FR.UTF-8'   > /mnt/root/etc/locale.conf;
+echo 'KEYMAP=fr-latin9'   > /mnt/root/etc/vconsole.conf;
+echo 'FONT=eurlatgr'     >> /mnt/root/etc/vconsole.conf;
+echo 'fr_FR.UTF-8 UTF-8'  > /mnt/root/etc/locale.gen;
+locale-gen;
+
 ```
 
 #### Etape 5: Démarrer le Raspberry
