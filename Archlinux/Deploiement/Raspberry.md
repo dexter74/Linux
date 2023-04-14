@@ -4,6 +4,8 @@
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
+[WIKI](https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3)
+
 #### Etape 1: Préparation de la Carte SD
 
 ```
