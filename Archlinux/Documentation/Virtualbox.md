@@ -13,7 +13,13 @@ IP Invité   : 0.0.0.0
 Port invité : 22
 ```
 
+#### Définir le mot de passe (Login: root | Mot de passe: admin)
+```
+echo "root:admin" | chpasswd;
+```
+
+
 #### Se connecter en SSH
 ```
-ssh 127.0.0.1 -p 27015
+ssh root@127.0.0.1 -p 27015
 ```
