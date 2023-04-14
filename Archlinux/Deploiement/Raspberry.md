@@ -73,6 +73,8 @@ pacman -Sy pambase;
 
 #### Log
 ```
+lightdm --test-mode --debug
+
 cat /var/log/Xorg.0.log | grep "EE\|WW"
 ```
 
