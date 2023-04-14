@@ -191,7 +191,7 @@ pacstrap /mnt pulseaudio pulseaudio-alsa pulseaudio-equalizer;
 ```
 #### Bluetooth
 ```bash
-pacstrap /mnt --noconfirm blueman pulseaudio-bluetooth
+pacstrap /mnt --noconfirm blueman pulseaudio-bluetooth;
 ```
 #### Librairies
 ``` bash
