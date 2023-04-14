@@ -44,7 +44,7 @@ DISK=/dev/sda
 SIZE_BOOT=+512M
 SIZE_SWAP=+2G
 SIZE_SYST=+10G
-SIZE_HOME=+19.49G
+SIZE_HOME=+10G
 LVM_NAMEVG=Vg0
 ```
 
@@ -98,9 +98,9 @@ df -h | grep "/mnt"; swapon -s | tail -n 1;
 clear;
 DISK=/dev/nvmeXn1
 SIZE_BOOT=+512M
-SIZE_SWAP=+4G
+SIZE_SWAP=+2G
 SIZE_SYST=+10G
-SIZE_HOME=+20G
+SIZE_HOME=+10G
 LVM_NAMEVG=Vg0
 ```
 ##### Création des partitions
