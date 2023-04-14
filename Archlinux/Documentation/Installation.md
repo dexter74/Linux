@@ -53,10 +53,14 @@ LVM_NAMEVG=vg0
 clear;
 umount -R /mnt 2>/dev/null;
 swapoff /dev/$LVM_NAMEVG/SWAP 2>/dev/null;
-dd if=/dev/zero of=${DISK} bs=512 count=1 1>/dev/null;
-(echo "g"; echo "w") | fdisk ${DISK} 1>/dev/null;
-(echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT" ; echo "t" ; echo "1" ; echo "w") | fdisk $DISK 1>/dev/null;
-(echo "n"; echo "2"; echo ""; echo "" ; echo "t"; echo "2" ; echo "43"; echo "w") | fdisk $DISK 1>/dev/null;
+dd if=/dev/zero of=${DISK} bs=512 count=1;
+(echo "g"; echo "w") | fdisk ${DISK};
+(echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT" ; echo "t" ; echo "1" ; echo "w") | fdisk $DISK;
+(echo "n"; echo "2"; echo ""; echo "" ; echo "t"; echo "2" ; echo "43"; echo "w") | fdisk $DISK;
+```
+
+```bash
+clear;
 (echo "p") | fdisk $DISK | grep $DISK;
 ```
 
@@ -75,6 +79,13 @@ echo "yes" | lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG 1>/dev/null;
 echo "yes" | lvcreate -n SYSTEM -L $SIZE_SYST $LVM_NAMEVG 1>/dev/null;
 echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP $LVM_NAMEVG 1>/dev/null;
 ```
+```bash
+clear;
+vgs;
+lvs;
+```
+
+
 #### Formatage des partitions
 ```bash
 clear;
@@ -90,6 +101,9 @@ swapon /dev/$LVM_NAMEVG/SWAP;
 mount /dev/$LVM_NAMEVG/SYSTEM /mnt;
 mkdir -p /mnt/home && mount /dev/$LVM_NAMEVG/HOME /mnt/home;
 mkdir -p /mnt/boot && mount ${DISK}1  /mnt/boot;
+```
+
+```bash
 df -h | grep "/mnt"; swapon -s | tail -n 1;
 ```
 
