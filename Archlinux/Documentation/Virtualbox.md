@@ -11,3 +11,9 @@ IP Hôte     : 127.0.0.1
 Port Hôte   : 27015 (22 réserver à l'hôte)
 IP Invité   : 0.0.0.0
 Port invité : 22
+```
+
+#### Se connecter en SSH
+```
+ssh 127.0.0.1 -p 27015
+```
