@@ -53,6 +53,8 @@ pacman-key --populate archlinuxarm;
 #### Etape 7: Installation de Package
 ```bash
 pacman -Syu;
+pacman -Sy xorg;
+
 pacman -Sy networkmanager networkmanager-pptp networkmanager-qt network-manager-applet;
 pacman -Sy pulseaudio pavucontrol;
 pacman -Sy xfce4 xfce4-goodies;
