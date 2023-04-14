@@ -206,7 +206,11 @@ pacstrap /mnt bash-completion binutils curl git gvfs gvfs-gphoto2 gvfs-mtp gvfs-
 ```
 #### Fonctions
 ```bash
-pacstrap /mnt logrotate ntp openssh samba tlp tlp-rdw;
+pacstrap /mnt logrotate;
+pacstrap /mnt ntp;
+pacstrap /mnt openssh;
+pacstrap /mnt samba;
+pacstrap /mnt tlp tlp-rdw;
 ```
 #### FSTAB (Boot, Swap, Home, System)
 ```bash
