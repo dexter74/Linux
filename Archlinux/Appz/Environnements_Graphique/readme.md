@@ -47,6 +47,6 @@ sudo sed -i '22d' /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml;
 
 ```bash
 rm /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml;
-curl "https://github.com/GalliumOS/xubuntu-default-settings/blob/master/etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml" > /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml;
+curl "https://raw.githubusercontent.com/GalliumOS/xubuntu-default-settings/master/etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml" > /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml;
 systemctl restart lightdm;
 ```
