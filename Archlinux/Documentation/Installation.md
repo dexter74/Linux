@@ -42,9 +42,9 @@ iwctl station wlan0 connect Livebox-F28A --passphrase u7yCLyQED26nXW7EP7;
 clear;
 DISK=/dev/sda
 SIZE_BOOT=+512M
-SIZE_SWAP=+1G
-SIZE_SYST=+20G
-SIZE_HOME=+10.4G
+SIZE_SWAP=+2G
+SIZE_SYST=+15G
+SIZE_HOME=+10G
 LVM_NAMEVG=vg0
 ```
 
