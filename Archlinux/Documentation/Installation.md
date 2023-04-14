@@ -81,7 +81,6 @@ echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP $LVM_NAMEVG 1>/dev/null;
 ```
 ```bash
 clear;
-vgs;
 lvs;
 ```
 
