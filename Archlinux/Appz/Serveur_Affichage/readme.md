@@ -12,3 +12,8 @@ sudo pacman -Sy --noconfirm xf86-video-amdgpu;
 ```bash
 sudo pacman -Sy --noconfirm xf86-video-vesa;
 ```
+
+##### Pilotes VMWare
+```bash
+sudo pacman -Sy --noconfirm xf86-video-vmware;
+```
