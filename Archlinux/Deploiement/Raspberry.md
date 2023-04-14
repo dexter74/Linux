@@ -61,9 +61,13 @@ pacman-key --populate archlinuxarm;
 ```bash
 pacman -Syu;
 pacman -Sy xorg;
-
+pacman -Sy xf86-video-fbdev;
 pacman -Sy networkmanager networkmanager-pptp networkmanager-qt network-manager-applet;
 pacman -Sy pulseaudio pavucontrol;
 pacman -Sy xfce4 xfce4-goodies;
 pacman -Sy lightdm lightdm-gtk-greeter;
 ```
+
+#### Log
+```
+cat /vat/log/Xorg.0.log | grep "EE\|WW"
