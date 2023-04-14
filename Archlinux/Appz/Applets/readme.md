@@ -1,11 +1,11 @@
 ##### Réseau
 ```bash
-pacman -Sy --noconfirm network-manager-applet;
-pacman -Sy --noconfirm networkmanager-pptp;
-pacman -Sy --noconfirm networkmanager-qt;
+sudo pacman -Sy --noconfirm network-manager-applet;
+sudo pacman -Sy --noconfirm networkmanager-pptp;
+sudo pacman -Sy --noconfirm networkmanager-qt;
 ```
 
 ##### Son
 ```bash
-pacman -Sy --noconfirm pavucontrol;
+sudo pacman -Sy --noconfirm pavucontrol;
 ```
