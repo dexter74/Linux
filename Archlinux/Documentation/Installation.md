@@ -5,7 +5,7 @@
 
 #### A ajouter
 ```
-Connexion au Wifi au début 
+Connexion au Wifi au début
 ```
 
 
