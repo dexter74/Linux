@@ -35,23 +35,14 @@ xfce4-panel-profiles load /home/marc/Bureau/XFCE4_Profile.tar.bz2
 Pour supprimer tout les tableaux de bord, il faut supprimer les lignes suivantes.
 
 ```bash
-sudo cp /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml.old
 sudo sed -i '24d' /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml;
 sudo sed -i '23d' /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml;
 sudo sed -i '22d' /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml;
 ```
 
-```bash
-sudo cat /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml.old > /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
-sudo systemctl restart lightdm;
-```
-
 
 ```bash
-<property name="Client2_Command" type="array">
-<value type="string" value="xfce4-panel"/>
-</property>
-
+rm /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml;
 curl "https://github.com/GalliumOS/xubuntu-default-settings/blob/master/etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml" > /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml;
-xfce4-panel -r;
+systemctl restart lightdm;
 ```
