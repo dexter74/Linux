@@ -51,6 +51,7 @@ LVM_NAMEVG=Vg0
 ##### Création des partitions
 ```bash
 clear;
+umount -R /mnt 2>/dev/null;
 dd if=/dev/zero of=${DISK} bs=512 count=1;
 (echo "g"; echo "w") | fdisk ${DISK};
 (echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT" ; echo "t" ; echo "1" ; echo "w") | fdisk $DISK;
