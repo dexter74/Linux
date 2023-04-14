@@ -100,9 +100,6 @@ swapon /dev/$LVM_NAMEVG/SWAP;
 mount /dev/$LVM_NAMEVG/SYSTEM /mnt;
 mkdir -p /mnt/home && mount /dev/$LVM_NAMEVG/HOME /mnt/home;
 mkdir -p /mnt/boot && mount ${DISK}1  /mnt/boot;
-```
-
-```bash
 df -h | grep "/mnt"; swapon -s | tail -n 1;
 ```
 
