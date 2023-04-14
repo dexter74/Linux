@@ -409,5 +409,17 @@ sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ss
 ----------------------------------------------------------------------------------------------------------------------------------------
 #### Inteface Utilisateur
 
-| [Xorg](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Serveur_Affichage/readme.md)   | [Pilote](https://github.com/dexter74/Linux/blob/main/Archlinux/Appz/Pilotes/readme.md)                   | [Partage](https://github.com/dexter74/Linux/blob/main/Archlinux/Documentation/Partage.md)                 | [XFCE](https://github.com/dexter74/Linux/blob/main/Archlinux/Appz/Environnements_Graphique/readme.md)  | [Lightdm](https://github.com/dexter74/Linux/blob/main/Archlinux/Appz/Gestionnaire_de_connexion/readme.md) | [Applets](https://github.com/dexter74/Linux/blob/main/Archlinux/Appz/Applets/readme.md)                   | [Bureautique](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Bureautique)
+#### [Xorg](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Serveur_Affichage/readme.md)
+
+#### [Pilote](https://github.com/dexter74/Linux/blob/main/Archlinux/Appz/Pilotes/readme.md)
+
+#### [XFCE](https://github.com/dexter74/Linux/blob/main/Archlinux/Appz/Environnements_Graphique/readme.md)
+
+#### [Applets](https://github.com/dexter74/Linux/blob/main/Archlinux/Appz/Applets/readme.md)
+
+#### [Lightdm](https://github.com/dexter74/Linux/blob/main/Archlinux/Appz/Gestionnaire_de_connexion/readme.md)
+
+#### [Bureautique](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Bureautique)
+
+#### [Partage](https://github.com/dexter74/Linux/blob/main/Archlinux/Documentation/Partage.md)
 
