@@ -362,13 +362,15 @@ systemctl enable avahi-dnsconfd.service;
 systemctl enable NetworkManager;
 systemctl enable sshd;
 systemctl enable ntpd;
+systemctl enable systemd-timesyncd.service;
 ```
 
 ##### Fuseau Horaire + Synchronisation
 ```bash
 clear;
 timedatectl set-timezone Europe/Paris;
-timedatectl set-ntp no;
+timedatectl set-ntp true;
+
 ```
 
 ###### TimeZone (old)
