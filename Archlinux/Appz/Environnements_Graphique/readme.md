@@ -42,6 +42,12 @@ sudo sed -i '22d' /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml;
 ```
 
 ```bash
+sudo cat /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml.old > /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
+sudo systemctl restart lightdm;
+```
+
+
+```bash
 <property name="Client2_Command" type="array">
 <value type="string" value="xfce4-panel"/>
 </property>
