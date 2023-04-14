@@ -52,7 +52,7 @@ LVM_NAMEVG=vg0
 ```bash
 clear;
 umount -R /mnt 2>/dev/null;
-swapoff /dev/Vg0/SWAP 2>/dev/null;
+swapoff /dev/$LVM_NAMEVG/SWAP 2>/dev/null;
 dd if=/dev/zero of=${DISK} bs=512 count=1;
 (echo "g"; echo "w") | fdisk ${DISK};
 (echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT" ; echo "t" ; echo "1" ; echo "w") | fdisk $DISK;
