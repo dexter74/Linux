@@ -49,6 +49,7 @@ locale-gen;
 ```bash
 loadkey fr;
 sudo iwconfig wlan0 key LaCLEWEP
+wifi-menu -o;
 ```
 
 #### Etape 6: Mise à jour des clé PGP
