@@ -323,6 +323,7 @@ mkinitcpio -p linux;
 
 ##### Gestions des utilisateurs
 ```bash
+clear;
 USERNAME=marc
 ID=1000
 PASSWORD=admin
