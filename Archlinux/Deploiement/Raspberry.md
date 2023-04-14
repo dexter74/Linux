@@ -15,11 +15,13 @@ Partition 1: 31G  en ext4
 
 ```bash
 clear;
+umount -R /run/media/$USER/* 2>/dev/null;
+
 lsblk;
-umount -R /run/media/$USER/*
 cfdisk /dev/mmcblk1;
-mkfs.vfat /dev/mmcblk1p1;
-mkfs.ext4 /dev/mmcblk1p2;
+
+echo "yes" | mkfs.vfat /dev/mmcblk1p1;
+echo "yes" | mkfs.ext4 /dev/mmcblk1p2;
 ```
 
 #### Etape 2: Monter la partition
