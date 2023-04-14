@@ -42,16 +42,17 @@ iwctl station wlan0 connect Livebox-F28A --passphrase u7yCLyQED26nXW7EP7;
 clear;
 DISK=/dev/sda
 SIZE_BOOT=+512M
-SIZE_SWAP=+2G
+SIZE_SWAP=+1G
 SIZE_SYST=+20G
 SIZE_HOME=+10G
-LVM_NAMEVG=Vg0
+LVM_NAMEVG=vg0
 ```
 
 ##### Création des partitions
 ```bash
 clear;
 umount -R /mnt 2>/dev/null;
+swapoff /dev/Vg0/SWAP 2>/dev/null;
 dd if=/dev/zero of=${DISK} bs=512 count=1;
 (echo "g"; echo "w") | fdisk ${DISK};
 (echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT" ; echo "t" ; echo "1" ; echo "w") | fdisk $DISK;
@@ -102,7 +103,7 @@ SIZE_BOOT=+512M
 SIZE_SWAP=+2G
 SIZE_SYST=+10G
 SIZE_HOME=+10G
-LVM_NAMEVG=Vg0
+LVM_NAMEVG=vg0
 ```
 ##### Création des partitions
 ```bash
