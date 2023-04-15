@@ -72,9 +72,7 @@ apt install -y xfce4-panel-profiles;
 ###### X. XFCE4 (Panel Profiles)
 ```bash
 git clone https://github.com/xfce-mirror/xfce4-panel-profiles.git /tmp/xfce4-panel-profiles;
-
-cd /tmp/xfce4-panel-profiles; ./autogen.sh; make; make install;
-
+cd /tmp/xfce4-panel-profiles; ./configure; make; make install;
 ```
 ###### X. DockLike
 ```bash
