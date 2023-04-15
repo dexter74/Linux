@@ -32,20 +32,34 @@ clear;
 apt update;
 apt upgrade -y;
 ```
-###### C. Environnement Graphique
+###### C. Gestionnaire de session
+```
+apt install -y lightdm lightdm-gtk-greeter;
+```
+
+###### D. Environnement Graphique
 ```bash
 apt install -y xfce4;
 apt install -y xfce4-goodies;
+apt install -y intltool;
+
+rm -r /tmp/xfce4-docklike-plugin-0.4.0*;
+wget --inet4-only https://archive.xfce.org/src/panel-plugins/xfce4-docklike-plugin/0.4/xfce4-docklike-plugin-0.4.0.tar.bz2 -O /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 && tar xf /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 -C /tmp;
+sed -i '22  s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
+sed -i '177 s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
+sed -i '26  s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
+sed -i '190 s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
+cd /tmp/xfce4-docklike-plugin-0.4.0/; 
+./configure;
+make -$(nproc);
+make install;
 ```
-###### D. Gestionnaire de session
-```
-apt install -y lightdm lightdm-gtk-greeter;
+
+
+##### X. Gestion des services
+```bash
 systemctl start lightdm;
 ```
-
-
-
-
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 #### III. Note de travaille
