@@ -2,7 +2,7 @@
 ```
 sudo mkdir /etc/credentials;
 
-echo "username=
+sudo echo "username=
 password=
 vers=3.0
 file_mode=0777
