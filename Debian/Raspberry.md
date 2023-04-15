@@ -82,7 +82,11 @@ cd /tmp/xfce4-panel-profiles; ./configure; make; make install;
 clear;
 apt install -y intltool;
 apt install -y dbus-x11;
-apt install -y libwnck-3-0
+
+
+wget http://ftp.de.debian.org/debian/pool/main/libw/libwnck3/libwnck-3-common_3.30.0-2_all.deb -O /tmp/libwnck-3-common_3.30.0-2_all.deb;
+dpkg -i /tmp/libwnck-3-common_3.30.0-2_all.deb;
+
 cd;
 rm -r /tmp/xfce4-docklike-plugin-0.4.0*;
 wget --inet4-only https://archive.xfce.org/src/panel-plugins/xfce4-docklike-plugin/0.4/xfce4-docklike-plugin-0.4.0.tar.bz2 -O /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 && tar xf /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 -C /tmp;
