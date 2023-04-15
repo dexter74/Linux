@@ -16,26 +16,26 @@ Codename       : bullseye
 ------------------------------------------------------------------------------------------------------------------------------------------------
 #### II. Installation de paquets
 
-##### A. Message de Bienenue
+###### A. Message de Bienenue
 ```bash
 clear;
 echo "" > /etc/motd;
 ```
 
-##### B. Mise à jour
+###### B. Mise à jour
 ```bash
 clear;
 apt update;
 apt upgrade -y;
 ```
 
-##### C. Environnement Graphique
+###### C. Environnement Graphique
 ```bash
 apt install -y xfce4;
 apt install -y xfce4-goodies;
 ```
 
-##### D. Gestionnaire de session
+###### D. Gestionnaire de session
 ```
 apt install -y lightdm lightdm-gtk-greeter;
 systemctl start lightdm;
