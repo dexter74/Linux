@@ -55,7 +55,9 @@ cd /tmp/xfce4-docklike-plugin-0.4.0/; ./configure; make -$(nproc); make install;
 
 ##### X. Gestion des services
 ```bash
-systemctl start lightdm;
+systemctl start  lightdm;
+systemctl enable lightdm;
+
 ```
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
