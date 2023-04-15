@@ -71,6 +71,7 @@ pacman -Sy xfce4 xfce4-goodies;
 pacman -Sy lightdm lightdm-gtk-greeter;
 pacman -Sy accountsservice;
 pacman -Sy pambase;
+pacman -Sy plymouth;
 ```
 
 #### Log
