@@ -6,8 +6,8 @@
 
 #### Information sur le Système
 ```
-Distributor ID :	Raspbian
-Description    :	Raspbian GNU/Linux 11 (bullseye)
-Release        :	11
-Codename       :	bullseye
+Distributor ID : Raspbian
+Description    : Raspbian GNU/Linux 11 (bullseye)
+Release        : 11
+Codename       : bullseye
 ```
