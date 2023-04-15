@@ -1,8 +1,8 @@
 ##### I. Credentials
 ```
-sudo mkdir /etc/credentials;
+mkdir /etc/credentials;
 
-sudo echo "username=
+echo "username=
 password=
 vers=3.0
 file_mode=0777
@@ -10,8 +10,8 @@ dir_mode=0777
 workgroup=WORKGROUP
 _netdev" > /etc/credentials/.smbpassword;
 
-sudo chmod 600 /etc/credentials/.smbpassword;
-sudo nano /etc/credentials/.smbpassword;
+chmod 600 /etc/credentials/.smbpassword;
+nano /etc/credentials/.smbpassword;
 ```
 ```
 username=
@@ -34,7 +34,7 @@ x-gvfs-show
 ##### II. Services Mount
 ```bash
 ####################################################################################################################################
-sudo echo "[Unit]
+echo "[Unit]
   Description=Montage du partage Download
   Requires=network-online.target
   After=network-online.service
@@ -64,7 +64,7 @@ echo "[Unit]
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Music.mount;
 ####################################################################################################################################
-sudo echo "[Unit]
+echo "[Unit]
   Description=Montage du partage Video
   Requires=network-online.target
   After=network-online.service
@@ -79,7 +79,7 @@ sudo echo "[Unit]
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Video.mount;
 ####################################################################################################################################
-sudo echo "[Unit]
+echo "[Unit]
   Description=Montage du partage Home
   Requires=network-online.target
   After=network-online.service
@@ -100,18 +100,18 @@ sudo echo "[Unit]
 ```
 clear;
 USERNAME=$(id 1000 | cut -d  ")" -f 1 | cut -d "(" -f 2)
-sudo mkdir -p /mnt/{Download,Home,Music,Video};
-sudo chown -R $USERNAME:users /mnt/{Download,Home,Music,Video};
+mkdir -p /mnt/{Download,Home,Music,Video};
+chown -R $USERNAME:users /mnt/{Download,Home,Music,Video};
 ```
 ```
 clear;
-sudo systemctl daemon-reload;
-sudo systemctl stop  mnt-{Download,Home,Music,Video}.mount;
-sudo systemctl disable --now mnt-{Download,Home,Music,Video}.mount;
+systemctl daemon-reload;
+systemctl stop  mnt-{Download,Home,Music,Video}.mount;
+systemctl disable --now mnt-{Download,Home,Music,Video}.mount;
 
-sudo systemctl start mnt-{Download,Home,Music,Video}.mount;
-sudo systemctl enable --now mnt-{Download,Home,Music,Video}.mount;
-sudo systemctl status --now mnt-{Download,Home,Music,Video}.mount | grep "mount\|Active:" ;
+systemctl start mnt-{Download,Home,Music,Video}.mount;
+systemctl enable --now mnt-{Download,Home,Music,Video}.mount;
+systemctl status --now mnt-{Download,Home,Music,Video}.mount | grep "mount\|Active:" ;
 ```
 
 
@@ -120,7 +120,7 @@ sudo systemctl status --now mnt-{Download,Home,Music,Video}.mount | grep "mount\
 ##### IV. Services Automounts
 ```bash
 ####################################################################################################################################
-sudo echo "[Unit]
+echo "[Unit]
   Description=cifs mount script
   Requires=network-online.target
   After=network-online.service
@@ -132,7 +132,7 @@ sudo echo "[Unit]
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Music.automount;
 ####################################################################################################################################
-sudo echo "[Unit]
+echo "[Unit]
   Description=cifs mount script
   Requires=network-online.target
   After=network-online.service
@@ -144,7 +144,7 @@ sudo echo "[Unit]
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Video.automount;
 ####################################################################################################################################
-sudo echo "[Unit]
+echo "[Unit]
   Description=cifs mount script
   Requires=network-online.target
   After=network-online.service
@@ -156,7 +156,7 @@ sudo echo "[Unit]
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Home.automount;
 ####################################################################################################################################
-sudo echo "[Unit]
+echo "[Unit]
   Description=cifs mount script
   Requires=network-online.target
   After=network-online.service
