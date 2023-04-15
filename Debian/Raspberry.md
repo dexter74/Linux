@@ -26,18 +26,24 @@ Codename       : bullseye
 clear;
 echo "" > /etc/motd;
 ```
-###### B. Mise à jour
+###### X. Mise à jour
 ```bash
 clear;
 apt update;
 apt upgrade -y;
 ```
-###### C. Gestionnaire de session
-```
+###### X. Gestionnaire de session
+```bash
 apt install -y lightdm lightdm-gtk-greeter;
 ```
 
-###### D. Environnement Graphique
+
+###### X. Utilitaires en Commande
+```bash
+apt install -y git;
+```
+
+###### X. Environnement Graphique
 ```bash
 apt install -y xfce4;
 apt install -y xfce4-goodies;
