@@ -41,9 +41,10 @@ apt install -y lightdm lightdm-gtk-greeter;
 ```bash
 apt install -y xfce4;
 apt install -y xfce4-goodies;
+apt install -y xfce4-panel-profiles;
+
 apt install -y intltool;
 apt install -y dbus-x11;
-
 rm -r /tmp/xfce4-docklike-plugin-0.4.0*;
 wget --inet4-only https://archive.xfce.org/src/panel-plugins/xfce4-docklike-plugin/0.4/xfce4-docklike-plugin-0.4.0.tar.bz2 -O /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 && tar xf /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 -C /tmp;
 sed -i '22  s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
