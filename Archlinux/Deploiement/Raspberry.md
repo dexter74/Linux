@@ -6,8 +6,22 @@
 
 #### Information sur le Système
 ```
+RPI-Image      : Oui (Pré-configurer : Wifi, User)
 Distributor ID : Raspbian
 Description    : Raspbian GNU/Linux 11 (bullseye)
 Release        : 11
 Codename       : bullseye
+```
+
+#### Mise en service
+```
+sudo apt install -y lightdm lightdm-gtk-greeter;
+sudo apt install -y xfce4 xfce4-goodies;
+```
+
+
+#### Information
+```
+# Configuration Wifi:
+/etc/wpa_supplicant/wpa_supplicant.conf
 ```
