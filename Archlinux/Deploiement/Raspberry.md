@@ -16,7 +16,7 @@ Codename       : bullseye
 ------------------------------------------------------------------------------------------------------------------------------------------------
 #### II. Installation de paquets
 
-###### A. Message de Bienenue
+###### A. Message de Bienvenu
 ```bash
 clear;
 echo "" > /etc/motd;
