@@ -13,7 +13,7 @@ sudo pacman -Sy --noconfirm lightdm-webkit2-greeter;
 ##### Thèmes (A compléter)
 ```bash
 sudo git clone https://github.com/AlphaNecron/lightdm-evo.git /usr/share/lightdm-webkit/themes/lightdm-evo;
-sudo sed -i 's/\#greeter-session\=example-gtk-gnome/greeter-session\=/g' /etc/lightdm/lightdm.conf;
+sudo sed -i 's/\#greeter-session\=example-gtk-gnome/greeter-session\=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf;
 sudo sed -i 's///g' /etc/lightdm/lightdm-webkit2-greeter.conf;
 ```
 
