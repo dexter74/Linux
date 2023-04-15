@@ -13,13 +13,24 @@ Release        : 11
 Codename       : bullseye
 ```
 
-#### Mise en service
+#### Installation de paquets
 ```
-sudo apt install -y lightdm lightdm-gtk-greeter;
-sudo apt install -y xfce4 xfce4-goodies;
-sudo apt install -y ukui-themes;
-sudo apt install -y ukui-greeter;
-sudo apt install -y ukui-session-manager
+clear:
+echo "" > /etc/motd;
+apt update;
+apt upgrade -y;
+apt install -y xfce4;
+apt install -y xfce4-goodies;
+
+apt install -y lightdm lightdm-gtk-greeter;
+systemctl start lightdm;
+```
+
+#### Divers
+```bash
+apt install -y ukui-themes;
+apt install -y ukui-greeter;
+apt install -y ukui-session-manager;
 ```
 
 
