@@ -413,7 +413,7 @@ sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ss
 
 #### [Pilote](https://github.com/dexter74/Linux/blob/main/Archlinux/Appz/Pilotes/readme.md)
 
-#### [XFCE](https://github.com/dexter74/Linux/blob/main/Archlinux/Appz/Environnements_Graphique/readme.md)
+#### [GUI](https://github.com/dexter74/Linux/blob/main/Archlinux/Appz/Environnements_Graphique/readme.md)
 
 #### [Applets](https://github.com/dexter74/Linux/blob/main/Archlinux/Appz/Applets/readme.md)
 
