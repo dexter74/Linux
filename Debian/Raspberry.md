@@ -17,6 +17,7 @@ Description    : Raspbian GNU/Linux 11 (bullseye)
 Release        : 11
 Codename       : bullseye
 ```
+
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
@@ -67,6 +68,7 @@ apt install -y git;
 apt install -y xfce4;
 apt install -y xfce4-goodies;
 apt install -y xfce4-panel-profiles;
+apt install -y xfce4-whiskermenu-plugin;
 ```
 
 ###### X. XFCE4 (Panel Profiles)
