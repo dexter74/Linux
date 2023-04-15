@@ -34,7 +34,7 @@ apt update;
 apt upgrade -y;
 ```
 
-###### X. Langue FR
+###### X. Langue FR (A réviser d'urgence)
 ```bash
 echo 'LANG=fr_FR.UTF-8'   > /etc/locale.conf;
 echo 'KEYMAP=fr-latin9'   > /etc/vconsole.conf;
