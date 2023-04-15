@@ -423,3 +423,4 @@ sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ss
 
 #### [Partage](https://github.com/dexter74/Linux/blob/main/Archlinux/Documentation/Partage.md)
 
+#### [Themes](https://github.com/dexter74/Linux/tree/main/Archlinux/themes)
