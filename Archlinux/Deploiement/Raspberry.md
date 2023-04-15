@@ -62,16 +62,17 @@ pacman-key --populate archlinuxarm;
 #### Etape 7: Installation de Package
 ```bash
 pacman -Syu;
-pacman -Sy sudo;
-pacman -Sy xorg xorg-server xorg-xinit;
-pacman -Sy xf86-video-fbdev;
-pacman -Sy networkmanager networkmanager-pptp networkmanager-qt network-manager-applet;
-pacman -Sy pulseaudio pavucontrol;
-pacman -Sy xfce4 xfce4-goodies;
-pacman -Sy lightdm lightdm-gtk-greeter;
 pacman -Sy accountsservice;
+pacman -Sy lightdm lightdm-gtk-greeter;
+pacman -Sy networkmanager networkmanager-pptp networkmanager-qt network-manager-applet;
 pacman -Sy pambase;
 pacman -Sy plymouth;
+pacman -Sy pulseaudio pavucontrol;
+pacman -Sy sudo;
+pacman -Sy wireless-regdb;
+pacman -Sy xf86-video-fbdev;
+pacman -Sy xorg xorg-server xorg-xinit;
+pacman -Sy xfce4 xfce4-goodies;
 ```
 
 #### Log
