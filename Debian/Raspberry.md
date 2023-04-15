@@ -32,33 +32,6 @@ clear;
 apt update;
 apt upgrade -y;
 ```
-###### X. Gestionnaire de session
-```bash
-apt install -y lightdm lightdm-gtk-greeter;
-```
-
-
-###### X. Utilitaires en Commande
-```bash
-apt install -y git;
-```
-
-###### X. Environnement Graphique
-```bash
-apt install -y xfce4;
-apt install -y xfce4-goodies;
-apt install -y xfce4-panel-profiles;
-
-apt install -y intltool;
-apt install -y dbus-x11;
-rm -r /tmp/xfce4-docklike-plugin-0.4.0*;
-wget --inet4-only https://archive.xfce.org/src/panel-plugins/xfce4-docklike-plugin/0.4/xfce4-docklike-plugin-0.4.0.tar.bz2 -O /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 && tar xf /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 -C /tmp;
-sed -i '22  s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
-sed -i '177 s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
-sed -i '26  s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
-sed -i '190 s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
-cd /tmp/xfce4-docklike-plugin-0.4.0/; ./configure; make -$(nproc); make install;
-```
 
 ###### X. Langue FR
 ```bash
@@ -76,6 +49,44 @@ echo 'Section "InputClass"
     Option "XkbVariant"    "oss"
     Option "XkbOptions"    "compose:menu,terminate:ctrl_alt_bksp"
 EndSection' > /etc/X11/xorg.conf.d/00-keyboard.conf;
+```
+
+###### X. Gestionnaire de session
+```bash
+apt install -y lightdm lightdm-gtk-greeter;
+```
+
+
+###### X. Utilitaires en Commande
+```bash
+apt install -y git;
+```
+
+###### X. XFCE4
+```bash
+apt install -y xfce4;
+apt install -y xfce4-goodies;
+apt install -y xfce4-panel-profiles;
+```
+
+###### X. XFCE4 (Panel Profiles)
+```bash
+git clone https://github.com/xfce-mirror/xfce4-panel-profiles.git /tmp/xfce4-panel-profiles;
+
+cd /tmp/xfce4-panel-profiles; ./autogen.sh; make; make install;
+
+```
+###### X. DockLike
+```bash
+apt install -y intltool;
+apt install -y dbus-x11;
+rm -r /tmp/xfce4-docklike-plugin-0.4.0*;
+wget --inet4-only https://archive.xfce.org/src/panel-plugins/xfce4-docklike-plugin/0.4/xfce4-docklike-plugin-0.4.0.tar.bz2 -O /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 && tar xf /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 -C /tmp;
+sed -i '22  s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
+sed -i '177 s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
+sed -i '26  s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
+sed -i '190 s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
+cd /tmp/xfce4-docklike-plugin-0.4.0/; ./configure; make -$(nproc); make install;
 ```
 
 ##### X. Gestion des services
