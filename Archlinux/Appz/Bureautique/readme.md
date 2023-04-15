@@ -1,23 +1,28 @@
 ### Administration
 ##### Coffre-fort
 ```bash
+clear
 sudo pacman -Sy --noconfirm seahorse;
 ```
 ##### Editeur de profil
 ```bash
+clear
 yay -Sy --noconfirm mugshot;
 ```
 ##### Gestionnaire de Disque-dur
 ```bash
+clear
 yay -Sy --noconfirm blivet-gui;
 yay -Sy --noconfirm gnome-disk-utility;
 ```
 ##### Gestionnaire de fichier compréssé
 ```bash
+clear
 sudo pacman -Sy --noconfirm file-roller;
 ```
 ##### Gestionnaire de Tâches
 ```bash
+clear
 yay -Sy --noconfirm sysmontask;
 ```
 
