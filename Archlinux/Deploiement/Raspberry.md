@@ -64,6 +64,7 @@ sudo pacman-key --populate archlinuxarm;
 #### Etape 7: Installation de Package
 ```bash
 sudo pacman -Syu;
+sudo pacman -Sy sudo;
 sudo pacman -Sy xorg xorg-server xorg-xinit;
 sudo pacman -Sy xf86-video-fbdev;
 sudo pacman -Sy networkmanager networkmanager-pptp networkmanager-qt network-manager-applet;
