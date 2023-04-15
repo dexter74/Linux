@@ -4,14 +4,20 @@
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
-#### I. Information sur le Système
+#### I. Installation du Système d'exploitation
+##### Utilitaires
 ```
-RPI-Image      : Oui (Pré-configurer : Wifi, User)
+raspberry image
+```
+
+###### Operating System
+```
 Distributor ID : Raspbian
 Description    : Raspbian GNU/Linux 11 (bullseye)
 Release        : 11
 Codename       : bullseye
 ```
+<br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 #### II. Installation de paquets
