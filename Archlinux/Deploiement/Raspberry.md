@@ -48,8 +48,6 @@ systemctl start lightdm;
 ```
 
 
-
-
 ------------------------------------------------------------------------------------------------------------------------------------------------
 #### III. Note de travaille
 ###### A. Divers
@@ -57,6 +55,8 @@ systemctl start lightdm;
 apt install -y ukui-themes;
 apt install -y ukui-greeter;
 apt install -y ukui-session-manager;
+
+Ukui Desktop Environment
 ```
 
 ###### B. Information
@@ -64,3 +64,5 @@ apt install -y ukui-session-manager;
 # Configuration Wifi:
 /etc/wpa_supplicant/wpa_supplicant.conf
 ```
+
+
