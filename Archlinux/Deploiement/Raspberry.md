@@ -13,18 +13,35 @@ Release        : 11
 Codename       : bullseye
 ```
 
+------------------------------------------------------------------------------------------------------------------------------------------------
 #### Installation de paquets
-```
-clear:
+
+##### Message de Bienenue
+```bash
+clear;
 echo "" > /etc/motd;
+```
+
+##### Mise à jour
+```bash
+clear;
 apt update;
 apt upgrade -y;
+```
+
+##### Environnement Graphique
+```bash
 apt install -y xfce4;
 apt install -y xfce4-goodies;
+```
 
+##### Gestionnaire de session
+```
 apt install -y lightdm lightdm-gtk-greeter;
 systemctl start lightdm;
 ```
+
+
 
 #### Divers
 ```bash
