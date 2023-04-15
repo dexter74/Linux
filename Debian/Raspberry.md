@@ -82,10 +82,9 @@ cd /tmp/xfce4-panel-profiles; ./configure; make; make install;
 clear;
 apt install -y intltool;
 apt install -y dbus-x11;
+apt install -y libwnck-3-0;
 
-wget http://ftp.de.debian.org/debian/pool/main/libw/libwnck3/libwnck-3-common_3.30.0-2_all.deb -O /tmp/libwnck-3-common_3.30.0-2_all.deb;
-dpkg -i /tmp/libwnck-3-common_3.30.0-2_all.deb;
-reboot;
+# wget http://ftp.de.debian.org/debian/pool/main/libw/libwnck3/libwnck-3-common_3.30.0-2_all.deb -O /tmp/libwnck-3-common_3.30.0-2_all.deb;  dpkg -i /tmp/libwnck-3-common_3.30.0-2_all.deb; reboot;
 ```
 
 ```
