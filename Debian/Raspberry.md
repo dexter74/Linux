@@ -74,6 +74,7 @@ apt install -y xfce4-panel-profiles;
 git clone https://github.com/xfce-mirror/xfce4-panel-profiles.git /tmp/xfce4-panel-profiles;
 cd /tmp/xfce4-panel-profiles; ./configure; make; make install;
 ```
+
 ###### X. DockLike
 ```bash
 apt install -y intltool;
@@ -91,7 +92,29 @@ cd /tmp/xfce4-docklike-plugin-0.4.0/; ./configure; make -$(nproc); make install;
 ```bash
 systemctl start  lightdm;
 systemctl enable lightdm;
+```
 
+#### X. Personnalisation
+```bash
+apt install -y python3-gi gir1.2-libxfce4ui-2.0;
+
+
+mkdir -p ~/.config/;
+echo "XDG_DESKTOP_DIR=\"\$HOME/Bureau\";
+XDG_DOCUMENTS_DIR=\"\$HOME/Documents\"
+XDG_DOWNLOAD_DIR=\"\$HOME/Telechargements\"
+XDG_TEMPLATES_DIR=\"\$HOME/Templates\"
+XDG_MUSIC_DIR=\"\$HOME/Musiques\"
+XDG_PICTURES_DIR=\"\$HOME/Images\"
+XDG_PUBLICSHARE_DIR=\"\$HOME/Public\"
+XDG_VIDEOS_DIR=\"\$HOME/Videos\"" > $HOME/.config/user-dirs.dirs;
+rm -rf /home/marc/*;
+mkdir Bureau Documents Telechargements Templates Musiques Images Public Videos;
+wget "https://github.com/dexter74/Linux/raw/main/Archlinux/Appz/Environnements_Graphique/XFCE4_Profile.tar.bz2" -O /home/marc/Bureau/XFCE4_Profile.tar.bz2
+```
+
+```
+echo "xfce4-panel-profiles load /home/marc/Bureau/XFCE4_Profile.tar.bz2" > /home/marc/Bureau/theme.sh
 ```
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
