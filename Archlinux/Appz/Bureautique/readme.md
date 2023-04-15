@@ -1,37 +1,39 @@
 ### Administration
 ##### Coffre-fort
 ```bash
-clear
+clear;
 sudo pacman -Sy --noconfirm seahorse;
 ```
 ##### Editeur de profil
 ```bash
-clear
+clear;
 yay -Sy --noconfirm mugshot;
 ```
 ##### Gestionnaire de Disque-dur
 ```bash
-clear
+clear;
 yay -Sy --noconfirm blivet-gui;
 yay -Sy --noconfirm gnome-disk-utility;
 ```
 ##### Gestionnaire de fichier compréssé
 ```bash
-clear
+clear;
 sudo pacman -Sy --noconfirm file-roller;
 ```
 ##### Gestionnaire de Tâches
 ```bash
-clear
+clear;
 yay -Sy --noconfirm sysmontask;
 ```
 
 ##### Pavé-Numérique
 ```bash
+clear;
 sudo pacman -Sy --noconfirm numlockx;
 ```
 ##### Magasin Applicatif (KO)
 ```bash
+clear;
 yay -Sy --noconfirm pamac-all;
 ```
 ##### Sauvegarde et Restauration
@@ -40,8 +42,9 @@ yay -Sy --noconfirm timeshift;
 ```
 ##### Virtualbox
 ```
+clear;
 sudo pacman -Sy --noconfirm virtualbox virtualbox-guest-iso virtualbox-host-modules-arch;
-yay    -Sy --noconfirm virtualbox-ext-oracle;
+yay -Sy --noconfirm virtualbox-ext-oracle;
 
 echo "* 192.168.1.0/24
 * 192.168.2.0/24
@@ -54,11 +57,13 @@ echo "* 192.168.1.0/24
 ### Multimédias
 ##### Lecteur de Film
 ```bash
+clear;
 sudo pacman -Sy --noconfirm smplayer;
 sudo pacman -Sy --noconfirm mplayer;
 ```
 ##### Lecteur de Musique
 ```bash
+clear;
 yay -Sy --noconfirm rhythmbox;
 yay -Sy --noconfirm rhythmbox-plugin-hide-git;
 yay -Sy --noconfirm rhythmbox-plugin-tray-icon;
@@ -92,6 +97,7 @@ Clique droit dans le blanc > Décocher les cases
 ------------------------------------------------------------------------------------------------------------------
 ##### Navigateurs
 ```bash
+clear;
 yay -Sy --noconfirm microsoft-edge-stable-bin;
 ```
 <br />
@@ -99,11 +105,13 @@ yay -Sy --noconfirm microsoft-edge-stable-bin;
 ------------------------------------------------------------------------------------------------------------------
 ##### Editeur de Texte
 ```bash
+clear;
 sudo pacman -Sy --noconfirm xed;
 ```
 
 ##### Suite Bureautique
 ```bash
+clear;
 sudo pacman -Sy --noconfirm libreoffice-fresh libreoffice-fresh-fr
 ```
 <br />
@@ -112,6 +120,7 @@ sudo pacman -Sy --noconfirm libreoffice-fresh libreoffice-fresh-fr
 
 ##### Divers
 ```bash
+clear;
 sudo pacman -Sy --noconfirm discord;
 sudo pacman -Sy --noconfirm gnome-calculator;
 sudo pacman -Sy --noconfirm gnome-calendar;
