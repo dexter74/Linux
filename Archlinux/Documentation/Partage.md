@@ -1,6 +1,7 @@
 ##### I. Credentials
 ```
-mkdir /etc/credentials;
+sudo mkdir /etc/credentials;
+
 echo "username=
 password=
 vers=3.0
@@ -8,8 +9,9 @@ file_mode=0777
 dir_mode=0777
 workgroup=WORKGROUP
 _netdev" > /etc/credentials/.smbpassword;
-chmod 600 /etc/credentials/.smbpassword;
-nano /etc/credentials/.smbpassword;
+
+sudo chmod 600 /etc/credentials/.smbpassword;
+sudo nano /etc/credentials/.smbpassword;
 ```
 ```
 username=
@@ -32,7 +34,7 @@ x-gvfs-show
 ##### II. Services Mount
 ```bash
 ####################################################################################################################################
-echo "[Unit]
+sudo echo "[Unit]
   Description=Montage du partage Download
   Requires=network-online.target
   After=network-online.service
@@ -62,7 +64,7 @@ echo "[Unit]
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Music.mount;
 ####################################################################################################################################
-echo "[Unit]
+sudo echo "[Unit]
   Description=Montage du partage Video
   Requires=network-online.target
   After=network-online.service
@@ -77,7 +79,7 @@ echo "[Unit]
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Video.mount;
 ####################################################################################################################################
-echo "[Unit]
+sudo echo "[Unit]
   Description=Montage du partage Home
   Requires=network-online.target
   After=network-online.service
@@ -94,12 +96,31 @@ echo "[Unit]
 ####################################################################################################################################
 ```
 
+##### III. Mise en fonction des services
+```
+clear;
+USERNAME=$(id 1000 | cut -d  ")" -f 1 | cut -d "(" -f 2)
+sudo mkdir -p /mnt/{Download,Home,Music,Video};
+sudo chown -R $USERNAME:users /mnt/{Download,Home,Music,Video};
+```
+```
+clear;
+sudo systemctl daemon-reload;
+sudo systemctl stop  mnt-{Download,Home,Music,Video}.mount;
+sudo systemctl disable --now mnt-{Download,Home,Music,Video}.mount;
+
+sudo systemctl start mnt-{Download,Home,Music,Video}.mount;
+sudo systemctl enable --now mnt-{Download,Home,Music,Video}.mount;
+sudo systemctl status --now mnt-{Download,Home,Music,Video}.mount | grep "mount\|Active:" ;
+```
 
 
-##### III. Services Automounts
+
+
+##### IV. Services Automounts
 ```bash
 ####################################################################################################################################
-echo "[Unit]
+sudo echo "[Unit]
   Description=cifs mount script
   Requires=network-online.target
   After=network-online.service
@@ -111,7 +132,7 @@ echo "[Unit]
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Music.automount;
 ####################################################################################################################################
-echo "[Unit]
+sudo echo "[Unit]
   Description=cifs mount script
   Requires=network-online.target
   After=network-online.service
@@ -123,7 +144,7 @@ echo "[Unit]
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Video.automount;
 ####################################################################################################################################
-echo "[Unit]
+sudo echo "[Unit]
   Description=cifs mount script
   Requires=network-online.target
   After=network-online.service
@@ -135,7 +156,7 @@ echo "[Unit]
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Home.automount;
 ####################################################################################################################################
-echo "[Unit]
+sudo echo "[Unit]
   Description=cifs mount script
   Requires=network-online.target
   After=network-online.service
@@ -146,38 +167,4 @@ echo "[Unit]
   
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Download.automount;
-```
-
-##### IV. Mise en fonction des services
-```
-clear;
-USERNAME=$(id 1000 | cut -d  ")" -f 1 | cut -d "(" -f 2)
-mkdir -p /mnt/{Download,Home,Music,Video};
-chown -R $USERNAME:users /mnt/{Download,Home,Music,Video};
-```
-
-```
-clear;
-systemctl daemon-reload;
-systemctl disable --now mnt-{Download,Home,Music,Video}.mount;
-#systemctl disable --now mnt-{Download,Home,Music,Video}.automount;
-```
-
-```
-clear;
-systemctl daemon-reload;
-systemctl start mnt-{Download,Home,Music,Video}.mount;
-#systemctl start mnt-{Download,Home,Music,Video}.automount;
-```
-
-```
-clear;
-systemctl status --now mnt-{Download,Home,Music,Video}.mount | grep "mount\|Active:" ;
-#systemctl status --now mnt-{Download,Home,Music,Video}.automount;
-```
-
-```
-clear;
-systemctl enable --now mnt-{Download,Home,Music,Video}.mount;
-#systemctl enable --now mnt-{Download,Home,Music,Video}.automount;
 ```
