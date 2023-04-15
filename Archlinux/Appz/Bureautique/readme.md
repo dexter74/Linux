@@ -1,7 +1,7 @@
 ### Administration
 ##### Coffre-fort
 ```bash
-pacman -Sy --noconfirm seahorse;
+sudo pacman -Sy --noconfirm seahorse;
 ```
 ##### Editeur de profil
 ```bash
@@ -14,7 +14,7 @@ yay -Sy --noconfirm gnome-disk-utility;
 ```
 ##### Gestionnaire de fichier compréssé
 ```bash
-pacman -Sy --noconfirm file-roller;
+sudo pacman -Sy --noconfirm file-roller;
 ```
 ##### Gestionnaire de Tâches
 ```bash
@@ -23,7 +23,7 @@ yay -Sy --noconfirm sysmontask;
 
 ##### Pavé-Numérique
 ```bash
-pacman -Sy --noconfirm numlockx;
+sudo pacman -Sy --noconfirm numlockx;
 ```
 ##### Magasin Applicatif (KO)
 ```bash
@@ -35,7 +35,7 @@ yay -Sy --noconfirm timeshift;
 ```
 ##### Virtualbox
 ```
-pacman -Sy --noconfirm virtualbox virtualbox-guest-iso virtualbox-host-modules-arch;
+sudo pacman -Sy --noconfirm virtualbox virtualbox-guest-iso virtualbox-host-modules-arch;
 yay    -Sy --noconfirm virtualbox-ext-oracle;
 
 echo "* 192.168.1.0/24
@@ -49,8 +49,8 @@ echo "* 192.168.1.0/24
 ### Multimédias
 ##### Lecteur de Film
 ```bash
-pacman -Sy --noconfirm smplayer;
-pacman -Sy --noconfirm mplayer;
+sudo pacman -Sy --noconfirm smplayer;
+sudo pacman -Sy --noconfirm mplayer;
 ```
 ##### Lecteur de Musique
 ```bash
@@ -94,12 +94,12 @@ yay -Sy --noconfirm microsoft-edge-stable-bin;
 ------------------------------------------------------------------------------------------------------------------
 ##### Editeur de Texte
 ```bash
-pacman -Sy --noconfirm xed;
+sudo pacman -Sy --noconfirm xed;
 ```
 
 ##### Suite Bureautique
 ```bash
-pacman -Sy --noconfirm libreoffice-fresh libreoffice-fresh-fr
+sudo pacman -Sy --noconfirm libreoffice-fresh libreoffice-fresh-fr
 ```
 <br />
 
@@ -107,11 +107,11 @@ pacman -Sy --noconfirm libreoffice-fresh libreoffice-fresh-fr
 
 ##### Divers
 ```bash
-pacman -Sy --noconfirm discord;
-pacman -Sy --noconfirm gnome-calculator;
-pacman -Sy --noconfirm gnome-calendar;
-pacman -Sy --noconfirm gnome-connections;
-pacman -Sy --noconfirm gnome-font-viewer;
-pacman -Sy --noconfirm gnome-terminal;
+sudo pacman -Sy --noconfirm discord;
+sudo pacman -Sy --noconfirm gnome-calculator;
+sudo pacman -Sy --noconfirm gnome-calendar;
+sudo pacman -Sy --noconfirm gnome-connections;
+sudo pacman -Sy --noconfirm gnome-font-viewer;
+sudo pacman -Sy --noconfirm gnome-terminal;
 ```
 <br />
