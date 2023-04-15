@@ -44,40 +44,38 @@ sudo echo 'LANG=fr_FR.UTF-8'   > /mnt/root/etc/locale.conf;
 sudo echo 'KEYMAP=fr-latin9'   > /mnt/root/etc/vconsole.conf;
 sudo echo 'FONT=eurlatgr'     >> /mnt/root/etc/vconsole.conf;
 sudo echo 'fr_FR.UTF-8 UTF-8'  > /mnt/root/etc/locale.gen;
-sudo locale-gen;
-
 ```
 
 #### Etape 5: Démarrer le Raspberry
 ```bash
 loadkey fr;
-sudo iwconfig wlan0 key LaCLEWEP;
-sudo wifi-menu -o;
+iwconfig wlan0 key LaCLEWEP;
+wifi-menu -o;
 ```
 
 #### Etape 6: Mise à jour des clé PGP
 ```bash
-sudo pacman-key --init;
-sudo pacman-key --populate archlinuxarm;
+pacman-key --init;
+pacman-key --populate archlinuxarm;
 ```
 
 #### Etape 7: Installation de Package
 ```bash
-sudo pacman -Syu;
-sudo pacman -Sy sudo;
-sudo pacman -Sy xorg xorg-server xorg-xinit;
-sudo pacman -Sy xf86-video-fbdev;
-sudo pacman -Sy networkmanager networkmanager-pptp networkmanager-qt network-manager-applet;
-sudo pacman -Sy pulseaudio pavucontrol;
-sudo pacman -Sy xfce4 xfce4-goodies;
-sudo pacman -Sy lightdm lightdm-gtk-greeter;
-sudo pacman -Sy accountsservice;
-sudo pacman -Sy pambase;
+pacman -Syu;
+pacman -Sy sudo;
+pacman -Sy xorg xorg-server xorg-xinit;
+pacman -Sy xf86-video-fbdev;
+pacman -Sy networkmanager networkmanager-pptp networkmanager-qt network-manager-applet;
+pacman -Sy pulseaudio pavucontrol;
+pacman -Sy xfce4 xfce4-goodies;
+pacman -Sy lightdm lightdm-gtk-greeter;
+pacman -Sy accountsservice;
+pacman -Sy pambase;
 ```
 
 #### Log
 ```
-sudo lightdm --test-mode --debug
+lightdm --test-mode --debug
 cat /var/log/Xorg.0.log | grep "EE\|WW"
 ```
 
