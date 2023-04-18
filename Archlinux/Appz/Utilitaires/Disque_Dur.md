@@ -4,4 +4,7 @@ wget https://www.seagate.com/content/dam/seagate/migrated-assets/www-content/sup
 unzip /tmp/SeaToolsLinuxX64Installer.zip -d /tmp/
 sudo chmod +x /tmp/SeaToolsLinuxX64Installer.run;
 sudo /tmp/SeaToolsLinuxX64Installer.run;
+
+
+kill -9 $(ps -ef | grep SeaTools5 | grep -v grep | cut -c 12-19)
 ```
