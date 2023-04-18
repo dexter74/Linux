@@ -200,7 +200,7 @@ pacstrap /mnt gtk-engine-murrine gtk-engines;
 ```
 #### Utilitaires (Ligne de commandes)
 ``` bash
-pacstrap /mnt bash-completion binutils curl git gvfs gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb lsb-release lvm2 man nano neofetch p7zip smbclient sudo unzip usbutils wget zip;
+pacstrap /mnt bash-completion binutils curl git gvfs gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb lsb-release lvm2 man nano neofetch p7zip pacman-contrib smbclient sudo unzip usbutils wget zip;
 
 # cabextract lha lsof mtools reflector pacman-contrib nm-connection-editor
 ```
