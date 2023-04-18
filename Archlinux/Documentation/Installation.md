@@ -373,7 +373,7 @@ runuser -l $USERNAME -c 'cd /tmp/yay && makepkg -si --noconfirm;'
 
 ##### Les services
 ```bash
-clear
+clear;
 systemctl enable avahi-daemon.service;
 systemctl enable avahi-dnsconfd.service;
 systemctl enable NetworkManager;
