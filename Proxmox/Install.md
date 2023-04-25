@@ -1,3 +1,47 @@
+#### Création d'un compte Utilisateur Linux
+```bash
+
+#########################################################################################################
+# Nettoyage de la console #
+###########################
+clear;
+
+#########################################################################################################
+# Déclaration des variables #
+#############################
+# Nom d'utilisateur et mot de passe du compte:
+export UTILISATEUR=Drthrax74
+export PASSWORD=admin
+export USERID=1000
+
+#########################################################################################################
+# Création du compte #
+######################
+/usr/sbin/useradd \
+--home-dir /home/$UTILISATEUR \
+--base-dir /home/$UTILISATEUR \
+--uid $USERID \
+--no-user-group \
+--shell /bin/bash \
+--create-home $UTILISATEUR;
+
+#########################################################################################################
+# Définir le mot de passe du compte #
+#####################################
+(echo "$UTILISATEUR:$PASSWORD") | chpasswd;
+
+#########################################################################################################
+# Sudoers son utilisateur #
+###########################
+# echo "$UTILISATEUR ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$UTILISATEUR;
+
+#########################################################################################################
+# Vérification #
+################
+id $UTILISATEUR;
+```
+
+
 #### Création d'un compte Utilisateur Proxmox
 ```bash
 UTILISATEUR="Drthrax74@pam"
