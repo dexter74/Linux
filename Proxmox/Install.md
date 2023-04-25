@@ -45,13 +45,6 @@ id $UTILISATEUR;
 
 ------------------------------------------------------------------------------------------
 
-sudo pveum pool add 100.LXC
-sudo pveum pool add 200.Linux
-sudo pveum pool add 300.Windows
-
-
-
-
 #### Création d'un compte Utilisateur Proxmox
 ```bash
 UTILISATEUR="Drthrax74@pam"
