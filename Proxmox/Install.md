@@ -96,10 +96,11 @@ sudo pveum user modify "$UTILISATEUR" -group Administrateurs;
 
 #### VFIO
 ```
-nano /etc/default/grub
-amd_iommu=on
+# Activer IOMMU:
+sed -i -e 's/quiet/quiet amd_iommu=on/g' /etc/default/grub;
 update-grub;
 
+# Activer Modules
 echo "vfio
 vfio_iommu_type1
 vfio_pci
@@ -110,14 +111,15 @@ amd_iommu=on" > /etc/modules
 echo "options vfio_iommu_type1 allow_unsafe_interrupts=1" > /etc/modprobe.d/iommu_unsafe_interrupts.conf;
 echo "options kvm ignore_msrs=1" > /etc/modprobe.d/kvm.conf;
 
-
-echo "blacklist radeon"  >> /etc/modprobe.d/blacklist.conf;
+echo "blacklist amdgpu"  >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist nouveau" >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist nvidia"  >> /etc/modprobe.d/blacklist.conf;
+echo "blacklist radeon"  >> /etc/modprobe.d/blacklist.conf;
+
 
 lspci -v;
-lspci -n -s 01:00;
-echo "options vfio-pci ids=10de:1b81,10de:10f0 disable_vga=1"> /etc/modprobe.d/vfio.conf;
+lspci -n -s 0b:00
+echo "options vfio-pci ids=1002:73df,1002:ab28 disable_vga=1"> /etc/modprobe.d/vfio.conf;
 update-initramfs -u;
 reset;
 ```
