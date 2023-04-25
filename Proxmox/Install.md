@@ -97,7 +97,7 @@ sudo pveum user modify "$UTILISATEUR" -group Administrateurs;
 #### VFIO
 ```
 # Activer IOMMU:
-sed -i -e 's/quiet/quiet amd_iommu=on/g' /etc/default/grub;
+sed -i -e 's/quiet/quiet amd_iommu=on initcall_blacklist=sysfb_init/g' /etc/default/grub;
 update-grub;
 
 # Activer Modules
