@@ -41,6 +41,16 @@ export USERID=1000
 id $UTILISATEUR;
 ```
 
+<br />
+
+------------------------------------------------------------------------------------------
+
+sudo pveum pool add 100.LXC
+sudo pveum pool add 200.Linux
+sudo pveum pool add 300.Windows
+
+
+
 
 #### Création d'un compte Utilisateur Proxmox
 ```bash
@@ -56,7 +66,13 @@ sudo pveum group del   Audit 2>/dev/null;
 sudo pveum group del   Stockage 2>/dev/null;
 sudo pveum group del   Utilisateurs 2>/dev/null;
 sudo pveum group del   VMadmin  2>/dev/null;
+sudo pveum pool del     100.LXC;
+sudo pveum pool del     200.Linux;
+sudo pveum pool del     300.Windows;
+sudo pveum pool del     400.Templates;
 sudo pveum user delete $UTILISATEUR 2>/dev/null;
+
+
 
 # Création des Groupes:
 sudo pveum group add Administrateurs -comment "Groupe des administrateurs"
@@ -65,6 +81,11 @@ sudo pveum group add Stockage        -comment "Groupe du stockage"
 sudo pveum group add Utilisateurs    -comment "Groupe des utilisateurs"
 sudo pveum group add VMadmin         -comment "Groupe des Admins des VM"
 
+# Création des Pools:
+sudo pveum pool add 100.LXC;
+sudo pveum pool add 200.Linux;
+sudo pveum pool add 300.Windows;
+sudo pveum pool add  400.Templates;
 # Création Utilisateur
 sudo pveum user add "$UTILISATEUR" -email "$EMAIL" -enable 1 -first "$PRENOM" -lastname "$NOM";
 
