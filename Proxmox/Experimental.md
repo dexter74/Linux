@@ -8,6 +8,7 @@ Dongle HDMI sur la sortie Vidéo du GPU
 #### Activer IOMMU:
 ```bash
 sed -i -e 's/quiet/quiet amd_iommu=on initcall_blacklist=sysfb_init/g' /etc/default/grub;
+nano /etc/default/grub;
 update-grub;
 ```
 
@@ -16,8 +17,7 @@ update-grub;
 echo "vfio
 vfio_iommu_type1
 vfio_pci
-vfio_virqfd
-amd_iommu=on" > /etc/modules
+vfio_virqfd" > /etc/modules
 ```
 
 ### KVM
