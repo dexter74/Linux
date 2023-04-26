@@ -1,8 +1,8 @@
 [TOPIC](https://forum.proxmox.com/threads/problem-error-43-on-amd-rx-6700xt.126434/) (En cours)
 
-#### Prérequis:
+#### Optionnel:
 ```
-Dongle HDMI sur la sortie Vidéo du GPU
+Dongle HDMI sur la sortie Vidéo du GPU.
 ```
 
 #### Activer IOMMU:
