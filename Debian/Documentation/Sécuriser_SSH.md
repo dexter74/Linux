@@ -1,14 +1,10 @@
-################################
-# Changer le mot de passe root #
-################################
+# Changer le mot de passe root
 ````
 Définir le MDP ROOT : (echo XXXX; echo XXXX) | passwd root
 Désactiver MDP ROOT : sudo passwd -l root
 ````
 
-##########################
-# Configurer la clé SSH  #
-##########################
+# Configurer la clé SSH
 ````
 clear;
 rm -r .ssh;
@@ -21,10 +17,7 @@ echo $KEY_SSH_WINDOWS > .ssh/authorized_keys;
 cat .ssh/authorized_keys;
 ````
 
-
-#####################
-# Configurer le SSH #
-#####################
+# Configurer le SSH
 ````
 # Sauvegarde             : cp /usr/etc/ssh/sshd_config /usr/etc/ssh/sshd_config.old ;
 # Restauration           : cp /usr/etc/ssh/sshd_config.old /usr/etc/ssh/sshd_config ;
