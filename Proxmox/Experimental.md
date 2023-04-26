@@ -1,3 +1,5 @@
+[TOPIC](https://forum.proxmox.com/threads/problem-error-43-on-amd-rx-6700xt.126434/) (En cours)
+
 #### Prérequis:
 ```
 Dongle HDMI sur la sortie Vidéo du GPU
