@@ -1,9 +1,13 @@
+#### Prérequis:
+```
+Dongle HDMI sur la sortie Vidéo du GPU
+```
+
 #### Activer IOMMU:
 ```bash
 sed -i -e 's/quiet/quiet amd_iommu=on initcall_blacklist=sysfb_init/g' /etc/default/grub;
 update-grub;
 ```
-
 
 ### Activer Modules
 ```bash
