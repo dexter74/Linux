@@ -34,22 +34,20 @@ echo "blacklist nvidia"  >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist radeon"  >> /etc/modprobe.d/blacklist.conf;
 ```
 
-
-#### Check
-```
-dmesg | grep 0b
-```
-
 ### Attacher GPU au module VFIO
 ```bash
 echo "options vfio-pci ids=1002:73df,1002:ab28 disable_vga=1"> /etc/modprobe.d/vfio.conf;
 update-initramfs -u;
 reboot;
 ```
+
+#### Check
 ```
+dmesg | grep 0b
 lspci -v;
 lspci -n -s 0b:00
 ```
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
