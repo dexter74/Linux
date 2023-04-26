@@ -73,7 +73,8 @@ Session: (Important)
 
 #### Attacher Disque-Dur physique à une VM
 ```
-qm set 310 -scsi5 /dev/nvme0n1p1
+qm set 310 -sata5 /dev/nvme0n1p1;
+qm unlink 310 --idlist sata5;
 ```
 
 #### Ouverture Automatique Session [Microsoft](https://learn.microsoft.com/fr-fr/troubleshoot/windows-server/user-profiles-and-logon/turn-on-automatic-logon)
