@@ -49,6 +49,12 @@ lspci -n -s 0b:00
 ```
 Machine: Q35
 Bios: OVMF
+OS: Windows 10
+
+Session: (Important)
+ - User: marc
+ - Pass: admin
+
 ```
 
 #### Ouverture Automatique Session [Microsoft](https://learn.microsoft.com/fr-fr/troubleshoot/windows-server/user-profiles-and-logon/turn-on-automatic-logon)
