@@ -1,0 +1,41 @@
+#### Activer IOMMU:
+```bash
+sed -i -e 's/quiet/quiet amd_iommu=on initcall_blacklist=sysfb_init/g' /etc/default/grub;
+update-grub;
+```
+
+
+### Activer Modules
+```bash
+echo "vfio
+vfio_iommu_type1
+vfio_pci
+vfio_virqfd
+amd_iommu=on" > /etc/modules
+```
+
+### KVM
+```bash
+echo "options vfio_iommu_type1 allow_unsafe_interrupts=1" > /etc/modprobe.d/iommu_unsafe_interrupts.conf;
+echo "options kvm ignore_msrs=1" > /etc/modprobe.d/kvm.conf;
+```
+
+### Blacklist
+```bash
+echo "blacklist amdgpu"  >> /etc/modprobe.d/blacklist.conf;
+echo "blacklist nouveau" >> /etc/modprobe.d/blacklist.conf;
+echo "blacklist nvidia"  >> /etc/modprobe.d/blacklist.conf;
+echo "blacklist radeon"  >> /etc/modprobe.d/blacklist.conf;
+```
+
+### Attacher GPU au module VFIO
+```bash
+echo "options vfio-pci ids=1002:73df,1002:ab28 disable_vga=1"> /etc/modprobe.d/vfio.conf;
+update-initramfs -u;
+reboot;
+```
+```
+
+lspci -v;
+lspci -n -s 0b:00
+```
