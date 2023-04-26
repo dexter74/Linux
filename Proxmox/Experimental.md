@@ -60,6 +60,10 @@ OS: Windows 10
 Session: (Important)
  - User: marc
  - Pass: admin
+ 
+ PCI device: 0000:0b:00.0
+  - ROM Bar: Cocher
+  - PCI-Express: Cocher
 ```
 
 #### Ouverture Automatique Session [Microsoft](https://learn.microsoft.com/fr-fr/troubleshoot/windows-server/user-profiles-and-logon/turn-on-automatic-logon)
