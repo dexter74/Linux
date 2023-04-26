@@ -67,4 +67,5 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogo
 ```
 
 Source:
-[lucduke](https://github.com/lucduke/proxmox/blob/main/3-vm-gaming.md))
+
+[lucduke](https://github.com/lucduke/proxmox/blob/main/3-vm-gaming.md)
