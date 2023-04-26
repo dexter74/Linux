@@ -54,7 +54,6 @@ OS: Windows 10
 Session: (Important)
  - User: marc
  - Pass: admin
-
 ```
 
 #### Ouverture Automatique Session [Microsoft](https://learn.microsoft.com/fr-fr/troubleshoot/windows-server/user-profiles-and-logon/turn-on-automatic-logon)
@@ -64,7 +63,6 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogo
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DefaultPassword /t REG_SZ /d admin /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoAdminLogon  /t REG_SZ /d 1 /f
 ```
-
 
 Source:
 [lucduke]([v](https://github.com/lucduke/proxmox/blob/main/3-vm-gaming.md))
