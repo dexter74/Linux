@@ -73,8 +73,8 @@ Session: (Important)
 
 #### Attacher Disque-Dur physique à une VM
 ```
-qm set 310 -sata5 /dev/nvme0n1p1;
-qm unlink 310 --idlist sata5;
+qm set 310 -sata2 /dev/nvme0n1p1;
+qm unlink 310 --idlist sata2;
 ```
 
 #### Ouverture Automatique Session [Microsoft](https://learn.microsoft.com/fr-fr/troubleshoot/windows-server/user-profiles-and-logon/turn-on-automatic-logon)
@@ -86,5 +86,4 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogo
 ```
 
 Source:
-
 [lucduke](https://github.com/lucduke/proxmox/blob/main/3-vm-gaming.md)
