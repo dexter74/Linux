@@ -69,9 +69,12 @@ PCI device: 0000:0b:00.0
 Session: (Important)
  - User: marc
  - Pass: admin
- 
- 
- ```
+```
+
+#### Attacher Disque-Dur physique à une VM
+```
+qm set 310 -scsi5 /dev/nvme0n1p1
+```
 
 #### Ouverture Automatique Session [Microsoft](https://learn.microsoft.com/fr-fr/troubleshoot/windows-server/user-profiles-and-logon/turn-on-automatic-logon)
 ```
