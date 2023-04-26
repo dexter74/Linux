@@ -43,6 +43,14 @@ lspci -v;
 lspci -n -s 0b:00
 ```
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#### Création de la VM
+```
+Machine: Q35
+Bios: OVMF
+```
+
 #### Ouverture Automatique Session [Microsoft](https://learn.microsoft.com/fr-fr/troubleshoot/windows-server/user-profiles-and-logon/turn-on-automatic-logon)
 ```
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device" /v DevicePasswordLessBuildVersion /t REG_DWORD /d 0 /f
