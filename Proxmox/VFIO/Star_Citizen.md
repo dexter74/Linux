@@ -1,5 +1,5 @@
 #### Easy Anti-Cheat
-Il faut éditer les caractéristiques du BIOS
+Il faut éditer les caractéristiques du BIOS et indiquer un Fabricant (Manufacturer)
 ```
 Virtual Machine 310:
  - Options
