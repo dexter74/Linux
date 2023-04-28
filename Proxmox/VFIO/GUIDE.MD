@@ -46,6 +46,7 @@ reboot;
 
 #### Check
 ```
+find /sys/kernel/iommu_groups/ -type l
 dmesg | grep 0b; #AMD
 dmesg | grep 0c; #Nvidia
 lspci -v;
