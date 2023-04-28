@@ -46,7 +46,8 @@ reboot;
 
 #### Check
 ```
-dmesg | grep 0b
+dmesg | grep 0b; #AMD
+dmesg | grep 0c; #Nvidia
 lspci -v;
 lspci -n -s 0b:00
 ```
