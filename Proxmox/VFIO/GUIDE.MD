@@ -3,7 +3,7 @@
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-#### Optionnel:
+#### Optionnel: ([Intel](https://github.com/intel/nemu/wiki/Testing-VFIO-with-GPU))
 ```
 Dongle HDMI sur la sortie Vidéo du GPU.
 ```
