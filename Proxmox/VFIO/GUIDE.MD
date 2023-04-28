@@ -39,6 +39,8 @@ echo "blacklist radeon"  >> /etc/modprobe.d/blacklist.conf;
 
 ### Attacher GPU au module VFIO
 ```bash
+# GTX 1060  : 10de:1c02,10de:10f1
+# RX 6700 XT: 1002:73df,1002:ab28 
 echo "options vfio-pci ids=1002:73df,1002:ab28 disable_vga=1"> /etc/modprobe.d/vfio.conf;
 update-initramfs -u;
 reboot;
@@ -52,7 +54,6 @@ dmesg | grep 0c; #Nvidia
 lspci -v;
 lspci -n -s 0b:00
 ```
-
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
