@@ -1,0 +1,18 @@
+################
+version: '3.9' #
+services:      #
+################
+#
+################################################
+ Homer_Dashboard:
+  image: 'b4bz/homer'
+  container_name: 'home_dashboard'
+  volumes:
+   - 'Homer:/www/assets'
+  ports:
+   - '8080:8080'
+################################################
+volumes:
+ Homer:
+  external: false
+################################################
