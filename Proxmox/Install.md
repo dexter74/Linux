@@ -76,6 +76,7 @@ sudo pveum pool add 100.LXC;
 sudo pveum pool add 200.Linux;
 sudo pveum pool add 300.Windows;
 sudo pveum pool add  400.Templates;
+
 # Création Utilisateur
 sudo pveum user add "$UTILISATEUR" -email "$EMAIL" -enable 1 -first "$PRENOM" -lastname "$NOM";
 
