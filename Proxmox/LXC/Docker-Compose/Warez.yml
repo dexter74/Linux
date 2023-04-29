@@ -66,6 +66,7 @@ services:      #
    - 8.8.8.8
   environment:
    TZ: 'EUROPE\PARIS'
+   WEBUI_PORT: '1007'
    PUID: '0'
    PGID: '0'
   volumes:
