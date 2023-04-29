@@ -7,7 +7,7 @@ services:      #
  Flaresolverr:
   image: 'ghcr.io/flaresolverr/flaresolverr'
   container_name: 'flaresolverr'
-  network_mode: 'bidge'
+  network_mode: 'bridge'
   restart: 'unless-stopped'
   hostname: 'flaresolverr'
   environment:
@@ -22,7 +22,7 @@ services:      #
  XXXX:
   image: ''
   container_name: ''
-  network_mode: 'bidge'
+  network_mode: 'bridge'
   restart: 'unless-stopped'
   hostname: ''
   environment:
