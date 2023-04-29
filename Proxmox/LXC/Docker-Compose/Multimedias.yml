@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+##############################
+ Medias:
+  image: 'emby/embyserver'
+  container_name: 'emby'
+  network_mode: 'bridge'
+  restart: 'unless-stopped'
+  hostname: 'emby'
+  environment:
+   UID: '0'
+   GUID: '0'
+   GIDLIST: '100'
+  volumes:
+   - 'Emby:/config'
+   - '/mnt/Download:/Download'
+   - '/mnt/Music:/Music'
+   - '/mnt/Video:/Video'
+  ports:
+   - '8096:8096' # HTTP
+##############################
+volumes:
+ Emby:
+  external: false
+##############################
