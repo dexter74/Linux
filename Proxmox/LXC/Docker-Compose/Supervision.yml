@@ -3,9 +3,7 @@ version: '3.9' #
 services:      #
 ################
 #
-
 ######################################################
-#
  NginxProxyManager:
   image: 'jc21/nginx-proxy-manager'
   container_name: 'nginx'
@@ -31,8 +29,6 @@ services:      #
    - '443:443'
   labels:
    cacher: 'oui'
-######################################################
-#
 ######################################################
  adminer:
   image: 'adminer'
