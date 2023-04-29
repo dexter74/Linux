@@ -4,14 +4,31 @@ services:      #
 ################
 #
 ##################################
- KMS:
+ XXXX:
   image: ''
   container_name: ''
-  network_mode: ''
-  restart: ''
+  network_mode: 'bidge'
+  restart: 'unless-stopped'
   hostname: ''
   environment:
   volumes:
+   - ''
+  ports:
+   - ''
   labels:
    Cacher: 'oui'
 ##################################
+ KMS:
+  image: 'mikolatero/vlmcsd'
+  container_name: 'kms'
+  network_mode: 'bridge'
+  restart: 'unless-stopped'
+  hostname: 'kms'
+  ports:
+   - '1688:1688'
+  labels:
+   Cacher: 'oui'
+##################################
+volumes:
+ XXXX:
+  external: false
