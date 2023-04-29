@@ -62,7 +62,7 @@ links:
 #########################################################################################################
 # Contenu Haut
 message:
-  style: "is-warning"
+  style: "is-info"
   title: "Optional message!"
   icon: "fa fa-exclamation-triangle"
   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
