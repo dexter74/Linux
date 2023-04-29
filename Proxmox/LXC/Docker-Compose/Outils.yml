@@ -4,7 +4,6 @@ services:      #
 ################
 #
 ######################################################
-#
  adguardhome:
   image: 'adguard/adguardhome'
   container_name: 'adguardhome'
@@ -18,7 +17,9 @@ services:      #
    - 'adguardhome_conf:/opt/adguardhome/conf'
    - 'adguardhome_work:/opt/adguardhome/work'
   ports:
-   - '3000:3000' # Installation 
+   - '3000:3000' # Installation
+   - '53:53'     # DNS
+   - '3272:3272' # WebUI
   labels:
    cacher: 'oui'
 ######################################################
