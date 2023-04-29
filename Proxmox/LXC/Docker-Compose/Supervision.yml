@@ -28,7 +28,7 @@ services:      #
    - '81:81'
    - '443:443'
   labels:
-   cacher: 'oui'
+   Cacher: 'oui'
 ######################################################
  adminer:
   image: 'adminer'
@@ -43,7 +43,7 @@ services:      #
   ports:
    - '644:8080'
   labels:
-   cacher: 'oui'
+   Cacher: 'oui'
 ######################################################
 volumes:
  nginx_config:
