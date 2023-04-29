@@ -37,3 +37,10 @@ echo "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docke
 ```bash
 apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin;
 ```
+
+#### Docker-compose
+```
+curl -L "https://github.com/docker/compose/releases/download/v2.17.3/docker-compose-$(uname -s)-$(uname -m)"  -o /usr/local/bin/docker-compose;
+chmod +x /usr/local/bin/docker-compose;
+docker-compose --version;
+```
