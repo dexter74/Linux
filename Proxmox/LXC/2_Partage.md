@@ -1,4 +1,9 @@
-####
+#### Host
+```
+Il faut monter les partages !
+```
+
+#### LXC
 ```
 nano /etc/pve/lxc/101.conf
 mp0: /mnt/Download,mp=/mnt/Download
