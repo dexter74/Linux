@@ -1,12 +1,4 @@
 # https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md#configuration
-
-
-#########################################################################################################
-# Configuration du Header
-header: true
-title: "Mon Titre"
-subtitle: "Sous-Titre"
-logo: "assets/logo.png"
 #########################################################################################################
 columns: "3"
 connectivityCheck: true
@@ -47,12 +39,13 @@ colors:
     link-hover: "#ffdd57"
     background-image: "assets/your/dark/bg.png"
 #########################################################################################################
-message:
-  style: "is-warning"
-  title: "Optional message!"
-  icon: "fa fa-exclamation-triangle"
-  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+# Configuration du Header
+header: true
+title: "Mon Titre"
+subtitle: "Sous-Titre"
+logo: "assets/logo.png"
 #########################################################################################################
+# Configuration des liens
 links:
   - name: "Link 1"
     icon: "fab fa-github"
@@ -64,6 +57,15 @@ links:
   - name: "Second Page"
     icon: "fas fa-file-alt"
     url: "#page2"
+#########################################################################################################
+
+#########################################################################################################
+# Configuration du Contenu
+message:
+  style: "is-warning"
+  title: "Optional message!"
+  icon: "fa fa-exclamation-triangle"
+  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 #########################################################################################################
 # Configuration du Pied de page
 footer: 'Mon Copyright'
