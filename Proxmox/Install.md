@@ -1,6 +1,5 @@
-#### Création d'un compte Utilisateur Linux
+### Création d'un compte Utilisateur Linux
 ```bash
-
 #########################################################################################################
 # Nettoyage de la console #
 ###########################
@@ -45,7 +44,7 @@ id $UTILISATEUR;
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
-#### Création d'un compte Utilisateur Proxmox
+### Création d'un compte Utilisateur Proxmox
 ```bash
 UTILISATEUR="Drthrax74@pam"
 MOTDEPASSE="admin"
@@ -97,7 +96,7 @@ sudo pveum user modify "$UTILISATEUR" -group Administrateurs;
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------
-#### Partage
+### Partage
 
 ```bash
 mkdir /etc/credentials;
@@ -178,6 +177,8 @@ echo "[Unit]
 ####################################################################################################################################
 ```
 
+
+#### Dossier, Permission et services
 ```bash
 clear;
 USERNAME=$(id 1000 | cut -d  ")" -f 1 | cut -d "(" -f 2)
