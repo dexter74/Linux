@@ -45,5 +45,14 @@ chmod +x /usr/local/bin/docker-compose;
 docker-compose --version;
 ```
 
-#### Libérer le port 53 ([Gude](https://github.com/AdguardTeam/AdGuardHome/wiki/FAQ#bindinuse))
-
+#### Libérer le port 53 pour ADGuardHome ([Gude](https://github.com/AdguardTeam/AdGuardHome/wiki/FAQ#bindinuse))
+```
+lsof -i :53;
+mkdir -p /etc/systemd/resolved.conf.d;
+echo "[Resolve]
+DNS=127.0.0.1
+DNSStubListener=no" > /etc/systemd/resolved.conf.d/adguardhome.conf;
+mv /etc/resolv.conf /etc/resolv.conf.backup;
+ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf;
+systemctl reload-or-restart systemd-resolved;
+```
