@@ -71,7 +71,7 @@ services:      #
    PGID: '0'
   volumes:
    - 'Qbittorrent:/config'
-   - '/mnt/Download:/media/Download'
+   - '/mnt/Download:/media/Download/Torrent'
   ports:
    - '6881:6881' # Tranmission
    - '1110:1007' # WebUI
