@@ -4,7 +4,6 @@ services:      #
 ################
 #
 ######################################################
-
  adguardhome:
   image: 'adguard/adguardhome'
   container_name: 'adguardhome'
