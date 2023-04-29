@@ -71,7 +71,7 @@ services:      #
   ports:
    - '1112:7878'
   labels:
-   Cacher: 'Oui'
+   Cacher: 'Non'
 ################################################
 volumes:
  Jackett:
