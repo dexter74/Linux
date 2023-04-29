@@ -1,4 +1,21 @@
 # https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md#configuration
 
-title: ""
-subtitle: ""
+
+#########################################################################################################
+# Configuration du Header
+header: true
+title: "Mon Titre"
+subtitle: "Sous-Titre"
+logo: "assets/logo.png"
+#########################################################################################################
+connectivityCheck: true
+columns: "3"
+
+
+
+
+
+#########################################################################################################
+# Configuration du Pied de page
+footer: 'Mon Copyright'
+
