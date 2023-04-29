@@ -109,6 +109,9 @@ _netdev" > /etc/credentials/.smbpassword;
 
 chmod 600 /etc/credentials/.smbpassword;
 nano /etc/credentials/.smbpassword;
+```
+
+```bash
 ####################################################################################################################################
 echo "[Unit]
   Description=Montage du partage Download
@@ -170,13 +173,14 @@ echo "[Unit]
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Home.mount;
 ####################################################################################################################################
+```
 
+```bash
 clear;
 USERNAME=$(id 1000 | cut -d  ")" -f 1 | cut -d "(" -f 2)
 mkdir -p /mnt/{Download,Home,Music,Video};
 chown -R $USERNAME:users /mnt/{Download,Home,Music,Video};
 
-clear;
 systemctl daemon-reload;
 systemctl stop  mnt-{Download,Home,Music,Video}.mount;
 systemctl disable --now mnt-{Download,Home,Music,Video}.mount;
