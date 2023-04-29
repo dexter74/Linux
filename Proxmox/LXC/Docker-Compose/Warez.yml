@@ -17,7 +17,7 @@ services:      #
   ports:
    - '1115:8191'
   labels:
-   Cacher: 'Oui'
+   Cacher: 'Non'
 ################################################
  Jackett:
   image: 'linuxserver/jackett'
@@ -40,21 +40,7 @@ services:      #
   ports:
    - '1111:9117'
   labels:
-   Cacher: 'Oui'
-################################################
- XXXX:
-  image: ''
-  container_name: ''
-  network_mode: 'bridge'
-  restart: 'unless-stopped'
-  hostname: ''
-  environment:
-  volumes:
-   - ''
-  ports:
-   - ''
-  labels:
-   Cacher: 'Oui'
+   Cacher: 'Non'
 ################################################
  KMS:
   image: 'mikolatero/vlmcsd'
@@ -64,6 +50,26 @@ services:      #
   hostname: 'kms'
   ports:
    - '1688:1688'
+  labels:
+   Cacher: 'Non'
+################################################
+ Radarr:
+  image: 'linuxserver/radarr'
+  container_name: 'radarr'
+  network_mode: 'bridge'
+  restart: 'unless-stopped'
+  hostname: 'radarr'
+  environment:
+   TZ: 'EUROPE\PARIS'
+   PUID: '0'
+   PGID: '0'
+  volumes:
+   - 'Radarr:/config'
+   - '/mnt/Download:/media/Download'
+   - '/mnt/Music:/media/Music'
+   - '/mnt/Video:/media/Video'   
+  ports:
+   - '1112:7878'
   labels:
    Cacher: 'Oui'
 ################################################
