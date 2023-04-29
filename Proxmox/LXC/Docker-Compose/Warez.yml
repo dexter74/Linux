@@ -17,7 +17,30 @@ services:      #
   ports:
    - '1115:8191'
   labels:
-   Cacher: 'oui'
+   Cacher: 'Oui'
+################################################
+ Jackett:
+  image: 'linuxserver/jackett'
+  container_name: 'jackett'
+  network_mode: 'bridge'
+  restart: 'unless-stopped'
+  hostname: 'jackett'
+  sysctl:
+   - net.ipv6.conf.all.disable_ipv6=1
+  dns:
+   - 192.168.0.1
+   - 8.8.8.8
+  environment:
+   AUTO_UPDATE: 'true'
+   TZ: 'EUROPE\PARIS'
+   PUID: '0'
+   PGID: '0'
+  volumes:
+   - 'Jackett:/config'
+  ports:
+   - '1111:9117'
+  labels:
+   Cacher: 'Oui'
 ################################################
  XXXX:
   image: ''
@@ -31,7 +54,7 @@ services:      #
   ports:
    - ''
   labels:
-   Cacher: 'oui'
+   Cacher: 'Oui'
 ################################################
  KMS:
   image: 'mikolatero/vlmcsd'
@@ -42,8 +65,8 @@ services:      #
   ports:
    - '1688:1688'
   labels:
-   Cacher: 'oui'
+   Cacher: 'Oui'
 ################################################
 volumes:
- XXXX:
+ Jackett:
   external: false
