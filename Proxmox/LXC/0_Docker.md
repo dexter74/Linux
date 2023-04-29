@@ -9,7 +9,7 @@ Description              : Debian GNU/Linux 11 (bullseye)
 Release                  : 11
 Codename                 : bullseye
 Conteneur non privilégié : Non (Important)
-Fonctionnalité           : 
+Fonctionnalité           : Imbriqué
 ```
 
 
