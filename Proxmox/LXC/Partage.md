@@ -1,7 +1,6 @@
 #### Création du fichier Credentials
-```
+```bash
 mkdir /etc/credentials;
-# Création du fichier .smbpassword:
 echo "username=
 password=
 vers=3.0
