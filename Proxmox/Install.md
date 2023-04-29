@@ -132,7 +132,8 @@ echo "[Unit]
 ####################################################################################################################################
 echo "[Unit]
   Description=Montage du partage Music
-  Requires=remote-fs-pre.target
+  Requires=
+  
   After=network-online.service
 
 [Mount]
@@ -184,6 +185,9 @@ clear;
 USERNAME=$(id 1000 | cut -d  ")" -f 1 | cut -d "(" -f 2)
 mkdir -p /mnt/{Download,Home,Music,Video};
 chown -R $USERNAME:users /mnt/{Download,Home,Music,Video};
+
+# Pre-requis:
+systemctl enable systemd-networkd-wait-online.service
 
 systemctl daemon-reload;
 systemctl stop  mnt-{Download,Home,Music,Video}.mount;
