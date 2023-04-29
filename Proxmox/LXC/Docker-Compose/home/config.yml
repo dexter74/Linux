@@ -66,6 +66,34 @@ message:
   title: "Optional message!"
   icon: "fa fa-exclamation-triangle"
   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+
+
+services:
+  - name: "Application"
+    icon: "fas fa-code-branch"
+    items:
+      - name: "Awesome app"
+        logo: "assets/tools/sample.png"
+        subtitle: "Bookmark example"
+        tag: "app"
+        keywords: "self hosted reddit"
+        url: "https://www.reddit.com/r/selfhosted/"
+        target: "_blank"
+      - name: "Another one"
+        logo: "assets/tools/sample2.png"
+        subtitle: "Another application"
+        tag: "app"
+        tagstyle: "is-success"
+        url: "#"
+  - name: "Other group"
+    icon: "fas fa-heartbeat"
+    items:
+      - name: "Pi-hole"
+        logo: "assets/tools/sample.png"
+        tag: "other"
+        url: "http://192.168.0.151/admin"
+        type: "PiHole"
+        target: "_blank"
 #########################################################################################################
 # Configuration du Pied de page
 footer: 'Mon Copyright'
