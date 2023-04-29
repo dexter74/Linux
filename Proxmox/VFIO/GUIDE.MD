@@ -35,6 +35,8 @@ echo "blacklist amdgpu"   > /etc/modprobe.d/blacklist.conf;
 echo "blacklist nouveau" >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist nvidia"  >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist radeon"  >> /etc/modprobe.d/blacklist.conf;
+
+echo "blacklist snd_hda_intel" >> /etc/modprobe.d/blacklist.conf;
 ```
 
 ### Attacher GPU au module VFIO
