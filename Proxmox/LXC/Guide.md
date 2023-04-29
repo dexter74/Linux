@@ -2,6 +2,13 @@
 ## <p align='center'> Création d'un Conteneur LXC sous Debian disposant de Docker </p>
 --------------------------------------------------------------------------------------------------------------------------------------------
 
+#### Création du conteneur LXC
+```
+Conteneur non privilégié : A définir
+Fonctionnalité           : A définir
+```
+
+
 #### Accés SSH
 ```
 sed -i -e 's/\#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config;
