@@ -8,8 +8,8 @@ Distributor ID           : Debian
 Description              : Debian GNU/Linux 11 (bullseye)
 Release                  : 11
 Codename                 : bullseye
-Conteneur non privilégié : A définir
-Fonctionnalité           : A définir
+Conteneur non privilégié : Non (Important)
+Fonctionnalité           : 
 ```
 
 
