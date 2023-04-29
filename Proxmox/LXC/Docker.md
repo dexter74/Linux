@@ -44,3 +44,6 @@ curl -L "https://github.com/docker/compose/releases/download/v2.17.3/docker-comp
 chmod +x /usr/local/bin/docker-compose;
 docker-compose --version;
 ```
+
+#### Libérer le port 53 ([GUide](https://github.com/AdguardTeam/AdGuardHome/wiki/FAQ#bindinuse))
+
