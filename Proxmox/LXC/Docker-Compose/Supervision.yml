@@ -4,7 +4,7 @@ services:      #
 ################
 #
 ######################################################
- adminer:
+ Adminer:
   image: 'adminer'
   container_name: 'adminer'
   network_mode: 'bridge'
@@ -17,7 +17,20 @@ services:      #
   ports:
    - '644:8080'
   labels:
-   Cacher: 'Oui'
+   Cacher: 'Non'
+######################################################
+ Dozzle:
+  image: 'amir20/dozzle'
+  container_name: 'dozzle'
+  network_mode: 'bridge'
+  restart: 'unless-stopped'
+  hostname: 'dozzle'
+  volumes:
+   - '/var/run/docker.sock:/var/run/docker.sock'
+  ports:
+   - '1005:8080'
+  labels:
+   Cacher: 'Non'
 ######################################################
  NginxProxyManager:
   image: 'jc21/nginx-proxy-manager'
@@ -43,7 +56,7 @@ services:      #
    - '81:81'
    - '443:443'
   labels:
-   Cacher: 'Oui'
+   Cacher: 'Non'
 ######################################################
 volumes:
  nginx_config:
