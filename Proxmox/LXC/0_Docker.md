@@ -11,8 +11,9 @@ Codename                 : bullseye
 Conteneur non privilégié : Non (Important)
 Fonctionnalité           : Imbriqué
 ```
+<br />
 
-
+--------------------------------------------------------------------------------------------------------------------------------------------
 #### Accés SSH
 ```
 sed -i -e 's/\#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config;
@@ -20,7 +21,6 @@ nano /etc/ssh/sshd_config;
 systemctl restart ssh;
 systemctl status ssh;
 ```
-
 #### Installation des prérequis
 ```bash
 apt update;
@@ -44,7 +44,9 @@ curl -L "https://github.com/docker/compose/releases/download/v2.17.3/docker-comp
 chmod +x /usr/local/bin/docker-compose;
 docker-compose --version;
 ```
+<br />
 
+--------------------------------------------------------------------------------------------------------------------------------------------
 #### Libérer le port 53 pour ADGuardHome ([Gude](https://github.com/AdguardTeam/AdGuardHome/wiki/FAQ#bindinuse))
 ```
 lsof -i :53;
@@ -55,4 +57,11 @@ DNSStubListener=no" > /etc/systemd/resolved.conf.d/adguardhome.conf;
 mv /etc/resolv.conf /etc/resolv.conf.backup;
 ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf;
 systemctl reload-or-restart systemd-resolved;
+```
+<br />
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+#### Transcodage Vidéo ([Guide](https://ketanvijayvargiya.com/302-hardware-transcoding-inside-an-unprivileged-lxc-container-on-proxmox/))
+```
+
 ```
