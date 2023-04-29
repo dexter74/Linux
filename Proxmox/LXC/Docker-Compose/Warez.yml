@@ -76,3 +76,5 @@ services:      #
 volumes:
  Jackett:
   external: false
+ Radarr:
+  external: false
