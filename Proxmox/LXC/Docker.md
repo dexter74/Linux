@@ -45,5 +45,5 @@ chmod +x /usr/local/bin/docker-compose;
 docker-compose --version;
 ```
 
-#### Libérer le port 53 ([GUide](https://github.com/AdguardTeam/AdGuardHome/wiki/FAQ#bindinuse))
+#### Libérer le port 53 ([Gude](https://github.com/AdguardTeam/AdGuardHome/wiki/FAQ#bindinuse))
 
