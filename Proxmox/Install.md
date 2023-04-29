@@ -98,6 +98,7 @@ sudo pveum user modify "$UTILISATEUR" -group Administrateurs;
 
 ----------------------------------------------------------------------------------------------------------------------------------
 #### Partage
+
 ```bash
 mkdir /etc/credentials;
 
