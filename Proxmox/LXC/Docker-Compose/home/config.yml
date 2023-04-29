@@ -80,7 +80,7 @@ services:
         url: "http://192.168.0.1"
         target: "_blank"
       - name: "ASUSTOR"
-        logo: "assets/tools/sample2.png"
+        logo: "assets/tools/sample.png"
         subtitle: "NAS"
         tag: "app"
         tagstyle: "is-success"
@@ -96,7 +96,6 @@ services:
         url: "http://192.168.0.6:9000/"
         type: "Portainer"
         target: "_blank"
-
 
 #########################################################################################################
 # Configuration du Pied de page
