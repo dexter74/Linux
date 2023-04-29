@@ -21,6 +21,8 @@ services:      #
    MYSQL_PASSWORD: 'admin'
   volumes:
    - 'mariadb:/config'
+  labels:
+   Cacher: 'Oui'
 ##################################
 volumes:
  mariadb:
