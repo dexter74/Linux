@@ -3,7 +3,22 @@ version: '3.9' #
 services:      #
 ################
 #
-##################################
+################################################
+ Flaresolverr:
+  image: 'ghcr.io/flaresolverr/flaresolverr'
+  container_name: 'flaresolverr'
+  network_mode: 'bidge'
+  restart: 'unless-stopped'
+  hostname: 'flaresolverr'
+  environment:
+   LOG_LEVEL: 'info'
+   LOG_HTML: 'false'
+   CAPTCHA_SOLVER: 'none'
+  ports:
+   - '1115:8191'
+  labels:
+   Cacher: 'oui'
+################################################
  XXXX:
   image: ''
   container_name: ''
@@ -17,7 +32,7 @@ services:      #
    - ''
   labels:
    Cacher: 'oui'
-##################################
+################################################
  KMS:
   image: 'mikolatero/vlmcsd'
   container_name: 'kms'
@@ -28,7 +43,7 @@ services:      #
    - '1688:1688'
   labels:
    Cacher: 'oui'
-##################################
+################################################
 volumes:
  XXXX:
   external: false
