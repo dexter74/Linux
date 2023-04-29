@@ -58,10 +58,10 @@ sudo pveum group del   Audit 2>/dev/null;
 sudo pveum group del   Stockage 2>/dev/null;
 sudo pveum group del   Utilisateurs 2>/dev/null;
 sudo pveum group del   VMadmin  2>/dev/null;
-sudo pveum pool del     100.LXC;
-sudo pveum pool del     200.Linux;
-sudo pveum pool del     300.Windows;
-sudo pveum pool del     400.Templates;
+sudo pveum pool del    100.LXC;
+sudo pveum pool del    200.Linux;
+sudo pveum pool del    300.Windows;
+sudo pveum pool del    400.Templates;
 sudo pveum user delete $UTILISATEUR 2>/dev/null;
 
 # Création des Groupes:
