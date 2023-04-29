@@ -22,7 +22,7 @@ services:      #
    - '53:53/tcp' # DNS
    - '3272:3272' # WebUI
   labels:
-   Cacher: 'oui'
+   Cacher: 'Oui'
 ######################################################
 volumes:
  adguardhome_conf:
