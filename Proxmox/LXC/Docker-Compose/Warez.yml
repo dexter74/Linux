@@ -53,6 +53,29 @@ services:      #
   labels:
    Cacher: 'Non'
 ################################################
+ qbittorrent:
+  image: 'linuxserver/qbittorrent'
+  container_name: 'qbittorrent'
+  network_mode: 'bridge'
+  restart: 'unless-stopped'
+  hostname: 'qbittorrent'
+  sysctls:
+   - net.ipv6.conf.all.disable_ipv6=1
+  dns:
+   - 192.168.0.1
+   - 8.8.8.8
+  environment:
+   TZ: 'EUROPE\PARIS'
+   PUID: '0'
+   PGID: '0'
+  volumes:
+   - 'Qbittorrent:/config'
+  ports:
+   - '6881:6881' # Tranmission
+   - '1110:1007' # WebUI
+  labels:
+   Cacher: 'Non'
+################################################
  Radarr:
   image: 'linuxserver/radarr'
   container_name: 'radarr'
@@ -76,5 +99,7 @@ services:      #
 volumes:
  Jackett:
   external: false
+ Qbittorrent:
+   external: false
  Radarr:
   external: false
