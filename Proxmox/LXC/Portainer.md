@@ -21,3 +21,8 @@ docker run -d \
   portainer/portainer-ce \
   --hide-label Cacher="Oui"
 ```
+
+#### Accéder à l'URL
+```
+Port 9000 en http
+```
