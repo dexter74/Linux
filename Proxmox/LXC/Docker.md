@@ -24,7 +24,7 @@ systemctl status ssh;
 #### Installation des prérequis
 ```bash
 apt update;
-apt install -y ca-certificates curl gnupg;
+apt install -y ca-certificates curl gnupg net-tools;
 ```
 
 #### Dépôt
