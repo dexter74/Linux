@@ -60,40 +60,44 @@ links:
 #########################################################################################################
 
 #########################################################################################################
-# Configuration du Contenu
+# Contenu Haut
 message:
   style: "is-warning"
   title: "Optional message!"
   icon: "fa fa-exclamation-triangle"
   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-
-
+#########################################################################################################
+# Contenu Milieu
 services:
-  - name: "Application"
+  - name: "Panel d'administation"
     icon: "fas fa-code-branch"
     items:
-      - name: "Awesome app"
+      - name: "Routeur"
         logo: "assets/tools/sample.png"
-        subtitle: "Bookmark example"
+        subtitle: "ASUS RT-AC88U"
         tag: "app"
         keywords: "self hosted reddit"
-        url: "https://www.reddit.com/r/selfhosted/"
+        url: "http://192.168.0.1"
         target: "_blank"
-      - name: "Another one"
+      - name: "ASUSTOR"
         logo: "assets/tools/sample2.png"
-        subtitle: "Another application"
+        subtitle: "NAS"
         tag: "app"
         tagstyle: "is-success"
-        url: "#"
-  - name: "Other group"
+        url: "http://192.168.0.3:8000"
+        target: "_blank"
+
+  - name: "Applications"
     icon: "fas fa-heartbeat"
     items:
-      - name: "Pi-hole"
+      - name: "Portainer"
         logo: "assets/tools/sample.png"
         tag: "other"
-        url: "http://192.168.0.151/admin"
-        type: "PiHole"
+        url: "http://192.168.0.6:9000/"
+        type: "Portainer"
         target: "_blank"
+
+
 #########################################################################################################
 # Configuration du Pied de page
 footer: 'Mon Copyright'
