@@ -24,6 +24,7 @@ services:      #
   labels:
    Cacher: 'Non'
 ###################################################################
+# DATABASE: bitwarden | USER: bitwarden | PASS: bitwarden
  bitwarden:
   image: 'vaultwarden/server'
   container_name: 'bitwarden'
