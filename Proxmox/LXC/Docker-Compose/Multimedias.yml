@@ -13,9 +13,9 @@ services:
    GIDLIST: '100'
   volumes:
    - 'Emby:/config'
-   - '/mnt/Download:/Download'
-   - '/mnt/Music:/Music'
-   - '/mnt/Video:/Video'
+   - '/mnt/Download:/media/Download'
+   - '/mnt/Music:/media/Music'
+   - '/mnt/Video:/media/Video'
   ports:
    - '8096:8096' # HTTP
 ##############################
