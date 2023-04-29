@@ -1,0 +1,30 @@
+################
+version: '3.9' #
+services:      #
+################
+#
+######################################################
+#
+ adguardhome:
+  image: 'adguard/adguardhome'
+  container_name: 'adguardhome'
+  network_mode: 'bridge'
+  restart: 'unless-stopped'
+  hostname: 'adguardhome'
+  environment:
+   TZ: 'Europe/Paris'
+  volumes:
+   - '/etc/localtime:/etc/localtime:ro'
+   - 'adguardhome_conf:/opt/adguardhome/conf'
+   - 'adguardhome_work:/opt/adguardhome/work'
+  ports:
+   - '3000:3000' # Installation 
+  labels:
+   cacher: 'oui'
+######################################################
+volumes:
+ adguardhome_conf:
+  external: false
+ adguardhome_work:
+  external: false
+######################################################
