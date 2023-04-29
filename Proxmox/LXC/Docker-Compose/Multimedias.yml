@@ -1,6 +1,6 @@
 version: '3.9'
 services:
-########################################
+###############################################
  Emby:
   image: 'emby/embyserver'
   container_name: 'emby'
@@ -18,7 +18,7 @@ services:
    - '/mnt/Video:/media/Video'
   ports:
    - '8096:8096' # HTTP
-########################################
+###############################################
  Jellyfin:
   image: 'linuxserver/jellyfin'
   container_name: 'jellyfin'
@@ -39,10 +39,10 @@ services:
    - '8097:8096'
   labels:
    Cacher: 'Non'
-########################################
+###############################################
 volumes:
  Emby:
   external: false
  Jellyfin:
   external: false
-########################################
+###############################################
