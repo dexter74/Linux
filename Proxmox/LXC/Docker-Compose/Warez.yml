@@ -25,7 +25,7 @@ services:      #
   network_mode: 'bridge'
   restart: 'unless-stopped'
   hostname: 'jackett'
-  sysctl:
+  sysctls:
    - net.ipv6.conf.all.disable_ipv6=1
   dns:
    - 192.168.0.1
