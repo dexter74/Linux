@@ -1,6 +1,11 @@
 #### Torrent
 ```bash
 clear;
+# ------------------------------------------------------------------------------------------------------------------
+CHEMIN=/var/lib/docker/volumes/
+STACK=warez
+CONTENEUR=Qbittorrent
+# ------------------------------------------------------------------------------------------------------------------
 docker stop qbittorrent;
 # ------------------------------------------------------------------------------------------------------------------
 echo "[BitTorrent]
@@ -22,7 +27,7 @@ WebUI\Port=1007
 WebUI\HostHeaderValidation=false
 
 [WebUI]
-HostHeaderValidation=false" > /var/lib/docker/volumes/warez_Qbittorrent/_data/qBittorrent/qBittorrent.conf
+HostHeaderValidation=false" > $CHEMIN/${STACK}_Qbittorrent/_data/qBittorrent/qBittorrent.conf
 # ------------------------------------------------------------------------------------------------------------------
 docker start qbittorrent;
 ```
