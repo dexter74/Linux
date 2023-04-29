@@ -117,11 +117,11 @@ nano /etc/credentials/.smbpassword;
 ####################################################################################################################################
 echo "[Unit]
   Description=Montage du partage Download
-  Requires=network-online.target
+  Requires=remote-fs-pre.target
   After=network-online.service
 
 [Mount]
-  What=//192.168.1.32/Download
+  What=//192.168.0.3/Download
   Where=/mnt/Download
   Type=cifs
   TimeoutSec=5s
@@ -132,11 +132,11 @@ echo "[Unit]
 ####################################################################################################################################
 echo "[Unit]
   Description=Montage du partage Music
-  Requires=network-online.target
+  Requires=remote-fs-pre.target
   After=network-online.service
 
 [Mount]
-  What=//192.168.1.32/Music
+  What=//192.168.0.3/Music
   Where=/mnt/Music
   Type=cifs
   TimeoutSec=5s
@@ -147,11 +147,11 @@ echo "[Unit]
 ####################################################################################################################################
 echo "[Unit]
   Description=Montage du partage Video
-  Requires=network-online.target
+  Requires=remote-fs-pre.target
   After=network-online.service
 
 [Mount]
-  What=//192.168.1.32/Video
+  What=//192.168.0.3/Video
   Where=/mnt/Video
   Type=cifs
   TimeoutSec=5s
@@ -162,11 +162,11 @@ echo "[Unit]
 ####################################################################################################################################
 echo "[Unit]
   Description=Montage du partage Home
-  Requires=network-online.target
+  Requires=remote-fs-pre.target
   After=network-online.service
 
 [Mount]
-  What=//192.168.1.32/Home
+  What=//192.168.0.3/Home
   Where=/mnt/Home
   Type=cifs
   TimeoutSec=5s
@@ -191,5 +191,5 @@ systemctl disable --now mnt-{Download,Home,Music,Video}.mount;
 
 systemctl start mnt-{Download,Home,Music,Video}.mount;
 systemctl enable --now mnt-{Download,Home,Music,Video}.mount;
-systemctl status --now mnt-{Download,Home,Music,Video}.mount | grep "mount\|Active:" ;
+systemctl status --now mnt-{Download,Home,Music,Video}.mount | grep "mount\|Active:";
 ```
