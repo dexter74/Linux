@@ -1,0 +1,28 @@
+################
+version: "3.9" #
+services:      #
+################
+#
+##################################
+# Base de Donnée MariaDB
+ DB:
+  image: 'linuxserver/mariadb'
+  container_name: 'mariadb'
+  network_mode: 'bridge'
+  restart: 'unless-stopped'
+  hostname: 'mariadb'
+  environment:
+   TZ: 'EUROPE\PARIS'
+   PUID: '0'
+   PGID: '0'
+   MYSQL_ROOT_PASSWORD: 'root'
+   MYSQL_DATABASE: 'default'
+   MYSQL_USER: 'marc'
+   MYSQL_PASSWORD: 'admin'
+  volumes:
+   - 'mariadb:/config'
+##################################
+volumes:
+ mariadb:
+  external: false
+##################################
