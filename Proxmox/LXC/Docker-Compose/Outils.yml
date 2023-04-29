@@ -3,7 +3,7 @@ version: '3.9' #
 services:      #
 ################
 #
-######################################################
+###################################################################
  adguardhome:
   image: 'adguard/adguardhome'
   container_name: 'adguardhome'
@@ -22,11 +22,34 @@ services:      #
    - '53:53/tcp' # DNS
    - '3272:3272' # WebUI
   labels:
-   Cacher: 'Oui'
-######################################################
+   Cacher: 'Non'
+###################################################################
+ Bitwarden:
+  image: 'vaultwarden/server'
+  container_name: 'bitwarden'
+  network_mode: 'bridge'
+  restart: 'unless-stopped'
+  hostname: 'bitwarden'
+  external_links:
+   - 'mariadb:db'
+  environment:
+   TZ: 'Europe/Paris'
+   DOMAIN: 'http://db'
+   DATA_FOLDER: 'data'
+   ADMIN_TOKEN: 'admin'
+   DATABASE_URL: 'mysql://bitwarden:bitwarden@db:3306/bitwarden'
+  volumes:
+    - 'bitwarden:/data'
+  ports:
+   - '7777:80'
+   - '3012:3012'
+  labels:
+   Cacher: 'Non'
+###################################################################
 volumes:
  adguardhome_conf:
   external: false
  adguardhome_work:
   external: false
-######################################################
+ bitwarden:
+  external: false
