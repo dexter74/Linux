@@ -13,7 +13,7 @@ Session\Port=60221
 Session\QueueingSystemEnabled=false
 
 [Downloads]
-SavePath=/mnt/Download/Qbitorrent
+SavePath=/media/Download/Torrent
 
 [%General]
 Locale=fr_FR
