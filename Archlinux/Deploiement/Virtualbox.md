@@ -44,6 +44,7 @@ BOOT=+512M
 SWAP=+3G
 SYSTEM=+20G
 HOME=+8G
+VG=vg0
 ```
 
 ###### Pacman
@@ -57,10 +58,10 @@ pacman -Sy --noconfirm archlinux-keyring;
 ```bash
 mount -R -f /mnt /mnt/*;
 swapoff -a -v;
-echo "yes" | lvremove /dev/vg0/SWAP;
-echo "yes" | lvremove /dev/vg0/SYSTEM;
-echo "yes" | lvremove /dev/vg0/HOME;
-echo "yes" | vgremove vg0;
+echo "yes" | lvremove /dev/$VG/SWAP;
+echo "yes" | lvremove /dev/$VG/SYSTEM;
+echo "yes" | lvremove /dev/$VG/HOME;
+echo "yes" | vgremove $VG;
 echo "yes" | pvremove ${DISK}2;
 
 dd if=/dev/zero of=${DISK}  bs=512  count=1;
@@ -73,16 +74,16 @@ partprobe ${DISK}2;
 ###### LVM
 ```bash
 echo "yes" | pvcreate ${DISK}2;
-echo "yes" | vgcreate vg0 ${DISK}2;
-echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP vg0;
-echo "yes" | lvcreate -n SYSTEM -L $SIZE_SYST vg0;
-echo "yes" | lvcreate -n HOME   -L $SIZE_HOME vg0;
+echo "yes" | vgcreate $VG ${DISK}2;
+echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP $VG;
+echo "yes" | lvcreate -n SYSTEM -L $SIZE_SYST $VG;
+echo "yes" | lvcreate -n HOME   -L $SIZE_HOME $VG;
 echo "yes" | mkfs.fat -F32 ${DISK}1;
-echo "yes" | mkswap /dev/vg0/SWAP;
-echo "yes" | mkfs -t ext4 /dev/vg0/SYSTEM;
-echo "yes" | mkfs -t ext4 /dev/vg0/HOME;
-swapon /dev/vg0/SWAP;
-mount /dev/vg0/SYSTEM /mnt;
-mkdir -p /mnt/home && mount /dev/vg0/HOME /mnt/home;
+echo "yes" | mkswap /dev/$VG/SWAP;
+echo "yes" | mkfs -t ext4 /dev/$VG/SYSTEM;
+echo "yes" | mkfs -t ext4 /dev/$VG/HOME;
+swapon /dev/$VG/SWAP;
+mount /dev/$VG/SYSTEM /mnt;
+mkdir -p /mnt/home && mount /dev/$VG/HOME /mnt/home;
 mkdir -p /mnt/boot && mount ${DISK}1  /mnt/boot;
 ```
