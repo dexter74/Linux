@@ -154,11 +154,13 @@ pacstrap /mnt samba;
 genfstab -U /mnt > /mnt/etc/fstab;
 ```
 
-###### Chroot
+###### Chroot (ps -fu; kill -9 XXXX)
 ```base
-# Reprendre la main sur un Chroot: ps -fu; kill -9 XXXX
 arch-chroot /mnt
 ```
+
+
+
 
 ###### Pacman
 ```bash
