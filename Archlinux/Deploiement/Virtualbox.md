@@ -10,6 +10,13 @@ Disque-Dur: 32 Go
 Mémoire-Vive: 4 Go
 ```
 
+#### Redirection de Port (Configuration > Réseau)
+Permet l'accès SSH depuis l'hôte
+
+![image](https://user-images.githubusercontent.com/35907/235335563-f902952d-d02d-4e03-a7cb-705a92f2fccf.png)
+
+
+
 --------------------------------------------------------------------------------------------------------------------------------------------
 ### Installation d'Archlinux
 ###### Définir le clavier en FR
