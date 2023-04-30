@@ -100,27 +100,53 @@ rm -rf /mnt 2>/dev/null;
 
 ###### Packages
 ```bash
-
-pacstrap /mnt base;
-pacstrap /mnt linux;
-pacstrap /mnt base-devel;
-pacstrap /mnt fakeroot;
-
-pacstrap /mnt efibootmgr;
 pacstrap /mnt amd-ucode;
-pacstrap /mnt lvm2;
-pacstrap /mnt ntfs-3g;
-pacstrap /mnt virtualbox-guest-utils;
-pacstrap /mnt linux-firmware;
-pacstrap /mnt linux-headers;
-
+pacstrap /mnt base;
+pacstrap /mnt base-devel;
+pacstrap /mnt bash-completion;
+pacstrap /mnt blueman;
+pacstrap /mnt curl;
+pacstrap /mnt binutils;
+pacstrap /mnt efibootmgr;
 pacstrap /mnt dhcpcd;
 pacstrap /mnt dhclient;
-
-pacstrap /mnt sudo;
-pacstrap /mnt openssh;
-pacstrap /mnt go;
+pacstrap /mnt dnsutils;
+pacstrap /mnt fakeroot;
+pacstrap /mnt gtk-engine-murrine;
+pacstrap /mnt gtk-engines;
 pacstrap /mnt git;
+pacstrap /mnt go;
+pacstrap /mnt gvfs gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb;
+pacstrap /mnt linux;
+pacstrap /mnt linux-firmware;
+pacstrap /mnt linux-headers;
+pacstrap /mnt lsb-release;
+pacstrap /mnt lvm2;
+pacstrap /mnt man;
+pacstrap /mnt nano;
+pacstrap /mnt neofetch;
+pacstrap /mnt net-tools;
+pacstrap /mnt networkmanager;
+pacstrap /mnt ntfs-3g;
+pacstrap /mnt openssh;
+pacstrap /mnt p7zip;
+pacstrap /mnt pacman-contrib;
+pacstrap /mnt pulseaudio;
+pacstrap /mnt pulseaudio-alsa;
+pacstrap /mnt pulseaudio-bluetooth;
+pacstrap /mnt pulseaudio-equalizer;
+pacstrap /mnt smbclient;
+pacstrap /mnt sudo;
+pacstrap /mnt unzip;
+pacstrap /mnt usbutils;
+pacstrap /mnt virtualbox-guest-utils;
+pacstrap /mnt wget;
+pacstrap /mnt zip;
+
+pacstrap /mnt logrotate;
+pacstrap /mnt ntp;
+pacstrap /mnt openssh;
+pacstrap /mnt samba;
 ```
 
 ###### FSTAB
