@@ -3,15 +3,14 @@
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-#### Création de la Machine Virtuelle
+### Création de la Machine Virtuelle
 ```
 aaa
 ```
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-#### Installation d'Archlinux
-
-##### Définir le clavier en FR
+### Installation d'Archlinux
+###### Définir le clavier en FR
 ```bash
 loadkeys fr;
 ```
