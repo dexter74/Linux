@@ -56,6 +56,7 @@ pacman -Sy --noconfirm archlinux-keyring;
 
 ###### Disque-Dur
 ```bash
+clear;
 mount -R -f /mnt /mnt/*;
 swapoff -a -v;
 echo "yes" | lvremove /dev/$VG/SWAP;
@@ -74,11 +75,12 @@ lsblk | grep "sd[a-z]";
 
 ###### LVM
 ```bash
+clear;
 echo "yes" | pvcreate ${DISK}2;
 echo "yes" | vgcreate $VG ${DISK}2;
-echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP $VG;
-echo "yes" | lvcreate -n SYSTEM -L $SIZE_SYST $VG;
-echo "yes" | lvcreate -n HOME   -L $SIZE_HOME $VG;
+echo "yes" | lvcreate -n SWAP   -L $SWAP $VG;
+echo "yes" | lvcreate -n SYSTEM -L $SYSTEM $VG;
+echo "yes" | lvcreate -n HOME   -L $HOME $VG;
 echo "yes" | mkfs.fat -F32 ${DISK}1;
 echo "yes" | mkswap /dev/$VG/SWAP;
 echo "yes" | mkfs -t ext4 /dev/$VG/SYSTEM;
@@ -87,4 +89,6 @@ swapon /dev/$VG/SWAP;
 mount /dev/$VG/SYSTEM /mnt;
 mkdir -p /mnt/home && mount /dev/$VG/HOME /mnt/home;
 mkdir -p /mnt/boot && mount ${DISK}1  /mnt/boot;
+
+lsblk | grep "sd[a-z]\|SWAP\|$VG";
 ```
