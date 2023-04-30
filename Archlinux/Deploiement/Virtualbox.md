@@ -165,13 +165,15 @@ PASSWORD=admin
 COMMENT='Marc Jaffré'
 ```
 
-
-
 ###### Pacman
 ```bash
 sed -i -e "s/\#ParallelDownloads \= 5/ParallelDownloads = 5/g" /mnt/etc/pacman.conf;
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /mnt/etc/pacman.conf;
 pacman -Sy --noconfirm archlinux-keyring;
+```
+###### Autoriser SSH (root)
+```bash
+sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ssh/sshd_config;
 ```
 
 ###### Langue FR et Clavier en Azerty
