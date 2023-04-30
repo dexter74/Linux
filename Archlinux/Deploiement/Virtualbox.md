@@ -36,7 +36,7 @@ ssh root@127.0.0.1 -p 22
 <br />
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-### Installation ArchLinux
+### Préparation du Disque-Dur d'ArchLinux
 ###### Déclaration des variables
 ```bash
 DISK=/dev/sda
@@ -57,7 +57,7 @@ pacman -Sy --noconfirm archlinux-keyring;
 ###### Disque-Dur
 ```bash
 clear;
-mount -R -f /mnt /mnt/*;
+mount -R -f /mnt ;
 swapoff -a -v;
 echo "yes" | lvremove /dev/$VG/SWAP;
 echo "yes" | lvremove /dev/$VG/SYSTEM;
@@ -91,4 +91,82 @@ mkdir -p /mnt/home && mount /dev/$VG/HOME /mnt/home;
 mkdir -p /mnt/boot && mount ${DISK}1  /mnt/boot;
 
 lsblk | grep "sd[a-z]\|SWAP\|$VG";
+```
+
+###### Nettoyage
+```bash
+rm -rf /mnt 2>/dev/null;
+```
+
+###### Packages
+```bash
+pacstrap -i /mnt --noconfirm base linux
+pacstrap -i /mnt --noconfirm lvm2 efibootmgr
+pacstrap -i /mnt --noconfirm dhcpcd dhclient
+pacstrap -i /mnt --noconfirm amd-ucode
+pacstrap -i /mnt --noconfirm openssh
+pacstrap -i /mnt --noconfirm virtualbox-guest-utils
+pacstrap -i /mnt --noconfirm sudo
+pacstrap -i /mnt --noconfirm go
+pacstrap -i /mnt --noconfirm git
+pacstrap -i /mnt --noconfirm fakeroot
+pacstrap -i /mnt --noconfirm base-devel
+```
+
+###### FSTAB
+```bash
+genfstab -U /mnt > /mnt/etc/fstab;
+```
+
+###### Chroot
+```base
+# Reprendre la main sur un Chroot: ps -fu; kill -9 XXXX
+arch-chroot /mnt
+```
+
+###### Pacman
+```bash
+sed -i -e "s/\#ParallelDownloads \= 5/ParallelDownloads = 5/g" /mnt/etc/pacman.conf;
+sed -i "/\[multilib\]/,/Include/"'s/^#//' /mnt/etc/pacman.conf;
+pacman -Sy --noconfirm archlinux-keyring;
+```
+
+###### Langue FR et Clavier en Azerty
+```bash
+echo 'LANG=fr_FR.UTF-8'                 > /mnt/etc/locale.conf;
+echo 'LC_CTYPE="fr_FR.UTF-8"'          >> /mnt/etc/locale.conf;
+echo 'LC_NUMERIC="fr_FR.UTF-8"'        >> /mnt/etc/locale.conf;
+echo 'LC_TIME="fr_FR.UTF-8"'           >> /mnt/etc/locale.conf;
+echo 'LC_COLLATE="fr_FR.UTF-8"'        >> /mnt/etc/locale.conf;
+echo 'LC_MONETARY="fr_FR.UTF-8"'       >> /mnt/etc/locale.conf;
+echo 'LC_MESSAGES='                    >> /mnt/etc/locale.conf;
+echo 'LC_PAPER="fr_FR.UTF-8"'          >> /mnt/etc/locale.conf;
+echo 'LC_NAME="fr_FR.UTF-8"'           >> /mnt/etc/locale.conf;
+echo 'LC_ADDRESS="fr_FR.UTF-8"'        >> /mnt/etc/locale.conf;
+echo 'LC_TELEPHONE="fr_FR.UTF-8"'      >> /mnt/etc/locale.conf;
+echo 'LC_MEASUREMENT="fr_FR.UTF-8"'    >> /mnt/etc/locale.conf;
+echo 'LC_IDENTIFICATION="fr_FR.UTF-8"' >> /mnt/etc/locale.conf;
+echo 'LC_ALL='                         >> /mnt/etc/locale.conf;
+echo 'LANGUAGE="fr_FR"'                >> /mnt/etc/locale.conf;
+echo 'KEYMAP=fr-latin9'                 > /mnt/etc/vconsole.conf;
+echo 'FONT=eurlatgr'                   >> /mnt/etc/vconsole.conf;
+
+echo 'fr_FR.UTF-8 UTF-8'                > /mnt/etc/locale.gen;
+arch-chroot /mnt locale-gen;
+```
+
+###### MKINITCPIO
+```bash
+cp /mnt/etc/mkinitcpio.conf /mnt/etc/mkinitcpio.conf.old;
+chattr +i /mnt/etc/mkinitcpio.conf.old;
+sed -i -e "s/HOOKS\=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems udev resume keyboard keymap sd-vconsole fsck)/g" /mnt/etc/mkinitcpio.conf;
+arch-chroot /mnt mkinitcpio -p linux;
+```
+
+###### UEFI Boot (Loader + Entrées)
+```bash
+cp /mnt/etc/mkinitcpio.conf /mnt/etc/mkinitcpio.conf.old;
+chattr +i /mnt/etc/mkinitcpio.conf.old;
+sed -i -e "s/HOOKS\=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems udev resume keyboard keymap sd-vconsole fsck)/g" /mnt/etc/mkinitcpio.conf;
+arch-chroot /mnt mkinitcpio -p linux;
 ```
