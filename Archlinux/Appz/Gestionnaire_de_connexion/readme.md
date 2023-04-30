@@ -6,7 +6,6 @@ sudo pacman -Sy --noconfirm lightdm;
 ##### Suppléments
 ```bash
 sudo pacman -Sy --noconfirm lightdm-gtk-greeter;
-sudo pacman -Sy --noconfirm lightdm-gtk-greeter-settings;
 sudo pacman -Sy --noconfirm lightdm-webkit2-greeter;
 ```
 
