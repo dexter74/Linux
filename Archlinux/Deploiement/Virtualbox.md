@@ -157,7 +157,7 @@ arch-chroot /mnt
 
 ###### Déclaration de Variable
 ```bash
-NAME=Drthrax74
+NAME=Virtualbox
 DOM=home
 USERNAME=marc
 ID=1000
