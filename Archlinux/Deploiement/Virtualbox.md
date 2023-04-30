@@ -101,26 +101,26 @@ rm -rf /mnt 2>/dev/null;
 ###### Packages
 ```bash
 
-pacstrap /mnt --noconfirm base;
-pacstrap /mnt --noconfirm linux;
-pacstrap /mnt --noconfirm base-devel;
-pacstrap /mnt --noconfirm fakeroot;
+pacstrap /mnt base;
+pacstrap /mnt linux;
+pacstrap /mnt base-devel;
+pacstrap /mnt fakeroot;
 
-pacstrap /mnt --noconfirm efibootmgr;
-pacstrap /mnt --noconfirm amd-ucode;
-pacstrap /mnt --noconfirm lvm2;
+pacstrap /mnt efibootmgr;
+pacstrap /mnt amd-ucode;
+pacstrap /mnt lvm2;
 pacstrap /mnt ntfs-3g;
 pacstrap /mnt virtualbox-guest-utils;
 pacstrap /mnt linux-firmware;
 pacstrap /mnt linux-headers;
 
-pacstrap /mnt --noconfirm dhcpcd;
-pacstrap /mnt --noconfirm dhclient;
+pacstrap /mnt dhcpcd;
+pacstrap /mnt dhclient;
 
-pacstrap /mnt --noconfirm sudo;
-pacstrap /mnt --noconfirm openssh;
-pacstrap /mnt --noconfirm go;
-pacstrap /mnt --noconfirm git;
+pacstrap /mnt sudo;
+pacstrap /mnt openssh;
+pacstrap /mnt go;
+pacstrap /mnt git;
 ```
 
 ###### FSTAB
