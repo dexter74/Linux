@@ -178,26 +178,26 @@ sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ss
 
 ###### Langue FR et Clavier en Azerty
 ```bash
-echo 'LANG=fr_FR.UTF-8'                 > /mnt/etc/locale.conf;
-echo 'LC_CTYPE="fr_FR.UTF-8"'          >> /mnt/etc/locale.conf;
-echo 'LC_NUMERIC="fr_FR.UTF-8"'        >> /mnt/etc/locale.conf;
-echo 'LC_TIME="fr_FR.UTF-8"'           >> /mnt/etc/locale.conf;
-echo 'LC_COLLATE="fr_FR.UTF-8"'        >> /mnt/etc/locale.conf;
-echo 'LC_MONETARY="fr_FR.UTF-8"'       >> /mnt/etc/locale.conf;
-echo 'LC_MESSAGES='                    >> /mnt/etc/locale.conf;
-echo 'LC_PAPER="fr_FR.UTF-8"'          >> /mnt/etc/locale.conf;
-echo 'LC_NAME="fr_FR.UTF-8"'           >> /mnt/etc/locale.conf;
-echo 'LC_ADDRESS="fr_FR.UTF-8"'        >> /mnt/etc/locale.conf;
-echo 'LC_TELEPHONE="fr_FR.UTF-8"'      >> /mnt/etc/locale.conf;
-echo 'LC_MEASUREMENT="fr_FR.UTF-8"'    >> /mnt/etc/locale.conf;
-echo 'LC_IDENTIFICATION="fr_FR.UTF-8"' >> /mnt/etc/locale.conf;
-echo 'LC_ALL='                         >> /mnt/etc/locale.conf;
-echo 'LANGUAGE="fr_FR"'                >> /mnt/etc/locale.conf;
+echo 'LANG=fr_FR.UTF-8'                 > /etc/locale.conf;
+echo 'LC_CTYPE="fr_FR.UTF-8"'          >> /etc/locale.conf;
+echo 'LC_NUMERIC="fr_FR.UTF-8"'        >> /etc/locale.conf;
+echo 'LC_TIME="fr_FR.UTF-8"'           >> /etc/locale.conf;
+echo 'LC_COLLATE="fr_FR.UTF-8"'        >> /etc/locale.conf;
+echo 'LC_MONETARY="fr_FR.UTF-8"'       >> /etc/locale.conf;
+echo 'LC_MESSAGES='                    >> /etc/locale.conf;
+echo 'LC_PAPER="fr_FR.UTF-8"'          >> /etc/locale.conf;
+echo 'LC_NAME="fr_FR.UTF-8"'           >> /etc/locale.conf;
+echo 'LC_ADDRESS="fr_FR.UTF-8"'        >> /etc/locale.conf;
+echo 'LC_TELEPHONE="fr_FR.UTF-8"'      >> /etc/locale.conf;
+echo 'LC_MEASUREMENT="fr_FR.UTF-8"'    >> /etc/locale.conf;
+echo 'LC_IDENTIFICATION="fr_FR.UTF-8"' >> /etc/locale.conf;
+echo 'LC_ALL='                         >> /etc/locale.conf;
+echo 'LANGUAGE="fr_FR"'                >> /etc/locale.conf;
 
-echo 'KEYMAP=fr-latin9'                 > /mnt/etc/vconsole.conf;
-echo 'FONT=eurlatgr'                   >> /mnt/etc/vconsole.conf;
-echo 'fr_FR.UTF-8 UTF-8'                > /mnt/etc/locale.gen;
-arch-chroot /mnt locale-gen;
+echo 'KEYMAP=fr-latin9'                 > /etc/vconsole.conf;
+echo 'FONT=eurlatgr'                   >> /etc/vconsole.conf;
+echo 'fr_FR.UTF-8 UTF-8'                > /etc/locale.gen;
+locale-gen;
 
 mkdir -p /etc/X11/xorg.conf.d/;
 echo 'Section "InputClass"
@@ -211,22 +211,42 @@ EndSection' > /etc/X11/xorg.conf.d/00-keyboard.conf;
 
 ###### MKINITCPIO
 ```bash
+clear;
 cp /mnt/etc/mkinitcpio.conf /mnt/etc/mkinitcpio.conf.old;
 chattr +i /mnt/etc/mkinitcpio.conf.old;
-sed -i -e "s/HOOKS\=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems udev resume keyboard keymap sd-vconsole fsck)/g" /mnt/etc/mkinitcpio.conf;
-arch-chroot /mnt mkinitcpio -p linux;
+sed -i -e "s/HOOKS\=(base udev autodetect modconf kms keyboard keymap consolefont block filesystems fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems udev resume keyboard keymap sd-vconsole fsck)/g" /etc/mkinitcpio.conf;
+mkinitcpio -p linux;
 ```
 
 ###### UEFI Boot (Loader + Entrées)
 ```bash
-cp /mnt/etc/mkinitcpio.conf /mnt/etc/mkinitcpio.conf.old;
-chattr +i /mnt/etc/mkinitcpio.conf.old;
 
-# sed -i -e "s/HOOKS\=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems udev resume keyboard keymap sd-vconsole fsck)/g" /mnt/etc/mkinitcpio.conf;
-# sed -i -e "s/HOOKS\=(base udev autodetect modconf kms keyboard keymap consolefont block filesystems fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems udev resume keyboard keymap sd-vconsole fsck)/g" /etc/mkinitcpio.conf;
-
-mkinitcpio -p linux;
-```
+clear;
+# ---------------------------------------------------------------------------------------------
+UUID_SYSTEM=$(blkid | grep 'SYSTEM: UUID=' | cut -d '"' -f 2);
+# ---------------------------------------------------------------------------------------------
+bootctl --path=/boot install;
+# ---------------------------------------------------------------------------------------------
+echo "default arch01.conf
+timeout 5
+console-mode max
+editor no" > /boot/loader/loader.conf;
+# ---------------------------------------------------------------------------------------------
+echo "title Arch Linux (Normal)
+linux   /vmlinuz-linux
+initrd  /initramfs-linux.img
+initrd  /amd-ucode.img
+options root=UUID=$UUID_SYSTEM rw quiet splash loglevel=3" > /boot/loader/entries/arch01.conf;
+# ---------------------------------------------------------------------------------------------
+echo "title Arch Linux (Recovery)
+linux   /vmlinuz-linux
+initrd  /initramfs-linux-fallback.img
+initrd  /amd-ucode.img
+options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch02.conf;
+# ---------------------------------------------------------------------------------------------
+bootctl update;
+bootctl;
+# ---------------------------------------------------------------------------------------------```
 
 ###### Nom de la Machine
 ```bash
