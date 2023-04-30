@@ -11,18 +11,78 @@ Mémoire-Vive: 4 Go
 ```
 
 #### Redirection de Port (Configuration > Réseau)
-Permet l'accès SSH depuis l'hôte
+Permet l'accès SSH depuis l'hôte. (Port 22 de la VM rediriger vers le port 22 de la machine hôte Windows)
 
 ![image](https://user-images.githubusercontent.com/35907/235335576-9f380bc6-31b5-43a7-a757-a05491d15cfb.png)
 
+<br />
+
 --------------------------------------------------------------------------------------------------------------------------------------------
-### Installation d'Archlinux
+### Connexion SSH
 ###### Définir le clavier en FR
 ```bash
 loadkeys fr;
 ```
-
 ###### Définir le mot de passe du compte root
 ```
-passwd root;
+passwd;
+```
+
+###### Se connecter en SSH
+L'adresse de bouclage `127.0.0.1` ou `localhost` sur le port 22 qui correspond à au port d'accès externe le VM.
+```
+ssh root@127.0.0.1 -p 22
+```
+<br />
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+### Installation ArchLinux
+###### Déclaration des variables
+```bash
+DISK=/dev/sda
+BOOT=+512M
+SWAP=+3G
+SYSTEM=+20G
+HOME=+8G
+```
+
+###### Pacman
+```bash
+sed -i -e "s/\#ParallelDownloads \= 5/ParallelDownloads = 5/g" /etc/pacman.conf;
+sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf;
+pacman -Sy --noconfirm archlinux-keyring;
+```
+
+###### Disque-Dur
+```bash
+mount -R -f /mnt /mnt/*;
+swapoff -a -v;
+echo "yes" | lvremove /dev/vg0/SWAP;
+echo "yes" | lvremove /dev/vg0/SYSTEM;
+echo "yes" | lvremove /dev/vg0/HOME;
+echo "yes" | vgremove vg0;
+echo "yes" | pvremove ${DISK}2;
+
+dd if=/dev/zero of=${DISK}  bs=512  count=1;
+(echo "g"; echo "w") | fdisk ${DISK};
+(echo "n"; echo "1"; echo ""; echo "$BOOT" ; echo "t" ; echo "1" ; echo "w")      | fdisk $DISK; # EFI
+(echo "n"; echo "2"; echo ""; echo "" ; echo "t"; echo "2" ; echo "43"; echo "w") | fdisk $DISK; # LVM
+partprobe ${DISK}2;
+```
+
+###### LVM
+```bash
+echo "yes" | pvcreate ${DISK}2;
+echo "yes" | vgcreate vg0 ${DISK}2;
+echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP vg0;
+echo "yes" | lvcreate -n SYSTEM -L $SIZE_SYST vg0;
+echo "yes" | lvcreate -n HOME   -L $SIZE_HOME vg0;
+echo "yes" | mkfs.fat -F32 ${DISK}1;
+echo "yes" | mkswap /dev/vg0/SWAP;
+echo "yes" | mkfs -t ext4 /dev/vg0/SYSTEM;
+echo "yes" | mkfs -t ext4 /dev/vg0/HOME;
+swapon /dev/vg0/SWAP;
+mount /dev/vg0/SYSTEM /mnt;
+mkdir -p /mnt/home && mount /dev/vg0/HOME /mnt/home;
+mkdir -p /mnt/boot && mount ${DISK}1  /mnt/boot;
 ```
