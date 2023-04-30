@@ -167,13 +167,9 @@ COMMENT='Marc Jaffré'
 
 ###### Pacman
 ```bash
-sed -i -e "s/\#ParallelDownloads \= 5/ParallelDownloads = 5/g" /mnt/etc/pacman.conf;
-sed -i "/\[multilib\]/,/Include/"'s/^#//' /mnt/etc/pacman.conf;
+sed -i -e "s/\#ParallelDownloads \= 5/ParallelDownloads = 5/g" /etc/pacman.conf;
+sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf;
 pacman -Sy --noconfirm archlinux-keyring;
-```
-###### Autoriser SSH (root)
-```bash
-sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ssh/sshd_config;
 ```
 
 ###### Langue FR et Clavier en Azerty
@@ -212,8 +208,8 @@ EndSection' > /etc/X11/xorg.conf.d/00-keyboard.conf;
 ###### MKINITCPIO
 ```bash
 clear;
-cp /mnt/etc/mkinitcpio.conf /mnt/etc/mkinitcpio.conf.old;
-chattr +i /mnt/etc/mkinitcpio.conf.old;
+cp /etc/mkinitcpio.conf /etc/mkinitcpio.conf.old;
+chattr +i /etc/mkinitcpio.conf.old;
 sed -i -e "s/HOOKS\=(base udev autodetect modconf kms keyboard keymap consolefont block filesystems fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems udev resume keyboard keymap sd-vconsole fsck)/g" /etc/mkinitcpio.conf;
 mkinitcpio -p linux;
 ```
@@ -265,6 +261,16 @@ clear;
 
 (echo "$USERNAME:$PASSWORD") | chpasswd;
 (echo "root:$PASSWORD") | chpasswd;
+echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/admin;
+```
+
+###### Autoriser SSH (root)
+```bash
+sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ssh/sshd_config;
+```
+
+###### Sudoers l'utilisateur
+```bash
 echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/admin;
 ```
 
