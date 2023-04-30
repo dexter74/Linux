@@ -109,7 +109,8 @@ pacstrap /mnt --noconfirm fakeroot;
 pacstrap /mnt --noconfirm efibootmgr;
 pacstrap /mnt --noconfirm amd-ucode;
 pacstrap /mnt --noconfirm lvm2;
-pacstrap /mnt --noconfirm virtualbox-guest-utils;
+pacstrap /mnt ntfs-3g;
+pacstrap /mnt virtualbox-guest-utils;
 pacstrap /mnt linux-firmware;
 pacstrap /mnt linux-headers;
 
