@@ -110,6 +110,8 @@ pacstrap /mnt --noconfirm efibootmgr;
 pacstrap /mnt --noconfirm amd-ucode;
 pacstrap /mnt --noconfirm lvm2;
 pacstrap /mnt --noconfirm virtualbox-guest-utils;
+pacstrap /mnt linux-firmware;
+pacstrap /mnt linux-headers;
 
 pacstrap /mnt --noconfirm dhcpcd;
 pacstrap /mnt --noconfirm dhclient;
