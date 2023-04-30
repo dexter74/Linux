@@ -69,6 +69,7 @@ dd if=/dev/zero of=${DISK}  bs=512  count=1;
 (echo "n"; echo "1"; echo ""; echo "$BOOT" ; echo "t" ; echo "1" ; echo "w")      | fdisk $DISK; # EFI
 (echo "n"; echo "2"; echo ""; echo "" ; echo "t"; echo "2" ; echo "43"; echo "w") | fdisk $DISK; # LVM
 partprobe ${DISK}2;
+lsblk | grep "sd[a-z]";
 ```
 
 ###### LVM
