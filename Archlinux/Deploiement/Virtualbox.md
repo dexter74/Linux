@@ -297,6 +297,13 @@ runuser -l $USERNAME -c 'git clone https://aur.archlinux.org/yay.git /tmp/yay;'
 runuser -l $USERNAME -c 'cd /tmp/yay && makepkg -si --noconfirm;'
 ```
 
+###### YAY (Package)
+```bash
+runuser -l $USERNAME -c ';'
+
+```
+
+
 ###### Services
 ```bash
 clear;
