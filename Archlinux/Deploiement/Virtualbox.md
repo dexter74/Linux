@@ -120,6 +120,7 @@ pacstrap /mnt gvfs gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb;
 pacstrap /mnt linux;
 pacstrap /mnt linux-firmware;
 pacstrap /mnt linux-headers;
+pacstrap /mnt logrotate;
 pacstrap /mnt lsb-release;
 pacstrap /mnt lvm2;
 pacstrap /mnt man;
@@ -128,6 +129,7 @@ pacstrap /mnt neofetch;
 pacstrap /mnt net-tools;
 pacstrap /mnt networkmanager;
 pacstrap /mnt ntfs-3g;
+pacstrap /mnt ntp;
 pacstrap /mnt openssh;
 pacstrap /mnt p7zip;
 pacstrap /mnt pacman-contrib;
@@ -135,6 +137,7 @@ pacstrap /mnt pulseaudio;
 pacstrap /mnt pulseaudio-alsa;
 pacstrap /mnt pulseaudio-bluetooth;
 pacstrap /mnt pulseaudio-equalizer;
+pacstrap /mnt samba;
 pacstrap /mnt smbclient;
 pacstrap /mnt sudo;
 pacstrap /mnt unzip;
@@ -142,23 +145,25 @@ pacstrap /mnt usbutils;
 pacstrap /mnt virtualbox-guest-utils;
 pacstrap /mnt wget;
 pacstrap /mnt zip;
-
-pacstrap /mnt logrotate;
-pacstrap /mnt ntp;
-pacstrap /mnt openssh;
-pacstrap /mnt samba;
 ```
-
 ###### FSTAB
 ```bash
 genfstab -U /mnt > /mnt/etc/fstab;
 ```
-
 ###### Chroot (ps -fu; kill -9 XXXX)
 ```base
 arch-chroot /mnt
 ```
 
+###### Déclaration de Variable
+```bash
+NAME=Drthrax74
+DOM=home
+USERNAME=marc
+ID=1000
+PASSWORD=admin
+COMMENT='Marc Jaffré'
+```
 
 
 
@@ -186,11 +191,20 @@ echo 'LC_MEASUREMENT="fr_FR.UTF-8"'    >> /mnt/etc/locale.conf;
 echo 'LC_IDENTIFICATION="fr_FR.UTF-8"' >> /mnt/etc/locale.conf;
 echo 'LC_ALL='                         >> /mnt/etc/locale.conf;
 echo 'LANGUAGE="fr_FR"'                >> /mnt/etc/locale.conf;
+
 echo 'KEYMAP=fr-latin9'                 > /mnt/etc/vconsole.conf;
 echo 'FONT=eurlatgr'                   >> /mnt/etc/vconsole.conf;
-
 echo 'fr_FR.UTF-8 UTF-8'                > /mnt/etc/locale.gen;
 arch-chroot /mnt locale-gen;
+
+mkdir -p /etc/X11/xorg.conf.d/;
+echo 'Section "InputClass"
+    Identifier             "Keyboard Defaults"
+    MatchIsKeyboard        "yes"
+    Option "XkbLayout"     "fr"
+    Option "XkbVariant"    "oss"
+    Option "XkbOptions"    "compose:menu,terminate:ctrl_alt_bksp"
+EndSection' > /etc/X11/xorg.conf.d/00-keyboard.conf;
 ```
 
 ###### MKINITCPIO
@@ -205,6 +219,47 @@ arch-chroot /mnt mkinitcpio -p linux;
 ```bash
 cp /mnt/etc/mkinitcpio.conf /mnt/etc/mkinitcpio.conf.old;
 chattr +i /mnt/etc/mkinitcpio.conf.old;
-sed -i -e "s/HOOKS\=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems udev resume keyboard keymap sd-vconsole fsck)/g" /mnt/etc/mkinitcpio.conf;
-arch-chroot /mnt mkinitcpio -p linux;
+
+# sed -i -e "s/HOOKS\=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems udev resume keyboard keymap sd-vconsole fsck)/g" /mnt/etc/mkinitcpio.conf;
+# sed -i -e "s/HOOKS\=(base udev autodetect modconf kms keyboard keymap consolefont block filesystems fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems udev resume keyboard keymap sd-vconsole fsck)/g" /etc/mkinitcpio.conf;
+
+mkinitcpio -p linux;
 ```
+
+###### Nom de la Machine
+```bash
+clear;
+echo "127.0.0.1       localhost
+127.0.1.1       $NAME        $NAME
+#127.0.1.1      $NAME.$DOM        $NAME" > /etc/hosts;
+echo "$NAME" > /etc/hostname;
+```
+
+###### Les utilisateurs de la machine
+```bash
+clear;
+/usr/sbin/userdel -r $USERNAME 2>/dev/null;
+/usr/sbin/useradd --home-dir /home/$USERNAME --base-dir /home/$USERNAME --uid $ID --groups wheel,storage,power --no-user-group --shell /bin/bash --comment "$COMMENT" --create-home $USERNAME;
+
+(echo "$USERNAME:$PASSWORD") | chpasswd;
+(echo "root:$PASSWORD") | chpasswd;
+echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/admin;
+```
+
+###### Profil utilisateur
+```bash
+clear;
+runuser -l $USERNAME -c "mkdir -p ~/.config/";
+runuser -l $USERNAME -c 'echo "
+XDG_DESKTOP_DIR=\"\$HOME/Bureau\";
+XDG_DOCUMENTS_DIR=\"\$HOME/Documents\"
+XDG_DOWNLOAD_DIR=\"\$HOME/Telechargements\"
+XDG_TEMPLATES_DIR=\"\$HOME/Templates\"
+XDG_MUSIC_DIR=\"\$HOME/Musiques\"
+XDG_PICTURES_DIR=\"\$HOME/Images\"
+XDG_PUBLICSHARE_DIR=\"\$HOME/Public\"
+XDG_VIDEOS_DIR=\"\$HOME/Videos\" " > $HOME/.config/user-dirs.dirs';
+runuser -l $USERNAME -c "mkdir Bureau Documents Telechargements Templates Musiques Images Public Videos";
+```
+
+
