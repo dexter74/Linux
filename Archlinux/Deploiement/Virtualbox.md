@@ -284,4 +284,20 @@ XDG_VIDEOS_DIR=\"\$HOME/Videos\" " > $HOME/.config/user-dirs.dirs';
 runuser -l $USERNAME -c "mkdir Bureau Documents Telechargements Templates Musiques Images Public Videos";
 ```
 
+###### YAY
+```bash
+clear;
+runuser -l $USERNAME -c 'git clone https://aur.archlinux.org/yay.git /tmp/yay;'
+runuser -l $USERNAME -c 'cd /tmp/yay && makepkg -si --noconfirm;'
+```
 
+###### Services
+```bash
+clear;
+systemctl enable avahi-daemon.service;
+systemctl enable avahi-dnsconfd.service;
+systemctl enable NetworkManager;
+systemctl enable sshd;
+systemctl enable ntpd;
+systemctl enable systemd-timesyncd.service;
+```
