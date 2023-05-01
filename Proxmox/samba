@@ -49,34 +49,36 @@ net use * /delete /y
 # The [homes] feature is not supported running on a Samba Active Directory (AD) domain controller (DC).
 
 [homes]
-comment = Dossier Utilisateurs 
-browseable = no 
-read only = no
-writable = yes
-create mask = 0700
+comment        = Dossier Utilisateurs 
+browseable     = no 
+read only      = no
+writable       = yes
+create mask    = 0700
 directory mask = 0700
-guest ok = no
+guest ok       = no
 			
 [SYSTEM]
-comment = Acces au dossier root
-path = /
-browseable = yes
-writable = yes
-read only = no
-valid users = marc
-force user = root
+comment        = Acces au dossier root
+path           = /
+browseable     = yes
+writable       = yes
+read only      = no
+valid users    = marc
+force user     = root
 
 ####################
 # Active Directory #
 ####################
+
+;mkdir -p /home/samba/{netlogon,profiles}; chmod ug+rw /home/samba/profiles
+
 [profiles]
-   comment = Users profiles
-   path = /home/samba/profiles
-   guest ok = no
-   browseable = no
-   create mask = 0600
-   directory mask = 0700
-;  mkdir -p /home/samba/{netlogon,profiles}; chmod ug+rw /home/samba/profiles
+comment        = Users profiles
+path           = /home/samba/profiles
+guest ok       = no
+browseable     = no
+create mask    = 0600
+directory mask = 0700
 
 [netlogon]
    comment = Network Logon Service
@@ -92,7 +94,7 @@ force user = root
 # chown www-data:www-data /var/www/html/ -R ;
 
 [www] 
-comment = Dossier Apache
+comment        = Dossier Apache
 path           = /var/www/html
 browseable     = yes
 writable       = yes
@@ -106,16 +108,17 @@ directory mask = 0700
 # Explication sur les paramètres de partages #
 ##############################################
 [NomdemonPartage]
-comment 		= Mon commentaire
-path			= /chemin
-browseable 		= yes | no (Partage Visible ou cacher)
-writable 		= yes | no 
-read only 		= yes | no
-valid users 	   	= USER1, USER2, @groupe12000 %S  (Utilisateurs, Groupe ou Services autorisés)
-force user		= utilisateur de substitution
-create mask 		= 0700 (Conseiller) | 0755 (déconseiller)
-directory mask		= 0700 (Conseiller) | 0755 (déconseiller)			
-guest ok		= no | yes (Permet aux clients de se connecter au répertoire partagé sans fournir de mot de passe.)
+comment 	= Mon commentaire
+path		= /chemin
+browseable 	= yes | no (Partage Visible ou cacher)
+writable 	= yes | no 
+read only 	= yes | no
+valid users 	= USER1, USER2, @groupe12000 %S  (Utilisateurs, Groupe ou Services autorisés)
+force user	= utilisateur de substitution
+create mask 	= 0700 (Conseiller) | 0755 (déconseiller)
+directory mask	= 0700 (Conseiller) | 0755 (déconseiller)			
+guest ok	= no | yes (Permet aux clients de se connecter au répertoire partagé sans fournir de mot de passe.)
+
 
 /!\ HOMES DEJA CREE MAIS MAL CONFIG /!\
 #
