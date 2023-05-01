@@ -107,22 +107,20 @@ directory mask = 0700
 ##############################################
 # Explication sur les paramètres de partages #
 ##############################################
-[NomdemonPartage]
-comment 	= Mon commentaire
-path		= /chemin
-browseable 	= yes | no (Partage Visible ou cacher)
-writable 	= yes | no 
-read only 	= yes | no
-valid users 	= USER1, USER2, @groupe12000 %S  (Utilisateurs, Groupe ou Services autorisés)
-force user	= utilisateur de substitution
-create mask 	= 0700 (Conseiller) | 0755 (déconseiller)
-directory mask	= 0700 (Conseiller) | 0755 (déconseiller)			
-guest ok	= no | yes (Permet aux clients de se connecter au répertoire partagé sans fournir de mot de passe.)
+#[NomdemonPartage]
+#comment 	= Mon commentaire
+#path		= /chemin
+#browseable 	= yes | no (Partage Visible ou cacher)
+#writable 	= yes | no 
+#read only 	= yes | no
+#valid users 	= USER1, USER2, @groupe12000 %S  (Utilisateurs, Groupe ou Services autorisés)
+#force user	= utilisateur de substitution
+#create mask 	= 0700 (Conseiller) | 0755 (déconseiller)
+#directory mask	= 0700 (Conseiller) | 0755 (déconseiller)			
+#guest ok	= no | yes (Permet aux clients de se connecter au répertoire partagé sans fournir de mot de passe.)
 
-
-/!\ HOMES DEJA CREE MAIS MAL CONFIG /!\
+#/!\ HOMES DEJA CREE MAIS MAL CONFIG /!\
 #
 #homes 	=> Référence au dossier utilisateur
-	=> browseable = no (Evite un doublon du dossier Home et USER)
-
-net use * /delete /y
+#	=> browseable = no (Evite un doublon du dossier Home et USER)
+# net use * /delete /y
