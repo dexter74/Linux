@@ -1,0 +1,146 @@
+################
+# Installation #
+################
+sudo apt-get purge -y samba samba-common
+sudo rm -rf /etc/samba/ /etc/default/samba
+sudo apt-get install -y samba
+
+clear ; sudo nano /etc/samba/smb.conf ; sudo systemctl restart smbd  ; systemctl status smb
+
+#############################
+# Droit sur le partages www #
+#############################
+#
+# Guide : https://serverfault.com/a/994971
+sudo smbpasswd -a marc 
+sudo smbpasswd -e marc 
+sudo systemctl restart smbd 
+
+#############################
+# Edition du fichier config #
+#############################
+sudo nano /etc/samba/smb.conf 
+sudo systemctl restart smbd
+sudo systemctl restart samba-ad-dc.service
+testparm -s smb.txt
+
+###########################
+# Gestion des accès Samba #
+###########################
+pdbedit -L : Lister les utilisateur de samba
+
+smbpasswd -a <add user>
+smbpasswd -d <disable user>
+smbpasswd -e <enable user>
+smbpasswd -n <set no password>
+smbpasswd -x <delete user>
+
+
+net use * /delete /y
+
+\\192.168.1.20
+
+
+
+###################################
+#        NE PAS SUPPRIMER         #
+;   write list = root, @lpadmin	
+###################################
+
+# Profil Itinérant: https://wiki.samba.org/index.php/User_Home_Folders
+# The [homes] feature is not supported running on a Samba Active Directory (AD) domain controller (DC).
+
+
+
+[homes]
+comment = Dossier Utilisateurs 
+browseable = no 
+read only = no
+writable = yes
+create mask = 0700
+directory mask = 0700
+guest ok = no
+			
+			
+
+[SYSTEM]
+comment = Acces au dossier root
+path = /
+browseable = yes
+writable = yes
+read only = no
+valid users = marc
+force user = root
+
+
+
+
+
+####################
+# Active Directory #
+####################
+[profiles]
+   comment = Users profiles
+   path = /home/samba/profiles
+   guest ok = no
+   browseable = no
+   create mask = 0600
+   directory mask = 0700
+;  mkdir -p /home/samba/{netlogon,profiles}; chmod ug+rw /home/samba/profiles
+
+
+
+[netlogon]
+   comment = Network Logon Service
+   path = /home/samba/netlogon
+   guest ok = yes
+   read only = yes
+
+
+
+############################
+# Droit sur le dossier www #
+############################
+# 
+# Guide : https://api.stanleystella.com/fr_FR/page/wordpress
+# chown www-data:www-data /var/www/html/ -R ;
+
+
+
+[www] 
+comment = Dossier Apache
+path           = /var/www/html
+browseable     = yes
+writable       = yes
+read only      = no
+force user     = www-data
+force group    = www-data
+create mask    = 0700
+directory mask = 0700
+
+
+##############################################
+# Explication sur les paramètres de partages #
+##############################################
+[NomdemonPartage]
+comment 		= Mon commentaire
+path			= /chemin
+browseable 		= yes | no (Partage Visible ou cacher)
+writable 		= yes | no 
+read only 		= yes | no
+valid users 	   	= USER1, USER2, @groupe12000 %S  (Utilisateurs, Groupe ou Services autorisés)
+force user		= utilisateur de substitution
+create mask 		= 0700 (Conseiller) | 0755 (déconseiller)
+directory mask		= 0700 (Conseiller) | 0755 (déconseiller)			
+guest ok		= no | yes (Permet aux clients de se connecter au répertoire partagé sans fournir de mot de passe.)
+
+
+/!\ HOMES DEJA CREE MAIS MAL CONFIG /!\
+#
+#homes 	=> Référence au dossier utilisateur
+	=> browseable = no (Evite un doublon du dossier Home et USER)
+
+
+net use * /delete /y
+
+
