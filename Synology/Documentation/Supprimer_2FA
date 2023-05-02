@@ -1,3 +1,5 @@
+#https://global.download.synology.com/download/Document/Software/DeveloperGuide/Firmware/DSM/All/enu/Synology_DiskStation_Administration_CLI_Guide.pdf
+
 synouser --add marc admin "marc" 0 teste74@hotmail.fr administrator
 passwd marc
 synogroup --member administrators marc
