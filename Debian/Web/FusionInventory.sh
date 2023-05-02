@@ -1,152 +1,87 @@
 ######################################################################################################################################
-# Debian 11 + GLPI 9.5.12 | MariaDB #
-#####################################
-RAM	  : 1 Go
-Data	: 8 Go (2,6 Go réel)
-
-######################################################################################################################################
-# Nettoyage de la console #
-###########################
-clear;
-
-######################################################################################################################################
-# Mettre à jour le Système #
-############################
-apt update;
-apt upgrade -y;
-
-######################################################################################################################################
-# Installation de paquet #
-##########################
-apt install -y apache2;
-apt install -y libapache2-mod-php;
-apt install -y mariadb-server;
-apt install -y php;
-
-######################################################################################################################################
-# Installation des modules #
-############################
-apt install -y apcupsd;
-apt install -y php-apcu;
-apt install -y php-cas;
-apt install -y php-curl;
-apt install -y php-gd;
-apt install -y php-imap;
-apt install -y php-ldap;
-apt install -y php-intl;
-apt install -y php-mysql;
-apt install -y php-xmlrpc;
-
-######################################################################################################################################
-# Sécuriser la Base De Donnée #
-###############################
-mysql_secure_installation;
-(echo ""; echo "y" ; echo "y"; echo "admin"; echo "admin"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
-
-######################################################################################################################################
-# Relancer le service Apache2 #
-###############################
-systemctl restart apache2;
-
-######################################################################################################################################
-# Connexion à la BDD #
-######################
-mysql -u root -padmin;
-
-######################################################################################################################################
-# Purge Database et User #
-##########################
-DROP DATABASE IF EXISTS GLPI;
-DROP USER IF EXISTS 'GLPI'@'localhost';
-
-######################################################################################################################################
-# Création de la BDD #
-######################
-CREATE DATABASE IF NOT EXISTS GLPI;
-
-######################################################################################################################################
-# Création de l'utilisateur #
-#############################
-CREATE USER 'GLPI'@'localhost' IDENTIFIED BY 'admin';
-
-######################################################################################################################################
-# Edition des permissions #
-###########################
-GRANT ALL PRIVILEGES ON GLPI.* TO 'GLPI'@'localhost';
-
-######################################################################################################################################
-# Déconnexion MYSQL #
-#####################
-quit;
-
-######################################################################################################################################
-# Déploiement de GLPI 9.5.12 #
-##############################
+# Plugin GLPI : FusionInventory #
+#################################
 cd /tmp;
-wget "https://github.com/glpi-project/glpi/releases/download/9.5.12/glpi-9.5.12.tgz";
-tar -xvf glpi-9.5.12.tgz -C /var/www/html;
+wget https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.5%2B4.2/fusioninventory-9.5+4.2.tar.bz2;
+tar -xvf fusioninventory-9.5+4.2.tar.bz2 -C /var/www/html/glpi/plugins;
+chown -R www-data /var/www/html/glpi/plugins
+
+######################################################################################################################################
+# Activation du Plugin #
+########################
+Configuration 
+- Plugins 
+- FusionInventory 
+> Installer 
+> Activer
+
+######################################################################################################################################
+# Tâches Planifiées #
+#####################
+# Récupérer la version de php : echo $(php --version | head -n 1 | cut -d 'P' -f 3 | cut -d '(' -f 1 | cut -c 2-4)
+
+# Crontab
+cd /var/spool/cron;
+crontab -e;
 
 
+#Studi: (Erreur)
+* * * * * /usr/bin/php /var/www/html/glpi/front/cron.php &>/dev/null
+
+# Documentation
+* * * * * cd /var/www/html/glpi/front/ && /usr/bin/php cron.php &>/dev/null
+
+######################################################################################################################################
+# Relancer le service Cron #
+############################
+systemctl restart cron;
+systemctl status  cron;
+
+######################################################################################################################################
+# Activer les tâches Cron #
+###########################
+Configuration 
+- Actions automatiques
+- Taskscheduler
+-> Exécuter 
+-> Sauvegarder
+
+
+systemctl enable --now apache2;
+systemctl enable --now cron;
+systemctl enable --now mariadb;
+systemctl enable --now fusioninventory-agent.service;
 
 
 ######################################################################################################################################
-# Déploiement de GLPI 10.0.7 #
-##############################
-wget "https://github.com/glpi-project/glpi/releases/download/10.0.7/glpi-10.0.7.tgz"
-tar -xvf glpi-10.0.7.tgz -C /var/www/html;
+# Agent FusionInventory #
+#########################
 
-apt install -y php-fileinfo
-apt install -y php-json
-apt install -y php-dom
-apt install -y php-simplexml
+# Fonction:
+- Il peut également faire une découverte de tous les matériels réseau autour de sa machine (modules NetDiscovery et NetInventory). Le module
+Deploy permet de réaliser du déploiement de logiciels et la fonction Wake-on-lan est intégrée.
 
-######################################################################################################################################
-# Permission #
-##############
-chown -R www-data /var/www/html/glpi;
 
-######################################################################################################################################
-# https://glpi-install.readthedocs.io/fr/develop/command-line.html#cdline-install #
-###################################################################################
-cd /var/www/html/glpi;
-php bin/console glpi:system:check_requirements;
+Windows: https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/fusioninventory-agent_windows-x64_2.6.exe
 
-php bin/console db:install --reconfigure \
---default-language=fr_FR \
---db-host=localhost \
---db-port=3306 \
---db-name=GLPI \
---db-user=GLPI \
---db-password=admin \
---force;
+Installation:
+ - Type d'installation: Complète
+ - Serveur: http://192.168.1.53/glpi/plugins/fusioninventory/
 
-php bin/console db:check;
-php bin/console glpi:migration:timestamps;
+Forcer la Maj: http://localhost:62354
+	     : Force an Inventory
 
-php bin/console glpi:maintenance:enable;
-php bin/console glpi:maintenance:disable;
-php bin/console db:update -f;
+
+
+Linux :
+apt install -y fusioninventory-agent;
+cp /etc/fusioninventory/agent.cfg /etc/fusioninventory/agent.cfg.old;
+sed -i -e 's/^#server = http:\/\/server.domain.com\/glpi\/plugins\/fusioninventory\//server = http:\/\/192.168.1.53\/glpi\/plugins\/fusioninventory\//' /etc/fusioninventory/agent.cfg
+fusioninventory-agent;
+systemctl disable --now fusioninventory-agent.service;
+systemctl enable --now fusioninventory-agent.service;
 
 ######################################################################################################################################
-# Sécurité #
-############
-mv /var/www/html/glpi/install/install.php     /var/www/html/glpi/install/install.php.old;
-mv /var/www/html/glpi/install/install.php.old /var/www/html/glpi/install/install.php;
-
-
-######################################################################################################################################
-# Dépôt Backports pour phpmyadmin #
-###################################
-echo "deb http://deb.debian.org/debian buster-backports main" > /etc/apt/sources.list.d/phpmyadmin.list;
-
-######################################################################################################################################
-# Installer des dépendances #
-#############################
-apt upgrade -y php-tcpdf php-twig;
-apt install -y -t buster-backports php-twig;
-
-######################################################################################################################################
-# phpmyadmin #
-##############
-# sudo dpkg-reconfigure;
-apt install -y phpmyadmin;
+# Serveur #
+###########
+Cliquer sur l'accueil de GLPI puis dans Ordinateurs
