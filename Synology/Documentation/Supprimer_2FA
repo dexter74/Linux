@@ -1,0 +1,19 @@
+cd /usr/bin/
+    2  ls
+    3  synouser
+    4  synouser --add marc admin marc jaffre
+    5  clear
+    6  synouser --add marc "admin" marc jaffre
+    7  synouser --add marc "admin" "marc jaffre"
+    8  synouser --add marc admin "marc jaffre"
+    9  synouser --add marc admin "marc jaffre" 0
+   10  synouser --add marc admin "marc jaffre" 0 teste74@hotmail.fr administrator
+   11  id marc
+   12  id
+   13  synogroup --member root marc
+   14  id marc
+   15  synogroup --member admin marc
+   16  id paullux
+   17  id Paullux
+   18  synogroup --member administrators marc
+   19  history
