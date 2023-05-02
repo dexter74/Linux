@@ -31,15 +31,15 @@ echo "options kvm ignore_msrs=1" > /etc/modprobe.d/kvm.conf;
 
 ### Blacklist
 ```bash
-echo "blacklist amdgpu"   > /etc/modprobe.d/blacklist.conf;
-echo "blacklist nouveau" >> /etc/modprobe.d/blacklist.conf;
-echo "blacklist nvidia"  >> /etc/modprobe.d/blacklist.conf;
-echo "blacklist radeon"  >> /etc/modprobe.d/blacklist.conf;
+echo "blacklist amdgpu"         > /etc/modprobe.d/blacklist.conf;
+echo "blacklist nouveau"       >> /etc/modprobe.d/blacklist.conf;
+echo "blacklist nvidia"        >> /etc/modprobe.d/blacklist.conf;
+echo "blacklist radeon"        >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist snd_hda_intel" >> /etc/modprobe.d/blacklist.conf;
 
-
-echo "blacklist ccp" >> /etc/modprobe.d/blacklist.conf;
-echo "blacklist xhci_hcd" >> /etc/modprobe.d/blacklist.conf;
+# Ryzen 5700G:
+echo "blacklist ccp"           >> /etc/modprobe.d/blacklist.conf;
+echo "blacklist xhci_hcd"      >> /etc/modprobe.d/blacklist.conf;
 ```
 
 ### Attacher GPU au module VFIO
