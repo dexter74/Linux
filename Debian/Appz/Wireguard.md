@@ -111,6 +111,9 @@ systemctl restart wg-quick@wg0;
 ------------------------------------------------------------------------------------------------------------------------
 #### Client 1
 ```
+# Private Key	cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
+# Public Key	GqYCPBrwBj1v7f4S7HfX4zkG6hZfgZsCjLPDJq4zxQg=
+
 [Interface]
 PrivateKey = cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
 ListenPort = 51820
@@ -124,6 +127,9 @@ Endpoint = 192.168.0.20:51820
 
 #### Client 2
 ```
+# Private Key	eM3IgPYevDoxvgh3cJjM2sQca6HWDVeL1N4Y7XDInnE=
+# Public Key	7epVMA/arEQhIqeukMAyWPyqgjIRcMbUSbQCM06zNw8=
+
 [Interface]
 Address = 10.0.0.3/24
 ListenPort = 51820
@@ -138,6 +144,9 @@ Endpoint = 192.168.0.20:51820
 
 #### Client 3
 ```
+# Private Key	EMmWLWmR7miu34PWajdZ4vKr2hxKb0sCPx4EOf3wnnM=
+# Public Key	UaMiX5Pk26GSG0dON74qQIRcIdIKgmIcNG3+4f+WP38=
+
 [Interface]
 Address = 10.0.0.4/24
 ListenPort = 51820
@@ -152,6 +161,9 @@ Endpoint = 192.168.0.20:51820
 
 #### Client 4
 ```
+# Private Key	KAPUCv3ZCdfIWtCtQsJI8fk7XuXnz4knXsa4rrOtb2w=
+# Public Key	KkiC/yLZTztDJ76sAhY+2ytS9+i8B4yWTLXqKUT2TDQ=
+
 [Interface]
 Address = 10.0.0.5/24
 ListenPort = 51820
