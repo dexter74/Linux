@@ -102,12 +102,12 @@ systemctl restart wg-quick@wg0;
 #### Client 1
 ```
 [Interface]
-Address = 10.0.0.2/24
-ListenPort = 51820
 PrivateKey = cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
+ListenPort = 51820
+Address = 10.0.0.2/24
 
 [Peer]
 PublicKey = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
-AllowedIPs = 0.0.0.0/0, ::/0
+AllowedIPs = 192.168.0.0/24, 0.0.0.0/0, ::/0
 Endpoint = 192.168.0.20:51820
 ```
