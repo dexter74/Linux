@@ -158,7 +158,7 @@ DNS = 192.168.0.1
 [Peer]
 PublicKey = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
 AllowedIPs = 192.168.0.0/24, 0.0.0.0/0, ::/0
-Endpoint = 192.168.0.20:51820
+Endpoint = 192.168.0.20:51820" > /etc/wireguard/wg0.conf;
 ```
 
 #### Client 4
