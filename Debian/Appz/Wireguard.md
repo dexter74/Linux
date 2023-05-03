@@ -47,6 +47,7 @@ apt install -y iptables
 ```bash
 apt update > /dev/null;
 apt install -y wireguard > /dev/null;
+apt install -y resolvconf;
 mkdir  /etc/wireguard;
 ```
 
@@ -111,7 +112,7 @@ systemctl restart wg-quick@wg0;
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------
-#### Client 1
+#### Client 1 (DNS > Requiert le paquet Resolvconf)
 ```
 echo "cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=" > /etc/wireguard/privatekey;
 echo "GqYCPBrwBj1v7f4S7HfX4zkG6hZfgZsCjLPDJq4zxQg=" > /etc/wireguard/publickey;
