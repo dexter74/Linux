@@ -93,3 +93,19 @@ sudo chmod 600 -R /etc/wireguard/;
 ```bash
 systemctl restart wg-quick@wg0;
 ```
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+#### Client 1
+```
+[Interface]
+Address = 10.0.0.2/24
+ListenPort = 51820
+PrivateKey = cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
+
+[Peer]
+PublicKey = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
+AllowedIPs = 0.0.0.0/0, ::/0
+Endpoint = 192.168.0.20:51820
+```
