@@ -115,6 +115,10 @@ systemctl restart wg-quick@wg0;
 #### Clients
 Si on utilise la Directive `DNS =` dans la zone `[interface]`, il faut sur Linux resolvconf.
 
+`clear;
+nano /etc/wireguard/wg0.conf;
+systemctl restart wg-quick@wg0.service`
+
 ###### Client 1
 ```
 # Privatekey : cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
@@ -179,3 +183,5 @@ PublicKey  = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
 AllowedIPs = 0.0.0.0/0, ::/0
 Endpoint   = 192.168.0.20:51820
 ```
+
+
