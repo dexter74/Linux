@@ -109,7 +109,7 @@ systemctl restart wg-quick@wg0;
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------
-#### Clients
+#### Client 1
 ```
 [Interface]
 PrivateKey = cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
@@ -120,9 +120,10 @@ Address = 10.0.0.2/24
 PublicKey = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
 AllowedIPs = 192.168.0.0/24, 0.0.0.0/0, ::/0
 Endpoint = 192.168.0.20:51820
+```
 
-
--------------------------------------------------------------------------
+#### Client 2
+```
 [Interface]
 Address = 10.0.0.3/24
 ListenPort = 51820
@@ -133,8 +134,10 @@ DNS = 192.168.0.1
 PublicKey = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
 AllowedIPs = 192.168.0.0/24, 0.0.0.0/0, ::/0
 Endpoint = 192.168.0.20:51820
+```
 
--------------------------------------------------------------------------
+#### Client 3
+```
 [Interface]
 Address = 10.0.0.4/24
 ListenPort = 51820
@@ -145,8 +148,10 @@ DNS = 192.168.0.1
 PublicKey = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
 AllowedIPs = 192.168.0.0/24, 0.0.0.0/0, ::/0
 Endpoint = 192.168.0.20:51820
+```
 
--------------------------------------------------------------------------
+#### Client 4
+```
 [Interface]
 Address = 10.0.0.5/24
 ListenPort = 51820
