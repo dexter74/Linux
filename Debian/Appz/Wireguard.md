@@ -122,7 +122,7 @@ wg;
 
 ------------------------------------------------------------------------------------------------------------------------
 #### Clients
-Si on utilise la Directive `DNS =` dans la zone `[interface]`, il faut sur Linux resolvconf.
+Si on utilise la Directive `DNS =` dans la zone `[interface]`, il faut sur Linux resolvconf et autoriser le réseau 192.168.0.0/24 (Windows) et 192.168.0.0/16 (Linux).
 
 `clear;
 nano /etc/wireguard/wg0.conf;
