@@ -21,12 +21,21 @@ systemctl daemon-reload;
 echo "deb http://deb.debian.org/debian $(lsb_release -c | cut -c 11-20)-backports main" >  /etc/apt/sources.list.d/buster-backports.list;
 ```
 
+#### Installation de IPTABLES
+```bash
+apt update > /dev/null;
+apt install -y iptables
+```
+
+
+
 #### Installation de Wireguard
 ```bash
 apt update > /dev/null;
 apt install -y wireguard > /dev/null;
 mkdir  /etc/wireguard;
 ```
+
 
 #### Autoriser le trafic inter-réseau
 ```bash
