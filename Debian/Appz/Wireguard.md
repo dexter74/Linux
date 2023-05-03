@@ -10,7 +10,7 @@ https://www.wireguardconfig.com
 - Number of Clients   : Nombre de clients à générer
 - CIDR                : Réseau Wireguard
 - Client Allowed IPs  : Adresse réseau qui seront autorisés
-- Endpoin  t          : Adresse du serveur Wireguard (IP ou adresse DNS)
+- Endpoint            : Adresse du serveur Wireguard (IP ou adresse DNS)
 - DNS                 : Serveur DNS qui seront utilisé par les clients. (Si le DNS est sur un réseau différent, ajouter dans AllowIP le réseau)
 
 - Post-Up rule        : Règle de Pare-feu lorsque l'interface est Démarrer (Changer le nom de l'interface par celle qui à internet)
