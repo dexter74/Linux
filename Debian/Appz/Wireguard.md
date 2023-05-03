@@ -112,7 +112,9 @@ systemctl restart wg-quick@wg0;
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------
-#### Client 1 (DNS > Requiert le paquet Resolvconf)
+#### Clients
+
+###### Client 1
 ```
 # Privatekey : cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
 # PublicKey  : GqYCPBrwBj1v7f4S7HfX4zkG6hZfgZsCjLPDJq4zxQg=
@@ -128,7 +130,7 @@ AllowedIPs = 0.0.0.0/0, ::/0
 Endpoint   = 192.168.0.20:51820
 ```
 
-#### Client 2
+###### Client 2
 ```
 # Privatekey : eM3IgPYevDoxvgh3cJjM2sQca6HWDVeL1N4Y7XDInnE=
 # PublicKey  : 7epVMA/arEQhIqeukMAyWPyqgjIRcMbUSbQCM06zNw8=
@@ -145,7 +147,7 @@ Endpoint   = 192.168.0.20:51820
 ```
 
 
-#### Client 3
+###### Client 3
 ```
 # Privatekey :EMmWLWmR7miu34PWajdZ4vKr2hxKb0sCPx4EOf3wnnM=
 # PublicKey  : UaMiX5Pk26GSG0dON74qQIRcIdIKgmIcNG3+4f+WP38=
@@ -161,7 +163,7 @@ AllowedIPs = 0.0.0.0/0, ::/0
 Endpoint   = 192.168.0.20:51820
 ```
 
-#### Client 4
+###### Client 4
 ```
 # Privatekey : KAPUCv3ZCdfIWtCtQsJI8fk7XuXnz4knXsa4rrOtb2w=
 # PublicKey  : KkiC/yLZTztDJ76sAhY+2ytS9+i8B4yWTLXqKUT2TDQ=
