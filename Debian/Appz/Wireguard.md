@@ -40,7 +40,7 @@ echo "deb http://deb.debian.org/debian $(lsb_release -c | cut -c 11-20)-backport
 #### Installation de IPTABLES
 ```bash
 apt update > /dev/null;
-apt install -y iptables
+apt install -y iptables;
 ```
 
 #### Installation de Wireguard
