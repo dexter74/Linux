@@ -110,7 +110,15 @@ sudo chmod 600 -R /etc/wireguard/;
 ```bash
 systemctl restart wg-quick@wg0;
 ```
+
+#### Vérification du bon fonctionnement
+```bash
+wg;
+```
+
 <br />
+
+
 
 ------------------------------------------------------------------------------------------------------------------------
 #### Clients
