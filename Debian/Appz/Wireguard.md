@@ -21,6 +21,7 @@ echo "deb http://deb.debian.org/debian $(lsb_release -c | cut -c 11-20)-backport
 ```bash
 apt update > /dev/null;
 apt install -y wireguard > /dev/null;
+mkdir  /etc/wireguard;
 ```
 
 #### Autoriser le trafic inter-réseau
@@ -36,14 +37,17 @@ systemctl disable --now wg-quick@wg0;
 
 #### Clé Publique et Privée
 ```bash
-mkdir  /etc/wireguard;
-echo "" > /etc/wireguard/privatekey;
-echo "" > /etc/wireguard/publickey;
+PRIVATE=
+PUBLIC=
+
+echo "$PRIVATE" > /etc/wireguard/privatekey;
+echo "$PUBLIC" > /etc/wireguard/publickey;
 ```
 
 #### Configuration du Serveur
 ```bash
 echo "" > /etc/wireguard/wg0.conf;
+nano /etc/wireguard/wg0.conf;
 ````
 
 #### Permission de fichier
