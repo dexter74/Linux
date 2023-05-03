@@ -1,3 +1,10 @@
+
+#### Génération de la configuration
+```
+https://www.wireguardconfig.com
+```
+
+
 #### Nettoyage de Wireguard
 ```
 apt autoremove --purge -y wireguard > /dev/null;
@@ -46,5 +53,5 @@ sudo chmod 600 -R /etc/wireguard/;
 
 #### Lancement du service
 ```bash
-systemctl disable --now wg-quick@wg0;
+systemctl restart wg-quick@wg0;
 ```
