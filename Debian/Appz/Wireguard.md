@@ -12,7 +12,6 @@ lORM1DSdwfzsA4NskzgwOOrsz9flKMzWpwJJrzQY8YIfjiDId46Ry8S80Lbve+Fg5OzhJcaQ6nHHx8ho
 #### Nettoyage de Wireguard
 ```
 apt autoremove --purge -y wireguard > /dev/null;
-rm -r /etc/wireguard;
 systemctl daemon-reload;
 ```
 
