@@ -22,7 +22,7 @@ sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf;
 /sbin/sysctl -w net.ipv4.ip_forward=1; 
 ```
 
-#### Arrêt des services (Maintenance
+#### Arrêt du services
 ```bash
 systemctl disable --now wg-quick@wg0;
 ```
@@ -42,4 +42,9 @@ echo "" > /etc/wireguard/wg0.conf;
 #### Permission de fichier
 ```bash
 sudo chmod 600 -R /etc/wireguard/;
+```
+
+#### Lancement du service
+```bash
+systemctl disable --now wg-quick@wg0;
 ```
