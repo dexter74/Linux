@@ -113,7 +113,8 @@ systemctl restart wg-quick@wg0;
 
 ------------------------------------------------------------------------------------------------------------------------
 #### Clients
-Si on utilise la Directive `DNS = 8.8.8.8` dans la zone `[interface]`, il faut sur Linux resolvconf.
+Si on utilise la Directive `DNS =` dans la zone `[interface]`, il faut sur Linux resolvconf.
+
 ###### Client 1
 ```
 # Privatekey : cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
@@ -126,7 +127,7 @@ PrivateKey = cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
 
 [Peer]
 PublicKey  = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
-AllowedIPs = 192.168.0.0/24, 0.0.0.0/0, ::/0
+AllowedIPs = 0.0.0.0/0, ::/0
 Endpoint   = 192.168.0.20:51820
 ```
 
@@ -159,7 +160,7 @@ PrivateKey = EMmWLWmR7miu34PWajdZ4vKr2hxKb0sCPx4EOf3wnnM=
 
 [Peer]
 PublicKey  = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
-AllowedIPs = 192.168.0.0/24, 0.0.0.0/0, ::/0
+AllowedIPs = 0.0.0.0/0, ::/0
 Endpoint   = 192.168.0.20:51820
 ```
 
@@ -175,6 +176,6 @@ PrivateKey = KAPUCv3ZCdfIWtCtQsJI8fk7XuXnz4knXsa4rrOtb2w=
 
 [Peer]
 PublicKey  = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
-AllowedIPs = 192.168.0.0/24, 0.0.0.0/0, ::/0
+AllowedIPs = 0.0.0.0/0, ::/0
 Endpoint   = 192.168.0.20:51820
 ```
