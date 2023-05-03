@@ -146,10 +146,3 @@ echo "deb http://deb.debian.org/debian buster-backports main" > /etc/apt/sources
 #############################
 apt upgrade -y php-tcpdf php-twig;
 apt install -y -t buster-backports php-twig;
-
-
-######################################################################################################################################
-# phpmyadmin #
-##############
-# sudo dpkg-reconfigure;
-apt install -y phpmyadmin;
