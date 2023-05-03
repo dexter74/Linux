@@ -113,7 +113,7 @@ systemctl restart wg-quick@wg0;
 
 ------------------------------------------------------------------------------------------------------------------------
 #### Clients
-
+Si on utilise la Directive `DNS = 8.8.8.8` dans la zone `[interface]`, il faut sur Linux resolvconf.
 ###### Client 1
 ```
 # Privatekey : cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
