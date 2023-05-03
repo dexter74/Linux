@@ -166,7 +166,7 @@ Endpoint = 192.168.0.20:51820
 echo "KAPUCv3ZCdfIWtCtQsJI8fk7XuXnz4knXsa4rrOtb2w=" /etc/wireguard/privatekey;
 echo "KkiC/yLZTztDJ76sAhY+2ytS9+i8B4yWTLXqKUT2TDQ=" /etc/wireguard/publickey;
 
-[Interface]
+echo "[Interface]
 Address = 10.0.0.5/24
 ListenPort = 51820
 PrivateKey = KAPUCv3ZCdfIWtCtQsJI8fk7XuXnz4knXsa4rrOtb2w=
