@@ -98,13 +98,49 @@ systemctl restart wg-quick@wg0;
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------
-
-#### Client 1
+#### Clients
 ```
 [Interface]
 PrivateKey = cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
 ListenPort = 51820
 Address = 10.0.0.2/24
+
+[Peer]
+PublicKey = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
+AllowedIPs = 192.168.0.0/24, 0.0.0.0/0, ::/0
+Endpoint = 192.168.0.20:51820
+
+
+-------------------------------------------------------------------------
+[Interface]
+Address = 10.0.0.3/24
+ListenPort = 51820
+PrivateKey = eM3IgPYevDoxvgh3cJjM2sQca6HWDVeL1N4Y7XDInnE=
+DNS = 192.168.0.1
+
+[Peer]
+PublicKey = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
+AllowedIPs = 192.168.0.0/24, 0.0.0.0/0, ::/0
+Endpoint = 192.168.0.20:51820
+
+-------------------------------------------------------------------------
+[Interface]
+Address = 10.0.0.4/24
+ListenPort = 51820
+PrivateKey = EMmWLWmR7miu34PWajdZ4vKr2hxKb0sCPx4EOf3wnnM=
+DNS = 192.168.0.1
+
+[Peer]
+PublicKey = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
+AllowedIPs = 192.168.0.0/24, 0.0.0.0/0, ::/0
+Endpoint = 192.168.0.20:51820
+
+-------------------------------------------------------------------------
+[Interface]
+Address = 10.0.0.5/24
+ListenPort = 51820
+PrivateKey = KAPUCv3ZCdfIWtCtQsJI8fk7XuXnz4knXsa4rrOtb2w=
+DNS = 192.168.0.1
 
 [Peer]
 PublicKey = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
