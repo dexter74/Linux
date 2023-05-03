@@ -114,67 +114,65 @@ systemctl restart wg-quick@wg0;
 ------------------------------------------------------------------------------------------------------------------------
 #### Client 1 (DNS > Requiert le paquet Resolvconf)
 ```
-echo "cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=" > /etc/wireguard/privatekey;
-echo "GqYCPBrwBj1v7f4S7HfX4zkG6hZfgZsCjLPDJq4zxQg=" > /etc/wireguard/publickey;
+# Privatekey : cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
+# PublicKey  : GqYCPBrwBj1v7f4S7HfX4zkG6hZfgZsCjLPDJq4zxQg=
 
-echo "[Interface]
-PrivateKey = cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
+[Interface]
+Address    = 10.0.0.2/24
 ListenPort = 51820
-Address = 10.0.0.2/24
+PrivateKey = cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
 
 [Peer]
-PublicKey = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
-AllowedIPs = 192.168.0.0/24, 0.0.0.0/0, ::/0
-Endpoint = 192.168.0.20:51820" > /etc/wireguard/wg0.conf;
+PublicKey  = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
+AllowedIPs = 0.0.0.0/0, ::/0
+Endpoint   = 192.168.0.20:51820
 ```
 
 #### Client 2
 ```
-echo "eM3IgPYevDoxvgh3cJjM2sQca6HWDVeL1N4Y7XDInnE=" > /etc/wireguard/privatekey;
-echo "7epVMA/arEQhIqeukMAyWPyqgjIRcMbUSbQCM06zNw8=" > /etc/wireguard/publickey;
+# Privatekey : eM3IgPYevDoxvgh3cJjM2sQca6HWDVeL1N4Y7XDInnE=
+# PublicKey  : 7epVMA/arEQhIqeukMAyWPyqgjIRcMbUSbQCM06zNw8=
 
-echo "[Interface]
-Address = 10.0.0.3/24
+[Interface]
+Address    = 10.0.0.3/24
 ListenPort = 51820
 PrivateKey = eM3IgPYevDoxvgh3cJjM2sQca6HWDVeL1N4Y7XDInnE=
-DNS = 192.168.0.1
 
 [Peer]
-PublicKey = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
-AllowedIPs = 192.168.0.0/24, 0.0.0.0/0, ::/0
-Endpoint = 192.168.0.20:51820" > /etc/wireguard/wg0.conf;
+PublicKey  = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
+AllowedIPs = 0.0.0.0/0, ::/0
+Endpoint   = 192.168.0.20:51820
 ```
+
 
 #### Client 3
 ```
-echo "EMmWLWmR7miu34PWajdZ4vKr2hxKb0sCPx4EOf3wnnM=" > /etc/wireguard/privatekey;
-echo "UaMiX5Pk26GSG0dON74qQIRcIdIKgmIcNG3+4f+WP38=" > /etc/wireguard/publickey;
+# Privatekey :EMmWLWmR7miu34PWajdZ4vKr2hxKb0sCPx4EOf3wnnM=
+# PublicKey  : UaMiX5Pk26GSG0dON74qQIRcIdIKgmIcNG3+4f+WP38=
 
-echo "[Interface]
-Address = 10.0.0.4/24
+[Interface]
+Address    = 10.0.0.4/24
 ListenPort = 51820
 PrivateKey = EMmWLWmR7miu34PWajdZ4vKr2hxKb0sCPx4EOf3wnnM=
-DNS = 192.168.0.1
 
 [Peer]
-PublicKey = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
-AllowedIPs = 192.168.0.0/24, 0.0.0.0/0, ::/0
-Endpoint = 192.168.0.20:51820" > /etc/wireguard/wg0.conf;
+PublicKey  = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
+AllowedIPs = 0.0.0.0/0, ::/0
+Endpoint   = 192.168.0.20:51820
 ```
 
 #### Client 4
 ```
-echo "KAPUCv3ZCdfIWtCtQsJI8fk7XuXnz4knXsa4rrOtb2w=" > /etc/wireguard/privatekey;
-echo "KkiC/yLZTztDJ76sAhY+2ytS9+i8B4yWTLXqKUT2TDQ=" > /etc/wireguard/publickey;
+# Privatekey : KAPUCv3ZCdfIWtCtQsJI8fk7XuXnz4knXsa4rrOtb2w=
+# PublicKey  : KkiC/yLZTztDJ76sAhY+2ytS9+i8B4yWTLXqKUT2TDQ=
 
-echo "[Interface]
-Address = 10.0.0.5/24
+[Interface]
+Address    = 10.0.0.5/24
 ListenPort = 51820
 PrivateKey = KAPUCv3ZCdfIWtCtQsJI8fk7XuXnz4knXsa4rrOtb2w=
-DNS = 192.168.0.1
 
 [Peer]
-PublicKey = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
-AllowedIPs = 192.168.0.0/24, 0.0.0.0/0, ::/0
-Endpoint = 192.168.0.20:51820" > /etc/wireguard/wg0.conf;
+PublicKey  = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
+AllowedIPs = 0.0.0.0/0, ::/0
+Endpoint   = 192.168.0.20:51820
 ```
