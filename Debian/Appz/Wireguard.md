@@ -113,8 +113,8 @@ systemctl restart wg-quick@wg0;
 ------------------------------------------------------------------------------------------------------------------------
 #### Client 1
 ```
-echo "cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=" /etc/wireguard/privatekey;
-echo "GqYCPBrwBj1v7f4S7HfX4zkG6hZfgZsCjLPDJq4zxQg=" /etc/wireguard/publickey;
+echo "cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=" > /etc/wireguard/privatekey;
+echo "GqYCPBrwBj1v7f4S7HfX4zkG6hZfgZsCjLPDJq4zxQg=" > /etc/wireguard/publickey;
 
 echo "[Interface]
 PrivateKey = cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
@@ -129,8 +129,8 @@ Endpoint = 192.168.0.20:51820" > /etc/wireguard/wg0.conf;
 
 #### Client 2
 ```
-echo "eM3IgPYevDoxvgh3cJjM2sQca6HWDVeL1N4Y7XDInnE=" /etc/wireguard/privatekey;
-echo "7epVMA/arEQhIqeukMAyWPyqgjIRcMbUSbQCM06zNw8=" /etc/wireguard/publickey;
+echo "eM3IgPYevDoxvgh3cJjM2sQca6HWDVeL1N4Y7XDInnE=" > /etc/wireguard/privatekey;
+echo "7epVMA/arEQhIqeukMAyWPyqgjIRcMbUSbQCM06zNw8=" > /etc/wireguard/publickey;
 
 echo "[Interface]
 Address = 10.0.0.3/24
@@ -146,8 +146,8 @@ Endpoint = 192.168.0.20:51820" > /etc/wireguard/wg0.conf;
 
 #### Client 3
 ```
-echo "EMmWLWmR7miu34PWajdZ4vKr2hxKb0sCPx4EOf3wnnM=" /etc/wireguard/privatekey;
-echo "UaMiX5Pk26GSG0dON74qQIRcIdIKgmIcNG3+4f+WP38=" /etc/wireguard/publickey;
+echo "EMmWLWmR7miu34PWajdZ4vKr2hxKb0sCPx4EOf3wnnM=" > /etc/wireguard/privatekey;
+echo "UaMiX5Pk26GSG0dON74qQIRcIdIKgmIcNG3+4f+WP38=" > /etc/wireguard/publickey;
 
 echo "[Interface]
 Address = 10.0.0.4/24
@@ -163,8 +163,8 @@ Endpoint = 192.168.0.20:51820" > /etc/wireguard/wg0.conf;
 
 #### Client 4
 ```
-echo "KAPUCv3ZCdfIWtCtQsJI8fk7XuXnz4knXsa4rrOtb2w=" /etc/wireguard/privatekey;
-echo "KkiC/yLZTztDJ76sAhY+2ytS9+i8B4yWTLXqKUT2TDQ=" /etc/wireguard/publickey;
+echo "KAPUCv3ZCdfIWtCtQsJI8fk7XuXnz4knXsa4rrOtb2w=" > /etc/wireguard/privatekey;
+echo "KkiC/yLZTztDJ76sAhY+2ytS9+i8B4yWTLXqKUT2TDQ=" > /etc/wireguard/publickey;
 
 echo "[Interface]
 Address = 10.0.0.5/24
