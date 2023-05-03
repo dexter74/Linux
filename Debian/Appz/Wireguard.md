@@ -69,7 +69,8 @@ echo "zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=" > /etc/wireguard/publickey;
 ```
 
 #### Configuration du Serveur
-L'interface qui permet l'accès internet est `ens18`, l'adresse réseau de Wireguard est `10.0.0.0/24` et son point d'accès est l'adresse IP du serveur `192.168.0.20` sur le port `51820` en UDP.
+L'interface qui permet l'accès internet est `ens18`, l'adresse réseau de Wireguard est `10.0.0.1/24` et son point d'accès est l'adresse IP du serveur `192.168.0.20` sur le port `51820` en UDP.
+Par conséquent pour les règles IPTABLES ont indiques bien le nom de l'interface sinon sa marchera pas .
 
 ```bash
 echo "[Interface]
