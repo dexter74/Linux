@@ -83,6 +83,7 @@ VPN > WireGuard > Paramètres
 ```
 État > WireGuard
 ```
+On peut voir le réseau actif (Blanc), puis le client dans le réseau.
 ![image](https://user-images.githubusercontent.com/35907/236338291-3962556b-d3c0-452a-a968-0cecfc93626f.png)
 
 ![image](https://user-images.githubusercontent.com/35907/236338483-457647b9-b6b2-4d3c-b360-8db382e37fc4.png) : Aucune connexion en cours
