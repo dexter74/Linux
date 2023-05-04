@@ -103,7 +103,7 @@ powershell cat %USERPROFILE%\Desktop\Wireguard\Serveur_Private.txt | %WIREGUARD%
 :: Génération des Clés du Client
 %WIREGUARD% genpsk > %USERPROFILE%\Desktop\Wireguard\Client_Preshared.txt
 %WIREGUARD% genkey > %USERPROFILE%\Desktop\Wireguard\Client_Private.txt
-powershell cat %USERPROFILE%\Desktop\Wireguard\Client_Private.txt | %WIREGUARD% pubkey > %USERPROFILE%\Desktop\Wireguard\Client\Publique.txt
+powershell cat %USERPROFILE%\Desktop\Wireguard\Client_Private.txt | %WIREGUARD% pubkey > %USERPROFILE%\Desktop\Wireguard\Client_Publique.txt
 ```
 
 ##### Exemple
