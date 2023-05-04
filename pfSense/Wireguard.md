@@ -64,18 +64,20 @@ Client:
 ```
 VPN > Wireguard > Tunnels >  Add Tunnels
 ```
-
 ![image](https://user-images.githubusercontent.com/35907/236337098-b1524720-6256-424d-90e7-cb119c3231bd.png)
 
+#### Etat du Serveur
+```
+État > WireGuard
+```
+![image](https://user-images.githubusercontent.com/35907/236338111-5a974ac2-16ff-40b3-99e9-dfc5b319a200.png)
 
 
 #### Client
-
 ```
 VPN > Wireguard > Peers >  Add Peers
 ```
 ![image](https://user-images.githubusercontent.com/35907/236337732-9e1b7a0d-897e-40d6-8e84-a203c47dcb8a.png)
-
 
 
 ##### Activation du Serveur
