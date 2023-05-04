@@ -18,6 +18,8 @@ Available subcommands:
   genpsk: Generates a new preshared key and writes it to stdout
   pubkey: Reads a private key from stdin and writes a public key to stdout
 
+
+del /F /Q Desktop\Wireguard
 mkdir Desktop\Wireguard\Client
 mkdir Desktop\Wireguard\Serveur
 
