@@ -93,8 +93,6 @@ rmdir /S /Q Wireguard
 
 :: Création de l-arborescence des dossiers
 mkdir Wireguard
-mkdir Wireguard\Client
-mkdir Wireguard\Serveur
 
 :: Génération des Clés du Serveur
 %WIREGUARD% genkey > %USERPROFILE%\Desktop\Wireguard\Serveur_Private.txt
