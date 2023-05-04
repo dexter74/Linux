@@ -28,18 +28,20 @@ apt install -y php;
 ############################
 apt install -y apcupsd;
 apt install -y php-apcu;
+apt install -y php-bz2;
 apt install -y php-cas;
 apt install -y php-curl;
+apt install -y php-dom;
 apt install -y php-gd;
 apt install -y php-imap;
 apt install -y php-ldap;
 apt install -y php-intl;
-apt install -y php-mysql;
-apt install -y php-xmlrpc;
-
-apt install -y php-bz2;
+apt install -y php-json;
 apt install -y php-mbstring;
+apt install -y php-mysql;
+apt install -y php-fileinfo;
 apt install -y php-simplexml;
+apt install -y php-xmlrpc;
 apt install -y php-zip;
 
 ######################################################################################################################################
@@ -88,8 +90,9 @@ quit;
 ######################################################################################################################################
 # Déploiement de GLPI 9.5.12 #
 ##############################
-cd /tmp;
 FILE="https://github.com/glpi-project/glpi/releases/download/9.5.12/glpi-9.5.12.tgz" 
+rm -r /var/www/html/glpi 2>/dev/null;
+
 wget "$FILE"  -O /tmp/glpi-9.5.12.tgz;
 tar -xvf /tmp/glpi-9.5.12.tgz -C /var/www/html;
 
@@ -99,12 +102,10 @@ tar -xvf /tmp/glpi-9.5.12.tgz -C /var/www/html;
 
 FILE="https://github.com/glpi-project/glpi/releases/download/10.0.6/glpi-10.0.6.tgz"
 wget "$FILE" -O /tmp/glpi-10.0.6.tgz;
+rm -r /var/www/html/glpi 2>/dev/null;
 tar -xvf  /tmp/glpi-10.0.6.tgz -C /var/www/html;
 
-apt install -y php-fileinfo;
-apt install -y php-json;
-apt install -y php-dom;
-apt install -y php-simplexml;
+
 
 ######################################################################################################################################
 # Permission #
