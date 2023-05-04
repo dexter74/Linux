@@ -6,41 +6,44 @@ Wireguard
 
 ##### Générer des Clés Privées, Publiques et Pre-shared
 ```
-"C:\Program Files\WireGuard\wg" /?
-Available subcommands:
-  show: Shows the current configuration and device information
-  showconf: Shows the current configuration of a given WireGuard interface, for use with `setconf'
-  set: Change the current configuration, add peers, remove peers, or change peers
-  setconf: Applies a configuration file to a WireGuard interface
-  addconf: Appends a configuration file to a WireGuard interface
-  syncconf: Synchronizes a configuration file to a WireGuard interface
-  genkey: Generates a new private key and writes it to stdout
-  genpsk: Generates a new preshared key and writes it to stdout
-  pubkey: Reads a private key from stdin and writes a public key to stdout
+@echo on
 
+:: ##########################################
+:: # Script pour Générer des Clés Wireguard #
+:: # "C:\Program Files\WireGuard\wg" /?     #
+:: ##########################################
 
-del /F /Q Desktop\Wireguard
-mkdir Desktop\Wireguard\Client
-mkdir Desktop\Wireguard\Serveur
+:: Titre de la Fenetre DOS
+title Generer Cle Wireguard
 
-"C:\Program Files\WireGuard\wg" genpsk > Desktop\Wireguard\Client\Preshared.txt
-"C:\Program Files\WireGuard\wg" genkey > Desktop\Wireguard\Client\Private.txt
-"C:\Program Files\WireGuard\wg" pubkey > Desktop\Wireguard\Client\Public.txt
+:: Declaration des Variables
+set WIREGUARD="C:\Program Files\WireGuard\wg"
 
+:: Nettoyage
+rmdir /S /Q Wireguard
 
-"C:\Program Files\WireGuard\wg" genpsk > Desktop\Wireguard\Serveur\Preshared.txt
-"C:\Program Files\WireGuard\wg" genkey > Desktop\Wireguard\Serveur\Private.txt
-"C:\Program Files\WireGuard\wg" pubkey > Desktop\Wireguard\Serveur\Public.txt
+:: Création de l'arborescence des dossiers
+mkdir Wireguard
+mkdir Wireguard\Client
+mkdir Wireguard\Serveur
+
+:: Génération des Clés du Serveur
+%WIREGUARD% genpsk > %USERPROFILE%\Desktop\Wireguard\Serveur\Preshared.txt
+%WIREGUARD% genkey > %USERPROFILE%\Desktop\Wireguard\Serveur\Private.txt
+powershell cat %USERPROFILE%\Desktop\Wireguard\Serveur\Private.txt | %WIREGUARD% pubkey > %USERPROFILE%\Desktop\Wireguard\Serveur\Publique.txt
+
+:: Génération des Clés du Client
+%WIREGUARD% genpsk > %USERPROFILE%\Desktop\Wireguard\Client\Preshared.txt
+%WIREGUARD% genkey > %USERPROFILE%\Desktop\Wireguard\Client\Private.txt
+powershell cat %USERPROFILE%\Desktop\Wireguard\Client\Private.txt | %WIREGUARD% pubkey > %USERPROFILE%\Desktop\Wireguard\Client\Publique.txt
 ```
-
-
 
 ##### Configuration du Serveur
 ```
 VPN > Wireguard > Tunnels > Add Tunnels
-- Description        : Coller la clé Publique
+- Description        : Wireguard
 - Listen Port        : 51820 (UDP)
-- Interface Keys     : Cliquer sur Générer et copier la clé puis coller dans la "Description"
+- Interface Keys     : Coller les clés générés
 - Interface Address  : 192.168.5.0/24 
 ```
 
