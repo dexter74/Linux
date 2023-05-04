@@ -94,6 +94,10 @@ VPN > WireGuard > Paramètres
 On peut voir le réseau actif (Blanc), puis le client dans le réseau.
 ![image](https://user-images.githubusercontent.com/35907/236338291-3962556b-d3c0-452a-a968-0cecfc93626f.png)
 
+![image](https://user-images.githubusercontent.com/35907/236208130-5c07bd5e-db85-4f4b-8e87-9eccfa0bca46.png)
+
+
+
 ![image](https://user-images.githubusercontent.com/35907/236338483-457647b9-b6b2-4d3c-b360-8db382e37fc4.png) : Aucune connexion en cours
 
 
@@ -153,8 +157,4 @@ Endpoint = 192.168.0.5:51820
 ##### Etat de Wireguard
 
 ![image](https://user-images.githubusercontent.com/35907/236340595-d801adc3-c990-47c5-8ee4-632a9da7504a.png)
-
-
-
-![image](https://user-images.githubusercontent.com/35907/236208130-5c07bd5e-db85-4f4b-8e87-9eccfa0bca46.png)
 
