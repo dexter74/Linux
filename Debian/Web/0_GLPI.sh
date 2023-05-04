@@ -52,11 +52,6 @@ apt install -y php-zip;
 (echo ""; echo "y" ; echo "y"; echo "admin"; echo "admin"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
 
 ######################################################################################################################################
-# Relancer le service Apache2 #
-###############################
-systemctl restart apache2;
-
-######################################################################################################################################
 # Connexion à la BDD #
 ######################
 mysql -u root -padmin;
@@ -114,6 +109,11 @@ apt install -y php-simplexml
 #
 # Propriétaire (Utilisateur:Groupe)
 chown -R www-data:www-data /var/www/html/;
+
+######################################################################################################################################
+# Relancer le service Apache2 #
+###############################
+systemctl restart apache2;
 
 ######################################################################################################################################
 # https://glpi-install.readthedocs.io/fr/develop/command-line.html#cdline-install #
