@@ -69,7 +69,7 @@ echo  - Public  : %CLIENT_PUB%       >> %USERPROFILE%\Desktop\Wireguard.txt
 rmdir /S /Q %USERPROFILE%\tmp
 
 :: Ouverture du fichier Wireguard.txt
-%USERPROFILE%\Desktop\Wireguard.txt
+start %USERPROFILE%\Desktop\Wireguard.txt
 exit
 ```
 
