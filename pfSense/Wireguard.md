@@ -65,11 +65,14 @@ VPN > Wireguard > Tunnels > Add Tunnels
 ##### Client
 ```
 VPN > Wireguard > Peers >  Add Peers
-- Tunnel         : tun_wg0
-- Descrption     : Client 1
-- Public Key     : RSdHPzKQWWxhKlkr7PunaurJt6EuUi7seAreoCe2TxU=
-- Pre-shared Key : h6dyEycgxcgjlzf84mxK/GtLzyUT5xVcKqmxVPlNznY=
-- Allowed IPs    : 0.0.0.0/0
+- Tunnel           : tun_wg0
+- Descrption       : Client 1
+- Dynamic Endpoint : Décocher
+- Endpoint         : 192.168.0.5:51820
+- Public Key       : RSdHPzKQWWxhKlkr7PunaurJt6EuUi7seAreoCe2TxU=
+- Pre-shared Key   : h6dyEycgxcgjlzf84mxK/GtLzyUT5xVcKqmxVPlNznY=
+- Allowed IPs      : 0.0.0.0/0
+
 ```
 
 ##### Activation du Serveur
