@@ -105,12 +105,12 @@ Pare-feu > Règles > WAN
 ```
 [Interface]
 PrivateKey = SFqEF+d/4BvIRmfqYDRbJppRDoOcA60ZaztAJaEHfl4=
-Address     = 192.168.5.2/24
-DNS            = 192.168.0.1
+Address = 192.168.5.2/24
+DNS = 192.168.0.1
 
 [Peer]
-PublicKey =
-PresharedKey =
-AllowedIPS =
-Endpoint =
+PublicKey = PIgbMLozKsxhLYMvGn87sBFLzOHL8bM341J+lZw1UCw=
+PresharedKey = YJUO1byaWTdh4cXmrOeZ7XG1rJoTropEoYMcozXQsCM=
+AllowedIPs = 0.0.0.0/24
+Endpoint = 192.168.0.6:51820
 ```
