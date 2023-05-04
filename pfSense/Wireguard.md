@@ -61,9 +61,13 @@ Client:
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 #### Configuration du Serveur
-Indiquer la clé Privée du serveur.
+```
+VPN > Wireguard > Tunnels >  Add Tunnels
+```
 
 ![image](https://user-images.githubusercontent.com/35907/236337098-b1524720-6256-424d-90e7-cb119c3231bd.png)
+
+
 
 #### Client
 
