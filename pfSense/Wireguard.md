@@ -70,8 +70,6 @@ Indiquer la clé Privée du serveur.
 VPN > Wireguard > Peers >  Add Peers
 - Tunnel           : tun_wg0
 - Descrption       : Client 1
-- Dynamic Endpoint : Décocher
-- Endpoint         : 192.168.0.5:51820 (A revérifier)
 - Public Key       : RSdHPzKQWWxhKlkr7PunaurJt6EuUi7seAreoCe2TxU=
 - Pre-shared Key   : h6dyEycgxcgjlzf84mxK/GtLzyUT5xVcKqmxVPlNznY=
 - Allowed IPs      : 0.0.0.0/0
