@@ -114,19 +114,6 @@ apt install -y php-simplexml
 #
 # Propriétaire (Utilisateur:Groupe)
 chown -R www-data:www-data /var/www/html/;
-#
-# Permission (Propriétaire, Groupe Propriétaire, Autres)
-chmod -R 777 /var/www/html/glpi/files/_dumps
-chmod -R 777 /var/www/html/glpi/config
-chmod -R 777 /var/www/html/glpi/files/_sessions
-chmod -R 777 /var/www/html/glpi/files/_cron
-chmod -R 777 /var/www/html/glpi/files/_cache/
-chmod -R 777 /var/www/html/glpi/files/_graphs
-chmod -R 777 /var/www/html/glpi/files/_log
-chmod 777 /var/www/html/glpi/files/
-
-
-
 
 ######################################################################################################################################
 # https://glpi-install.readthedocs.io/fr/develop/command-line.html#cdline-install #
