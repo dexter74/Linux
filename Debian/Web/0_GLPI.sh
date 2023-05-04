@@ -40,7 +40,7 @@ apt install -y php-xmlrpc;
 ######################################################################################################################################
 # Sécuriser la Base De Donnée #
 ###############################
-mysql_secure_installation;
+# mysql_secure_installation;
 (echo ""; echo "y" ; echo "y"; echo "admin"; echo "admin"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
 
 ######################################################################################################################################
