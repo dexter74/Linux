@@ -97,9 +97,6 @@ cd /tmp;
 wget "https://github.com/glpi-project/glpi/releases/download/9.5.12/glpi-9.5.12.tgz";
 tar -xvf glpi-9.5.12.tgz -C /var/www/html;
 
-
-
-
 ######################################################################################################################################
 # Déploiement de GLPI 10.0.7 #
 ##############################
@@ -111,11 +108,25 @@ apt install -y php-json
 apt install -y php-dom
 apt install -y php-simplexml
 
-
 ######################################################################################################################################
 # Permission #
 ##############
+#
+# Propriétaire (Utilisateur:Groupe)
 chown -R www-data:www-data /var/www/html/;
+#
+# Permission (Propriétaire, Groupe Propriétaire, Autres)
+chmod -R 777 /var/www/html/glpi/files/_dumps
+chmod -R 777 /var/www/html/glpi/config
+chmod -R 777 /var/www/html/glpi/files/_sessions
+chmod -R 777 /var/www/html/glpi/files/_cron
+chmod -R 777 /var/www/html/glpi/files/_cache/
+chmod -R 777 /var/www/html/glpi/files/_graphs
+chmod -R 777 /var/www/html/glpi/files/_log
+chmod 777 /var/www/html/glpi/files/
+
+
+
 
 ######################################################################################################################################
 # https://glpi-install.readthedocs.io/fr/develop/command-line.html#cdline-install #
