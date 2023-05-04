@@ -57,8 +57,10 @@ Client:
 VPN > Wireguard > Tunnels > Add Tunnels
 - Description        : Wireguard
 - Listen Port        : 51820 (UDP)
-- Interface Keys     : Coller les clés générés
-- Interface Address  : 192.168.5.0/24 
+- Interface Keys     : Coller la clé Privée
+- Interface Address  : 192.168.5.0/24
+
+> Valider
 ```
 
 
