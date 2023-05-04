@@ -57,7 +57,7 @@ VPN > Wireguard > Tunnels > Add Tunnels
 - Description        : Wireguard
 - Listen Port        : 51820 (UDP)
 - Interface Keys     : Coller la clé Privée
-- Interface Address  : 192.168.5.0/24
+- Interface Address  : 192.168.20.0/24
 
 > Valider
 ```
@@ -88,7 +88,7 @@ Editer OPTX
  - Description: VPN
  - Type de configuration IPv4: IP statique
  - MTU: 1420 (A voir si sa impact)
- - Adresse IPv4:  192..168.5.1 / 24 (CF. au serveur Wireguard)
+ - Adresse IPv4:  192..168.20.1 / 24 (CF. au serveur Wireguard)
 ```
 
 ##### Pare-Feu
@@ -105,7 +105,7 @@ Pare-feu > Règles > WAN
 ```
 [Interface]
 PrivateKey = SFqEF+d/4BvIRmfqYDRbJppRDoOcA60ZaztAJaEHfl4=
-Address = 192.168.5.2/24
+Address = 192.168.20.2/24
 DNS = 192.168.0.1
 
 [Peer]
