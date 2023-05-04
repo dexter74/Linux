@@ -20,7 +20,6 @@ Clé Publique: 5YLEO4jQQfMWEom52uFnBG3rsjZgXcPViPWGQ2MlZkg=
 ###### Générer une Clé Privée / Publique
 ```
 "C:\Program Files\WireGuard\wg" /?
-
 Available subcommands:
   show: Shows the current configuration and device information
   showconf: Shows the current configuration of a given WireGuard interface, for use with `setconf'
@@ -32,5 +31,7 @@ Available subcommands:
   genpsk: Generates a new preshared key and writes it to stdout
   pubkey: Reads a private key from stdin and writes a public key to stdout
 
-"C:\Program Files\WireGuard\wg" genkey
+"C:\Program Files\WireGuard\wg" genpsk > Desktop\Preshared.txt
+"C:\Program Files\WireGuard\wg" genkey > Desktop\Private.txt
+"C:\Program Files\WireGuard\wg" pubkey > Desktop\Public.txt
 ```
