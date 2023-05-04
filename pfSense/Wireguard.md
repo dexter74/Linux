@@ -98,3 +98,19 @@ Pare-feu > Règles > WireGuard
 
 Pare-feu > Règles > WAN
 ```
+
+
+
+##### Connexion
+```
+[Interface]
+PrivateKey = SFqEF+d/4BvIRmfqYDRbJppRDoOcA60ZaztAJaEHfl4=
+Address     = 192.168.5.2/24
+DNS            = 192.168.0.1
+
+[Peer]
+PublicKey =
+PresharedKey =
+AllowedIPS =
+Endpoint =
+```
