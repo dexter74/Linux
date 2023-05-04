@@ -5,7 +5,7 @@ Wireguard
 ```
 
 ##### Générer des Clés Privées, Publiques et Pre-shared
-```
+```bash
 @echo on
 
 :: ##########################################
