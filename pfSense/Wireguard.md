@@ -97,13 +97,13 @@ mkdir Wireguard\Client
 mkdir Wireguard\Serveur
 
 :: Génération des Clés du Serveur
-%WIREGUARD% genkey > %USERPROFILE%\Desktop\Wireguard\Serveur\Private.txt
-powershell cat %USERPROFILE%\Desktop\Wireguard\Serveur\Private.txt | %WIREGUARD% pubkey > %USERPROFILE%\Desktop\Wireguard\Serveur\Publique.txt
+%WIREGUARD% genkey > %USERPROFILE%\Desktop\Wireguard\Serveur_Private.txt
+powershell cat %USERPROFILE%\Desktop\Wireguard\Serveur_Private.txt | %WIREGUARD% pubkey > %USERPROFILE%\Desktop\Wireguard\Serveur_Publique.txt
 
 :: Génération des Clés du Client
-%WIREGUARD% genpsk > %USERPROFILE%\Desktop\Wireguard\Client\Preshared.txt
-%WIREGUARD% genkey > %USERPROFILE%\Desktop\Wireguard\Client\Private.txt
-powershell cat %USERPROFILE%\Desktop\Wireguard\Client\Private.txt | %WIREGUARD% pubkey > %USERPROFILE%\Desktop\Wireguard\Client\Publique.txt
+%WIREGUARD% genpsk > %USERPROFILE%\Desktop\Wireguard\Client_Preshared.txt
+%WIREGUARD% genkey > %USERPROFILE%\Desktop\Wireguard\Client_Private.txt
+powershell cat %USERPROFILE%\Desktop\Wireguard\Client_Private.txt | %WIREGUARD% pubkey > %USERPROFILE%\Desktop\Wireguard\Client\Publique.txt
 ```
 
 ##### Exemple
