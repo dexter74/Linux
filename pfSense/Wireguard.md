@@ -121,6 +121,7 @@ On peut voir le réseau est actif car il est blan et pas gris.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 ##### Pare-Feu
 ###### WAN
+Lors du choix "Source" il faut choisir Tout si on accéde sur un réseau autre que le WAN de pfsense.
 ![image](https://user-images.githubusercontent.com/35907/236339693-fa31fef5-d22b-4450-b87b-42ad2c006401.png)
 
 ###### Wireguard
