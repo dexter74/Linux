@@ -74,7 +74,6 @@ VPN > Wireguard > Peers >  Add Peers
 - Public Key       : RSdHPzKQWWxhKlkr7PunaurJt6EuUi7seAreoCe2TxU=
 - Pre-shared Key   : h6dyEycgxcgjlzf84mxK/GtLzyUT5xVcKqmxVPlNznY=
 - Allowed IPs      : 0.0.0.0/0
-
 ```
 
 ##### Activation du Serveur
