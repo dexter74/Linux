@@ -109,16 +109,15 @@ Pare-feu > Règles > WAN
 ##### Connexion
 ```
 [Interface]
-PrivateKey = SFqEF+d/4BvIRmfqYDRbJppRDoOcA60ZaztAJaEHfl4=
-Address = 192.168.20.2/32
-DNS = 192.168.0.1
+PrivateKey = <Clé Privée du Client>
+Address = 192.168.XX.2/32
+DNS = 192.168.XX.1
 MTU = 1420
 
 [Peer]
-PublicKey = PIgbMLozKsxhLYMvGn87sBFLzOHL8bM341J+lZw1UCw=
-AllowedIPs = 192.168.0.0/24, 0.0.0.0/0
-Endpoint = 192.168.0.5:51820
-
+PublicKey = <Clé Privée du Serveur>
+AllowedIPs = 0.0.0.0/0
+Endpoint = <Adresse DNS ou IP serveur>:<Port Wireguard>
 ```
 
 
