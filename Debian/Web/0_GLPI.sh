@@ -94,14 +94,14 @@ quit;
 # Déploiement de GLPI 9.5.12 #
 ##############################
 cd /tmp;
-wget "https://github.com/glpi-project/glpi/releases/download/9.5.12/glpi-9.5.12.tgz";
-tar -xvf glpi-9.5.12.tgz -C /var/www/html;
+wget "https://github.com/glpi-project/glpi/releases/download/9.5.12/glpi-9.5.12.tgz" -O /tmp/glpi-9.5.12.tgz;
+tar -xvf /tmp/glpi-9.5.12.tgz -C /var/www/html;
 
 ######################################################################################################################################
 # Déploiement de GLPI 10.0.7 #
 ##############################
-wget "https://github.com/glpi-project/glpi/releases/download/10.0.7/glpi-10.0.7.tgz"
-tar -xvf glpi-10.0.7.tgz -C /var/www/html;
+wget "https://github.com/glpi-project/glpi/releases/download/10.0.7/glpi-10.0.7.tgz" -O /tmp/glpi-10.0.7.tgz
+tar -xvf  /tmp/glpi-10.0.7.tgz -C /var/www/html;
 
 apt install -y php-fileinfo
 apt install -y php-json
@@ -165,7 +165,7 @@ apt install -y -t buster-backports php-twig;
 ######################################################################################################################################
 # phpmyadmin #
 ##############
-wget "https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-all-languages.zip" -O  /var/www/html/phpMyAdmin.zip
-unzip /var/www/html/phpMyAdmin.zip -d /var/www/html;
+wget "https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-all-languages.zip" -O  /tmp/phpMyAdmin.zip
+unzip /tmp/phpMyAdmin.zip -d /var/www/html;
 mv /var/www/html/phpMyAdmin-5.2.1-all-languages /var/www/html/phpmyadmin;
 
