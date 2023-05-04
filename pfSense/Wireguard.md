@@ -82,4 +82,10 @@ VPN > WireGuard > Paramètres
 ##### Création de l'interface 
 ```
 Interface > Assignments
+Ports réseau disponibles	 : tun_wg0 > Cliquer sur Ajouter
+Editer OPTX
+ - Activer: Oui
+ - Description: VPN
+ - Type de configuration IPv4: IP statique
+ - Adresse IPv4:  192..168.5.1 (CF. au serveur Wireguard)
 ```
