@@ -78,7 +78,7 @@ cp /etc/fusioninventory/agent.cfg /etc/fusioninventory/agent.cfg.old;
 sed -i -e 's/^#server = http:\/\/server.domain.com\/glpi\/plugins\/fusioninventory\//server = http:\/\/192.168.1.53\/glpi\/plugins\/fusioninventory\//' /etc/fusioninventory/agent.cfg
 fusioninventory-agent;
 systemctl disable --now fusioninventory-agent.service;
-systemctl enable --now fusioninventory-agent.service;
+systemctl enable  --now fusioninventory-agent.service;
 
 ######################################################################################################################################
 # Serveur #
