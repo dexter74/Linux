@@ -75,7 +75,7 @@ exit
 
 ##### Script B
 ```batch
-@echo on
+@echo off
 
 :: ##########################################################
 :: # Script pour Générer des Clés Wireguard par Marc Jaffré #
