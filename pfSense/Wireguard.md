@@ -94,6 +94,16 @@ On peut voir le réseau actif (Blanc), puis le client dans le réseau.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 ##### Création de l'interface 
+
+**CLiquer sur Ajouter**
+![image](https://user-images.githubusercontent.com/35907/236338769-42cbbcd2-89d1-4bc0-9481-b36d6d0e085c.png)
+
+**Editer OPT1 en cliquant dessus** 
+![image](https://user-images.githubusercontent.com/35907/236338820-b15c34d6-f4b7-4422-87a7-3eeedffcbac1.png)
+
+**Il faut que l'adresse IP de Wireguard soit dans le réseau créer dans l'étape précédente.**
+![image](https://user-images.githubusercontent.com/35907/236339134-e7d9137f-7f3e-40c6-95aa-ac36643e7967.png)
+
 ```
 Interface > Assignments
 Ports réseau disponibles : tun_wg0 
