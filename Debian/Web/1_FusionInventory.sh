@@ -53,14 +53,24 @@ Configuration
 -> Exécuter 
 -> Sauvegarder
 
-systemctl enable --now apache2;
-systemctl enable --now cron;
-systemctl enable --now mariadb;
-systemctl enable --now fusioninventory-agent.service;
-
 ######################################################################################################################################
 # Agent FusionInventory #
 #########################
+# Installation de l'agent FusionInventory
+apt install -y fusioninventory-agent;
+
+# Sauvegarde Fichier original
+cp /etc/fusioninventory/agent.cfg /etc/fusioninventory/agent.cfg.old;
+
+# Remplacer l'adresse IP par l'IP GLPI (192.168.0.10)
+sed -i -e 's/^#server = http:\/\/server.domain.com\/glpi\/plugins\/fusioninventory\//server = http:\/\/192.168.0.10\/glpi\/plugins\/fusioninventory\//' /etc/fusioninventory/agent.cfg
+fusioninventory-agent;
+
+systemctl enable --now apache2;
+systemctl enable --now cron;
+systemctl enable --now mariadb;
+systemctl enable  --now fusioninventory-agent.service;
+
 
 # Fonction:
 - Il peut également faire une découverte de tous les matériels réseau autour de sa machine (modules NetDiscovery et NetInventory). Le module
@@ -76,13 +86,6 @@ Forcer la Maj: http://localhost:62354
 	     : Force an Inventory
 
 
-Linux : Remplacer dans la commande SED l'adresse IP Du serveur
-apt install -y fusioninventory-agent;
-cp /etc/fusioninventory/agent.cfg /etc/fusioninventory/agent.cfg.old;
-sed -i -e 's/^#server = http:\/\/server.domain.com\/glpi\/plugins\/fusioninventory\//server = http:\/\/192.168.1.53\/glpi\/plugins\/fusioninventory\//' /etc/fusioninventory/agent.cfg
-fusioninventory-agent;
-systemctl disable --now fusioninventory-agent.service;
-systemctl enable  --now fusioninventory-agent.service;
 
 ######################################################################################################################################
 # Serveur #
