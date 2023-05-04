@@ -156,14 +156,16 @@ php bin/console db:update -f;
 mv /var/www/html/glpi/install/install.php     /var/www/html/glpi/install/install.php.old;
 mv /var/www/html/glpi/install/install.php.old /var/www/html/glpi/install/install.php;
 
-
 ######################################################################################################################################
-# Dépôt Backports pour phpmyadmin #
-###################################
-echo "deb http://deb.debian.org/debian buster-backports main" > /etc/apt/sources.list.d/phpmyadmin.list;
-
-######################################################################################################################################
-# Installer des dépendances #
-#############################
+# Installer des dépendances pour phpmyadmin #
+#############################################
 apt upgrade -y php-tcpdf php-twig;
 apt install -y -t buster-backports php-twig;
+
+######################################################################################################################################
+# phpmyadmin #
+##############
+wget "https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-all-languages.zip" -O  /var/www/html/phpMyAdmin.zip
+unzip /var/www/html/phpMyAdmin.zip -d /var/www/html;
+mv /var/www/html/phpMyAdmin-5.2.1-all-languages /var/www/html/phpmyadmin;
+
