@@ -37,10 +37,18 @@ apt install -y php-intl;
 apt install -y php-mysql;
 apt install -y php-xmlrpc;
 
+apt install -y php-bz2;
+apt install -y php-mbstring;
+apt install -y php-simplexml;
+apt install -y php-zip;
+
 ######################################################################################################################################
 # Sécuriser la Base De Donnée #
 ###############################
-# mysql_secure_installation;
+#
+# Version Classique: mysql_secure_installation;
+# Mot de passe du compte root: admin
+#
 (echo ""; echo "y" ; echo "y"; echo "admin"; echo "admin"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
 
 ######################################################################################################################################
@@ -67,6 +75,9 @@ CREATE DATABASE IF NOT EXISTS GLPI;
 ######################################################################################################################################
 # Création de l'utilisateur #
 #############################
+# Database:
+# User: GLPI
+# Pass: admin
 CREATE USER 'GLPI'@'localhost' IDENTIFIED BY 'admin';
 
 ######################################################################################################################################
@@ -78,7 +89,6 @@ GRANT ALL PRIVILEGES ON GLPI.* TO 'GLPI'@'localhost';
 # Déconnexion MYSQL #
 #####################
 quit;
-
 
 ######################################################################################################################################
 # Déploiement de GLPI 9.5.12 #
