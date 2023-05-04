@@ -78,3 +78,8 @@ VPN > Wireguard > Peers >  Add Peers
 VPN > WireGuard > Paramètres
 - Activer: Cocher
 ```
+
+##### Création de l'interface 
+```
+Interface > Assignments
+```
