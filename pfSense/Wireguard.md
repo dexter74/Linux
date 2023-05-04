@@ -2,6 +2,14 @@
 ## <p align='center'> Configuration d'un serveur VPN Wireguard sous pfSense </p>
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
+#### Présentation de l'environnement
+```
+Pfsense:
+ - Réseau WAN: 192.168.0.0/24
+ - Réseau LAN: 192.168.10.0/24
+ - Réseau wg0: 192.168.20.0/24
+```
+----------------------------------------------------------------------------------------------------------------------------------------------
 
 #### Installation du Paquet
 ```
@@ -129,15 +137,16 @@ On peut voir le réseau actif (Blanc), puis le client dans le réseau.
 ##### Connexion
 ```
 [Interface]
-PrivateKey = <Clé Privée du Client>
-Address = 192.168.XX.2/32
-DNS = 192.168.XX.1
+PrivateKey = SFqEF+d/4BvIRmfqYDRbJppRDoOcA60ZaztAJaEHfl4=
+Address = 192.168.20.2/32
+DNS = 192.168.20.1
 MTU = 1420
 
 [Peer]
-PublicKey = <Clé Privée du Serveur>
+PublicKey = PIgbMLozKsxhLYMvGn87sBFLzOHL8bM341J+lZw1UCw=
+PresharedKey = h6dyEycgxcgjlzf84mxK/GtLzyUT5xVcKqmxVPlNznY=
 AllowedIPs = 0.0.0.0/0
-Endpoint = <Adresse DNS ou IP serveur>:<Port Wireguard>
+Endpoint = 192.168.0.5:51820
 ```
 
 
