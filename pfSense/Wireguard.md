@@ -25,10 +25,10 @@ Sur un poste Windows, il faut installer WireGuard. Les clés sont générés dan
 ```bash
 @echo on
 
-:: ##########################################
-:: # Script pour Générer des Clés Wireguard #
-:: # "C:\Program Files\WireGuard\wg" /?     #
-:: ##########################################
+:: ##########################################################
+:: # Script pour Générer des Clés Wireguard par Marc Jaffré #
+:: # Syntaxe Commande : "C:\Program Files\WireGuard\wg" /?  #
+:: ##########################################################
 
 :: Titre de la Fenetre DOS
 title Generer Cle Wireguard
