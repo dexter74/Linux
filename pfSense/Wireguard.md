@@ -86,7 +86,7 @@ VPN > WireGuard > Paramètres
 ##### Création de l'interface 
 ```
 Interface > Assignments
-Ports réseau disponibles	 : tun_wg0 > Cliquer sur Ajouter
+Ports réseau disponibles : tun_wg0 > Cliquer sur Ajouter
 Editer OPTX
  - Activer: Oui
  - Description: VPN
