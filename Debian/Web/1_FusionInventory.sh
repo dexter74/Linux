@@ -5,13 +5,13 @@
 # GLPI 9.5
 FILE=https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.5%2B4.2/fusioninventory-9.5+4.2.tar.bz2
 wget $FILE -O /tmp/fusioninventory-9.5+4.2.tar.bz2;
-tar -xvf  /tmp/fusioninventory-9.5+4.2.tar.bz2 -C /var/www/html/glpi/plugins;
+tar -xvf /tmp/fusioninventory-9.5+4.2.tar.bz2 -C /var/www/html/glpi/plugins;
 chown -R www-data:www-data /var/www/html/glpi/plugins;
 
 # GLPI 10.0
 FILE=https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi10.0.6%2B1.1/fusioninventory-10.0.6+1.1.tar.bz2 
 wget $FILE -O /tmp/fusioninventory-10.0.6+1.1.tar.bz2
-tar -xvf  /tmp/fusioninventory-10.0.6+1.1.tar.bz2 -C /var/www/html/glpi/plugins;
+tar -xvf /tmp/fusioninventory-10.0.6+1.1.tar.bz2 -C /var/www/html/glpi/plugins;
 chown -R www-data:www-data /var/www/html/glpi/plugins;
 
 ######################################################################################################################################
