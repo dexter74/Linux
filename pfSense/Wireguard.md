@@ -146,6 +146,7 @@ MTU = 1420
 PublicKey = PIgbMLozKsxhLYMvGn87sBFLzOHL8bM341J+lZw1UCw=
 PresharedKey = h6dyEycgxcgjlzf84mxK/GtLzyUT5xVcKqmxVPlNznY=
 AllowedIPs = 0.0.0.0/0
+AllowedIPs = 192.168.0.0/24
 Endpoint = 192.168.0.5:51820
 ```
 
