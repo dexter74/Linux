@@ -4,18 +4,7 @@ Système > Gestionnaire de paquets > Paquets disponibles
 Wireguard
 ```
 
-##### Configuration du Serveur
-```
-VPN > Wireguard > Tunnels > Add Tunnels
-- Description        : Coller la clé Publique
-- Listen Port        : 51820 (UDP)
-- Interface Keys     : Cliquer sur Générer et copier la clé puis coller dans la "Description"
-- Interface Address  : 192.168.5.0/24 
-```
-
-
-##### Client
-###### Générer une Clé Privée / Publique
+##### Générer des Clés Privées, Publiques et Pre-shared
 ```
 "C:\Program Files\WireGuard\wg" /?
 Available subcommands:
@@ -29,7 +18,29 @@ Available subcommands:
   genpsk: Generates a new preshared key and writes it to stdout
   pubkey: Reads a private key from stdin and writes a public key to stdout
 
-"C:\Program Files\WireGuard\wg" genpsk > Desktop\Preshared.txt
-"C:\Program Files\WireGuard\wg" genkey > Desktop\Private.txt
-"C:\Program Files\WireGuard\wg" pubkey > Desktop\Public.txt
+mkdir Desktop\Wireguard\Client
+mkdir Desktop\Wireguard\Serveur
+
+"C:\Program Files\WireGuard\wg" genpsk > Desktop\Wireguard\Client\Preshared.txt
+"C:\Program Files\WireGuard\wg" genkey > Desktop\Wireguard\Client\Private.txt
+"C:\Program Files\WireGuard\wg" pubkey > Desktop\Wireguard\Client\Public.txt
+
+
+"C:\Program Files\WireGuard\wg" genpsk > Desktop\Wireguard\Serveur\Preshared.txt
+"C:\Program Files\WireGuard\wg" genkey > Desktop\Wireguard\Serveur\Private.txt
+"C:\Program Files\WireGuard\wg" pubkey > Desktop\Wireguard\Serveur\Public.txt
 ```
+
+
+
+##### Configuration du Serveur
+```
+VPN > Wireguard > Tunnels > Add Tunnels
+- Description        : Coller la clé Publique
+- Listen Port        : 51820 (UDP)
+- Interface Keys     : Cliquer sur Générer et copier la clé puis coller dans la "Description"
+- Interface Address  : 192.168.5.0/24 
+```
+
+
+##### Client
