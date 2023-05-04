@@ -89,19 +89,22 @@ quit;
 # Déploiement de GLPI 9.5.12 #
 ##############################
 cd /tmp;
-wget "https://github.com/glpi-project/glpi/releases/download/9.5.12/glpi-9.5.12.tgz" -O /tmp/glpi-9.5.12.tgz;
+FILE="https://github.com/glpi-project/glpi/releases/download/9.5.12/glpi-9.5.12.tgz" 
+wget "$FILE"  -O /tmp/glpi-9.5.12.tgz;
 tar -xvf /tmp/glpi-9.5.12.tgz -C /var/www/html;
 
 ######################################################################################################################################
 # Déploiement de GLPI 10.0.6 #
 ##############################
-wget "https://github.com/glpi-project/glpi/releases/download/10.0.6/glpi-10.0.6.tgz" -O /tmp/glpi-10.0.6.tgz
+
+FILE="https://github.com/glpi-project/glpi/releases/download/10.0.6/glpi-10.0.6.tgz"
+wget "$FILE" -O /tmp/glpi-10.0.6.tgz;
 tar -xvf  /tmp/glpi-10.0.6.tgz -C /var/www/html;
 
-apt install -y php-fileinfo
-apt install -y php-json
-apt install -y php-dom
-apt install -y php-simplexml
+apt install -y php-fileinfo;
+apt install -y php-json;
+apt install -y php-dom;
+apt install -y php-simplexml;
 
 ######################################################################################################################################
 # Permission #
