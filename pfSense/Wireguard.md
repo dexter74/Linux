@@ -85,6 +85,8 @@ VPN > WireGuard > Paramètres
 ```
 ![image](https://user-images.githubusercontent.com/35907/236338291-3962556b-d3c0-452a-a968-0cecfc93626f.png)
 
+![image](https://user-images.githubusercontent.com/35907/236338384-ddee4b10-788d-46d6-b9d7-c247fea09031.png) : Aucune connexion en cours
+
 
 
 <br />
