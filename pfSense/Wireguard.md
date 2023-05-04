@@ -114,3 +114,7 @@ PresharedKey = YJUO1byaWTdh4cXmrOeZ7XG1rJoTropEoYMcozXQsCM=
 AllowedIPs = 0.0.0.0/24
 Endpoint = 192.168.0.6:51820
 ```
+
+
+![image](https://user-images.githubusercontent.com/35907/236208130-5c07bd5e-db85-4f4b-8e87-9eccfa0bca46.png)
+
