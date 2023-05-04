@@ -22,7 +22,7 @@ set WIREGUARD="C:\Program Files\WireGuard\wg"
 :: Nettoyage
 rmdir /S /Q Wireguard
 
-:: Création de l'arborescence des dossiers
+:: Création de l-arborescence des dossiers
 mkdir Wireguard
 mkdir Wireguard\Client
 mkdir Wireguard\Serveur
