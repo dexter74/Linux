@@ -98,13 +98,10 @@ tar -xvf /tmp/glpi-9.5.12.tgz -C /var/www/html;
 ######################################################################################################################################
 # Déploiement de GLPI 10.0.6 #
 ##############################
-
 FILE="https://github.com/glpi-project/glpi/releases/download/10.0.6/glpi-10.0.6.tgz"
 wget "$FILE" -O /tmp/glpi-10.0.6.tgz;
 rm -r /var/www/html/glpi 2>/dev/null;
 tar -xvf  /tmp/glpi-10.0.6.tgz -C /var/www/html;
-
-
 
 ######################################################################################################################################
 # Permission #
