@@ -3,7 +3,7 @@
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
-##### Installation du Paquet
+#### Installation du Paquet
 ```
 Système > Gestionnaire de paquets > Paquets disponibles
 Wireguard
@@ -11,7 +11,7 @@ Wireguard
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
-##### Générer des Clés Privées, Publiques et Pre-shared
+#### Générer des Clés Privées, Publiques et Pre-shared
 Sur un poste Windows, il faut installer WireGuard. Les clés sont générés dans le dossier Wireguard qui sera crée sur le bureau de l'utilisateur.
 
 ```bash
@@ -60,14 +60,12 @@ Client:
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
-##### Configuration du Serveur
+#### Configuration du Serveur
 Indiquer la clé Privée du serveur.
 
 ![image](https://user-images.githubusercontent.com/35907/236337098-b1524720-6256-424d-90e7-cb119c3231bd.png)
 
-
-
-##### Client
+#### Client
 ```
 VPN > Wireguard > Peers >  Add Peers
 - Tunnel           : tun_wg0
