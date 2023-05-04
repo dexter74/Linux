@@ -90,3 +90,11 @@ Editer OPTX
  - MTU: 1420 (A voir si sa impact)
  - Adresse IPv4:  192..168.5.1 / 24 (CF. au serveur Wireguard)
 ```
+
+##### Pare-Feu
+```
+Pare-feu > Règles > WireGuard
+ -  
+
+Pare-feu > Règles > WAN
+```
