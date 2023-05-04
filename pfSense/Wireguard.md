@@ -104,31 +104,24 @@ On peut voir le réseau actif (Blanc), puis le client dans le réseau.
 **Il faut que l'adresse IP de Wireguard soit dans le réseau créer dans l'étape précédente.**
 ![image](https://user-images.githubusercontent.com/35907/236339134-e7d9137f-7f3e-40c6-95aa-ac36643e7967.png)
 
-```
-Interface > Assignments
-Ports réseau disponibles : tun_wg0 
- > Cliquer sur Ajouter
- > Enregistrer
- 
- Editer OPTX
- - Activer: Oui
- - Description: VPN
- - Type de configuration IPv4: IP statique
- - MTU: 1420 (A voir si sa impact)
- - Adresse IPv4:  192.168.20.1 / 24
-  > CF. à la configuration du serveur Wireguard
+![image](https://user-images.githubusercontent.com/35907/236339280-37bebab7-19ec-4e53-a6c2-f52f68265c21.png)
 
-Ajouter dans le groupe Wireguard l'interface VPN
-```
+**Ajouter l'interface wg0 au groupe Wireguard**
+![image](https://user-images.githubusercontent.com/35907/236339352-1e512167-e3fa-4805-93e6-224be6145af4.png)
+
+![image](https://user-images.githubusercontent.com/35907/236339386-caff331c-85c4-4a90-8b1d-cc3328968e06.png)
 
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 ##### Pare-Feu
-```
-Pare-feu > Règles > WireGuard
-Pare-feu > Règles > WAN
-```
+###### WAN
+![image](https://user-images.githubusercontent.com/35907/236339693-fa31fef5-d22b-4450-b87b-42ad2c006401.png)
+
+###### Wireguard
+![image](https://user-images.githubusercontent.com/35907/236339772-8f69c96a-30f5-4166-bffa-03e1e901b393.png)
+
+
 
 <br />
 
