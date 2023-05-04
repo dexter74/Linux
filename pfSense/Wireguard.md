@@ -69,8 +69,7 @@ VPN > Wireguard > Peers >  Add Peers
 - Descrption     : Client 1
 - Public Key     : RSdHPzKQWWxhKlkr7PunaurJt6EuUi7seAreoCe2TxU=
 - Pre-shared Key : h6dyEycgxcgjlzf84mxK/GtLzyUT5xVcKqmxVPlNznY=
-- Allowed IPs    : 192.168.0.0/24
-- Allowed IPs    : 192.168.1.0/24
+- Allowed IPs    : 0.0.0.0/0
 ```
 
 ##### Activation du Serveur
