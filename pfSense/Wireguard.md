@@ -150,6 +150,11 @@ AllowedIPs = 192.168.0.0/24
 Endpoint = 192.168.0.5:51820
 ```
 
+##### Etat de Wireguard
+
+![image](https://user-images.githubusercontent.com/35907/236340595-d801adc3-c990-47c5-8ee4-632a9da7504a.png)
+
+
 
 ![image](https://user-images.githubusercontent.com/35907/236208130-5c07bd5e-db85-4f4b-8e87-9eccfa0bca46.png)
 
