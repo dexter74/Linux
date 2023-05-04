@@ -5,6 +5,8 @@ Wireguard
 ```
 
 ##### Générer des Clés Privées, Publiques et Pre-shared
+Sur un poste Windows, il faut installer WireGuard.
+
 ```bash
 @echo on
 
