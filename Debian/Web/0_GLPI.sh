@@ -93,10 +93,10 @@ wget "https://github.com/glpi-project/glpi/releases/download/9.5.12/glpi-9.5.12.
 tar -xvf /tmp/glpi-9.5.12.tgz -C /var/www/html;
 
 ######################################################################################################################################
-# Déploiement de GLPI 10.0.7 #
+# Déploiement de GLPI 10.0.6 #
 ##############################
-wget "https://github.com/glpi-project/glpi/releases/download/10.0.7/glpi-10.0.7.tgz" -O /tmp/glpi-10.0.7.tgz
-tar -xvf  /tmp/glpi-10.0.7.tgz -C /var/www/html;
+wget "https://github.com/glpi-project/glpi/releases/download/10.0.6/glpi-10.0.6.tgz" -O /tmp/glpi-10.0.6.tgz
+tar -xvf  /tmp/glpi-10.0.6.tgz -C /var/www/html;
 
 apt install -y php-fileinfo
 apt install -y php-json
