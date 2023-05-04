@@ -28,7 +28,7 @@ mkdir Wireguard\Client
 mkdir Wireguard\Serveur
 
 :: Génération des Clés du Serveur
-%WIREGUARD% genpsk > %USERPROFILE%\Desktop\Wireguard\Serveur\Preshared.txt
+:: %WIREGUARD% genpsk > %USERPROFILE%\Desktop\Wireguard\Serveur\Preshared.txt
 %WIREGUARD% genkey > %USERPROFILE%\Desktop\Wireguard\Serveur\Private.txt
 powershell cat %USERPROFILE%\Desktop\Wireguard\Serveur\Private.txt | %WIREGUARD% pubkey > %USERPROFILE%\Desktop\Wireguard\Serveur\Publique.txt
 
@@ -56,7 +56,7 @@ Client:
 VPN > Wireguard > Tunnels > Add Tunnels
 - Description        : Wireguard
 - Listen Port        : 51820 (UDP)
-- Interface Keys     : Coller la clé Privée
+- Interface Keys     : 4McJApCA5LSuGWiEQhY6/N+ge4BYNUu/7kt2eWJXSm0=
 - Interface Address  : 192.168.20.0/24
 
 > Valider
