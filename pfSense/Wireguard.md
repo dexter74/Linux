@@ -81,8 +81,9 @@ VPN > Wireguard > Peers >  Add Peers
 ##### Activation du Serveur
 ```
 VPN > WireGuard > Paramètres
-- Activer: Cocher
 ```
+![image](https://user-images.githubusercontent.com/35907/236337964-5e5770e7-abaa-4b89-b57b-bd3d14b4c262.png)
+
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
