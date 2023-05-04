@@ -38,6 +38,23 @@ powershell cat %USERPROFILE%\Desktop\Wireguard\Serveur\Private.txt | %WIREGUARD%
 powershell cat %USERPROFILE%\Desktop\Wireguard\Client\Private.txt | %WIREGUARD% pubkey > %USERPROFILE%\Desktop\Wireguard\Client\Publique.txt
 ```
 
+##### Exemple
+```
+Serveur:
+ - Preshared: YJUO1byaWTdh4cXmrOeZ7XG1rJoTropEoYMcozXQsCM=
+ - Private  : 4McJApCA5LSuGWiEQhY6/N+ge4BYNUu/7kt2eWJXSm0=
+ - Public   : PIgbMLozKsxhLYMvGn87sBFLzOHL8bM341J+lZw1UCw=
+
+ 
+Client:
+ - Preshared: h6dyEycgxcgjlzf84mxK/GtLzyUT5xVcKqmxVPlNznY=
+ - Private  : SFqEF+d/4BvIRmfqYDRbJppRDoOcA60ZaztAJaEHfl4=
+ - Public   : RSdHPzKQWWxhKlkr7PunaurJt6EuUi7seAreoCe2TxU=
+
+
+```
+
+
 ##### Configuration du Serveur
 ```
 VPN > Wireguard > Tunnels > Add Tunnels
