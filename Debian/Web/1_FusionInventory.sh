@@ -61,7 +61,6 @@ systemctl enable --now fusioninventory-agent.service;
 - Il peut également faire une découverte de tous les matériels réseau autour de sa machine (modules NetDiscovery et NetInventory). Le module
 Deploy permet de réaliser du déploiement de logiciels et la fonction Wake-on-lan est intégrée.
 
-
 Windows: https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/fusioninventory-agent_windows-x64_2.6.exe
 
 Installation:
@@ -73,7 +72,7 @@ Forcer la Maj: http://localhost:62354
 
 
 
-Linux :
+Linux : Remplacer dans la commande SED l'adresse IP Du serveur
 apt install -y fusioninventory-agent;
 cp /etc/fusioninventory/agent.cfg /etc/fusioninventory/agent.cfg.old;
 sed -i -e 's/^#server = http:\/\/server.domain.com\/glpi\/plugins\/fusioninventory\//server = http:\/\/192.168.1.53\/glpi\/plugins\/fusioninventory\//' /etc/fusioninventory/agent.cfg
