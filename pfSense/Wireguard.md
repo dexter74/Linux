@@ -61,15 +61,10 @@ Client:
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 ##### Configuration du Serveur
-```
-VPN > Wireguard > Tunnels > Add Tunnels
-- Description        : Wireguard
-- Listen Port        : 51820 (UDP)
-- Interface Keys     : 4McJApCA5LSuGWiEQhY6/N+ge4BYNUu/7kt2eWJXSm0=
-- Interface Address  : 192.168.20.0/24
 
-> Valider
-```
+![image](https://user-images.githubusercontent.com/35907/236337098-b1524720-6256-424d-90e7-cb119c3231bd.png)
+
+
 
 ##### Client
 ```
