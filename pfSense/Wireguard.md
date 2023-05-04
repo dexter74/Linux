@@ -87,5 +87,6 @@ Editer OPTX
  - Activer: Oui
  - Description: VPN
  - Type de configuration IPv4: IP statique
+ - MTU: 1420 (A voir si sa impact)
  - Adresse IPv4:  192..168.5.1 / 24 (CF. au serveur Wireguard)
 ```
