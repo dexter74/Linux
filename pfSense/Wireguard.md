@@ -68,13 +68,14 @@ Client:
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
-#### Configuration du Serveur
+### IV. Configuration du service Wireguard
+##### A. Serveur
 ```
 VPN > Wireguard > Tunnels >  Add Tunnels
 ```
 ![image](https://user-images.githubusercontent.com/35907/236337098-b1524720-6256-424d-90e7-cb119c3231bd.png)
 
-#### Client
+##### B. Client
 ```
 VPN > Wireguard > Peers >  Add Peers
 ```
@@ -87,18 +88,16 @@ VPN > WireGuard > Paramètres
 ![image](https://user-images.githubusercontent.com/35907/236337964-5e5770e7-abaa-4b89-b57b-bd3d14b4c262.png)
 
 
-#### Etat du Serveur
+##### C. Etat du Serveur
 ```
 État > WireGuard
 ```
 On peut voir le réseau est actif car il est blan et pas gris.
 ![image](https://user-images.githubusercontent.com/35907/236338291-3962556b-d3c0-452a-a968-0cecfc93626f.png)
-
-
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
-##### Création de l'interface 
+### V. Création de l'interface 
 
 **CLiquer sur Ajouter**
 ![image](https://user-images.githubusercontent.com/35907/236338769-42cbbcd2-89d1-4bc0-9481-b36d6d0e085c.png)
@@ -119,7 +118,7 @@ On peut voir le réseau est actif car il est blan et pas gris.
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
-##### Pare-Feu
+### VI. Pare-Feu
 ###### WAN
 Lors du choix "Source" il faut choisir Tout si on accéde sur un réseau autre que le WAN de pfsense.
 ![image](https://user-images.githubusercontent.com/35907/236339693-fa31fef5-d22b-4450-b87b-42ad2c006401.png)
@@ -127,12 +126,10 @@ Lors du choix "Source" il faut choisir Tout si on accéde sur un réseau autre q
 ###### Wireguard
 ![image](https://user-images.githubusercontent.com/35907/236339772-8f69c96a-30f5-4166-bffa-03e1e901b393.png)
 
-
-
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
-##### Connexion
+### VII. Connexion depuis le client
 ```
 [Interface]
 PrivateKey = SFqEF+d/4BvIRmfqYDRbJppRDoOcA60ZaztAJaEHfl4=
