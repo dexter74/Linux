@@ -21,7 +21,62 @@ Wireguard
 ----------------------------------------------------------------------------------------------------------------------------------------------
 ### III. Générer des Clés Privées, Publiques et Pre-shared
 Sur un poste Windows, il faut installer WireGuard. Les clés sont générés dans le dossier Wireguard qui sera crée sur le bureau de l'utilisateur.
+Le script A ou B font la même chose.
 
+##### Script A
+````batch
+@echo off
+
+
+:: ##########################################################
+:: # Script pour Générer des Clés Wireguard par Marc Jaffré #
+:: # Syntaxe Commande : "C:\Program Files\WireGuard\wg" /?  #
+:: ##########################################################
+
+:: Titre de la Fenetre DOS
+title Generer Cle Wireguard
+
+:: Declaration des Variables
+set WIREGUARD="C:\Program Files\WireGuard\wg"
+
+:: Création du Dossier Temporaire
+mkdir %USERPROFILE%\tmp\
+
+:: Génération des Clés Serveur
+%WIREGUARD% genkey > %USERPROFILE%\tmp\PRIVATE.txt
+powershell cat %USERPROFILE%\tmp\PRIVATE.txt | %WIREGUARD% pubkey >  %USERPROFILE%\tmp\PUBLIC.txt
+FOR /F "tokens=*" %%g IN ('powershell cat %USERPROFILE%\tmp\PRIVATE.txt') do (SET SRV_PRIV=%%g)
+FOR /F "tokens=*" %%g IN ('powershell cat %USERPROFILE%\tmp\PUBLIC.txt') do (SET SRV_PUB=%%g)
+
+:: Génération des Clés Client
+%WIREGUARD% genkey > %USERPROFILE%\tmp\PRIVATE.txt
+%WIREGUARD% genpsk > %USERPROFILE%\tmp\Preshared.txt
+powershell cat %USERPROFILE%\tmp\PRIVATE.txt | %WIREGUARD% pubkey >  %USERPROFILE%\tmp\PUBLIC.txt
+FOR /F "tokens=*" %%g IN ('powershell cat %USERPROFILE%\tmp\PRIVATE.txt') do (SET CLIENT_PRIV=%%g)
+FOR /F "tokens=*" %%g IN ('powershell cat %USERPROFILE%\tmp\Preshared.txt')  do (SET CLIENT_Preshared=%%g)
+FOR /F "tokens=*" %%g IN ('powershell cat %USERPROFILE%\tmp\PUBLIC.txt')  do (SET CLIENT_PUB=%%g)
+
+
+:: Génération du fichier de sortie:
+
+echo Serveur: > %USERPROFILE%\Desktop\Wireguard.txt
+echo  - Private : %SRV_PRIV% >> %USERPROFILE%\Desktop\Wireguard.txt
+echo  - Public  : %SRV_PUB%  >> %USERPROFILE%\Desktop\Wireguard.txt
+echo. >> %USERPROFILE%\Desktop\Wireguard.txt
+echo Client:                         >> %USERPROFILE%\Desktop\Wireguard.txt
+echo  - Private : %CLIENT_PRIV%      >> %USERPROFILE%\Desktop\Wireguard.txt
+echo  - Preshare: %CLIENT_Preshared% >> %USERPROFILE%\Desktop\Wireguard.txt
+echo  - Public  : %CLIENT_PUB%       >> %USERPROFILE%\Desktop\Wireguard.txt
+
+
+:: Purge du Dossier Temp:
+rmdir /S /Q %USERPROFILE%\tmp
+
+:: Ouverture du fichier Wireguard.txt
+%USERPROFILE%\Desktop\Wireguard.txt
+```
+
+##### Script B
 ```bash
 @echo on
 
