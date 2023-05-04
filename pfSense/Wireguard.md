@@ -8,7 +8,6 @@ Système > Gestionnaire de paquets > Paquets disponibles
 Wireguard
 ```
 
-
 ##### Générer des Clés Privées, Publiques et Pre-shared
 Sur un poste Windows, il faut installer WireGuard. Les clés sont générés dans le dossier Wireguard qui sera crée sur le bureau de l'utilisateur.
 
@@ -108,8 +107,6 @@ Ajouter dans le groupe Wireguard l'interface VPN
 Pare-feu > Règles > WireGuard
 Pare-feu > Règles > WAN
 ```
-
-
 
 ##### Connexion
 ```
