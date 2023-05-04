@@ -1,8 +1,13 @@
+----------------------------------------------------------------------------------------------------------------------------------------------
+<p align='center'> Configuration d'un serveur VPN Wireguard sous pfSense </p>
+----------------------------------------------------------------------------------------------------------------------------------------------
+
 ##### Installation du Paquet
 ```
 Système > Gestionnaire de paquets > Paquets disponibles
 Wireguard
 ```
+
 
 ##### Générer des Clés Privées, Publiques et Pre-shared
 Sur un poste Windows, il faut installer WireGuard. Les clés sont générés dans le dossier Wireguard qui sera crée sur le bureau de l'utilisateur.
