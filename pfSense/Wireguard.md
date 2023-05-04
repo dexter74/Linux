@@ -62,7 +62,6 @@ VPN > Wireguard > Tunnels > Add Tunnels
 > Valider
 ```
 
-
 ##### Client
 ```
 VPN > Wireguard > Peers >  Add Peers
@@ -72,4 +71,10 @@ VPN > Wireguard > Peers >  Add Peers
 - Pre-shared Key : h6dyEycgxcgjlzf84mxK/GtLzyUT5xVcKqmxVPlNznY=
 - Allowed IPs    : 192.168.0.0/24
 - Allowed IPs    : 192.168.1.0/24
+```
+
+##### Activation du Serveur
+```
+VPN > WireGuard > Paramètres
+- Activer: Cocher
 ```
