@@ -115,7 +115,7 @@ apt install -y php-simplexml
 ######################################################################################################################################
 # Permission #
 ##############
-chown -R www-data /var/www/html/glpi;
+chown -R www-data:www-data /var/www/html/;
 
 ######################################################################################################################################
 # https://glpi-install.readthedocs.io/fr/develop/command-line.html#cdline-install #
