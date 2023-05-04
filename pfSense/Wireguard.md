@@ -66,14 +66,13 @@ Indiquer la clé Privée du serveur.
 ![image](https://user-images.githubusercontent.com/35907/236337098-b1524720-6256-424d-90e7-cb119c3231bd.png)
 
 #### Client
+
 ```
 VPN > Wireguard > Peers >  Add Peers
-- Tunnel           : tun_wg0
-- Descrption       : Client 1
-- Public Key       : RSdHPzKQWWxhKlkr7PunaurJt6EuUi7seAreoCe2TxU=
-- Pre-shared Key   : h6dyEycgxcgjlzf84mxK/GtLzyUT5xVcKqmxVPlNznY=
-- Allowed IPs      : 0.0.0.0/0
 ```
+![image](https://user-images.githubusercontent.com/35907/236337732-9e1b7a0d-897e-40d6-8e84-a203c47dcb8a.png)
+
+
 
 ##### Activation du Serveur
 ```
