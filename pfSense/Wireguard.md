@@ -65,3 +65,9 @@ VPN > Wireguard > Tunnels > Add Tunnels
 
 
 ##### Client
+```
+VPN > Wireguard > Peers >  Add Peers
+- Tunnel         : tun_wg0
+- Descrption     : Client 1
+- Public Key     :
+- Pre-shared Key : 
