@@ -51,7 +51,6 @@ Client:
  - Preshared: h6dyEycgxcgjlzf84mxK/GtLzyUT5xVcKqmxVPlNznY=
 ```
 
-
 ##### Configuration du Serveur
 ```
 VPN > Wireguard > Tunnels > Add Tunnels
@@ -69,5 +68,5 @@ VPN > Wireguard > Tunnels > Add Tunnels
 VPN > Wireguard > Peers >  Add Peers
 - Tunnel         : tun_wg0
 - Descrption     : Client 1
-- Public Key     :
-- Pre-shared Key : 
+- Public Key     : RSdHPzKQWWxhKlkr7PunaurJt6EuUi7seAreoCe2TxU=
+- Pre-shared Key : h6dyEycgxcgjlzf84mxK/GtLzyUT5xVcKqmxVPlNznY=
