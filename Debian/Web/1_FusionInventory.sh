@@ -24,7 +24,6 @@ Configuration
 cd /var/spool/cron;
 crontab -e;
 
-
 #Studi: (Erreur)
 * * * * * /usr/bin/php /var/www/html/glpi/front/cron.php &>/dev/null
 
@@ -46,12 +45,10 @@ Configuration
 -> Exécuter 
 -> Sauvegarder
 
-
 systemctl enable --now apache2;
 systemctl enable --now cron;
 systemctl enable --now mariadb;
 systemctl enable --now fusioninventory-agent.service;
-
 
 ######################################################################################################################################
 # Agent FusionInventory #
@@ -69,7 +66,6 @@ Installation:
 
 Forcer la Maj: http://localhost:62354
 	     : Force an Inventory
-
 
 
 Linux : Remplacer dans la commande SED l'adresse IP Du serveur
