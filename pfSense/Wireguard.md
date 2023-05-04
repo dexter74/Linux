@@ -30,7 +30,6 @@ mkdir Wireguard\Client
 mkdir Wireguard\Serveur
 
 :: Génération des Clés du Serveur
-:: %WIREGUARD% genpsk > %USERPROFILE%\Desktop\Wireguard\Serveur\Preshared.txt
 %WIREGUARD% genkey > %USERPROFILE%\Desktop\Wireguard\Serveur\Private.txt
 powershell cat %USERPROFILE%\Desktop\Wireguard\Serveur\Private.txt | %WIREGUARD% pubkey > %USERPROFILE%\Desktop\Wireguard\Serveur\Publique.txt
 
@@ -45,7 +44,6 @@ powershell cat %USERPROFILE%\Desktop\Wireguard\Client\Private.txt | %WIREGUARD% 
 Serveur:
  - Private  : 4McJApCA5LSuGWiEQhY6/N+ge4BYNUu/7kt2eWJXSm0=
  - Public   : PIgbMLozKsxhLYMvGn87sBFLzOHL8bM341J+lZw1UCw=
- - Preshared: YJUO1byaWTdh4cXmrOeZ7XG1rJoTropEoYMcozXQsCM=
 
 Client:
  - Private  : SFqEF+d/4BvIRmfqYDRbJppRDoOcA60ZaztAJaEHfl4=
@@ -88,14 +86,16 @@ Interface > Assignments
 Ports réseau disponibles : tun_wg0 
  > Cliquer sur Ajouter
  > Enregistrer
-
-Editer OPTX
+ 
+ Editer OPTX
  - Activer: Oui
  - Description: VPN
  - Type de configuration IPv4: IP statique
  - MTU: 1420 (A voir si sa impact)
  - Adresse IPv4:  192.168.20.1 / 24
   > CF. à la configuration du serveur Wireguard
+
+Ajouter dans le groupe Wireguard l'interface VPN
 ```
 
 ##### Pare-Feu
