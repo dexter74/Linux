@@ -102,8 +102,6 @@ Editer OPTX
 ##### Pare-Feu
 ```
 Pare-feu > Règles > WireGuard
- -  
-
 Pare-feu > Règles > WAN
 ```
 
