@@ -44,6 +44,7 @@ apt install -y sudo;
 ```
 
 #### Mauvaise Pratique
+Cette pratique est uniquement pour l'apprentissage ! (Diminue la sécurité !)
 ```bash
 # Récupére le nom d'utilisateur de l'ID 1000
 UTILISATEUR=$(id 1000 | cut -d "(" -f 2 | cut -d ")" -f 1)
