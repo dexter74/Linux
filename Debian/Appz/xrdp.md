@@ -22,9 +22,9 @@ systemctl enable --now xrdp;
 #### Xsession
 ```
 rm /home/marc/.xsession;
-runuser -l marc  -c 'echo "cinnamon-session" > /home/marc/.xsession';
-echo "gnome-session" > /home/marc/.xsession;
+#runuser -l marc  -c 'echo "cinnamon-session" > /home/marc/.xsession';
+# echo "gnome-session" > /home/marc/.xsession;
 ```
-
-
- systemctl disable --now bluetooth.service blueman-mechanism.service
+systemctl disable --now bluetooth.service blueman-mechanism.service
+journalctl -f -b 0 | grep xrdp
+```
