@@ -149,7 +149,8 @@ dpkg-reconfigure lightdm;
 #### V. Cinnamon
 ##### A. Installation de base
 ```
-apt install -y cinnamon cinnamon-desktop-environment cinnamon-l10n;
+apt install cinnamon cinnamon-l10n;
+apt install cinnamon-desktop-environment;
 ```
 ##### B. Lancement du service lighdm
 ```
