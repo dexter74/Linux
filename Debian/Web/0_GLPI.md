@@ -104,6 +104,9 @@ GRANT ALL PRIVILEGES ON GLPI.* TO 'GLPI'@'localhost';
 ```bash
 quit;
 ```
+
+A ce stade, on à crée la base de donnée, l'utilisateur avec son mot de passe. et pour terminer les permissions sur la base de donnée sur GLPI.  (L'utilisateur GLPI à tout droit sur la BDD GLPI)
+
 <r />
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
