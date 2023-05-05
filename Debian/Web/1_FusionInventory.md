@@ -18,7 +18,9 @@ wget $FILE -O /tmp/fusioninventory-10.0.6+1.1.tar.bz2
 tar -xvf /tmp/fusioninventory-10.0.6+1.1.tar.bz2 -C /var/www/html/glpi/plugins;
 chown -R www-data:www-data /var/www/html/glpi/plugins;
 ```
+<br />
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Activation du Plugin
 ```
 Configuration 
@@ -42,56 +44,73 @@ crontab -e;
 * * * * * /usr/bin/php /var/www/html/glpi/front/cron.php &>/dev/null
 ```
 
-######################################################################################################################################
-# Relancer le service Cron #
-############################
+#### Relancer le service Cron
+```bash
 systemctl restart cron;
 systemctl status  cron;
+```
 
-######################################################################################################################################
-# Activer les tâches Cron #
-###########################
+#### Activer les tâches Cron 
+```
 Configuration 
 - Actions automatiques
 - Taskscheduler
 -> Exécuter 
 -> Sauvegarder
+```
 
-######################################################################################################################################
-# Agent FusionInventory #
-#########################
-# Installation de l'agent FusionInventory
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#### Installation de l'agent FusionInventory
+```bash
 apt install -y fusioninventory-agent;
+```
 
-# Sauvegarde Fichier original
+### Sauvegarde Fichier original
+Permet de revenir en Arrière en cas de problème via le fichier original.
+```bash
 cp /etc/fusioninventory/agent.cfg /etc/fusioninventory/agent.cfg.old;
+```
 
-# Remplacer l'adresse IP par l'IP GLPI (192.168.0.10)
+#### Configurer l'adresse GLPI pour l'agent
+Remplacer l'adresse `192.168.0.10`par l'adresse de votre serveur GLPI.
+```bash
 sed -i -e 's/^#server = http:\/\/server.domain.com\/glpi\/plugins\/fusioninventory\//server = http:\/\/192.168.0.10\/glpi\/plugins\/fusioninventory\//' /etc/fusioninventory/agent.cfg
 fusioninventory-agent;
+```
 
+#### Restaurer le fichier original (En cas d'erreur)
+Permet de restaure le contenu du fichier original dans le fichier de configuration.
+```bash
+cat /etc/fusioninventory/agent.cfg.old >  /etc/fusioninventory/agent.cfg;
+```
+
+#### Relancer les services
+Relance du serveur Web, Cron, MariaDB (BDD) et de l'agent Fusion Inventory;
+```bash
 systemctl enable --now apache2;
 systemctl enable --now cron;
 systemctl enable --now mariadb;
 systemctl enable  --now fusioninventory-agent.service;
+```
 
-
-# Fonction:
+#### Fonction de l'agent Inventory
+```
 - Il peut également faire une découverte de tous les matériels réseau autour de sa machine (modules NetDiscovery et NetInventory). Le module
 Deploy permet de réaliser du déploiement de logiciels et la fonction Wake-on-lan est intégrée.
-
 Windows: https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/fusioninventory-agent_windows-x64_2.6.exe
 
 Installation:
  - Type d'installation: Complète
- - Serveur: http://192.168.1.53/glpi/plugins/fusioninventory/
+ - Serveur: http://192.168.0.10/glpi/plugins/fusioninventory/
+```
 
-Forcer la Maj: http://localhost:62354
-	     : Force an Inventory
+#### Côté Client (Forcer la MAJ)
+```
+Aller à l'adresse de bouclage sur le port 65354 : http://localhost:62354
+puis cliquer sur Force an Inventory
+```
 
-
-
-######################################################################################################################################
-# Serveur #
-###########
+#### Côté GLPI
+```
 Cliquer sur l'accueil de GLPI puis dans Ordinateurs
+```
