@@ -25,8 +25,9 @@ cp /etc/apt/sources.list /etc/apt/sources.list.old;
 ```
 ###### Modification des sources
 ```
+sed -i -e "s/^deb cdrom/#deb cdrom/g" /etc/apt/sources.list;
 echo 'deb http://ftp.fr.debian.org/debian bullseye main contrib non-free
-deb-src http://ftp.fr.debian.org/debian bullseye main contrib non-free' > /etc/apt/sources.list 
+deb-src http://ftp.fr.debian.org/debian bullseye main contrib non-free' > /etc/apt/sources.list.d/bullseye.list
 ```
 ##### B. Mettre à jour la liste des paquets
 ```
