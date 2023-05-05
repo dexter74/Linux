@@ -232,11 +232,10 @@ mv /var/www/html/phpMyAdmin-5.2.1-all-languages /var/www/html/phpmyadmin;
 
 #### Divers Commande [ICI](https://glpi-install.readthedocs.io/fr/develop/command-line.html#cdline-install)
 ```
-/var/www/html/glpi/bin/console db:check;
-/var/www/html/glpi/bin/console glpi:migration:timestamps;
-
 /var/www/html/glpi/bin/console glpi:maintenance:enable;
 /var/www/html/glpi/bin/console glpi:maintenance:disable;
+
+/var/www/html/glpi/bin/console glpi:migration:timestamps;
 /var/www/html/glpi/bin/console db:update -f;
 ```
 
