@@ -130,14 +130,10 @@ tar -xvf  /tmp/glpi-10.0.6.tgz -C /var/www/html;
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Installation des extensions
+Un Site Web nécessite des extensions selon les fonctions ou le langage utilisé, on n'installe les extensions que si il est nécessaire.
 
 #### GLPI 9.5.X
 ![image](https://user-images.githubusercontent.com/35907/236466165-1fd9544b-9ca5-4bef-b147-7b7c533136c5.png)
-
-Le site indique des extensions manquant.
-1. En rouge se sont des modules bloquants, indispensable.
-2. En Jaune se sont des modules optionnels mais non bloquant.
-
 
 Un module php à comme préfixe `php-` suivis du nom du module.
 ```bash
@@ -154,13 +150,20 @@ apt install -y php-intl;
 apt install -y php-json;
 apt install -y php-mbstring;
 apt install -y php-mysql;
+apt install -y php-mysqli;
 apt install -y php-fileinfo;
 apt install -y php-simplexml;
 apt install -y php-xmlrpc;
 apt install -y php-zip;
 ```
-<br />
 
+### Relancer le Service Apache2
+Apache charge PHP et ses modules et lorsqu'on installe des modules, il faut relancer le service.
+```bash
+systemctl restart apache2;
+```
+
+<br />
 
 
 
@@ -171,11 +174,6 @@ apt install -y php-zip;
 chown -R www-data:www-data /var/www/html/;
 ```
 
-### Relancer le Service Apache2
-Apache charge PHP et ses modules et lorsqu'on installe des modules, il faut relancer le service.
-```bash
-systemctl restart apache2;
-```
 
 ### Vérification
 ```bash
