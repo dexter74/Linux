@@ -104,9 +104,6 @@ Apache charge PHP et ses modules
 systemctl restart apache2;
 ```
 
-################################################################################################################################################
-# https://glpi-install.readthedocs.io/fr/develop/command-line.html#cdline-install #
-
 #### Installation du site
 ```bash
 cd /var/www/html/glpi;
@@ -122,7 +119,7 @@ php bin/console db:install --reconfigure \
 --force;
 ```
 
-#### Divers Commande
+#### Divers Commande [ICI](https://glpi-install.readthedocs.io/fr/develop/command-line.html#cdline-install)
 ```
 cd /var/www/html/glpi;
 php bin/console db:check;
