@@ -170,7 +170,8 @@ La valeur `MTU` peut être défini à `1420` en cas de problème. Du côté Clie
 
 CMD:
 ```batch
-ping –f –l 150 www.orange.fr
+ping –f –l 1500 www.orange.fr
+ping –f –l 1472 www.orange.fr
 ```
 
 <br />
