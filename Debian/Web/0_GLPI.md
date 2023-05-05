@@ -2,7 +2,6 @@
 ## <p align='center'> Guide de Déploiement de GLPI sous Debian </p>
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 ### Dépôt
 Commenter la ligne CD-ROM du fichier sources.list
 ```bash
@@ -14,7 +13,9 @@ sed -i -e "s/^deb cdrom/#deb cdrom/g"  /etc/apt/sources.list;
 apt update;
 apt upgrade -y;
 ```
+<br />
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Installation de paquet
 ```bash
 apt install -y apache2;
@@ -22,7 +23,6 @@ apt install -y libapache2-mod-php;
 apt install -y mariadb-server;
 apt install -y php;
 ```
-
 
 ### Installation des modules PHP pour GLPI
 ```bash
@@ -44,8 +44,9 @@ apt install -y php-simplexml;
 apt install -y php-xmlrpc;
 apt install -y php-zip;
 ```
+<br />
 
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Sécuriser la Base De Donnée
 ```bash
 PASSWORD_DB=admin
@@ -82,6 +83,10 @@ GRANT ALL PRIVILEGES ON GLPI.* TO 'GLPI'@'localhost';
 ```bash
 quit;
 ```
+<r />
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## <p align='center'> Choisir la Version de GLPI </p>
 
 ### GLPI 9.5.X
 ```bash
@@ -98,7 +103,9 @@ wget "$FILE" -O /tmp/glpi-10.0.6.tgz;
 rm -r /var/www/html/glpi 2>/dev/null;
 tar -xvf  /tmp/glpi-10.0.6.tgz -C /var/www/html;
 ```
+<br />
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Permission www
 ```bash
 chown -R www-data:www-data /var/www/html/;
