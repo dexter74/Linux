@@ -77,13 +77,13 @@ systemctl enable --now vboxadd.service;
 ```
 # Minimum + startx + glxinfo
 apt install -y xserver-xorg-core xinit mesa-utils;
-
-# xf86-input-keyboard
-# xf86-input-mouse
 mkdir -p /usr/share/fonts/X11/cyrillic;
 mkdir -p /usr/share/fonts/X11/100dpi;
 mkdir -p /usr/share/fonts/X11/75dpi;
 mkdir -p /usr/share/fonts/X11/Type1;
+
+# xf86-input-keyboard
+# xf86-input-mouse
 ```
 
 ##### B. Définir la langue en FR sur Xorg
