@@ -38,7 +38,7 @@ Remplacer notifyCinnamon2d en /* notifyCinnamon2d */
 ```
 
 #### Expérimental [Source](https://ishwarjagdale.github.io/wslWithGUI/)
-```
+```bash
 runuser -l marc -c 'echo "cinnamon-session" > .xsession'
 sudo sed -i 's/max_bpp=32/#max_bpp=32\nmax_bpp=128/g' /etc/xrdp/xrdp.ini
 sudo sed -i 's/xserverbpp=24/#xserverbpp=24\nxserverbpp=128/g' /etc/xrdp/xrdp.ini
@@ -47,7 +47,5 @@ sudo sed -i 's/xserverbpp=24/#xserverbpp=24\nxserverbpp=128/g' /etc/xrdp/xrdp.in
 nano /etc/xrdp/startwm.sh
 > test -x /etc/X11/Xsession && exec /etc/X11/Xsession
 > exec /bin/sh /etc/X11/Xsession
-
-
 ```
 
