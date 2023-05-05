@@ -25,3 +25,6 @@ rm /home/marc/.xsession;
 runuser -l marc  -c 'echo "cinnamon-session" > /home/marc/.xsession';
 echo "gnome-session" > /home/marc/.xsession;
 ```
+
+
+ systemctl disable --now bluetooth.service blueman-mechanism.service
