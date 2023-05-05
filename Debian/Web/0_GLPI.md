@@ -70,10 +70,10 @@ apt install -y php;
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Sécuriser la Base De Donnée
-La commande echo permet d'envoyer des messages à la commande, et chaque echo correspond à une question poser. (`echo "" est une réponse sans valeur`) 
+La commande `mysql_secure_installation` pose 9 Questions. (9 echo = 9 réponse) 
 ```bash
 PASSWORD_DB=admin
-(echo ""; echo "y" ; echo "y"; echo "$PASSWORD_DB"; echo "$PASSWORD_DB"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
+(echo ""; echo "y"; echo "y"; echo "$PASSWORD_DB"; echo "$PASSWORD_DB"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
 ```
 
 ### Connexion à la Base de Donnée
