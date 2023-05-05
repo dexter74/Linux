@@ -20,10 +20,10 @@ Utilisateur:
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### Dépôt
-Commenter la ligne CD-ROM du fichier sources.list
+### Personnalisation
 ```bash
 sed -i -e "s/^deb cdrom/#deb cdrom/g"  /etc/apt/sources.list;
+sed -i -e "s/\#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config; systemctl restart ssh;
 ```
 
 ### Mettre à jour le Système
