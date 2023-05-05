@@ -166,6 +166,7 @@ On peut voir le réseau est actif car il est blan et pas gris.
 
 ![image](https://user-images.githubusercontent.com/35907/236339386-caff331c-85c4-4a90-8b1d-cc3328968e06.png)
 
+La valeur `MTU` peut être défini à `1420` en cas de problème. Du côté Client faudra indiquer la valeur `MTU = 1420`
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
@@ -187,7 +188,7 @@ J'autorise les réseaux `192.168.0.0/24` et `192.168.1.0/24` car j'utilise ses r
 PrivateKey = SFqEF+d/4BvIRmfqYDRbJppRDoOcA60ZaztAJaEHfl4=
 Address = 192.168.20.2/32
 DNS = 192.168.20.1
-MTU = 1420
+MTU = 1500
 
 [Peer]
 PublicKey = PIgbMLozKsxhLYMvGn87sBFLzOHL8bM341J+lZw1UCw=
