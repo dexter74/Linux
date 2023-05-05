@@ -137,7 +137,9 @@ chown -R www-data:www-data /var/www/html/;
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Installation des extensions
 Un Site Web nécessite des extensions selon les fonctions ou le langage utilisé, on n'installe les extensions que si il est nécessaire.
-Un module php à comme préfixe `php-` suivis du nom du module.
+
+Un module php à comme préfixe `php-` suivis du nom de l'extension.
+
 
 #### GLPI 9.5.X
 ![image](https://user-images.githubusercontent.com/35907/236466165-1fd9544b-9ca5-4bef-b147-7b7c533136c5.png)
