@@ -193,17 +193,17 @@ J'autorise les réseaux `192.168.0.0/24` et `192.168.1.0/24` car j'utilise ses r
 ```
 [Interface]
 PrivateKey = SFqEF+d/4BvIRmfqYDRbJppRDoOcA60ZaztAJaEHfl4=
-Address = 192.168.20.2/32
-DNS = 192.168.20.1
-MTU = 1500
+Address    = 192.168.20.2/32
+DNS        = 192.168.20.1
+MTU        = 1500
 
 [Peer]
-PublicKey = PIgbMLozKsxhLYMvGn87sBFLzOHL8bM341J+lZw1UCw=
+PublicKey    = PIgbMLozKsxhLYMvGn87sBFLzOHL8bM341J+lZw1UCw=
 PresharedKey = h6dyEycgxcgjlzf84mxK/GtLzyUT5xVcKqmxVPlNznY=
-AllowedIPs = 0.0.0.0/0
-AllowedIPs = 192.168.1.0/24
-AllowedIPs = 192.168.0.0/24
-Endpoint = 192.168.0.5:51820
+AllowedIPs   = 0.0.0.0/0
+AllowedIPs   = 192.168.1.0/24
+AllowedIPs   = 192.168.0.0/24
+Endpoint     = 192.168.0.5:51820
 ```
 
 ##### Etat de Wireguard
