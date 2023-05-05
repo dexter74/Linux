@@ -100,10 +100,17 @@ CREATE USER 'GLPI'@'localhost' IDENTIFIED BY 'admin';
 GRANT ALL PRIVILEGES ON GLPI.* TO 'GLPI'@'localhost';
 ```
 
+### Fuseau Horaire (Ne pas utiliser, en cours)
+```
+GRANT SELECT ON mysql.time_zone_name TO 'GLPI'@'localhost';
+FLUSH PRIVILEGES;
+```
+
 ### Déconnexion MYSQL
 ```bash
 quit;
 ```
+
 
 A ce stade, on à crée la base de donnée, l'utilisateur avec son mot de passe. et pour terminer les permissions sur la base de donnée sur GLPI.  (L'utilisateur GLPI à tout droit sur la BDD GLPI)
 
@@ -180,13 +187,7 @@ Apache charge PHP et ses modules et lorsqu'on installe des modules, il faut rela
 ```bash
 systemctl restart apache2;
 ```
-
-
-
 <br />
-
-
-
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Vérification (Prérequis, Sécurité)
@@ -195,8 +196,6 @@ systemctl restart apache2;
 ```
 
 ![image](https://user-images.githubusercontent.com/35907/236469772-68412a28-12dc-4a62-b6b2-35f503c053a3.png)
-
-
 
 
 ### Installation du site
