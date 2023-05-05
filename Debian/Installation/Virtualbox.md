@@ -20,21 +20,21 @@ L'interface sera Cinnamon
 ##### A. Modifier les Sources par défaut
 
 ###### Sauvegarde de la configuration
-```
+```bash
 cp /etc/apt/sources.list /etc/apt/sources.list.old;
 ```
 ###### Modification des sources
-```
+```bash
 sed -i -e "s/^deb cdrom/#deb cdrom/g" /etc/apt/sources.list;
 echo 'deb http://ftp.fr.debian.org/debian bullseye main contrib non-free
 deb-src http://ftp.fr.debian.org/debian bullseye main contrib non-free' > /etc/apt/sources.list.d/bullseye.list
 ```
 ##### B. Mettre à jour la liste des paquets
-```
+```bash
 apt update;
 ```
 ##### C. Installation des packages
-```
+```bash
 apt install -y amd64-microcode;
 apt install -y bash-completion;
 apt install -y cifs-utils;
@@ -46,18 +46,17 @@ apt install -y linux-headers-$(uname -r);
 # apt install -y software-properties-gtk;
 ```
 ##### D. Configuration OpenSSH
-```
+```bash
 sed -i -e 's/\#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config;
 systemctl restart ssh;
 ```
 ##### E. Virtualbox Guest Additions
-
 ###### Installation des dépendances
-```
+```bash
 apt install -y build-essential dkms;
 ```
 ###### Installation de VirtualBox Guest Additions
-```
+```bash
 apt install -y virtualbox-guest-additions-iso;
 mkdir /media/virtualbox;
 mount /usr/share/virtualbox/VBoxGuestAdditions.iso /media/virtualbox;
@@ -74,7 +73,7 @@ systemctl enable --now vboxadd.service;
 <p align='center'> <img src='https://plumf.eu/content/images/2022/01/x-architecture-1.webp'> </p> 
 
 ##### B. Installation de X11
-```
+```bash
 # Minimum + startx + glxinfo
 apt install -y xserver-xorg-core xinit mesa-utils;
 mkdir -p /usr/share/fonts/X11/cyrillic;
@@ -87,7 +86,7 @@ mkdir -p /usr/share/fonts/X11/Type1;
 ```
 
 ##### B. Définir la langue en FR sur Xorg
-```
+```bash
 echo 'Section "InputClass"
         Identifier "system-keyboard"
         MatchIsKeyboard "on"
@@ -96,7 +95,7 @@ EndSection' > /etc/X11/xorg.conf.d/00-keyboard.conf;
 ```
 
 ##### C. Installer le pilote Carte-graphique
-```
+```bash
 lspci | grep VGA
 
 # -------------------------------------------------------
@@ -119,7 +118,7 @@ apt install -y xserver-xorg-video-vmware;
 ```
 
 ##### D. Configurer Xorg
-```
+```bash
 ### Générer configuration
 # Xorg -configure;
 
@@ -135,12 +134,12 @@ apt install -y xserver-xorg-video-vmware;
 #### IV. Gestionnaire de connexions 
 
 ##### A. Installation de Lightdm
-```
+```bash
 apt install -y lightdm;
 ```
 
 ##### B. Définir le gestionnaire de connexions par défaut
-```
+```bash
 dpkg-reconfigure lightdm;
 ```
 <br />
@@ -148,12 +147,16 @@ dpkg-reconfigure lightdm;
 ------------------------------------------------------------------------------------------------
 #### V. Cinnamon
 ##### A. Installation de base
+```bash
+apt install -y cinnamon cinnamon-l10n;
 ```
-apt install cinnamon cinnamon-l10n;
-apt install cinnamon-desktop-environment;
+##### B. Complémentaire
+```bash
+apt install -y cinnamon-desktop-environment;
 ```
+
 ##### B. Lancement du service lighdm
-```
+```bash
 systemctl enable --now lightdm;
 ```
 <br />
