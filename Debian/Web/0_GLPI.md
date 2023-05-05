@@ -2,6 +2,24 @@
 ## <p align='center'> Guide de Déploiement de GLPI sous Debian </p>
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Base de donnée
+```
+Host:
+ - 127.0.0.1
+ - localhost
+
+Administrateur:
+ - Identifiant  : root
+ - Mot de passe : admin
+
+Utilisateur:
+ - Identifiant    : GLPI
+ - Mot de passe   : GLPI
+ - Base de Donnée : GLPI
+```
+<br />
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Dépôt
 Commenter la ligne CD-ROM du fichier sources.list
 ```bash
