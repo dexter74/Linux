@@ -2,41 +2,44 @@
 ## <p align='center'> Installation de Fusion Inventory </p>
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# GLPI 9.5
+### GLPI 9.5.X
+```bash
 FILE=https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.5%2B4.2/fusioninventory-9.5+4.2.tar.bz2
 wget $FILE -O /tmp/fusioninventory-9.5+4.2.tar.bz2;
 tar -xvf /tmp/fusioninventory-9.5+4.2.tar.bz2 -C /var/www/html/glpi/plugins;
 chown -R www-data:www-data /var/www/html/glpi/plugins;
-
-# GLPI 10.0
+```
+### GLPI 10.0
+```bash
 FILE=https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi10.0.6%2B1.1/fusioninventory-10.0.6+1.1.tar.bz2 
 wget $FILE -O /tmp/fusioninventory-10.0.6+1.1.tar.bz2
 tar -xvf /tmp/fusioninventory-10.0.6+1.1.tar.bz2 -C /var/www/html/glpi/plugins;
 chown -R www-data:www-data /var/www/html/glpi/plugins;
+```
 
-######################################################################################################################################
-# Activation du Plugin #
-########################
+
+### Activation du Plugin
+```
 Configuration 
 - Plugins 
 - FusionInventory 
 > Installer 
 > Activer
+```
+### Tâches Planifiées (Cron)
+##### Connaitre la version de PHP
+```bash
+ echo $(php --version | head -n 1 | cut -d 'P' -f 3 | cut -d '(' -f 1 | cut -c 2-4)
+```
 
-######################################################################################################################################
-# Tâches Planifiées #
-#####################
-# Récupérer la version de php : echo $(php --version | head -n 1 | cut -d 'P' -f 3 | cut -d '(' -f 1 | cut -c 2-4)
-
-# Crontab
-cd /var/spool/cron;
+##### Création de la Tâche
+```bash
 crontab -e;
+```
 
-#Studi: (Erreur)
+```bash
 * * * * * /usr/bin/php /var/www/html/glpi/front/cron.php &>/dev/null
-
-# Documentation
-* * * * * cd /var/www/html/glpi/front/ && /usr/bin/php cron.php &>/dev/null
+```
 
 ######################################################################################################################################
 # Relancer le service Cron #
