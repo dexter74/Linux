@@ -191,8 +191,7 @@ systemctl restart apache2;
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Vérification (Prérequis, Sécurité)
 ```bash
-cd /var/www/html/glpi;
-php bin/console glpi:system:check_requirements;
+/var/www/html/glpi/bin/console glpi:system:check_requirements;
 ```
 
 ![image](https://user-images.githubusercontent.com/35907/236469772-68412a28-12dc-4a62-b6b2-35f503c053a3.png)
@@ -201,28 +200,28 @@ php bin/console glpi:system:check_requirements;
 
 
 ### Installation du site
-La commande permet de déclencher l'installation du Site sans passer par l'installation Web. (Connexion à la BDD, création de la Base de donnée)
+La commande permet de déclencher l'installation du Site sans passer par l'installation Web, puis il faut taper `yes` pour valider l'installtion. (Connexion à la BDD, création de la Base de donnée)
 ```bash
-cd /var/www/html/glpi;
-php bin/console db:install --reconfigure \
+/var/www/html/glpi/bin/console db:install \
+--reconfigure \
 --default-language=fr_FR \
 --db-host=localhost \
 --db-port=3306 \
 --db-name=GLPI \
 --db-user=GLPI \
---db-password=admin \
---force;
+--db-password=admin --force;
 ```
+
+
 
 #### Divers Commande [ICI](https://glpi-install.readthedocs.io/fr/develop/command-line.html#cdline-install)
 ```
-cd /var/www/html/glpi;
-php bin/console db:check;
-php bin/console glpi:migration:timestamps;
+/var/www/html/glpi/bin/console db:check;
+/var/www/html/glpi/bin/console glpi:migration:timestamps;
 
-php bin/console glpi:maintenance:enable;
-php bin/console glpi:maintenance:disable;
-php bin/console db:update -f;
+/var/www/html/glpi/bin/console glpi:maintenance:enable;
+/var/www/html/glpi/bin/console glpi:maintenance:disable;
+/var/www/html/glpi/bin/console db:update -f;
 ```
 
 
