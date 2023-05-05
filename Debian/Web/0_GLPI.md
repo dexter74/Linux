@@ -189,16 +189,19 @@ systemctl restart apache2;
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-### Vérification
+### Vérification (Prérequis, Sécurité)
 ```bash
 cd /var/www/html/glpi;
 php bin/console glpi:system:check_requirements;
 ```
 
+![image](https://user-images.githubusercontent.com/35907/236469772-68412a28-12dc-4a62-b6b2-35f503c053a3.png)
+
+
+
+
 ### Installation du site
+La commande permet de déclencher l'installation du Site sans passer par l'installation Web. (Connexion à la BDD, création de la Base de donnée)
 ```bash
 cd /var/www/html/glpi;
 php bin/console db:install --reconfigure \
