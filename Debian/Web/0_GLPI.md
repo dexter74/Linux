@@ -58,33 +58,12 @@ systemctl restart ssh;
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### Installation de paquet
+### Installation des paquets de base
 ```bash
 apt install -y apache2;
 apt install -y libapache2-mod-php;
 apt install -y mariadb-server;
 apt install -y php;
-```
-
-### Installation des modules PHP pour GLPI
-```bash
-apt install -y apcupsd;
-apt install -y php-apcu;
-apt install -y php-bz2;
-apt install -y php-cas;
-apt install -y php-curl;
-apt install -y php-dom;
-apt install -y php-gd;
-apt install -y php-imap;
-apt install -y php-ldap;
-apt install -y php-intl;
-apt install -y php-json;
-apt install -y php-mbstring;
-apt install -y php-mysql;
-apt install -y php-fileinfo;
-apt install -y php-simplexml;
-apt install -y php-xmlrpc;
-apt install -y php-zip;
 ```
 <br />
 
@@ -144,6 +123,29 @@ FILE="https://github.com/glpi-project/glpi/releases/download/10.0.6/glpi-10.0.6.
 wget "$FILE" -O /tmp/glpi-10.0.6.tgz;
 rm -r /var/www/html/glpi 2>/dev/null;
 tar -xvf  /tmp/glpi-10.0.6.tgz -C /var/www/html;
+```
+
+### Installation des modules
+Un site Web requiert des fonctions de PHP. L'installation de module se fait selon le site qu'on installe.
+
+```bash
+apt install -y apcupsd;
+apt install -y php-apcu;
+apt install -y php-bz2;
+apt install -y php-cas;
+apt install -y php-curl;
+apt install -y php-dom;
+apt install -y php-gd;
+apt install -y php-imap;
+apt install -y php-ldap;
+apt install -y php-intl;
+apt install -y php-json;
+apt install -y php-mbstring;
+apt install -y php-mysql;
+apt install -y php-fileinfo;
+apt install -y php-simplexml;
+apt install -y php-xmlrpc;
+apt install -y php-zip;
 ```
 <br />
 
