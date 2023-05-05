@@ -20,7 +20,7 @@ Utilisateur:
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### Personnalisation
+### Dépôt (Commenter la ligne CDROM)
 ```bash
 UTILISATEUR=$(id 1000 | cut -d "(" -f 2 | cut -d ")" -f 1)
 sed -i -e "s/^deb cdrom/#deb cdrom/g"  /etc/apt/sources.list;
