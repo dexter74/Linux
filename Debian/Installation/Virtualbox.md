@@ -137,8 +137,8 @@ apt install -y xserver-xorg-video-vmware;
 ##### A. Installation de Lightdm
 ```
 apt install -y lightdm;
-systemctl enable lightdm;
 ```
+
 ##### B. Définir le gestionnaire de connexions par défaut
 ```
 dpkg-reconfigure lightdm;
@@ -151,9 +151,10 @@ dpkg-reconfigure lightdm;
 ```
 apt install -y cinnamon cinnamon-desktop-environment cinnamon-l10n;
 ```
-##### B. Redémarrage du PC
+##### B. Lancement du service lighdm
 ```
-reboot;
+systemctl enable lightdm;
+
 ```
 <br />
 
