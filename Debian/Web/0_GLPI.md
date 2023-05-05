@@ -129,14 +129,15 @@ tar -xvf  /tmp/glpi-10.0.6.tgz -C /var/www/html;
 ```
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### Installation des modules
+### Installation des extensions
 
 #### GLPI 9.5.X
 ![image](https://user-images.githubusercontent.com/35907/236466165-1fd9544b-9ca5-4bef-b147-7b7c533136c5.png)
 
-Le site indique des modules manquant.
-- En rouge se sont des modules bloquants, indispensable.
-- En Jaune se sont des modules optionnels mais non bloquant.
+Le site indique des extensions manquant.
+1. En rouge se sont des modules bloquants, indispensable.
+2. En Jaune se sont des modules optionnels mais non bloquant.
+
 
 Un module php à comme préfixe `php-` suivis du nom du module.
 ```bash
