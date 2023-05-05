@@ -22,8 +22,11 @@ Utilisateur:
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Personnalisation
 ```bash
+UTILISATEUR=$(id | cut -d "(" -f 2 | cut -d ")" -f 1)
+
 sed -i -e "s/^deb cdrom/#deb cdrom/g"  /etc/apt/sources.list;
 sed -i -e "s/\#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config; systemctl restart ssh;
+echo "$UTILISATEUR ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/admin
 ```
 
 ### Mettre à jour le Système
