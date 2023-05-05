@@ -2,12 +2,17 @@
 ## <p align='center'> Installation de xrdp pour faire du Bureau à Distance </p>
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#### Information
-```
-Expérimental !
+#### Installation du Paquet
+```bash
+apt install -y xrdp;
 ```
 
-#### Installation du Paquet
+#### Gestion du service
+```bash
+systemctl enable --now xrdp;
 ```
-apt install -y xrdp;
+
+#### Ajouter le compte xrdp au groupe ssl-group
+```bash
+adduser xrdp ssl-cert;
 ```
