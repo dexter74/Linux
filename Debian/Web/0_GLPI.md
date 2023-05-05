@@ -128,6 +128,12 @@ rm -r /var/www/html/glpi 2>/dev/null;
 tar -xvf  /tmp/glpi-10.0.6.tgz -C /var/www/html;
 ```
 
+### Permission
+L'utilisateur du service Apache2 est `www-data` et appartient au groupe `www-data` et le dossier `www` est son dossier de travail. Il est indispensable qu'il est le contrôle de tout les fichiers.
+```bash
+chown -R www-data:www-data /var/www/html/;
+```
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Installation des extensions
 Un Site Web nécessite des extensions selon les fonctions ou le langage utilisé, on n'installe les extensions que si il est nécessaire.
@@ -136,27 +142,36 @@ Un module php à comme préfixe `php-` suivis du nom du module.
 #### GLPI 9.5.X
 ![image](https://user-images.githubusercontent.com/35907/236466165-1fd9544b-9ca5-4bef-b147-7b7c533136c5.png)
 
+La version 9.5.X requiert: 
+```
+- apcu
+- bz2
+- curl
+- gd
+- intl
+- ldap
+- mbstring
+- mysqli
+- simplexml
+- xmlrpc
+- zip
+```
 
 #### Exemple de module
 ```bash
 apt install -y php-apcu apcupsd;
 apt install -y php-bz2;
-apt install -y php-cas;
 apt install -y php-curl;
-apt install -y php-dom;
 apt install -y php-gd;
-apt install -y php-imap;
-apt install -y php-ldap;
 apt install -y php-intl;
-apt install -y php-json;
+apt install -y php-ldap;
 apt install -y php-mbstring;
-apt install -y php-mysql;
 apt install -y php-mysqli;
-apt install -y php-fileinfo;
 apt install -y php-simplexml;
 apt install -y php-xmlrpc;
 apt install -y php-zip;
 ```
+
 
 ### Relancer le Service Apache2
 Apache charge PHP et ses modules et lorsqu'on installe des modules, il faut relancer le service.
@@ -164,16 +179,15 @@ Apache charge PHP et ses modules et lorsqu'on installe des modules, il faut rela
 systemctl restart apache2;
 ```
 
+
+
 <br />
 
 
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### Permission www
-```bash
-chown -R www-data:www-data /var/www/html/;
-```
+
 
 
 ### Vérification
