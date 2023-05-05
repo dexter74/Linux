@@ -154,7 +154,6 @@ apt install -y cinnamon cinnamon-desktop-environment cinnamon-l10n;
 ##### B. Lancement du service lighdm
 ```
 systemctl enable lightdm;
-
 ```
 <br />
 
