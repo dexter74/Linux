@@ -20,10 +20,11 @@ Utilisateur:
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### Dépôt (Commenter la ligne CDROM)
+### Dépôt
+Commenter la ligne `cdrom` du fichier `/etc/apt/sources.list`.
+
 ```bash
-UTILISATEUR=$(id 1000 | cut -d "(" -f 2 | cut -d ")" -f 1)
-sed -i -e "s/^deb cdrom/#deb cdrom/g"  /etc/apt/sources.list;
+sed -i -e "s/^deb cdrom/#deb cdrom/g" /etc/apt/sources.list;
 ```
 
 ### Mettre à jour le Système
@@ -35,6 +36,9 @@ apt upgrade -y;
 
 #### Mauvaise Pratique
 ```bash
+# Récupére le nom d'utilisateur de l'ID 1000
+UTILISATEUR=$(id 1000 | cut -d "(" -f 2 | cut -d ")" -f 1)
+
 # Sudoers son utilisateur (No Password)
 echo "$UTILISATEUR ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/admin;
 
