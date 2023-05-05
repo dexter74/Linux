@@ -130,7 +130,7 @@ chown -R www-data:www-data /var/www/html/;
 ```
 
 ### Relancer le Service Apache2
-Apache charge PHP et ses modules
+Apache charge PHP et ses modules et lorsqu'on installe des modules, il faut relancer le service.
 ```bash
 systemctl restart apache2;
 ```
