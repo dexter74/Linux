@@ -5,7 +5,7 @@
 
 #### Dépôt
 ```bash
-sed -i -e "s/deb cdrom/#deb cdrom/g"  /etc/apt/sources.list;
+sed -i -e "s/^deb cdrom/#deb cdrom/g"  /etc/apt/sources.list;
 ```
 
 #### Mettre à jour le Système
