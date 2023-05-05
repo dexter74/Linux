@@ -9,13 +9,13 @@ Commenter la ligne CD-ROM du fichier sources.list
 sed -i -e "s/^deb cdrom/#deb cdrom/g"  /etc/apt/sources.list;
 ```
 
-#### Mettre à jour le Système
+### Mettre à jour le Système
 ```bash
 apt update;
 apt upgrade -y;
 ```
 
-#### Installation de paquet
+### Installation de paquet
 ```bash
 apt install -y apache2;
 apt install -y libapache2-mod-php;
@@ -24,7 +24,7 @@ apt install -y php;
 ```
 
 
-#### Installation des modules PHP pour GLPI
+### Installation des modules PHP pour GLPI
 ```bash
 apt install -y apcupsd;
 apt install -y php-apcu;
@@ -46,28 +46,29 @@ apt install -y php-zip;
 ```
 
 
-#### Sécuriser la Base De Donnée
+### Sécuriser la Base De Donnée
 ```bash
 PASSWORD_DB=admin
 (echo ""; echo "y" ; echo "y"; echo "$PASSWORD_DB"; echo "$PASSWORD_DB"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
 ```
-#### Connexion à la Base de Donnée
+
+### Connexion à la Base de Donnée
 ```bash
 mysql -u root -padmin;
 ```
 
-#### Purge Database et User
+### Purge Database et User
 ```bash
 DROP DATABASE IF EXISTS GLPI;
 DROP USER IF EXISTS 'GLPI'@'localhost';
 ```
 
-#### Création de la BDD
+### Création de la BDD
 ```bash
 CREATE DATABASE IF NOT EXISTS GLPI;
 ```
 
-#### Création de l'utilisateur
+### Création de l'utilisateur
 ```bash
 CREATE USER 'GLPI'@'localhost' IDENTIFIED BY 'admin';
 ```
@@ -77,12 +78,12 @@ CREATE USER 'GLPI'@'localhost' IDENTIFIED BY 'admin';
 GRANT ALL PRIVILEGES ON GLPI.* TO 'GLPI'@'localhost';
 ```
 
-#### Déconnexion MYSQL
+### Déconnexion MYSQL
 ```bash
 quit;
 ```
 
-#### GLPI 9.5.X
+### GLPI 9.5.X
 ```bash
 FILE="https://github.com/glpi-project/glpi/releases/download/9.5.12/glpi-9.5.12.tgz"
 rm -r /var/www/html/glpi 2>/dev/null;
@@ -90,10 +91,9 @@ wget "$FILE"  -O /tmp/glpi-9.5.12.tgz;
 tar -xvf /tmp/glpi-9.5.12.tgz -C /var/www/html;
 ```
 
-#### GLPI 10.0.6
+### GLPI 10.0.6
 ```bash
 FILE="https://github.com/glpi-project/glpi/releases/download/10.0.6/glpi-10.0.6.tgz"
-
 wget "$FILE" -O /tmp/glpi-10.0.6.tgz;
 rm -r /var/www/html/glpi 2>/dev/null;
 tar -xvf  /tmp/glpi-10.0.6.tgz -C /var/www/html;
@@ -110,11 +110,15 @@ Apache charge PHP et ses modules
 systemctl restart apache2;
 ```
 
-#### Installation du site
+### Vérification
 ```bash
 cd /var/www/html/glpi;
 php bin/console glpi:system:check_requirements;
+```
 
+### Installation du site
+```bash
+cd /var/www/html/glpi;
 php bin/console db:install --reconfigure \
 --default-language=fr_FR \
 --db-host=localhost \
