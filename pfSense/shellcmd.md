@@ -1,4 +1,7 @@
-
+# Paquets
+```
+shellcmd
+```
 # Désactiver sécurité:
 ```
 pfctl -d 
