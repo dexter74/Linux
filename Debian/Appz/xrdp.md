@@ -30,3 +30,10 @@ reboot;
 ```bash
 journalctl -f -b 0 | grep xrdp
 ```
+
+
+#### Supprimer Notification "Rendering hardware"
+```
+nano /usr/share/cinnamon/js/ui/main.js
+Remplacer notifyCinnamon2d en /* notifyCinnamon2d */
+```
