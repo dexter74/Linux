@@ -9,7 +9,7 @@ https://github.com/debauchee/barrier
 /etc/modprobe.d/blacklist
 /etc/modprobe.d/vfio.conf
 /etc/pve/storage
-/etc/pve/lxc
-/etc/pve/qemu-server
+/etc/pve/lxc/*conf > /etc/pve/lxc/old/*conf 
+/etc/pve/qemu-server/*conf > /etc/pve/qemu-server/old/*conf 
 systemctl disable networking
 ```
