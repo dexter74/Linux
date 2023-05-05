@@ -102,15 +102,13 @@ GRANT ALL PRIVILEGES ON GLPI.* TO 'GLPI'@'localhost';
 
 ### Fuseau Horaire (Ne pas utiliser, en cours)
 ```
-GRANT SELECT ON mysql.time_zone_name TO 'GLPI'@'localhost';
-FLUSH PRIVILEGES;
+ mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -padmin -u root mysql
 ```
 
 ### Déconnexion MYSQL
 ```bash
 quit;
 ```
-
 
 A ce stade, on à crée la base de donnée, l'utilisateur avec son mot de passe. et pour terminer les permissions sur la base de donnée sur GLPI.  (L'utilisateur GLPI à tout droit sur la BDD GLPI)
 
@@ -210,8 +208,6 @@ La commande permet de déclencher l'installation du Site sans passer par l'insta
 --db-user=GLPI \
 --db-password=admin --force;
 ```
-
-
 
 #### Divers Commande [ICI](https://glpi-install.readthedocs.io/fr/develop/command-line.html#cdline-install)
 ```
