@@ -34,10 +34,13 @@ apt upgrade -y;
 ```
 
 #### Mauvaise Pratique
-Permettre l'accès SSH via le compte Root et d'élevé son Utilisateur (ID 1000) en root.
-```
-sed -i -e "s/\#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config; systemctl restart ssh;
+```bash
+# Sudoers son utilisateur (No Password)
 echo "$UTILISATEUR ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/admin;
+
+# Accès SSH par le compte root
+sed -i -e "s/\#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config;
+systemctl restart ssh;
 ```
 <br />
 
