@@ -121,9 +121,10 @@ apt install -y xserver-xorg-video-vmware;
 ##### D. Configurer Xorg
 ```
 ### Générer configuration
-Xorg -configure;
+# Xorg -configure;
+
 # Tester configuration
-X -config /root/xorg.conf.new;
+# X -config /root/xorg.conf.new;
 
 # Placer fichier de configuration
 # mv /root/xorg.conf.new /root/xorg.conf;
