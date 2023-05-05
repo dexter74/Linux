@@ -123,8 +123,8 @@ A ce stade, on à crée la base de donnée, l'utilisateur avec son mot de passe.
 ### GLPI 9.5.X
 ```bash
 FILE="https://github.com/glpi-project/glpi/releases/download/9.5.12/glpi-9.5.12.tgz"
-rm -r /var/www/html/glpi 2>/dev/null;
 wget "$FILE"  -O /tmp/glpi-9.5.12.tgz;
+rm -r /var/www/html/glpi 2>/dev/null;
 tar -xvf /tmp/glpi-9.5.12.tgz -C /var/www/html;
 ```
 
