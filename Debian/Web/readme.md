@@ -6,6 +6,6 @@ Cette Fiche permet le déploiement sous Debian de l'outil GLPI.
 
 -> Configuration de la Base de donnée (Création BDD, Utilisateur)
 
--> Installation de GLPI 9.5.X ou 10.0.X
+-> Installation de GLPI 9.5.X ou 10.0.X ainsi de ses dépedances pour les modules PHP
 
 -> Installation de FusionInventory
