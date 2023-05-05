@@ -7,12 +7,12 @@
 apt install -y xrdp;
 ```
 
-#### Gestion du service
-```bash
-systemctl enable --now xrdp;
-```
-
 #### Ajouter le compte xrdp au groupe ssl-group
 ```bash
 adduser xrdp ssl-cert;
+```
+
+#### Gestion du service
+```bash
+systemctl enable --now xrdp;
 ```
