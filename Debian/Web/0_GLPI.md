@@ -20,6 +20,11 @@ Utilisateur:
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### Se connecter en Root
+```
+su -
+```
+
 ### Dépôt
 Commenter la ligne `cdrom` du fichier `/etc/apt/sources.list`.
 
@@ -30,8 +35,12 @@ sed -i -e "s/^deb cdrom/#deb cdrom/g" /etc/apt/sources.list;
 ### Mettre à jour le Système
 ```bash
 apt update;
-apt install -y sudo;
 apt upgrade -y;
+```
+
+### Installation de Sudo
+```bash
+apt install -y sudo;
 ```
 
 #### Mauvaise Pratique
