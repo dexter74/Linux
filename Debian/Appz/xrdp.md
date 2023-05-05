@@ -6,3 +6,8 @@
 ```
 Expérimental !
 ```
+
+#### Installation du Paquet
+```
+apt install -y xrdp;
+```
