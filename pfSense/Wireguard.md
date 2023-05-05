@@ -170,8 +170,10 @@ La valeur `MTU` peut être défini à `1420` pour éviter des problème de taill
 
 CMD:
 ```batch
-ping –f –l 1500 www.orange.fr
-ping –f –l 1472 www.orange.fr
+ping –f –l 1500 www.yahoo.fr
+ping –f –l 1472 www.yahoo.fr
+ping –f –l 1450 www.yahoo.fr
+ping –f –l 1420 www.yahoo.fr
 ```
 
 <br />
