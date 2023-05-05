@@ -64,14 +64,13 @@ mount /usr/share/virtualbox/VBoxGuestAdditions.iso /media/virtualbox;
 systemctl enable --now vboxadd.service;
 # Construire module pour tout les noyaux: /sbin/rcvboxadd quicksetup all;
 ```
+<br />
 
 ------------------------------------------------------------------------------------------------
 #### III. Serveur D'affichage
 
 ##### A. Présentation de Xorg
-<p align='center'>
-<img src='https://plumf.eu/content/images/2022/01/x-architecture-1.webp'>
-</p> 
+<p align='center'> <img src='https://plumf.eu/content/images/2022/01/x-architecture-1.webp'> </p> 
 
 ##### B. Installation de X11
 ```
@@ -84,9 +83,8 @@ mkdir -p /usr/share/fonts/X11/cyrillic;
 mkdir -p /usr/share/fonts/X11/100dpi;
 mkdir -p /usr/share/fonts/X11/75dpi;
 mkdir -p /usr/share/fonts/X11/Type1;
-
-
 ```
+
 ##### B. Définir la langue en FR sur Xorg
 ```
 echo 'Section "InputClass"
@@ -95,6 +93,7 @@ echo 'Section "InputClass"
         Option "XkbLayout" "fr"
 EndSection' > /etc/X11/xorg.conf.d/00-keyboard.conf;
 ```
+
 ##### C. Installer le pilote Carte-graphique
 ```
 lspci | grep VGA
@@ -117,17 +116,19 @@ apt install -y xserver-xorg-video-vmware;
 # apt install -y xserver-xorg-video-amdgpu;
 # -------------------------------------------------------
 ```
+
 ##### D. Configurer Xorg
 ```
 ### Générer configuration
 Xorg -configure;
-
 # Tester configuration
 X -config /root/xorg.conf.new;
 
 # Placer fichier de configuration
 # mv /root/xorg.conf.new /root/xorg.conf;
 ```
+<br />
+
 ------------------------------------------------------------------------------------------------
 #### IV. Gestionnaire de connexions 
 
@@ -140,8 +141,9 @@ systemctl enable lightdm;
 ```
 dpkg-reconfigure lightdm;
 ```
-------------------------------------------------------------------------------------------------
+<br />
 
+------------------------------------------------------------------------------------------------
 #### V. Cinnamon
 ##### A. Installation de base
 ```
@@ -151,16 +153,9 @@ apt install -y cinnamon cinnamon-desktop-environment cinnamon-l10n;
 ```
 reboot;
 ```
-
-
-
-
-
-
-
+<br />
 
 ------------------------------------------------------------------------------------------------
-
 ### Annexe: 
 
 ##### [PulseAudio](https://wiki.debian.org/fr/PulseAudio)
