@@ -16,15 +16,17 @@ adduser marc ssl-cert;
 
 #### Gestion du service
 ```bash
+systemctl disable --now bluetooth.service blueman-mechanism.service
 systemctl enable --now xrdp;
 ```
 
 #### Xsession
 ```
 rm /home/marc/.xsession;
-#runuser -l marc  -c 'echo "cinnamon-session" > /home/marc/.xsession';
-# echo "gnome-session" > /home/marc/.xsession;
+reboot;
 ```
-systemctl disable --now bluetooth.service blueman-mechanism.service
+
+#### Debug
+```bash
 journalctl -f -b 0 | grep xrdp
 ```
