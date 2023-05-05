@@ -212,6 +212,24 @@ La commande permet de déclencher l'installation du Site sans passer par l'insta
 --db-password=admin --force;
 ```
 
+
+#### Sécurité
+Le fichier install.php doit être renommé ou Supprimé
+```bash
+mv /var/www/html/glpi/install/install.php     /var/www/html/glpi/install/install.php.old;
+rm /var/www/html/glpi/install/install.php.old;
+```
+
+#### Gestionnaire de Base De Donnée (phpmyadmin)
+```bash
+apt upgrade -y php-tcpdf php-twig unzip;
+wget "https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-all-languages.zip" -O  /tmp/phpMyAdmin.zip;
+unzip /tmp/phpMyAdmin.zip -d /var/www/html;
+mv /var/www/html/phpMyAdmin-5.2.1-all-languages /var/www/html/phpmyadmin;
+```
+
+
+
 #### Divers Commande [ICI](https://glpi-install.readthedocs.io/fr/develop/command-line.html#cdline-install)
 ```
 /var/www/html/glpi/bin/console db:check;
@@ -223,19 +241,3 @@ La commande permet de déclencher l'installation du Site sans passer par l'insta
 ```
 
 
-#### Sécurité
-Le fichier install.php doit être renommé ou Supprimé
-```bash
-mv /var/www/html/glpi/install/install.php     /var/www/html/glpi/install/install.php.old;
-rm /var/www/html/glpi/install/install.php.old;
-```
-
-#### Gestionnaire de Base De Donnée (phpmyadmin
-```bash
-apt upgrade -y php-tcpdf php-twig;
-apt install -y -t buster-backports php-twig;
-
-wget "https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-all-languages.zip" -O  /tmp/phpMyAdmin.zip;
-unzip /tmp/phpMyAdmin.zip -d /var/www/html;
-mv /var/www/html/phpMyAdmin-5.2.1-all-languages /var/www/html/phpmyadmin;
-```
