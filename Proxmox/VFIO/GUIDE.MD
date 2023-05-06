@@ -31,11 +31,19 @@ echo "options kvm ignore_msrs=1" > /etc/modprobe.d/kvm.conf;
 
 ### Blacklist
 ```bash
-echo "blacklist amdgpu"         > /etc/modprobe.d/blacklist.conf;
+# GPU AMD
+echo "blacklist ati"            > /etc/modprobe.d/blacklist.conf;
+echo "blacklist amdgpu"        >> /etc/modprobe.d/blacklist.conf;
+echo "blacklist radeon"        >> /etc/modprobe.d/blacklist.conf;
+
+# GPU Nvidia
 echo "blacklist nouveau"       >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist nvidia"        >> /etc/modprobe.d/blacklist.conf;
-echo "blacklist radeon"        >> /etc/modprobe.d/blacklist.conf;
+
+# USB
 echo "blacklist snd_hda_intel" >> /etc/modprobe.d/blacklist.conf;
+
+# Manette Xbox
 echo "blacklist xpad"          >> /etc/modprobe.d/blacklist.conf;
 ```
 
