@@ -143,7 +143,8 @@ VPN > WireGuard > Paramètres
 ```
 État > WireGuard
 ```
-On peut voir le réseau est actif car il est blan et pas gris.
+On peut voir le réseau est actif car il est blanc et pas gris.
+
 ![image](https://user-images.githubusercontent.com/35907/236338291-3962556b-d3c0-452a-a968-0cecfc93626f.png)
 <br />
 
