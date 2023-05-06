@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------------------
-## <p align='center'> Configuration d'un serveur VPN Wireguard sous pfSense par Marc Jaffré</p>
+## <p align='center'>.: Configuration d'un serveur VPN Wireguard sous pfSense par Marc Jaffré :.</p>
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 ### I. Présentation de l'environnement
