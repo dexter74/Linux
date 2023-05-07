@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+ KMS:
+  image: 'mikolatero/vlmcsd'
+  container_name: 'kms'
+  hostname: 'kms'
+  restart: 'unless-stopped'
+  network_mode: 'bridge'
+  ports:
+   - '1688:1688'
