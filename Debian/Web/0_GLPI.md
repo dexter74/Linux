@@ -25,6 +25,23 @@ Utilisateur:
 su -;
 ```
 
+### Carte-réseau (Proxmox)
+```
+echo "source /etc/network/interfaces.d/*
+auto lo
+iface lo inet loopback
+
+allow-hotplug ens18
+iface ens18 inet static
+        address 192.168.0.80/24
+        gateway 192.168.0.1
+        dns-nameservers 192.168.0.1
+" > /etc/network/interfaces;
+
+```
+
+
+
 ### Dépôt
 Commenter la ligne `cdrom` du fichier `/etc/apt/sources.list`.
 
