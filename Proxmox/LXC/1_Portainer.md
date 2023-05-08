@@ -19,10 +19,9 @@ docker run -d \
   portainer/portainer-ce;
 
 #docker volume create Portainer;
-
 ```
 
 #### Accéder à l'URL
 ```
-http://192.168.0.3:9000
+http://192.168.0.6:9000/#!/home
 ```
