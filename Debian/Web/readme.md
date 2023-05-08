@@ -1,4 +1,4 @@
-Cette Fiche permet le déploiement sous Debian de l'outil GLPI.
+Cette Fiche permet le déploiement sous Debian 11 de l'outil GLPI de manière entièrement en commande.
 
 -> Installation d'un Serveur Web (Apache) et de PHP
 
