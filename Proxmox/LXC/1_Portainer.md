@@ -24,5 +24,5 @@ docker run -d \
 
 #### Accéder à l'URL
 ```
-Port 9000 en http
+http://192.168.0.3:9000
 ```
