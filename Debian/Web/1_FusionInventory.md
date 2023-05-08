@@ -93,6 +93,12 @@ systemctl enable --now mariadb;
 systemctl enable --now fusioninventory-agent.service;
 ```
 
+#### URL Linux
+```
+http://192.168.0.10:62354/
+```
+
+
 #### Fonction de l'agent Inventory
 ```
 - Il peut également faire une découverte de tous les matériels réseau autour de sa machine (modules NetDiscovery et NetInventory). 
