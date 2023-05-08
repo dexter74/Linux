@@ -247,7 +247,11 @@ unzip /tmp/phpMyAdmin.zip -d /var/www/html;
 mv /var/www/html/phpMyAdmin-5.2.1-all-languages /var/www/html/phpmyadmin;
 ```
 
-
+### Permission
+L'utilisateur du service Apache2 est `www-data` et appartient au groupe `www-data` et le dossier `www` est son dossier de travail. Il est indispensable qu'il est le contrôle de tout les fichiers.
+```bash
+chown -R www-data:www-data /var/www/html/;
+```
 
 #### Divers Commande [ICI](https://glpi-install.readthedocs.io/fr/develop/command-line.html#cdline-install)
 ```
