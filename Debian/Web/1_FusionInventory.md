@@ -95,8 +95,8 @@ systemctl enable --now fusioninventory-agent.service;
 
 #### Fonction de l'agent Inventory
 ```
-- Il peut également faire une découverte de tous les matériels réseau autour de sa machine (modules NetDiscovery et NetInventory). Le module
-Deploy permet de réaliser du déploiement de logiciels et la fonction Wake-on-lan est intégrée.
+- Il peut également faire une découverte de tous les matériels réseau autour de sa machine (modules NetDiscovery et NetInventory). 
+Le module Deploy permet de réaliser du déploiement de logiciels et la fonction Wake-on-lan est intégrée.
 ```
 
 #### Windows
