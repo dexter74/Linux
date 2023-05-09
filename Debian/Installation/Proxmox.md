@@ -44,6 +44,7 @@ deb-src http://ftp.fr.debian.org/debian/           bullseye-updates main contrib
 
 ### Installation des paquets
 ```bash
+
 apt install -y sudo;
 apt install -y timeshift;
 ```
@@ -57,4 +58,16 @@ sudo adduser $MONUSER sudo
 
 ### Création de la sauvegarde Système
 ```bash
+Paramètres:
+ - Type d'instantané: rsync
+ - Emplacement      : dm-3 (Backup)
+ - Planning         : Quotidienne (Conserver 7)
+
+Dossiers Personnls:
+- marc: Exclude All Files
+- root: Exclude All Files
+
+Misc : %d-%m-%Y %H:%M:%S
+
+
 ```
