@@ -56,7 +56,7 @@ apt install -y timeshift;
 La variable MONUSER récupére le nom de l'utilisateur ayant l'ID 1000.
 ```bash
 MONUSER=$(id 1000 | cut -d ")" -f 1 | cut -d "(" -f 2)
-sudo adduser $MONUSER sudo
+sudo adduser $MONUSER sudo;
 ```
 
 ### Création de la sauvegarde Système
