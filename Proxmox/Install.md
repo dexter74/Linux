@@ -188,7 +188,7 @@ mkdir -p /mnt/{Download,Home,Music,Video};
 chown -R $USERNAME:users /mnt/{Download,Home,Music,Video};
 
 # Pre-requis:
-systemctl enable systemd-networkd-wait-online.service
+systemctl enable systemd-networkd-wait-online.service;
 
 systemctl daemon-reload;
 systemctl stop  mnt-{Download,Home,Music,Video}.mount;
