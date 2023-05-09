@@ -11,7 +11,7 @@ clear;
 # Nom d'utilisateur et mot de passe du compte:
 export UTILISATEUR=Drthrax74
 export PASSWORD=admin
-export USERID=1000
+export USERID=1001
 
 #########################################################################################################
 # Création du compte #
