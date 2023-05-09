@@ -4,8 +4,9 @@ Distribution      : Debian 11
 Nom de la machine : proxmox.lan
 Carte Graphique   : AMD GPU Radeon 6700XT
 Carte Wifi        : Broadcom BCM4352 802.11ac
-
 Nom d'utilisateur : marc
+
+Networking affichera que le réseau est KO !
 ```
 
 ### Partitionnement
