@@ -177,7 +177,7 @@ systemctl enable --now lightdm;
 | XFCE	 				  | NON									|
 
 
-**Mixeurs**
+**Mixeurs** (Applet Utilisateur)
 ```
 pavucontrol
 ```
