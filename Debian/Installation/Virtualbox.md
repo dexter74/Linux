@@ -57,11 +57,11 @@ apt install -y build-essential dkms;
 ```
 ###### Installation de VirtualBox Guest Additions
 ```bash
-apt install -y virtualbox-guest-additions-iso;
-mkdir /media/virtualbox;
-mount /usr/share/virtualbox/VBoxGuestAdditions.iso /media/virtualbox;
-/media/virtualbox/VBoxLinuxAdditions.run;
-systemctl enable --now vboxadd.service;
+#apt install -y virtualbox-guest-additions-iso;
+#mkdir /media/virtualbox;
+#mount /usr/share/virtualbox/VBoxGuestAdditions.iso /media/virtualbox;
+#/media/virtualbox/VBoxLinuxAdditions.run;
+#systemctl enable --now vboxadd.service;
 # Construire module pour tout les noyaux: /sbin/rcvboxadd quicksetup all;
 ```
 <br />
