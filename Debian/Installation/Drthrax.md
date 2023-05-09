@@ -1,6 +1,8 @@
-## Distribution
+## Informations
 ```
-Debian 11
+Distribution   : Debian 11
+Carte Graphique: AMD GPU Radeon 6700XT
+Carte Wifi     : Broadcom BCM4352 802.11ac
 ```
 
 ## Partitionnement
