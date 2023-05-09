@@ -16,6 +16,10 @@ cp /etc/pve/storage.cfg    /backup/proxmox/etc/;
 cp /etc/pve/user.cfg       /backup/proxmox/etc/;
 
 cp -r /etc/pve/nodes /backup/proxmox/etc/nodes;
+```
 
+
+#### Permission
+```
 chown -R root:www-data /backup/proxmox;
 ```
