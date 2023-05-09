@@ -98,9 +98,9 @@ source /etc/network/interfaces.d/*
 ##############################################
 auto lo
 iface lo inet loopback
-# Interface enp4s0
-auto enp4s0
-iface enp4s0 inet manual
+# Interface $NAME_INTERFACE
+auto $NAME_INTERFACE
+iface $NAME_INTERFACE inet manual
         dns-domain lan
         dns-nameservers 192.168.0.1 8.8.8.8
 ##############################################
@@ -108,7 +108,7 @@ auto vmbr0
 iface vmbr0 inet static
         address 192.168.0.4/24
         gateway 192.168.0.1
-        bridge-ports enp4s0
+        bridge-ports $NAME_INTERFACE
         bridge-stp off
         bridge-fd 0
 ##############################################
