@@ -54,6 +54,11 @@ apt install -y sudo;
 apt install -y timeshift;
 ```
 
+### GPU
+```
+
+```
+
 ### Ajouter Utilisateur au groupe sudo
 La variable MONUSER récupére le nom de l'utilisateur ayant l'ID 1000.
 ```bash
