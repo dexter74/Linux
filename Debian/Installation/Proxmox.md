@@ -92,37 +92,47 @@ Patterns d'inclusion / Exclusion:
 ##### A. Configuration de l'ip Static
 ```bash
 clear;
-NAME_INTERFACE=$(ip add | grep UP | grep -v lo | cut -d ":" -f 2 | cut -d " " -f 2)
-
-# source /etc/network/interfaces.d/*
-
-echo "auto lo
+NAME_INTERFACE=$(ip add | grep -v "vmbr[0-9]:\|lo" | grep "[0-9]: " | cut -d ":" -f 2 | cut -c 2-9)
+echo "#####################################
+source /etc/network/interfaces.d/*
+#####################################
+# Adresse de Bouclage
+auto lo
 iface lo inet loopback
+#####################################
+# Interface Physique
 auto $NAME_INTERFACE
-iface $NAME_INTERFACE inet manual
-dns-domain lan
-dns-nameservers 192.168.0.1 8.8.8.8
-
+  iface $NAME_INTERFACE inet manual
+  dns-domain lan
+  dns-nameservers 192.168.0.1 8.8.8.8
+#####################################
+# Pont 0
 auto vmbr0
-iface vmbr0 inet static
-address 192.168.0.4/24
-gateway 192.168.0.1
-bridge-ports $NAME_INTERFACE
-bridge-stp off
-bridge-fd 0
-
+  iface vmbr0 inet static
+  address 192.168.0.4/24
+  gateway 192.168.0.1
+  bridge-ports $NAME_INTERFACE
+  bridge-stp off
+  bridge-fd 0
+#####################################
+# Pont 1
 auto vmbr1
-iface vmbr1 inet static
-address 192.168.10.0/24
-bridge-ports none
-bridge-stp off
-bridge-fd 0" > /etc/network/interfaces;
-        
-systemctl restart networking.service;
-systemctl status networking.service;
+  iface vmbr1 inet static
+  address 192.168.10.0/24
+  bridge-ports none
+  bridge-stp off
+  bridge-fd 0
+#####################################" > /etc/network/interfaces; cat /etc/network/interfaces;
 ```
 
-##### B. Nom de la Machine
+##### B. Relance du service
+```bash
+systemctl restart networking.service;
+```
+
+
+
+##### C. Nom de la Machine
 ```bash
 echo "proxmox" > /etc/hostname;
 echo "127.0.0.1       localhost
@@ -134,7 +144,7 @@ ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters" > /etc/hosts;
 ```
 
-##### C. Dépôt Proxmox
+##### D. Dépôt Proxmox
 ```bash
 echo "deb [arch=amd64] http://download.proxmox.com/debian/pve bullseye pve-no-subscription" > /etc/apt/sources.list.d/pve-install-repo.list;
 ```
