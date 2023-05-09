@@ -2,7 +2,7 @@
 ## <p align='center'> Installation de l'applicatif Proxmox sur Debian 11 </p>
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-### Présentation de l'environnement
+#### I. Présentation de l'environnement
 ```
 Distribution      : Debian 11
 Nom de la machine : proxmox.lan
@@ -12,8 +12,8 @@ Nom d'utilisateur : marc
 ```
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-### Installation de Débian
-##### Partitionnement
+#### II. Installation de Débian
+##### A. Partitionnement
 ```
 Partition 1: ESP
 Partition 2: LVM
@@ -25,7 +25,7 @@ Partition 2: LVM
   - LVM: Backup 100 Go /backup
 ```
 
-### Dépôt (Défaut)
+##### B. Dépôt (Défaut)
 ```
 deb     http://ftp.fr.debian.org/debian/           bullseye main
 deb-src http://ftp.fr.debian.org/debian/           bullseye main
@@ -37,7 +37,7 @@ deb     http://ftp.fr.debian.org/debian/           bullseye-updates main contrib
 deb-src http://ftp.fr.debian.org/debian/           bullseye-updates main contrib
 ```
 
-### Dépôt (Modifier)
+##### C. Dépôt (Modifier)
 ```
 deb     http://ftp.fr.debian.org/debian/           bullseye main non-free
 deb-src http://ftp.fr.debian.org/debian/           bullseye main
@@ -49,7 +49,7 @@ deb     http://ftp.fr.debian.org/debian/           bullseye-updates main contrib
 deb-src http://ftp.fr.debian.org/debian/           bullseye-updates main contrib
 ```
 
-### Installation des paquets
+##### D. Installation des paquets
 ```bash
 apt install -y git;
 apt install -y gnome-disk-utility;
@@ -57,19 +57,19 @@ apt install -y sudo;
 apt install -y timeshift;
 ```
 
-### GPU
+##### E. GPU
+```
+A compléter
 ```
 
-```
-
-### Ajouter Utilisateur au groupe sudo
+##### F. Ajouter Utilisateur au groupe sudo
 La variable MONUSER récupére le nom de l'utilisateur ayant l'ID 1000.
 ```bash
 MONUSER=$(id 1000 | cut -d ")" -f 1 | cut -d "(" -f 2)
 sudo adduser $MONUSER sudo;
 ```
 
-### Création de la sauvegarde Système
+##### G. Création de la sauvegarde Système
 ```
 Paramètres:
  - Type d'instantané: rsync
