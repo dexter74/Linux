@@ -78,8 +78,31 @@ Patterns d'inclusion / Exclusion:
 ```
 
 ### Proxmox
-##### Nom de la Machine
+##### Configuration de l'ip Static
+```bash
+clear;
+NAME_INTERFACE=$(ip add | grep UP | grep -v lo | cut -d ":" -f 2 | cut -d " " -f 2)
+echo "source /etc/network/interfaces.d/*
+# The loopback network interface
+auto lo
+iface lo inet loopback
+################################
+# Interface $NAME_INTERFACE
+allow-hotplug $NAME_INTERFACE
+auto $NAME_INTERFACE
+iface $NAME_INTERFACE inet static
+ address 192.168.0.4/24
+ netmask 255.255.255.0
+ gateway 192.168.0.1
+ dns-domain lan
+ dns-nameservers 192.168.0.1 8.8.8.8" > /etc/network/interfaces;
+systemctl restart networking.service;
+systemctl status networking.service;
 ```
+
+
+##### Nom de la Machine
+```bash
 echo "127.0.0.1       localhost
 192.168.0.4     proxmox.lan proxmox
 
@@ -108,7 +131,6 @@ apt full-upgrade -y
 ```bash
 apt install -y pve-kernel-5.15;
 ```
-
 
 ###### Installer le Noyaux de Proxmox (Last Release)
 ```bash
