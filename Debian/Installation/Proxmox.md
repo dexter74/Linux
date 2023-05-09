@@ -154,3 +154,7 @@ apt install -y pve-kernel-5.15;
 LAST_KERNEL_PVE=$(apt search pve-kernel | grep stable | grep -v "helper\|libc" | tail -n 1 | cut -d "/" -f 1)
 apt install -y $LAST_KERNEL_PVE;
 ```
+
+
+#### Suite du Guide
+https://github.com/dexter74/Linux/blob/main/Proxmox/Install.md
