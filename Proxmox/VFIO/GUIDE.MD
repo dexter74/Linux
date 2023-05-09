@@ -118,10 +118,8 @@ args: -cpu host,host-cache-info=on,-hypervisor,kvm=off
 
 #### Wifi
 ```
-
 06:00.0 0280: 14e4:43b1 (rev 03)
 	Subsystem: 1043:85ba
-
 ```
 
 
