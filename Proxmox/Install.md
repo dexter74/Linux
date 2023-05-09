@@ -13,7 +13,7 @@ export UTILISATEUR=Drthrax74
 export PASSWORD=admin
 export USERID=1001
 
-#########################################################################################################
+#######################################language: fr##################################################################
 # Création du compte #
 ######################
 /usr/sbin/useradd \
@@ -213,4 +213,13 @@ systemctl status --now mnt-{Download,Home,Music,Video}.mount | grep "mount\|Acti
 /etc/pve/lxc
 /etc/pve/qemu-server
 /etc/pve/priv/storage
+```
+
+#### French
+```
+
+echo "language: fr" >> /etc/pve/datacenter.cfg;
+systemctl restart pveproxy.service;
+
+# /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
 ```
