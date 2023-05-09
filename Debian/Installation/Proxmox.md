@@ -87,8 +87,8 @@ Patterns d'inclusion / Exclusion:
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-### Installation de Proxmox
-##### Configuration de l'ip Static
+#### Installation de Proxmox
+##### A. Configuration de l'ip Static
 ```bash
 clear;
 NAME_INTERFACE=$(ip add | grep UP | grep -v lo | cut -d ":" -f 2 | cut -d " " -f 2)
@@ -115,7 +115,7 @@ systemctl restart networking.service;
 systemctl status networking.service;
 ```
 
-##### Nom de la Machine
+##### B. Nom de la Machine
 ```bash
 echo "proxmox" > /etc/hostname;
 echo "127.0.0.1       localhost
@@ -127,45 +127,48 @@ ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters" > /etc/hosts;
 ```
 
-###### Dépôt
+##### C. Dépôt Proxmox
 ```bash
 echo "deb [arch=amd64] http://download.proxmox.com/debian/pve bullseye pve-no-subscription" > /etc/apt/sources.list.d/pve-install-repo.list;
 ```
 
-###### Clé GPG
+##### E. Clé GPG
 ```bash
 wget https://enterprise.proxmox.com/debian/proxmox-release-bullseye.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg;
 ```
 
-###### Mise à jour
+##### F. Mise à jour
 ```bash
 apt update;
 apt full-upgrade -y;
 ```
 
-###### Installer les packages de Proxmox
+##### G. Installer les packages de Proxmox
 Choisir `Local uniquement` .
 ```
 apt install -y proxmox-ve postfix open-iscsi;
 ```
 
-
-###### Installer le Noyaux par défaut de Proxmox 7.0 (Stable)
+##### H. Installer le Noyaux par défaut de Proxmox 7.0 (Stable)
 ```bash
 apt install -y pve-kernel-5.15;
 ```
 
-###### Installer le Noyaux de Proxmox (Last Release)
+##### I. Installer le Noyaux de Proxmox (Last Release)
 ```bash
 LAST_KERNEL_PVE=$(apt search pve-kernel | grep stable | grep -v "helper\|libc" | tail -n 1 | cut -d "/" -f 1)
 apt install -y $LAST_KERNEL_PVE;
 ```
 
-###### Reboot
+##### J. Commenter le Dépôt Entreprise de Proxmox
+```
+sed -i -e "s/^deb/#deb/g" /etc/apt/sources.list.d/pve-enterprise.list;
+``` 
+
+##### K. Reboot
 ```
 systemctl reboot;
 ```
 
-
-#### Suite du Guide
+##### L. Suite du Guide
 https://github.com/dexter74/Linux/blob/main/Proxmox/Install.md
