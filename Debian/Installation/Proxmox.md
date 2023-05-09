@@ -104,10 +104,24 @@ wget https://enterprise.proxmox.com/debian/proxmox-release-bullseye.gpg -O /etc/
 apt update;
 apt full-upgrade -y
 ```
+###### Installer le Noyaux par défaut de Proxmox 7.0 (Stable)
+```bash
+apt install -y pve-kernel-5.15;
+```
+
 
 ###### Installer le Noyaux de Proxmox (Last Release)
 ```bash
 LAST_KERNEL_PVE=$(apt search pve-kernel | grep stable | grep -v "helper\|libc" | tail -n 1 | cut -d "/" -f 1)
 apt install -y $LAST_KERNEL_PVE
+```
+
+###### Reboot
+```
 systemctl reboot
+```
+
+###### Installer les packages de Proxmox
+```
+apt install -y proxmox-ve postfix open-iscsi;
 ```
