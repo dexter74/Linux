@@ -3,8 +3,6 @@
 mkdir -p /backup/proxmox/etc/;
 ```
 
-
-
 #### Sauvegarde de la  configuration
 ```
 cp /etc/passwd   /backup/proxmox/etc/;
@@ -19,7 +17,15 @@ cp -r /etc/pve/nodes /backup/proxmox/etc/nodes;
 ```
 
 
+#### Restauration
+```bash 
+cp -r /backup/proxmox/etc/* /etc/pve/;
+cp -r /backup/proxmox/etc/nodes /etc/nodes;
+
+```
+
 #### Permission
 ```
-chown -R root:www-data /backup/proxmox;
+chown -R root:www-data /etc/*.cfg;
+chown -R root:www-data /etc/nodes;
 ```
