@@ -135,6 +135,10 @@ apt install -y proxmox-ve postfix open-iscsi;
 ```
 
 
+###### Reboot
+```
+systemctl reboot;
+```
 
 
 ###### Installer le Noyaux par défaut de Proxmox 7.0 (Stable)
@@ -146,9 +150,4 @@ apt install -y pve-kernel-5.15;
 ```bash
 LAST_KERNEL_PVE=$(apt search pve-kernel | grep stable | grep -v "helper\|libc" | tail -n 1 | cut -d "/" -f 1)
 apt install -y $LAST_KERNEL_PVE;
-```
-
-###### Reboot
-```
-systemctl reboot
 ```
