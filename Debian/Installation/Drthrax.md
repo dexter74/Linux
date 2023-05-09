@@ -41,3 +41,12 @@ deb-src http://security.debian.org/debian-security bullseye-security main contri
 deb     http://ftp.fr.debian.org/debian/           bullseye-updates main contrib
 deb-src http://ftp.fr.debian.org/debian/           bullseye-updates main contrib
 ```
+
+### Installation de Timeshift
+```bash
+apt install -y timeshift;
+```
+
+### Création de la sauvegarde Système
+```bash
+```
