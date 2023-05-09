@@ -139,7 +139,7 @@ apt full-upgrade -y;
 ```
 
 ###### Installer les packages de Proxmox
-Choisir Serveur Local
+Choisir `Local uniquement` .
 ```
 apt install -y proxmox-ve postfix open-iscsi;
 ```
