@@ -87,7 +87,6 @@ PCI device: 0000:0b:00.0
   - ROM Bar: Cocher
   - PCI-Express: Cocher
 
-
 Session: (Important)
  - User: marc
  - Pass: admin
@@ -99,6 +98,12 @@ Une fois Ajouter, il faut éditer le Disque pour empêcher la sauvegarde de celu
 qm set 310 -sata2 /dev/nvme0n1p1;
 qm unlink 310 --idlist sata2;
 ```
+
+#### CPU:
+```
+echo "args: -cpu host,-hypervisor,kvm=off" >> /etc/pve/qemu-server/XXX.conf
+```
+
 
 #### Ouverture Automatique Session ([Microsoft](https://learn.microsoft.com/fr-fr/troubleshoot/windows-server/user-profiles-and-logon/turn-on-automatic-logon))
 ```
