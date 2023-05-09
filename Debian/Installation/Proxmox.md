@@ -104,7 +104,6 @@ systemctl restart networking.service;
 systemctl status networking.service;
 ```
 
-
 ##### Nom de la Machine
 ```bash
 echo "proxmox" > /etc/hostname;
@@ -139,12 +138,10 @@ Choisir Serveur Local
 apt install -y proxmox-ve postfix open-iscsi;
 ```
 
-
 ###### Reboot
 ```
 systemctl reboot;
 ```
-
 
 ###### Installer le Noyaux par défaut de Proxmox 7.0 (Stable)
 ```bash
