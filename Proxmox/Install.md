@@ -1,14 +1,12 @@
 ## Distribution
 ```
 Debian 11
- > XFCE
- > Serveur SSH
- > Utilitaires usuels du Système
 ```
 
 ## Partitionnement
 ```
 Partition 1: ESP
+
 Partition 2: LVM
  - Volume Group: vg0
   - LVM: Swap
@@ -18,10 +16,14 @@ Partition 2: LVM
   - LVM: Backup 100 Go /backup
 ```
 
-## Installation
+### Dépôt
 ```
 
 ```
+
+
+
+
 
 ### Création d'un compte Utilisateur Linux
 ```bash
