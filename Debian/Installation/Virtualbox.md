@@ -11,7 +11,8 @@
 
 #### I. Présentation de l'installation
 L'installation de Debian se fera sans choisir un seul package.
-L'interface sera Cinnamon
+
+L'environnement graphique utilisateur sera Cinnamon.
 
 ------------------------------------------------------------------------------------------------
 
