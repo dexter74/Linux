@@ -93,17 +93,15 @@ Patterns d'inclusion / Exclusion:
 ```bash
 clear;
 NAME_INTERFACE=$(ip add | grep UP | grep -v lo | cut -d ":" -f 2 | cut -d " " -f 2)
-echo "##############################################
-source /etc/network/interfaces.d/*
-##############################################
+echo "source /etc/network/interfaces.d/*
 auto lo
 iface lo inet loopback
-# Interface $NAME_INTERFACE
+
 auto $NAME_INTERFACE
 iface $NAME_INTERFACE inet manual
         dns-domain lan
         dns-nameservers 192.168.0.1 8.8.8.8
-##############################################
+
 auto vmbr0
 iface vmbr0 inet static
         address 192.168.0.4/24
@@ -111,14 +109,15 @@ iface vmbr0 inet static
         bridge-ports $NAME_INTERFACE
         bridge-stp off
         bridge-fd 0
-##############################################
+
+
 auto vmbr1
 iface vmbr1 inet static
         address 192.168.10.0/24
         bridge-ports none
         bridge-stp off
-        bridge-fd 0
-##############################################" > /etc/network/interfaces;
+        bridge-fd 0" > /etc/network/interfaces;
+        
 systemctl restart networking.service;
 systemctl status networking.service;
 ```
