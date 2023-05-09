@@ -45,7 +45,9 @@ deb-src http://ftp.fr.debian.org/debian/           bullseye-updates main contrib
 
 ### Installation des paquets
 ```bash
-apt install -y gnome-disk-utility
+apt install -y firmware-amd-graphics
+apt install -y git;
+apt install -y gnome-disk-utility;
 apt install -y sudo;
 apt install -y timeshift;
 ```
@@ -68,4 +70,13 @@ Paramètres:
 Dossiers Personnls:
 - marc: Exclude All Files
 - root: Exclude All Files
+```
+
+### Pilote Graphique 6700XT:
+```
+
+mkdir ~/git && cd ~/git
+git clone https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+sudo cp -r linux-firmware/amdgpu /lib/firmware
+sudo update-initramfs -u -k all
 ```
