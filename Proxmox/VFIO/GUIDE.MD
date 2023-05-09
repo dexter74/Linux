@@ -65,7 +65,7 @@ options vfio-pci ids=1002:73df,1002:ab28 disable_vga=1
 # Nvidia: GTX 1060
 options vfio-pci ids=10de:1c02,10de:10f1 disable_vga=1
 
-# WIFI
+# Broadcom: BCM4352 802.11ac
 options vfio-pci ids=14e4:43b1" > /etc/modprobe.d/vfio.conf;
 
 
