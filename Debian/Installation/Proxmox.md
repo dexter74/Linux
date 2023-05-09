@@ -73,7 +73,7 @@ Dossiers Personnls:
 
 Patterns d'inclusion / Exclusion:
 - /data/
-- 
+
 ```
 
 ### Pilote Graphique 6700XT:
