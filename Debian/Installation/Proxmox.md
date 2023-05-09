@@ -13,10 +13,10 @@ Nom d'utilisateur : marc
 Networking affichera que le réseau est KO !
 ```
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Partitionnement
 ```
 Partition 1: ESP
-
 Partition 2: LVM
  - Volume Group: vg0
   - LVM: Swap
