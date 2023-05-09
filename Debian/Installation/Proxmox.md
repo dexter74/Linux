@@ -109,23 +109,23 @@ echo "127.0.0.1       localhost
 # The following lines are desirable for IPv6 capable hosts
 ::1     localhost ip6-localhost ip6-loopback
 ff02::1 ip6-allnodes
-ff02::2 ip6-allrouters" > /etc/hosts
+ff02::2 ip6-allrouters" > /etc/hosts;
 ```
 
 ###### Dépôt
 ```bash
-echo "deb [arch=amd64] http://download.proxmox.com/debian/pve bullseye pve-no-subscription" > /etc/apt/sources.list.d/pve-install-repo.list
+echo "deb [arch=amd64] http://download.proxmox.com/debian/pve bullseye pve-no-subscription" > /etc/apt/sources.list.d/pve-install-repo.list;
 ```
 
 ###### Clé GPG
 ```bash
-wget https://enterprise.proxmox.com/debian/proxmox-release-bullseye.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg 
+wget https://enterprise.proxmox.com/debian/proxmox-release-bullseye.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg;
 ```
 
 ###### Mise à jour
 ```bash
 apt update;
-apt full-upgrade -y
+apt full-upgrade -y;
 ```
 ###### Installer le Noyaux par défaut de Proxmox 7.0 (Stable)
 ```bash
