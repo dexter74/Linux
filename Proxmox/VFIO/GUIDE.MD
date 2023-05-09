@@ -51,6 +51,9 @@ echo "blacklist xpad"          >> /etc/modprobe.d/blacklist.conf;
 ```bash
 echo "blacklist ccp"           >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist xhci_hcd"      >> /etc/modprobe.d/blacklist.conf;
+
+echo "blacklist wl"            >> /etc/modprobe.d/blacklist.conf;
+echo "blacklist bcma"          >> /etc/modprobe.d/blacklist.conf;
 ```
 
 
@@ -60,7 +63,12 @@ echo "# AMD: RX 6700 XT
 options vfio-pci ids=1002:73df,1002:ab28 disable_vga=1
 
 # Nvidia: GTX 1060
-options vfio-pci ids=10de:1c02,10de:10f1 disable_vga=1"> /etc/modprobe.d/vfio.conf;
+options vfio-pci ids=10de:1c02,10de:10f1 disable_vga=1
+
+# WIFI
+options vfio-pci ids=14e4:43b1" > /etc/modprobe.d/vfio.conf;
+
+
 update-initramfs -u;
 reboot;
 ```
@@ -103,6 +111,17 @@ qm unlink 310 --idlist sata2;
 ```
 args: -cpu host,host-cache-info=on,-hypervisor,kvm=off
 ```
+
+
+#### Wifi
+```
+
+06:00.0 0280: 14e4:43b1 (rev 03)
+	Subsystem: 1043:85ba
+
+```
+
+
 
 
 #### Ouverture Automatique Session ([Microsoft](https://learn.microsoft.com/fr-fr/troubleshoot/windows-server/user-profiles-and-logon/turn-on-automatic-logon))
