@@ -1,8 +1,9 @@
 ### Informations
 ```
-Distribution   : Debian 11
-Carte Graphique: AMD GPU Radeon 6700XT
-Carte Wifi     : Broadcom BCM4352 802.11ac
+Distribution      : Debian 11
+Nom de la machine : proxmox.lan
+Carte Graphique   : AMD GPU Radeon 6700XT
+Carte Wifi        : Broadcom BCM4352 802.11ac
 ```
 
 ### Partitionnement
