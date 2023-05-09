@@ -47,7 +47,6 @@ deb-src http://ftp.fr.debian.org/debian/           bullseye-updates main contrib
 
 ### Installation des paquets
 ```bash
-apt install -y firmware-amd-graphics
 apt install -y git;
 apt install -y gnome-disk-utility;
 apt install -y sudo;
