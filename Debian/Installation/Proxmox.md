@@ -102,6 +102,7 @@ systemctl status networking.service;
 
 ##### Nom de la Machine
 ```bash
+echo "proxmox" > /etc/hostname;
 echo "127.0.0.1       localhost
 192.168.0.4     proxmox.lan proxmox
 
