@@ -198,3 +198,19 @@ systemctl start mnt-{Download,Home,Music,Video}.mount;
 systemctl enable --now mnt-{Download,Home,Music,Video}.mount;
 systemctl status --now mnt-{Download,Home,Music,Video}.mount | grep "mount\|Active:";
 ```
+
+
+#### Sauvegarde / Restauration de configuration
+```
+/etc/passwd
+/etc/gshadow
+/etc/group
+
+/etc/pve/datacenter.cfg
+/etc/pve/storage.cfg
+/etc/pve/user.cfg
+
+/etc/pve/lxc
+/etc/pve/qemu-server
+/etc/pve/priv/storage
+```
