@@ -42,9 +42,15 @@ deb     http://ftp.fr.debian.org/debian/           bullseye-updates main contrib
 deb-src http://ftp.fr.debian.org/debian/           bullseye-updates main contrib
 ```
 
-### Installation de Timeshift
+### Installation des paquets
 ```bash
+apt install -y sudo;
 apt install -y timeshift;
+```
+
+### Ajouter Utilisateur au groupe sudo
+```bash
+sudo adduser marc sudo
 ```
 
 ### Création de la sauvegarde Système
