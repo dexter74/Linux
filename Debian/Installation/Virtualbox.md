@@ -74,8 +74,10 @@ apt install -y build-essential dkms;
 
 ##### B. Installation de X11
 ```bash
-# Minimum + startx + glxinfo
+# Minimum + startx + glxinfo (Test performance GPU)
 apt install -y xserver-xorg-core xinit mesa-utils;
+
+# Xorg
 mkdir -p /usr/share/fonts/X11/cyrillic;
 mkdir -p /usr/share/fonts/X11/100dpi;
 mkdir -p /usr/share/fonts/X11/75dpi;
