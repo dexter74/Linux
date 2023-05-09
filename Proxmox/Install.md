@@ -8,7 +8,7 @@ LVM:
  > 32 Go
  - Minfree  : Définit la quantité d'espace libre restant dans le groupe de volumes LVM pve. (hdsize/8)
  > 10 Go
- - Maxvz    : Définit la taille maximale du volume de données.
+ - Maxvz    : Définit la taille maximale du volume de données. (Data : VM)
  > 20 Go
 ``` 
  
