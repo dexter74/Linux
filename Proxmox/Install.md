@@ -2,6 +2,7 @@
 ```
 LVM:
  - hdsize   : Définissez la taille totale du disque dur à utiliser.
+ > 952 Go
  - Swapsize : Définit la taille du volume d'échange. La valeur par défaut est la taille de la mémoire installée, minimum 4 Go et maximum 8 Go. (Max: 8)
  - MaxRoot  : Définit la taille maximale du volume racine, qui stocke le système d'exploitation. (MAX: hdsize/4)
  > 32 Go
