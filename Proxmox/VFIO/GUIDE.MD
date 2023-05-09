@@ -35,6 +35,8 @@ echo "options kvm ignore_msrs=1" > /etc/modprobe.d/kvm.conf;
 echo "blacklist ati"            > /etc/modprobe.d/blacklist.conf;
 echo "blacklist amdgpu"        >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist radeon"        >> /etc/modprobe.d/blacklist.conf;
+echo "blacklist pcieport"      >> /etc/modprobe.d/blacklist.conf;
+
 
 # GPU Nvidia
 echo "blacklist nouveau"       >> /etc/modprobe.d/blacklist.conf;
