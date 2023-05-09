@@ -144,6 +144,7 @@ systemctl reboot
 ```
 
 ###### Installer les packages de Proxmox
+Choisir Serveur Local
 ```
 apt install -y proxmox-ve postfix open-iscsi;
 ```
