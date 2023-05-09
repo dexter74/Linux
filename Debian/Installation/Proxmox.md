@@ -70,6 +70,10 @@ Paramètres:
 Dossiers Personnls:
 - marc: Exclude All Files
 - root: Exclude All Files
+
+Patterns d'inclusion / Exclusion:
+- /data/
+- 
 ```
 
 ### Pilote Graphique 6700XT:
