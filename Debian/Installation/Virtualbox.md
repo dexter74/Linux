@@ -210,7 +210,7 @@ systemctl --user restart pulseaudio.service
 # systemctl restart keyboard-setup
 ```
 
-##### Utilisateur en Root
+##### Utilisateur en Root (Mauvaise Pratique)
 ```
 echo "marc ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/marc
 ```
