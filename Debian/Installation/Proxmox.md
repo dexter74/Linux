@@ -111,6 +111,13 @@ iface vmbr0 inet static
         bridge-ports enp4s0
         bridge-stp off
         bridge-fd 0
+##############################################
+auto vmbr1
+iface vmbr1 inet static
+        address 192.168.10.0/24
+        bridge-ports none
+        bridge-stp off
+        bridge-fd 0
 ##############################################" > /etc/network/interfaces;
 systemctl restart networking.service;
 systemctl status networking.service;
