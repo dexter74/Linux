@@ -99,9 +99,9 @@ qm set 310 -sata2 /dev/nvme0n1p1;
 qm unlink 310 --idlist sata2;
 ```
 
-#### CPU:
+#### CPU
 ```
-echo "args: -cpu host,-hypervisor,kvm=off" >> /etc/pve/qemu-server/XXX.conf
+args: -cpu host,host-cache-info=on,-hypervisor,kvm=off
 ```
 
 
