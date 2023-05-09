@@ -57,17 +57,14 @@ sudo adduser $MONUSER sudo
 ```
 
 ### Création de la sauvegarde Système
-```bash
+```
 Paramètres:
  - Type d'instantané: rsync
  - Emplacement      : dm-3 (Backup)
  - Planning         : Quotidienne (Conserver 7)
+ - Misc : %d-%m-%Y %H:%M:%S
 
 Dossiers Personnls:
 - marc: Exclude All Files
 - root: Exclude All Files
-
-Misc : %d-%m-%Y %H:%M:%S
-
-
 ```
