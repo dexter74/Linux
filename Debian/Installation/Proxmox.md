@@ -49,8 +49,10 @@ apt install -y timeshift;
 ```
 
 ### Ajouter Utilisateur au groupe sudo
+La variable MONUSER récupére le nom de l'utilisateur ayant l'ID 1000.
 ```bash
-sudo adduser marc sudo
+MONUSER=$(id 1000 | cut -d ")" -f 1 | cut -d "(" -f 2)
+sudo adduser $MONUSER sudo
 ```
 
 ### Création de la sauvegarde Système
