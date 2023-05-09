@@ -47,13 +47,16 @@ echo "blacklist snd_hda_intel" >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist xpad"          >> /etc/modprobe.d/blacklist.conf;
 ```
 
+##### BCM4352 802.11ac Wireless Network Adapter
+```bash
+echo "blacklist wl"            >> /etc/modprobe.d/blacklist.conf;
+echo "blacklist bcma"          >> /etc/modprobe.d/blacklist.conf;
+```
+
 ##### Ryzen 5700G:
 ```bash
 echo "blacklist ccp"           >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist xhci_hcd"      >> /etc/modprobe.d/blacklist.conf;
-
-echo "blacklist wl"            >> /etc/modprobe.d/blacklist.conf;
-echo "blacklist bcma"          >> /etc/modprobe.d/blacklist.conf;
 ```
 
 
