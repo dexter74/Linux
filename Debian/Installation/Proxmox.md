@@ -81,20 +81,25 @@ Patterns d'inclusion / Exclusion:
 ```bash
 clear;
 NAME_INTERFACE=$(ip add | grep UP | grep -v lo | cut -d ":" -f 2 | cut -d " " -f 2)
-echo "source /etc/network/interfaces.d/*
-# The loopback network interface
+echo "##############################################
+source /etc/network/interfaces.d/*
+##############################################
 auto lo
 iface lo inet loopback
-################################
-# Interface $NAME_INTERFACE
-allow-hotplug $NAME_INTERFACE
-auto $NAME_INTERFACE
-iface $NAME_INTERFACE inet static
- address 192.168.0.4/24
- netmask 255.255.255.0
- gateway 192.168.0.1
- dns-domain lan
- dns-nameservers 192.168.0.1 8.8.8.8" > /etc/network/interfaces;
+# Interface enp4s0
+auto enp4s0
+iface enp4s0 inet manual
+        dns-domain lan
+        dns-nameservers 192.168.0.1 8.8.8.8
+##############################################
+auto vmbr0
+iface vmbr0 inet static
+        address 192.168.0.4/24
+        gateway 192.168.0.1
+        bridge-ports enp4s0
+        bridge-stp off
+        bridge-fd 0
+##############################################" > /etc/network/interfaces;
 systemctl restart networking.service;
 systemctl status networking.service;
 ```
