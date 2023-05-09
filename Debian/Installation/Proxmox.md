@@ -74,7 +74,7 @@ Dossiers Personnls:
 
 ### Pilote Graphique 6700XT:
 ```
-
+apt policy firmware-amd-graphics
 mkdir ~/git && cd ~/git
 git clone https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
 sudo cp -r linux-firmware/amdgpu /lib/firmware
