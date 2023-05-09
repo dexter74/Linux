@@ -2,19 +2,18 @@
 ## <p align='center'> Installation de l'applicatif Proxmox sur Debian 11 </p>
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-### Informations
+### Présentation de l'environnement
 ```
 Distribution      : Debian 11
 Nom de la machine : proxmox.lan
 Carte Graphique   : AMD GPU Radeon 6700XT
 Carte Wifi        : Broadcom BCM4352 802.11ac
 Nom d'utilisateur : marc
-
-Networking affichera que le réseau est KO !
 ```
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-### Partitionnement
+### Installation de Débian
+##### Partitionnement
 ```
 Partition 1: ESP
 Partition 2: LVM
@@ -86,7 +85,9 @@ Patterns d'inclusion / Exclusion:
 - /data/
 ```
 
-### Proxmox
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+### Installation de Proxmox
 ##### Configuration de l'ip Static
 ```bash
 clear;
