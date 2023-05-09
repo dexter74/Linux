@@ -104,3 +104,10 @@ wget https://enterprise.proxmox.com/debian/proxmox-release-bullseye.gpg -O /etc/
 apt update;
 apt full-upgrade -y
 ```
+
+###### Installer le Noyaux de Proxmox (Last Release)
+```bash
+LAST_KERNEL_PVE=$(apt search pve-kernel | grep stable | grep -v "helper\|libc" | tail -n 1 | cut -d "/" -f 1)
+apt install -y $LAST_KERNEL_PVE
+systemctl reboot
+```
