@@ -120,9 +120,8 @@ pacman -Sy --noconfirm archlinux-keyring 1>/dev/null;
 #### Installation des paquets
 ```bash
 clear;
-pacstrap /mnt base 1>/dev/null;
-
 pacstrap /mnt amd-ucode 1>/dev/null;
+pacstrap /mnt base 1>/dev/null;
 pacstrap /mnt base-devel 1>/dev/null;
 pacstrap /mnt bash-completion 1>/dev/null;
 pacstrap /mnt curl 1>/dev/null;
