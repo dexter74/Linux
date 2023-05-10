@@ -62,9 +62,11 @@ apt install -y timeshift;
 ```
 clear;
 sed -i -e "s/bullseye main non-free/bullseye-backports main non-free/g" /etc/apt/sources.list;
-# apt update;
-# apt upgrade -y;
-# apt install -y firmware-amd-graphics;
+apt update;
+apt upgrade -y;
+apt install -y firmware-amd-graphics;
+
+
 # ------------------------------------------------------------------------
 # sed -i -e "s/bullseye/bookworm/g" /etc/apt/sources.list;
 # sed -i -e "s/non-free/non-free-firmware/g" /etc/apt/sources.list;
