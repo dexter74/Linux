@@ -120,7 +120,6 @@ pacman -Sy --noconfirm archlinux-keyring 1>/dev/null;
 #### Installation des paquets
 ```bash
 clear;
-
 DEBIAN_FRONTEND=noninteractive
 pacstrap /mnt amd-ucode 1>/dev/null;
 pacstrap /mnt base 1>/dev/null;
@@ -163,4 +162,14 @@ pacstrap /mnt unzip 1>/dev/null;
 pacstrap /mnt usbutils 1>/dev/null;
 pacstrap /mnt wget 1>/dev/null;
 pacstrap /mnt zip   1>/dev/null;
+```
+
+#### Générer le FSTAB
+```bash
+genfstab -U /mnt > /mnt/etc/fstab;
+```
+
+#### Passage en Chroot
+```bash
+arch-chroot /mnt
 ```
