@@ -209,10 +209,10 @@ apt install -y pve-kernel-5.15;
 
 ##### J. Installer le Noyaux de Proxmox (Last Release)
 ```bash
-#clear;
-#LAST_KERNEL_PVE=$(apt search pve-kernel | grep stable | grep -v "helper\|libc" | tail -n 1 | cut -d "/" -f 1)
-#apt install -y $LAST_KERNEL_PVE;
-# dpkg --list | grep linux-image;
+clear;
+dpkg --list | grep linux-image;
+# LAST_KERNEL_PVE=$(apt search pve-kernel | grep stable | grep -v "helper\|libc" | tail -n 1 | cut -d "/" -f 1)
+# apt install -y $LAST_KERNEL_PVE;
 ```
 
 ##### K. Reboot
