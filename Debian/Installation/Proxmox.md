@@ -157,7 +157,7 @@ wget https://enterprise.proxmox.com/debian/proxmox-release-bullseye.gpg -O /etc/
 ##### F. Mise à jour
 ```bash
 apt update;
-apt full-upgrade -y;;
+apt full-upgrade -y;
 ```
 
 ##### G. Installer les packages de Proxmox
