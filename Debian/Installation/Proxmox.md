@@ -173,7 +173,7 @@ apt full-upgrade -y;
 ```
 
 ##### G. Installer les packages de Proxmox
-Choisir `Local uniquement` .
+Choisir `Pas de configuration` .
 ```bash
 clear;
 #apt remove -y os-prober;
