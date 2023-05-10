@@ -48,8 +48,8 @@ root@archiso ~ # lspci -k | grep -i "network\|vga" -A2 | grep -v Sub
 Le Disque-dur `/dev/sda` aura une partition `EFI` et une partition `LVM`.
 
 La partition `LVM` aura comme nom de Groupe de volume `vg0` et il qui contiendra les LVS `HOME`, `SYSTEM` et `SWAP`.
-
 ```bash
+clear;
 DISK=/dev/sda
 BOOT=+512M
 SWAP=+3G
@@ -57,7 +57,6 @@ SYSTEM=+20G
 HOME=+8G
 VG=vg0
 
-clear;
 dd if=/dev/zero of=${DISK}  bs=512  count=1;
 (echo "g"; echo "w") | fdisk ${DISK};
 (echo "n"; echo "1"; echo ""; echo "$BOOT" ; echo "t" ; echo "1" ; echo "w")      | fdisk $DISK; # EFI
@@ -75,6 +74,7 @@ echo "yes" | lvcreate -n HOME   -L $HOME $VG;
 ```
 ##### Formatage des Partitions
 ```bash
+clear;
 echo "yes" | mkfs.fat -F32 ${DISK}1;
 echo "yes" | mkswap /dev/$VG/SWAP;
 echo "yes" | mkfs -t ext4 /dev/$VG/SYSTEM;
@@ -83,6 +83,7 @@ echo "yes" | mkfs -t ext4 /dev/$VG/HOME;
 
 ##### Monter les partitions 
 ```bash
+clear;
 swapon /dev/$VG/SWAP;
 mount /dev/$VG/SYSTEM /mnt;
 mkdir -p /mnt/home && mount /dev/$VG/HOME /mnt/home;
@@ -91,6 +92,7 @@ mkdir -p /mnt/boot && mount ${DISK}1  /mnt/boot;
 
 ##### Vérification
 ```bash
+clear;
 # root@archiso ~ # lsblk| grep "sd[a-z]\|SWAP\|$VG";
 # sda              8:0    0    32G  0 disk
 # ├─sda1           8:1    0   512M  0 part /mnt/boot
@@ -102,6 +104,7 @@ mkdir -p /mnt/boot && mount ${DISK}1  /mnt/boot;
 
 ##### Nettoyage Du Système
 ```bash
+clear;
 rm -rf /mnt 2>/dev/null;
 ```
 
