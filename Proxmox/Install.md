@@ -210,7 +210,7 @@ systemctl restart pveproxy.service;
 
 <br />
 
-#### [Restaurer Configuration](https://github.com/dexter74/Linux/blob/main/Proxmox/sauvegarde_restauration.md)
+#### [Sauvegarde ou Restaurer Configuration](https://github.com/dexter74/Linux/blob/main/Proxmox/sauvegarde_restauration.md)
 
 
 <br />
