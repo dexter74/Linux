@@ -208,6 +208,12 @@ systemctl restart pveproxy.service;
 # /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
 ```
 
+#### Restaurer
+```
+https://github.com/dexter74/Linux/blob/main/Proxmox/sauvegarde_restauration.md
+```
+
+
 #### Attacher Disque-Dur physique à une VM
 Une fois Ajouter, il faut éditer le Disque pour empêcher la sauvegarde de celui-ci.
 ```
