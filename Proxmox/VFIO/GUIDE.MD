@@ -20,7 +20,7 @@ nano /etc/default/grub;
 echo "vfio
 vfio_iommu_type1
 vfio_pci
-vfio_virqfd" > /etc/modules
+vfio_virqfd" > /etc/modules;
 ```
 
 ### KVM
