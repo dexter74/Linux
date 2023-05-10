@@ -42,7 +42,7 @@ STORAGE=data/images
 VMID=300
 DISK=2
 FORMAT=qcow2
-SIZE=1
+SIZE=100
 
 # Nettoyage
 rm /${STORAGE}/${VMID}/new-vm-${VMID}-disk-${DISK}.${FORMAT};
