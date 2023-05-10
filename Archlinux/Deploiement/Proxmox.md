@@ -344,9 +344,14 @@ systemctl enable ntpd;
 systemctl enable systemd-timesyncd.service;
 ```
 
-#### 
+#### Vérifier log
 ```bash
+clear;
+dmesg --level 4;
+dmesg --level 3;
 ```
+
+
 
 #### 
 ```bash
