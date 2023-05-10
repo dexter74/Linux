@@ -1,7 +1,9 @@
 **Augmenter LVS**
 ```bash
 # Définir la Taille du LVS
-SIZE=700G
-lvextend -L $SIZE /dev/vg0/Data;
-resize2fs /dev/vg0/Data;
+SIZE=XXXG
+VG=
+LVS=
+lvextend -L $SIZE /dev/$VG/$LVS;
+resize2fs /dev/$VG/$LVS;
 ```
