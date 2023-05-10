@@ -220,5 +220,11 @@ dpkg --list | grep linux-image;
 systemctl reboot;
 ```
 
-##### L. Suite du Guide
+##### L. Apparmor ([Topic](https://forum.ubuntu-fr.org/viewtopic.php?id=2032761))
+```bash
+
+
+```
+
+##### M. Suite du Guide
 https://github.com/dexter74/Linux/blob/main/Proxmox/Install.md
