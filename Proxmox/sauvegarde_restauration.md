@@ -1,4 +1,5 @@
 #### Dossier de Sauvegarderm -r /backup/proxmox/etc/*;
+```bash
 cp /etc/passwd   /backup/proxmox/etc/;
 cp /etc/gshadow  /backup/proxmox/etc/;
 cp /etc/group    /backup/proxmox/etc/;
