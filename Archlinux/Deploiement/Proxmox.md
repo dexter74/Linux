@@ -232,8 +232,6 @@ echo 'Section "InputClass"
 EndSection' > /etc/X11/xorg.conf.d/00-keyboard.conf;
 ```
 
-
-
 #### mkinitcpio
 ```bash
 clear;
@@ -323,6 +321,16 @@ runuser -l $USERNAME -c 'cd /tmp/yay && makepkg -si --noconfirm;'
 
 #### 
 ```bash
+runuser -l $USERNAME -c 'yay -Sy --noconfirm ";
+
+==> WARNING: Possibly missing firmware for module: 'bfa'
+==> WARNING: Possibly missing firmware for module: 'qed'
+==> WARNING: Possibly missing firmware for module: 'wd719x'
+==> WARNING: Possibly missing firmware for module: 'qla1280'
+==> WARNING: Possibly missing firmware for module: 'qla2xxx'
+==> WARNING: Possibly missing firmware for module: 'aic94xx'
+==> WARNING: Possibly missing firmware for module: 'xhci_pci'
+  -> Running build hook: [lvm2]
 ```
 
 #### 
