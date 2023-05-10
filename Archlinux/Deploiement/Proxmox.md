@@ -291,11 +291,6 @@ clear;
 echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/admin;
 ```
 
-#### Sudoers Utilisateurs
-```bash
-adduser $USERNAME sudo;
-```
-
 #### Profil utilisateur
 ```bash
 clear;
@@ -331,6 +326,12 @@ runuser -l $USERNAME -c 'yay -Sy --noconfirm ";
 ==> WARNING: Possibly missing firmware for module: 'aic94xx'
 ==> WARNING: Possibly missing firmware for module: 'xhci_pci'
   -> Running build hook: [lvm2]
+```
+
+
+
+#### Sudoers Utilisateurs
+```bash
 ```
 
 #### 
