@@ -109,12 +109,14 @@ rm -rf /mnt 2>/dev/null;
 ### IV. Installation du Système
 #### Pacman
 ```bash
+clear;
 sed -i -e "s/\#ParallelDownloads \= 5/ParallelDownloads = 5/g" /etc/pacman.conf;
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf;
-pacman -Sy --noconfirm archlinux-keyring;
+pacman -Sy --noconfirm archlinux-keyring 1>/dev/null;
 ```
 #### Installation des paquets
 ```bash
+clear;
 pacstrap /mnt amd-ucode 1>/dev/null;
 pacstrap /mnt base 1>/dev/null;
 pacstrap /mnt base-devel 1>/dev/null;
@@ -156,5 +158,4 @@ pacstrap /mnt unzip 1>/dev/null;
 pacstrap /mnt usbutils 1>/dev/null;
 pacstrap /mnt wget 1>/dev/null;
 pacstrap /mnt zip 1>/dev/null;
-
 ```
