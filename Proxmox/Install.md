@@ -62,6 +62,7 @@ sudo pveum pool del    100.LXC;
 sudo pveum pool del    200.Linux;
 sudo pveum pool del    300.Windows;
 sudo pveum pool del    400.Templates;
+sudo pveum pool del    500.invites;
 sudo pveum user delete $UTILISATEUR 2>/dev/null;
 
 # Création des Groupes:
@@ -75,7 +76,8 @@ sudo pveum group add VMadmin         -comment "Groupe des Admins des VM"
 sudo pveum pool add 100.LXC;
 sudo pveum pool add 200.Linux;
 sudo pveum pool add 300.Windows;
-sudo pveum pool add  400.Templates;
+sudo pveum pool add 400.Templates;
+sudo pveum pool add 500.invites;
 
 # Création Utilisateur
 sudo pveum user add "$UTILISATEUR" -email "$EMAIL" -enable 1 -first "$PRENOM" -lastname "$NOM";
