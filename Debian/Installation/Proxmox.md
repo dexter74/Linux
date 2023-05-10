@@ -222,8 +222,6 @@ systemctl reboot;
 
 ##### L. [Expérimental] Apparmor ([Topic](https://forum.ubuntu-fr.org/viewtopic.php?id=2032761))
 ```bash
-systemctl restart apparmor; journalctl -u apparmor | grep impossible | tail -n 10
-
 mv /etc/apparmor.d/*cups*                /etc/apparmor.d/disable
 mv /etc/apparmor.d/*libreoffice*         /etc/apparmor.d/disable
 mv /etc/apparmor.d/nvidia_modprobe       /etc/apparmor.d/disable
@@ -236,6 +234,7 @@ mv /etc/apparmor.d/local                 /etc/apparmor.d/disable
 mv /etc/apparmor.d/lxc                   /etc/apparmor.d/disable
 mv /etc/apparmor.d/tunables              /etc/apparmor.d/disable
 mv /etc/apparmor.d/usr.bin.man           /etc/apparmor.d/disable
+systemctl restart apparmor;
 ```
 
 ##### M. Suite du Guide
