@@ -96,7 +96,15 @@ sudo pveum acl modify / -group VMadmin -role PVEVMAdmin;
 sudo pveum user modify "$UTILISATEUR" -group Administrateurs;
 ```
 
+#### French
+```
+echo "language: fr" >> /etc/pve/datacenter.cfg;
+systemctl restart pveproxy.service;
+
+# /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
+```
 <br />
+
 
 ----------------------------------------------------------------------------------------------------------------------------------
 ### Partage
@@ -200,13 +208,7 @@ systemctl enable --now mnt-{Download,Home,Music,Video}.mount;
 systemctl status --now mnt-{Download,Home,Music,Video}.mount | grep "mount\|Active:";
 ```
 
-#### French
-```
-echo "language: fr" >> /etc/pve/datacenter.cfg;
-systemctl restart pveproxy.service;
 
-# /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
-```
 
 <br />
 
