@@ -31,3 +31,29 @@ lvreduce -L ${SIZE}G -v /dev/mapper/$VG-$LVS
 ```
 -------------------------------------------------------------------------------------------------------------------------
 ### Qcow2
+##### Utilitaire
+```bash
+apt install -y libguestfs-tools;
+``` 
+
+#### Réduire Qcow2
+```
+STORAGE=data/images
+VMID=300
+DISK=2
+FORMAT=qcow2
+SIZE=1
+NAME=test
+
+# Création (Taille Réel FS du Disque à copier)
+qemu-img create -f ${FORMAT} -o preallocation=metadata /${STORAGE}/${VMID}/new-vm-${VMID}-disk-${DISK}.${FORMAT} ${SIZE}G;
+
+# Information:
+qemu-img info  /${STORAGE}/${VMID}/new-vm-${VMID}-disk-${DISK}.${FORMAT};
+
+# Copier Ancien vers Nouveau
+virt-resize /${STORAGE}/${VMID}/vm-${VMID}-disk-${DISK}.${FORMAT} /${STORAGE}/${VMID}/new-vm-${VMID}-disk-${DISK}.${FORMAT};
+
+# Renommage
+mv /${STORAGE}/${VMID}/vm-${VMID}-disk-${DISK}.${FORMAT} /${STORAGE}/${VMID}/vm-${VMID}-disk-${DISK}.${FORMAT}.old;
+mv /${STORAGE}/${VMID}/new-vm-${VMID}-disk-${DISK}.${FORMAT}; /${STORAGE}/${VMID}/vm-${VMID}-disk-${DISK}.${FORMAT};
