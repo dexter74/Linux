@@ -188,21 +188,21 @@ W: Possible missing firmware /lib/firmware/amdgpu/sienna_cichlid_mes.bin for mod
 W: Possible missing firmware /lib/firmware/amdgpu/navi10_mes.bin for module amdgpu
 ```
 
-##### H. Installer le Noyaux par défaut de Proxmox 7.0 (Stable)
+##### H. Commenter le Dépôt Entreprise de Proxmox
+```
+sed -i -e "s/^deb/#deb/g" /etc/apt/sources.list.d/pve-enterprise.list;
+``` 
+
+##### I. Installer le Noyaux par défaut de Proxmox 7.0 (Stable)
 ```bash
 apt install -y pve-kernel-5.15;
 ```
 
-##### I. Installer le Noyaux de Proxmox (Last Release)
+##### J. Installer le Noyaux de Proxmox (Last Release)
 ```bash
 LAST_KERNEL_PVE=$(apt search pve-kernel | grep stable | grep -v "helper\|libc" | tail -n 1 | cut -d "/" -f 1)
 apt install -y $LAST_KERNEL_PVE;
 ```
-
-##### J. Commenter le Dépôt Entreprise de Proxmox
-```
-sed -i -e "s/^deb/#deb/g" /etc/apt/sources.list.d/pve-enterprise.list;
-``` 
 
 ##### K. Reboot
 ```
