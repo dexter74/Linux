@@ -108,18 +108,10 @@ Session: (Important)
  - Pass: admin
 ```
 
-#### Attacher Disque-Dur physique à une VM
-Une fois Ajouter, il faut éditer le Disque pour empêcher la sauvegarde de celui-ci.
-```
-qm set 310 -sata2 /dev/nvme0n1p1;
-qm unlink 310 --idlist sata2;
-```
-
 #### CPU
 ```
 args: -cpu host,host-cache-info=on,-hypervisor,kvm=off
 ```
-
 
 #### Wifi
 ```
