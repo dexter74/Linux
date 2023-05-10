@@ -13,5 +13,14 @@ lvextend -L ${SIZE}G /dev/$VG/$LVS;
 resize2fs /dev/$VG/$LVS;
 ```
 
+##### Diminuer le FileSystem
+Il faut que le FileSystem soit inférieur à la taille du LVS.
+```bash
+SIZE=
+VG=
+LVS=
+resize2fs /dev/mapper/$VG-$LVS ${SIZE}G;
+```
+
 -------------------------------------------------------------------------------------------------------------------------
 ### Qcow2
