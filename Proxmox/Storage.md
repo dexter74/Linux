@@ -1,4 +1,4 @@
-### Augmenter LVS
+#### Augmenter LVS
 La valeur `SIZE` est en Go car le terme `G` est mis sur la ligne `lvextend`.
 ```bash
 SIZE=
