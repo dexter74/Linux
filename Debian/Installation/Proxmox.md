@@ -220,10 +220,11 @@ dpkg --list | grep linux-image;
 systemctl reboot;
 ```
 
-##### L. Apparmor ([Topic](https://forum.ubuntu-fr.org/viewtopic.php?id=2032761))
+##### L. [Expérimental] Apparmor ([Topic](https://forum.ubuntu-fr.org/viewtopic.php?id=2032761))
 ```bash
-
-
+aa-status
+aa-disable libreoffice-oopslash;
+aa-disable libreoffice-soffice;
 ```
 
 ##### M. Suite du Guide
