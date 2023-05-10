@@ -5,6 +5,7 @@ mkdir -p /backup/proxmox/etc/;
 
 #### Sauvegarde de la  configuration
 ```
+rm -r /backup/proxmox/etc/*;
 cp /etc/passwd   /backup/proxmox/etc/;
 cp /etc/gshadow  /backup/proxmox/etc/;
 cp /etc/group    /backup/proxmox/etc/;
