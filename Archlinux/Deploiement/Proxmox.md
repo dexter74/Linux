@@ -328,7 +328,10 @@ runuser -l $USERNAME -c 'yay -Sy --noconfirm adduser';
 echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/admin
 ```
 
-
+#### Autoriser le SSH
+```bash
+sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ssh/sshd_config;
+```
 
 #### 
 ```bash
