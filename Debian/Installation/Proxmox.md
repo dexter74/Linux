@@ -59,7 +59,7 @@ apt install -y timeshift;
 ```
 
 ##### E. GPU ([Topic](https://debian-facile.org/viewtopic.php?pid=395680#p395680) | [Package](https://packages.debian.org/search?keywords=firmware-amd-graphics))
-```
+```bash
 clear;
 sed -i -e "s/bullseye main non-free/bullseye-backports main non-free/g" /etc/apt/sources.list;
 apt update;
@@ -71,6 +71,7 @@ sed -i -e "s/bullseye-backports main non-free/bullseye main non-free/g" /etc/apt
 ##### F. Ajouter Utilisateur au groupe sudo
 La variable MONUSER récupére le nom de l'utilisateur ayant l'ID 1000.
 ```bash
+clear;
 MONUSER=$(id 1000 | cut -d ")" -f 1 | cut -d "(" -f 2)
 sudo adduser $MONUSER sudo;
 ```
@@ -133,6 +134,7 @@ auto vmbr1
 ##### B. Relance du service
 Ne pas tenir compte de l'erreur !
 ```bash
+clear;
 systemctl restart networking.service;
 ```
 
@@ -140,6 +142,7 @@ systemctl restart networking.service;
 
 ##### C. Nom de la Machine
 ```bash
+clear;
 echo "proxmox" > /etc/hostname;
 echo "127.0.0.1       localhost
 192.168.0.4     proxmox.lan proxmox
@@ -152,23 +155,27 @@ ff02::2 ip6-allrouters" > /etc/hosts;
 
 ##### D. Dépôt Proxmox
 ```bash
+clear;
 echo "deb [arch=amd64] http://download.proxmox.com/debian/pve bullseye pve-no-subscription" > /etc/apt/sources.list.d/pve-install-repo.list;
 ```
 
 ##### E. Clé GPG
 ```bash
+clear;
 wget https://enterprise.proxmox.com/debian/proxmox-release-bullseye.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg;
 ```
 
 ##### F. Mise à jour
 ```bash
+clear;
 apt update;
 apt full-upgrade -y;
 ```
 
 ##### G. Installer les packages de Proxmox
 Choisir `Local uniquement` .
-```
+```bash
+clear;
 apt remove -y os-prober;
 apt install -y proxmox-ve postfix open-iscsi;
 ```
@@ -189,19 +196,24 @@ W: Possible missing firmware /lib/firmware/amdgpu/navi10_mes.bin for module amdg
 ```
 
 ##### H. Commenter le Dépôt Entreprise de Proxmox
-```
+```bash
+clear;
 sed -i -e "s/^deb/#deb/g" /etc/apt/sources.list.d/pve-enterprise.list;
 ``` 
 
 ##### I. Installer le Noyaux par défaut de Proxmox 7.0 (Stable)
 ```bash
+clear;
 apt install -y pve-kernel-5.15;
 ```
 
 ##### J. Installer le Noyaux de Proxmox (Last Release)
 ```bash
+clear;
 LAST_KERNEL_PVE=$(apt search pve-kernel | grep stable | grep -v "helper\|libc" | tail -n 1 | cut -d "/" -f 1)
 apt install -y $LAST_KERNEL_PVE;
+
+# dpkg --list | grep linux-image;
 ```
 
 ##### K. Reboot
