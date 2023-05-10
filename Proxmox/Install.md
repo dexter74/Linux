@@ -83,7 +83,7 @@ sudo pveum pool add 500.invites;
 sudo pveum user add "$UTILISATEUR" -email "$EMAIL" -enable 1 -first "$PRENOM" -lastname "$NOM";
 
 # Changement du mot de passe:
-(echo "$MOTDEPASSE"; echo "$MOTDEPASSE") | sudo pveum passwd $UTILISATEUR
+(echo "$MOTDEPASSE"; echo "$MOTDEPASSE") | sudo pveum passwd $UTILISATEUR;
 
 # Modification des permissions pour les groupes
 sudo pveum acl modify / -group Administrateurs -role Administrator;
