@@ -37,23 +37,25 @@ apt install -y libguestfs-tools;
 ``` 
 
 #### Réduire Qcow2
-```
+```bash
 STORAGE=data/images
 VMID=300
 DISK=2
 FORMAT=qcow2
 SIZE=1
-NAME=test
 
-# Création (Taille Réel FS du Disque à copier)
+# Création:
 qemu-img create -f ${FORMAT} -o preallocation=metadata /${STORAGE}/${VMID}/new-vm-${VMID}-disk-${DISK}.${FORMAT} ${SIZE}G;
 
 # Information:
 qemu-img info  /${STORAGE}/${VMID}/new-vm-${VMID}-disk-${DISK}.${FORMAT};
 
-# Copier Ancien vers Nouveau
+# Copier Ancien vers Nouveau:
 virt-resize /${STORAGE}/${VMID}/vm-${VMID}-disk-${DISK}.${FORMAT} /${STORAGE}/${VMID}/new-vm-${VMID}-disk-${DISK}.${FORMAT};
 
-# Renommage
+# Renommage:
 mv /${STORAGE}/${VMID}/vm-${VMID}-disk-${DISK}.${FORMAT} /${STORAGE}/${VMID}/vm-${VMID}-disk-${DISK}.${FORMAT}.old;
 mv /${STORAGE}/${VMID}/new-vm-${VMID}-disk-${DISK}.${FORMAT}; /${STORAGE}/${VMID}/vm-${VMID}-disk-${DISK}.${FORMAT};
+
+# Purge de l'ancien Disque: 
+# rm  /${STORAGE}/${VMID}/vm-${VMID}-disk-${DISK}.${FORMAT}.old;
