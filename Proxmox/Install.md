@@ -179,7 +179,6 @@ echo "[Unit]
 ####################################################################################################################################
 ```
 
-
 #### Dossier, Permission et services
 ```bash
 clear;
@@ -206,3 +205,11 @@ systemctl restart pveproxy.service;
 
 # /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
 ```
+
+#### Attacher Disque-Dur physique à une VM
+Une fois Ajouter, il faut éditer le Disque pour empêcher la sauvegarde de celui-ci.
+```
+qm set 310 -sata2 /dev/nvme0n1p1;
+qm unlink 310 --idlist sata2;
+```
+
