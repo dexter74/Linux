@@ -63,18 +63,9 @@ apt install -y timeshift;
 clear;
 sed -i -e "s/bullseye main non-free/bullseye-backports main non-free/g" /etc/apt/sources.list;
 apt update;
+apt upgrade -y;
 apt install -y firmware-amd-graphics;
 sed -i -e "s/bullseye-backports main non-free/bullseye main non-free/g" /etc/apt/sources.list;
-
-
-# ------------------------------------------------------------------------
-# sed -i -e "s/bullseye/bookworm/g" /etc/apt/sources.list;
-# sed -i -e "s/non-free/non-free-firmware/g" /etc/apt/sources.list;
-# apt update;
-# apt install -y firmware-amd-graphics;
-# sed -i -e "s/non-free-firmware/non-free/g" /etc/apt/sources.list;
-# sed -i -e "s/bookworm/bullseye/g" /etc/apt/sources.list;
-# apt update;
 ```
 
 ##### F. Ajouter Utilisateur au groupe sudo
