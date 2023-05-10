@@ -333,6 +333,17 @@ echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/admin
 sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ssh/sshd_config;
 ```
 
+#### Services
+```bash
+clear;
+systemctl enable avahi-daemon.service;
+systemctl enable avahi-dnsconfd.service;
+systemctl enable NetworkManager;
+systemctl enable sshd;
+systemctl enable ntpd;
+systemctl enable systemd-timesyncd.service;
+```
+
 #### 
 ```bash
 ```
