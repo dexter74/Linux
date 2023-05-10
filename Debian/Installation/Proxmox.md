@@ -60,7 +60,8 @@ apt install -y timeshift;
 
 ##### E. GPU
 ```
-A compléter
+git clone https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git /tmp/linux-firmware;
+
 ```
 
 ##### F. Ajouter Utilisateur au groupe sudo
