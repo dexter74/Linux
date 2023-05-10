@@ -270,7 +270,6 @@ bootctl update;
 bootctl;
 ```
 
-
 #### Nom de la Machine
 ```bash
 clear;
@@ -350,14 +349,8 @@ clear;
 dmesg --level 4;
 dmesg --level 3;
 ```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### VI.Installation de l'environnement Graphique
 
-
-
-#### 
-```bash
-```
-
-#### 
-```bash
-```
+| [APPLET](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Applets)|
 
