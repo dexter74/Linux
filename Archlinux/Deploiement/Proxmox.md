@@ -314,25 +314,21 @@ runuser -l $USERNAME -c 'git clone https://aur.archlinux.org/yay.git /tmp/yay;'
 runuser -l $USERNAME -c 'cd /tmp/yay && makepkg -si --noconfirm;'
 ```
 
-#### 
+#### YAY ([MKINITCPIO](https://wiki.archlinux.org/title/mkinitcpio))
 ```bash
-runuser -l $USERNAME -c 'yay -Sy --noconfirm ";
-
-==> WARNING: Possibly missing firmware for module: 'bfa'
-==> WARNING: Possibly missing firmware for module: 'qed'
-==> WARNING: Possibly missing firmware for module: 'wd719x'
-==> WARNING: Possibly missing firmware for module: 'qla1280'
-==> WARNING: Possibly missing firmware for module: 'qla2xxx'
-==> WARNING: Possibly missing firmware for module: 'aic94xx'
-==> WARNING: Possibly missing firmware for module: 'xhci_pci'
-  -> Running build hook: [lvm2]
+runuser -l $USERNAME -c 'yay -Sy --noconfirm linux-firmware-qlogic';
+runuser -l $USERNAME -c 'yay -Sy --noconfirm wd719x-firmware';
+runuser -l $USERNAME -c 'yay -Sy --noconfirm aic94xx-firmware';
+runuser -l $USERNAME -c 'yay -Sy --noconfirm upd72020x-fw';
+runuser -l $USERNAME -c 'yay -Sy --noconfirm adduser';
 ```
-
-
 
 #### Sudoers Utilisateurs
 ```bash
+echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/admin
 ```
+
+
 
 #### 
 ```bash
