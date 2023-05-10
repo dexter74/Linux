@@ -6,3 +6,10 @@
 ```
 Contrôleur : VMware PVSCSI
 ```
+
+#### Console
+```
+loadkeys fr;
+passwd;
+ip add | grep 192.168;
+```
