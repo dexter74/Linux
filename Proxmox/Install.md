@@ -103,8 +103,31 @@ systemctl restart pveproxy.service;
 
 # /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
 ```
+
+
 <br />
 
+#### [Sauvegarde ou Restaurer Configuration](https://github.com/dexter74/Linux/blob/main/Proxmox/sauvegarde_restauration.md)
+
+
+<br />
+
+#### Attacher Disque-Dur physique à une VM
+Une fois Ajouter, il faut éditer le Disque pour empêcher la sauvegarde de celui-ci.
+```
+qm shutdown 300;
+qm unlink 300 --idlist sata1;
+qm unlink 300 --idlist sata2;
+
+qm set 300 -sata1 /dev/sda;
+qm set 300 -sata2 /dev/nvme0n1p1;
+
+qm start 300;
+```
+
+#### [VFIO](https://github.com/dexter74/Linux/blob/main/Proxmox/VFIO/GUIDE.MD)
+
+<br />
 
 ----------------------------------------------------------------------------------------------------------------------------------
 ### Partage
@@ -207,29 +230,3 @@ systemctl start mnt-{Download,Home,Music,Video}.mount;
 systemctl enable --now mnt-{Download,Home,Music,Video}.mount;
 systemctl status --now mnt-{Download,Home,Music,Video}.mount | grep "mount\|Active:";
 ```
-
-
-
-<br />
-
-#### [Sauvegarde ou Restaurer Configuration](https://github.com/dexter74/Linux/blob/main/Proxmox/sauvegarde_restauration.md)
-
-
-<br />
-
-#### Attacher Disque-Dur physique à une VM
-Une fois Ajouter, il faut éditer le Disque pour empêcher la sauvegarde de celui-ci.
-```
-qm shutdown 300;
-qm unlink 300 --idlist sata1;
-qm unlink 300 --idlist sata2;
-
-qm set 300 -sata1 /dev/sda;
-qm set 300 -sata2 /dev/nvme0n1p1;
-
-qm start 300;
-```
-
-<br />
-
-#### [VFIO](https://github.com/dexter74/Linux/blob/main/Proxmox/VFIO/GUIDE.MD)
