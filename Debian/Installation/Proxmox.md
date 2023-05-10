@@ -176,7 +176,7 @@ apt full-upgrade -y;
 Choisir `Local uniquement` .
 ```bash
 clear;
-apt remove -y os-prober;
+#apt remove -y os-prober;
 apt install -y proxmox-ve postfix open-iscsi;
 ```
 
