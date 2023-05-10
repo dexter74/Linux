@@ -120,6 +120,8 @@ pacman -Sy --noconfirm archlinux-keyring 1>/dev/null;
 #### Installation des paquets
 ```bash
 clear;
+
+DEBIAN_FRONTEND=noninteractive
 pacstrap /mnt amd-ucode 1>/dev/null;
 pacstrap /mnt base 1>/dev/null;
 pacstrap /mnt base-devel 1>/dev/null;
@@ -135,7 +137,7 @@ pacstrap /mnt gtk-engine-murrine 1>/dev/null;
 pacstrap /mnt gtk-engines 1>/dev/null;
 pacstrap /mnt git 1>/dev/null;
 pacstrap /mnt go 1>/dev/null;
-pacstrap /mnt gvfs gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb 1>/dev/null;
+pacstrap /mnt gvfs 1>/dev/null;
 pacstrap /mnt linux 1>/dev/null;
 pacstrap /mnt linux-firmware 1>/dev/null;
 pacstrap /mnt linux-headers 1>/dev/null;
@@ -160,5 +162,5 @@ pacstrap /mnt sudo 1>/dev/null;
 pacstrap /mnt unzip 1>/dev/null;
 pacstrap /mnt usbutils 1>/dev/null;
 pacstrap /mnt wget 1>/dev/null;
-pacstrap /mnt zip 1>/dev/null;
+pacstrap /mnt zip   1>/dev/null;
 ```
