@@ -338,8 +338,9 @@ clear;
 systemctl enable avahi-daemon.service;
 systemctl enable avahi-dnsconfd.service;
 systemctl enable NetworkManager;
-systemctl enable sshd;
 systemctl enable ntpd;
+systemctl enable sshd;
+systemctl enable systemd-homed;
 systemctl enable systemd-timesyncd.service;
 ```
 
