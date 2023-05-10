@@ -208,10 +208,7 @@ systemctl restart pveproxy.service;
 # /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
 ```
 
-#### Restaurer
-```
-https://github.com/dexter74/Linux/blob/main/Proxmox/sauvegarde_restauration.md
-```
+#### [Restaurer Configuration](https://github.com/dexter74/Linux/blob/main/Proxmox/sauvegarde_restauration.md)
 
 
 #### Attacher Disque-Dur physique à une VM
@@ -227,3 +224,5 @@ qm set 300 -sata2 /dev/nvme0n1p1;
 qm start 300;
 ```
 
+
+#### [VFIO](https://github.com/dexter74/Linux/blob/main/Proxmox/VFIO/GUIDE.MD)
