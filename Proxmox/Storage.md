@@ -44,6 +44,9 @@ DISK=2
 FORMAT=qcow2
 SIZE=1
 
+# Nettoyage
+rm /${STORAGE}/${VMID}/new-vm-${VMID}-disk-${DISK}.${FORMAT};
+
 # Création:
 qemu-img create -f ${FORMAT} -o preallocation=metadata /${STORAGE}/${VMID}/new-vm-${VMID}-disk-${DISK}.${FORMAT} ${SIZE}G;
 
@@ -54,8 +57,8 @@ qemu-img info  /${STORAGE}/${VMID}/new-vm-${VMID}-disk-${DISK}.${FORMAT};
 virt-resize /${STORAGE}/${VMID}/vm-${VMID}-disk-${DISK}.${FORMAT} /${STORAGE}/${VMID}/new-vm-${VMID}-disk-${DISK}.${FORMAT};
 
 # Renommage:
-mv /${STORAGE}/${VMID}/vm-${VMID}-disk-${DISK}.${FORMAT} /${STORAGE}/${VMID}/vm-${VMID}-disk-${DISK}.${FORMAT}.old;
-mv /${STORAGE}/${VMID}/new-vm-${VMID}-disk-${DISK}.${FORMAT}; /${STORAGE}/${VMID}/vm-${VMID}-disk-${DISK}.${FORMAT};
-
-# Purge de l'ancien Disque: 
+mv /${STORAGE}/${VMID}/vm-${VMID}-disk-${DISK}.${FORMAT} /${STORAGE}/${VMID}/vm-${VMID}-disk-${DISK}.${FORMAT}.old;  # ORIGINAL TO OLD
+mv /${STORAGE}/${VMID}/new-vm-${VMID}-disk-${DISK}.${FORMAT}; /${STORAGE}/${VMID}/vm-${VMID}-disk-${DISK}.${FORMAT}; # NEW TO DISK
+ 
+# Purge de l'ancien Disque:
 # rm  /${STORAGE}/${VMID}/vm-${VMID}-disk-${DISK}.${FORMAT}.old;
