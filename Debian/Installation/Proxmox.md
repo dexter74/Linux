@@ -130,6 +130,7 @@ auto vmbr1
 ```
 
 ##### B. Relance du service
+Ne pas tenir compte de l'erreur !
 ```bash
 systemctl restart networking.service;
 ```
