@@ -222,30 +222,20 @@ systemctl reboot;
 
 ##### L. [Expérimental] Apparmor ([Topic](https://forum.ubuntu-fr.org/viewtopic.php?id=2032761))
 ```bash
-impossible de remplacer << /usr/bin/lxc-start >>.  Profil non conforme au protocole
-impossible de remplacer << swtpm >>.  Profil non conforme au protocole
-impossible de remplacer << kmod >>.  Profil non conforme au protocole
-impossible de remplacer << nvidia_modprobe >>.  Profil non conforme au protocole
-impossible de remplacer << lsb_release >>.  Profil non conforme au protocole
-impossible de remplacer << /usr/bin/man >>.  Profil non conforme au protocole
-impossible de remplacer << /usr/sbin/cups-browsed >>.  Profil non conforme au protocole
-impossible de remplacer << chromium >>.  Profil non conforme au protocole
-impossible de remplacer << /usr/lib/x86_64-linux-gnu/lightdm/lightdm-guest-session >>.  Profil non conforme au protocole
-impossible de remplacer << /usr/lib/cups/backend/cups-pdf >>.  Profil non conforme au protocole
-impossible de remplacer << lxc-container-default >>.  Profil non conforme au protocole
-impossible de remplacer << /usr/bin/lxc-start >>.  Profil non conforme au protocole
-impossible de remplacer << swtpm >>.  Profil non conforme au protocole
-impossible de remplacer << kmod >>.  Profil non conforme au protocole
-impossible de remplacer << nvidia_modprobe >>.  Profil non conforme au protocole
-impossible de remplacer << lsb_release >>.  Profil non conforme au protocole
-impossible de remplacer << /usr/bin/man >>.  Profil non conforme au protocole
-impossible de remplacer << /usr/sbin/cups-browsed >>.  Profil non conforme au protocole
-impossible de remplacer << chromium >>.  Profil non conforme au protocole
-impossible de remplacer << /usr/lib/x86_64-linux-gnu/lightdm/lightdm-guest-session >>.  Profil non conforme au protocole
-impossible de remplacer << lxc-container-default >>.  Profil non conforme au protocole
-impossible de remplacer << /usr/lib/cups/backend/cups-pdf >>.  Profil non conforme au protocole
+systemctl restart apparmor; journalctl -u apparmor | grep impossible | tail -n 10
 
-cd /etc/apparmor.d/;
+mv /etc/apparmor.d/*cups*                /etc/apparmor.d/disable
+mv /etc/apparmor.d/*libreoffice*         /etc/apparmor.d/disable
+mv /etc/apparmor.d/nvidia_modprobe       /etc/apparmor.d/disable
+mv /etc/apparmor.d/lsb_release           /etc/apparmor.d/disable
+mv /etc/apparmor.d/lxc-containers        /etc/apparmor.d/disable
+mv /etc/apparmor.d/usr.bin.lxc-start     /etc/apparmor.d/disable
+mv /etc/apparmor.d/usr.bin.swtpm         /etc/apparmor.d/disable
+mv /etc/apparmor.d/lightdm-guest-session /etc/apparmor.d/disable
+mv /etc/apparmor.d/local                 /etc/apparmor.d/disable
+mv /etc/apparmor.d/lxc                   /etc/apparmor.d/disable
+mv /etc/apparmor.d/tunables              /etc/apparmor.d/disable
+mv /etc/apparmor.d/usr.bin.man           /etc/apparmor.d/disable
 ```
 
 ##### M. Suite du Guide
