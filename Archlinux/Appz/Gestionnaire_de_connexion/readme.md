@@ -14,7 +14,10 @@ sudo pacman -Sy --noconfirm lightdm-webkit2-greeter;
 sudo git clone https://github.com/AlphaNecron/lightdm-evo.git /usr/share/lightdm-webkit/themes/lightdm-evo;
 sudo sed -i 's/\#greeter-session\=example-gtk-gnome/greeter-session\=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf;
 sudo sed -i 's/antergos/lightdm-evo/g' /etc/lightdm/lightdm-webkit2-greeter.conf;
-sudo sed -i '/lightdm-evo/a #antergos' /etc/lightdm/lightdm-webkit2-greeter.conf;
+sudo sed -i 's/lightdm-evo/antergos/g' /etc/lightdm/lightdm-webkit2-greeter.conf;
+
+#sudo sed -i '/lightdm-evo/a #antergos' /etc/lightdm/lightdm-webkit2-greeter.conf;
+
 ```
 
 ##### Services
