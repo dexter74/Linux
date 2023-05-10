@@ -58,7 +58,7 @@ apt install -y sudo;
 apt install -y timeshift;
 ```
 
-##### E. GPU ([topic](https://debian-facile.org/viewtopic.php?pid=395680#p395680))
+##### E. GPU ([Topic](https://debian-facile.org/viewtopic.php?pid=395680#p395680) | [Package](https://packages.debian.org/search?keywords=firmware-amd-graphics))
 ```
 clear;
 sed -i -e "s/bullseye/bookworm/g" /etc/apt/sources.list;
