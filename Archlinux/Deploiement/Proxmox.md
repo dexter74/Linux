@@ -352,5 +352,5 @@ dmesg --level 3;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### VI.Installation de l'environnement Graphique
 
-| [APPLET](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Applets)|
+| [Environnement Graphique](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Environnements_Graphique) | [Gestionnaire de session](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Gestionnaire_de_connexion)| [APPLET](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Applets) |
 
