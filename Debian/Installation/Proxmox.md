@@ -61,8 +61,9 @@ apt install -y timeshift;
 ##### E. GPU
 ```
 clear;
-git clone https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git /tmp/linux-firmware;
-cd /tmp/linux-firmware;
+
+https://debian-facile.org/viewtopic.php?pid=395680#p395680
+non-free-firmware 
 
 ```
 
