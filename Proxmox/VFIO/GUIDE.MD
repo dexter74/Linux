@@ -78,6 +78,8 @@ options vfio-pci ids=14e4:43b1" > /etc/modprobe.d/vfio.conf;
 #### Mettre à jour Grub
 ````bash
 update-initramfs -u;
+update-grub;
+update-grub2;
 reboot;
 ````
 
