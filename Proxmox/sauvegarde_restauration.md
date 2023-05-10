@@ -39,5 +39,5 @@ cp /backup/proxmox/etc/*.cfg /etc/pve/
 #### Permission
 ```
 chown -R root:www-data /etc/*.cfg;
-chown -R root:www-data /etc/nodes;
+chown -R root:www-data /etc/pve/nodes;
 ```
