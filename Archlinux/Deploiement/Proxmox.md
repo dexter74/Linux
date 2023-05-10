@@ -26,7 +26,7 @@ ssh root@<IP du poste>
 ```
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### III. Installation du Système
+### III. Préparation de l'environnement
 #### A. Information sur la machine
 ```bash
 root@archiso ~ # lsblk
@@ -98,4 +98,60 @@ mkdir -p /mnt/boot && mount ${DISK}1  /mnt/boot;
 #   ├─vg0-SWAP   253:0    0     3G  0 lvm  [SWAP]
 #   ├─vg0-SYSTEM 253:1    0    20G  0 lvm  /mnt
 #   └─vg0-HOME   253:2    0     8G  0 lvm  /mnt/home
+```
+
+##### Nettoyage Du Système
+```bash
+rm -rf /mnt 2>/dev/null;
+```
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### IV. Installation du Système
+#### A. Installation des paquets
+```bash
+pacstrap /mnt amd-ucode;
+pacstrap /mnt base;
+pacstrap /mnt base-devel;
+pacstrap /mnt bash-completion;
+pacstrap /mnt blueman;
+pacstrap /mnt curl;
+pacstrap /mnt binutils;
+pacstrap /mnt efibootmgr;
+pacstrap /mnt dhcpcd;
+pacstrap /mnt dhclient;
+pacstrap /mnt dnsutils;
+pacstrap /mnt fakeroot;
+pacstrap /mnt gtk-engine-murrine;
+pacstrap /mnt gtk-engines;
+pacstrap /mnt git;
+pacstrap /mnt go;
+pacstrap /mnt gvfs gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb;
+pacstrap /mnt linux;
+pacstrap /mnt linux-firmware;
+pacstrap /mnt linux-headers;
+pacstrap /mnt lsb-release;
+pacstrap /mnt lvm2;
+pacstrap /mnt man;
+pacstrap /mnt nano;
+pacstrap /mnt neofetch;
+pacstrap /mnt net-tools;
+pacstrap /mnt networkmanager;
+pacstrap /mnt ntfs-3g;
+pacstrap /mnt ntp;
+pacstrap /mnt openssh;
+pacstrap /mnt p7zip;
+pacstrap /mnt pacman-contrib;
+pacstrap /mnt pulseaudio;
+pacstrap /mnt pulseaudio-alsa;
+pacstrap /mnt pulseaudio-bluetooth;
+pacstrap /mnt pulseaudio-equalizer;
+pacstrap /mnt samba;
+pacstrap /mnt smbclient;
+pacstrap /mnt sudo;
+pacstrap /mnt unzip;
+pacstrap /mnt usbutils;
+pacstrap /mnt virtualbox-guest-utils;
+pacstrap /mnt wget;
+pacstrap /mnt zip;
+
 ```
