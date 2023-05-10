@@ -1,7 +1,7 @@
 **Augmenter LVS**
+La valeur `SIZE` est en Go car le terme `G` est mis sur la ligne `lvextend`.
 ```bash
-# Définir la Taille du LVS
-SIZE=XXX
+SIZE=
 VG=
 LVS=
 lvextend -L ${SIZE}G /dev/$VG/$LVS;
