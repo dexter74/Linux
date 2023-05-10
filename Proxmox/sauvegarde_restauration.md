@@ -33,6 +33,7 @@ cp -r /etc/pve/nodes /backup/proxmox/etc/nodes;
 ```bash 
 cp /backup/proxmox/etc/nodes/proxmox/qemu-server/* /etc/pve/nodes/proxmox/qemu-server/;
 cp /backup/proxmox/etc/nodes/proxmox/lxc/* /etc/pve/nodes/proxmox/lxc;
+cp /backup/proxmox/etc/*.cfg /etc/pve/
 ```
 
 #### Permission
