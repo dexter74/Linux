@@ -66,6 +66,8 @@ sed -i -e "s/non-free/non-free-firmware/g" /etc/apt/sources.list;
 apt update;
 apt install -y firmware-amd-graphics;
 
+
+sed -i -e "s/non-free-firmware/non-free/g" /etc/apt/sources.list;
 sed -i -e "s/bookworm/bullseye/g" /etc/apt/sources.list;
 apt update;
 ```
