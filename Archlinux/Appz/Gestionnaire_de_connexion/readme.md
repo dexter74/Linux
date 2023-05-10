@@ -9,17 +9,15 @@ sudo pacman -Sy --noconfirm lightdm-gtk-greeter;
 sudo pacman -Sy --noconfirm lightdm-webkit2-greeter;
 ```
 
-##### Thèmes
+##### Téléchargr Thèmes
 ```bash
 sudo git clone https://github.com/AlphaNecron/lightdm-evo.git /usr/share/lightdm-webkit/themes/lightdm-evo;
+```
+
+#### Configurer Lightdm
+```
 sudo sed -i 's/\#greeter-session\=example-gtk-gnome/greeter-session\=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf;
 sudo sed -i 's/antergos/lightdm-evo/g' /etc/lightdm/lightdm-webkit2-greeter.conf;
-
-
-
-
-sudo sed -i 's/greeter-session\=lightdm-webkit2-greeter/\#greeter-session\=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf;
-sudo sed -i 's/lightdm-evo/antergos/g' /etc/lightdm/lightdm-webkit2-greeter.conf;
 ```
 
 ##### Services
@@ -27,7 +25,6 @@ sudo sed -i 's/lightdm-evo/antergos/g' /etc/lightdm/lightdm-webkit2-greeter.conf
 sudo systemctl disable --now lightdm;
 sudo systemctl enable  --now lightdm;
 ```
-
 
 #### Note
 ```
