@@ -212,7 +212,7 @@ Une fois Ajouter, il faut éditer le Disque pour empêcher la sauvegarde de celu
 qm unlink 300 --idlist sata1;
 qm unlink 300 --idlist sata2;
 
-qm set 300 -sata1 /dev/nvme0n1p1;
-qm set 300 -sata2 /dev/sda;
+qm set 300 -sata1 /dev/sda;
+qm set 300 -sata2 /dev/nvme0n1p1;
 ```
 
