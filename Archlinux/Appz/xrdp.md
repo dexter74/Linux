@@ -1,14 +1,25 @@
-https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=865653#15 | https://df.tips/t/topic/885
+[GUIDE](https://gist.github.com/valorad/7fd3e4a7fb4481f1eb77ded42a72537d)
 
+#### Installation du Paquet
+```bash
+yay -Sy --noconfirm xrdp xorgxrdp-git;
+```
 
+##### /etc/X11/Xwrapper.config
+```bash
+# Allow anybody to start X:
+allowed_users=anybody
+```
 
-# DEBIAN
-# XRDP: Le groupe ssl-cert doit être mis pour les utilisateurs
-sudo apt install -y xrdp openssh-server
+##### /etc/xrdp/sesman.ini
+```bash
+[Xorg]
+param=/usr/lib/Xorg
+# Leave the rest of the lines untouched
+#...
+```
 
-#Reconfigurer Xorg		     : sudo dpkg-reconfigure xserver-xorg-legacy
-#Changer l'environnement X session : sudo update-alternatives --config x-session-manager
-#Modifier l'arrière plan	     : sudo update-alternatives --config desktop-background (17)
-
-https://c-nergy.be/blog/?p=12073
-
+##### xinit
+```bash
+cp /etc/X11/xinit/xinitrc ~/.xinitrc
+```
