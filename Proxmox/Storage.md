@@ -1,5 +1,5 @@
 **Augmenter LVS**
-```
+```bash
 # Définir la Taille du LVS
 SIZE=700G
 lvextend -L $SIZE /dev/vg0/Data;
