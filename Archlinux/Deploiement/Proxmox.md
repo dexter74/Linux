@@ -25,9 +25,7 @@ ip add | grep 192.168;
 ssh root@<IP du poste>
 ```
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### III. Préparation de l'environnement
-#### A. Information sur la machine
+#### Information sur la machine
 ```bash
 root@archiso ~ # lsblk
 #NAME  MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
@@ -43,7 +41,10 @@ root@archiso ~ # lspci -k | grep -i "network\|vga" -A2 | grep -v Sub
  #         Kernel driver in use: virtio-pci
 ```
 
-#### B. Gestion du Disque-Dur
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### III. Préparation du stockage
+
+#### A. Gestion du Disque-Dur
 ##### Partitionnements
 Le Disque-dur `/dev/sda` aura une partition `EFI` et une partition `LVM`.
 
@@ -109,7 +110,8 @@ rm -rf /mnt 2>/dev/null;
 ```
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### IV. Installation du Système
+### IV. Installation des Paquets, FSTAB et Chroot
+
 #### Pacman
 ```bash
 clear;
@@ -117,6 +119,7 @@ sed -i -e "s/\#ParallelDownloads \= 5/ParallelDownloads = 5/g" /etc/pacman.conf;
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf;
 pacman -Sy --noconfirm archlinux-keyring 1>/dev/null;
 ```
+
 #### Installation des paquets
 ```bash
 clear;
@@ -173,3 +176,164 @@ genfstab -U /mnt > /mnt/etc/fstab;
 ```bash
 arch-chroot /mnt
 ```
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### V. Préparation de l'environnement Utilisateur
+
+#### Pacman
+```bash
+clear;
+sed -i -e "s/\#ParallelDownloads \= 5/ParallelDownloads = 5/g" /etc/pacman.conf;
+sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf;
+pacman -Sy --noconfirm archlinux-keyring 1>/dev/null;
+```
+
+#### Déclaration des variables Systèmes
+```bash
+NAME=archlinux
+DOM=lan
+USERNAME=marc
+ID=1000
+PASSWORD=admin
+COMMENT='Marc Jaffré'
+```
+
+
+#### Français
+```bash
+echo 'LANG=fr_FR.UTF-8'                 > /etc/locale.conf;
+echo 'LC_CTYPE="fr_FR.UTF-8"'          >> /etc/locale.conf;
+echo 'LC_NUMERIC="fr_FR.UTF-8"'        >> /etc/locale.conf;
+echo 'LC_TIME="fr_FR.UTF-8"'           >> /etc/locale.conf;
+echo 'LC_COLLATE="fr_FR.UTF-8"'        >> /etc/locale.conf;
+echo 'LC_MONETARY="fr_FR.UTF-8"'       >> /etc/locale.conf;
+echo 'LC_MESSAGES='                    >> /etc/locale.conf;
+echo 'LC_PAPER="fr_FR.UTF-8"'          >> /etc/locale.conf;
+echo 'LC_NAME="fr_FR.UTF-8"'           >> /etc/locale.conf;
+echo 'LC_ADDRESS="fr_FR.UTF-8"'        >> /etc/locale.conf;
+echo 'LC_TELEPHONE="fr_FR.UTF-8"'      >> /etc/locale.conf;
+echo 'LC_MEASUREMENT="fr_FR.UTF-8"'    >> /etc/locale.conf;
+echo 'LC_IDENTIFICATION="fr_FR.UTF-8"' >> /etc/locale.conf;
+echo 'LC_ALL='                         >> /etc/locale.conf;
+echo 'LANGUAGE="fr_FR"'                >> /etc/locale.conf;
+
+echo 'KEYMAP=fr-latin9'                 > /etc/vconsole.conf;
+echo 'FONT=eurlatgr'                   >> /etc/vconsole.conf;
+echo 'fr_FR.UTF-8 UTF-8'                > /etc/locale.gen;
+locale-gen;
+
+mkdir -p /etc/X11/xorg.conf.d/;
+echo 'Section "InputClass"
+    Identifier             "Keyboard Defaults"
+    MatchIsKeyboard        "yes"
+    Option "XkbLayout"     "fr"
+    Option "XkbVariant"    "oss"
+    Option "XkbOptions"    "compose:menu,terminate:ctrl_alt_bksp"
+EndSection' > /etc/X11/xorg.conf.d/00-keyboard.conf;
+```
+
+
+
+#### mkinitcpio
+```bash
+clear;
+cp /etc/mkinitcpio.conf /etc/mkinitcpio.conf.old;
+chattr +i /etc/mkinitcpio.conf.old;
+sed -i -e "s/HOOKS\=(base udev autodetect modconf kms keyboard keymap consolefont block filesystems fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems udev resume keyboard keymap sd-vconsole fsck)/g" /etc/mkinitcpio.conf;
+mkinitcpio -p linux;
+```
+
+#### BootLoader EFI
+```bash
+clear;
+# ---------------------------------------------------------------------------------------------
+UUID_SYSTEM=$(blkid | grep 'SYSTEM: UUID=' | cut -d '"' -f 2);
+# ---------------------------------------------------------------------------------------------
+bootctl --path=/boot install;
+# ---------------------------------------------------------------------------------------------
+echo "default arch01.conf
+timeout 5
+console-mode max
+editor no" > /boot/loader/loader.conf;
+# ---------------------------------------------------------------------------------------------
+echo "title Arch Linux (Normal)
+linux   /vmlinuz-linux
+initrd  /initramfs-linux.img
+initrd  /amd-ucode.img
+options root=UUID=$UUID_SYSTEM rw quiet splash loglevel=3" > /boot/loader/entries/arch01.conf;
+# ---------------------------------------------------------------------------------------------
+echo "title Arch Linux (Recovery)
+linux   /vmlinuz-linux
+initrd  /initramfs-linux-fallback.img
+initrd  /amd-ucode.img
+options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch02.conf;
+# ---------------------------------------------------------------------------------------------
+bootctl update;
+bootctl;
+```
+
+
+#### Nom de la Machine
+```bash
+clear;
+echo "127.0.0.1       localhost
+127.0.1.1       $NAME        $NAME
+#127.0.1.1      $NAME.$DOM        $NAME" > /etc/hosts;
+echo "$NAME" > /etc/hostname;
+```
+
+#### Utilisateurs
+```bash
+clear;
+/usr/sbin/userdel -r $USERNAME 2>/dev/null;
+/usr/sbin/useradd --home-dir /home/$USERNAME --base-dir /home/$USERNAME --uid $ID --groups wheel,storage,power --no-user-group --shell /bin/bash --comment "$COMMENT" --create-home $USERNAME;
+
+(echo "$USERNAME:$PASSWORD") | chpasswd;
+(echo "root:$PASSWORD") | chpasswd;
+echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/admin;
+```
+
+#### Sudoers Utilisateurs
+```bash
+adduser $USERNAME sudo;
+```
+
+#### Profil utilisateur
+```bash
+clear;
+runuser -l $USERNAME -c "mkdir -p ~/.config/";
+runuser -l $USERNAME -c 'echo "
+XDG_DESKTOP_DIR=\"\$HOME/Bureau\";
+XDG_DOCUMENTS_DIR=\"\$HOME/Documents\"
+XDG_DOWNLOAD_DIR=\"\$HOME/Telechargements\"
+XDG_TEMPLATES_DIR=\"\$HOME/Templates\"
+XDG_MUSIC_DIR=\"\$HOME/Musiques\"
+XDG_PICTURES_DIR=\"\$HOME/Images\"
+XDG_PUBLICSHARE_DIR=\"\$HOME/Public\"
+XDG_VIDEOS_DIR=\"\$HOME/Videos\" " > $HOME/.config/user-dirs.dirs';
+runuser -l $USERNAME -c "mkdir Bureau Documents Telechargements Templates Musiques Images Public Videos";
+```
+
+#### Gestionnaire de paquet YAY
+```bash
+clear;
+runuser -l $USERNAME -c 'git clone https://aur.archlinux.org/yay.git /tmp/yay;'
+runuser -l $USERNAME -c 'cd /tmp/yay && makepkg -si --noconfirm;'
+```
+
+#### 
+```bash
+```
+
+#### 
+```bash
+```
+
+#### 
+```bash
+```
+
+#### 
+```bash
+```
+
