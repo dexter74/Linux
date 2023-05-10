@@ -1,9 +1,9 @@
 -------------------------------------------------------------------------------------------------------------------------
-# <p align='center'> Edition de la taille des Disques, Stockage </p>
+## <p align='center'> Edition de la taille des Disques, Stockage </p>
 
 -------------------------------------------------------------------------------------------------------------------------
-## LVM
-#### Augmenter LVS
+### LVM
+##### Augmenter LVS
 La valeur `SIZE` est en Go car le terme `G` est mis sur la ligne `lvextend`.
 ```bash
 SIZE=
@@ -14,4 +14,4 @@ resize2fs /dev/$VG/$LVS;
 ```
 
 -------------------------------------------------------------------------------------------------------------------------
-## Qcow2
+### Qcow2
