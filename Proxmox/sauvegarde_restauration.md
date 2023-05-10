@@ -30,6 +30,8 @@ cp -r /etc/pve/nodes /backup/proxmox/etc/nodes;
 
 #### Restauration
 ```bash 
+cp /backup/proxmox/etc/nodes/proxmox/qemu-server/* /etc/pve/nodes/proxmox/qemu-server/;
+cp /backup/proxmox/etc/nodes/proxmox/lxc/* /etc/pve/nodes/proxmox/lxc;
 ```
 
 #### Permission
