@@ -36,7 +36,7 @@ lvreduce -L ${SIZE}G -v /dev/mapper/$VG-$LVS
 apt install -y libguestfs-tools;
 ``` 
 
-#### Réduire Qcow2
+#### Réduire Qcow2 ([Guide](https://maunium.net/blog/resizing-qcow2-images/))
 ```bash
 STORAGE=data/images
 VMID=300
@@ -62,3 +62,4 @@ mv /${STORAGE}/${VMID}/new-vm-${VMID}-disk-${DISK}.${FORMAT}; /${STORAGE}/${VMID
  
 # Purge de l'ancien Disque:
 # rm  /${STORAGE}/${VMID}/vm-${VMID}-disk-${DISK}.${FORMAT}.old;
+```
