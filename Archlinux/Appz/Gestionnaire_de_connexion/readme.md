@@ -3,6 +3,11 @@
 sudo pacman -Sy --noconfirm lightdm;
 ```
 
+##### Ouvrir la session
+```
+Ouvrir la session une fois avant de charger le thème
+```
+
 ##### Suppléments
 ```bash
 sudo pacman -Sy --noconfirm lightdm-gtk-greeter;
