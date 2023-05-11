@@ -244,7 +244,7 @@ echo "title Arch Linux (Normal)
 linux   /vmlinuz-linux
 initrd  /initramfs-linux.img
 initrd  /amd-ucode.img
-options root=UUID=$UUID_SYSTEM rw quiet splash loglevel=3" > /boot/loader/entries/arch01.conf;
+options root=UUID=$UUID_SYSTEM rw quiet loglevel=3" > /boot/loader/entries/arch01.conf;
 # ---------------------------------------------------------------------------------------------
 echo "title Arch Linux (Recovery)
 linux   /vmlinuz-linux
