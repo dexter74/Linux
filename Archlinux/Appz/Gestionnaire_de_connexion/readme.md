@@ -24,6 +24,7 @@ sudo sed -i 's/antergos/lightdm-evo/g' /etc/lightdm/lightdm-webkit2-greeter.conf
 ```bash
 sudo systemctl disable --now lightdm;
 sudo systemctl enable  --now lightdm;
+sudo reboot;
 ```
 
 #### Note
