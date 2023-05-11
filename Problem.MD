@@ -1,8 +1,6 @@
-#### Découverte Réseau
+#### Découverte Réseau (En cours
 ```
 systemctl disable avahi-daemon.service;
-
-
 echo "[main]
 systemd-resolved=false" > /etc/NetworkManager/conf.d/no-systemd-resolved.conf;
 systemctl restart systemd-resolved.service;
