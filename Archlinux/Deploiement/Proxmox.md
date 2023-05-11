@@ -335,7 +335,7 @@ runuser -l $USERNAME -c 'yay -Sy --noconfirm adduser 1>/dev/null';
 
 #### Sudoers Utilisateurs
 ```bash
-echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/admin;
+echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/admin;
 ```
 
 #### Autoriser le SSH
