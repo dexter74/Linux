@@ -64,7 +64,20 @@ dd if=/dev/zero of=${DISK}  bs=512  count=1;
 (echo "n"; echo "2"; echo ""; echo "" ; echo "t"; echo "2" ; echo "43"; echo "w") | fdisk $DISK; # LVM
 partprobe ${DISK}2;
 ```
-##### Création des LVS
+
+##### Suppression du LVM
+```
+clear;
+mount -R -f /mnt ;
+swapoff -a -v;
+echo "yes" | lvremove /dev/$VG/SWAP;
+echo "yes" | lvremove /dev/$VG/SYSTEM;
+echo "yes" | lvremove /dev/$VG/HOME;
+echo "yes" | vgremove $VG;
+echo "yes" | pvremove ${DISK}2;
+```
+
+##### Création des LVM
 ```
 clear;
 echo "yes" | pvcreate ${DISK}2;
