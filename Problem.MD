@@ -7,7 +7,4 @@ pacman -Sy --noconfirm gvfs-nfs;
 systemctl disable avahi-daemon;
 systemctl disable NetworkManager;
 systemctl disable systemd-resolved;
-
-
-
 ```
