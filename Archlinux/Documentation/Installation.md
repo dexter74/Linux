@@ -268,7 +268,19 @@ echo "127.0.0.1       localhost
 echo "$NAME" > /etc/hostname;
 ```
 
-##### Langue en Français
+##### Langue en Français (A confirmer le bon fonctionnement)
+```
+# @Forum: localectl --no-convert set-x11-keymap fr "" latin9
+localectl set-x11-keymap fr pc105 fr terminate:ctrl_alt_bksp;
+
+#localectl list-locales             >> fr_FR.UTF-8
+#localectl list-x11-keymap-models   >> pc105
+#localectl list-x11-keymap-variants >> fr
+#localectl list-x11-keymap-options  >> terminate:ctrl_alt_bksp
+
+```
+
+##### Langue en Français (Outdate)
 ```bash
 clear;
 echo 'LANG=fr_FR.UTF-8'   > /etc/locale.conf;
