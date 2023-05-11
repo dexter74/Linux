@@ -299,7 +299,6 @@ clear;
 
 (echo "$USERNAME:$PASSWORD") | chpasswd;
 (echo "root:$PASSWORD") | chpasswd;
-echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/admin;
 ```
 
 #### Profil utilisateur
