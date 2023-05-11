@@ -327,16 +327,16 @@ runuser -l $USERNAME -c 'cd /tmp/yay && makepkg -si --noconfirm;'
 
 #### YAY ([MKINITCPIO](https://wiki.archlinux.org/title/mkinitcpio))
 ```bash
-runuser -l $USERNAME -c 'yay -Sy --noconfirm linux-firmware-qlogic';
-runuser -l $USERNAME -c 'yay -Sy --noconfirm wd719x-firmware';
-runuser -l $USERNAME -c 'yay -Sy --noconfirm aic94xx-firmware';
-runuser -l $USERNAME -c 'yay -Sy --noconfirm upd72020x-fw';
-runuser -l $USERNAME -c 'yay -Sy --noconfirm adduser';
+runuser -l $USERNAME -c 'yay -Sy --noconfirm linux-firmware-qlogic 1>/dev/null';
+runuser -l $USERNAME -c 'yay -Sy --noconfirm wd719x-firmware 1>/dev/null';
+runuser -l $USERNAME -c 'yay -Sy --noconfirm aic94xx-firmware 1>/dev/null';
+runuser -l $USERNAME -c 'yay -Sy --noconfirm upd72020x-fw 1>/dev/null';
+runuser -l $USERNAME -c 'yay -Sy --noconfirm adduser 1>/dev/null';
 ```
 
 #### Sudoers Utilisateurs
 ```bash
-echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/admin
+echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/admin;
 ```
 
 #### Autoriser le SSH
