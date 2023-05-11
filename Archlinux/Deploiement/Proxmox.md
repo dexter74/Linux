@@ -177,6 +177,9 @@ pacstrap /mnt unzip 1>/dev/null;
 pacstrap /mnt usbutils 1>/dev/null;
 pacstrap /mnt wget 1>/dev/null;
 pacstrap /mnt zip   1>/dev/null;
+
+pacstrap /mnt qemu-guest-agent;
+
 ```
 
 #### Générer le FSTAB
