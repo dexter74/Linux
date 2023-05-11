@@ -46,6 +46,7 @@ sudo cp /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml /etc/xdg/xfc
 sudo sed -i '24d' /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml;
 sudo sed -i '23d' /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml;
 sudo sed -i '22d' /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml;
+systemctl restart lightdm;
 ```
 
 
