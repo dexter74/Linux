@@ -46,12 +46,49 @@ services:      #
    - '3012:3012'
   labels:
    Cacher: 'Non'
+######################################################
+ NginxProxyManager:
+  image: 'jc21/nginx-proxy-manager'
+  container_name: 'nginx'
+  network_mode: 'bridge'
+  restart: 'unless-stopped'
+  hostname: 'nginxproxymanager'
+  external_links:
+   - 'mariadb:db'
+  environment:
+   TZ: 'EUROPE\PARIS'
+   DB_MYSQL_HOST: 'db'
+   DB_MYSQL_PORT: '3306'
+   DB_MYSQL_NAME: 'nginx'
+   DB_MYSQL_USER: 'nginx'
+   DB_MYSQL_PASSWORD: 'nginx'
+  volumes:
+   - 'nginx_config:/config'
+   - 'nginx_certif:/etc/letsencrypt'
+   - 'nginx_data:/data'
+  ports:
+   - '80:80'
+   - '81:81'
+   - '443:443'
+  labels:
+   Cacher: 'Non'
 ###################################################################
 volumes:
  adguardhome_conf:
   external: false
+
  adguardhome_work:
   external: false
+
  bitwarden:
+  external: false
+
+ nginx_config:
+  external: false
+
+ nginx_certif:
+  external: false
+
+ nginx_data:
   external: false
 ###################################################################
