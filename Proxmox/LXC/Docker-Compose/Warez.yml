@@ -90,8 +90,10 @@ services:      #
 volumes:
  Jackett:
   external: false
+
  Qbittorrent:
    external: false
+
  Radarr:
   external: false
 
