@@ -3,7 +3,7 @@ version: "3.9" #
 services:      #
 ################
 #
-##################################
+#####################################################################
 # Base de Donnée MariaDB
  DB:
   image: 'linuxserver/mariadb'
@@ -22,9 +22,28 @@ services:      #
   volumes:
    - 'mariadb:/config'
   labels:
-   Cacher: 'Oui'
+   Cacher: 'Non'
+#####################################################################
+ Mysql:
+  image: 'mysql'
+  container_name: 'mysql'
+  network_mode: 'bridge'
+  restart: 'unless-stopped'
+  hostname: 'mysql'
+  command: --default-authentication-plugin=mysql_native_password
+  environment:
+   MYSQL_ROOT_PASSWORD: 'admin'
+   MYSQL_DATABASE: 'mremoteng'
+   MYSQL_USER: 'mremoteng'
+   MYSQL_PASSWORD: 'mremoteng'
+  ports:
+   - '3306:3306'
+  volumes:
+   - 'mysql:/var/lib/mysql'
 ##################################
 volumes:
  mariadb:
+  external: false
+ mysql:
   external: false
 ##################################
