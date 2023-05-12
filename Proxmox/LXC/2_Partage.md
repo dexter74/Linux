@@ -22,7 +22,7 @@ volumes:
 
 
 
-```
+```yml
 NAS=192.168.0.3
 UTILISATEUR=
 MOTDEPASSE=
@@ -36,7 +36,6 @@ NAME_1=DOWNLOAD
 NAME_2=VIDEO
 NAME_3=MUSIC
 NAME_4=MyPhoto
-
 
 # Suppression des volumes
 docker volume rm -f ${NAME_1};
