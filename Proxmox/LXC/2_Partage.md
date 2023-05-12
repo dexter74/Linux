@@ -4,8 +4,8 @@
   volumes
    - 'DOWNLOAD:/media/Download:ro'
    - 'MUSIC:/media/Music'
-   - 'MyPhoto:/media/MyPhoto:ro'
    - 'VIDEO:/media/Video:ro'
+   - 'MyPhoto:/media/MyPhoto:ro'
 ```
 
 ```yml
