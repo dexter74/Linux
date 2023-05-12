@@ -115,13 +115,12 @@ systemctl restart pveproxy.service;
 #### Attacher Disque-Dur physique à une VM
 Une fois Ajouter, il faut éditer le Disque pour empêcher la sauvegarde de celui-ci.
 ```
+clear;
 qm shutdown 300;
-qm unlink 300 --idlist sata1;
-qm unlink 300 --idlist sata2;
-
-qm set 300 -sata1 /dev/sda;
-qm set 300 -sata2 /dev/nvme0n1p1;
-
+SATA=sata1
+DISK=/dev/sdc
+qm unlink 300 --idlist ${SATA};
+qm set 300 -sata1 ${DISK};
 qm start 300;
 ```
 
