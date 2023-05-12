@@ -1,16 +1,14 @@
 #### Script pour la création des Volumes
 
-```
-######################################
+```yml
   volumes
    - 'DOWNLOAD:/media/DOWNLOAD'
    - 'MUSIC:/media/music'
    - 'MyPhoto:/media/MyPhoto'
    - 'VIDEO:/media/video'
-######################################
 ```
 
-```
+```yml
 volumes:
  DOWNLOAD:
   external: true
