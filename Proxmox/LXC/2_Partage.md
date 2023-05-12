@@ -1,4 +1,25 @@
 #### Script pour la création des Volumes
+
+```
+  volumes
+   - 'DOWNLOAD:/media/DOWNLOAD'
+   - 'MUSIC:/media/music'
+   - 'MyPhoto:/media/MyPhoto'
+   - 'VIDEO:/media/video'
+######################################
+volumes:
+ DOWNLOAD:
+  external: true
+ MUSIC:
+  external: true
+ MyPhoto:
+  external: true
+ VIDEO:
+  external: true
+```
+
+
+
 ```
 NAS=192.168.0.3
 UTILISATEUR=
@@ -45,3 +66,4 @@ docker volume create --driver local \
         --opt o=username=${UTILISATEUR},password=${MOTDEPASSE},vers=3.0,file_mode=0777,dir_mode=0777 \
         --name ${NAME_4};
 ```
+
