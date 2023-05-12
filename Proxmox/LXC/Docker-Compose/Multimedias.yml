@@ -13,9 +13,9 @@ services:
    GIDLIST: '100'
   volumes:
    - 'Emby:/config'
-   - '/mnt/Download:/media/Download'
-   - '/mnt/Music:/media/Music'
-   - '/mnt/Video:/media/Video'
+   - 'DOWNLOAD:/media/Download:ro'
+   - 'MUSIC:/media/Music'
+   - 'VIDEO:/media/Video:ro'
   ports:
    - '8096:8096' # HTTP
 ###############################################
@@ -32,9 +32,9 @@ services:
    PGID: '0'
   volumes:
    - 'Jellyfin:/config'
-   - '/mnt/Download:/media/Download'
-   - '/mnt/Music:/media/Music'
-   - '/mnt/Video:/media/Video'
+   - 'DOWNLOAD:/media/Download:ro'
+   - 'MUSIC:/media/Music'
+   - 'VIDEO:/media/Video:ro'
   ports:
    - '8097:8096'
   labels:
@@ -45,4 +45,12 @@ volumes:
   external: false
  Jellyfin:
   external: false
+ DOWNLOAD:
+  external: true
+ MUSIC:
+  external: true
+ MyPhoto:
+  external: true
+ VIDEO:
+  external: true
 ###############################################
