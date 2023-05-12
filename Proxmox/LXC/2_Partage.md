@@ -1,3 +1,5 @@
+#### Script pour la création des Volumes
+```
 NAS=192.168.0.3
 UTILISATEUR=
 MOTDEPASSE=
@@ -14,31 +16,32 @@ NAME_4=MyPhoto
 
 
 # Suppression des volumes
-docker volume rm -f $NAME_1;
-docker volume rm -f $NAME_2;
-docker volume rm -f $NAME_3;
-docker volume rm -f $NAME_4;
-
-ocker volume create --driver local \
-        --opt type=cifs \
-        --opt device=//${NAS}/$PARTAGE_1 \
-        --opt o=username=${UTILISATEUR},password=${MOTDEPASSE},vers=3.0,file_mode=0777,dir_mode=0777 \
-        --name $NAME_1;
+docker volume rm -f ${NAME_1};
+docker volume rm -f ${NAME_2};
+docker volume rm -f ${NAME_3};
+docker volume rm -f ${NAME_4};
 
 docker volume create --driver local \
         --opt type=cifs \
-        --opt device=//${NAS}/$PARTAGE_2 \
+        --opt device=//${NAS}/${PARTAGE_1} \
         --opt o=username=${UTILISATEUR},password=${MOTDEPASSE},vers=3.0,file_mode=0777,dir_mode=0777 \
-        --name $NAME_2;
+        --name ${NAME_1};
 
 docker volume create --driver local \
         --opt type=cifs \
-        --opt device=//${NAS}/$PARTAGE_3 \
+        --opt device=//${NAS}/${PARTAGE_2} \
         --opt o=username=${UTILISATEUR},password=${MOTDEPASSE},vers=3.0,file_mode=0777,dir_mode=0777 \
-        --name $NAME_3;
+        --name ${NAME_2};
 
 docker volume create --driver local \
         --opt type=cifs \
-        --opt device=//${NAS}/$PARTAGE_4 \
+        --opt device=//${NAS}/${PARTAGE_3} \
         --opt o=username=${UTILISATEUR},password=${MOTDEPASSE},vers=3.0,file_mode=0777,dir_mode=0777 \
-        --name $NAME_4;
+        --name ${NAME_3};
+
+docker volume create --driver local \
+        --opt type=cifs \
+        --opt device=//${NAS}/${PARTAGE_4} \
+        --opt o=username=${UTILISATEUR},password=${MOTDEPASSE},vers=3.0,file_mode=0777,dir_mode=0777 \
+        --name ${NAME_4};
+```
