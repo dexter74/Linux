@@ -1,7 +1,7 @@
 ###################################################################################################################
 # Script: proxmox.sh
 # Description:
-# - Installation du Pilote Graphique AMD (La parte VGA est pas détecté sans)
+# - Installation du Pilote Graphique AMD (Problème de detection du GPU VGA)
 # - Installation de Proxmox-PVE
 # - Mise à jour du Kernel
 #
