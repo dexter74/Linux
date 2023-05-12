@@ -42,17 +42,6 @@ services:      #
   labels:
    Cacher: 'Non'
 ################################################
- KMS:
-  image: 'mikolatero/vlmcsd'
-  container_name: 'kms'
-  network_mode: 'bridge'
-  restart: 'unless-stopped'
-  hostname: 'kms'
-  ports:
-   - '1688:1688'
-  labels:
-   Cacher: 'Non'
-################################################
  qbittorrent:
   image: 'linuxserver/qbittorrent'
   container_name: 'qbittorrent'
@@ -71,7 +60,7 @@ services:      #
    PGID: '0'
   volumes:
    - 'Qbittorrent:/config'
-   - '/mnt/Download:/media/Download/Torrent'
+   - 'DOWNLOAD:/media/Download/Torrent'
   ports:
    - '6881:6881' # Tranmission
    - '1110:1007' # WebUI
@@ -90,9 +79,9 @@ services:      #
    PGID: '0'
   volumes:
    - 'Radarr:/config'
-   - '/mnt/Download:/media/Download'
-   - '/mnt/Music:/media/Music'
-   - '/mnt/Video:/media/Video'   
+   - 'DOWNLOAD:/media/Download'
+   - 'MUSIC:/media/Music'
+   - 'VIDEO:/media/Video'
   ports:
    - '1112:7878'
   labels:
@@ -105,4 +94,14 @@ volumes:
    external: false
  Radarr:
   external: false
+
+ DOWNLOAD:
+  external: true
+
+ MUSIC:
+  external: true
+
+ VIDEO:
+  external: true
+
 ################################################
