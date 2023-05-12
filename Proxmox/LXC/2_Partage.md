@@ -12,11 +12,14 @@
 volumes:
  DOWNLOAD:
   external: true
+
  MUSIC:
   external: true
- MyPhoto:
-  external: true
+
  VIDEO:
+  external: true
+
+ MyPhoto:
   external: true
 ```
 
