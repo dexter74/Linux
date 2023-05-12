@@ -1,12 +1,16 @@
 #### Script pour la création des Volumes
 
 ```
+######################################
   volumes
    - 'DOWNLOAD:/media/DOWNLOAD'
    - 'MUSIC:/media/music'
    - 'MyPhoto:/media/MyPhoto'
    - 'VIDEO:/media/video'
 ######################################
+```
+
+```
 volumes:
  DOWNLOAD:
   external: true
