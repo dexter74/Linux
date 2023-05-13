@@ -62,6 +62,7 @@ echo "Menu D: Démarrer la Machine"
 echo "Menu R: Redémarrer la Machine"
 echo "Menu K: Tuer la Machine"
 echo "Menu Q: Quitter le menu"
+echo "################################################"
 echo
 read -p "Indiquer votre choix: " choix
 }
