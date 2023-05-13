@@ -7,7 +7,7 @@
 nano /etc/modprobe.d/vfio.conf;
 ```
 ```
-nano /etc/modprobe.d/blacklist;
+nano /etc/modprobe.d/blacklist.conf;
 ```
 
 
