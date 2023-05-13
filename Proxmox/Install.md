@@ -122,7 +122,7 @@ DISK=/dev/sdc
 
 qm shutdown ${VM};
 qm unlink ${VM} --idlist ${SATA};
-qm set ${VM} -sata1 ${DISK};
+qm set ${VM} -${SATA} ${DISK};
 qm start ${VM};
 ```
 
