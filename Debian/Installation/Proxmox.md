@@ -56,6 +56,7 @@ apt install -y git;
 apt install -y gnome-disk-utility;
 apt install -y sudo;
 apt install -y timeshift;
+apt install ntfs-3g;
 ```
 
 ##### E. GPU ([Topic](https://debian-facile.org/viewtopic.php?pid=395680#p395680) | [Package](https://packages.debian.org/search?keywords=firmware-amd-graphics))
