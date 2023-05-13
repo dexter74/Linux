@@ -23,7 +23,7 @@ Partition 2: LVM
   - LVM: SYSTEM  32 Go /
   - LVM: Home    10 Go /home
   - LVM: Data   500 Go /data
-  - LVM: Backup 100 Go /run/timeshift/backup
+  - LVM: Backup 100 Go /backup
 ```
 
 ##### B. Dépôt (Défaut)
