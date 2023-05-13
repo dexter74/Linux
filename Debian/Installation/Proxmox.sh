@@ -1,6 +1,7 @@
 ###################################################################################################################
 # Script: proxmox.sh
 # Description:
+# - Ajout de l'utilisateur au groupe sudo
 # - Installation du Pilote Graphique AMD (Problème de detection du GPU VGA)
 # - Installation de Proxmox-PVE
 # - Mise à jour du Kernel
@@ -13,6 +14,8 @@ MONUSER=$(id 1000 | cut -d ")" -f 1 | cut -d "(" -f 2)
 sudo adduser $MONUSER sudo;
 
 ###################################################################################################################
+# Dépôts #
+##########
 echo "deb     http://ftp.fr.debian.org/debian/           bullseye main non-free
 deb-src http://ftp.fr.debian.org/debian/           bullseye main
 deb     http://security.debian.org/debian-security bullseye-security main contrib
@@ -20,16 +23,20 @@ deb-src http://security.debian.org/debian-security bullseye-security main contri
 deb     http://ftp.fr.debian.org/debian/           bullseye-updates main contrib
 deb-src http://ftp.fr.debian.org/debian/           bullseye-updates main contrib" > /etc/apt/sources.list;
 ###################################################################################################################
+# Installation de paquet #
+##########################
+apt update;
+apt install -y git;
+apt install -y ntfs-3g;
+apt install -y sudo;
+apt install -y timeshift;
+###################################################################################################################
 sed -i -e "s/bullseye main non-free/bullseye-backports main non-free/g" /etc/apt/sources.list;
 apt update;
-###################################################################################################################
-# NE SURTOUT PAS FAIRE UPGRADE !
-# apt upgrade -y;
 apt install -y firmware-amd-graphics;
 ###################################################################################################################
 sed -i -e "s/bullseye-backports main non-free/bullseye main non-free/g" /etc/apt/sources.list;
 apt update;
-apt install ntfs-3g;
 ###################################################################################################################
 NAME_INTERFACE=$(ip add | grep -v "vmbr[0-9]:\|lo" | grep "[0-9]: " | cut -d ":" -f 2 | cut -c 2-9)
 echo "#####################################
