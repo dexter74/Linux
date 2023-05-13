@@ -1,0 +1,132 @@
+##########################################################################################
+func_LIST(){
+lsblk | grep -v "sd[a-z][1-9]\|loop\|NAME\|p[0-9]\|-" | cut -c 1-5;
+}
+##########################################################################################
+func_VM(){
+read -p "Indiquer le N° de VM: " VMID
+}
+##########################################################################################
+func_SATA(){
+ read -p "Indiquer le N° de SATA: " SATA
+}
+##########################################################################################
+func_DISK(){
+ read -p "Quel est la référence Disque physique ? " DISK
+}
+##########################################################################################
+func_ACTION(){
+ read -p "Quel action souhaitez vous faire ? (add|remove) " ACTION
+}
+##########################################################################################
+func_APPLIQUER(){
+ if [[ $ACTION = add ]]; then
+  qm set ${VMID} -sata${SATA} /dev/${DISK};
+  echo "Ajout du disque";
+ fi
+ if [[ $ACTION = remove ]]; then
+  qm unlink ${VMID} --idlist sata${SATA};
+  echo "Suppression du Disque";
+ fi
+}
+##########################################################################################
+func_ALLUMER(){
+ qm start $VMID 2>/dev/null;
+}
+##########################################################################################
+func_REDEMARRER(){
+ qm restart $VMID 2>/dev/null;
+}
+##########################################################################################
+func_ETEINDRE(){
+ qm shutdown $VMID 2>/dev/null;
+}
+##########################################################################################
+func_KILL(){
+qm stop $VMID 2>/dev/null;
+}
+##########################################################################################
+func_MENU(){
+echo "################################################"
+echo "Menu L: Lister les disques"
+echo "Menu 1: Choisir la VM ($VMID)"
+echo "Menu 2: Choisir le N° de Sata (Sata${SATA})"
+echo "Menu 3: Choisir le Disque (/dev/${DISK})"
+echo "Menu 4: choisir Action ($ACTION)"
+echo "Menu A: Appliquer action"
+echo "Menu E: Eteindre la Machine"
+echo "Menu D: Démarrer la Machine"
+echo "Menu R: Redémarrer la Machine"
+echo "Menu K: Tuer la Machine"
+echo "Menu Q: Quitter le menu"
+echo
+read -p "Indiquer votre choix: " choix
+}
+##########################################################################################
+
+func_choix(){
+case $choix in
+ # --------------- #
+ l|L)
+  clear;
+  func_LIST;
+  echo;
+ ;;
+ # --------------- #
+ 1)
+  clear;
+  func_VM;
+ ;;
+ # --------------- #
+ 2)
+  clear;
+  func_SATA;
+ ;;
+ # --------------- #
+ 3) 
+  clear;
+  func_DISK;
+ ;;
+ # --------------- #
+ 4)
+  clear;
+  func_ACTION;
+ ;;
+ # --------------- #
+ a|A)
+  clear;
+  func_APPLIQUER; 
+ ;;
+ # --------------- #
+ e|E)
+  clear;
+  func_ETEINDRE;
+ ;;
+ # --------------- #
+ d|D)
+  clear;
+  func_ALLUMER;
+ ;;
+ # --------------- #
+ r|R)
+  clear;
+  func_REDEMARRER;
+ ;;
+ # --------------- #
+ k|k)
+  clear;
+  func_KILL;
+ ;;
+ # --------------- #
+ q|Q)
+  clear;
+  exit;
+ ;;
+ # --------------- #
+ *)
+  clear;
+  echo "MDR"
+ ;;
+ # --------------- #
+ esac
+}
