@@ -19,17 +19,17 @@ deb     http://security.debian.org/debian-security bullseye-security main contri
 deb-src http://security.debian.org/debian-security bullseye-security main contrib
 deb     http://ftp.fr.debian.org/debian/           bullseye-updates main contrib
 deb-src http://ftp.fr.debian.org/debian/           bullseye-updates main contrib" > /etc/apt/sources.list;
-
+###################################################################################################################
 sed -i -e "s/bullseye main non-free/bullseye-backports main non-free/g" /etc/apt/sources.list;
 apt update;
-
+###################################################################################################################
 # NE SURTOUT PAS FAIRE UPGRADE !
-#apt upgrade -y;
+# apt upgrade -y;
 apt install -y firmware-amd-graphics;
-
+###################################################################################################################
 sed -i -e "s/bullseye-backports main non-free/bullseye main non-free/g" /etc/apt/sources.list;
 apt update;
-
+apt install ntfs-3g;
 ###################################################################################################################
 NAME_INTERFACE=$(ip add | grep -v "vmbr[0-9]:\|lo" | grep "[0-9]: " | cut -d ":" -f 2 | cut -c 2-9)
 echo "#####################################
