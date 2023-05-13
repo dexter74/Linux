@@ -18,8 +18,11 @@ source ./fonction/attach
 ID=$(id -u)
 
 # Vérification
-if [[ $ID = 0 ]]; then
- MENU=0;
+if [[ $ID = 0 ]];
+ then
+  MENU=0;
+ else
+  echo "Veuiller lancer le script depuis root"
 fi
 
 # Boucle Infinie
