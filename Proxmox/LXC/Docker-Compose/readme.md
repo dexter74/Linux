@@ -8,45 +8,62 @@ CONTENEUR=Qbittorrent
 # ------------------------------------------------------------------------------------------------------------------
 docker stop qbittorrent;
 # ------------------------------------------------------------------------------------------------------------------
-echo "[AutoRun]
-OnTorrentAdded\Enabled=false
-OnTorrentAdded\Program=
+echo '[AutoRun]
 enabled=false
 program=
 
 [BitTorrent]
-Session\ExcludedFileNames=
-Session\Port=60221
-Session\QueueingSystemEnabled=false
+Session\AddExtensionToIncompleteFiles=true
+Session\AddTorrentPaused=true
+Session\AlternativeGlobalDLSpeedLimit=128
+Session\AlternativeGlobalUPSpeedLimit=1
+Session\BTProtocol=TCP
+Session\BandwidthSchedulerEnabled=true
+Session\DefaultSavePath=/downloads/Torrent
+Session\DisableAutoTMMByDefault=false
+Session\DisableAutoTMMTriggers\CategorySavePathChanged=false
+Session\DisableAutoTMMTriggers\DefaultSavePathChanged=false
+Session\GlobalDLSpeedLimit=2048
+Session\GlobalMaxSeedingMinutes=1
+Session\GlobalUPSpeedLimit=0
+Session\MaxActiveDownloads=4
+Session\MaxActiveTorrents=7
+Session\MaxActiveUploads=4
+Session\MaxUploadsPerTorrent=10
+Session\Port=6881
+Session\QueueingSystemEnabled=true
+Session\TempPath=/downloads/Torrent/incomplete/
+Session\TempPathEnabled=false
+Session\UseAlternativeGlobalSpeedLimit=true
 
 [Core]
 AutoDeleteAddedTorrentFile=Never
 
-[Downloads]
-SavePath=/media/Download/Torrent
-
-[%General]
-General\Locale=fr_FR
-Locale=fr_FR
+[LegalNotice]
+Accepted=true
 
 [Meta]
 MigrationVersion=4
 
 [Network]
 Cookies=@Invalid()
+PortForwardingEnabled=false
 Proxy\OnlyForTorrents=false
 
 [Preferences]
 Advanced\RecheckOnCompletion=false
 Advanced\trackerPort=9000
-Advanced\trackerPortForwarding=false
+Connection\PortRangeMin=6881
 Connection\ResolvePeerCountries=true
+Connection\UPnP=false
+Downloads\SavePath=/downloads/
+Downloads\TempPath=/downloads/incomplete/
 DynDNS\DomainName=changeme.dyndns.org
 DynDNS\Enabled=false
 DynDNS\Password=
 DynDNS\Service=DynDNS
 DynDNS\Username=
-General\Locale=fr
+General\Locale=fr_FR
 MailNotification\email=
 MailNotification\enabled=false
 MailNotification\password=
@@ -55,13 +72,16 @@ MailNotification\req_ssl=false
 MailNotification\sender=qBittorrent_notification@example.com
 MailNotification\smtp_server=smtp.changeme.com
 MailNotification\username=
+Scheduler\days=EveryDay
+Scheduler\end_time=@Variant(\0\0\0\xf\x4\xefm\x80)
+Scheduler\start_time=@Variant(\0\0\0\xf\x1\xb7t\0)
 WebUI\Address=*
 WebUI\AlternativeUIEnabled=false
-WebUI\AuthSubnetWhitelist=0.0.0.0/0
+WebUI\AuthSubnetWhitelist=172.17.0.0/24, 192.168.0.0/24,192.168.1.0/24,192.168.2.0/24, 0.0.0.0/32, 0.0.0.0/24
 WebUI\AuthSubnetWhitelistEnabled=true
 WebUI\BanDuration=3600
-WebUI\CSRFProtection=true
-WebUI\ClickjackingProtection=true
+WebUI\CSRFProtection=false
+WebUI\ClickjackingProtection=false
 WebUI\CustomHTTPHeaders=
 WebUI\CustomHTTPHeadersEnabled=false
 WebUI\HTTPS\CertificatePath=
@@ -77,14 +97,12 @@ WebUI\SecureCookie=true
 WebUI\ServerDomains=*
 WebUI\SessionTimeout=3600
 WebUI\TrustedReverseProxiesList=
-WebUI\UseUPnP=false
+WebUI\UseUPnP=true
 WebUI\Username=admin
 
 [RSS]
 AutoDownloader\DownloadRepacks=true
-
-[WebUI]
-HostHeaderValidation=false" > $CHEMIN/${STACK}_Qbittorrent/_data/qBittorrent/qBittorrent.conf
+AutoDownloader\SmartEpisodeFilter=s(\\d+)e(\\d+), (\\d+)x(\\d+), "(\\d{4}[.\\-]\\d{1,2}[.\\-]\\d{1,2})", "(\\d{1,2}[.\\-]\\d{1,2}[.\\-]\\d{4})"' > $CHEMIN/${STACK}_Qbittorrent/_data/qBittorrent/qBittorrent.conf
 # ------------------------------------------------------------------------------------------------------------------
 docker start qbittorrent;
 ```
