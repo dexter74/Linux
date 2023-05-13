@@ -32,7 +32,7 @@ Session\MaxActiveUploads=4
 Session\MaxUploadsPerTorrent=10
 Session\Port=6881
 Session\QueueingSystemEnabled=true
-Session\TempPath=/downloads/Torrent/incomplete/
+Session\TempPath=/media/Download/Torrent/incomplete/
 Session\TempPathEnabled=false
 Session\UseAlternativeGlobalSpeedLimit=true
 
