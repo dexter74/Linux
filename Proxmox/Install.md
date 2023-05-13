@@ -116,9 +116,10 @@ systemctl restart pveproxy.service;
 Une fois Ajouter, il faut éditer le Disque pour empêcher la sauvegarde de celui-ci.
 ```
 clear;
-qm shutdown 300;
 SATA=sata1
 DISK=/dev/sdc
+
+qm shutdown 300;
 qm unlink 300 --idlist ${SATA};
 qm set 300 -sata1 ${DISK};
 qm start 300;
