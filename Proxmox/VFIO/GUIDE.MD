@@ -41,7 +41,7 @@ echo "# GPU Nvidia"            >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist nouveau"       >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist nvidia"        >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist nvidiafb"      >> /etc/modprobe.d/blacklist.conf;
-
+echo ""                        >> /etc/modprobe.d/blacklist.conf;
 echo "# Manette Xbox"          >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist xpad"          >> /etc/modprobe.d/blacklist.conf;
 
