@@ -39,7 +39,7 @@ apt install -y timeshift;
 ###################################################################################################################
 # Dépôt Backport #
 ##################
-sed -i -e "s/bullseye main non-free/bullseye-backports main non-free/g" /etc/apt/sources.list; 
+sed -i -e "s/bullseye main non-free/bullseye-backports main non-free/g" /etc/apt/sources.list;
 apt update;
 apt install -y firmware-amd-graphics;
 ###################################################################################################################
