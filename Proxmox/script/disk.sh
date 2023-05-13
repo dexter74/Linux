@@ -12,7 +12,7 @@
 clear;
 
 # Chargement des fonctions Attach
-source fonction/attach
+source ./fonction/attach
 
 # Déclaration d'une variable pour la boucle Infinie
 MENU=0
