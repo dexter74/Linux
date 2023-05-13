@@ -16,5 +16,5 @@ MENU=0
 while [ $MENU = 0 ];
  do
  func_MENU;
- func_choix;
+ func_CHOIX;
  done
