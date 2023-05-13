@@ -1,4 +1,8 @@
 ###########################################################################
+# Auteur du script : Marc Jaffré                                          #
+# Date d'édition   : 13-05-2012                                           #
+# Version: Alpha 1.0                                                      #
+#                                                                         #
 # Présentation:                                                           #
 # - Script pour l'ajout ou suppression de Disque via un menu de sélection #
 ###########################################################################
