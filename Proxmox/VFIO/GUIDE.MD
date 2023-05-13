@@ -31,22 +31,23 @@ echo "options kvm ignore_msrs=1" > /etc/modprobe.d/kvm.conf;
 
 ### Blacklist
 ```bash
-# GPU AMD
-echo "blacklist ati"            > /etc/modprobe.d/blacklist.conf;
+echo "# GPU AMD"               >  /etc/modprobe.d/blacklist.conf;
+echo "blacklist ati"           >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist amdgpu"        >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist radeon"        >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist pcieport"      >> /etc/modprobe.d/blacklist.conf;
-
-
-# GPU Nvidia
+echo ""                        >> /etc/modprobe.d/blacklist.conf;
+echo "# GPU Nvidia"            >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist nouveau"       >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist nvidia"        >> /etc/modprobe.d/blacklist.conf;
+echo "blacklist nvidiafb"      >> /etc/modprobe.d/blacklist.conf;
+
+echo "# Manette Xbox"          >> /etc/modprobe.d/blacklist.conf;
+echo "blacklist xpad"          >> /etc/modprobe.d/blacklist.conf;
 
 # USB
-echo "blacklist snd_hda_intel" >> /etc/modprobe.d/blacklist.conf;
+# echo "blacklist snd_hda_intel" >> /etc/modprobe.d/blacklist.conf;
 
-# Manette Xbox
-echo "blacklist xpad"          >> /etc/modprobe.d/blacklist.conf;
 ```
 
 ##### BCM4352 802.11ac Wireless Network Adapter
