@@ -14,8 +14,13 @@ clear;
 # Chargement des fonctions Attach
 source ./fonction/attach
 
-# Déclaration d'une variable pour la boucle Infinie
-MENU=0
+# Récupération de l'ID en cours
+ID=$(id -u)
+
+# Vérification
+if [[ $ID = 0 ]]; then
+ MENU=0;
+fi
 
 # Boucle Infinie
 while [ $MENU = 0 ];
