@@ -41,13 +41,10 @@ echo "# GPU Nvidia"            >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist nouveau"       >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist nvidia"        >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist nvidiafb"      >> /etc/modprobe.d/blacklist.conf;
+echo "blacklist snd_hda_intel" >> /etc/modprobe.d/blacklist.conf;
 echo ""                        >> /etc/modprobe.d/blacklist.conf;
 echo "# Manette Xbox"          >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist xpad"          >> /etc/modprobe.d/blacklist.conf;
-
-# USB
-# echo "blacklist snd_hda_intel" >> /etc/modprobe.d/blacklist.conf;
-
 ```
 
 ##### BCM4352 802.11ac Wireless Network Adapter
@@ -65,14 +62,22 @@ echo "blacklist xhci_hcd"      >> /etc/modprobe.d/blacklist.conf;
 
 ### Attacher GPU au module VFIO
 ```bash
-echo "# AMD: RX 6700 XT
-options vfio-pci ids=1002:73df,1002:ab28 disable_vga=1
-
+clear;
+echo "###########################################################
 # Nvidia: GTX 1060
-options vfio-pci ids=10de:1c02,10de:10f1 disable_vga=1
-
+# options vfio-pci ids=10de:1c02,10de:10f1 disable_vga=1
+###########################################################
+# Nvidia: RTX 3060
+# options vfio-pci ids=10de:2503,10de:228e disable_vga=1
+###########################################################
+# AMD: RX 6700 XT
+# options vfio-pci ids=1002:73df,1002:ab28 disable_vga=1
+###########################################################
 # Broadcom: BCM4352 802.11ac
-options vfio-pci ids=14e4:43b1" > /etc/modprobe.d/vfio.conf;
+# options vfio-pci ids=14e4:43b1
+###########################################################" > /etc/modprobe.d/vfio.conf;
+
+nano /etc/modprobe.d/vfio.conf;
 ```
 
 #### Mettre à jour Grub
