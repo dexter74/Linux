@@ -7,9 +7,13 @@
 # - Mise à jour du Kernel
 #
 ###################################################################################################################
+# Nettoyage de la console #
+###########################
 clear;
 
 ###################################################################################################################
+# AJouter l'utilisateur au groupe Sudo #
+########################################
 MONUSER=$(id 1000 | cut -d ")" -f 1 | cut -d "(" -f 2)
 sudo adduser $MONUSER sudo;
 
@@ -22,6 +26,7 @@ deb     http://security.debian.org/debian-security bullseye-security main contri
 deb-src http://security.debian.org/debian-security bullseye-security main contrib
 deb     http://ftp.fr.debian.org/debian/           bullseye-updates main contrib
 deb-src http://ftp.fr.debian.org/debian/           bullseye-updates main contrib" > /etc/apt/sources.list;
+
 ###################################################################################################################
 # Installation de paquet #
 ##########################
@@ -30,36 +35,55 @@ apt install -y git;
 apt install -y ntfs-3g;
 apt install -y sudo;
 apt install -y timeshift;
+
 ###################################################################################################################
-sed -i -e "s/bullseye main non-free/bullseye-backports main non-free/g" /etc/apt/sources.list;
+# Dépôt Backport #
+##################
+sed -i -e "s/bullseye main non-free/bullseye-backports main non-free/g" /etc/apt/sources.list; 
 apt update;
 apt install -y firmware-amd-graphics;
 ###################################################################################################################
+# Dépôt Classique #
+###################
 sed -i -e "s/bullseye-backports main non-free/bullseye main non-free/g" /etc/apt/sources.list;
 apt update;
+
 ###################################################################################################################
-NAME_INTERFACE=$(ip add | grep -v "vmbr[0-9]:\|lo" | grep "[0-9]: " | cut -d ":" -f 2 | cut -c 2-9)
+# Configuration de l'interface #
+################################
+#NAME_INTERFACE=$(ip add | grep -v "vmbr[0-9]:\|lo" | grep "[0-9]: " | cut -d ":" -f 2 | cut -c 2-9)
+NAME_INTERFACE=$(ip link | grep -v "lo:" | grep "UP" | cut -d ":" -f 2 | cut -c 2-7)
+IP=192.168.0.4
+MASK=24
+PASSERELLE=192.168.0.1
+DNS1=192.168.0.1
+DNS2=8.8.8.8
+
 echo "#####################################
 source /etc/network/interfaces.d/*
+
 #####################################
 # Adresse de Bouclage
 auto lo
 iface lo inet loopback
+
 #####################################
 # Interface Physique
 auto $NAME_INTERFACE
   iface $NAME_INTERFACE inet manual
   dns-domain lan
-  dns-nameservers 192.168.0.1 8.8.8.8
+  dns-nameservers ${DNS1} ${DNS2}
+
 #####################################
 # Pont 0
 auto vmbr0
   iface vmbr0 inet static
-  address 192.168.0.4/24
-  gateway 192.168.0.1
+  address ${IP}/${MASK}
+  gateway ${PASSERELLE}
   bridge-ports $NAME_INTERFACE
   bridge-stp off
   bridge-fd 0
+
 #####################################
 # Pont 1
 auto vmbr1
