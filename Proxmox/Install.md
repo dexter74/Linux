@@ -116,13 +116,14 @@ systemctl restart pveproxy.service;
 Une fois Ajouter, il faut éditer le Disque pour empêcher la sauvegarde de celui-ci.
 ```
 clear;
+VM=310
 SATA=sata1
 DISK=/dev/sdc
 
-qm shutdown 300;
-qm unlink 300 --idlist ${SATA};
-qm set 300 -sata1 ${DISK};
-qm start 300;
+qm shutdown ${VM};
+qm unlink ${VM} --idlist ${SATA};
+qm set ${VM} -sata1 ${DISK};
+qm start ${VM};
 ```
 
 #### [VFIO](https://github.com/dexter74/Linux/blob/main/Proxmox/VFIO/GUIDE.MD)
