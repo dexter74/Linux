@@ -26,7 +26,7 @@ volumes:
 
 
 ```yml
-NAS=192.168.0.3
+NAS=192.168.0.2
 UTILISATEUR=
 MOTDEPASSE=
 
