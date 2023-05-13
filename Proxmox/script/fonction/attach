@@ -3,8 +3,10 @@
 
 ##########################################################################################
 func_LIST(){
-lsblk | grep -v "sd[a-z][1-9]\|loop\|NAME\|p[0-9]\|-" | cut -c 1-5;
+lsblk | cut -c 1-15 | grep "sd[a-z]\|nvme[0-9]n[0-9]p"
+#lsblk | grep -v "sd[a-z][1-9]\|loop\|NAME\|p[0-9]\|-" | cut -c 1-5;
 }
+
 ##########################################################################################
 func_VM(){
 read -p "Indiquer le N° de VM: " VMID
@@ -129,7 +131,7 @@ case $choix in
  # --------------- #
  *)
   clear;
-  echo "MDR"
+  echo "Mauvais choix, quel boulet"
  ;;
  # --------------- #
  esac
