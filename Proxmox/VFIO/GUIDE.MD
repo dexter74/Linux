@@ -2,11 +2,22 @@
 ## <p align='center'> Machine Virtuelle avec Carte-Graphique </p>
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+#### Maintenance
+```
+nano /etc/modprobe.d/vfio.conf;
+```
+```
+nano /etc/modprobe.d/blacklist;
+```
+
 
 #### Optionnel: ([Intel](https://github.com/intel/nemu/wiki/Testing-VFIO-with-GPU))
 ```
 Dongle HDMI sur la sortie Vidéo du GPU.
 ```
+
+
+
 
 #### Activer IOMMU:
 ```bash
