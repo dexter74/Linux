@@ -19,3 +19,6 @@
  `++:.                           `-/+/   Memory: 1750MiB / 32006MiB 
  .`                                 `/
 ```
+
+
+![image](https://github.com/dexter74/Linux/assets/35907/60a593f0-58f1-48b9-b3b3-232014de4579)
