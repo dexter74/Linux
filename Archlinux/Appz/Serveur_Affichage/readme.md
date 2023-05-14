@@ -1,19 +1,23 @@
 ##### Serveur d'affichage
 ```bash
-sudo pacman -Sy --noconfirm xorg-server xorg-xinit;
+clear;
+sudo pacman -Sy --noconfirm xorg-server xorg-xinit 1>/dev/null;
 ```
 
 ##### Pilotes AMD
 ```bash
-sudo pacman -Sy --noconfirm xf86-video-amdgpu;
+clear;
+sudo pacman -Sy --noconfirm xf86-video-amdgpu 1>/dev/null;
 ```
 
 ##### Pilotes Vesa
 ```bash
-sudo pacman -Sy --noconfirm xf86-video-vesa;
+clear;
+sudo pacman -Sy --noconfirm xf86-video-vesa 1>/dev/null;
 ```
 
 ##### Pilotes VMWare
 ```bash
-sudo pacman -Sy --noconfirm xf86-video-vmware;
+clear;
+sudo pacman -Sy --noconfirm xf86-video-vmware 1>/dev/null;
 ```
