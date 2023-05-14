@@ -32,14 +32,15 @@ dbus-connection.c: In function 'dbus_connection_remove_filter':
 #### Docklike
 ```bash
 clear;
-rm -r /tmp/xfce4-docklike-plugin-0.4.0*;
+sudo rm -rf /tmp/xfce4-docklike-plugin-0.4.0*;
 wget --inet4-only https://archive.xfce.org/src/panel-plugins/xfce4-docklike-plugin/0.4/xfce4-docklike-plugin-0.4.0.tar.bz2 -O /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 && tar xf /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 -C /tmp;
 sed -i '22  s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
 sed -i '177 s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
 sed -i '26  s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
 sed -i '190 s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
 cd /tmp/xfce4-docklike-plugin-0.4.0/; ./configure; make -j$(nproc); sudo make install 1>/dev/null;
-cd; sudo rm -rf /tmp/xfce4-docklike-plugin-0.4.0/;
+cd;
+sudo rm -rf /tmp/xfce4-docklike-plugin-0.4.0/;
 ```
 <br />
 
