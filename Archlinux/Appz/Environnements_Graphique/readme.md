@@ -5,19 +5,21 @@
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 #### XFCE4
 ```bash
+clear;
 sudo pacman -Sy --noconfirm xfce4 xfce4-dev-tools xfce4-goodies xfce4-datetime-plugin xfce4-whiskermenu-plugin 1>/dev/null;
 ```
 
 #### Suppléments
 ```bash
+clear;
 sudo pacman -Sy --noconfirm libgsf libopenraw ffmpeg ffmpegthumbnailer libgepub poppler poppler-glib 1>/dev/null;
 yay -Sy --noconfirm xfce4-panel-profiles 1>/dev/null;
-
-#yay -Sy --noconfirm dbus-x11 1>/dev/null;
+yay -Sy --noconfirm dbus-x11 1>/dev/null;
 ```
 
 #### Docklike
 ```bash
+clear;
 rm -r /tmp/xfce4-docklike-plugin-0.4.0*;
 wget --inet4-only https://archive.xfce.org/src/panel-plugins/xfce4-docklike-plugin/0.4/xfce4-docklike-plugin-0.4.0.tar.bz2 -O /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 && tar xf /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 -C /tmp;
 sed -i '22  s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
@@ -25,13 +27,13 @@ sed -i '177 s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.
 sed -i '26  s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
 sed -i '190 s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
 cd /tmp/xfce4-docklike-plugin-0.4.0/; ./configure; make -$(nproc); sudo make install 1>/dev/null;
-cd;
-sudo rm -rf /tmp/xfce4-docklike-plugin-0.4.0/;
+cd; sudo rm -rf /tmp/xfce4-docklike-plugin-0.4.0/;
 ```
 <br />
 
 #### Profil XFCE
 ```
+clear;
 wget "https://github.com/dexter74/Linux/raw/main/Archlinux/Appz/Environnements_Graphique/XFCE4_Profile.tar.bz2" -O /home/marc/Bureau/XFCE4_Profile.tar.bz2
 xfce4-panel-profiles load /home/marc/Bureau/XFCE4_Profile.tar.bz2 
 ```
