@@ -325,7 +325,7 @@ runuser -l $USERNAME -c "mkdir Bureau Documents Telechargements Templates Musiqu
 
 #### Sudoers (Indispensable pour YAY)
 ```bash
-echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/admin
+echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/admin;
 ```
 
 #### Gestionnaire de paquet YAY
@@ -345,10 +345,7 @@ runuser -l $USERNAME -c 'yay -Sy --noconfirm upd72020x-fw 1>/dev/null';
 runuser -l $USERNAME -c 'yay -Sy --noconfirm adduser 1>/dev/null';
 ```
 
-#### Sudoers Utilisateurs
-```bash
-echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/admin;
-```
+
 
 #### Autoriser le SSH
 ```bash
