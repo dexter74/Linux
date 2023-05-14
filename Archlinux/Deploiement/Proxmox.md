@@ -321,7 +321,10 @@ XDG_PICTURES_DIR=\"\$HOME/Images\"
 XDG_PUBLICSHARE_DIR=\"\$HOME/Public\"
 XDG_VIDEOS_DIR=\"\$HOME/Videos\" " > $HOME/.config/user-dirs.dirs';
 runuser -l $USERNAME -c "mkdir Bureau Documents Telechargements Templates Musiques Images Public Videos";
+```
 
+#### Sudoers (Indispensable pour YAY)
+```bash
 echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/admin
 ```
 
@@ -329,8 +332,7 @@ echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/admin
 ```bash
 clear;
 runuser -l $USERNAME -c 'git clone https://aur.archlinux.org/yay.git /tmp/yay;'
-runuser -l $USERNAME -c 'cd /tmp/yay && makepkg;'
-pacman -U --noconfirm /tmp/yay/*.zst
+runuser -l $USERNAME -c 'cd /tmp/yay && makepkg -si --noconfirm;'
 ```
 
 #### YAY ([MKINITCPIO](https://wiki.archlinux.org/title/mkinitcpio))
