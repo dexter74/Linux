@@ -107,7 +107,8 @@ mkdir -p /mnt/boot && mount ${DISK}1  /mnt/boot;
 ##### Vérification
 ```bash
 clear;
-# root@archiso ~ # lsblk| grep "sd[a-z]\|SWAP\|$VG";
+lsblk| grep "sd[a-z]\|SWAP\|SYSTEM\|$VG";
+
 # sda              8:0    0    32G  0 disk
 # ├─sda1           8:1    0   512M  0 part /mnt/boot
 # └─sda2           8:2    0  31.5G  0 part
