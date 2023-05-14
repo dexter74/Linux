@@ -355,13 +355,14 @@ sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ss
 #### Services
 ```bash
 clear;
-systemctl enable avahi-daemon.service;
-systemctl enable avahi-dnsconfd.service;
 systemctl enable NetworkManager;
-systemctl enable ntpd;
 systemctl enable sshd;
-systemctl enable systemd-homed;
-systemctl enable systemd-timesyncd.service;
+
+#systemctl enable avahi-daemon.service;
+#systemctl enable avahi-dnsconfd.service;
+#systemctl enable ntpd;
+#systemctl enable systemd-homed;
+#systemctl enable systemd-timesyncd.service;
 ```
 
 #### Vérifier log
