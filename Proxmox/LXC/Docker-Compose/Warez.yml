@@ -61,6 +61,7 @@ services:      #
   volumes:
    - 'Qbittorrent:/config'
    - 'DOWNLOAD:/media/Download/Torrent'
+   - 'VIDEO:/media/Video'
   ports:
    - '6881:6881' # Tranmission
    - '1110:1007' # WebUI
