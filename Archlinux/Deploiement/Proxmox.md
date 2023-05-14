@@ -206,6 +206,7 @@ pacman -Sy --noconfirm archlinux-keyring 1>/dev/null;
 
 #### Déclaration des variables Systèmes
 ```bash
+clear;
 NAME=archlinux
 DOM=lan
 USERNAME=marc
@@ -217,6 +218,7 @@ COMMENT='Marc Jaffré'
 
 #### Français
 ```bash
+clear;
 echo 'LANG=fr_FR.UTF-8'                 > /etc/locale.conf;
 echo 'LC_CTYPE="fr_FR.UTF-8"'          >> /etc/locale.conf;
 echo 'LC_NUMERIC="fr_FR.UTF-8"'        >> /etc/locale.conf;
@@ -330,6 +332,7 @@ runuser -l $USERNAME -c 'cd /tmp/yay && makepkg -si --noconfirm;'
 
 #### YAY ([MKINITCPIO](https://wiki.archlinux.org/title/mkinitcpio))
 ```bash
+clear;
 runuser -l $USERNAME -c 'yay -Sy --noconfirm linux-firmware-qlogic 1>/dev/null';
 runuser -l $USERNAME -c 'yay -Sy --noconfirm wd719x-firmware 1>/dev/null';
 runuser -l $USERNAME -c 'yay -Sy --noconfirm aic94xx-firmware 1>/dev/null';
