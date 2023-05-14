@@ -17,6 +17,18 @@ yay -Sy --noconfirm xfce4-panel-profiles 1>/dev/null;
 yay -Sy --noconfirm dbus-x11 1>/dev/null;
 ```
 
+#### Information
+```
+==> ATTENTION : Utilisation de l’arbre $srcdir/ existant
+configure: WARNING: unrecognized options: --with-console-auth-dir
+configure: WARNING: Sufficiently new SELinux library not found
+configure: WARNING: Sufficiently new AppArmor library not found
+configure: WARNING: unrecognized options: --with-console-auth-dir
+dbus-connection.c: In function 'dbus_connection_remove_filter':
+```
+
+
+
 #### Docklike
 ```bash
 clear;
