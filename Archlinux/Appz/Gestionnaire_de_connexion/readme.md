@@ -25,12 +25,21 @@ sudo sed -i 's/\#greeter-session\=example-gtk-gnome/greeter-session\=lightdm-web
 sudo sed -i 's/antergos/lightdm-evo/g' /etc/lightdm/lightdm-webkit2-greeter.conf;
 ```
 
+##### Reverse
+```bash
+sudo sed -i 's/^greeter-session\=lightdm-webkit2-greeter/\#greeter-session\=example-gtk-gnome/g' /etc/lightdm/lightdm.conf;
+sudo systemctl restart lightdm;
+```
+
+
 ##### Services
 ```bash
 sudo systemctl disable --now lightdm;
+sudo systemctl restart       lightdm;
 sudo systemctl enable  --now lightdm;
-sudo reboot;
 ```
+
+
 
 #### Note
 ```
