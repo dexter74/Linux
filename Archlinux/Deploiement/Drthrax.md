@@ -1,5 +1,4 @@
-```
-neofetch 
+```bash 
                    -`                    marc@archlinux 
                   .o+`                   -------------- 
                  `ooo/                   OS: Arch Linux x86_64 
