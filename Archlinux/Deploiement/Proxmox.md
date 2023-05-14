@@ -256,7 +256,7 @@ clear;
 cp /etc/mkinitcpio.conf /etc/mkinitcpio.conf.old;
 chattr +i /etc/mkinitcpio.conf.old;
 sed -i -e "s/HOOKS\=(base udev autodetect modconf kms keyboard keymap consolefont block filesystems fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems udev resume keyboard keymap sd-vconsole fsck)/g" /etc/mkinitcpio.conf;
-mkinitcpio -p linux;
+mkinitcpio -p linux 1>/dev/null;
 ```
 
 #### BootLoader EFI
