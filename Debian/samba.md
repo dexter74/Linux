@@ -71,6 +71,7 @@ writable       = yes
 read only      = no
 valid users    = marc
 force user     = root
+guest ok       = no
 ```
 
 #### Active Directory
@@ -84,10 +85,10 @@ force user     = root
 [profiles]
 comment        = Users profiles
 path           = /home/samba/profiles
-guest ok       = no
 browseable     = no
 create mask    = 0600
 directory mask = 0700
+guest ok       = no
 
 [netlogon]
    comment = Network Logon Service
