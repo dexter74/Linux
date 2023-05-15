@@ -118,9 +118,8 @@ directory mask = 0700
 ```
 
 
-##############################################
-# Explication sur les paramètres de partages #
-##############################################
+#### Guide de création de partage
+```bash
 #[NomdemonPartage]
 #comment 	= Mon commentaire
 #path		= /chemin
@@ -132,9 +131,12 @@ directory mask = 0700
 #create mask 	= 0700 (Conseiller) | 0755 (déconseiller)
 #directory mask	= 0700 (Conseiller) | 0755 (déconseiller)			
 #guest ok	= no | yes (Permet aux clients de se connecter au répertoire partagé sans fournir de mot de passe.)
+```
 
+```
 #/!\ HOMES DEJA CREE MAIS MAL CONFIG /!\
 #
-#homes 	=> Référence au dossier utilisateur
+# homes 	=> Référence au dossier utilisateur
 #	=> browseable = no (Evite un doublon du dossier Home et USER)
 # net use * /delete /y
+```
