@@ -79,7 +79,8 @@ force user     = root
 # Active Directory #
 ####################
 
-;mkdir -p /home/samba/{netlogon,profiles}; chmod ug+rw /home/samba/profiles
+; mkdir -p /home/samba/{netlogon,profiles}; chmod ug+rw /home/samba/profiles
+
 [profiles]
 comment        = Users profiles
 path           = /home/samba/profiles
