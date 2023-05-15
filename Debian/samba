@@ -1,13 +1,13 @@
 ################
 # Installation #
 ################
-sudo apt-get purge -y samba samba-common;
-sudo rm -rf /etc/samba/ /etc/default/samba;
-sudo apt-get install -y samba;
+apt-get purge -y samba samba-common;
+rm -rf /etc/samba/ /etc/default/samba;
+apt-get install -y samba;
 
 clear;
-sudo nano /etc/samba/smb.conf;
-sudo systemctl restart smbd;
+nano /etc/samba/smb.conf;
+systemctl restart smbd;
 systemctl status smb;
 
 #############################
@@ -15,16 +15,16 @@ systemctl status smb;
 #############################
 #
 # Guide : https://serverfault.com/a/994971
-sudo smbpasswd -a marc;
-sudo smbpasswd -e marc;
-sudo systemctl restart smbd;
+smbpasswd -a marc;
+smbpasswd -e marc;
+systemctl restart smbd;
 
 #############################
 # Edition du fichier config #
 #############################
-sudo nano /etc/samba/smb.conf;
-sudo systemctl restart smbd;
-sudo systemctl restart samba-ad-dc.service;
+nano /etc/samba/smb.conf;
+systemctl restart smbd;
+systemctl restart samba-ad-dc.service;
 testparm -s smb.txt;
 
 ###########################
