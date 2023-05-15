@@ -62,7 +62,7 @@ writable       = yes
 create mask    = 0700
 directory mask = 0700
 guest ok       = no
-			
+
 [SYSTEM]
 comment        = Acces au dossier root
 path           = /
