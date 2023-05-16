@@ -20,9 +20,7 @@ Wireguard
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 ### III. Générer des Clés Privées, Publiques et Pre-shared
-Sur un poste Windows, il faut installer WireGuard. Les clés sont générés dans le dossier Wireguard qui sera crée sur le bureau de l'utilisateur.
-
-Le script A ou B font la même chose.
+Il faut installer Wireguard pour utiliser le script depuis un poste Windows.
 
 ##### Script A
 ```batch
