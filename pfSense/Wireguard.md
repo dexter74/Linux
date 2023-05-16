@@ -38,7 +38,7 @@ Le script A ou B font la même chose.
 title Generer Cle Wireguard
 
 :: Declaration des Variables
-set WIREGUARD="C:\Program Files\WireGuard\wg"
+set WIREGUARD="C:\Program Files\WireGuard\wg.exe"
 
 :: Création du Dossier Temporaire
 mkdir %USERPROFILE%\tmp\
