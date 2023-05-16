@@ -31,6 +31,7 @@ Le script A ou B font la même chose.
 :: ##########################################################
 :: # Script pour Générer des Clés Wireguard par Marc Jaffré #
 :: # Syntaxe Commande : "C:\Program Files\WireGuard\wg" /?  #
+:: # Bug: Si le dossier bureau à été déplacer, marche pas ! #
 :: ##########################################################
 
 :: Titre de la Fenetre DOS
