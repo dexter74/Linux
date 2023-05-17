@@ -109,7 +109,7 @@ sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf;
 pacman -Sy --noconfirm archlinux-keyring 1>/dev/null;
 ```
 
-#### B. Installation des paquets
+#### B. Installation des paquets (Manque package HyperV)
 ```bash
 clear;
 pacstrap /mnt amd-ucode            1>/dev/null;
