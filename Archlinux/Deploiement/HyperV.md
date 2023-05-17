@@ -93,8 +93,21 @@ clear;
 lsblk| grep "sd[a-z]\|SWAP\|SYSTEM\|$VG";
 ```
 
-##### Nettoyage Du Système
+##### G. Nettoyage Du Système
 ```bash
 clear;
 rm -rf /mnt 2>/dev/null;
 ```
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### IV. Installation des Paquets, FSTAB et Chroot
+
+#### A. Pacman
+```bash
+clear;
+sed -i -e "s/\#ParallelDownloads \= 5/ParallelDownloads = 5/g" /etc/pacman.conf;
+sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf;
+pacman -Sy --noconfirm archlinux-keyring 1>/dev/null;
+```
+
+#### B. Installation des paquets
