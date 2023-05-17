@@ -26,7 +26,6 @@ ssh root@192.168.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #### III. Gestion du Disque-Dur
-
 ###### B. Déclaration des variables
 ```bash
 clear;
@@ -43,7 +42,7 @@ VG=vg0
 clear;
 dd if=/dev/zero of=${DISK}  bs=512  count=1;
 (echo "g"; echo "w") | fdisk ${DISK};
-(echo "n"; echo "1"; echo ""; echo "$BOOT" ; echo "t" ; echo "1" ; echo "w")      | fdisk $DISK; # EFI
+(echo "n"; echo "1"; echo ""; echo "$BOOT" ; echo "t" ; echo "1" ; echo "w")       | fdisk $DISK; # MBR
 (echo "n"; echo "2"; echo ""; echo "" ; echo "t"; echo "2" ; echo "136"; echo "w") | fdisk $DISK; # LVM
 partprobe ${DISK}2;
 ```
@@ -72,7 +71,7 @@ echo "yes" | lvcreate -n HOME   -L $HOME $VG;
 ##### D. Formatage des Partitions
 ```bash
 clear;
-echo "yes" | mkfs.fat -F32 ${DISK}1;
+echo "yes" | mkfs -t ext4 ${DISK}1;
 echo "yes" | mkswap /dev/$VG/SWAP;
 echo "yes" | mkfs -t ext4 /dev/$VG/SYSTEM;
 echo "yes" | mkfs -t ext4 /dev/$VG/HOME;
