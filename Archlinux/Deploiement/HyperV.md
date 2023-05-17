@@ -87,3 +87,14 @@ mkdir -p /mnt/home && mount /dev/$VG/HOME /mnt/home;
 mkdir -p /mnt/boot && mount ${DISK}1  /mnt/boot;
 ```
 
+##### F. Vérification
+```bash
+clear;
+lsblk| grep "sd[a-z]\|SWAP\|SYSTEM\|$VG";
+```
+
+##### Nettoyage Du Système
+```bash
+clear;
+rm -rf /mnt 2>/dev/null;
+```
