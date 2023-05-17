@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## <p align='center'>
-  Installation d'Archlinux sur l'hyperviseur Hyper-V de Microsoft 
-</p>
+## <p align='center'>    Installation d'Archlinux sur l'hyperviseur Hyper-V de Microsoft    </p>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#### I. Création de la Machine Virtuelles ([WIKI](https://wiki.archlinux.org/title/Hyper-V#Virtual_machine_creation))
+```
+Pour les machines de Génération 2, le démarrage à partir d’un lecteur de CD/DVD physique n’est pas pris en charge.
+```
