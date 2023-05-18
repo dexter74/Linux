@@ -95,8 +95,8 @@ nano /etc/vsftpd.conf; systemctl restart vsftpd; systemctl status vsftpd;
 ####################################################################################
 connect_from_port_20=YES
 dirmessage_enable=YES
-listen_ipv6=NO
 listen=YES
+listen_ipv6=NO
 use_localtime=YES
 xferlog_enable=YES
 #secure_chroot_dir=/var/run/vsftpd/empty
