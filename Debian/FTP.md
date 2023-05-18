@@ -68,7 +68,6 @@ allow_anon_ssl=YES
 anonymous_enable=YES
 anon_mkdir_write_enable=YES
 anon_upload_enable=YES
-
 ##############################################################
 # Write:
 write_enable=yes
@@ -80,7 +79,7 @@ dirmessage_enable=YES
 listen_ipv6=NO
 listen=YES
 local_enable=YES
-secure_chroot_dir=/var/run/vsftpd/empty
+#secure_chroot_dir=/var/run/vsftpd/empty
 use_localtime=YES
 xferlog_enable=YES
 ##############################################################
