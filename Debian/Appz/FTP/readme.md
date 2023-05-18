@@ -273,5 +273,5 @@ sudo usermod -g sftp_users FTP_USER;
 
 ##### Changer le dossier de l'utilisateur
 ```
-sudo usermod -d / FTP_USER;
+sudo usermod -d /mnt/Download/ FTP_USER;
 ```
