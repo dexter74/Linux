@@ -50,25 +50,37 @@ cat /etc/vsftpd.conf.old > /etc/vsftpd.conf;
 
 ##### Afficher Paramètre
 ```
+clear; 
 grep -v "^#" /etc/vsftpd.conf | sort -n;
 ```
 
 ##### Configuration du FTP (/etc/vsftpd.conf)
 ```
+clear;
 echo "##############################################################
+allow_anon_ssl=NO
 anonymous_enable=NO
 connect_from_port_20=YES
 dirmessage_enable=YES
-listen_ipv6=YES
+force_local_data_ssl=YES
+force_local_logins_ssl=YES
+listen_ipv6=NO
 listen=NO
 local_enable=YES
+local_umask=022
 pam_service_name=vsftpd
-rsa_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
-rsa_private_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
+require_ssl_reuse=NO
+rsa_cert_file=/etc/ssl-vsftpd/private/vsftpd.pem
 secure_chroot_dir=/var/run/vsftpd/empty
-ssl_enable=NO
+ssl_enable=YES
+ssl_tlsv1=YES
+ssl_sslv2=NO
+ssl_sslv3=NO
+ssl_ciphers=HIGH
 use_localtime=YES
 xferlog_enable=YES
-##############################################################" > /etc/vsftpd.conf
+write_enable=YES
+##############################################################" > /etc/vsftpd.conf;
+systemctl restart vsftpd;
 ```
 
