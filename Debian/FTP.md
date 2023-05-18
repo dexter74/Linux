@@ -1,11 +1,12 @@
-#### /etc/passwd
+#### Création du compte FTP
 ```
-ftp:x:106:115:ftp daemon,,,:/srv/ftp:/usr/sbin/nologin
+sudo adduser ftp --no-create-home;
+sudo passwd ftp;
 ```
 
 #### Installation
 ```
-apt install -ysudo;
+apt install -y sudo;
 apt install -y vsftpd;
 ```
 
