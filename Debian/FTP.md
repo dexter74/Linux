@@ -59,7 +59,7 @@ echo "##############################################################
 anonymous_enable=NO
 connect_from_port_20=YES
 dirmessage_enable=YES
-listen_ipv6=NO
+listen_ipv6=YES
 listen=NO
 local_enable=YES
 pam_service_name=vsftpd
@@ -68,6 +68,7 @@ rsa_private_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
 secure_chroot_dir=/var/run/vsftpd/empty
 ssl_enable=NO
 use_localtime=YES
-xferlog_enable=YES" > /etc/vsftpd.conf
+xferlog_enable=YES
+##############################################################" > /etc/vsftpd.conf
 ```
 
