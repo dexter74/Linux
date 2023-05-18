@@ -4,7 +4,7 @@
 ---------------------------------------------------------------------------------------------------------------------
 #### Pare-Feu
 
-`ftps://marc:admin@proxmox74.ddns.net:221`
+`ftp://marc:admin@proxmox74.ddns.net:221`
 | Regle       | Interne | Port Externe |
 | ----------- | ------- | ------------ |
 | FTP-Connect | 21      | 221          |
