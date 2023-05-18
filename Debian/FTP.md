@@ -63,11 +63,12 @@ grep -v "^#" /etc/vsftpd.conf | sort -n;
 ```
 clear;
 echo "##############################################################
-# Connexion Anonyme
+# Connexion Anonyme (/srv/ftp/)
 allow_anon_ssl=YES
 anonymous_enable=YES
 anon_mkdir_write_enable=YES
 anon_upload_enable=YES
+
 ##############################################################
 # Write:
 write_enable=yes
@@ -102,7 +103,6 @@ rsa_private_key_file=/etc/ssl/vsftp/vsftpd.pem
 systemctl restart vsftpd;
 systemctl status vsftpd;
 ```
-
 
 
 ##### Création du Groupe FTP
