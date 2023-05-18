@@ -9,7 +9,6 @@ apt-get install -y samba;
 ```bash
 clear;
 cp /etc/samba/smb.conf /etc/samba/smb.conf.old;
-chattr +i /etc/samba/smb.conf.old;
 nano /etc/samba/smb.conf;
 systemctl restart smbd;
 ```
