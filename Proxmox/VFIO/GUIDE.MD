@@ -47,7 +47,6 @@ echo "# GPU AMD"               >  /etc/modprobe.d/blacklist.conf;
 echo "blacklist ati"           >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist amdgpu"        >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist radeon"        >> /etc/modprobe.d/blacklist.conf;
-echo "blacklist pcieport"      >> /etc/modprobe.d/blacklist.conf;
 echo ""                        >> /etc/modprobe.d/blacklist.conf;
 echo "# GPU Nvidia"            >> /etc/modprobe.d/blacklist.conf;
 echo "blacklist nouveau"       >> /etc/modprobe.d/blacklist.conf;
