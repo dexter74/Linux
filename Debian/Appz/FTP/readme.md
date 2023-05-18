@@ -163,6 +163,9 @@ write_enable=YES
 xferlog_enable=YES
 xferlog_std_format=NO
 
+#
+pasv_max_port=12500
+pasv_min_port=12550
 
 ########################################################################
 # Configuration du SSL #
@@ -195,7 +198,6 @@ ssl_tlsv1=YES
 strict_ssl_read_eof=NO
 strict_ssl_write_shutdown=NO
 #
-
 
 ########################################################################
 # Configuration du compte Invité #
