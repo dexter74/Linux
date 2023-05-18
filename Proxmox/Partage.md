@@ -40,7 +40,7 @@ echo "[Unit]
   Where=/mnt/Download
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=1000,gid=984
+  Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=0,gid=0
 
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Download.mount;
@@ -56,7 +56,7 @@ echo "[Unit]
   Where=/mnt/Music
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=1000,gid=984
+  Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=0,gid=0
 
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Music.mount;
@@ -71,7 +71,7 @@ echo "[Unit]
   Where=/mnt/Video
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=1000,gid=984
+  Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=0,gid=0
 
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Video.mount;
@@ -86,7 +86,7 @@ echo "[Unit]
   Where=/mnt/Home
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=1000,gid=984
+  Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=0,gid=0
 
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Home.mount;
