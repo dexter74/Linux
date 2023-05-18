@@ -87,13 +87,11 @@ ssl_sslv3=NO
 ssl_tlsv1=YES
 rsa_cert_file=/etc/ssl/vsftp/vsftpd.pem
 rsa_private_key_file=/etc/ssl/vsftp/vsftpd.pem
-
 ##############################################################
 # Activation du mode passif
 # pasv_enable=YES
 # pasv_min_port=12500  # La tranche de ports  aléatoires 
 # pasv_max_port=12550  # doit être > à 1024
-##############################################################
 ##############################################################" > /etc/vsftpd.conf;
 systemctl restart vsftpd;
 systemctl status vsftpd;
