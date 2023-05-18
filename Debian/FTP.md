@@ -70,7 +70,7 @@ anon_mkdir_write_enable=YES
 anon_upload_enable=YES
 ##############################################################
 # Write:
-#write_enable=yes
+write_enable=yes
 #chroot_local_user=yes
 ##############################################################
 # FTP
