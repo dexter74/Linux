@@ -66,8 +66,8 @@ echo "##############################################################
 # Connexion Anonyme
 allow_anon_ssl=NO
 anonymous_enable=NO
-anon_mkdir_write_enable=NO
-anon_upload_enable=NO
+anon_mkdir_write_enable=YES
+anon_upload_enable=YES
 ##############################################################
 # Wrtie:
 write_enable=yes
