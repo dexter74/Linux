@@ -14,6 +14,13 @@ apt install -y sudo openssl vsftpd;
 
 ---------------------------------------------------------------------------------------------------------------------
 #### Génération d'un Certificat SSL
+
+###### Création du Dossier du certificat
+```
+mkdir -p /etc/ssl-vsftpd/private;
+chmod 700 /etc/ssl-vsftpd/private;
+```
+
 ###### Définir la configuration du Certificat
 ```
 PAYS=FR
@@ -27,12 +34,6 @@ EMAIL=test@tld.com
 ###### Purge Ancien Certificat
 ```
 /etc/ssl-vsftpd/private/vsftpd.pem 2>/dev/null;
-```
-
-###### Création du Dossier du certificat
-```
-mkdir -p /etc/ssl-vsftpd/private;
-chmod 700 /etc/ssl-vsftpd/private;
 ```
 
 ###### Génération du Certificat
