@@ -4,13 +4,15 @@
 ---------------------------------------------------------------------------------------------------------------------
 #### Purge de VSFTPD
 ```
-apt remove --purge -y openssl vsftpd;
+clear;
+apt remove --purge -y openssl vsftpd 1>/dev/null;
 rm -r /etc/ssl/vsftp 2>/dev/null;
 ```
 
 #### Installation des paquets
 ```
-apt install -y sudo openssl vsftpd;
+clear;
+apt install -y sudo openssl vsftpd 1>/dev/null;
 ```
 
 ---------------------------------------------------------------------------------------------------------------------
@@ -18,6 +20,7 @@ apt install -y sudo openssl vsftpd;
 
 ###### Définir la configuration du Certificat
 ```
+clear;
 PAYS=FR
 REGION=Haute-savoie
 VILLE=Paris
@@ -28,20 +31,24 @@ EMAIL=test@tld.com
 
 ###### Création du Dossier du certificat
 ```
+clear;
 mkdir -p /etc/ssl/vsftp;
 ```
 
 ###### Purge Ancien Certificat
 ```
+clear;
 rm /etc/ssl/vsftp/vsftpd.pem 2>/dev/null;
 ```
 
 ###### Génération du Certificat
 ```
-(echo "$PAYS"; echo "$REGION"; echo "$VILLE"; echo "$ORGANISATION"; echo "$ORGANISATION"; echo "$FQDN"; echo "$EMAIL") |  openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc/ssl/vsftp/vsftpd.pem -out /etc/ssl/vsftp/vsftpd.pem -days 3650; 
+clear;
+(echo "$PAYS"; echo "$REGION"; echo "$VILLE"; echo "$ORGANISATION"; echo "$ORGANISATION"; echo "$FQDN"; echo "$EMAIL") |  openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc/ssl/vsftp/vsftpd.pem -out /etc/ssl/vsftp/vsftpd.pem -days 3650 2>/dev/null; 
 ```
 ###### Relance du service FTP
 ```
+clear;
 systemctl restart vsftpd;
 ```
 
@@ -49,6 +56,7 @@ systemctl restart vsftpd;
 #### Configuration de VSFTPD
 ##### Sauvegarder Configuration Inital
 ```
+clear;
 cp /etc/vsftpd.conf /etc/vsftpd.conf.old;
 cat /etc/vsftpd.conf.old > /etc/vsftpd.conf;
 ```
@@ -56,26 +64,29 @@ cat /etc/vsftpd.conf.old > /etc/vsftpd.conf;
 ##### Afficher les paramètres
 ```
 clear; 
-grep -v "^#" /etc/vsftpd.conf | sort -n;
+grep -v "^#" /etc/vsftpd.conf | sort -n; echo "";
 ```
 
 ##### Configuration du FTP (/etc/vsftpd.conf)
 
 ###### Edition de la configuration
 ```bash
-nano  /etc/vsftpd.conf; systemctl restart vsftpd; systemctl status vsftpd;
+clear;
+echo "" > /etc/vsftpd.conf;
+nano /etc/vsftpd.conf; systemctl restart vsftpd; systemctl status vsftpd;
 ```
 
 ###### FTP
 ```
+####################################################################################
 connect_from_port_20=YES
 dirmessage_enable=YES
 listen_ipv6=NO
 listen=YES
 local_enable=YES
-#secure_chroot_dir=/var/run/vsftpd/empty
 use_localtime=YES
 xferlog_enable=YES
+#secure_chroot_dir=/var/run/vsftpd/empty
 ```
 
 ###### Bannière de connexion
@@ -87,8 +98,11 @@ ftpd_banner=Bienvenue sur le serveur ftp de Marc Jaffré
 ###### Connexion Anonyme  
 ```
 ####################################################################################
-# Autoriser la connexion Anoymement
+# Autoriser la connexion Anoymement FTP
 anonymous_enable=YES
+
+# Autoriser la connexion Anoymement FTPs
+allow_anon_ssl=YES
 
 # Autoriser l'envoi
 anon_upload_enable=NO
@@ -120,7 +134,6 @@ local_umask=022
 ###### FTPS
 ```
 ####################################################################################
-allow_anon_ssl=YES
 force_local_data_ssl=YES
 force_local_logins_ssl=YES
 ssl_ciphers=HIGH
