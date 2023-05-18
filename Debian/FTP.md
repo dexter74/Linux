@@ -40,6 +40,10 @@ EMAIL=test@tld.com
 ```
 (echo "$PAYS"; echo "$ETAT"; echo "$CITY"; echo "$ORGA"; echo "$ORGA"; echo "$FQDN"; echo "$EMAIL") | openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout /etc/ssl-vsftpd/private/vsftpd.pem -out /etc/ssl-vsftpd/private/vsftpd.pem;
 ```
+###### Relance du service FTP
+```
+systemctl restart vsftpd;
+```
 
 ---------------------------------------------------------------------------------------------------------------------
 #### Configuration de VSFTPD
