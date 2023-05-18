@@ -63,11 +63,17 @@ grep -v "^#" /etc/vsftpd.conf | sort -n;
 ```
 clear;
 echo "##############################################################
+# Connexion Anonyme
 allow_anon_ssl=NO
 anonymous_enable=NO
 anon_mkdir_write_enable=NO
 anon_upload_enable=NO
 ##############################################################
+# Wrtie:
+write_enable=yes
+chroot_local_user=yes
+##############################################################
+# FTP
 connect_from_port_20=YES
 dirmessage_enable=YES
 listen_ipv6=NO
@@ -77,6 +83,7 @@ secure_chroot_dir=/var/run/vsftpd/empty
 use_localtime=YES
 xferlog_enable=YES
 ##############################################################
+# SFTP
 force_local_data_ssl=YES
 force_local_logins_ssl=YES
 ssl_ciphers=HIGH
