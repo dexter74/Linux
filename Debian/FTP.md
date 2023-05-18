@@ -5,6 +5,7 @@
 #### Purge de VSFTPD
 ```
 apt remove --purge -y openssl vsftpd;
+rm -r /etc/ssl/vsftp 2>/dev/null;
 ```
 
 #### Installation des paquets
@@ -18,24 +19,26 @@ apt install -y sudo openssl vsftpd;
 ###### Définir la configuration du Certificat
 ```
 PAYS=FR
-ETAT=France
-CITY=Paris
-ORGA=Personnel
+REGION=Haute-savoie
+VILLE=Paris
+ORGANISATION=Personnel
 FQDN=$(cat /etc/hosts | grep "$HOSTNAME" | cut -c 11-20)
 EMAIL=test@tld.com
 ```
 
-
 ###### Création du Dossier du certificat
 ```
+mkdir -p /etc/ssl/vsftp;
 ```
 
 ###### Purge Ancien Certificat
 ```
+rm /etc/ssl/vsftp/vsftpd.pem 2>/dev/null;
 ```
 
 ###### Génération du Certificat
 ```
+(echo "$PAYS"; echo "$REGION"; echo "$VILLE"; echo "$ORGANISATION"; echo "$ORGANISATION"; echo "$FQDN"; echo "$EMAIL") |  openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc/ssl/vsftp/vsftpd.pem -out /etc/ssl/vsftp/vsftpd.pem -days 3650; 
 ```
 ###### Relance du service FTP
 ```
@@ -50,7 +53,7 @@ cp /etc/vsftpd.conf /etc/vsftpd.conf.old;
 cat /etc/vsftpd.conf.old > /etc/vsftpd.conf;
 ```
 
-##### Afficher Paramètre
+##### Afficher les paramètres
 ```
 clear; 
 grep -v "^#" /etc/vsftpd.conf | sort -n;
@@ -59,10 +62,28 @@ grep -v "^#" /etc/vsftpd.conf | sort -n;
 ##### Configuration du FTP (/etc/vsftpd.conf)
 ```
 clear;
-echo "
-##############################################################
-##############################################################
-" > /etc/vsftpd.conf;
+echo "##############################################################
+allow_anon_ssl=NO
+anonymous_enable=NO
+connect_from_port_20=YES
+dirmessage_enable=YES
+force_local_data_ssl=YES
+force_local_logins_ssl=YES
+listen_ipv6=YES
+listen=NO
+local_enable=YES
+pam_service_name=vsftpd
+rsa_cert_file=/etc/ssl/vsftp/vsftpd.pem
+rsa_private_key_file=/etc/ssl/vsftp/vsftpd.pem
+secure_chroot_dir=/var/run/vsftpd/empty
+ssl_ciphers=HIGH
+ssl_enable=YES
+ssl_sslv2=NO
+ssl_sslv3=NO
+ssl_tlsv1=YES
+use_localtime=YES
+xferlog_enable=YES
+##############################################################" > /etc/vsftpd.conf;
 systemctl restart vsftpd;
 ```
 
