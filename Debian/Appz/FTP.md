@@ -98,6 +98,8 @@ ftpd_banner=Bienvenue sur le serveur ftp de Marc Jaffré
 ###### Connexion Anonyme  
 ```
 ####################################################################################
+# Connexion Anonyme  #
+######################
 # Autoriser la connexion Anoymement FTP
 anonymous_enable=YES
 
@@ -127,6 +129,8 @@ anon_root=/var/ftp/
 ###### Autoriser les utilisateurs locaux de se connecter et d'écrire
 ```
 ####################################################################################
+# Autoriser les utilisateurs locaux de se connecter et d'écrire #
+#################################################################
 local_enable=YES
 write_enable=YES
 local_umask=022
@@ -134,6 +138,8 @@ local_umask=022
 ###### FTPS
 ```
 ####################################################################################
+# Configuration FTPS #
+######################
 force_local_data_ssl=YES
 force_local_logins_ssl=YES
 ssl_ciphers=HIGH
@@ -148,12 +154,18 @@ rsa_private_key_file=/etc/ssl/vsftp/vsftpd.pem
 ###### Activation du mode passif
 ```
 ####################################################################################
-pasv_enable=YES
-pasv_min_port=12500  # La tranche de ports  aléatoires 
-pasv_max_port=12550  # doit être > à 1024
+# Mode Passif  #
+################
+# pasv_enable=YES
+# pasv_min_port=12500  # La tranche de ports  aléatoires 
+# pasv_max_port=12550  # doit être > à 1024
 ```
 
-##### Création du Groupe FTP
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+##### Création du Groupe FTP (Section en COURS)
 ```
 sudo groupadd sftp_users
 ```
