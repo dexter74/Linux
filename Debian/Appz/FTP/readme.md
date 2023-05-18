@@ -79,7 +79,7 @@ systemctl restart vsftpd;
 ########################################################################
 # Cloisonnement de l'utilisateur #
 ##################################
-chroot_local_user=YES
+chroot_local_user=NO
 allow_writeable_chroot=YES
 chroot_list_enable=NO
 
