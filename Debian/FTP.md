@@ -10,12 +10,22 @@ apt install -y vsftpd;
 
 ```
 
-#### Dossier ftp
+#### Dossier Racine ftp
 ```
 mkdir /opt/ftp
 sudo usermod -d /opt/ftp ftp;
-systemctl restart vsftpd
+systemctl restart vsftpd;
 ```
 
+#### Dossier Projet 
+```
+mkdir /opt/ftp/projet;
+```
 
-
+#### Editer configuration
+```
+nano /etc/vsftpd.conf;
+local_enable=YES;
+write_enable=YES;
+chroot_local_user=YES;
+```
