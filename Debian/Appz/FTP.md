@@ -97,7 +97,6 @@ connect_from_port_20=YES
 dirmessage_enable=YES
 listen_ipv6=NO
 listen=YES
-local_enable=YES
 use_localtime=YES
 xferlog_enable=YES
 #secure_chroot_dir=/var/run/vsftpd/empty
