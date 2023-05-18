@@ -82,7 +82,7 @@ grep -v "^#" /etc/vsftpd.conf | sort -n; echo "";
 ```
 
 ##### Configuration du FTP (/etc/vsftpd.conf)
-
+Pour récupérer les arguments `man vsftpd.conf`
 ###### Edition de la configuration
 ```bash
 clear;
