@@ -84,3 +84,17 @@ write_enable=YES
 systemctl restart vsftpd;
 ```
 
+##### Création du Groupe FTP
+```
+sudo groupadd sftp_users
+```
+
+##### Ajouter l'utilisateur au groupe
+```
+sudo usermod -g sftp_users marc
+```
+
+##### Changer le dossier de l'utilisateur
+```
+sudo usermod -d /var/www marc
+```
