@@ -257,12 +257,21 @@ no_anon_password=NO
 sudo groupadd sftp_users
 ```
 
+##### Création d'un utilisateur
+```
+sudo useradd --no-create-home FTP_USER;
+```
+##### Définir le mot de passe
+```
+ (echo "admin"; echo "admin") | sudo passwd FTP_USER;
+```
+
 ##### Ajouter l'utilisateur au groupe
 ```
-sudo usermod -g sftp_users marc
+sudo usermod -g sftp_users FTP_USER;
 ```
 
 ##### Changer le dossier de l'utilisateur
 ```
-sudo usermod -d /home/marc marc
+sudo usermod -d / FTP_USER;
 ```
