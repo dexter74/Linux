@@ -25,7 +25,7 @@ systemctl restart smbd;
 nano /etc/samba/smb.conf;
 systemctl restart smbd;
 systemctl restart samba-ad-dc.service;
-testparm -s smb.txt;
+testparm -s /etc/samba/smb.conf;
 ```
 
 #### Gestion des accès Samba
