@@ -98,5 +98,5 @@ systemctl disable --now mnt-{Download,Home,Music,Video}.mount;
 
 systemctl start mnt-{Download,Home,Music,Video}.mount;
 systemctl enable --now mnt-{Download,Home,Music,Video}.mount;
-systemctl status --now mnt-{Download,Home,Music,Video}.mount | grep "mount\|Active:";
+systemctl status       mnt-{Download,Home,Music,Video}.mount | grep "mount\|Active:";
 ```
