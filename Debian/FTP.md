@@ -62,27 +62,36 @@ grep -v "^#" /etc/vsftpd.conf | sort -n;
 ##### Configuration du FTP (/etc/vsftpd.conf)
 ```
 clear;
-echo "##############################################################
+echo "
+##############################################################
 allow_anon_ssl=NO
 anonymous_enable=NO
+#############################################################
 connect_from_port_20=YES
 dirmessage_enable=YES
-force_local_data_ssl=YES
-force_local_logins_ssl=YES
-listen_ipv6=YES
+listen_ipv6=NO
 listen=NO
 local_enable=YES
 pam_service_name=vsftpd
-rsa_cert_file=/etc/ssl/vsftp/vsftpd.pem
-rsa_private_key_file=/etc/ssl/vsftp/vsftpd.pem
 secure_chroot_dir=/var/run/vsftpd/empty
+use_localtime=YES
+xferlog_enable=YES
+##############################################################
+force_local_data_ssl=YES
+force_local_logins_ssl=YES
 ssl_ciphers=HIGH
 ssl_enable=YES
 ssl_sslv2=NO
 ssl_sslv3=NO
 ssl_tlsv1=YES
-use_localtime=YES
-xferlog_enable=YES
+rsa_cert_file=/etc/ssl/vsftp/vsftpd.pem
+rsa_private_key_file=/etc/ssl/vsftp/vsftpd.pem
+
+##############################################################
+# Activation du mode passif
+# pasv_enable=YES
+# pasv_min_port=12500  # La tranche de ports  aléatoires 
+# pasv_max_port=12550  # doit être > à 1024
 ##############################################################" > /etc/vsftpd.conf;
 systemctl restart vsftpd;
 ```
