@@ -136,11 +136,6 @@ local_enable=YES
 # Permission sur les fichiers (Défaut: 077)
 local_umask=022
 #
-# Mode passive
-pasv_addr_resolve=NO
-pasv_enable=NO
-pasv_promiscuous=NO
-#
 # Interdire la méthode PORT d'obtention d'une connexion de données.
 port_enable=YES
 #
