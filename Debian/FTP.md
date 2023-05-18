@@ -4,10 +4,11 @@ sudo adduser ftp --no-create-home;
 sudo passwd ftp;
 ```
 
-#### Installation
+#### Installation du FTP
 ```
 apt install -y sudo;
 apt install -y vsftpd;
+apt install -y openssl;
 ```
 
 #### Dossier Racine ftp
