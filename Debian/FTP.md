@@ -66,12 +66,12 @@ echo "##############################################################
 # Connexion Anonyme
 allow_anon_ssl=NO
 anonymous_enable=NO
-anon_mkdir_write_enable=YES
-anon_upload_enable=YES
+anon_mkdir_write_enable=NO
+anon_upload_enable=NO
 ##############################################################
-# Wrtie:
-write_enable=yes
-chroot_local_user=yes
+# Write:
+#write_enable=yes
+#chroot_local_user=yes
 ##############################################################
 # FTP
 connect_from_port_20=YES
