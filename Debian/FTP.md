@@ -3,6 +3,10 @@
 sudo adduser ftp --no-create-home;
 sudo passwd ftp;
 ```
+#### Purge de VSFTPD
+```
+apt remove --purge -y vsftpdvsftpd.conf;
+```
 
 #### Installation du FTP
 ```
