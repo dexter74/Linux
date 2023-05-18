@@ -94,6 +94,8 @@ xferlog_enable=YES
 ###### Bannière de connexion
 ```
 ####################################################################################
+# Bannière de connexion #
+#########################
 ftpd_banner=Bienvenue sur le serveur ftp de Marc Jaffré
 ```
 
