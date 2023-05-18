@@ -17,6 +17,7 @@ chmod 600 /etc/credentials/.smbpassword;
 nano /etc/credentials/.smbpassword;
 ```
 
+**CIFS** (Windows)
 ```bash
 ####################################################################################################################################
 echo "[Unit]
