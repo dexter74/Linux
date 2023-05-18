@@ -66,8 +66,9 @@ echo "##############################################################
 # Connexion Anonyme  (Defaut: chmod -R 755 /srv/ftp/; chown -R root:ftp /srv/ftp/
 allow_anon_ssl=YES
 anonymous_enable=YES
-anon_mkdir_write_enable=YES
-anon_upload_enable=YES
+anon_mkdir_write_enable=NO
+anon_upload_enable=NO
+anon_other_write_enable=NO
 ##############################################################
 # Write:
 write_enable=yes
