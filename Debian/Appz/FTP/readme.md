@@ -84,6 +84,12 @@ allow_writeable_chroot=YES
 chroot_list_enable=NO
 
 ########################################################################
+# Forcer la connexion SSL #
+###########################
+force_local_data_ssl=YES
+force_local_logins_ssl=YES
+
+########################################################################
 # Configuration Générale #
 ##########################
 #
@@ -171,10 +177,6 @@ pasv_promiscuous=NO
 ########################
 # Mode Debuggage
 #debug_ssl=NO
-#
-# Forcer la connexion SSL
-force_local_data_ssl=YES
-force_local_logins_ssl=YES
 #
 # Certificat SSL (Default: /usr/share/ssl/certs/vsftpd.pem)
 rsa_cert_file=/etc/ssl/vsftp/vsftpd.pem
