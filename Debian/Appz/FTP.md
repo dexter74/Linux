@@ -165,8 +165,6 @@ rsa_private_key_file=/etc/ssl/vsftp/vsftpd.pem
 # pasv_max_port=12550  # doit être > à 1024
 ```
 
-
-
 ---------------------------------------------------------------------------------------------------------------------
 
 ##### Création du Groupe FTP (Section en COURS)
