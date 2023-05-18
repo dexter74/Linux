@@ -13,7 +13,8 @@ apt install -y vsftpd;
 #### Dossier ftp
 ```
 mkdir /opt/ftp
-sudo usermod -d /opt/ftp ftp
+sudo usermod -d /opt/ftp ftp;
+systemctl restart vsftpd
 ```
 
 
