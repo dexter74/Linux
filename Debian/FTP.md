@@ -65,15 +65,14 @@ clear;
 echo "##############################################################
 allow_anon_ssl=NO
 anonymous_enable=NO
-anon_upload_enable=NO
 anon_mkdir_write_enable=NO
+anon_upload_enable=NO
 ##############################################################
 connect_from_port_20=YES
 dirmessage_enable=YES
 listen_ipv6=NO
 listen=YES
 local_enable=YES
-
 secure_chroot_dir=/var/run/vsftpd/empty
 use_localtime=YES
 xferlog_enable=YES
