@@ -151,6 +151,15 @@ local_enable=YES
 write_enable=YES
 local_umask=022
 ```
+
+###### Cloisonner son utilisateur à son dossier
+```
+####################################################################################
+# Cloisonner son utilisateur à son dossier #
+############################################
+chroot_local_user=YES 
+```
+
 ###### FTPS
 ```
 ####################################################################################
