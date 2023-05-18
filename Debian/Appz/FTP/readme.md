@@ -86,8 +86,8 @@ chroot_list_enable=NO
 ########################################################################
 # Forcer la connexion SSL #
 ###########################
-force_local_data_ssl=YES
-force_local_logins_ssl=YES
+force_local_data_ssl=NO
+force_local_logins_ssl=NO
 
 ########################################################################
 # Configuration Générale #
