@@ -101,6 +101,9 @@ rsa_private_key_file=/etc/ssl/vsftp/vsftpd.pem
 # pasv_enable=YES
 # pasv_min_port=12500  # La tranche de ports  aléatoires 
 # pasv_max_port=12550  # doit être > à 1024
+####################################################################################
+#ascii_upload_enable=YES
+#ascii_download_enable=YES
 ####################################################################################" > /etc/vsftpd.conf;
 systemctl restart vsftpd;
 systemctl status vsftpd;
