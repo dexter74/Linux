@@ -46,11 +46,6 @@ rm /etc/ssl/vsftp/vsftpd.pem 2>/dev/null;
 clear;
 (echo "$PAYS"; echo "$REGION"; echo "$VILLE"; echo "$ORGANISATION"; echo "$ORGANISATION"; echo "$FQDN"; echo "$EMAIL") |  openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc/ssl/vsftp/vsftpd.pem -out /etc/ssl/vsftp/vsftpd.pem -days 3650 2>/dev/null; 
 ```
-###### Relance du service FTP
-```
-clear;
-systemctl restart vsftpd;
-```
 
 ---------------------------------------------------------------------------------------------------------------------
 #### Configuration de VSFTPD
@@ -60,6 +55,13 @@ clear;
 cp /etc/vsftpd.conf /etc/vsftpd.conf.old;
 cat /etc/vsftpd.conf.old > /etc/vsftpd.conf;
 ```
+
+###### Relance du service FTP
+```
+clear;
+systemctl restart vsftpd;
+```
+
 
 ##### Afficher les paramètres
 ```
