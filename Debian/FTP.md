@@ -63,7 +63,7 @@ grep -v "^#" /etc/vsftpd.conf | sort -n;
 ```
 clear;
 echo "##############################################################
-# Connexion Anonyme (/srv/ftp/)
+# Connexion Anonyme  (Defaut: chmod -R 755 /srv/ftp/; chown -R root:ftp /srv/ftp/
 allow_anon_ssl=YES
 anonymous_enable=YES
 anon_mkdir_write_enable=YES
