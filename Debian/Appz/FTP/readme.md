@@ -77,6 +77,13 @@ systemctl restart vsftpd;
 ##### Configuration
 ```
 ########################################################################
+# Cloisonnement de l'utilisateur #
+##################################
+chroot_local_user=YES
+allow_writeable_chroot=YES
+chroot_list_enable=NO
+
+########################################################################
 # Configuration Générale #
 ##########################
 #
@@ -101,10 +108,6 @@ dirmessage_enable=YES
 #
 # Permettre le téléchargement
 download_enable=YES
-#
-chroot_list_enable=NO
-chroot_local_user=YES
-allow_writeable_chroot=YES
 #
 # Lister le contenu caché (.XXXX) 
 force_dot_files=NO
