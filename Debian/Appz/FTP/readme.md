@@ -157,6 +157,7 @@ local_umask=022
 # Cloisonner son utilisateur à son dossier #
 ############################################
 chroot_local_user=YES 
+allow_writeable_chroot=YES
 ```
 
 ###### FTPS
