@@ -15,12 +15,6 @@ apt install -y sudo openssl vsftpd;
 ---------------------------------------------------------------------------------------------------------------------
 #### Génération d'un Certificat SSL
 
-###### Création du Dossier du certificat
-```
-mkdir -p /etc/ssl-vsftpd/private;
-chmod 700 /etc/ssl-vsftpd/private;
-```
-
 ###### Définir la configuration du Certificat
 ```
 PAYS=FR
@@ -31,14 +25,17 @@ FQDN=$(cat /etc/hosts | grep "$HOSTNAME" | cut -c 11-20)
 EMAIL=test@tld.com
 ```
 
+
+###### Création du Dossier du certificat
+```
+```
+
 ###### Purge Ancien Certificat
 ```
-/etc/ssl-vsftpd/private/vsftpd.pem 2>/dev/null;
 ```
 
 ###### Génération du Certificat
 ```
-(echo "$PAYS"; echo "$ETAT"; echo "$CITY"; echo "$ORGA"; echo "$ORGA"; echo "$FQDN"; echo "$EMAIL") | openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout /etc/ssl-vsftpd/private/vsftpd.pem -out /etc/ssl-vsftpd/private/vsftpd.pem;
 ```
 ###### Relance du service FTP
 ```
@@ -65,7 +62,8 @@ clear;
 echo "
 ##############################################################
 ##############################################################
-" > /etc/vsftpd.conf; systemctl restart vsftpd;
+" > /etc/vsftpd.conf;
+systemctl restart vsftpd;
 ```
 
 ##### Création du Groupe FTP
