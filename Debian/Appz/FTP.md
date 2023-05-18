@@ -60,28 +60,14 @@ grep -v "^#" /etc/vsftpd.conf | sort -n;
 ```
 
 ##### Configuration du FTP (/etc/vsftpd.conf)
+
+###### Edition de la configuration
+```bash
+nano  /etc/vsftpd.conf; systemctl restart vsftpd; systemctl status vsftpd;
 ```
-clear;
-echo "
-####################################################################################
-ftpd_banner=Bienvenue sur le serveur ftp de Marc Jaffré
-####################################################################################
-# Connexion Anonyme  (Defaut: chmod -R 755 /var/ftp/; chown -R root:ftp /var/ftp/)
-anonymous_enable=YES
-anon_upload_enable=NO
-anon_mkdir_write_enable=NO
-anon_other_write_enable=NO
-anon_world_readable_only=no
-anon_root=/var/ftp/
-####################################################################################
-# Write:
-local_enable=YES
-write_enable=YES
-local_umask=022
-write_enable=yes
-#chroot_local_user=yes
-####################################################################################
-# FTP
+
+###### FTP
+```
 connect_from_port_20=YES
 dirmessage_enable=YES
 listen_ipv6=NO
@@ -90,8 +76,50 @@ local_enable=YES
 #secure_chroot_dir=/var/run/vsftpd/empty
 use_localtime=YES
 xferlog_enable=YES
+```
+
+###### Bannière de connexion
+```
 ####################################################################################
-# SFTP
+ftpd_banner=Bienvenue sur le serveur ftp de Marc Jaffré
+```
+
+###### Connexion Anonyme  
+```
+####################################################################################
+# Autoriser la connexion Anoymement
+anonymous_enable=YES
+
+# Autoriser l'envoi
+anon_upload_enable=NO
+
+# Autoriser la création de Dossier
+anon_mkdir_write_enable=NO
+
+# Autoriser l'écriture
+anon_other_write_enable=NO
+
+# ????
+anon_world_readable_only=no
+
+# Dossier racine des invités
+anon_root=/var/ftp/
+
+# Permission :
+# - chmod -R 755 /var/ftp/;
+# - chown -R root:ftp /var/ftp/
+```
+
+###### Autoriser les utilisateurs locaux de se connecter et d'écrire
+```
+####################################################################################
+local_enable=YES
+write_enable=YES
+local_umask=022
+```
+###### FTPS
+```
+####################################################################################
 allow_anon_ssl=YES
 force_local_data_ssl=YES
 force_local_logins_ssl=YES
@@ -102,19 +130,15 @@ ssl_sslv3=NO
 ssl_tlsv1=YES
 rsa_cert_file=/etc/ssl/vsftp/vsftpd.pem
 rsa_private_key_file=/etc/ssl/vsftp/vsftpd.pem
-####################################################################################
-# Activation du mode passif
-# pasv_enable=YES
-# pasv_min_port=12500  # La tranche de ports  aléatoires 
-# pasv_max_port=12550  # doit être > à 1024
-####################################################################################
-#ascii_upload_enable=YES
-#ascii_download_enable=YES
-####################################################################################" > /etc/vsftpd.conf;
-systemctl restart vsftpd;
-systemctl status vsftpd;
 ```
 
+###### Activation du mode passif
+```
+####################################################################################
+pasv_enable=YES
+pasv_min_port=12500  # La tranche de ports  aléatoires 
+pasv_max_port=12550  # doit être > à 1024
+```
 
 ##### Création du Groupe FTP
 ```
