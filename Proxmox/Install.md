@@ -103,15 +103,12 @@ systemctl restart pveproxy.service;
 
 # /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
 ```
-
-
 <br />
 
-#### [Sauvegarde ou Restaurer Configuration](https://github.com/dexter74/Linux/blob/main/Proxmox/sauvegarde_restauration.md)
+--------------------------------------------------------------------------------
 
-
-<br />
-
+#### [Serveur Samba](https://github.com/dexter74/Linux/blob/main/Proxmox/samba.md)
+#### [Monter Partage](https://github.com/dexter74/Linux/blob/main/Proxmox/Partage.md)
 #### [VFIO](https://github.com/dexter74/Linux/blob/main/Proxmox/VFIO/GUIDE.MD)
-
+#### [Scripts](https://github.com/dexter74/Linux/tree/main/Proxmox/script)
 <br />
