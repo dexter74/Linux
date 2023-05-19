@@ -68,14 +68,9 @@ cp /etc/vsftpd.conf /etc/vsftpd.conf.old;
 cat /etc/vsftpd.conf.old > /etc/vsftpd.conf;
 ```
 
-###### Relance du service FTP
-```
-clear;
-systemctl restart vsftpd;
-```
-
 ##### Configuration
 ```
+echo "
 ########################################################################
 # Cloisonnement de l'utilisateur #
 ##################################
@@ -171,7 +166,6 @@ pasv_max_port=12500
 pasv_min_port=12550
 pasv_promiscuous=NO
 
-
 ########################################################################
 # Configuration du SSL #
 ########################
@@ -247,6 +241,7 @@ no_anon_password=NO
 # chmod -R 755 /var/ftp/;        #
 # chown -R root:ftp /var/ftp/;   #
 ##################################
+" > /etc/vsftpd.conf;
 ```
 
 
@@ -292,4 +287,10 @@ sudo usermod -d $CHEMIN2 $COMPTE2;
 
 # Définir le groupe principale de l'utilisateur
 # sudo usermod -g myftp test;
+```
+
+###### Relance du service FTP
+```
+clear;
+systemctl restart vsftpd;
 ```
