@@ -130,10 +130,14 @@ systemctl start mnt-{Download,Home,Music,Video}.mount;
 systemctl enable --now mnt-{Download,Home,Music,Video,Windows}.mount 2>/dev/null;
 ```
 
-
 #### Vérification
 ```bash
 clear;
 df -h /mnt/Home /mnt/Download /mnt/Video /mnt/Music /mnt/Windows;
 ls -la /mnt;
+```
+
+##### Relance FTP
+```
+systemctl restart vsftpd.service
 ```
