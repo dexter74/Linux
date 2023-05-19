@@ -356,31 +356,26 @@ runuser -l $USERNAME -c 'yay -Sy --noconfirm adduser'               1>/dev/null 
 sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ssh/sshd_config;
 ```
 
-#### Samba (Découverte réseau)
+#### Samba
 ```
 echo "client min protocol = NT1
 client max protocol = SMB3" > /etc/samba/smb.conf;
+```
 
 #### Services
 ```bash
 clear;
-systemctl enable qemu-guest-agent           2>/dev/null;
+systemctl enable avahi-daemon.service       2>/dev/null;
 systemctl enable NetworkManager             2>/dev/null;
 systemctl enable sshd                       2>/dev/null;
-#systemctl enable avahi-daemon.service      2>/dev/null;
+systemctl enable smb                        2>/dev/null;
+
 #systemctl enable avahi-dnsconfd.service    2>/dev/null;
 #systemctl enable ntpd                      2>/dev/null;
 #systemctl enable systemd-homed             2>/dev/null;
 #systemctl enable systemd-timesyncd.service 2>/dev/null;
+#systemctl enable qemu-guest-agent           2>/dev/null;
 ```
-
-
-
-
-
-
-
-
 
 
 #### Vérifier log
@@ -394,15 +389,6 @@ dmesg --level 3;
 ```
 pacman -Sy --noconfirm xfce4;
 pacman -Sy --noconfirm gdm;
-pacman -Sy --noconfirm avahi;
-pacman -Sy --noconfirm samba;
-pacman -Sy --noconfirm smbclient;
-
-echo "client min protocol = NT1
-client max protocol = SMB3" >  /etc/samba/smb.conf;
-
-systemctl enable smb;
-systemctl enable avahi-daemon.service;
 systemctl enable gdm.service;
 ```
 
