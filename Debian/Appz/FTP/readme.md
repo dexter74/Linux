@@ -266,9 +266,14 @@ sudo useradd --no-create-home FTP_USER;
  (echo "admin"; echo "admin") | sudo passwd FTP_USER;
 ```
 
-##### Ajouter l'utilisateur au groupe
+##### Définir le groupe principale de l'utilisateur
 ```
 sudo usermod -g sftp_users FTP_USER;
+```
+
+##### Ajouter L'utilisateur marc au Groupe sftp_users
+```
+sudo usermod -a -G sftp_users marc;
 ```
 
 ##### Changer le dossier de l'utilisateur
