@@ -70,13 +70,12 @@ cat /etc/vsftpd.conf.old > /etc/vsftpd.conf;
 
 ##### Configuration
 ```
-echo "
-########################################################################
+echo "########################################################################
 # Cloisonnement de l'utilisateur #
 ##################################
-allow_writeable_chroot=NO
-chroot_local_user=NO
+chroot_local_user=YES
 chroot_list_enable=NO
+allow_writeable_chroot=YES
 
 ########################################################################
 # Forcer la connexion SSL #
@@ -241,7 +240,7 @@ no_anon_password=NO
 # chmod -R 755 /var/ftp/;        #
 # chown -R root:ftp /var/ftp/;   #
 ##################################
-" > /etc/vsftpd.conf;
+" > /etc/vsftpd.conf; systemctl restart vsftpd;
 ```
 
 
@@ -249,6 +248,7 @@ no_anon_password=NO
 #### Création des utilisateurs FTP
 ```
 clear;
+
 ###########################################################################
 # Déclarer mes Variables #
 ##########################
