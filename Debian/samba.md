@@ -128,7 +128,7 @@ directory mask = 0700
 #path		= /chemin
 #browseable 	= yes | no (Partage Visible ou cacher)
 #writable 	= yes | no 
-write list    = # Si writable absent
+#write list     = # Si writable absent
 
 #read only 	= yes | no
 #valid users 	= USER1, USER2, @groupe12000 %S  (Utilisateurs, Groupe ou Services autorisés)
