@@ -18,6 +18,14 @@ sudo apt install -y smbclient 1>/dev/null;
 ----------------------------------------------------------------------------------------------------------------------------------
 ### Partage
 
+```
+  # ,x-gvfs-show,uid=0,gid=0
+  # ,file_mode=0775,dir_mode=0775,
+  # _netdev
+  # ,acl
+  # ,user_xattr
+```
+
 ```bash
 clear;
 mkdir /etc/credentials 2>/dev/null;
@@ -40,8 +48,7 @@ echo "[Unit]
   Where=/mnt/Download
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,file_mode=0775,dir_mode=0775,_netdev,acl
-  # ,x-gvfs-show,uid=0,gid=0
+  Options=credentials=/etc/credentials/.smbpassword,acl
 
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Download.mount;
@@ -57,8 +64,7 @@ echo "[Unit]
   Where=/mnt/Home
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,file_mode=0775,dir_mode=0775,_netdev,acl,user_xattr
-  # ,x-gvfs-show,uid=0,gid=0
+  Options=credentials=/etc/credentials/.smbpassword,acl
 
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Home.mount;
@@ -74,8 +80,7 @@ echo "[Unit]
   Where=/mnt/Music
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,file_mode=0775,dir_mode=0775,_netdev,acl,user_xattr
-  # ,x-gvfs-show,uid=0,gid=0
+  Options=credentials=/etc/credentials/.smbpassword,acl
 
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Music.mount;
@@ -91,8 +96,7 @@ echo "[Unit]
   Where=/mnt/Video
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,file_mode=0775,dir_mode=0775,_netdev,acl,user_xattr
-  # ,x-gvfs-show,uid=0,gid=0
+  Options=credentials=/etc/credentials/.smbpassword,acl
 
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Video.mount;
@@ -108,8 +112,7 @@ echo "[Unit]
   Where=/mnt/Windows
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,file_mode=0775,dir_mode=0775,_netdev,acl,user_xattr
-  # ,x-gvfs-show,uid=0,gid=0
+  Options=credentials=/etc/credentials/.smbpassword,acl
 
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Windows.mount;
