@@ -134,7 +134,7 @@ systemctl disable --now mnt-{Download,Home,Music,Video,Windows}.mount 2>/dev/nul
 chown -R $USERNAME:users /mnt/{Download,Home,Music,Video,Windows};
 
 # Lancer le Service
-systemctl start mnt-{Download,Home,Music,Video}.mount;
+systemctl start mnt-{Download,Home,Music,Video,Windows}.mount;
 systemctl enable --now mnt-{Download,Home,Music,Video,Windows}.mount 2>/dev/null;
 ```
 
