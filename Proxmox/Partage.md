@@ -133,4 +133,6 @@ systemctl start mnt-{Download,Home,Music,Video}.mount;
 systemctl enable --now mnt-{Download,Home,Music,Video,Windows}.mount;
 
 systemctl status mnt-{Download,Home,Music,Video,Windows}.mount | grep "mount\|Active:";
+
+ls -la /mnt
 ```
