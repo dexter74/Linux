@@ -15,12 +15,7 @@ sudo apt install -y smbclient;  # Client SMB
 ```bash
 mkdir /etc/credentials;
 echo "username=marc
-password=admin
-vers=3.0
-file_mode=0777
-dir_mode=0777
-workgroup=WORKGROUP
-_netdev" > /etc/credentials/.smbpassword; chmod 600 /etc/credentials/.smbpassword;
+password=admin" > /etc/credentials/.smbpassword; chmod 600 /etc/credentials/.smbpassword;
 
 #nano /etc/credentials/.smbpassword;
 ```
@@ -38,7 +33,7 @@ echo "[Unit]
   Where=/mnt/Download
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword
+  Options=credentials=/etc/credentials/.smbpassword,file_mode=0777,dir_mode=0777,_netdev
   # ,x-gvfs-show,uid=0,gid=0
 
 [Install]
@@ -55,7 +50,7 @@ echo "[Unit]
   Where=/mnt/Home
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword
+  Options=credentials=/etc/credentials/.smbpassword,file_mode=0777,dir_mode=0777,_netdev
   # ,x-gvfs-show,uid=0,gid=0
 
 [Install]
@@ -72,7 +67,7 @@ echo "[Unit]
   Where=/mnt/Music
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword
+  Options=credentials=/etc/credentials/.smbpassword,file_mode=0777,dir_mode=0777,_netdev
   # ,x-gvfs-show,uid=0,gid=0
 
 [Install]
@@ -89,7 +84,7 @@ echo "[Unit]
   Where=/mnt/Video
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword
+  Options=credentials=/etc/credentials/.smbpassword,file_mode=0777,dir_mode=0777,_netdev
   # ,x-gvfs-show,uid=0,gid=0
 
 [Install]
@@ -106,7 +101,7 @@ echo "[Unit]
   Where=/mnt/Windows
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword
+  Options=credentials=/etc/credentials/.smbpassword,file_mode=0777,dir_mode=0777,_netdev
   # ,x-gvfs-show,uid=0,gid=0
 
 [Install]
