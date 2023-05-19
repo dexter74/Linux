@@ -323,7 +323,7 @@ XDG_MUSIC_DIR=\"\$HOME/Musiques\"
 XDG_PICTURES_DIR=\"\$HOME/Images\"
 XDG_PUBLICSHARE_DIR=\"\$HOME/Public\"
 XDG_VIDEOS_DIR=\"\$HOME/Videos\" " > $HOME/.config/user-dirs.dirs';
-runuser -l $USERNAME -c "mkdir Bureau Documents Telechargements Templates Musiques Images Public Videos";
+runuser -l $USERNAME -c "mkdir Bureau Documents Telechargements Templates Musiques Images Public Videos" 2>/dev/null;
 ```
 
 #### Sudoers (Indispensable pour YAY)
@@ -334,21 +334,19 @@ echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/admin;
 #### Gestionnaire de paquet YAY
 ```bash
 clear;
-runuser -l $USERNAME -c 'git clone https://aur.archlinux.org/yay.git /tmp/yay;'
-runuser -l $USERNAME -c 'cd /tmp/yay && makepkg -si --noconfirm 1>/dev/null;'
+runuser -l $USERNAME -c 'git clone https://aur.archlinux.org/yay.git /tmp/yay' 2>/dev/null;
+runuser -l $USERNAME -c 'cd /tmp/yay && makepkg -si --noconfirm'   1>/dev/null 2>/dev/null; 
 ```
 
 #### YAY ([MKINITCPIO](https://wiki.archlinux.org/title/mkinitcpio))
 ```bash
 clear;
-runuser -l $USERNAME -c 'yay -Sy --noconfirm linux-firmware-qlogic 1>/dev/null';
-runuser -l $USERNAME -c 'yay -Sy --noconfirm wd719x-firmware 1>/dev/null';
-runuser -l $USERNAME -c 'yay -Sy --noconfirm aic94xx-firmware 1>/dev/null';
-runuser -l $USERNAME -c 'yay -Sy --noconfirm upd72020x-fw 1>/dev/null';
-runuser -l $USERNAME -c 'yay -Sy --noconfirm adduser 1>/dev/null';
+runuser -l $USERNAME -c 'yay -Sy --noconfirm linux-firmware-qlogic' 1>/dev/null 2>/dev/null;
+runuser -l $USERNAME -c 'yay -Sy --noconfirm wd719x-firmware'       1>/dev/null 2>/dev/null;
+runuser -l $USERNAME -c 'yay -Sy --noconfirm aic94xx-firmware'      1>/dev/null 2>/dev/null;
+runuser -l $USERNAME -c 'yay -Sy --noconfirm upd72020x-fw'          1>/dev/null 2>/dev/null;
+runuser -l $USERNAME -c 'yay -Sy --noconfirm adduser'               1>/dev/null 2>/dev/null;
 ```
-
-
 
 #### Autoriser le SSH
 ```bash
@@ -358,14 +356,13 @@ sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ss
 #### Services
 ```bash
 clear;
-systemctl enable NetworkManager;
-systemctl enable sshd;
-
-#systemctl enable avahi-daemon.service;
-#systemctl enable avahi-dnsconfd.service;
-#systemctl enable ntpd;
-#systemctl enable systemd-homed;
-#systemctl enable systemd-timesyncd.service;
+systemctl enable NetworkManager             2>/dev/null;
+systemctl enable sshd                       2>/dev/null;
+#systemctl enable avahi-daemon.service      2>/dev/null;
+#systemctl enable avahi-dnsconfd.service    2>/dev/null;
+#systemctl enable ntpd                      2>/dev/null;
+#systemctl enable systemd-homed             2>/dev/null;
+#systemctl enable systemd-timesyncd.service 2>/dev/null;
 ```
 
 #### Vérifier log
@@ -374,6 +371,8 @@ clear;
 dmesg --level 4;
 dmesg --level 3;
 ```
+
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### VI.Installation de l'environnement Graphique
 
