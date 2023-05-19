@@ -15,8 +15,8 @@ sudo apt install -y smbclient;  # Client SMB
 ```bash
 mkdir /etc/credentials;
 
-echo "username=
-password=
+echo "username=marc
+password=admin
 vers=3.0
 file_mode=0777
 dir_mode=0777
