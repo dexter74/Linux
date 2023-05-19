@@ -108,7 +108,7 @@ guest ok       = no
 
 [Video]
 comment        = Dossier Proxmox
-path           = "/mnt/sda"
+path           = "/mnt/sda/MyArchive"
 browseable     = yes
 writable       = yes
 read only      = no
