@@ -16,6 +16,7 @@ Démarrer la machine et taper les commandes suivantes pour permettre l'accès ss
 
 #### Langue FR + Mot de pass + Récupérer IP poste
 ```bash
+clear;
 loadkeys fr;
 passwd;
 ip add | grep 192.168;
@@ -180,17 +181,18 @@ pacstrap /mnt usbutils             1>/dev/null;
 pacstrap /mnt wget                 1>/dev/null;
 pacstrap /mnt zip                  1>/dev/null;
 
-
 pacstrap /mnt qemu-guest-agent     1>/dev/null;
 ```
 
 #### Générer le FSTAB
 ```bash
+clear;
 genfstab -U /mnt > /mnt/etc/fstab;
 ```
 
 #### Passage en Chroot
 ```bash
+clear;
 arch-chroot /mnt;
 ```
 
