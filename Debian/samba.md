@@ -155,6 +155,6 @@ directory mask = 0700
 #/!\ HOMES DEJA CREE MAIS MAL CONFIG /!\
 #
 # homes 	=> Référence au dossier utilisateur
-#	=> browseable = no (Evite un doublon du dossier Home et USER)
+#	      => browseable = no (Evite un doublon du dossier Home et USER)
 # net use * /delete /y
 ```
