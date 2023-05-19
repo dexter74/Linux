@@ -1,4 +1,13 @@
-##### Création du Partage
+##### FSTAB
+```
+# Film (EXT4)
+/dev/sda1                    /mnt/sda        ext4     defaults,nofail  0       2
+
+# MyArchive (NTFS)
+UUID=94001B57001B4022       /mnt/sdb        ntfs-3g   defaults,nofail      0       2
+```
+
+##### Créations des Partages
 ```bash
 #======================= Global Settings =======================
 [global]
