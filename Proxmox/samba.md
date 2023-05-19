@@ -1,5 +1,5 @@
 ##### Création du Partage
-```
+```bash
 #======================= Global Settings =======================
 [global]
    workgroup = WORKGROUP
