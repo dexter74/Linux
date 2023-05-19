@@ -373,6 +373,16 @@ dmesg --level 4;
 dmesg --level 3;
 ```
 
+#### Interface
+```
+pacman -Sy --noconfirm xfce4;
+pacman -Sy --noconfirm gdm;
+pacman -Sy --noconfirm avahi;
+
+systemctl enable avahi-daemon.service;
+systemctl enable gdm.service;
+```
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### VI.Installation de l'environnement Graphique
