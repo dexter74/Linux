@@ -41,8 +41,6 @@ find /sys/kernel/iommu_groups/ -type l | grep "25\|26";
 /usr/lib/modules/6.2.9-1-pve/kernel/drivers/vfio/pci/vfio-pci.ko
 /usr/lib/modules/6.2.9-1-pve/kernel/drivers/vfio/pci/vfio-pci-core.ko
 /usr/lib/modules/6.2.9-1-pve/kernel/drivers/vfio/vfio.ko
-
-Le module vfio_virqfd est absent du kernel 6.2.9-1 .
 ```
 
 
@@ -56,6 +54,7 @@ nano /etc/default/grub;
 
 
 ### Activer Modules
+Le module `vfio_virqfd` est absent du `kernel 6.2.9-1`. (Voir plus haut)
 ```bash
 echo "vfio
 vfio_iommu_type1
