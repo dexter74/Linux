@@ -1,18 +1,17 @@
 ----------------------------------------------------------------------------------------------------------------------------------
 ### Paquets Nécessaire
 ```
-# Serveur:
-sudo apt install -y samba samba-common;
-
-# Client:
-sudo apt install -y cifs-utils; # Prise en charger de CIFS
-sudo apt install -y smbclient;  # Client SMB
+clear;
+sudo apt install -y samba samba-common 1>/dev/null;
+sudo apt install -y cifs-utils 1>/dev/null;
+sudo apt install -y smbclient 1>/dev/null;
 ```
 
 ----------------------------------------------------------------------------------------------------------------------------------
 ### Partage
 
 ```bash
+clear;
 mkdir /etc/credentials 2>/dev/null;
 echo "username=marc
 password=admin" > /etc/credentials/.smbpassword; chmod 600 /etc/credentials/.smbpassword;
