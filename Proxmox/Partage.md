@@ -14,17 +14,15 @@ sudo apt install -y smbclient;  # Client SMB
 
 ```bash
 mkdir /etc/credentials;
-
 echo "username=marc
 password=admin
 vers=3.0
 file_mode=0777
 dir_mode=0777
 workgroup=WORKGROUP
-_netdev" > /etc/credentials/.smbpassword;
+_netdev" > /etc/credentials/.smbpassword; chmod 600 /etc/credentials/.smbpassword;
 
-chmod 600 /etc/credentials/.smbpassword;
-nano /etc/credentials/.smbpassword;
+#nano /etc/credentials/.smbpassword;
 ```
 
 **CIFS** (Windows)
