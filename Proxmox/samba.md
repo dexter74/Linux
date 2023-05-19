@@ -16,8 +16,7 @@ sudo mkdir /mnt/sd{a,b,c,d} 2>/dev/null;
 ##### FSTAB
 ```
 clear;
-echo '
-# LABEL="Film"
+echo '# LABEL="Film"
 UUID="127ccc45-40c9-4513-8f3c-382323b590b3"  /mnt/sda        ext4      defaults,nofail  0  2
 
 # LABEL="MyArchives"
@@ -130,7 +129,4 @@ directory mask = 0700
 guest ok       = no
 
 ;   write list = root, @lpadmin ' >  /etc/samba/smb.conf; systemctl restart smbd;
-
-
-
 ```
