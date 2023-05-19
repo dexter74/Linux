@@ -252,31 +252,32 @@ no_anon_password=NO
 
 ---------------------------------------------------------------------------------------------------------------------
 
+##### Suppression du compte et du groupe
+```
+sudo userdel test;
+sudo groupdel myftp;
+```
+
 ##### Création du Groupe FTP (Section en COURS)
 ```
-sudo groupadd sftp_users
+sudo groupadd myftp;
 ```
 
 ##### Création d'un utilisateur
 ```
-sudo useradd --no-create-home FTP_USER;
+sudo useradd --no-create-home test -G myftp --shell /usr/bin/bash;
 ```
 ##### Définir le mot de passe
 ```
- (echo "admin"; echo "admin") | sudo passwd FTP_USER;
+ (echo "admin"; echo "admin") | sudo passwd test;
 ```
 
 ##### Définir le groupe principale de l'utilisateur
 ```
-sudo usermod -g sftp_users FTP_USER;
-```
-
-##### Ajouter L'utilisateur marc au Groupe sftp_users
-```
-sudo usermod -a -G sftp_users marc;
+sudo usermod -g myftp test;
 ```
 
 ##### Changer le dossier de l'utilisateur
 ```
-sudo usermod -d /mnt/Download/ FTP_USER;
+sudo usermod -d /mnt/Download/ test;
 ```
