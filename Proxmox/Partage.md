@@ -48,7 +48,7 @@ echo "[Unit]
   Where=/mnt/Download
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,acl
+  Options=credentials=/etc/credentials/.smbpassword,cifsacl
 
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Download.mount;
@@ -64,7 +64,7 @@ echo "[Unit]
   Where=/mnt/Home
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,acl
+  Options=credentials=/etc/credentials/.smbpassword,cifsacl
 
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Home.mount;
@@ -80,7 +80,7 @@ echo "[Unit]
   Where=/mnt/Music
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,acl
+  Options=credentials=/etc/credentials/.smbpassword,cifsacl
 
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Music.mount;
@@ -96,7 +96,7 @@ echo "[Unit]
   Where=/mnt/Video
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,acl
+  Options=credentials=/etc/credentials/.smbpassword,cifsacl
 
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Video.mount;
@@ -112,7 +112,7 @@ echo "[Unit]
   Where=/mnt/Windows
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,acl
+  Options=credentials=/etc/credentials/.smbpassword,cifsacl
 
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Windows.mount;
