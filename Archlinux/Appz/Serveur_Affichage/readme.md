@@ -1,3 +1,8 @@
+#### Problème Boot
+```
+pacman -R xf86-video-fbdev
+```
+
 ##### Serveur d'affichage
 ```bash
 clear;
