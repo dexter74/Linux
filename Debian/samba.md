@@ -45,7 +45,7 @@ smbpasswd -x <delete user>;
 net use * /delete /y
 ```
 
-#### Partage
+#### Partage ([Bug](https://ubuntuforums.org/showthread.php?t=2384959))
 ```bash
 ; Decouverte Réseau (A voir)
 ; client max protocol = SMB3
