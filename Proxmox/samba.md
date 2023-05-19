@@ -1,10 +1,15 @@
+##### Paquets
+```
+apt-get purge -y samba samba-common;
+sudo apt install -y cifs-utils;
+sudo apt install -y smbclient;
+```
+
+
 ##### FSTAB
 ```
-# Film (EXT4)
-/dev/sda1                    /mnt/sda        ext4     defaults,nofail  0       2
-
-# MyArchive (NTFS)
-UUID=94001B57001B4022       /mnt/sdb        ntfs-3g   defaults,nofail      0       2
+UUID="127ccc45-40c9-4513-8f3c-382323b590b3"  /mnt/sda        ext4      defaults,nofail  0  2
+UUID=94001B57001B4022                        /mnt/sdb        ntfs-3g   defaults,nofail  0  2
 ```
 
 ##### Créations des Partages
