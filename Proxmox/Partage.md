@@ -135,4 +135,5 @@ systemctl enable --now mnt-{Download,Home,Music,Video,Windows}.mount 2>/dev/null
 ```bash
 clear;
 df -h /mnt/Home /mnt/Download /mnt/Video /mnt/Music /mnt/Windows;
+ls -la /mnt;
 ```
