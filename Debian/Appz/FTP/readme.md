@@ -251,33 +251,45 @@ no_anon_password=NO
 
 
 ---------------------------------------------------------------------------------------------------------------------
+#### Création des utilisateurs FTP
+```
+clear;
+###########################################################################
+# Déclarer mes Variables #
+##########################
+COMPTE1=test
+GROUPE1=monftp
+CHEMIN1=/mnt/Download/
+COMPTE2=Drthrax74
+GROUPE2=root
+CHEMIN2=/
+PASSWORD=admin
+shell=/usr/bin/bash
 
-##### Suppression du compte et du groupe
-```
-sudo userdel test;
-sudo groupdel myftp;
-```
+####################################
+# Purge des Users
+sudo userdel $COMPTE1 2>/dev/null;
+sudo userdel $COMPTE2 2>/dev/null;
 
-##### Création du Groupe FTP (Section en COURS)
-```
-sudo groupadd myftp;
-```
+# Purge du Groupe 1
+sudo groupdel $GROUPE1 2>/dev/null;
 
-##### Création d'un utilisateur
-```
-sudo useradd --no-create-home test -G myftp --shell /usr/bin/bash;
-```
-##### Définir le mot de passe
-```
- (echo "admin"; echo "admin") | sudo passwd test;
-```
+# Création du Groupe 1
+sudo groupadd $GROUPE1 2>/dev/null;
 
-##### Définir le groupe principale de l'utilisateur
-```
-sudo usermod -g myftp test;
-```
+sudo useradd --no-create-home $COMPTE1 -G $GROUPE1 --shell $shell;
+sudo useradd --no-create-home $COMPTE2 -G $GROUPE2,sudo --no-user-group --system --shell $shell;
 
-##### Changer le dossier de l'utilisateur
-```
-sudo usermod -d /mnt/Download/ test;
+id $COMPTE2;
+
+# Mot de passe
+(echo "$PASSWORD"; echo "$PASSWORD") | sudo passwd $COMPTE1;
+(echo "$PASSWORD"; echo "$PASSWORD") | sudo passwd $COMPTE2;
+
+# Changer le dossier de l'utilisateur
+sudo usermod -d $CHEMIN1 $COMPTE1;
+sudo usermod -d $CHEMIN2 $COMPTE2;
+
+# Définir le groupe principale de l'utilisateur
+# sudo usermod -g myftp test;
 ```
