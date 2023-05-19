@@ -54,10 +54,9 @@ net use * /delete /y
 
 #### Partage ([Bug](https://ubuntuforums.org/showthread.php?t=2384959))
 ```bash
-; Decouverte Réseau (A voir)
-; client min protocol = NT1
-; client max protocol = SMB3
 
+client min protocol = NT1
+client max protocol = SMB3
 
 ###################################
 #        NE PAS SUPPRIMER         #
