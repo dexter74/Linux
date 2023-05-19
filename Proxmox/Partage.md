@@ -40,41 +40,12 @@ echo "[Unit]
   Where=/mnt/Download
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=0,gid=0
+  Options=credentials=/etc/credentials/.smbpassword
+  # ,x-gvfs-show,uid=0,gid=0
 
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Download.mount;
-####################################################################################################################################
-echo "[Unit]
-  Description=Montage du partage Music
-  Requires=
-  
-  After=network-online.service
 
-[Mount]
-  What=//192.168.0.3/Music
-  Where=/mnt/Music
-  Type=cifs
-  TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=0,gid=0
-
-[Install]
-  WantedBy=multi-user.target" > /etc/systemd/system/mnt-Music.mount;
-####################################################################################################################################
-echo "[Unit]
-  Description=Montage du partage Video
-  Requires=remote-fs-pre.target
-  After=network-online.service
-
-[Mount]
-  What=//192.168.0.3/Video
-  Where=/mnt/Video
-  Type=cifs
-  TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=0,gid=0
-
-[Install]
-  WantedBy=multi-user.target" > /etc/systemd/system/mnt-Video.mount;
 ####################################################################################################################################
 echo "[Unit]
   Description=Montage du partage Home
@@ -86,11 +57,62 @@ echo "[Unit]
   Where=/mnt/Home
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=0,gid=0
+  Options=credentials=/etc/credentials/.smbpassword
+  # ,x-gvfs-show,uid=0,gid=0
 
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Home.mount;
+
 ####################################################################################################################################
+echo "[Unit]
+  Description=Montage du partage Music
+  Requires=remote-fs-pre.target
+  After=network-online.service
+
+[Mount]
+  What=//192.168.0.3/Music
+  Where=/mnt/Music
+  Type=cifs
+  TimeoutSec=5s
+  Options=credentials=/etc/credentials/.smbpassword
+  # ,x-gvfs-show,uid=0,gid=0
+
+[Install]
+  WantedBy=multi-user.target" > /etc/systemd/system/mnt-Music.mount;
+
+####################################################################################################################################
+echo "[Unit]
+  Description=Montage du partage Video
+  Requires=remote-fs-pre.target
+  After=network-online.service
+
+[Mount]
+  What=//192.168.0.3/Video
+  Where=/mnt/Video
+  Type=cifs
+  TimeoutSec=5s
+  Options=credentials=/etc/credentials/.smbpassword
+  # ,x-gvfs-show,uid=0,gid=0
+
+[Install]
+  WantedBy=multi-user.target" > /etc/systemd/system/mnt-Video.mount;
+
+####################################################################################################################################
+echo "[Unit]
+  Description=Montage du partage Windows
+  Requires=remote-fs-pre.target
+  After=network-online.service
+
+[Mount]
+  What=//192.168.0.3/Windows
+  Where=/mnt/Windows
+  Type=cifs
+  TimeoutSec=5s
+  Options=credentials=/etc/credentials/.smbpassword
+  # ,x-gvfs-show,uid=0,gid=0
+
+[Install]
+  WantedBy=multi-user.target" > /etc/systemd/system/mnt-Windows.mount;
 ```
 
 #### Dossier, Permission et services
@@ -98,16 +120,17 @@ echo "[Unit]
 clear;
 USERNAME=$(id 1000 | cut -d  ")" -f 1 | cut -d "(" -f 2)
 mkdir -p /mnt/{Download,Home,Music,Video};
-chown -R $USERNAME:users /mnt/{Download,Home,Music,Video};
+chown -R $USERNAME:users /mnt/{Download,Home,Music,Video,Windows};
 
 # Pre-requis:
 systemctl enable systemd-networkd-wait-online.service;
-
 systemctl daemon-reload;
+
 systemctl stop  mnt-{Download,Home,Music,Video}.mount;
-systemctl disable --now mnt-{Download,Home,Music,Video}.mount;
+systemctl disable --now mnt-{Download,Home,Music,Video,Windows}.mount;
 
 systemctl start mnt-{Download,Home,Music,Video}.mount;
-systemctl enable --now mnt-{Download,Home,Music,Video}.mount;
-systemctl status       mnt-{Download,Home,Music,Video}.mount | grep "mount\|Active:";
+systemctl enable --now mnt-{Download,Home,Music,Video,Windows}.mount;
+
+systemctl status       mnt-{Download,Home,Music,Video,Windows}.mount | grep "mount\|Active:";
 ```
