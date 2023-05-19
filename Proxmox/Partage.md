@@ -40,7 +40,7 @@ echo "[Unit]
   Where=/mnt/Download
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,file_mode=0775,dir_mode=0775,_netdev
+  Options=credentials=/etc/credentials/.smbpassword,file_mode=0775,dir_mode=0775,_netdev,cifsacl
   # ,x-gvfs-show,uid=0,gid=0
 
 [Install]
@@ -57,7 +57,7 @@ echo "[Unit]
   Where=/mnt/Home
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,file_mode=0775,dir_mode=0775,_netdev
+  Options=credentials=/etc/credentials/.smbpassword,file_mode=0775,dir_mode=0775,_netdev,cifsacl
   # ,x-gvfs-show,uid=0,gid=0
 
 [Install]
@@ -74,7 +74,7 @@ echo "[Unit]
   Where=/mnt/Music
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,file_mode=0775,dir_mode=0775,_netdev
+  Options=credentials=/etc/credentials/.smbpassword,file_mode=0775,dir_mode=0775,_netdev,cifsacl
   # ,x-gvfs-show,uid=0,gid=0
 
 [Install]
@@ -91,7 +91,7 @@ echo "[Unit]
   Where=/mnt/Video
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,file_mode=0775,dir_mode=0775,_netdev
+  Options=credentials=/etc/credentials/.smbpassword,file_mode=0775,dir_mode=0775,_netdev,cifsacl
   # ,x-gvfs-show,uid=0,gid=0
 
 [Install]
@@ -108,7 +108,7 @@ echo "[Unit]
   Where=/mnt/Windows
   Type=cifs
   TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,file_mode=0775,dir_mode=0775,_netdev
+  Options=credentials=/etc/credentials/.smbpassword,file_mode=0775,dir_mode=0775,_netdev,cifsacl
   # ,x-gvfs-show,uid=0,gid=0
 
 [Install]
