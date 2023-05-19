@@ -13,7 +13,7 @@ sudo apt install -y smbclient;  # Client SMB
 ### Partage
 
 ```bash
-mkdir /etc/credentials;
+mkdir /etc/credentials 2>/dev/null;
 echo "username=marc
 password=admin" > /etc/credentials/.smbpassword; chmod 600 /etc/credentials/.smbpassword;
 
