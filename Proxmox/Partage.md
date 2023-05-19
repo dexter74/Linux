@@ -116,20 +116,23 @@ systemctl daemon-reload;
 
 # Dossier
 USERNAME=$(id 1000 | cut -d  ")" -f 1 | cut -d "(" -f 2)
-mkdir -p /mnt/{Download,Home,Music,Video,Windows};
+mkdir -p /mnt/{Download,Home,Music,Video,Windows} 2>/dev/nulll;
 
 # Arrêter Service
-systemctl stop  mnt-{Download,Home,Music,Video}.mount;
-systemctl disable --now mnt-{Download,Home,Music,Video,Windows}.mount;
+systemctl stop  mnt-{Download,Home,Music,Video}.mount 2>/dev/null;
+systemctl disable --now mnt-{Download,Home,Music,Video,Windows}.mount 2>/dev/null;
 
 # Editer Permission
 chown -R $USERNAME:users /mnt/{Download,Home,Music,Video,Windows};
 
 # Lancer le Service
 systemctl start mnt-{Download,Home,Music,Video}.mount;
-systemctl enable --now mnt-{Download,Home,Music,Video,Windows}.mount;
+systemctl enable --now mnt-{Download,Home,Music,Video,Windows}.mount 2>/dev/null;
+```
 
-systemctl status mnt-{Download,Home,Music,Video,Windows}.mount | grep "mount\|Active:";
 
-ls -la /mnt
+#### Vérification
+```bash
+clear;
+df -h /mnt/Home /mnt/Download /mnt/Video /mnt/Music /mnt/Windows;
 ```
