@@ -356,6 +356,7 @@ sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ss
 #### Services
 ```bash
 clear;
+systemctl enable qemu-guest-agent           2>/dev/null;
 systemctl enable NetworkManager             2>/dev/null;
 systemctl enable sshd                       2>/dev/null;
 #systemctl enable avahi-daemon.service      2>/dev/null;
