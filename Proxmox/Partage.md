@@ -110,17 +110,22 @@ echo "[Unit]
 #### Dossier, Permission et services
 ```bash
 clear;
-USERNAME=$(id 1000 | cut -d  ")" -f 1 | cut -d "(" -f 2)
-mkdir -p /mnt/{Download,Home,Music,Video,Windows};
-chown -R $USERNAME:users /mnt/{Download,Home,Music,Video,Windows};
-
-# Pre-requis:
+# Pre-requis
 systemctl enable systemd-networkd-wait-online.service;
 systemctl daemon-reload;
 
+# Dossier
+USERNAME=$(id 1000 | cut -d  ")" -f 1 | cut -d "(" -f 2)
+mkdir -p /mnt/{Download,Home,Music,Video,Windows};
+
+# Arrêter Service
 systemctl stop  mnt-{Download,Home,Music,Video}.mount;
 systemctl disable --now mnt-{Download,Home,Music,Video,Windows}.mount;
 
+# Editer Permission
+chown -R $USERNAME:users /mnt/{Download,Home,Music,Video,Windows};
+
+# Lancer le Service
 systemctl start mnt-{Download,Home,Music,Video}.mount;
 systemctl enable --now mnt-{Download,Home,Music,Video,Windows}.mount;
 
