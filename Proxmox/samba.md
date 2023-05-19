@@ -5,6 +5,12 @@ sudo apt install -y ntfs-3g;
 sudo apt install -y samba;
 sudo apt install -y samba-common;
 sudo apt install -y smbclient;
+sudo apt install -y sudo;
+```
+
+##### Création des Points de montage
+```bash
+sudo mkdir /mnt/sd{a,b,c,d} 2>/dev/null;
 ```
 
 ##### FSTAB
@@ -15,14 +21,18 @@ UUID="127ccc45-40c9-4513-8f3c-382323b590b3"  /mnt/sda        ext4      defaults,
 # LABEL="MyArchives"
 UUID=94001B57001B4022                        /mnt/sdb        ntfs-3g   defaults,nofail  0  2
 ```
-##### Point de montage
-```bash
-mkdir /mnt/sd{a,b,c,d}
+
+##### Création du compte utilisateur Samba
+```
+clear;
+smbpasswd -a marc;
+smbpasswd -e marc;
+systemctl restart smbd;
 ```
 
-##### Créations des Partages
+##### Configuration de Samba
 ```bash
-#======================= Global Settings =======================
+echo '#======================= Global Settings =======================
 [global]
    workgroup = WORKGROUP
 #### Networking ####
@@ -119,7 +129,7 @@ create mask    = 0700
 directory mask = 0700
 guest ok       = no
 
-;   write list = root, @lpadmin
+;   write list = root, @lpadmin ' >  /etc/samba/smb.conf; systemctl restart smbd;
 
 
 ```
