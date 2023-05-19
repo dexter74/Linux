@@ -119,7 +119,7 @@ echo "[Unit]
 ```bash
 clear;
 USERNAME=$(id 1000 | cut -d  ")" -f 1 | cut -d "(" -f 2)
-mkdir -p /mnt/{Download,Home,Music,Video};
+mkdir -p /mnt/{Download,Home,Music,Video,Windows};
 chown -R $USERNAME:users /mnt/{Download,Home,Music,Video,Windows};
 
 # Pre-requis:
@@ -132,5 +132,5 @@ systemctl disable --now mnt-{Download,Home,Music,Video,Windows}.mount;
 systemctl start mnt-{Download,Home,Music,Video}.mount;
 systemctl enable --now mnt-{Download,Home,Music,Video,Windows}.mount;
 
-systemctl status       mnt-{Download,Home,Music,Video,Windows}.mount | grep "mount\|Active:";
+systemctl status mnt-{Download,Home,Music,Video,Windows}.mount | grep "mount\|Active:";
 ```
