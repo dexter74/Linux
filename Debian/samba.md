@@ -157,5 +157,7 @@ directory mask = 0700
 # homes 
 # => Référence au dossier utilisateur
 # => browseable = no (Evite un doublon du dossier Home et USER)
+#
+#
 # net use * /delete /y
 ```
