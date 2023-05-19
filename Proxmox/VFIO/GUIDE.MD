@@ -16,8 +16,26 @@ nano /etc/modprobe.d/blacklist.conf;
 Dongle HDMI sur la sortie Vidéo du GPU.
 ```
 
+### Relever les informations
+```
+lspci -nn -k | grep VGA -A3 | grep "VGA\|driver"
+# 0b:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Navi 22 [1002:73df] (rev c1)
+# Kernel driver in use: vfio-pci
 
+lspci -s 0b: -k -nn | grep -i "audio\|vga" -A2 | grep -iv "sub\|--"
+# 0b:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Navi 22 [1002:73df] (rev c1)
+# Kernel driver in use: amdgpu
+# 0b:00.1 Audio device [0403]: Advanced Micro Devices, Inc. [AMD/ATI] Device [1002:ab28]
+# Kernel driver in use: amdgpu
 
+find /sys/kernel/iommu_groups/ -type l;
+# /sys/kernel/iommu_groups/25/devices/0000:0b:00.0
+# /sys/kernel/iommu_groups/26/devices/0000:0b:00.1
+
+find /sys/kernel/iommu_groups/ -type l | grep "25\|26";
+# /sys/kernel/iommu_groups/25/devices/0000:0b:00.0
+# /sys/kernel/iommu_groups/26/devices/0000:0b:00.1
+```
 
 #### Activer IOMMU:
 ```bash
@@ -69,7 +87,6 @@ echo "blacklist bcma"          >> /etc/modprobe.d/pve-blacklist.conf;
 echo "blacklist ccp"           >> /etc/modprobe.d/pve-blacklist.conf;
 echo "blacklist xhci_hcd"      >> /etc/modprobe.d/pve-blacklist.conf;
 ```
-
 
 ### Attacher GPU au module VFIO
 ```bash
