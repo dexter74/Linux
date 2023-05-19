@@ -64,6 +64,7 @@ create mask    = 0700
 directory mask = 0700
 guest ok       = no
 
+
 [SYSTEM]
 comment        = Acces au dossier root
 path           = /
@@ -73,7 +74,19 @@ read only      = no
 valid users    = marc
 force user     = root
 guest ok       = no
+
+
+
+#[homes]
+#   comment = Home Directories
+#   browseable = no
+#   read only = yes
+#   create mask = 0700
+#   directory mask = 0700
+#   valid users = %S
 ```
+
+
 
 #### Active Directory
 ```bash
