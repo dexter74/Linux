@@ -1,15 +1,23 @@
-##### Paquets
+##### Paquets requis
 ```
-apt-get purge -y samba samba-common;
 sudo apt install -y cifs-utils;
+sudo apt install -y ntfs-3g;
+sudo apt install -y samba;
+sudo apt install -y samba-common;
 sudo apt install -y smbclient;
 ```
 
-
 ##### FSTAB
 ```
+# LABEL="Film"
 UUID="127ccc45-40c9-4513-8f3c-382323b590b3"  /mnt/sda        ext4      defaults,nofail  0  2
+
+# LABEL="MyArchives"
 UUID=94001B57001B4022                        /mnt/sdb        ntfs-3g   defaults,nofail  0  2
+```
+##### Point de montage
+```bash
+mkdir /mnt/sd{a,b,c,d}
 ```
 
 ##### Créations des Partages
