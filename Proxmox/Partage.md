@@ -2,7 +2,7 @@
 ### Paquets Nécessaire
 ```
 # Serveur:
-sudo apt install -y samba;
+sudo apt install -y samba samba-common;
 
 # Client:
 sudo apt install -y cifs-utils; # Prise en charger de CIFS
