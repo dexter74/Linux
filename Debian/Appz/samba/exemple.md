@@ -4,6 +4,7 @@ rm -rf /etc/samba/ /etc/default/samba;
 apt purge   -y samba samba-common;
 apt install -y samba samba-common;
 apt install -y smbclient;
+apt install -y avahi;
 ```
 
 #### Trouver les serveurs de partage
