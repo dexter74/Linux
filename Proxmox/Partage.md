@@ -1,4 +1,12 @@
 ----------------------------------------------------------------------------------------------------------------------------------
+### Présentation
+```
+Les partages sont montés en Root.
+L'utilisateur et Groupe Root ont toutes les permissions
+Les autres utilisateurs ne peuvent que Lire.
+```
+
+----------------------------------------------------------------------------------------------------------------------------------
 ### Paquets Nécessaire
 ```
 clear;
