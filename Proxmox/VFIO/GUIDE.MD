@@ -43,31 +43,31 @@ echo "options kvm ignore_msrs=1" > /etc/modprobe.d/kvm.conf;
 
 ### Blacklist
 ```bash
-echo "# GPU AMD"               >  /etc/modprobe.d/blacklist.conf;
-echo "blacklist ati"           >> /etc/modprobe.d/blacklist.conf;
-echo "blacklist amdgpu"        >> /etc/modprobe.d/blacklist.conf;
-echo "blacklist radeon"        >> /etc/modprobe.d/blacklist.conf;
-echo ""                        >> /etc/modprobe.d/blacklist.conf;
-echo "# GPU Nvidia"            >> /etc/modprobe.d/blacklist.conf;
-echo "blacklist nouveau"       >> /etc/modprobe.d/blacklist.conf;
-echo "blacklist nvidia"        >> /etc/modprobe.d/blacklist.conf;
-echo "blacklist nvidiafb"      >> /etc/modprobe.d/blacklist.conf;
-echo "blacklist snd_hda_intel" >> /etc/modprobe.d/blacklist.conf;
-echo ""                        >> /etc/modprobe.d/blacklist.conf;
-echo "# Manette Xbox"          >> /etc/modprobe.d/blacklist.conf;
-echo "blacklist xpad"          >> /etc/modprobe.d/blacklist.conf;
+echo "# GPU AMD"               >  /etc/modprobe.d/pve-blacklist.conf;
+echo "blacklist ati"           >> /etc/modprobe.d/pve-blacklist.conf;
+echo "blacklist amdgpu"        >> /etc/modprobe.d/pve-blacklist.conf;
+echo "blacklist radeon"        >> /etc/modprobe.d/pve-blacklist.conf;
+echo ""                        >> /etc/modprobe.d/pve-blacklist.conf;
+echo "# GPU Nvidia"            >> /etc/modprobe.d/pve-blacklist.conf;
+echo "blacklist nouveau"       >> /etc/modprobe.d/pve-blacklist.conf;
+echo "blacklist nvidia"        >> /etc/modprobe.d/pve-blacklist.conf;
+echo "blacklist nvidiafb"      >> /etc/modprobe.d/pve-blacklist.conf;
+echo "blacklist snd_hda_intel" >> /etc/modprobe.d/pve-blacklist.conf;
+echo ""                        >> /etc/modprobe.d/pve-blacklist.conf;
+echo "# Manette Xbox"          >> /etc/modprobe.d/pve-blacklist.conf;
+echo "blacklist xpad"          >> /etc/modprobe.d/pve-blacklist.conf;
 ```
 
 ##### BCM4352 802.11ac Wireless Network Adapter
 ```bash
-echo "blacklist wl"            >> /etc/modprobe.d/blacklist.conf;
-echo "blacklist bcma"          >> /etc/modprobe.d/blacklist.conf;
+echo "blacklist wl"            >> /etc/modprobe.d/pve-blacklist.conf;
+echo "blacklist bcma"          >> /etc/modprobe.d/pve-blacklist.conf;
 ```
 
 ##### Ryzen 5700G:
 ```bash
-echo "blacklist ccp"           >> /etc/modprobe.d/blacklist.conf;
-echo "blacklist xhci_hcd"      >> /etc/modprobe.d/blacklist.conf;
+echo "blacklist ccp"           >> /etc/modprobe.d/pve-blacklist.conf;
+echo "blacklist xhci_hcd"      >> /etc/modprobe.d/pve-blacklist.conf;
 ```
 
 
