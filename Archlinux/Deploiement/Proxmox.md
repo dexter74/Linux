@@ -356,6 +356,11 @@ runuser -l $USERNAME -c 'yay -Sy --noconfirm adduser'               1>/dev/null 
 sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ssh/sshd_config;
 ```
 
+#### Samba (Découverte réseau)
+```
+echo "client min protocol = NT1
+client max protocol = SMB3" > /etc/samba/smb.conf;
+
 #### Services
 ```bash
 clear;
@@ -368,6 +373,15 @@ systemctl enable sshd                       2>/dev/null;
 #systemctl enable systemd-homed             2>/dev/null;
 #systemctl enable systemd-timesyncd.service 2>/dev/null;
 ```
+
+
+
+
+
+
+
+
+
 
 #### Vérifier log
 ```bash
