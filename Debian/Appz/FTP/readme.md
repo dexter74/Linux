@@ -258,10 +258,10 @@ clear;
 ##########################
 COMPTE1=test
 GROUPE1=monftp
-CHEMIN1=/mnt/Download/
+CHEMIN1=/mnt/Download/Torrent
 COMPTE2=Drthrax74
 GROUPE2=root
-CHEMIN2=/
+CHEMIN2=/mnt/
 PASSWORD=admin
 shell=/usr/bin/bash
 
@@ -291,6 +291,7 @@ sudo usermod -d $CHEMIN2 $COMPTE2;
 
 # Définir le groupe principale de l'utilisateur
 # sudo usermod -g myftp test;
+
 ```
 
 ###### Relance du service FTP
