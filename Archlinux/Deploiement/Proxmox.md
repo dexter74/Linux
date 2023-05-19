@@ -276,15 +276,15 @@ console-mode max
 editor no" > /boot/loader/loader.conf;
 # ---------------------------------------------------------------------------------------------
 echo "title Arch Linux (Normal)
-linux   /vmlinuz-linux
-initrd  /initramfs-linux.img
-initrd  /amd-ucode.img
+linux   vmlinuz-linux
+initrd  initramfs-linux.img
+initrd  amd-ucode.img
 options root=UUID=$UUID_SYSTEM rw loglevel=3" > /boot/loader/entries/arch01.conf;
 # ---------------------------------------------------------------------------------------------
 echo "title Arch Linux (Recovery)
-linux   /vmlinuz-linux
-initrd  /initramfs-linux-fallback.img
-initrd  /amd-ucode.img
+linux   vmlinuz-linux
+initrd  initramfs-linux-fallback.img
+initrd  amd-ucode.img
 options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch02.conf;
 # ---------------------------------------------------------------------------------------------
 bootctl update;
