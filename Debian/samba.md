@@ -47,6 +47,10 @@ net use * /delete /y
 
 #### Partage
 ```bash
+; Decouverte Réseau (A voir)
+; client max protocol = SMB3
+
+
 ###################################
 #        NE PAS SUPPRIMER         #
 ;   write list = root, @lpadmin	
