@@ -140,6 +140,7 @@ pacman -Sy --noconfirm archlinux-keyring 1>/dev/null;
 ```bash
 clear;
 pacstrap /mnt amd-ucode            1>/dev/null;
+pacstrap /mnt avahi                1>/dev/null;
 pacstrap /mnt base                 1>/dev/null;
 pacstrap /mnt base-devel           1>/dev/null;
 pacstrap /mnt bash-completion      1>/dev/null;
@@ -155,6 +156,8 @@ pacstrap /mnt gtk-engines          1>/dev/null;
 pacstrap /mnt git                  1>/dev/null;
 pacstrap /mnt go                   1>/dev/null;
 pacstrap /mnt gvfs                 1>/dev/null;
+pacstrap /mnt gvfs-nfs             1>/dev/null;
+pacstrap /mnt gvfs-smb             1>/dev/null;
 pacstrap /mnt linux                1>/dev/null;
 pacstrap /mnt linux-firmware       1>/dev/null;
 pacstrap /mnt linux-headers        1>/dev/null;
