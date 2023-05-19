@@ -4,7 +4,7 @@
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### I. Création de la VM
 ```
-Disque EFI : Décocher la CASE 
+Disque EFI : Décocher Clé de préinscription (Empêche le boot EFI)
 Contrôleur : VMware PVSCSI
 Disque-Dur : 32 Go
 ```
