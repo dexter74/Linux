@@ -35,7 +35,17 @@ find /sys/kernel/iommu_groups/ -type l;
 find /sys/kernel/iommu_groups/ -type l | grep "25\|26";
 # /sys/kernel/iommu_groups/25/devices/0000:0b:00.0
 # /sys/kernel/iommu_groups/26/devices/0000:0b:00.1
+
+# find /usr/lib/modules -type f -name "vfio*" -o -name "vfio_iommu_type1*" -o -name "vfio_pci*" -o -name "vfio_virqfd*" 2>/dev/null | grep $(uname -r)
+/usr/lib/modules/6.2.9-1-pve/kernel/drivers/vfio/vfio_iommu_type1.ko
+/usr/lib/modules/6.2.9-1-pve/kernel/drivers/vfio/pci/vfio-pci.ko
+/usr/lib/modules/6.2.9-1-pve/kernel/drivers/vfio/pci/vfio-pci-core.ko
+/usr/lib/modules/6.2.9-1-pve/kernel/drivers/vfio/vfio.ko
+
+Le module vfio_virqfd est absent du kernel 6.2.9-1 .
 ```
+
+
 
 #### Activer IOMMU:
 ```bash
@@ -44,13 +54,12 @@ sed -i -e 's/quiet/quiet amd_iommu=on initcall_blacklist=sysfb_init/g' /etc/defa
 nano /etc/default/grub;
 ```
 
+
 ### Activer Modules
 ```bash
 echo "vfio
 vfio_iommu_type1
 vfio_pci" > /etc/modules;
-
-# vfio_virqfd
 ```
 
 ### KVM
