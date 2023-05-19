@@ -107,7 +107,7 @@ directory mask = 0700
 guest ok       = no
 
 [Video]
-comment        = Dossier Proxmox
+comment        = Dossier Video
 path           = "/mnt/sda/MyArchive"
 browseable     = yes
 writable       = yes
