@@ -264,7 +264,7 @@ GROUPE2=root
 CHEMIN2=/
 PASSWORD=admin
 shell=/usr/bin/bash
-shell2=/bin/nologin
+shell2=/bin/false
 
 ####################################
 # Purge des Users
