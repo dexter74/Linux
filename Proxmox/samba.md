@@ -33,13 +33,6 @@ UUID="127ccc45-40c9-4513-8f3c-382323b590b3"  /mnt/sda        ext4      defaults,
 UUID=94001B57001B4022                        /mnt/sdb        ntfs-3g   defaults,nofail  0  2' >> /etc/fstab;
 ```
 
-##### Création du compte utilisateur Samba
-```bash
-clear;
-smbpasswd -a marc;
-smbpasswd -e marc;
-```
-
 ##### Configuration de Samba
 ```bash
 echo '#======================= Global Settings =======================
@@ -137,8 +130,19 @@ create mask    = 0700
 directory mask = 0700
 guest ok       = no
 
-;   write list = root, @lpadmin ' >  /etc/samba/smb.conf; systemctl restart smbd;
+;   write list = root, @lpadmin ' >  /etc/samba/smb.conf;
 ```
+
+##### Création du compte utilisateur Samba
+```bash
+clear;
+smbpasswd -a marc;
+smbpasswd -e marc;
+systemctl restart smbd;
+```
+
+
+
 
 #### Exemple
 ```
