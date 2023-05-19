@@ -1,3 +1,13 @@
+##### Présentation
+```
+Download : Dossier Download
+Home     : Dossier User Homes
+Music    : Dossier Musique
+Proxmox  : Partage à monter dans Proxmox (Data)
+Video    : Dossier Video
+Windows  : Dossier Windows pour les Serveurs
+```
+
 ##### Paquets requis
 ```
 sudo apt install -y cifs-utils;
