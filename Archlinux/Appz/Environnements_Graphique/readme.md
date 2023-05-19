@@ -13,8 +13,8 @@ sudo pacman -Sy --noconfirm xfce4 xfce4-dev-tools xfce4-goodies xfce4-datetime-p
 ```bash
 clear;
 sudo pacman -Sy --noconfirm libgsf libopenraw ffmpeg ffmpegthumbnailer libgepub poppler poppler-glib 1>/dev/null;
-yay -Sy --noconfirm xfce4-panel-profiles 1>/dev/null;
-yay -Sy --noconfirm dbus-x11 1>/dev/null;
+yay -Sy --noconfirm xfce4-panel-profiles 1>/dev/null 2>/dev/null;
+yay -Sy --noconfirm dbus-x11             1>/dev/null 2>/dev/null;
 ```
 
 #### Information
