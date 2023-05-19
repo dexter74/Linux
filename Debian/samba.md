@@ -1,9 +1,16 @@
 #### Installation
 ```bash
-apt-get purge -y samba samba-common;
 rm -rf /etc/samba/ /etc/default/samba;
-apt-get install -y samba;
+apt purge   -y samba samba-common;
+apt install -y samba samba-common;
+apt install -y smbclient;
 ```
+
+#### Trouver les serveurs de partage
+```
+findsmb
+```
+
 
 #### Configuration
 ```bash
