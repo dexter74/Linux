@@ -78,7 +78,7 @@ Préférences > Options
   > Performance:
    - Thread: 4
    - Décodage matériel: Auto
-   - Filtre Anti-bloc: Passer Toujours (CPU ne prend pas en chjarge H.264)
+   - Filtre Anti-bloc: Passer Toujours (CPU ne prend pas en charge H.264)
   > Interface
    - GUI   : Interface Mpc 
    - Icône : Papirus
