@@ -56,7 +56,6 @@ echo '#======================= Global Settings =======================
    usershare allow guests = yes
 
 #======================= Share Definitions =======================
-
 [Download]
 comment        = Dossier Download
 path           = /mnt/sdb/MyArchive/Download
@@ -129,4 +128,20 @@ directory mask = 0700
 guest ok       = no
 
 ;   write list = root, @lpadmin ' >  /etc/samba/smb.conf; systemctl restart smbd;
+```
+
+#### Exemple
+```
+#[NomdemonPartage]
+#comment 	    = Mon commentaire
+#path		       = /chemin
+#browseable 	 = yes | no (Partage Visible ou cacher)
+#writable 	    = yes | no 
+#write list     = # Si writable absent
+#read only 	    = yes | no
+#valid users 	 = USER1, USER2, @groupe12000 %S  (Utilisateurs, Groupe ou Services autorisés)
+#force user	    = utilisateur de substitution
+#create mask 	 = 0700 (Conseiller) | 0755 (déconseiller)
+#directory mask = 0700 (Conseiller) | 0755 (déconseiller)			
+#guest ok	    = no | yes (Permet aux clients de se connecter au répertoire partagé sans fournir de mot de passe.)
 ```
