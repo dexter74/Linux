@@ -379,6 +379,8 @@ pacman -Sy --noconfirm xfce4;
 pacman -Sy --noconfirm gdm;
 pacman -Sy --noconfirm avahi;
 pacman -Sy --noconfirm samba;
+pacman -Sy --noconfirm smbclient;
+
 echo "client min protocol = NT1
 client max protocol = SMB3" >  /etc/samba/smb.conf;
 
