@@ -10,8 +10,12 @@ Le serveur est en mode Passive pour éviter que le client doit ouvrir le port 20
 | FTP-Connect | 21      | 221          |
 | FTP-Listen  | 12500   | 12500-12550  |
 
-
-
+---------------------------------------------------------------------------------------------------------------------
+#### Utilisateur
+| Identifiant | Mot de passe | Permission |
+| ----------- | ------------ | ---------- |
+| monftp      | admin        |
+| Drthrax74   | admin        |
 
 ---------------------------------------------------------------------------------------------------------------------
 #### Purge de VSFTPD
@@ -260,6 +264,7 @@ GROUPE2=root
 CHEMIN2=/
 PASSWORD=admin
 shell=/usr/bin/bash
+shell2=/bin/nologin
 
 ####################################
 # Purge des Users
@@ -272,7 +277,7 @@ sudo groupdel $GROUPE1 2>/dev/null;
 # Création du Groupe 1
 sudo groupadd $GROUPE1 2>/dev/null;
 
-sudo useradd --no-create-home $COMPTE1 -G $GROUPE1 --shell $shell;
+sudo useradd --no-create-home $COMPTE1 -G $GROUPE1 --shell $shell2;
 sudo useradd --no-create-home $COMPTE2 -G $GROUPE2,sudo --no-user-group --system --shell $shell;
 
 id $COMPTE2;
