@@ -258,7 +258,7 @@ clear;
 ##########################
 COMPTE1=test
 GROUPE1=monftp
-CHEMIN1=/mnt/Download/Torrent
+CHEMIN1=/
 COMPTE2=Drthrax74
 GROUPE2=root
 CHEMIN2=/mnt/
