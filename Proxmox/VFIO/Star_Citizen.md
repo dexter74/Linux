@@ -1,3 +1,8 @@
+#### Second Disque
+```
+Ne pas cocher la case SSD, car baisse de performance
+```
+
 #### Easy Anti-Cheat
 Il faut éditer les caractéristiques du BIOS en indiquent un Fabricant (Manufacturer)
 ```
