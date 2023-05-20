@@ -154,8 +154,9 @@ Session: (Important)
 
 #### CPU
 ```
-args: -cpu host,-hypervisor,kvm=off
-args: -cpu host,host-cache-info=on,-hypervisor,kvm=off
+args: 
+ -cpu host,host-cache-info=on
+ -hypervisor,kvm=off
 ```
 
 #### Wifi
