@@ -59,6 +59,22 @@ echo '#======================= Global Settings =======================
    usershare allow guests = yes
 
 #======================= Share Definitions =======================
+
+
+#=== Proxmox ===============================
+[Qemu-server]
+comment        = Dossier Qemu
+path           = "/etc/pve/qemu-server"
+browseable     = yes
+writable       = yes
+read only      = no
+valid users    = marc
+force user     = root
+create mask    = 0700
+directory mask = 0700
+guest ok       = no
+
+#=== Data NAS ==============================
 [Download]
 comment        = Dossier Download
 path           = /mnt/sdb/MyArchive/Download
@@ -106,33 +122,22 @@ create mask    = 0700
 directory mask = 0700
 guest ok       = no
 
-[Qemu-server]
-comment        = Dossier Qemu
-path           = "/etc/pve/qemu-server"
-browseable     = yes
-writable       = yes
-read only      = no
-valid users    = marc
-force user     = root
-create mask    = 0700
-directory mask = 0700
-guest ok       = no
-
-[Video]
-comment        = Dossier Video
-path           = "/mnt/sda/MyArchive"
-browseable     = yes
-writable       = yes
-read only      = no
-valid users    = marc
-force user     = root
-create mask    = 0700
-directory mask = 0700
-guest ok       = no
-
 [Windows]
 comment        = Utilisateur
 path           = "/mnt/sdb/MyArchive/Windows"
+browseable     = yes
+writable       = yes
+read only      = no
+valid users    = marc
+force user     = root
+create mask    = 0700
+directory mask = 0700
+guest ok       = no
+
+#=== Video NAS =============================
+[Video]
+comment        = Dossier Video
+path           = "/mnt/sda/MyArchive"
 browseable     = yes
 writable       = yes
 read only      = no
