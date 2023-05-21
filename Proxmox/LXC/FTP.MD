@@ -20,7 +20,8 @@ ls -la /mnt;
 
 
 #### Bind dossier
-```
+```bash
+clear;
 # Création des dossiers Bind
 mkdir /mnt/Download/Torrent/Video;
 mkdir /mnt/Download/Torrent/Music;
