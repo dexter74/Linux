@@ -2,9 +2,9 @@
 
 ```yml
   volumes
-   - 'DOWNLOAD:/media/Download:ro'
+   - 'DOWNLOAD:/media/Download:rw'
    - 'MUSIC:/media/Music:ro'
-   - 'VIDEO:/media/Video:ro'
+   - 'VIDEO:/media/Video:rw'
    - 'MyPhoto:/media/MyPhoto:ro'
 ```
 
