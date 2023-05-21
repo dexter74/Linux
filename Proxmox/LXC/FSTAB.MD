@@ -1,7 +1,12 @@
-#### Monter les Partages
+#### Packages
 ```bash
 clear;
 sudo apt install -y cifs-utils smbclient 1>/dev/null;
+```
+
+#### FSTAB
+```bash
+clear;
 mkdir -p /mnt/{Download,Music,Video};
 echo "####################################################################################
 //192.168.0.3/Download /mnt/Download cifs uid=root,username=marc,password=admin 0 0
