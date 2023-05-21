@@ -289,8 +289,8 @@ id $COMPTE2;
 
 #######################################################################################################
 # Mot de passe
-(echo "$PASSWORD"; echo "$PASSWORD1") | sudo passwd $COMPTE1;
-(echo "$PASSWORD"; echo "$PASSWORD2") | sudo passwd $COMPTE2;
+(echo "$PASSWORD1"; echo "$PASSWORD1") | sudo passwd $COMPTE1;
+(echo "$PASSWORD2"; echo "$PASSWORD2") | sudo passwd $COMPTE2;
 
 # Changer le dossier de l'utilisateur
 sudo usermod -d $CHEMIN1 $COMPTE1;
