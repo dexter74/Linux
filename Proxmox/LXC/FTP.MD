@@ -23,19 +23,10 @@ echo "##########################################################################
 ########################################################
 # Permission 775 #
 ##################
-//192.168.0.3/Download          /mnt/Download                cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
-//192.168.0.3/Music             /mnt/Music                   cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
-//192.168.0.3/Video             /mnt/Video                   cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
-##################################################################################################################################################
-# Permission 777 #
-##################
-//192.168.0.3/Download/Torrent  /mnt/Upload/Download/Torrent cifs uid=root,gid=sudo,file_mode=0777,dir_mode=0777,username=marc,password=admin 0 0
-##################################################################################################################################################
-# Bind Dossier #
-################
-/mnt/Download                   /mnt/Download                none defaults,bind                                                               0 0
-/mnt/Music                      /mnt/Music                   none defaults,bind                                                               0 0
-/mnt/Video                      /mnt/Video                   none defaults,bind                                                               0 0
+//192.168.0.3/Download          /mnt/Download         cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
+//192.168.0.3/Music             /mnt/Music            cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
+//192.168.0.3/Video             /mnt/Video            cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
+//192.168.0.3/Download/Torrent  /mnt/Download/Torrent cifs uid=root,gid=sudo,file_mode=0777,dir_mode=0777,username=marc,password=admin 0 0
 ##################################################################################################################################################" > /etc/fstab;
 
 ```
