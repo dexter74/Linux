@@ -42,6 +42,7 @@ REGION=Haute-savoie
 VILLE=Paris
 ORGANISATION=Personnel
 FQDN=$(cat /etc/hosts | grep "$HOSTNAME" | cut -c 11-20)
+DOMAIN=proxmox74.ddns.net
 EMAIL=test@tld.com
 ```
 
@@ -60,7 +61,7 @@ rm /etc/ssl/vsftp/vsftpd.pem 2>/dev/null;
 ###### Génération du Certificat
 ```
 clear;
-(echo "$PAYS"; echo "$REGION"; echo "$VILLE"; echo "$ORGANISATION"; echo "$ORGANISATION"; echo "$FQDN"; echo "$EMAIL") |  openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc/ssl/vsftp/vsftpd.pem -out /etc/ssl/vsftp/vsftpd.pem -days 3650 2>/dev/null; 
+(echo "$PAYS"; echo "$REGION"; echo "$VILLE"; echo "$ORGANISATION"; echo "$ORGANISATION"; echo "$DOMAIN"; echo "$EMAIL") |  openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc/ssl/vsftp/vsftpd.pem -out /etc/ssl/vsftp/vsftpd.pem -days 3650 2>/dev/null; 
 ```
 
 ---------------------------------------------------------------------------------------------------------------------
