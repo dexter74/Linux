@@ -244,7 +244,7 @@ no_anon_password=NO
 # chmod -R 755 /var/ftp/;        #
 # chown -R root:ftp /var/ftp/;   #
 ##################################
-" > /etc/vsftpd.conf; systemctl restart vsftpd;
+" > /etc/vsftpd.conf; systemctl restart vsftpd;  systemctl status vsftpd | grep "Active:";
 ```
 
 
