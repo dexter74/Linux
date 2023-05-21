@@ -164,6 +164,7 @@ pasv_max_port=12550
 pasv_promiscuous=NO
 pasv_addr_resolve=NO
 #
+" > /etc/vsftpd.conf; systemctl restart vsftpd;  systemctl status vsftpd | grep "Active:";
 ```
 
 ##### FTPS
@@ -248,7 +249,6 @@ anon_other_write_enable=NO
 # chmod -R 755 /var/ftp/;        #
 # chown -R root:ftp /var/ftp/;   #
 ##################################
-" > /etc/vsftpd.conf; systemctl restart vsftpd;  systemctl status vsftpd | grep "Active:";
 ```
 
 
