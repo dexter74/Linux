@@ -12,7 +12,7 @@ echo "##########################################################################
 //192.168.0.3/Download /mnt/Download cifs uid=root,username=marc,password=admin 0 0
 //192.168.0.3/Music    /mnt/Music    cifs uid=root,username=marc,password=admin 0 0
 //192.168.0.3/Video    /mnt/Video    cifs uid=root,username=marc,password=admin 0 0
-####################################################################################" > /etc/fstab;
+####################################################################################" > /etc/fstab; mount -a;
+df -h /mnt/Download
 
-mount -a;
 ```
