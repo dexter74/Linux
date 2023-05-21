@@ -136,7 +136,7 @@ listen=YES
 #listen_ipv6=NO
 #
 # Autoriser les comptes locaux à se connecter
-#local_enable=YES
+local_enable=YES
 #
 # Permission sur les fichiers (Défaut: 077)
 #local_umask=022
