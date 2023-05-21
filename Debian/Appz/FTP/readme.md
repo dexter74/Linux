@@ -78,9 +78,9 @@ cat /etc/vsftpd.conf.old > /etc/vsftpd.conf;
 echo "########################################################################
 # Cloisonnement de l'utilisateur #
 ##################################
-#chroot_local_user=NO
-#chroot_list_enable=NO
-#allow_writeable_chroot=NO
+chroot_local_user=YES
+chroot_list_enable=NO
+allow_writeable_chroot=YES
 #
 ########################################################################
 # Configuration Générale #
@@ -164,11 +164,6 @@ pasv_max_port=12550
 pasv_promiscuous=NO
 pasv_addr_resolve=NO
 #
-" > /etc/vsftpd.conf; systemctl restart vsftpd;  systemctl status vsftpd | grep "Active:";
-```
-
-##### FTPS
-```
 ########################################################################
 # Forcer la connexion SSL #
 ###########################
@@ -249,7 +244,9 @@ anon_other_write_enable=NO
 # chmod -R 755 /var/ftp/;        #
 # chown -R root:ftp /var/ftp/;   #
 ##################################
+" > /etc/vsftpd.conf; systemctl restart vsftpd;  systemctl status vsftpd | grep "Active:";
 ```
+
 
 
 ---------------------------------------------------------------------------------------------------------------------
