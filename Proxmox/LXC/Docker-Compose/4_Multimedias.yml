@@ -14,7 +14,7 @@ services:
   volumes:
    - 'Emby:/config'
    - 'DOWNLOAD:/media/Download:ro'
-   - 'MUSIC:/media/Music'
+   - 'MUSIC:/media/Music:ro'
    - 'VIDEO:/media/Video:ro'
   ports:
    - '8096:8096' # HTTP
@@ -33,7 +33,7 @@ services:
   volumes:
    - 'Jellyfin:/config'
    - 'DOWNLOAD:/media/Download:ro'
-   - 'MUSIC:/media/Music'
+   - 'MUSIC:/media/Music:ro'
    - 'VIDEO:/media/Video:ro'
   ports:
    - '8097:8096'
@@ -43,14 +43,16 @@ services:
 volumes:
  Emby:
   external: false
+
  Jellyfin:
   external: false
+
  DOWNLOAD:
   external: true
+
  MUSIC:
   external: true
- MyPhoto:
-  external: true
+
  VIDEO:
   external: true
 ###############################################
