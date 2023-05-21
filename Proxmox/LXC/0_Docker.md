@@ -20,7 +20,8 @@ Fonctionnalité           : Imbriqué
 clear
 addgroup --gid 1000 marc;
 adduser --home /home/marc --shell /usr/bin/bash --uid 1000 --gid 1000 marc;
-(echo "admin"; echo "admin") | chpasswd marc
+(echo "admin"; echo "admin") | chpasswd marc;
+usermod -a -G sudo marc;
 ```
 
 
