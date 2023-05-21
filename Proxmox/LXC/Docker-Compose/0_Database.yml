@@ -13,8 +13,8 @@ services:      #
   hostname: 'mariadb'
   environment:
    TZ: 'EUROPE\PARIS'
-   PUID: '0'
-   PGID: '0'
+   PUID: '1000'
+   PGID: '1000'
    MYSQL_ROOT_PASSWORD: 'root'
    MYSQL_DATABASE: 'default'
    MYSQL_USER: 'marc'
