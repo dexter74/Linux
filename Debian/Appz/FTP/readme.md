@@ -3,7 +3,7 @@
 
 ---------------------------------------------------------------------------------------------------------------------
 #### Pare-Feu (OpenWRT)
-Le serveur est en mode Passive pour éviter que le client doit ouvrir des ports. (`ftpes://Drthrax74:admin@proxmox74.ddns.net:21`)
+Le serveur est en mode Passive pour éviter que le client doit ouvrir des ports. (`ftpes://Drthrax74:D0Ck3R!@proxmox74.ddns.net:21`)
 
 | Regle       | Port Interne | Port Externe |
 | ----------- | ------------ | ------------ |
@@ -264,7 +264,7 @@ COMPTE2=Drthrax74
 GROUPE2=root
 CHEMIN2=/mnt/
 PASSWORD1=admin
-PASSWORD2=Azerty74@
+PASSWORD2=D0Ck3R!
 shell=/usr/bin/bash
 
 #######################################################################################################
