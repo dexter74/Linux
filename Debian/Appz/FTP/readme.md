@@ -291,7 +291,6 @@ sudo usermod -d $CHEMIN2 $COMPTE2;
 
 # Définir le groupe principale de l'utilisateur
 # sudo usermod -g myftp test;
-
 ```
 
 ###### Relance du service FTP
