@@ -15,4 +15,5 @@ echo "##########################################################################
 //192.168.0.3/Video    /mnt/Video    cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
 ##########################################################################################################################" > /etc/fstab; mount -a;
 df -h /mnt/Download /mnt/Music /mnt/Video;
+ls -la /mnt;
 ```
