@@ -5,7 +5,7 @@
    - 'DOWNLOAD:/media/Download:rw'
    - 'MUSIC:/media/Music:ro'
    - 'VIDEO:/media/Video:rw'
-   - 'MyPhoto:/media/MyPhoto:ro'
+  #- 'MyPhoto:/media/MyPhoto:ro'
 ```
 
 ```yml
@@ -19,8 +19,8 @@ volumes:
  VIDEO:
   external: true
 
- MyPhoto:
-  external: true
+#MyPhoto:
+# external: true
 ```
 
 
