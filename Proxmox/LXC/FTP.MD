@@ -327,3 +327,8 @@ systemctl start vsftpd;
 # sudo usermod -g myftp test;
 #######################################################################################################
 ```
+
+#### Liens
+```
+mount --bind /mnt/Video  /mnt/Download/Torrent/Video
+```
