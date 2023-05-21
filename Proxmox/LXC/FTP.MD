@@ -28,15 +28,7 @@ echo "##########################################################################
 //192.168.0.3/Video             /mnt/Video            cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
 //192.168.0.3/Download/Torrent  /mnt/Download/Torrent cifs uid=root,gid=sudo,file_mode=0777,dir_mode=0777,username=marc,password=admin 0 0
 ##################################################################################################################################################" > /etc/fstab;
-
 ```
-
-
-```
-# Racine pour Download
-sudo usermod -d /mnt/ Download;
-
-
 
 #### Installer FTP [Guide](http://vsftpd.beasts.org/vsftpd_conf.html)
 ---------------------------------------------------------------------------------------------------------------------
@@ -309,7 +301,7 @@ clear;
 ##########################
 COMPTE1=Download
 GROUPE1=FTPUSER
-CHEMIN1=/mnt/Download/Torrent/
+CHEMIN1=/mnt/
 COMPTE2=Drthrax74
 GROUPE2=root
 CHEMIN2=/mnt/
