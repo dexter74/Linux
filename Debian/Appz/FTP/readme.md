@@ -8,16 +8,6 @@ Le serveur est en mode Passive pour éviter que le client doit ouvrir des ports.
 `ftpes://Drthrax74:D0Ck3R!@proxmox74.ddns.net:21` | `ftpes://Download:HR9mJRR9gjitCj@proxmox74.ddns.net:21`
 
 
-COMPTE1=Download
-GROUPE1=FTPUSER
-CHEMIN1=/mnt/Download/Torrent/
-COMPTE2=Drthrax74
-GROUPE2=root
-CHEMIN2=/mnt/
-PASSWORD1=
-PASSWORD2=D0Ck3R!
-shell=/usr/bin/bash
-
 | Regle       | Port Interne | Port Externe |
 | ----------- | ------------ | ------------ |
 | FTP-Connect | 21           | 21           |
