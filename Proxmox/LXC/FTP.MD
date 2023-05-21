@@ -156,7 +156,7 @@ dirmessage_enable=YES
 download_enable=YES
 #
 # Lister le contenu caché (.XXXX) 
-force_dot_files=NO
+force_dot_files=YES
 #
 # Banniere de connexion
 ftpd_banner=Bienvenue sur le serveur ftp
