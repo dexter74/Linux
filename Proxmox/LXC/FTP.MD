@@ -21,12 +21,15 @@ ls -la /mnt;
 
 #### Bind dossier
 ```
+# Création des dossiers Bind
 mkdir /mnt/Download/Torrent/Video;
 mkdir /mnt/Download/Torrent/Music;
+
+# Bind dossier via le FSTAB
 echo "/mnt/Video /mnt/Download/Torrent/Video none defaults,bind 0 0" >> /etc/fstab
 echo "/mnt/Music /mnt/Download/Torrent/Music none defaults,bind 0 0" >> /etc/fstab
 
-# mount --bind /mnt/Video  /mnt/Download/Torrent/Video
+#mount --bind /mnt/Video  /mnt/Download/Torrent/Video
 ```
 
 
