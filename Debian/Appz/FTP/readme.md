@@ -165,8 +165,8 @@ port_enable=NO
 #
 # Mode passive
 pasv_enable=YES
-pasv_max_port=12500
-pasv_min_port=12550
+pasv_min_port=12500
+pasv_max_port=12550
 #pasv_promiscuous=NO
 #pasv_addr_resolve=NO
 #
