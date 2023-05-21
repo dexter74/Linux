@@ -3,7 +3,7 @@
 
 ---------------------------------------------------------------------------------------------------------------------
 #### Pare-Feu (OpenWRT)
-Le serveur est en mode Passive pour éviter que le client doit ouvrir le port 20 et 21 de son côté. (`ftpes://Drthrax:admin@192.168.1.100:21`)
+Le serveur est en mode Passive pour éviter que le client doit ouvrir le port 20 et 21 de son côté. (`ftpes://Drthrax74:admin@proxmox74.ddns.net:21`)
 
 | Regle       | Port Interne | Port Externe |
 | ----------- | ------------ | ------------ |
