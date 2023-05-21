@@ -34,7 +34,7 @@ echo "##########################################################################
 
 ```
 # Racine pour Download
-sudo usermod -d /mnt/Upload Download;
+sudo usermod -d /mnt/ Download;
 
 
 
@@ -159,7 +159,7 @@ dirmessage_enable=YES
 download_enable=YES
 #
 # Lister le contenu caché (.XXXX) 
-force_dot_files=YES
+force_dot_files=no
 #
 # Banniere de connexion
 ftpd_banner=Bienvenue sur le serveur ftp
