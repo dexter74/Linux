@@ -96,35 +96,35 @@ echo "########################################################################
 #accept_timeout=60
 #
 # Prise en charge ASCII (Attack DDOS)
-ascii_download_enable=NO
-ascii_upload_enable=NO
+#ascii_download_enable=NO
+#ascii_upload_enable=NO
 #
 # Contrôle l'origine de la connexion FTP-Data
-connect_from_port_20=YES
+#connect_from_port_20=YES
 #
 # Supprimer fichier en cas d'échec d'envoi
-delete_failed_uploads=NO
+#delete_failed_uploads=NO
 #
 # Permettre le listage de fichier
-userlist_enable=YES
+#userlist_enable=YES
 #
 # Afficher le message de bienvenue du dossier (.message)
-dirmessage_enable=NO
+#dirmessage_enable=NO
 #
 # Permettre le téléchargement
-download_enable=YES
+#download_enable=YES
 #
 # Lister le contenu caché (.XXXX) 
-force_dot_files=NO
+#force_dot_files=NO
 #
 # Banniere de connexion
 ftpd_banner=Bienvenue sur le serveur ftp
 #
 # Définir les sessions utilisateurs en invité
-guest_enable=NO
+##guest_enable=NO
 #
 # Cacher les Propriétés et afficher ftp comme propriétaire
-hide_ids=NO
+#hide_ids=NO
 #
 # Mode Implicite
 #implicit_ssl=NO
@@ -133,28 +133,28 @@ hide_ids=NO
 listen=YES
 #
 # Ecouter sur l'IPV6
-listen_ipv6=NO
+#listen_ipv6=NO
 #
 # Autoriser les comptes locaux à se connecter
 local_enable=YES
 #
 # Permission sur les fichiers (Défaut: 077)
-local_umask=022
+#local_umask=022
 #
 # Interdire la méthode PORT d'obtention d'une connexion de données.
-port_enable=NO
+#port_enable=NO
 #
 # Obliger les clients à présenter leur certificat au serveur
-require_cert=NO
+#require_cert=NO
 #
 # Réutilisation du certificat
-require_ssl_reuse=YES
+#require_ssl_reuse=YES
 #
 # Liste les fichiers avec le Fuseau Local du client
-use_localtime=YES
+#use_localtime=YES
 #
 # Certificat Valide Requis (Auto-sginé: Marche pas)
-validate_cert=NO
+#validate_cert=NO
 #
 # Permettre les commandes d'écritures 
 write_enable=YES
