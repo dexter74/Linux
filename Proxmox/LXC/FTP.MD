@@ -151,7 +151,9 @@ download_enable=YES
 #
 # Lister le contenu caché (.XXXX) 
 force_dot_files=NO
-hide_file={.*}
+#
+# Cacher Extension
+hide_file={.*,.nfo}
 #
 # Banniere de connexion
 ftpd_banner=Bienvenue sur le serveur ftp
