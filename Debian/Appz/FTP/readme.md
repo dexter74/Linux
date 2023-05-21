@@ -78,9 +78,9 @@ cat /etc/vsftpd.conf.old > /etc/vsftpd.conf;
 echo "########################################################################
 # Cloisonnement de l'utilisateur #
 ##################################
-chroot_local_user=NO
-chroot_list_enable=NO
-allow_writeable_chroot=NO
+#chroot_local_user=NO
+#chroot_list_enable=NO
+#allow_writeable_chroot=NO
 #
 ########################################################################
 # Configuration Générale #
@@ -90,38 +90,38 @@ allow_writeable_chroot=NO
 accept_timeout=60
 #
 # Prise en charge ASCII (Attack DDOS)
-ascii_download_enable=NO
-ascii_upload_enable=NO
+#ascii_download_enable=NO
+#ascii_upload_enable=NO
 #
 # Contrôle l'origine de la connexion FTP-Data
-connect_from_port_20=NO
+#connect_from_port_20=NO
 #
 # Supprimer fichier en cas d'échec d'envoi
-delete_failed_uploads=NO
+#delete_failed_uploads=NO
 #
 # Permettre le listage de fichier
 #userlist_enable=NO
 #
 # Afficher le message de bienvenue du dossier (.message)
-dirmessage_enable=NO
+#dirmessage_enable=NO
 #
 # Permettre le téléchargement
-download_enable=YES
+#download_enable=YES
 #
 # Lister le contenu caché (.XXXX) 
-force_dot_files=NO
+#force_dot_files=NO
 #
 # Banniere de connexion
-ftpd_banner=Bienvenue sur le serveur ftp
+#ftpd_banner=Bienvenue sur le serveur ftp
 #
 # Définir les sessions utilisateurs en invité
-guest_enable=NO
+#guest_enable=NO
 #
 # Cacher les Propriétés et afficher ftp comme propriétaire
-hide_ids=NO
+#hide_ids=NO
 #
 # Mode Implicite
-implicit_ssl=NO
+#implicit_ssl=NO
 #
 # Ecouter sur l'IPV4
 listen=YES
@@ -139,30 +139,30 @@ local_enable=YES
 port_enable=YES
 #
 # Obliger les clients à présenter leur certificat au serveur
-require_cert=NO
+#require_cert=NO
 #
 # Réutilisation du certificat
-require_ssl_reuse=No
+#require_ssl_reuse=No
 #
 # Liste les fichiers avec le Fuseau Local du client
 use_localtime=YES
 #
 # Certificat Valide Requis (Auto-sginé: Marche pas)
-validate_cert=NO
+#validate_cert=NO
 #
 # Permettre les commandes d'écritures 
 write_enable=YES
 #
 # Activer la Journalisation et dans un format Standard
-xferlog_enable=YES
-xferlog_std_format=NO
+#xferlog_enable=YES
+#xferlog_std_format=NO
 #
 # Mode passive
 pasv_enable=YES
 pasv_min_port=12500
 pasv_max_port=12550
-pasv_promiscuous=NO
-pasv_addr_resolve=NO
+#pasv_promiscuous=NO
+#pasv_addr_resolve=NO
 #
 " > /etc/vsftpd.conf; systemctl restart vsftpd;  systemctl status vsftpd | grep "Active:";
 ```
