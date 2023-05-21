@@ -258,11 +258,11 @@ clear;
 ##########################
 COMPTE1=test
 GROUPE1=monftp
-CHEMIN1=/mnt/
+CHEMIN1=/mnt/Download/Torrent/
 
 COMPTE2=Drthrax74
 GROUPE2=root
-CHEMIN2=/
+CHEMIN2=/mnt/
 PASSWORD=admin
 
 shell=/usr/bin/bash
