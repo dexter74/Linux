@@ -73,7 +73,7 @@ echo "# GPU AMD"                >  /etc/modprobe.d/pve-blacklist.conf;
 echo "blacklist ati"            >> /etc/modprobe.d/pve-blacklist.conf;
 echo "blacklist amdgpu"         >> /etc/modprobe.d/pve-blacklist.conf;
 echo "blacklist radeon"         >> /etc/modprobe.d/pve-blacklist.conf;
-echo ""                         >> /etc/modprobe.d/pve-blacklist.conf;
+echo "#"                        >> /etc/modprobe.d/pve-blacklist.conf;
 echo "# GPU Nvidia"             >> /etc/modprobe.d/pve-blacklist.conf;
 echo "#blacklist nouveau"       >> /etc/modprobe.d/pve-blacklist.conf;
 echo "#blacklist nvidia"        >> /etc/modprobe.d/pve-blacklist.conf;
