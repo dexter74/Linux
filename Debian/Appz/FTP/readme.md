@@ -296,7 +296,7 @@ sudo usermod -d $CHEMIN2 $COMPTE2;
 
 #######################################################################################################
 # Relance du service FTP
-systemctl stop vsftpd;
+systemctl start vsftpd;
 
 #######################################################################################################
 # Définir le groupe principale de l'utilisateur
