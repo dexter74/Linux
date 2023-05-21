@@ -26,9 +26,9 @@ volumes:
 
 
 ```yml
-NAS=192.168.0.2
-UTILISATEUR=
-MOTDEPASSE=
+NAS=192.168.0.3
+UTILISATEUR=marc
+MOTDEPASSE=admin
 
 PARTAGE_1=Download/Torrent
 PARTAGE_2=Video
