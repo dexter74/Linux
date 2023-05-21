@@ -4,31 +4,32 @@ clear;
 sudo apt install -y cifs-utils smbclient 1>/dev/null;
 ```
 
-#### FSTAB
-```bash
-clear;
-mkdir -p /mnt/{Download,Music,Video} 2>/dev/null;
-umount -R /mnt/*;
-echo "##########################################################################################################################
-//192.168.0.3/Download /mnt/Download cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
-//192.168.0.3/Music    /mnt/Music    cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
-//192.168.0.3/Video    /mnt/Video    cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
-##########################################################################################################################" > /etc/fstab; mount -a;
-df -h /mnt/Download /mnt/Music /mnt/Video;
-ls -la /mnt;
+#### V2
 ```
+# Racine pour Download
+sudo usermod -d /mnt/Upload Download;
+
+# Arborescence
+mkdir -p /mnt/{Download,Music,Video} 2>/dev/null;
+mkdir -p /mnt/Upload;
+mkdir -p /mnt/Upload/Download/Torrent;
+mkdir -p /mnt/Upload/Music;
+mkdir -p /mnt/Upload/Video;
+
+# Permission Dossier
+chmod -R 775 /mnt/Upload;
+
+# Monter Partage
+//192.168.0.3/Download          /mnt/Download                cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
+//192.168.0.3/Music             /mnt/Music                   cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
+//192.168.0.3/Video             /mnt/Video                   cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
+//192.168.0.3/Download/Torrent  /mnt/Upload/Download/Torrent cifs uid=root,gid=sudo,file_mode=0777,dir_mode=0777,username=marc,password=admin 0 0
+
+/mnt/Download /mnt/Download none defaults,bind 0 0
+/mnt/Music /mnt/Music       none defaults,bind 0 0
+/mnt/Video /mnt/Video       none defaults,bind 0 0
 
 
-#### Bind dossier
-```bash
-clear;
-# Création des dossiers Bind
-mkdir /mnt/Download/Torrent/Video;
-mkdir /mnt/Download/Torrent/Music;
-
-# Bind dossier via le FSTAB
-echo "/mnt/Video /mnt/Download/Torrent/Video none defaults,bind 0 0" >> /etc/fstab
-echo "/mnt/Music /mnt/Download/Torrent/Music none defaults,bind 0 0" >> /etc/fstab
 
 #mount --bind /mnt/Video  /mnt/Download/Torrent/Video
 ```
