@@ -127,8 +127,7 @@ chroot_list_enable=NO
 # Gestion des fichiers #
 ########################
 hide_file={.*,*.nfo,*.sfv,*.txt,*.xlsx,*.jpg,*.rtf,Thumbs.db}
-deny_file={*.exe,*.sh,.private} 
-allow_file={*.mkv,*.mp3,*.rar}
+deny_file={*.exe,*.sh,*.private,*.txt} 
 #
 ########################################################################
 # Configuration Générale #
