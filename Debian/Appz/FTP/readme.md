@@ -73,7 +73,7 @@ cp /etc/vsftpd.conf /etc/vsftpd.conf.old;
 cat /etc/vsftpd.conf.old > /etc/vsftpd.conf;
 ```
 
-##### Configuration
+##### Configuration FTP
 ```
 echo "########################################################################
 # Cloisonnement de l'utilisateur #
@@ -81,12 +81,6 @@ echo "########################################################################
 chroot_local_user=NO
 chroot_list_enable=NO
 allow_writeable_chroot=NO
-#
-########################################################################
-# Forcer la connexion SSL #
-###########################
-force_local_data_ssl=NO
-force_local_logins_ssl=NO
 #
 ########################################################################
 # Configuration Générale #
@@ -169,6 +163,16 @@ pasv_min_port=12500
 pasv_max_port=12550
 pasv_promiscuous=NO
 pasv_addr_resolve=NO
+#
+```
+
+##### FTPS
+```
+########################################################################
+# Forcer la connexion SSL #
+###########################
+force_local_data_ssl=NO
+force_local_logins_ssl=NO
 #
 ########################################################################
 # Configuration du SSL #
