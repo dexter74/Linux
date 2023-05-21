@@ -285,8 +285,6 @@ sudo groupadd $GROUPE1;
 sudo useradd --no-create-home $COMPTE1 -G $GROUPE1 --shell $shell;
 sudo useradd --no-create-home $COMPTE2 -G $GROUPE2,sudo --no-user-group --system --shell $shell;
 
-id $COMPTE2;
-
 #######################################################################################################
 # Mot de passe
 (echo "$PASSWORD1"; echo "$PASSWORD1") | sudo passwd $COMPTE1;
