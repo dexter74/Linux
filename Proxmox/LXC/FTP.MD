@@ -124,6 +124,13 @@ chroot_local_user=YES
 chroot_list_enable=NO
 #
 ########################################################################
+# Gestion des fichiers #
+########################
+hide_file={.*,*.nfo,*.sfv,*.txt,*.xlsx,*.jpg,*.rtf,Thumbs.db}
+deny_file={*.exe,*.sh,.private} 
+allow_file={*.mkv,*.mp3,*.rar}
+#
+########################################################################
 # Configuration Générale #
 ##########################
 #
@@ -151,9 +158,6 @@ download_enable=YES
 #
 # Lister le contenu caché (.XXXX) 
 force_dot_files=NO
-#
-# Cacher Extension
-hide_file={.*,.nfo}
 #
 # Banniere de connexion
 ftpd_banner=Bienvenue sur le serveur ftp
