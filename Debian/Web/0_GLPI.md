@@ -25,8 +25,13 @@ Utilisateur BDD:
 su -;
 ```
 
-### Carte-réseau (Proxmox)
+### Carte-réseau
+Mon Interface se nomme `ens18`.
+
 ```
+ip add;
+
+
 echo "source /etc/network/interfaces.d/*
 auto lo
 iface lo inet loopback
