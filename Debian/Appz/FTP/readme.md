@@ -253,7 +253,7 @@ no_anon_password=NO
 ```
 clear;
 
-###########################################################################
+#######################################################################################################
 # Déclarer mes Variables #
 ##########################
 COMPTE1=test
@@ -265,7 +265,11 @@ CHEMIN2=/mnt/
 PASSWORD=admin
 shell=/usr/bin/bash
 
-####################################
+#######################################################################################################
+# Arrêt du service FTP
+systemctl stop vsftpd;
+
+#######################################################################################################
 # Purge des Users
 sudo userdel $COMPTE1 2>/dev/null;
 sudo userdel $COMPTE2 2>/dev/null;
@@ -281,6 +285,7 @@ sudo useradd --no-create-home $COMPTE2 -G $GROUPE2,sudo --no-user-group --system
 
 id $COMPTE2;
 
+#######################################################################################################
 # Mot de passe
 (echo "$PASSWORD"; echo "$PASSWORD") | sudo passwd $COMPTE1;
 (echo "$PASSWORD"; echo "$PASSWORD") | sudo passwd $COMPTE2;
@@ -289,12 +294,12 @@ id $COMPTE2;
 sudo usermod -d $CHEMIN1 $COMPTE1;
 sudo usermod -d $CHEMIN2 $COMPTE2;
 
+#######################################################################################################
+# Relance du service FTP
+systemctl stop vsftpd;
+
+#######################################################################################################
 # Définir le groupe principale de l'utilisateur
 # sudo usermod -g myftp test;
-```
-
-###### Relance du service FTP
-```
-clear;
-systemctl restart vsftpd;
+#######################################################################################################
 ```
