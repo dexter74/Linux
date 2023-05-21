@@ -7,13 +7,6 @@ sudo apt install -y cifs-utils smbclient 1>/dev/null;
 #### Arborescence
 ```bash
 mkdir -p /mnt/{Download,Music,Video} 2>/dev/null;
-mkdir -p /mnt/Upload;
-mkdir -p /mnt/Upload/Download/Torrent;
-mkdir -p /mnt/Upload/Music;
-mkdir -p /mnt/Upload/Video;
-
-# Permission Dossier
-chmod -R 775 /mnt/Upload;
 ```
 
 #### FSTAB
