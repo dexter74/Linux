@@ -1,3 +1,10 @@
+#### LXC
+```
+- Taille de Stockage       : 2 Go
+- Conteneur Non-privilégié : NON
+- Fonctionnalité           : Imbriqués, SMB, NFS
+```
+
 #### Packages
 ```bash
 clear;
