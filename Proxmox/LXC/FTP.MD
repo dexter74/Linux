@@ -330,5 +330,8 @@ systemctl start vsftpd;
 
 #### Liens
 ```
-mount --bind /mnt/Video  /mnt/Download/Torrent/Video
+mkdir /mnt/Download/Torrent/Video;
+echo "/mnt/Video /mnt/Download/Torrent/Video none defaults,bind 0 0" >> /etc/fstab
+
+# mount --bind /mnt/Video  /mnt/Download/Torrent/Video
 ```
