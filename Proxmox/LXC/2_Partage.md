@@ -49,25 +49,29 @@ docker volume rm -f ${NAME_4};
 docker volume create --driver local \
         --opt type=cifs \
         --opt device=//${NAS}/${PARTAGE_1} \
-        --opt o=username=${UTILISATEUR},password=${MOTDEPASSE},vers=3.0,file_mode=0777,dir_mode=0777 \
+        --opt o=username=${UTILISATEUR},password=${MOTDEPASSE} \
         --name ${NAME_1};
 
 docker volume create --driver local \
         --opt type=cifs \
         --opt device=//${NAS}/${PARTAGE_2} \
-        --opt o=username=${UTILISATEUR},password=${MOTDEPASSE},vers=3.0,file_mode=0777,dir_mode=0777 \
+        --opt o=username=${UTILISATEUR},password=${MOTDEPASSE} \
         --name ${NAME_2};
 
 docker volume create --driver local \
         --opt type=cifs \
         --opt device=//${NAS}/${PARTAGE_3} \
-        --opt o=username=${UTILISATEUR},password=${MOTDEPASSE},vers=3.0,file_mode=0777,dir_mode=0777 \
+        --opt o=username=${UTILISATEUR},password=${MOTDEPASSE} \
         --name ${NAME_3};
 
 docker volume create --driver local \
         --opt type=cifs \
         --opt device=//${NAS}/${PARTAGE_4} \
-        --opt o=username=${UTILISATEUR},password=${MOTDEPASSE},vers=3.0,file_mode=0777,dir_mode=0777 \
+        --opt o=username=${UTILISATEUR},password=${MOTDEPASSE} \
         --name ${NAME_4};
+
+
+# ,vers=3.0,file_mode=0777,dir_mode=0777
+
 ```
 
