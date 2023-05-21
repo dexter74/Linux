@@ -18,7 +18,20 @@ df -h /mnt/Download /mnt/Music /mnt/Video;
 ls -la /mnt;
 ```
 
-#### Installer FTP
+
+#### Bind dossier
+```
+mkdir /mnt/Download/Torrent/Video;
+mkdir /mnt/Download/Torrent/Music;
+echo "/mnt/Video /mnt/Download/Torrent/Video none defaults,bind 0 0" >> /etc/fstab
+echo "/mnt/Music /mnt/Download/Torrent/Music none defaults,bind 0 0" >> /etc/fstab
+
+# mount --bind /mnt/Video  /mnt/Download/Torrent/Video
+```
+
+
+
+#### Installer FTP [Guide](http://vsftpd.beasts.org/vsftpd_conf.html)
 ---------------------------------------------------------------------------------------------------------------------
 ## <p align='center'> [Installation d'un serveur FTP / SFTP](https://infoloup.no-ip.org/ftps-vsftpd-debian10/) </p>
 
@@ -326,12 +339,4 @@ systemctl start vsftpd;
 # Définir le groupe principale de l'utilisateur
 # sudo usermod -g myftp test;
 #######################################################################################################
-```
-
-#### Liens
-```
-mkdir /mnt/Download/Torrent/Video;
-echo "/mnt/Video /mnt/Download/Torrent/Video none defaults,bind 0 0" >> /etc/fstab
-
-# mount --bind /mnt/Video  /mnt/Download/Torrent/Video
 ```
