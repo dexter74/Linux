@@ -100,7 +100,7 @@ ascii_download_enable=NO
 ascii_upload_enable=NO
 #
 # Contrôle l'origine de la connexion FTP-Data
-connect_from_port_20=YES
+connect_from_port_20=NO
 #
 # Supprimer fichier en cas d'échec d'envoi
 delete_failed_uploads=NO
