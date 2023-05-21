@@ -258,11 +258,13 @@ clear;
 ##########################
 COMPTE1=test
 GROUPE1=monftp
-CHEMIN1=/
+CHEMIN1=/mnt/
+
 COMPTE2=Drthrax74
 GROUPE2=root
-CHEMIN2=/mnt/
+CHEMIN2=/
 PASSWORD=admin
+
 shell=/usr/bin/bash
 
 ####################################
