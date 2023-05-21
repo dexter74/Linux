@@ -78,9 +78,9 @@ cat /etc/vsftpd.conf.old > /etc/vsftpd.conf;
 echo "########################################################################
 # Cloisonnement de l'utilisateur #
 ##################################
+allow_writeable_chroot=YES
 chroot_local_user=YES
 chroot_list_enable=NO
-allow_writeable_chroot=YES
 #
 ########################################################################
 # Configuration Générale #
@@ -97,19 +97,19 @@ ascii_upload_enable=NO
 connect_from_port_20=NO
 #
 # Supprimer fichier en cas d'échec d'envoi
-delete_failed_uploads=NO
+delete_failed_uploads=YES
 #
-# Permettre le listage de fichier
+# Utiliser une liste d'utilisateur  (/etc/vsftpd.user_list)
 userlist_enable=NO
 #
 # Afficher le message de bienvenue du dossier (.message)
-dirmessage_enable=NO
+dirmessage_enable=YES
 #
 # Permettre le téléchargement
 download_enable=YES
 #
 # Lister le contenu caché (.XXXX) 
-force_dot_files=NO
+force_dot_files=YES
 #
 # Banniere de connexion
 ftpd_banner=Bienvenue sur le serveur ftp
@@ -167,8 +167,8 @@ pasv_addr_resolve=NO
 ########################################################################
 # Forcer la connexion SSL #
 ###########################
-force_local_data_ssl=NO
-force_local_logins_ssl=NO
+force_local_data_ssl=YES
+force_local_logins_ssl=YES
 #
 ########################################################################
 # Configuration du SSL #
