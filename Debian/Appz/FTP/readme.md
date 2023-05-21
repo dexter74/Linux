@@ -130,7 +130,7 @@ echo "########################################################################
 #implicit_ssl=NO
 #
 # Ecouter sur l'IPV4
-#listen=YES
+listen=YES
 #
 # Ecouter sur l'IPV6
 #listen_ipv6=NO
