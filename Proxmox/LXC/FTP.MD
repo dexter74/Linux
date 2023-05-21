@@ -42,10 +42,10 @@ Le serveur est en mode Passive pour éviter que le client doit ouvrir des ports.
 
 ---------------------------------------------------------------------------------------------------------------------
 #### Utilisateur
-| Identifiant | Mot de passe | Permission |
-| ----------- | ------------ | ---------- |
-| test        | admin        |
-| Drthrax74   | admin        |
+| Identifiant | Mot de passe   | Permission    |
+| ----------- | -------------- | ------------- |
+| Download    | HR9mJRR9gjitCj | RWX : Torrent |
+| Drthrax74   | D0Ck3R!        | RWX : Tout    |
 
 ---------------------------------------------------------------------------------------------------------------------
 #### Purge de VSFTPD
