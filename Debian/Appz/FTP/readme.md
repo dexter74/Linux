@@ -142,7 +142,7 @@ local_enable=YES
 #local_umask=022
 #
 # Interdire la méthode PORT d'obtention d'une connexion de données.
-port_enable=NO
+port_enable=YES
 #
 # Obliger les clients à présenter leur certificat au serveur
 require_cert=NO
