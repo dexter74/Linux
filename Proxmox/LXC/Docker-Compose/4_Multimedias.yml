@@ -15,7 +15,7 @@ services:
    - 'Emby:/config'
    - 'DOWNLOAD:/media/Download:rw'
    - 'MUSIC:/media/Music:ro'
-   - 'VIDEO:/media/Video:rw'
+   - 'VIDEO:/media/Video:ro'
   ports:
    - '8096:8096' # HTTP
 ###############################################
