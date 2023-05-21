@@ -3,7 +3,20 @@
 
 ---------------------------------------------------------------------------------------------------------------------
 #### Pare-Feu (OpenWRT)
-Le serveur est en mode Passive pour éviter que le client doit ouvrir des ports. (`ftpes://Drthrax74:D0Ck3R!@proxmox74.ddns.net:21`)
+Le serveur est en mode Passive pour éviter que le client doit ouvrir des ports. 
+
+`ftpes://Drthrax74:D0Ck3R!@proxmox74.ddns.net:21` | `ftpes://Download:HR9mJRR9gjitCj@proxmox74.ddns.net:21`
+
+
+COMPTE1=Download
+GROUPE1=FTPUSER
+CHEMIN1=/mnt/Download/Torrent/
+COMPTE2=Drthrax74
+GROUPE2=root
+CHEMIN2=/mnt/
+PASSWORD1=
+PASSWORD2=D0Ck3R!
+shell=/usr/bin/bash
 
 | Regle       | Port Interne | Port Externe |
 | ----------- | ------------ | ------------ |
@@ -257,13 +270,13 @@ clear;
 #######################################################################################################
 # Déclarer mes Variables #
 ##########################
-COMPTE1=test
-GROUPE1=monftp
+COMPTE1=Download
+GROUPE1=FTPUSER
 CHEMIN1=/mnt/Download/Torrent/
 COMPTE2=Drthrax74
 GROUPE2=root
 CHEMIN2=/mnt/
-PASSWORD1=admin
+PASSWORD1=HR9mJRR9gjitCj
 PASSWORD2=D0Ck3R!
 shell=/usr/bin/bash
 
