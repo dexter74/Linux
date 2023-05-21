@@ -177,25 +177,25 @@ force_local_logins_ssl=NO
 #debug_ssl=NO
 #
 # Certificat SSL (Default: /usr/share/ssl/certs/vsftpd.pem)
-#rsa_cert_file=/etc/ssl/vsftp/vsftpd.pem
-#rsa_private_key_file=/etc/ssl/vsftp/vsftpd.pem
+rsa_cert_file=/etc/ssl/vsftp/vsftpd.pem
+rsa_private_key_file=/etc/ssl/vsftp/vsftpd.pem
 #
 # Type de chiffrement (DES-CBC3-SHA)
-#ssl_ciphers=HIGH
+ssl_ciphers=HIGH
 #
 # Prise en charge de l'authentifcation par SSL
-#ssl_enable=YES
+ssl_enable=YES
 #
 # Certificat Requis
-#ssl_request_cert=YES
+ssl_request_cert=YES
 #
 # Protocoles Autorisés
-#ssl_sslv2=NO
-#ssl_sslv3=NO
-#ssl_tlsv1=YES
+ssl_sslv2=NO
+ssl_sslv3=NO
+ssl_tlsv1=YES
 #
-#strict_ssl_read_eof=NO
-#strict_ssl_write_shutdown=NO
+strict_ssl_read_eof=NO
+strict_ssl_write_shutdown=NO
 #
 ########################################################################
 # Configuration du compte Invité #
