@@ -8,8 +8,8 @@ services:
   restart: 'unless-stopped'
   hostname: 'emby'
   environment:
-   UID: '0'
-   GUID: '0'
+   UID:  '1000'
+   GUID: '1000'
    GIDLIST: '100'
   volumes:
    - 'Emby:/config'
@@ -28,8 +28,8 @@ services:
   environment:
    JELLYFIN_PublishedServerUrl: '0.0.0.0'
    TS: 'Europe/Paris'
-   PUID: '0'
-   PGID: '0'
+   PUID: '1000'
+   PGID: '1000'
   volumes:
    - 'Jellyfin:/config'
    - 'DOWNLOAD:/media/Download:rw'
