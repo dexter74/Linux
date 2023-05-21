@@ -273,14 +273,14 @@ systemctl stop vsftpd;
 
 #######################################################################################################
 # Purge des Users
-sudo userdel $COMPTE1 2>/dev/null;
-sudo userdel $COMPTE2 2>/dev/null;
+sudo userdel $COMPTE1;
+sudo userdel $COMPTE2;
 
 # Purge du Groupe 1
-sudo groupdel $GROUPE1 2>/dev/null;
+sudo groupdel $GROUPE1;
 
 # Création du Groupe 1
-sudo groupadd $GROUPE1 2>/dev/null;
+sudo groupadd $GROUPE1;
 
 sudo useradd --no-create-home $COMPTE1 -G $GROUPE1 --shell $shell;
 sudo useradd --no-create-home $COMPTE2 -G $GROUPE2,sudo --no-user-group --system --shell $shell;
