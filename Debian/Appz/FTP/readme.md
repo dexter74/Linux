@@ -85,8 +85,8 @@ allow_writeable_chroot=YES
 ########################################################################
 # Forcer la connexion SSL #
 ###########################
-force_local_data_ssl=YES
-force_local_logins_ssl=YES
+force_local_data_ssl=NO
+force_local_logins_ssl=NO
 
 ########################################################################
 # Configuration Générale #
@@ -164,7 +164,7 @@ xferlog_enable=YES
 xferlog_std_format=NO
 
 # Mode passive
-pasv_enable=YES
+pasv_enable=NO
 pasv_max_port=12500
 pasv_min_port=12550
 pasv_promiscuous=NO
