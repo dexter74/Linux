@@ -5,10 +5,10 @@
 #### Pare-Feu
 Le serveur est en mode Passive pour éviter que le client doit ouvrir le port 20 et 21 de son côté. (`ftpes://Drthrax:admin@192.168.1.100:21`)
 
-| Regle       | Interne | Port Externe |
-| ----------- | ------- | ------------ |
-| FTP-Connect | 21      | 21           |
-| FTP-Listen  | 12500   | 12500-12550  |
+| Regle       | Port Interne | Port Externe |
+| ----------- | ------------ | ------------ |
+| FTP-Connect | 21           | 21           |
+| FTP-Listen  | 12500-12550  | 12500-12550  |
 
 ---------------------------------------------------------------------------------------------------------------------
 #### Utilisateur
