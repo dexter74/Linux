@@ -263,7 +263,8 @@ CHEMIN1=/mnt/Download/Torrent/
 COMPTE2=Drthrax74
 GROUPE2=root
 CHEMIN2=/mnt/
-PASSWORD=admin
+PASSWORD1=admin
+PASSWORD2=Azerty74@
 shell=/usr/bin/bash
 
 #######################################################################################################
@@ -288,8 +289,8 @@ id $COMPTE2;
 
 #######################################################################################################
 # Mot de passe
-(echo "$PASSWORD"; echo "$PASSWORD") | sudo passwd $COMPTE1;
-(echo "$PASSWORD"; echo "$PASSWORD") | sudo passwd $COMPTE2;
+(echo "$PASSWORD"; echo "$PASSWORD1") | sudo passwd $COMPTE1;
+(echo "$PASSWORD"; echo "$PASSWORD2") | sudo passwd $COMPTE2;
 
 # Changer le dossier de l'utilisateur
 sudo usermod -d $CHEMIN1 $COMPTE1;
