@@ -7,6 +7,7 @@ sudo apt install -y cifs-utils smbclient 1>/dev/null;
 #### Arborescence
 ```bash
 mkdir -p /mnt/{Download,Music,Video} 2>/dev/null;
+mkdir -p /mnt/Download/Torrent       2>/dev/null;
 ```
 
 #### FSTAB
