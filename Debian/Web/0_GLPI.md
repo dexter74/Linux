@@ -8,11 +8,11 @@ Host:
  - 127.0.0.1
  - localhost
 
-Administrateur:
+Utilisateur Système:
  - Identifiant  : root
  - Mot de passe : admin
 
-Utilisateur:
+Utilisateur BDD:
  - Identifiant    : GLPI
  - Mot de passe   : GLPI
  - Base de Donnée : GLPI
