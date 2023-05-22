@@ -30,7 +30,7 @@ NAS=192.168.0.3
 UTILISATEUR=marc
 MOTDEPASSE=admin
 
-PARTAGE_1=Download/Torrent
+PARTAGE_1=Download
 PARTAGE_2=Video
 PARTAGE_3=Music
 PARTAGE_4=Home/MyPhoto
