@@ -60,7 +60,7 @@ services:      #
    PGID: '1000'
   volumes:
    - 'Qbittorrent:/config'
-   - 'DOWNLOAD:/media/Download/Torrent'
+   - 'DOWNLOAD:/media/Download'
    - 'VIDEO:/media/Video'
   ports:
    - '6881:6881' # Tranmission
