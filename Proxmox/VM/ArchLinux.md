@@ -438,8 +438,8 @@ sudo rm -rf /tmp/xfce4-docklike-plugin-0.4.0/;
 #### Profil GUI
 ```
 clear;
-wget "https://github.com/dexter74/Linux/raw/main/Archlinux/Appz/Environnements_Graphique/XFCE4_Profile.tar.bz2" -O /home/marc/Bureau/XFCE4_Profile.tar.bz2
-chown marc:users /home/marc/Bureau/XFCE4_Profile.tar.bz2
+wget "https://github.com/dexter74/Linux/raw/main/Archlinux/Appz/Environnements_Graphique/XFCE4_Profile.tar.bz2" -O /home/marc/Bureau/XFCE4_Profile.tar.bz2;
+chown marc:users /home/marc/Bureau/XFCE4_Profile.tar.bz2;
 ```
 
 #### Gestionnaire de connxion
