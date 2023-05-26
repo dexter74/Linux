@@ -397,7 +397,22 @@ dmesg --level 3;
 ```bash
 clear;
 sudo pacman -Sy --noconfirm xorg-server xorg-xinit 1>/dev/null;
-
+sudo pacman -R xf86-video-fbdev;
 ```
+
+#### XFCE4
+```bash
+sudo pacman -Sy --noconfirm xfce4 1>/dev/null;
+sudo pacman -Sy --noconfirm xfce4-dev-tools 1>/dev/null;
+sudo pacman -Sy --noconfirm xfce4-datetime-plugin 1>/dev/null;
+sudo pacman -Sy --noconfirm xfce4-whiskermenu-plugin 1>/dev/null;
+```
+Goodies:
+```bash
+# sudo pacman -Sy --noconfirm xfce4-goodies 1>/dev/null;
+```
+
+
+
 | [Xorg](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Serveur_Affichage) | [Environnement Graphique](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Environnements_Graphique) | [Gestionnaire de session](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Gestionnaire_de_connexion) | [APPLET](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Applets) | [Drthrax](https://github.com/dexter74/Linux/blob/main/Archlinux/Deploiement/Drthrax.md)
 
