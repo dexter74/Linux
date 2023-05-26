@@ -444,6 +444,7 @@ chown marc:users /home/marc/Bureau/XFCE4_Profile.tar.bz2;
 
 #### Gestionnaire de connexion
 ```
+clear;
 sudo pacman -Sy --noconfirm lightdm;
 sudo pacman -Sy --noconfirm lightdm-gtk-greeter;
 sudo pacman -Sy --noconfirm lightdm-webkit2-greeter;
