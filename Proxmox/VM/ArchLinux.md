@@ -402,14 +402,14 @@ sudo pacman -R xf86-video-fbdev;
 
 #### XFCE4
 ```bash
-sudo pacman -Sy --noconfirm xfce4 1>/dev/null;
-sudo pacman -Sy --noconfirm xfce4-dev-tools 1>/dev/null;
-sudo pacman -Sy --noconfirm xfce4-datetime-plugin 1>/dev/null;
+sudo pacman -Sy --noconfirm xfce4                    1>/dev/null;
+sudo pacman -Sy --noconfirm xfce4-dev-tools          1>/dev/null;
+sudo pacman -Sy --noconfirm xfce4-datetime-plugin    1>/dev/null;
 sudo pacman -Sy --noconfirm xfce4-whiskermenu-plugin 1>/dev/null;
 ```
 Goodies:
 ```bash
-# sudo pacman -Sy --noconfirm xfce4-goodies 1>/dev/null;
+sudo pacman -Sy --noconfirm xfce4-goodies 1>/dev/null;
 ```
 
 
