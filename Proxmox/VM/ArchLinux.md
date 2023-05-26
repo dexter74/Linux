@@ -421,7 +421,7 @@ Goodies:
 sudo pacman -Sy --noconfirm xfce4-goodies 1>/dev/null;
 ```
 
-##### Docklike
+Docklike:
 ```bash
 clear;
 sudo rm -rf /tmp/xfce4-docklike-plugin-0.4.0*;
@@ -435,16 +435,24 @@ cd;
 sudo rm -rf /tmp/xfce4-docklike-plugin-0.4.0/;
 ```
 
-#### Profil GUI
+Profil XFCE4:
 ```
 clear;
 wget "https://github.com/dexter74/Linux/raw/main/Archlinux/Appz/Environnements_Graphique/XFCE4_Profile.tar.bz2" -O /home/marc/Bureau/XFCE4_Profile.tar.bz2;
 chown marc:users /home/marc/Bureau/XFCE4_Profile.tar.bz2;
 ```
 
-#### Gestionnaire de connxion
+#### Gestionnaire de connexion
 ```
+sudo pacman -Sy --noconfirm lightdm;
+sudo pacman -Sy --noconfirm lightdm-gtk-greeter;
+sudo pacman -Sy --noconfirm lightdm-webkit2-greeter;
 
+sudo git clone https://github.com/AlphaNecron/lightdm-evo.git /usr/share/lightdm-webkit/themes/lightdm-evo;
+sudo sed -i 's/\#greeter-session\=example-gtk-gnome/greeter-session\=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf;
+sudo sed -i 's/antergos/lightdm-evo/g' /etc/lightdm/lightdm-webkit2-greeter.conf;
+sudo systemctl restart lightdm;
+sudo systemctl enable  --now lightdm;
 ```
 
 
