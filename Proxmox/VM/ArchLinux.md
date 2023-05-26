@@ -406,10 +406,40 @@ sudo pacman -Sy --noconfirm xfce4                    1>/dev/null;
 sudo pacman -Sy --noconfirm xfce4-dev-tools          1>/dev/null;
 sudo pacman -Sy --noconfirm xfce4-datetime-plugin    1>/dev/null;
 sudo pacman -Sy --noconfirm xfce4-whiskermenu-plugin 1>/dev/null;
+
+# Fix Erreur (journalctl)
+sudo pacman -Sy --noconfirm libgsf                   1>/dev/null;
+sudo pacman -Sy --noconfirm libopenraw               1>/dev/null;
+sudo pacman -Sy --noconfirm ffmpeg                   1>/dev/null;
+sudo pacman -Sy --noconfirm ffmpegthumbnailer        1>/dev/null;
+sudo pacman -Sy --noconfirm libgepub                 1>/dev/null;
+sudo pacman -Sy --noconfirm poppler                  1>/dev/null;
+sudo pacman -Sy --noconfirm poppler-glib             1>/dev/null;
 ```
 Goodies:
 ```bash
 sudo pacman -Sy --noconfirm xfce4-goodies 1>/dev/null;
+```
+
+##### Docklike
+```bash
+clear;
+sudo rm -rf /tmp/xfce4-docklike-plugin-0.4.0*;
+wget --inet4-only https://archive.xfce.org/src/panel-plugins/xfce4-docklike-plugin/0.4/xfce4-docklike-plugin-0.4.0.tar.bz2 -O /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 && tar xf /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 -C /tmp;
+sed -i '22  s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
+sed -i '177 s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
+sed -i '26  s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
+sed -i '190 s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
+cd /tmp/xfce4-docklike-plugin-0.4.0/; ./configure; make -j$(nproc); sudo make install 1>/dev/null;
+cd;
+sudo rm -rf /tmp/xfce4-docklike-plugin-0.4.0/;
+```
+
+#### Profil GUI
+```
+clear;
+wget "https://github.com/dexter74/Linux/raw/main/Archlinux/Appz/Environnements_Graphique/XFCE4_Profile.tar.bz2" -O /home/marc/Bureau/XFCE4_Profile.tar.bz2
+xfce4-panel-profiles load /home/marc/Bureau/XFCE4_Profile.tar.bz2 
 ```
 
 
