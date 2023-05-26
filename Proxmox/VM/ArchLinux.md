@@ -388,16 +388,16 @@ dmesg --level 4;
 dmesg --level 3;
 ```
 
-#### Interface
-```
-pacman -Sy --noconfirm xfce4;
-pacman -Sy --noconfirm gdm;
-systemctl enable gdm.service;
-```
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### VI.Installation de l'environnement Graphique
 
+#### Serveur d'affichage
+```bash
+clear;
+sudo pacman -Sy --noconfirm xorg-server xorg-xinit 1>/dev/null;
+
+```
 | [Xorg](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Serveur_Affichage) | [Environnement Graphique](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Environnements_Graphique) | [Gestionnaire de session](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Gestionnaire_de_connexion) | [APPLET](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Applets) | [Drthrax](https://github.com/dexter74/Linux/blob/main/Archlinux/Deploiement/Drthrax.md)
 
