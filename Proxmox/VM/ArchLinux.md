@@ -447,8 +447,8 @@ chown marc:users /home/marc/Bureau/XFCE4_Profile.tar.bz2;
 sudo pacman -Sy --noconfirm lightdm;
 sudo pacman -Sy --noconfirm lightdm-gtk-greeter;
 sudo pacman -Sy --noconfirm lightdm-webkit2-greeter;
-
 sudo git clone https://github.com/AlphaNecron/lightdm-evo.git /usr/share/lightdm-webkit/themes/lightdm-evo;
+
 sudo sed -i 's/\#greeter-session\=example-gtk-gnome/greeter-session\=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf;
 sudo sed -i 's/antergos/lightdm-evo/g' /etc/lightdm/lightdm-webkit2-greeter.conf;
 sudo systemctl restart lightdm;
