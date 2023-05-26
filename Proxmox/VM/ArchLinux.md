@@ -214,8 +214,10 @@ pacman -Sy --noconfirm archlinux-keyring 1>/dev/null;
 #### Déclaration des variables Systèmes
 ```bash
 clear;
-NAME=archlinux
-DOM=lan
+
+NAME=Archlinux
+DOM=LAN
+
 USERNAME=marc
 ID=1000
 PASSWORD=admin
