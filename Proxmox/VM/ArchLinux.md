@@ -4,9 +4,10 @@
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### I. Création de la VM
 ```
-Disque EFI : Décocher Clé de préinscription (Empêche le boot EFI)
-Contrôleur : VMware PVSCSI
-Disque-Dur : 32 Go
+Disque EFI   : Décocher Clé de préinscription (Empêche le boot EFI)
+Contrôleur   : VMware PVSCSI
+Disque-Dur   : 32 Go
+Carte-réseau : vmbr0 
 ```
 
 
