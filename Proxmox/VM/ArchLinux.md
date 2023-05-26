@@ -439,9 +439,13 @@ sudo rm -rf /tmp/xfce4-docklike-plugin-0.4.0/;
 ```
 clear;
 wget "https://github.com/dexter74/Linux/raw/main/Archlinux/Appz/Environnements_Graphique/XFCE4_Profile.tar.bz2" -O /home/marc/Bureau/XFCE4_Profile.tar.bz2
-xfce4-panel-profiles load /home/marc/Bureau/XFCE4_Profile.tar.bz2 
+chown marc:users /home/marc/Bureau/XFCE4_Profile.tar.bz2
 ```
 
+#### Gestionnaire de connxion
+```
+
+```
 
 
 | [Xorg](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Serveur_Affichage) | [Environnement Graphique](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Environnements_Graphique) | [Gestionnaire de session](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Gestionnaire_de_connexion) | [APPLET](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Applets) | [Drthrax](https://github.com/dexter74/Linux/blob/main/Archlinux/Deploiement/Drthrax.md)
