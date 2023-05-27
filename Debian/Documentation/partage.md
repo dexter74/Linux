@@ -91,12 +91,12 @@ echo "[Unit]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-"$SHARE_SMB2".mount;
 #####################################################################################################
 echo "[Unit]
-  Description=Montage du partage "$SHARE_SMB2"
+  Description=Montage du partage "$SHARE_SMB3"
   Requires=network-online.target
   After=network-online.service
 [Mount]
-  What=//$SHARE_IP/"$SHARE_SMB2"
-  Where=/mnt/"$SHARE_SMB2"
+  What=//$SHARE_IP/"$SHARE_SMB3"
+  Where=/mnt/"$SHARE_SMB3"
   Type=cifs
   TimeoutSec=5s
   Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=$LOCAL_USER,gid=$LOCAL_GROUP
