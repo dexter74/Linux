@@ -63,7 +63,6 @@ dir_mode=0777
 workgroup=WORKGROUP
 _netdev" > /etc/credentials/.smbpassword;
 chmod 600 /etc/credentials/.smbpassword;
-
 #####################################################################################################
 echo "[Unit]
   Description=Montage du partage "$SHARE_SMB1"
