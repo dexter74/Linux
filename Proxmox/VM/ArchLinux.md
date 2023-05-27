@@ -143,6 +143,7 @@ pacman -Sy --noconfirm archlinux-keyring 1>/dev/null;
 ```bash
 clear;
 pacstrap /mnt amd-ucode                 1>/dev/null;
+pacstrap /mnt archlinux-keyring         1>/dev/null;
 pacstrap /mnt avahi                     1>/dev/null;
 pacstrap /mnt base                      1>/dev/null;
 pacstrap /mnt base-devel                1>/dev/null;
