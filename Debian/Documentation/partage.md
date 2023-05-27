@@ -9,7 +9,7 @@ clear;
 # Information serveur Partage #
 ###############################
 # IP du Serveur
-SHARE_IP=
+SHARE_IP=192.168.1.20
 
 # Identifiant du partage
 SHARE_USER=
@@ -18,9 +18,9 @@ SHARE_USER=
 SHARE_PASS=
 
 # Nom des partages
-SHARE_SMB1=""
-SHARE_SMB2=""
-SHARE_SMB3=""
+SHARE_SMB1="Dessin-Animee"
+SHARE_SMB2="Films"
+SHARE_SMB3="Serie"
 
 #####################
 # Utilisateur Local #
