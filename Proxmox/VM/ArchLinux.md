@@ -378,7 +378,7 @@ echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/admin;
 ```bash
 clear;
 runuser -l $USERNAME -c 'git clone https://aur.archlinux.org/yay.git /tmp/yay' 2>/dev/null;
-runuser -l $USERNAME -c 'cd /tmp/yay && makepkg -si --noconfirm'   1>/dev/null 2>/dev/null; 
+runuser -l $USERNAME -c 'cd /tmp/yay && makepkg -si --noconfirm'   1>/dev/null 2>/dev/null;
 ```
 
 #### Paquets YAY ([MKINITCPIO](https://wiki.archlinux.org/title/mkinitcpio))
