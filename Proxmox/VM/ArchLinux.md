@@ -142,53 +142,86 @@ pacman -Sy --noconfirm archlinux-keyring 1>/dev/null;
 #### Installation des paquets
 ```bash
 clear;
-pacstrap /mnt amd-ucode            1>/dev/null;
-pacstrap /mnt avahi                1>/dev/null;
-pacstrap /mnt base                 1>/dev/null;
-pacstrap /mnt base-devel           1>/dev/null;
-pacstrap /mnt bash-completion      1>/dev/null;
-pacstrap /mnt curl                 1>/dev/null;
-pacstrap /mnt binutils             1>/dev/null;
-pacstrap /mnt efibootmgr           1>/dev/null;
-pacstrap /mnt dhcpcd               1>/dev/null;
-pacstrap /mnt dhclient             1>/dev/null;
-pacstrap /mnt dnsutils             1>/dev/null;
-pacstrap /mnt fakeroot             1>/dev/null;
-pacstrap /mnt gtk-engine-murrine   1>/dev/null;
-pacstrap /mnt gtk-engines          1>/dev/null;
-pacstrap /mnt git                  1>/dev/null;
-pacstrap /mnt go                   1>/dev/null;
-pacstrap /mnt gvfs                 1>/dev/null;
-pacstrap /mnt gvfs-nfs             1>/dev/null;
-pacstrap /mnt gvfs-smb             1>/dev/null;
-pacstrap /mnt linux                1>/dev/null;
-pacstrap /mnt linux-firmware       1>/dev/null;
-pacstrap /mnt linux-headers        1>/dev/null;
-pacstrap /mnt lsb-release          1>/dev/null;
-pacstrap /mnt lvm2                 1>/dev/null;
-pacstrap /mnt man                  1>/dev/null;
-pacstrap /mnt nano                 1>/dev/null;
-pacstrap /mnt neofetch             1>/dev/null;
-pacstrap /mnt net-tools            1>/dev/null;
-pacstrap /mnt networkmanager       1>/dev/null;
-pacstrap /mnt ntfs-3g              1>/dev/null;
-pacstrap /mnt ntp                  1>/dev/null;
-pacstrap /mnt openssh              1>/dev/null;
-pacstrap /mnt p7zip                1>/dev/null;
-pacstrap /mnt pacman-contrib       1>/dev/null;
-pacstrap /mnt pulseaudio           1>/dev/null;
-pacstrap /mnt pulseaudio-alsa      1>/dev/null;
-pacstrap /mnt pulseaudio-equalizer 1>/dev/null;
-pacstrap /mnt samba                1>/dev/null;
-pacstrap /mnt smbclient            1>/dev/null;
-pacstrap /mnt sudo                 1>/dev/null;
-pacstrap /mnt unzip                1>/dev/null;
-pacstrap /mnt usbutils             1>/dev/null;
-pacstrap /mnt wget                 1>/dev/null;
-pacstrap /mnt zip                  1>/dev/null;
+pacstrap /mnt amd-ucode                 1>/dev/null;
+pacstrap /mnt avahi                     1>/dev/null;
+pacstrap /mnt base                      1>/dev/null;
+pacstrap /mnt base-devel                1>/dev/null;
+pacstrap /mnt bash-completion           1>/dev/null;
+pacstrap /mnt curl                      1>/dev/null;
+pacstrap /mnt binutils                  1>/dev/null;
+pacstrap /mnt efibootmgr                1>/dev/null;
+pacstrap /mnt dhcpcd                    1>/dev/null;
+pacstrap /mnt dhclient                  1>/dev/null;
+pacstrap /mnt dnsutils                  1>/dev/null;
+pacstrap /mnt fakeroot                  1>/dev/null;
+pacstrap /mnt ffmpeg                    1>/dev/null;
+pacstrap /mnt ffmpegthumbnailer         1>/dev/null;
+pacstrap /mnt gtk-engine-murrine        1>/dev/null;
+pacstrap /mnt gtk-engines               1>/dev/null;
+pacstrap /mnt git                       1>/dev/null;
+pacstrap /mnt go                        1>/dev/null;
+pacstrap /mnt gvfs                      1>/dev/null;
+pacstrap /mnt gvfs-nfs                  1>/dev/null;
+pacstrap /mnt gvfs-smb                  1>/dev/null;
+pacstrap /mnt libgepub                  1>/dev/null;
+pacstrap /mnt libgsf                    1>/dev/null;
+pacstrap /mnt libopenraw                1>/dev/null;
+pacstrap /mnt lightdm                   1>/dev/null;
+pacstrap /mnt lightdm-gtk-greeter       1>/dev/null;
+pacstrap /mnt lightdm-webkit2-greeter   1>/dev/null;
+pacstrap /mnt linux                     1>/dev/null;
+pacstrap /mnt linux-firmware            1>/dev/null;
+pacstrap /mnt linux-headers             1>/dev/null;
+pacstrap /mnt lsb-release               1>/dev/null;
+pacstrap /mnt lvm2                      1>/dev/null;
+pacstrap /mnt man                       1>/dev/null;
+pacstrap /mnt nano                      1>/dev/null;
+pacstrap /mnt neofetch                  1>/dev/null;
+pacstrap /mnt net-tools                 1>/dev/null;
+pacstrap /mnt networkmanager            1>/dev/null;
+pacstrap /mnt network-manager-applet    1>/dev/null;
+pacstrap /mnt networkmanager-pptp       1>/dev/null;
+pacstrap /mnt networkmanager-qt         1>/dev/null;
+pacstrap /mnt ntfs-3g                   1>/dev/null;
+pacstrap /mnt ntp                       1>/dev/null;
+pacstrap /mnt openssh                   1>/dev/null;
+pacstrap /mnt p7zip                     1>/dev/null;
+pacstrap /mnt pacman-contrib            1>/dev/null;
+pacstrap /mnt pavucontrol               1>/dev/null; 
+pacstrap /mnt pulseaudio                1>/dev/null;
+pacstrap /mnt pulseaudio-alsa           1>/dev/null;
+pacstrap /mnt pulseaudio-equalizer      1>/dev/null;
+pacstrap /mnt poppler                   1>/dev/null;
+pacstrap /mnt poppler-glib              1>/dev/null;
+pacstrap /mnt samba                     1>/dev/null;
+pacstrap /mnt smbclient                 1>/dev/null;
+pacstrap /mnt sudo                      1>/dev/null;
+pacstrap /mnt unzip                     1>/dev/null;
+pacstrap /mnt usbutils                  1>/dev/null;
+pacstrap /mnt wget                      1>/dev/null;
+pacstrap /mnt xorg-server               1>/dev/null;
+pacstrap /mnt xorg-xinit                1>/dev/null;
+pacstrap /mnt zip                       1>/dev/null;
+pacstrap /mnt qemu-guest-agent          1>/dev/null;
+pacstrap /mnt xfce4                     1>/dev/null;
+pacstrap /mnt xfce4-dev-tools           1>/dev/null;
+pacstrap /mnt xfce4-datetime-plugin     1>/dev/null;
+pacstrap /mnt xfce4-goodies             1>/dev/null;
+pacstrap /mnt xfce4-whiskermenu-plugin  1>/dev/null;
 
-pacstrap /mnt qemu-guest-agent     1>/dev/null;
 ```
+
+
+
+#### Gestionnaire de connexion
+```
+clear;
+git clone https://github.com/AlphaNecron/lightdm-evo.git /usr/share/lightdm-webkit/themes/lightdm-evo;
+sudo sed -i 's/\#greeter-session\=example-gtk-gnome/greeter-session\=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf;
+sudo sed -i 's/antergos/lightdm-evo/g' /etc/lightdm/lightdm-webkit2-greeter.conf;
+sudo systemctl enable lightdm;
+```
+
 
 #### Générer le FSTAB
 ```bash
@@ -346,7 +379,7 @@ runuser -l $USERNAME -c 'git clone https://aur.archlinux.org/yay.git /tmp/yay' 2
 runuser -l $USERNAME -c 'cd /tmp/yay && makepkg -si --noconfirm'   1>/dev/null 2>/dev/null; 
 ```
 
-#### YAY ([MKINITCPIO](https://wiki.archlinux.org/title/mkinitcpio))
+#### Paquets YAY ([MKINITCPIO](https://wiki.archlinux.org/title/mkinitcpio))
 ```bash
 clear;
 runuser -l $USERNAME -c 'yay -Sy --noconfirm linux-firmware-qlogic' 1>/dev/null 2>/dev/null;
@@ -354,6 +387,8 @@ runuser -l $USERNAME -c 'yay -Sy --noconfirm wd719x-firmware'       1>/dev/null 
 runuser -l $USERNAME -c 'yay -Sy --noconfirm aic94xx-firmware'      1>/dev/null 2>/dev/null;
 runuser -l $USERNAME -c 'yay -Sy --noconfirm upd72020x-fw'          1>/dev/null 2>/dev/null;
 runuser -l $USERNAME -c 'yay -Sy --noconfirm adduser'               1>/dev/null 2>/dev/null;
+
+yay -Sy --noconfirm xfce4-panel-profiles              1>/dev/null;
 ```
 
 #### Autoriser le SSH
@@ -395,37 +430,6 @@ dmesg --level 3;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### VI.Installation de l'environnement Graphique
 
-#### Serveur d'affichage
-```bash
-clear;
-sudo pacman -Sy --noconfirm xorg-server xorg-xinit 1>/dev/null;
-sudo pacman -R xf86-video-fbdev;
-```
-
-#### Interface Graphique
-```bash
-sudo pacman -Sy --noconfirm xfce4                    1>/dev/null;
-sudo pacman -Sy --noconfirm xfce4-dev-tools          1>/dev/null;
-sudo pacman -Sy --noconfirm xfce4-datetime-plugin    1>/dev/null;
-sudo pacman -Sy --noconfirm xfce4-whiskermenu-plugin 1>/dev/null;
-
-#Suppléments:
-yay -Sy --noconfirm xfce4-panel-profiles              1>/dev/null;
-
-# Fix Erreur (journalctl)
-sudo pacman -Sy --noconfirm libgsf                   1>/dev/null;
-sudo pacman -Sy --noconfirm libopenraw               1>/dev/null;
-sudo pacman -Sy --noconfirm ffmpeg                   1>/dev/null;
-sudo pacman -Sy --noconfirm ffmpegthumbnailer        1>/dev/null;
-sudo pacman -Sy --noconfirm libgepub                 1>/dev/null;
-sudo pacman -Sy --noconfirm poppler                  1>/dev/null;
-sudo pacman -Sy --noconfirm poppler-glib             1>/dev/null;
-```
-
-Goodies:
-```bash
-sudo pacman -Sy --noconfirm xfce4-goodies 1>/dev/null;
-```
 
 Docklike:
 ```bash
@@ -441,6 +445,10 @@ cd;
 sudo rm -rf /tmp/xfce4-docklike-plugin-0.4.0/;
 ```
 
+
+
+
+
 Profil XFCE4:
 ```
 clear;
@@ -448,28 +456,6 @@ wget "https://github.com/dexter74/Linux/raw/main/Archlinux/Appz/Environnements_G
 chown marc:users /home/marc/Bureau/XFCE4_Profile.tar.bz2;
 ```
 
-Applet:
-```bash
-sudo pacman -Sy --noconfirm network-manager-applet;
-sudo pacman -Sy --noconfirm networkmanager-pptp;
-sudo pacman -Sy --noconfirm networkmanager-qt;
-sudo pacman -Sy --noconfirm pavucontrol;
-```
-
-
-
-#### Gestionnaire de connexion
-```
-clear;
-sudo pacman -Sy --noconfirm lightdm;
-sudo pacman -Sy --noconfirm lightdm-gtk-greeter;
-sudo pacman -Sy --noconfirm lightdm-webkit2-greeter;
-sudo git clone https://github.com/AlphaNecron/lightdm-evo.git /usr/share/lightdm-webkit/themes/lightdm-evo;
-
-sudo sed -i 's/\#greeter-session\=example-gtk-gnome/greeter-session\=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf;
-sudo sed -i 's/antergos/lightdm-evo/g' /etc/lightdm/lightdm-webkit2-greeter.conf;
-sudo systemctl enable lightdm;
-```
 
 
 | [Xorg](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Serveur_Affichage) | [Environnement Graphique](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Environnements_Graphique) | [Gestionnaire de session](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Gestionnaire_de_connexion) | [APPLET](https://github.com/dexter74/Linux/tree/main/Archlinux/Appz/Applets) | [Drthrax](https://github.com/dexter74/Linux/blob/main/Archlinux/Deploiement/Drthrax.md)
