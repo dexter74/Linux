@@ -245,7 +245,7 @@ arch-chroot /mnt;
 clear;
 sed -i -e "s/\#ParallelDownloads \= 5/ParallelDownloads = 5/g" /etc/pacman.conf;
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf;
-pacman -Syu
+pacman -Syu;
 ```
 
 #### Déclaration des variables Systèmes
