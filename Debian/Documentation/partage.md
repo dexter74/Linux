@@ -1,6 +1,10 @@
 ##### I. Déclaration des variables
 ```
+###########################
+# Nettoyage de la console #
+###########################
 clear;
+
 ###############################
 # Information serveur Partage #
 ###############################
