@@ -389,21 +389,42 @@ runuser -l $USERNAME -c 'yay -Sy --noconfirm wd719x-firmware'       1>/dev/null 
 runuser -l $USERNAME -c 'yay -Sy --noconfirm aic94xx-firmware'      1>/dev/null 2>/dev/null;
 runuser -l $USERNAME -c 'yay -Sy --noconfirm upd72020x-fw'          1>/dev/null 2>/dev/null;
 runuser -l $USERNAME -c 'yay -Sy --noconfirm adduser'               1>/dev/null 2>/dev/null;
-
-yay -Sy --noconfirm xfce4-panel-profiles                            1>/dev/null;
+runuser -l $USERNAME -c 'yay -Sy --noconfirm xfce4-panel-profiles'  1>/dev/null 2>/dev/null;
 ```
 
 #### Autoriser le SSH
 ```bash
+clear;
 sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ssh/sshd_config;
 ```
 
 #### Samba
 ```
+clear;
 echo "client min protocol = NT1
 client max protocol = SMB3" > /etc/samba/smb.conf;
 ```
 
+#### Docklike
+```bash
+clear;
+sudo rm -rf /tmp/xfce4-docklike-plugin-0.4.0*;
+wget --inet4-only https://archive.xfce.org/src/panel-plugins/xfce4-docklike-plugin/0.4/xfce4-docklike-plugin-0.4.0.tar.bz2 -O /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 && tar xf /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 -C /tmp;
+sed -i '22  s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
+sed -i '177 s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
+sed -i '26  s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
+sed -i '190 s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
+cd /tmp/xfce4-docklike-plugin-0.4.0/; ./configure; make -j$(nproc); sudo make install 1>/dev/null;
+cd;
+sudo rm -rf /tmp/xfce4-docklike-plugin-0.4.0/;
+```
+
+#### Profil XFCE4:
+```
+clear;
+wget "https://github.com/dexter74/Linux/raw/main/Archlinux/Appz/Environnements_Graphique/XFCE4_Profile.tar.bz2" -O /home/marc/Bureau/XFCE4_Profile.tar.bz2;
+chown marc:users /home/marc/Bureau/XFCE4_Profile.tar.bz2;
+```
 #### Services
 ```bash
 clear;
@@ -428,35 +449,6 @@ dmesg --level 3;
 ```
 
 
-
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### VI.Installation de l'environnement Graphique
-
-
-Docklike:
-```bash
-clear;
-sudo rm -rf /tmp/xfce4-docklike-plugin-0.4.0*;
-wget --inet4-only https://archive.xfce.org/src/panel-plugins/xfce4-docklike-plugin/0.4/xfce4-docklike-plugin-0.4.0.tar.bz2 -O /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 && tar xf /tmp/xfce4-docklike-plugin-0.4.0.tar.bz2 -C /tmp;
-sed -i '22  s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
-sed -i '177 s/Épingler/Désépingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
-sed -i '26  s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
-sed -i '190 s/Désépingler/Épingler/'  /tmp/xfce4-docklike-plugin-0.4.0/po/fr.po;
-cd /tmp/xfce4-docklike-plugin-0.4.0/; ./configure; make -j$(nproc); sudo make install 1>/dev/null;
-cd;
-sudo rm -rf /tmp/xfce4-docklike-plugin-0.4.0/;
-```
-
-
-
-
-
-Profil XFCE4:
-```
-clear;
-wget "https://github.com/dexter74/Linux/raw/main/Archlinux/Appz/Environnements_Graphique/XFCE4_Profile.tar.bz2" -O /home/marc/Bureau/XFCE4_Profile.tar.bz2;
-chown marc:users /home/marc/Bureau/XFCE4_Profile.tar.bz2;
-```
 
 
 
