@@ -400,7 +400,7 @@ sudo pacman -Sy --noconfirm xorg-server xorg-xinit 1>/dev/null;
 sudo pacman -R xf86-video-fbdev;
 ```
 
-#### XFCE4
+#### Interface Graphique
 ```bash
 sudo pacman -Sy --noconfirm xfce4                    1>/dev/null;
 sudo pacman -Sy --noconfirm xfce4-dev-tools          1>/dev/null;
@@ -419,6 +419,7 @@ sudo pacman -Sy --noconfirm libgepub                 1>/dev/null;
 sudo pacman -Sy --noconfirm poppler                  1>/dev/null;
 sudo pacman -Sy --noconfirm poppler-glib             1>/dev/null;
 ```
+
 Goodies:
 ```bash
 sudo pacman -Sy --noconfirm xfce4-goodies 1>/dev/null;
@@ -444,6 +445,16 @@ clear;
 wget "https://github.com/dexter74/Linux/raw/main/Archlinux/Appz/Environnements_Graphique/XFCE4_Profile.tar.bz2" -O /home/marc/Bureau/XFCE4_Profile.tar.bz2;
 chown marc:users /home/marc/Bureau/XFCE4_Profile.tar.bz2;
 ```
+
+Applet:
+```bash
+sudo pacman -Sy --noconfirm network-manager-applet;
+sudo pacman -Sy --noconfirm networkmanager-pptp;
+sudo pacman -Sy --noconfirm networkmanager-qt;
+sudo pacman -Sy --noconfirm pavucontrol;
+```
+
+
 
 #### Gestionnaire de connexion
 ```
