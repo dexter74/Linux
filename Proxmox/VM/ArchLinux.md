@@ -407,7 +407,8 @@ sudo pacman -Sy --noconfirm xfce4-dev-tools          1>/dev/null;
 sudo pacman -Sy --noconfirm xfce4-datetime-plugin    1>/dev/null;
 sudo pacman -Sy --noconfirm xfce4-whiskermenu-plugin 1>/dev/null;
 
-yay -Sy --noconfirm xfce4-panel-profiles 1>/dev/null 2>/dev/null;
+#Suppléments:
+yay -Sy --noconfirm xfce4-panel-profiles              1>/dev/null;
 
 # Fix Erreur (journalctl)
 sudo pacman -Sy --noconfirm libgsf                   1>/dev/null;
