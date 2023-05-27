@@ -10,7 +10,7 @@ echo "###############################
 # Information serveur Partage #
 ###############################
 # IP du Serveur
-SHARE_IP=192.168.1.20
+SHARE_IP=192.168.X.X
 
 # Identifiant du partage
 SHARE_USER=
