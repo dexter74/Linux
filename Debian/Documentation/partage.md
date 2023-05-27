@@ -1,19 +1,4 @@
-##### I. Credentials
-```bash
-mkdir /etc/credentials;
-echo "username=
-password=
-vers=3.0
-file_mode=0777
-dir_mode=0777
-workgroup=WORKGROUP
-_netdev" > /etc/credentials/.smbpassword;
-chmod 600 /etc/credentials/.smbpassword;
-nano /etc/credentials/.smbpassword;
-```
-
-
-##### II. Déclaration des variables
+##### I. Déclaration des variables
 ```
 clear;
 ###############################
@@ -40,7 +25,6 @@ SHARE_SMB3=
 LOCAL_USER=$(id 1000  | cut -d ")" -f 1 | cut -d "(" -f 2)
 LOCAL_GROUP=$(id 1000 | cut -d "(" -f 2 | cut -d ")" -f 1)
 
-
 ####################################
 # Création des dossiers de montage #
 ####################################
@@ -56,9 +40,21 @@ chown -R $USERNAME:$LOCAL_GROUP /mnt/$SHARE_SMB2;
 chown -R $USERNAME:$LOCAL_GROUP /mnt/$SHARE_SMB3;
 ```
 
-##### II. Services Mount
+##### II. Credentials
+```bash
+mkdir /etc/credentials;
+echo "username=$SHARE_USER
+password=$SHARE_PASS
+vers=3.0
+file_mode=0777
+dir_mode=0777
+workgroup=WORKGROUP
+_netdev" > /etc/credentials/.smbpassword;
+chmod 600 /etc/credentials/.smbpassword;
+```
 
 
+##### III. Services Mount
 ```bash
 echo "[Unit]
   Description=Montage du partage $SHARE_SMB1
@@ -76,7 +72,7 @@ echo "[Unit]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-$SHARE_SMB1.mount;  
 ```
 
-
+#### IV. Gestion des services
 ```
 clear;
 systemctl daemon-reload;
