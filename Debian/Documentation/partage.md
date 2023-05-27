@@ -34,7 +34,6 @@ SHARE_SMB2="Films"
 SHARE_SMB3="Serie"
 
 
-
 #####################
 # Utilisateur Local #
 #####################
@@ -119,18 +118,18 @@ clear;
 SHARE_SMB1="Dessin-Animee"
 SHARE_SMB2="Films"
 SHARE_SMB3="Serie"
+
 SERVICE=$(systemd-escape -p /mnt/$SHARE_SMB1)
 
 systemctl daemon-reload;
 echo
-
-systemctl enable --now "$SERVICE.mount"
+systemctl enable "$SERVICE.mount"
 sleep 2
 echo
 sleep 2
-systemctl enable --now mnt-"$SHARE_SMB2".mount;
+systemctl enable mnt-"$SHARE_SMB2".mount;
 echo
 sleep 2
-systemctl enable --now mnt-"$SHARE_SMB3".mount;
+systemctl enable mnt-"$SHARE_SMB3".mount;
 ```
 
