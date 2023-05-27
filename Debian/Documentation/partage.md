@@ -13,9 +13,9 @@ nano /etc/credentials/.smbpassword;
 ```
 
 
+##### II. Déclaration des variables
 ```
 clear;
-
 ###############################
 # Information serveur Partage #
 ###############################
@@ -57,6 +57,8 @@ chown -R $USERNAME:$LOCAL_GROUP /mnt/$SHARE_SMB3;
 ```
 
 ##### II. Services Mount
+
+
 ```bash
 echo "[Unit]
   Description=Montage du partage $SHARE_SMB1
@@ -71,8 +73,9 @@ echo "[Unit]
   Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=$LOCAL_USER,gid=$LOCAL_GROUP
 
 [Install]
-  WantedBy=multi-user.target" > /etc/systemd/system/mnt-$SHARE_SMB1.mount;
+  WantedBy=multi-user.target" > /etc/systemd/system/mnt-$SHARE_SMB1.mount;  
 ```
+
 
 ```
 clear;
