@@ -31,7 +31,6 @@ LOCAL_GROUP=$(id 1000 | cut -d "(" -f 2 | cut -d ")" -f 1)
 mkdir -p /mnt/$SHARE_SMB1;
 mkdir -p /mnt/$SHARE_SMB2;
 mkdir -p /mnt/$SHARE_SMB3;
-
 ###############
 # Permissions #
 ###############
