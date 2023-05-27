@@ -18,9 +18,9 @@ SHARE_USER=
 SHARE_PASS=
 
 # Nom des partages
-SHARE_SMB1=
-SHARE_SMB2=
-SHARE_SMB3=
+SHARE_SMB1=""
+SHARE_SMB2=""
+SHARE_SMB3=""
 
 #####################
 # Utilisateur Local #
@@ -32,16 +32,16 @@ LOCAL_GROUP=$(id 1000 | cut -d "(" -f 2 | cut -d ")" -f 1)
 ####################################
 # Création des dossiers de montage #
 ####################################
-mkdir -p /mnt/$SHARE_SMB1 2>/dev/null;
-mkdir -p /mnt/$SHARE_SMB2 2>/dev/null;
-mkdir -p /mnt/$SHARE_SMB3 2>/dev/null;
+mkdir -p /mnt/"$SHARE_SMB1" 2>/dev/null;
+mkdir -p /mnt/"$SHARE_SMB2" 2>/dev/null;
+mkdir -p /mnt/"$SHARE_SMB3" 2>/dev/null;
 
 ###############
 # Permissions #
 ###############
-chown -R $USERNAME:$LOCAL_GROUP /mnt/$SHARE_SMB1;
-chown -R $USERNAME:$LOCAL_GROUP /mnt/$SHARE_SMB2;
-chown -R $USERNAME:$LOCAL_GROUP /mnt/$SHARE_SMB3;
+chown -R $USERNAME:$LOCAL_GROUP /mnt/"$SHARE_SMB1";
+chown -R $USERNAME:$LOCAL_GROUP /mnt/"$SHARE_SMB2";
+chown -R $USERNAME:$LOCAL_GROUP /mnt/"$SHARE_SMB3";
 
 mkdir /etc/credentials  2>/dev/null;
 echo "username=$SHARE_USER
@@ -55,43 +55,17 @@ chmod 600 /etc/credentials/.smbpassword;
 
 #####################################################################################################
 echo "[Unit]
-  Description=Montage du partage $SHARE_SMB1
+  Description=Montage du partage "$SHARE_SMB1"
   Requires=network-online.target
   After=network-online.service
 [Mount]
-  What=//$SHARE_IP/$SHARE_SMB1
-  Where=/mnt/$SHARE_SMB1
+  What=//$SHARE_IP/"$SHARE_SMB1"
+  Where=/mnt/"$SHARE_SMB1"
   Type=cifs
   TimeoutSec=5s
   Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=$LOCAL_USER,gid=$LOCAL_GROUP
 [Install]
-  WantedBy=multi-user.target" > /etc/systemd/system/mnt-$SHARE_SMB1.mount;
-#####################################################################################################
-echo "[Unit]
-  Description=Montage du partage $SHARE_SMB2
-  Requires=network-online.target
-  After=network-online.service
-[Mount]
-  What=//$SHARE_IP/$SHARE_SMB2
-  Where=/mnt/$SHARE_SMB2
-  Type=cifs
-  TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=$LOCAL_USER,gid=$LOCAL_GROUP
-[Install]
-  WantedBy=multi-user.target" > /etc/systemd/system/mnt-$SHARE_SMB2.mount;
-#####################################################################################################
-echo "[Unit]
-  Description=Montage du partage $SHARE_SMB3
-  Requires=network-online.target
-  After=network-online.service
-[Mount]
-  What=//$SHARE_IP/$SHARE_SMB3
-  Where=/mnt/$SHARE_SMB3
-  Type=cifs
-  TimeoutSec=5s
-  Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=$LOCAL_USER,gid=$LOCAL_GROUP
-[Install]
-  WantedBy=multi-user.target" > /etc/systemd/system/mnt-$SHARE_SMB3.mount;
+  WantedBy=multi-user.target" > /etc/systemd/system/mnt-"$SHARE_SMB1".mount;
 #####################################################################################################
 ```
 
@@ -99,11 +73,11 @@ echo "[Unit]
 ```
 clear;
 systemctl daemon-reload;
-systemctl stop  mnt-$SHARE_SMB1;
-systemctl disable --now mnt-$SHARE_SMB1;
+systemctl stop  mnt-"$SHARE_SMB1";
+systemctl disable --now mnt-"$SHARE_SMB1";
 
 systemctl start mnt-Download;
-systemctl enable --now mnt-$SHARE_SMB1;
-systemctl status --now mnt-$SHARE_SMB1 | grep "mount\|Active:" ;
+systemctl enable --now mnt-"$SHARE_SMB1";
+systemctl status --now mnt-"$SHARE_SMB1" | grep "mount\|Active:" ;
 ```
 
