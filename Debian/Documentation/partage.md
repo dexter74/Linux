@@ -33,6 +33,8 @@ SHARE_SMB1="Dessin-Animee"
 SHARE_SMB2="Films"
 SHARE_SMB3="Serie"
 
+
+
 #####################
 # Utilisateur Local #
 #####################
@@ -46,6 +48,10 @@ LOCAL_GROUP=$(id 1000 | cut -d "(" -f 2 | cut -d ")" -f 1)
 mkdir -p /mnt/"$SHARE_SMB1" 2>/dev/null;
 mkdir -p /mnt/"$SHARE_SMB2" 2>/dev/null;
 mkdir -p /mnt/"$SHARE_SMB3" 2>/dev/null;
+
+# Nom du service avec un tiret (mnt-Dessin\x2dAnimee.mount)
+SERVICE=$(systemd-escape -p /mnt/$SHARE_SMB1)
+
 
 ###############
 # Permissions #
@@ -75,7 +81,7 @@ echo "[Unit]
   TimeoutSec=5s
   Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=$LOCAL_USER,gid=$LOCAL_GROUP
 [Install]
-  WantedBy=multi-user.target" > /etc/systemd/system/mnt-"$SHARE_SMB1".mount;
+  WantedBy=multi-user.target" > /etc/systemd/system/$SERVICE.mount;
 #####################################################################################################
 echo "[Unit]
   Description=Montage du partage "$SHARE_SMB2"
