@@ -81,7 +81,7 @@ echo "[Unit]
   TimeoutSec=5s
   Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=$LOCAL_USER,gid=$LOCAL_GROUP
 [Install]
-  WantedBy=multi-user.target" > /etc/systemd/system/$SERVICE.mount;
+  WantedBy=multi-user.target" > /etc/systemd/system/"$SERVICE".mount;
 #####################################################################################################
 echo "[Unit]
   Description=Montage du partage "$SHARE_SMB2"
@@ -115,12 +115,22 @@ echo "[Unit]
 #### II. Gestion des services
 ```
 clear;
-systemctl daemon-reload;
-systemctl stop  mnt-"$SHARE_SMB1";
-systemctl disable --now mnt-"$SHARE_SMB1";
+# Nom des partages
+SHARE_SMB1="Dessin-Animee"
+SHARE_SMB2="Films"
+SHARE_SMB3="Serie"
+SERVICE=$(systemd-escape -p /mnt/$SHARE_SMB1)
 
-systemctl start mnt-Download;
-systemctl enable --now mnt-"$SHARE_SMB1";
-systemctl status --now mnt-"$SHARE_SMB1" | grep "mount\|Active:" ;
+systemctl daemon-reload;
+echo
+
+systemctl enable --now "$SERVICE.mount"
+sleep 2
+echo
+sleep 2
+systemctl enable --now mnt-"$SHARE_SMB2".mount;
+echo
+sleep 2
+systemctl enable --now mnt-"$SHARE_SMB3".mount;
 ```
 
