@@ -187,7 +187,7 @@ pacstrap /mnt ntp                       1>/dev/null;
 pacstrap /mnt openssh                   1>/dev/null;
 pacstrap /mnt p7zip                     1>/dev/null;
 pacstrap /mnt pacman-contrib            1>/dev/null;
-pacstrap /mnt pavucontrol               1>/dev/null; 
+pacstrap /mnt pavucontrol               1>/dev/null;
 pacstrap /mnt pulseaudio                1>/dev/null;
 pacstrap /mnt pulseaudio-alsa           1>/dev/null;
 pacstrap /mnt pulseaudio-equalizer      1>/dev/null;
