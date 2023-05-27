@@ -67,6 +67,33 @@ echo "[Unit]
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-"$SHARE_SMB1".mount;
 #####################################################################################################
+echo "[Unit]
+  Description=Montage du partage "$SHARE_SMB2"
+  Requires=network-online.target
+  After=network-online.service
+[Mount]
+  What=//$SHARE_IP/"$SHARE_SMB2"
+  Where=/mnt/"$SHARE_SMB2"
+  Type=cifs
+  TimeoutSec=5s
+  Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=$LOCAL_USER,gid=$LOCAL_GROUP
+[Install]
+  WantedBy=multi-user.target" > /etc/systemd/system/mnt-"$SHARE_SMB2".mount;
+#####################################################################################################
+echo "[Unit]
+  Description=Montage du partage "$SHARE_SMB2"
+  Requires=network-online.target
+  After=network-online.service
+[Mount]
+  What=//$SHARE_IP/"$SHARE_SMB2"
+  Where=/mnt/"$SHARE_SMB2"
+  Type=cifs
+  TimeoutSec=5s
+  Options=credentials=/etc/credentials/.smbpassword,x-gvfs-show,uid=$LOCAL_USER,gid=$LOCAL_GROUP
+[Install]
+  WantedBy=multi-user.target" > /etc/systemd/system/mnt-"$SHARE_SMB3".mount;
+#####################################################################################################
+
 ```
 
 #### II. Gestion des services
