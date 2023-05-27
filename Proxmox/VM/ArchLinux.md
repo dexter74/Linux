@@ -139,6 +139,11 @@ sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf;
 pacman -Sy --noconfirm archlinux-keyring 1>/dev/null;
 ```
 
+#### Installation des paquets sur le LiveCD
+```
+pacman -Sy --noconfirm git              1>/dev/null;
+```
+
 #### Installation des paquets
 ```bash
 clear;
@@ -209,18 +214,14 @@ pacstrap /mnt xfce4-dev-tools           1>/dev/null;
 pacstrap /mnt xfce4-datetime-plugin     1>/dev/null;
 pacstrap /mnt xfce4-goodies             1>/dev/null;
 pacstrap /mnt xfce4-whiskermenu-plugin  1>/dev/null;
-
 ```
 
-
-
-#### Gestionnaire de connexion
+#### Thème Lightdm
 ```
 clear;
-git clone https://github.com/AlphaNecron/lightdm-evo.git /usr/share/lightdm-webkit/themes/lightdm-evo;
-sudo sed -i 's/\#greeter-session\=example-gtk-gnome/greeter-session\=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf;
-sudo sed -i 's/antergos/lightdm-evo/g' /etc/lightdm/lightdm-webkit2-greeter.conf;
-sudo systemctl enable lightdm;
+git clone https://github.com/AlphaNecron/lightdm-evo.git /mnt/usr/share/lightdm-webkit/themes/lightdm-evo;
+sed -i 's/\#greeter-session\=example-gtk-gnome/greeter-session\=lightdm-webkit2-greeter/g' /mnt/etc/lightdm/lightdm.conf;
+sed -i 's/antergos/lightdm-evo/g' /mnt/etc/lightdm/lightdm-webkit2-greeter.conf;
 ```
 
 
@@ -407,15 +408,15 @@ client max protocol = SMB3" > /etc/samba/smb.conf;
 ```bash
 clear;
 systemctl enable avahi-daemon.service       2>/dev/null;
+systemctl enable lightdm                    2>/dev/null;
 systemctl enable NetworkManager             2>/dev/null;
 systemctl enable sshd                       2>/dev/null;
 systemctl enable smb                        2>/dev/null;
-
 #systemctl enable avahi-dnsconfd.service    2>/dev/null;
 #systemctl enable ntpd                      2>/dev/null;
 #systemctl enable systemd-homed             2>/dev/null;
 #systemctl enable systemd-timesyncd.service 2>/dev/null;
-#systemctl enable qemu-guest-agent           2>/dev/null;
+#systemctl enable qemu-guest-agent          2>/dev/null;
 ```
 
 
