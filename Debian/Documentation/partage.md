@@ -32,9 +32,10 @@ LOCAL_GROUP=$(id 1000 | cut -d "(" -f 2 | cut -d ")" -f 1)
 ####################################
 # Création des dossiers de montage #
 ####################################
-mkdir -p /mnt/$SHARE_SMB1;
-mkdir -p /mnt/$SHARE_SMB2;
-mkdir -p /mnt/$SHARE_SMB3;
+mkdir -p /mnt/$SHARE_SMB1 2>/dev/null;
+mkdir -p /mnt/$SHARE_SMB2 2>/dev/null;
+mkdir -p /mnt/$SHARE_SMB3 2>/dev/null;
+
 ###############
 # Permissions #
 ###############
@@ -42,7 +43,7 @@ chown -R $USERNAME:$LOCAL_GROUP /mnt/$SHARE_SMB1;
 chown -R $USERNAME:$LOCAL_GROUP /mnt/$SHARE_SMB2;
 chown -R $USERNAME:$LOCAL_GROUP /mnt/$SHARE_SMB3;
 
-mkdir /etc/credentials;
+mkdir /etc/credentials  2>/dev/null;
 echo "username=$SHARE_USER
 password=$SHARE_PASS
 vers=3.0
