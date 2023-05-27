@@ -1,11 +1,12 @@
 ##### I. Déclaration des variables
+
 ```
 ###########################
 # Nettoyage de la console #
 ###########################
 clear;
 
-###############################
+echo "###############################
 # Information serveur Partage #
 ###############################
 # IP du Serveur
@@ -15,7 +16,17 @@ SHARE_IP=192.168.1.20
 SHARE_USER=
 
 # Mot de passe
-SHARE_PASS=
+SHARE_PASS=" > credential; nano credential;
+```
+
+
+```
+###########################
+# Nettoyage de la console #
+###########################
+clear;
+
+source credential
 
 # Nom des partages
 SHARE_SMB1="Dessin-Animee"
@@ -93,8 +104,8 @@ echo "[Unit]
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-"$SHARE_SMB3".mount;
 #####################################################################################################
-
 ```
+
 
 #### II. Gestion des services
 ```
