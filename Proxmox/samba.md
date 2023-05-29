@@ -74,6 +74,19 @@ create mask    = 0700
 directory mask = 0700
 guest ok       = no
 
+#=== Video NAS =============================
+[Video]
+comment        = Dossier Video
+path           = "/mnt/sda/MyArchive"
+browseable     = yes
+writable       = yes
+read only      = no
+valid users    = marc
+force user     = root
+create mask    = 0700
+directory mask = 0700
+guest ok       = no
+
 #=== Data NAS ==============================
 [Download]
 comment        = Dossier Download
@@ -134,10 +147,10 @@ create mask    = 0700
 directory mask = 0700
 guest ok       = no
 
-#=== Video NAS =============================
-[Video]
-comment        = Dossier Video
-path           = "/mnt/sda/MyArchive"
+#=== Film2 ==============================
+[Film2]
+comment        = Utilisateur
+path           = "/mnt/sdc"
 browseable     = yes
 writable       = yes
 read only      = no
@@ -146,6 +159,7 @@ force user     = root
 create mask    = 0700
 directory mask = 0700
 guest ok       = no
+
 
 ;   write list = root, @lpadmin ' >  /etc/samba/smb.conf;
 ```
