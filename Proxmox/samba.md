@@ -30,7 +30,7 @@ echo '# Film (EXT4)
 /dev/sda1                    /mnt/sda        ext4     defaults,nofail      0       2
 
 # MyArchive (NTFS)
-UUID=94001B57001B4022       /mnt/sdb        ntfs-3g   defaults,nofail      0       2
+/dev/sdb1                   /mnt/sdb        ntfs-3g   defaults,nofail      0       2
 
 # Film2 (EXT4)
 /dev/sdc1                    /mnt/sdc        ext4      defaults,nofail     0       2' >> /etc/fstab;
