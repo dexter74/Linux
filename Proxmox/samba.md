@@ -102,6 +102,19 @@ create mask    = 0700
 directory mask = 0700
 guest ok       = no
 
+[Perso]
+comment        = Dossier Video
+path           = "/mnt/sda/MyArchive/.Perso"
+browseable     = no
+writable       = yes
+read only      = no
+valid users    = marc
+force user     = root
+create mask    = 0700
+directory mask = 0700
+guest ok       = no
+
+
 
 #=== Data NAS ==============================
 [Download]
