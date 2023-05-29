@@ -62,7 +62,7 @@ echo '#======================= Global Settings =======================
 
 
 #=== Proxmox ===============================
-[Qemu-server]
+[VM]
 comment        = Dossier Qemu
 path           = "/etc/pve/qemu-server"
 browseable     = yes
