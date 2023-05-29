@@ -140,6 +140,17 @@ create mask    = 0700
 directory mask = 0700
 guest ok       = no
 
+[Hentai]
+path           = "/mnt/sdb/MyArchive/User Homes/Drthrax74/Images/Hentai"
+browseable     = no
+writable       = yes
+read only      = no
+valid users    = marc
+force user     = root
+create mask    = 0700
+directory mask = 0700
+guest ok       = no
+
 [Music]
 comment        = Dossier Music
 path           = /mnt/sdb/MyArchive/Music
