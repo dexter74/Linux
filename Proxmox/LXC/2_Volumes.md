@@ -25,6 +25,12 @@ volumes:
  VIDEO2:
   external: true
 
+ PERSO:
+  external: true
+
+ HENTAI:
+  external: true
+
 #MyPhoto:
 # external: true
 ```
