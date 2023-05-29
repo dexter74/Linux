@@ -48,6 +48,8 @@ docker volume rm -f ${NAME_1};
 docker volume rm -f ${NAME_2};
 docker volume rm -f ${NAME_3};
 docker volume rm -f ${NAME_4};
+docker volume rm -f ${NAME_5};
+
 
 docker volume create --driver local \
         --opt type=cifs \
