@@ -148,7 +148,7 @@ directory mask = 0700
 guest ok       = no
 
 #=== Film2 ==============================
-[Film2]
+[Video2]
 comment        = Utilisateur
 path           = "/mnt/sdc"
 browseable     = yes
