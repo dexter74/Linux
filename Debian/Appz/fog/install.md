@@ -1,4 +1,4 @@
-#### Installation de FOG
+#### Installation de FOG (1.5.9 bug)
 ```bash
 ################################
 # Script de déploiement de FOG #
@@ -8,7 +8,6 @@
 FOG=https://github.com/FOGProject/fogproject/archive
 RELEASE=1.5.9.tar.gz
 PASSWORD_ROOT_SQL=admin
-
 
 # Nettoyage de la console
 clear;
@@ -43,4 +42,4 @@ cd bin;
 
 # Lancement de l'installation
 (echo "2"; echo "N"; echo "N"; echo "Y"; echo "";  echo "Y"; echo ""; echo "Y"; echo "Y"; echo "n"; echo "n"; echo "y"; echo "$PASSWORD_ROOT_SQL") | ./installfog.sh
-
+```
