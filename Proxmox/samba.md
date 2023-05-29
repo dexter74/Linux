@@ -87,11 +87,12 @@ create mask    = 0700
 directory mask = 0700
 guest ok       = no
 
+
 #=== Data NAS ==============================
 [Download]
 comment        = Dossier Download
 path           = /mnt/sdb/MyArchive/Download
-browseable     = no
+browseable     = yes
 writable       = yes
 read only      = no
 valid users    = marc
