@@ -6,6 +6,8 @@
    - 'MUSIC:/media/Music:ro'
    - 'VIDEO:/media/Video:rw'
    - 'VIDEO2:/media/Video2:rw'
+   - 'Perso:/media/Perso:ro'
+   - 'Hentai:/media/Hentai'
   #- 'MyPhoto:/media/MyPhoto:ro'
 ```
 
