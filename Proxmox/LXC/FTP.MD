@@ -114,7 +114,7 @@ cat /etc/vsftpd.conf.old > /etc/vsftpd.conf;
 ##### Configuration FTP
 ```
 echo "########################################################################
-# Cloisonnement de l'utilisateur #
+# Cloisonnement de l-utilisateur #
 ##################################
 allow_writeable_chroot=YES
 chroot_local_user=YES
@@ -127,74 +127,74 @@ hide_file={.*,*.nfo,*.sfv,*.txt,*.xlsx,*.jpg,*.rtf,Thumbs.db}
 deny_file={*.exe,*.sh,*.private,*.txt} 
 #
 ########################################################################
-# Configuration Générale #
+# Configuration Generale #
 ##########################
 #
-# Délai d'attente du client pour la connexion
+# Delai d-attente du client pour la connexion
 accept_timeout=60
 #
 # Prise en charge ASCII (Attack DDOS)
 ascii_download_enable=NO
 ascii_upload_enable=NO
 #
-# Contrôle l'origine de la connexion FTP-Data
+# Contrôle l-origine de la connexion FTP-Data
 connect_from_port_20=NO
 #
-# Supprimer fichier en cas d'échec d'envoi
+# Supprimer fichier en cas d-echec d-envoi
 delete_failed_uploads=YES
 #
-# Utiliser une liste d'utilisateur  (/etc/vsftpd.user_list)
+# Utiliser une liste d-utilisateur  (/etc/vsftpd.user_list)
 userlist_enable=NO
 #
 # Afficher le message de bienvenue du dossier (.message)
 dirmessage_enable=YES
 #
-# Permettre le téléchargement
+# Permettre le telechargement
 download_enable=YES
 #
-# Lister le contenu caché (.XXXX) 
+# Lister le contenu cache (.XXXX) 
 force_dot_files=no
 #
 # Banniere de connexion
 ftpd_banner=Bienvenue sur le serveur ftp
 #
-# Définir les sessions utilisateurs en invité
+# Definir les sessions utilisateurs en invitE
 guest_enable=NO
 #
-# Cacher les Propriétés et afficher ftp comme propriétaire
+# Cacher les Proprietes et afficher ftp comme proprietaire
 hide_ids=NO
 #
 # Mode Implicite
 implicit_ssl=NO
 #
-# Ecouter sur l'IPV4
+# Ecouter sur l-IPV4
 listen=YES
 #
-# Ecouter sur l'IPV6
+# Ecouter sur l-IPV6
 listen_ipv6=NO
 #
 # Autoriser les comptes locaux à se connecter
 local_enable=YES
 #
-# Permission sur les fichiers (Défaut: 077)
+# Permission sur les fichiers (Defaut: 077)
 local_umask=022
 #
-# Interdire la méthode PORT d'obtention d'une connexion de données.
+# Interdire la methode PORT d-obtention d-une connexion de donnees.
 port_enable=YES
 #
-# Obliger les clients à présenter leur certificat au serveur
+# Obliger les clients à presenter leur certificat au serveur
 require_cert=NO
 #
-# Réutilisation du certificat
+# Reutilisation du certificat
 require_ssl_reuse=No
 #
 # Liste les fichiers avec le Fuseau Local du client
 use_localtime=YES
 #
-# Certificat Valide Requis (Auto-sginé: Marche pas)
+# Certificat Valide Requis (Auto-sgine: Marche pas)
 validate_cert=NO
 #
-# Permettre les commandes d'écritures 
+# Permettre les commandes d-ecritures 
 write_enable=YES
 #
 # Activer la Journalisation et dans un format Standard
@@ -227,13 +227,13 @@ rsa_private_key_file=/etc/ssl/vsftp/vsftpd.pem
 # Type de chiffrement (DES-CBC3-SHA)
 ssl_ciphers=HIGH
 #
-# Prise en charge de l'authentifcation par SSL
+# Prise en charge de l-authentifcation par SSL
 ssl_enable=YES
 #
 # Certificat Requis
 ssl_request_cert=YES
 #
-# Protocoles Autorisés
+# Protocoles Autorises
 ssl_sslv2=NO
 ssl_sslv3=NO
 ssl_tlsv1=YES
@@ -242,38 +242,38 @@ strict_ssl_read_eof=NO
 strict_ssl_write_shutdown=NO
 #
 ########################################################################
-# Configuration du compte Invité #
+# Configuration du compte Invite #
 ##################################
 #
-# Permettre l'accès SSL (invité)
+# Permettre l-acces SSL (invite)
 #allow_anon_ssl=NO
 #
 #
-# Débit Max en Octets
+# Debit Max en Octets
 #anon_max_rate=0
 #
-# Permettre la création de dossier
+# Permettre la creation de dossier
 #anon_mkdir_write_enable=NO
 #
-# Racine du compte invité
+# Racine du compte invite
 #anon_root=/var/ftp
 #
-# Permettre l'écriture
+# Permettre l-ecriture
 anon_other_write_enable=NO
 #
-# Valeur Umask pour la création de fichier
+# Valeur Umask pour la creation de fichier
 #anon_umask=077
 #
-# Permettre l'envoie
+# Permettre l-envoie
 #anon_upload_enable=NO
 #
-# Permettre le téléchargement
+# Permettre le telechargement
 #anon_world_readable_only=NO
 #
 # Activer le compte
 #anonymous_enable=NO
 #
-# Changer le propriétaire sur les fichiers envoyés
+# Changer le proprietaire sur les fichiers envoyes
 #chown_uploads=NO
 #
 # Forcer la connexion SSL
@@ -299,7 +299,7 @@ anon_other_write_enable=NO
 clear;
 
 #######################################################################################################
-# Déclarer mes Variables #
+# Declarer mes Variables #
 ##########################
 COMPTE1=Download
 GROUPE1=FTPUSER
@@ -323,7 +323,7 @@ sudo userdel $COMPTE2;
 # Purge du Groupe 1
 sudo groupdel $GROUPE1;
 
-# Création du Groupe 1
+# Creation du Groupe 1
 sudo groupadd $GROUPE1;
 
 sudo useradd --no-create-home $COMPTE1 -G $GROUPE1 --shell $shell;
