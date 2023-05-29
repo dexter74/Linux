@@ -5,6 +5,7 @@
    - 'DOWNLOAD:/media/Download:rw'
    - 'MUSIC:/media/Music:ro'
    - 'VIDEO:/media/Video:rw'
+   - 'VIDEO2:/media/Video2:rw'
   #- 'MyPhoto:/media/MyPhoto:ro'
 ```
 
