@@ -1,4 +1,8 @@
-#### Installation de FOG (1.5.9 bug)
+#### Installation de FOG (Erreur)
+
+```
+ERROR 1146 (42S02) at line 1: Table 'fog.globalSettings' doesn't exist
+```
 ```bash
 ################################
 # Script de déploiement de FOG #
