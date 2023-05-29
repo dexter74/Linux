@@ -17,18 +17,18 @@ mkdir -p /mnt/{Download,Music,Video,Video2} 2>/dev/null;
 mkdir -p /mnt/Download/Torrent       2>/dev/null;
 ```
 
-#### FSTAB
+#### FSTAB (Obscolète)
 ```bash
 echo "##################################################################################################################################################
 # mount --bind /mnt/Video  /mnt/Upload/Video #
 ##############################################
 # Permission 775 #
 ##################
-//192.168.0.3/Download          /mnt/Download         cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
-//192.168.0.3/Music             /mnt/Music            cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
-//192.168.0.3/Video             /mnt/Video            cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
-//192.168.0.3/Video2            /mnt/Video2           cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
-//192.168.0.3/Download/Torrent  /mnt/Download/Torrent cifs uid=root,gid=sudo,file_mode=0777,dir_mode=0777,username=marc,password=admin 0 0
+#//192.168.0.3/Download          /mnt/Download         cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
+#//192.168.0.3/Music             /mnt/Music            cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
+#//192.168.0.3/Video             /mnt/Video            cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
+#//192.168.0.3/Video2            /mnt/Video2           cifs uid=root,gid=sudo,file_mode=0775,dir_mode=0775,username=marc,password=admin 0 0
+#//192.168.0.3/Download/Torrent  /mnt/Download/Torrent cifs uid=root,gid=sudo,file_mode=0777,dir_mode=0777,username=marc,password=admin 0 0
 ##################################################################################################################################################" > /etc/fstab;
 ```
 
