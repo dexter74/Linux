@@ -26,11 +26,14 @@ sudo mkdir /mnt/sd{a,b,c,d} 2>/dev/null;
 ##### FSTAB
 ```
 clear;
-echo '# LABEL="Film"
-UUID="127ccc45-40c9-4513-8f3c-382323b590b3"  /mnt/sda        ext4      defaults,nofail  0  2
+echo '# Film (EXT4)
+/dev/sda1                    /mnt/sda        ext4     defaults,nofail      0       2
 
-# LABEL="MyArchives"
-UUID=94001B57001B4022                        /mnt/sdb        ntfs-3g   defaults,nofail  0  2' >> /etc/fstab;
+# MyArchive (NTFS)
+UUID=94001B57001B4022       /mnt/sdb        ntfs-3g   defaults,nofail      0       2
+
+# Film2 (EXT4)
+/dev/sdc1                    /mnt/sdc        ext4      defaults,nofail     0       2' >> /etc/fstab;
 ```
 
 ##### Configuration de Samba
