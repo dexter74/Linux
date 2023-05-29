@@ -34,11 +34,13 @@ PARTAGE_1=Download
 PARTAGE_2=Video
 PARTAGE_3=Music
 PARTAGE_4=Home/MyPhoto
+PARTAGE_5=Video2
 
 NAME_1=DOWNLOAD
 NAME_2=VIDEO
 NAME_3=MUSIC
 NAME_4=MyPhoto
+NAME_5=VIDEO2
 
 # Suppression des volumes
 docker volume rm -f ${NAME_1};
@@ -69,6 +71,12 @@ docker volume create --driver local \
         --opt device=//${NAS}/${PARTAGE_4} \
         --opt o=username=${UTILISATEUR},password=${MOTDEPASSE} \
         --name ${NAME_4};
+
+docker volume create --driver local \
+        --opt type=cifs \
+        --opt device=//${NAS}/${PARTAGE_5} \
+        --opt o=username=${UTILISATEUR},password=${MOTDEPASSE} \
+        --name ${NAME_5};
 
 
 # ,vers=3.0,file_mode=0777,dir_mode=0777
