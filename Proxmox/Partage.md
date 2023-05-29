@@ -103,6 +103,24 @@ echo "[Unit]
 
 ####################################################################################################################################
 echo "[Unit]
+  Description=Montage du partage Video2
+  Requires=remote-fs-pre.target
+  After=network-online.service
+
+[Mount]
+  What=//192.168.0.3/Video2
+  Where=/mnt/Video2
+  Type=cifs
+  TimeoutSec=5s
+  Options=credentials=/etc/credentials/.smbpassword,cifsacl
+
+[Install]
+  WantedBy=multi-user.target" > /etc/systemd/system/mnt-Video2.mount;
+
+
+
+####################################################################################################################################
+echo "[Unit]
   Description=Montage du partage Windows
   Requires=remote-fs-pre.target
   After=network-online.service
@@ -127,24 +145,24 @@ systemctl daemon-reload;
 
 # Dossier
 USERNAME=$(id 1000 | cut -d  ")" -f 1 | cut -d "(" -f 2)
-mkdir -p /mnt/{Download,Home,Music,Video,Windows} 2>/dev/nulll;
+mkdir -p /mnt/{Download,Home,Music,Video,Video2,Windows} 2>/dev/nulll;
 
 # Arrêter Service
-systemctl stop  mnt-{Download,Home,Music,Video}.mount 2>/dev/null;
-systemctl disable --now mnt-{Download,Home,Music,Video,Windows}.mount 2>/dev/null;
+systemctl stop  mnt-{Download,Home,Music,Video,Video2,Windows}.mount 2>/dev/null;
+systemctl disable --now mnt-{Download,Home,Music,Video,Video2,Windows}.mount 2>/dev/null;
 
 # Editer Permission
-chown -R $USERNAME:users /mnt/{Download,Home,Music,Video,Windows};
+chown -R $USERNAME:users /mnt/{Download,Home,Music,Video,Video2,Windows};
 
 # Lancer le Service
-systemctl start mnt-{Download,Home,Music,Video,Windows}.mount;
-systemctl enable --now mnt-{Download,Home,Music,Video,Windows}.mount 2>/dev/null;
+systemctl start mnt-{Download,Home,Music,Video,Video2,Windows}.mount;
+systemctl enable --now mnt-{Download,Home,Music,Video,Video2,Windows}.mount 2>/dev/null;
 ```
 
 #### Vérification
 ```bash
 clear;
-df -h /mnt/Home /mnt/Download /mnt/Video /mnt/Music /mnt/Windows;
+df -h /mnt/Home /mnt/Download /mnt/Video /mnt/Video2 /mnt/Music /mnt/Windows;
 ls -la /mnt;
 ```
 
