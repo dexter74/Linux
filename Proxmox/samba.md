@@ -74,6 +74,18 @@ create mask    = 0700
 directory mask = 0700
 guest ok       = no
 
+[LXC]
+comment        = Dossier Qemu
+path           = "/etc/pve/lxc"
+browseable     = yes
+writable       = yes
+read only      = no
+valid users    = marc
+force user     = root
+create mask    = 0700
+directory mask = 0700
+guest ok       = no
+
 #=== Video NAS =============================
 [Video]
 comment        = Dossier Video
