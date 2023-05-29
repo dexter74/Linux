@@ -19,6 +19,9 @@ volumes:
 
  VIDEO:
   external: true
+  
+ VIDEO2:
+  external: true
 
 #MyPhoto:
 # external: true
