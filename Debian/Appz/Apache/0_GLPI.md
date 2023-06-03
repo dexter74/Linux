@@ -31,7 +31,6 @@ Mon Interface se nomme `ens18`.
 ```
 ip add;
 
-
 echo "source /etc/network/interfaces.d/*
 auto lo
 iface lo inet loopback
@@ -42,7 +41,6 @@ iface ens18 inet static
         gateway 192.168.0.1
         dns-nameservers 192.168.0.1
 " > /etc/network/interfaces;
-
 ```
 
 
