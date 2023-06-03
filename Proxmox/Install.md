@@ -46,6 +46,7 @@ id $UTILISATEUR;
 
 ### Création d'un compte Utilisateur Proxmox
 ```bash
+clear;
 UTILISATEUR="Drthrax74@pam"
 MOTDEPASSE="admin"
 EMAIL="teste74@hotmail.fr"
@@ -98,6 +99,7 @@ sudo pveum user modify "$UTILISATEUR"          -group Administrateurs;
 
 #### French
 ```bash
+clear;
 echo "language: fr" >> /etc/pve/datacenter.cfg;
 systemctl restart pveproxy.service;
 
