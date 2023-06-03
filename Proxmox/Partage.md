@@ -165,7 +165,7 @@ ls -la /mnt;
 ```
 
 ##### Relance FTP
-```
+```bash
 clear;
 systemctl restart vsftpd.service
 ```
