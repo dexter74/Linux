@@ -31,11 +31,6 @@ echo "##########################################
 username=marc
 password=admin" > /etc/credentials/.smbpassword; chmod 600 /etc/credentials/.smbpassword;
 ```
-
-```bash
-
-```
-
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------
@@ -167,6 +162,7 @@ chown -R $USERNAME:users /mnt/{Download,Home,Music,Video,Video2,Windows};
 systemctl start mnt-{Download,Home,Music,Video,Video2,Windows}.mount;
 systemctl enable --now mnt-{Download,Home,Music,Video,Video2,Windows}.mount 2>/dev/null;
 ```
+<br />
 
 ----------------------------------------------------------------------------------------------------------------------------------
 #### Vérification
@@ -175,6 +171,8 @@ clear;
 df -h /mnt/Home /mnt/Download /mnt/Video /mnt/Video2 /mnt/Music /mnt/Windows;
 ls -la /mnt;
 ```
+<br />
+<br />
 
 ----------------------------------------------------------------------------------------------------------------------------------
 ##### Relance FTP
