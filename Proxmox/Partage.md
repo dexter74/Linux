@@ -148,24 +148,20 @@ clear;
 systemctl enable systemd-networkd-wait-online.service;
 systemctl daemon-reload;
 
-
 # Dossier
 USERNAME=$(id 1000 | cut -d  ")" -f 1 | cut -d "(" -f 2)
 mkdir -p /mnt/{Download,Home,Music,Video,Video2,Windows} 2>/dev/nulll;
 
-
 # Arrêter Service
-systemctl stop  mnt-{Download,Home,Music,Video,Video2,Windows}.mount 2>/dev/null;
-systemctl disable --now mnt-{Download,Home,Music,Video,Video2,Windows}.mount 2>/dev/null;
-
+systemctl stop    mnt-{Download,Home,Music,Video,Video2,Windows}.mount 2>/dev/null;
+systemctl disable mnt-{Download,Home,Music,Video,Video2,Windows}.mount 2>/dev/null;
 
 # Editer Permission
 chown -R $USERNAME:users /mnt/{Download,Home,Music,Video,Video2,Windows};
 
-
 # Lancer le Service
-systemctl start mnt-{Download,Home,Music,Video,Video2,Windows}.mount;
-systemctl enable --now mnt-{Download,Home,Music,Video,Video2,Windows}.mount 2>/dev/null;
+systemctl start  mnt-{Download,Home,Music,Video,Video2,Windows}.mount;
+systemctl enable mnt-{Download,Home,Music,Video,Video2,Windows}.mount 2>/dev/null;
 ```
 <br />
 
