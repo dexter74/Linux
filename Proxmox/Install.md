@@ -8,10 +8,11 @@ clear;
 #########################################################################################################
 # Déclaration des variables #
 #############################
-# Nom d'utilisateur et mot de passe du compte:
+# Nom d'utilisateur et mot de passe du compte
 export UTILISATEUR=Drthrax74
 export PASSWORD=admin
 export USERID=1001
+export SHELL=/bin/bash
 
 #########################################################################################################
 # Création du compte #
@@ -21,7 +22,7 @@ export USERID=1001
 --base-dir /home/$UTILISATEUR \
 --uid $USERID \
 --no-user-group \
---shell /bin/bash \
+--shell $SHELL \
 --create-home $UTILISATEUR;
 
 #########################################################################################################
@@ -39,7 +40,6 @@ export USERID=1001
 ################
 id $UTILISATEUR;
 ```
-
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------
@@ -54,23 +54,23 @@ NOM="Jaffre"
 
 # Purge
 sudo pveum group del   Administrateurs 2>/dev/null;
-sudo pveum group del   Audit 2>/dev/null;
-sudo pveum group del   Stockage 2>/dev/null;
-sudo pveum group del   Utilisateurs 2>/dev/null;
-sudo pveum group del   VMadmin  2>/dev/null;
-sudo pveum pool del    100.LXC;
-sudo pveum pool del    200.Linux;
-sudo pveum pool del    300.Windows;
-sudo pveum pool del    400.Templates;
-sudo pveum pool del    500.invites;
-sudo pveum user delete $UTILISATEUR 2>/dev/null;
+sudo pveum group del   Audit           2>/dev/null;
+sudo pveum group del   Stockage        2>/dev/null;
+sudo pveum group del   Utilisateurs    2>/dev/null;
+sudo pveum group del   VMadmin         2>/dev/null;
+sudo pveum pool del    100.LXC         2>/dev/null;
+sudo pveum pool del    200.Linux       2>/dev/null;
+sudo pveum pool del    300.Windows     2>/dev/null;
+sudo pveum pool del    400.Templates   2>/dev/null;
+sudo pveum pool del    500.invites     2>/dev/null;
+sudo pveum user delete $UTILISATEUR    2>/dev/null;
 
 # Création des Groupes:
-sudo pveum group add Administrateurs -comment "Groupe des administrateurs"
-sudo pveum group add Audit           -comment "Groupe des auditeurs"
-sudo pveum group add Stockage        -comment "Groupe du stockage"
-sudo pveum group add Utilisateurs    -comment "Groupe des utilisateurs"
-sudo pveum group add VMadmin         -comment "Groupe des Admins des VM"
+sudo pveum group add Administrateurs -comment "Groupe des administrateurs";
+sudo pveum group add Audit           -comment "Groupe des auditeurs";
+sudo pveum group add Stockage        -comment "Groupe du stockage";
+sudo pveum group add Utilisateurs    -comment "Groupe des utilisateurs";
+sudo pveum group add VMadmin         -comment "Groupe des Admins des VM";
 
 # Création des Pools:
 sudo pveum pool add 100.LXC;
@@ -87,13 +87,13 @@ sudo pveum user add "$UTILISATEUR" -email "$EMAIL" -enable 1 -first "$PRENOM" -l
 
 # Modification des permissions pour les groupes
 sudo pveum acl modify / -group Administrateurs -role Administrator;
-sudo pveum acl modify / -group Audit -role PVEAuditor;
-sudo pveum acl modify / -group Stockage -role PVEDatastoreAdmin;
-sudo pveum acl modify / -group Utilisateurs -role PVEVMUser;
-sudo pveum acl modify / -group VMadmin -role PVEVMAdmin;
+sudo pveum acl modify / -group Audit           -role PVEAuditor;
+sudo pveum acl modify / -group Stockage        -role PVEDatastoreAdmin;
+sudo pveum acl modify / -group Utilisateurs    -role PVEVMUser;
+sudo pveum acl modify / -group VMadmin         -role PVEVMAdmin;
 
 # Modification permission de l'utilisateur
-sudo pveum user modify "$UTILISATEUR" -group Administrateurs;
+sudo pveum user modify "$UTILISATEUR"          -group Administrateurs;
 ```
 
 #### French
