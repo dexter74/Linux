@@ -97,7 +97,7 @@ sudo pveum user modify "$UTILISATEUR"          -group Administrateurs;
 ```
 
 #### French
-```
+```bash
 echo "language: fr" >> /etc/pve/datacenter.cfg;
 systemctl restart pveproxy.service;
 
