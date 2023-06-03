@@ -19,21 +19,23 @@ sudo apt install -y smbclient          1>/dev/null;
 ----------------------------------------------------------------------------------------------------------------------------------
 ### Partage
 ```bash
-  # ,x-gvfs-show,uid=0,gid=0
-  # ,file_mode=0775,dir_mode=0775,
-  # _netdev
-  # ,acl
-  # ,user_xattr
+clear;
+mkdir /etc/credentials 2>/dev/null;
+echo "##########################################
+# ,x-gvfs-show,uid=0,gid=0
+# ,file_mode=0775,dir_mode=0775,
+# _netdev
+# ,acl
+# ,user_xattr
+##########################################
+username=marc
+password=admin" > /etc/credentials/.smbpassword; chmod 600 /etc/credentials/.smbpassword;
 ```
 
 ```bash
-clear;
-mkdir /etc/credentials 2>/dev/null;
-echo "username=marc
-password=admin" > /etc/credentials/.smbpassword; chmod 600 /etc/credentials/.smbpassword;
 
-#nano /etc/credentials/.smbpassword;
 ```
+
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------
