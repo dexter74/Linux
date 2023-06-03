@@ -34,106 +34,113 @@ password=admin" > /etc/credentials/.smbpassword; chmod 600 /etc/credentials/.smb
 #nano /etc/credentials/.smbpassword;
 ```
 
+
+----------------------------------------------------------------------------------------------------------------------------------
 **CIFS** (Windows)
 ```bash
+#####################################################################################################
+# Nettoyage de la console #
+###########################
 clear;
-####################################################################################################################################
+
+#####################################################################################################
+# Montage du Partage Download #
+###############################
 echo "[Unit]
   Description=Montage du partage Download
   Requires=remote-fs-pre.target
   After=network-online.service
-
 [Mount]
   What=//192.168.0.3/Download
   Where=/mnt/Download
   Type=cifs
   TimeoutSec=5s
   Options=credentials=/etc/credentials/.smbpassword,cifsacl
-
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Download.mount;
 
-####################################################################################################################################
+#####################################################################################################
+# Montage du Partage Home #
+###########################
 echo "[Unit]
   Description=Montage du partage Home
   Requires=remote-fs-pre.target
   After=network-online.service
-
 [Mount]
   What=//192.168.0.3/Home
   Where=/mnt/Home
   Type=cifs
   TimeoutSec=5s
   Options=credentials=/etc/credentials/.smbpassword,cifsacl
-
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Home.mount;
 
-####################################################################################################################################
+#####################################################################################################
+# Montage du Partage Music #
+############################
 echo "[Unit]
   Description=Montage du partage Music
   Requires=remote-fs-pre.target
   After=network-online.service
-
 [Mount]
   What=//192.168.0.3/Music
   Where=/mnt/Music
   Type=cifs
   TimeoutSec=5s
   Options=credentials=/etc/credentials/.smbpassword,cifsacl
-
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Music.mount;
 
-####################################################################################################################################
+#####################################################################################################
+# Montage du Partage Video #
+############################
 echo "[Unit]
   Description=Montage du partage Video
   Requires=remote-fs-pre.target
   After=network-online.service
-
 [Mount]
   What=//192.168.0.3/Video
   Where=/mnt/Video
   Type=cifs
   TimeoutSec=5s
   Options=credentials=/etc/credentials/.smbpassword,cifsacl
-
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Video.mount;
 
-####################################################################################################################################
+#####################################################################################################
+# Montage du Partage Video2 #
+#############################
 echo "[Unit]
   Description=Montage du partage Video2
   Requires=remote-fs-pre.target
   After=network-online.service
-
 [Mount]
   What=//192.168.0.3/Video2
   Where=/mnt/Video2
   Type=cifs
   TimeoutSec=5s
   Options=credentials=/etc/credentials/.smbpassword,cifsacl
-
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Video2.mount;
 
-####################################################################################################################################
+#####################################################################################################
+# Montage du Partage Windows #
+##############################
 echo "[Unit]
   Description=Montage du partage Windows
   Requires=remote-fs-pre.target
   After=network-online.service
-
 [Mount]
   What=//192.168.0.3/Windows
   Where=/mnt/Windows
   Type=cifs
   TimeoutSec=5s
   Options=credentials=/etc/credentials/.smbpassword,cifsacl
-
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Windows.mount;
 ```
 
+----------------------------------------------------------------------------------------------------------------------------------
 #### Dossier, Permission et services
 ```bash
 clear;
@@ -157,6 +164,7 @@ systemctl start mnt-{Download,Home,Music,Video,Video2,Windows}.mount;
 systemctl enable --now mnt-{Download,Home,Music,Video,Video2,Windows}.mount 2>/dev/null;
 ```
 
+----------------------------------------------------------------------------------------------------------------------------------
 #### Vérification
 ```bash
 clear;
@@ -164,6 +172,7 @@ df -h /mnt/Home /mnt/Download /mnt/Video /mnt/Video2 /mnt/Music /mnt/Windows;
 ls -la /mnt;
 ```
 
+----------------------------------------------------------------------------------------------------------------------------------
 ##### Relance FTP
 ```bash
 clear;
