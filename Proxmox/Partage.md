@@ -14,6 +14,7 @@ sudo apt install -y samba samba-common 1>/dev/null;
 sudo apt install -y cifs-utils         1>/dev/null;
 sudo apt install -y smbclient          1>/dev/null;
 ```
+<br />
 
 ----------------------------------------------------------------------------------------------------------------------------------
 ### Partage
@@ -33,7 +34,7 @@ password=admin" > /etc/credentials/.smbpassword; chmod 600 /etc/credentials/.smb
 
 #nano /etc/credentials/.smbpassword;
 ```
-
+<br />
 
 ----------------------------------------------------------------------------------------------------------------------------------
 **CIFS** (Windows)
@@ -139,6 +140,7 @@ echo "[Unit]
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Windows.mount;
 ```
+<br />
 
 ----------------------------------------------------------------------------------------------------------------------------------
 #### Dossier, Permission et services
