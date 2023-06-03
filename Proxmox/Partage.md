@@ -8,7 +8,7 @@ Les autres utilisateurs ne peuvent que Lire.
 
 ----------------------------------------------------------------------------------------------------------------------------------
 ### Paquets Nécessaire
-```
+```bash
 clear;
 sudo apt install -y samba samba-common 1>/dev/null;
 sudo apt install -y cifs-utils 1>/dev/null;
@@ -17,8 +17,7 @@ sudo apt install -y smbclient 1>/dev/null;
 
 ----------------------------------------------------------------------------------------------------------------------------------
 ### Partage
-
-```
+```bash
   # ,x-gvfs-show,uid=0,gid=0
   # ,file_mode=0775,dir_mode=0775,
   # _netdev
@@ -37,6 +36,7 @@ password=admin" > /etc/credentials/.smbpassword; chmod 600 /etc/credentials/.smb
 
 **CIFS** (Windows)
 ```bash
+clear;
 ####################################################################################################################################
 echo "[Unit]
   Description=Montage du partage Download
@@ -117,8 +117,6 @@ echo "[Unit]
 [Install]
   WantedBy=multi-user.target" > /etc/systemd/system/mnt-Video2.mount;
 
-
-
 ####################################################################################################################################
 echo "[Unit]
   Description=Montage du partage Windows
@@ -168,5 +166,6 @@ ls -la /mnt;
 
 ##### Relance FTP
 ```
+clear;
 systemctl restart vsftpd.service
 ```
