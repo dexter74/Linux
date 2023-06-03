@@ -11,8 +11,8 @@ Les autres utilisateurs ne peuvent que Lire.
 ```bash
 clear;
 sudo apt install -y samba samba-common 1>/dev/null;
-sudo apt install -y cifs-utils 1>/dev/null;
-sudo apt install -y smbclient 1>/dev/null;
+sudo apt install -y cifs-utils         1>/dev/null;
+sudo apt install -y smbclient          1>/dev/null;
 ```
 
 ----------------------------------------------------------------------------------------------------------------------------------
