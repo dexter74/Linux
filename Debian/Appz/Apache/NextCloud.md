@@ -50,10 +50,10 @@ echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.
 ```
 
 
-
 #### Installation PHP 8.1 (Inclus Modules)
 ```bash
-# apt install php8.1 libapache2-mod-php8.1 1>/dev/null
+# apt install php 1>/dev/null;
+# apt install libapache2-mod-php 1>/dev/null
 #apt search php | grep dom
 #apt install -y php-symfony-polyfill-ctype;
 #apt install -y php-curl
