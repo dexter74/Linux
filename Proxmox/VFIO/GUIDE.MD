@@ -20,7 +20,7 @@ Dongle HDMI sur la sortie Vidéo du GPU.
 ```
 lspci -nn -k | grep VGA -A3 | grep "VGA\|driver"
 # 0b:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Navi 22 [1002:73df] (rev c1)
-# Kernel driver in use: vfio-pci
+# Kernel driver in use: amdgpu
 
 lspci -s 0b: -k -nn | grep -i "audio\|vga" -A2 | grep -iv "sub\|--"
 # 0b:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Navi 22 [1002:73df] (rev c1)
@@ -138,13 +138,17 @@ reboot;
 
 
 #### Vérification du bon fonctionnement
+On peut voir que ma Carte-graphique à comme pilote VFIO-PCI ce qui indique qu'elle est bien attribuer au Module et donc elle est disponible à l'attribution dans une VM .
 ```
 find /sys/kernel/iommu_groups/ -type l;
-dmesg | grep "0b\|0c" | less;
+dmesg | grep "0b" | less;
 lspci -v;
 lspci -n -k -s 0b:00;
-lspci -n -k -s 0c:00;
+
+# 0b:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Navi 22 [1002:73df] (rev c1)
+# Kernel driver in use: vfio-pci
 ```
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -166,6 +170,7 @@ Session: (Important)
 
 #### CPU
 ```
+# nano /etc/pve/qemu-server/XXX.conf;
 args: 
  -cpu host,host-cache-info=on
  -hypervisor,kvm=off
