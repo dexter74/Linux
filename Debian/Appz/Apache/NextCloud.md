@@ -5,7 +5,7 @@ Debian 11: BUSTER
 
 #### Dépôt
 ```
-echo "deb http://deb.debian.org/debian bullseye-backports main" > /etc/apt/sources.list.d/buster-backport.list
+echo "deb http://ftp.de.debian.org/debian bookworm main " > /etc/apt/sources.list.d/bookworm.list
 ```
 
 
