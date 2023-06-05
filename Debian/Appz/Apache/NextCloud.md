@@ -111,7 +111,7 @@ apt install -y apache2 1>/dev/null;
 #### A. Téléchargement de Nextcloud
 ```bash
 wget https://download.nextcloud.com/server/releases/latest.zip -O /tmp/Nextcloud.zip;
-unzip /tmp/Nextcloud.zip -d /var/www/html/;
+unzip /tmp/Nextcloud.zip -d /var/www/html;
 ```
 
 #### B. Permissions
