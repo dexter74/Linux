@@ -36,6 +36,13 @@ find /sys/kernel/iommu_groups/ -type l | grep "25\|26";
 # /sys/kernel/iommu_groups/25/devices/0000:0b:00.0
 # /sys/kernel/iommu_groups/26/devices/0000:0b:00.1
 
+uname -r
+# 6.2.9-1-pve
+```
+
+### Vérifier la présence du Module vfio_virqfd
+Le kernel de ma machine est `6.2.9.1` par conséquent le module doit être présent pour lui ce qui est pas le cas.
+```
 # find /usr/lib/modules -type f -name "vfio*" -o -name "vfio_iommu_type1*" -o -name "vfio_pci*" -o -name "vfio_virqfd*" 2>/dev/null | grep $(uname -r)
 /usr/lib/modules/6.2.9-1-pve/kernel/drivers/vfio/vfio_iommu_type1.ko
 /usr/lib/modules/6.2.9-1-pve/kernel/drivers/vfio/pci/vfio-pci.ko
