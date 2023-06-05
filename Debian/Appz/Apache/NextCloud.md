@@ -16,7 +16,7 @@ apt upgrade -y;
 #### Pré-requis:
 ```bash
 clear;
-apt install -y ca-certificates apt-transport-https software-properties-common 1>/dev/null;
+apt install -y ca-certificates apt-transport-https software-properties-common curl wget 1>/dev/null;
 ```
 
 
