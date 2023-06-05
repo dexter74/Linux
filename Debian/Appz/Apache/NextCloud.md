@@ -14,23 +14,6 @@ echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.
 apt install php8.1 libapache2-mod-php8.1 1>/dev/null
 ```
 
-PHP (see System requirements for a list of supported versions)
-PHP module ctype
-PHP module curl
-PHP module dom
-PHP module GD
-PHP module JSON (included with PHP >= 8.0)
-PHP module libxml (Linux package libxml2 must be >=2.7.0)
-PHP module mbstring
-PHP module openssl (included with PHP >= 8.0)
-PHP module posix
-PHP module session
-PHP module SimpleXML
-PHP module XMLReader
-PHP module XMLWriter
-PHP module zip
-PHP module zlib
-
 #### Modules
 ```bash
 php -m 
