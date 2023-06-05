@@ -1,3 +1,14 @@
+#### Information Système
+```
+Debian 11: BUSTER
+```
+
+#### Dépôt
+```
+echo "deb http://deb.debian.org/debian bullseye-backports main" > /etc/apt/sources.list.d/buster-backport.list
+```
+
+
 #### Pré-requis:
 ```bash
 apt install -y \
@@ -6,6 +17,7 @@ apt-transport-https \
 software-properties-common \
 1>/dev/null;
 ```
+
 
 
 #### Dépôt 8.1
