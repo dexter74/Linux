@@ -1,4 +1,6 @@
 ### VirtualBox 7.X
+Le package des Guest additions dans le dépôt officiel est pas à jour.
+
 ```
 # Root Requis: su -
 apt install -y linux-headers-$(uname -r);
