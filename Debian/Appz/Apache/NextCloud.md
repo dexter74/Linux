@@ -119,3 +119,8 @@ Apache2 qui est le service Web utilise le compte de service `www-data`, il faut 
 ```
 chown -R www-data:www-data /var/www/html/;
 ```
+
+#### Début de l'installation
+```
+http://<IP du serveur>/nextcloud
+```
