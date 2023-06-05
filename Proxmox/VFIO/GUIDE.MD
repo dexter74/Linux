@@ -75,6 +75,9 @@ echo "options kvm ignore_msrs=1" > /etc/modprobe.d/kvm.conf;
 ```
 
 ### Blacklist
+Le Blacklistage permet d'interdire les pilotes à se charger à son lancement. (Liste non exhaustive)
+
+Dans mon cas le GPU utilise `AMDGPU`.
 ```bash
 echo "# GPU AMD"                >  /etc/modprobe.d/pve-blacklist.conf;
 echo "blacklist ati"            >> /etc/modprobe.d/pve-blacklist.conf;
