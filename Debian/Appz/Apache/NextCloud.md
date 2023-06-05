@@ -6,7 +6,8 @@ Debian 11: Bullseye
 #### Dépôt BookWorm
 ```
 clear;
-sed -i -e 's/bullseye/bookworm/g' /etc/apt/sources.list;
+sed -i -e 's/^deb cdrom/#deb cdrom/g' /etc/apt/sources.list;
+sed -i -e 's/bullseye/bookworm/g'     /etc/apt/sources.list;
 apt update;
 apt upgrade -y;
 ```
