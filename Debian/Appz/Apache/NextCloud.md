@@ -2,7 +2,7 @@
 ## <p align='center'> Installation de NextCloud sur Debian 11 </p>
 
 ------------------------------------------------------------------------------------------------------------------------------------
-### Présentation
+### I. Présentation
 ```
 Ce guide permet le déploiement de Nexcloud.
 Il indique la marche à suivre pour l'installation d'Apache, MariaDB, PHP et ses modules sur la distribution Debian 11.
@@ -10,8 +10,8 @@ Il indique la marche à suivre pour l'installation d'Apache, MariaDB, PHP et ses
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------
-### Installation des Pre-requis
-#### Dépôt BookWorm
+### II. Installation des Pre-requis
+#### A. Dépôt BookWorm
 Les `paquets requis` pour `NextCloud` requiert le dépôt `BookWorm`. (On remplace Bullseye par BookWorm)
 ```
 clear;
@@ -21,7 +21,7 @@ apt update;
 apt upgrade -y;
 ```
 
-#### Utilitaires
+#### B. Utilitaires
 Utilitaires indispensables sur la distribution Linux.
 ```bash
 clear;
@@ -31,14 +31,14 @@ apt update;
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------
-### PHP
-#### Mise en place du Dépôt PHP
+### III. PHP
+#### A. Mise en place du Dépôt PHP
 ```bash
 clear;
 curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg;
 echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list;
 ```
-#### Installation des Packages PHP
+#### B. Installation des Packages PHP
 ```bash
 clear;
 apt install php                 1>/dev/null;
@@ -56,8 +56,8 @@ apt install -y php-zip          1>/dev/null;
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------
-### Base De Donnée
-#### Installation de MariaDB
+### IV. Base De Donnée
+#### A. Installation de MariaDB
 Le mot de passe du compte Root de la base de donnée est contenu dans la variable `PASSWORD_DB` soit par défaut `admin`.
 ```bash
 clear;
@@ -65,7 +65,7 @@ PASSWORD_DB=admin
 apt install -y mariadb-server 1>/dev/null;
 (echo ""; echo "y"; echo "y"; echo "$PASSWORD_DB"; echo "$PASSWORD_DB"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
 ```
-#### Création de la Base De Donnée
+#### B. La Base De Donnée pour Nextcloud
 Le nom de la Base de donnée est `website`, l'identifiant est `nextcloud` et le mot de passe est `admin`.
 ```sql
 # Connexion à la SQL:
@@ -85,7 +85,7 @@ CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'admin';
 GRANT ALL PRIVILEGES ON website.* TO 'nextcloud'@'localhost';
 FLUSH PRIVILEGES;
 ```
-#### Vérification de bon fonctionnement
+#### C. Vérification de bon fonctionnement
 ```sql
 # Connexion à la SQL (Compte de service)
 mysql -u nextcloud -padmin;
@@ -99,7 +99,7 @@ SELECT User FROM mysql.user;
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------
-### Apache2
+### V. Apache2
 ```bash
 clear;
 apt install -y apache2 1>/dev/null;
@@ -107,13 +107,14 @@ apt install -y apache2 1>/dev/null;
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------
-### Téléchargement du site Nextcloud
+### VI. Nextcloud
+#### A. Téléchargement de Nextcloud
 ```bash
 wget https://download.nextcloud.com/server/releases/latest.zip -O /tmp/Nextcloud.zip;
 unzip /tmp/Nextcloud.zip -d /var/www/html/;
 ```
 
-#### Permissions
+#### B. Permissions
 Apache2 qui est le service Web utilise le compte de service `www-data`, il faut remettre les bonnes permissions. (Page Blanche sinon) 
 ```
 chown -R www-data:www-data /var/www/html/;
