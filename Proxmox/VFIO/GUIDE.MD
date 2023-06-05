@@ -107,6 +107,7 @@ echo "blacklist xhci_hcd"      >> /etc/modprobe.d/pve-blacklist.conf;
 ```
 
 ### Attacher GPU au module VFIO
+Dans l'exemple suivant, plusieurs référence de GPU son présent.
 ```bash
 clear;
 echo "###########################################################
@@ -117,7 +118,7 @@ echo "###########################################################
 # options vfio-pci ids=10de:2503,10de:228e disable_vga=1
 ###########################################################
 # AMD: RX 6700 XT
-# options vfio-pci ids=1002:73df,1002:ab28 disable_vga=1
+options vfio-pci ids=1002:73df,1002:ab28 disable_vga=1
 ###########################################################
 # Broadcom: BCM4352 802.11ac
 # options vfio-pci ids=14e4:43b1
@@ -127,6 +128,7 @@ nano /etc/modprobe.d/vfio.conf;
 ```
 
 #### Mettre à jour Grub
+Grub qui est le gestionnaire de démarrage, les commandes suivantes permettent de mettre à jour le démarrage.
 ````bash
 update-initramfs -u;
 update-grub;
@@ -135,7 +137,7 @@ reboot;
 ````
 
 
-#### Check
+#### Vérification du bon fonctionnement
 ```
 find /sys/kernel/iommu_groups/ -type l;
 dmesg | grep "0b\|0c" | less;
