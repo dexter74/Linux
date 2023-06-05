@@ -54,7 +54,40 @@ clear;
 apt install -y apache2 1>/dev/null;
 ```
 
-#### Installation de Nextcloud
+
+#### Base de Donée
+```
+# Connexion à la SQL:
+mysql -u root -padmin;
+
+# Purge (Database et User)
+DROP DATABASE IF EXISTS website;
+DROP USER IF EXISTS 'nextcloud'@'localhost';
+
+# Création de la Base De Donnée
+CREATE DATABASE IF NOT EXISTS website;
+
+# Création de l'utilisateur
+CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'admin';
+
+# Editier les permissions
+GRANT ALL PRIVILEGES ON website.* TO 'nextcloud'@'localhost';
+FLUSH PRIVILEGES;
+
+
+
+# Vérification
+mysql -u nextcloud -padmin;
+
+# Afficher les Bases de données:
+SHOW DATABASES;
+
+# Afficher les Utilisateurs:
+SELECT User FROM mysql.user;
+
+```
+
+#### Téléchargement du site Nextcloud
 ```bash
 wget https://download.nextcloud.com/server/releases/latest.zip -O /tmp/Nextcloud.zip;
 unzip /tmp/Nextcloud.zip -d /var/www/html/;
