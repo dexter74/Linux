@@ -7,45 +7,31 @@ software-properties-common \
 1>/dev/null;
 ```
 
-#### PHP 8.1
+
+#### Dépôt 8.1
 ```bash
 curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg;
 echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list;
-apt install php8.1 libapache2-mod-php8.1 1>/dev/null
 ```
 
-#### Modules
+#### Installation PHP 8.1 (Inclus Modules)
 ```bash
-php -m 
-apt search php | grep dom
-apt install -y php-symfony-polyfill-ctype;
-apt install -y php-curl
-apt install -y php-dompdf php-fdomdocument php-random-compat
-apt install -y php-gd
-apt install -y php-json
-apt install -y php-libxml
-apt install -y php-
-apt install -y php-
-apt install -y php-
-apt install -y php-
-apt install -y php-
-apt install -y php-
-apt install -y php-
-apt install -y php-
-apt install -y php-
-apt install -y php-
-apt install -y php-
-apt install -y php-
-apt install -y php-
-apt install -y php-
+# php -m 
+# apt install php8.1 libapache2-mod-php8.1 1>/dev/null
+#apt search php | grep dom
+#apt install -y php-symfony-polyfill-ctype;
+#apt install -y php-curl
+#apt install -y php-dompdf php-fdomdocument php-random-compat
+#apt install -y php-gd
+#apt install -y php-json
+#apt install -y php-libxml
+#apt install -y php-zip
 ```
 
 #### Apache2
 ```bash
 apt install -y apache2 1>/dev/null;
 ```
-
-
 
 
 #### Installation de Nextcloud
