@@ -4,7 +4,8 @@
 ------------------------------------------------------------------------------------------------------------------------------------
 ### Présentation
 ```
-Debian 11: Bullseye
+Ce guide permet le déploiement de Nexcloud.
+Il indique la marche à suivre pour l'installation d'Apache, MariaDB, PHP et ses modules sur Debian 11.
 ```
 <br />
 
