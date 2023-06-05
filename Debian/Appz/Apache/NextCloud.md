@@ -5,6 +5,7 @@ Debian 11: Bullseye
 
 #### Dépôt BookWorm
 ```
+clear;
 sed -i -e 's/bullseye/bookworm/g' /etc/apt/sources.list;
 apt update;
 apt upgrade -y;
@@ -13,17 +14,15 @@ apt upgrade -y;
 
 #### Pré-requis:
 ```bash
-apt install -y \
-ca-certificates \
-apt-transport-https \
-software-properties-common \
-1>/dev/null;
+clear;
+apt install -y ca-certificates apt-transport-https software-properties-common 1>/dev/null;
 ```
 
 
 
 #### Dépôt 8.1
 ```bash
+clear;
 curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg;
 echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list;
 ```
