@@ -68,7 +68,7 @@ apt install -y mariadb-server 1>/dev/null;
 
 ##### Création de la Base De Donnée
 Le nom de la Base de donnée est `website`, l'identifiant est `nextcloud` et le mot de passe est `admin`.
-```
+```sql
 # Connexion à la SQL:
 mysql -u root -padmin;
 
@@ -85,11 +85,14 @@ CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'admin';
 # Editier les permissions
 GRANT ALL PRIVILEGES ON website.* TO 'nextcloud'@'localhost';
 FLUSH PRIVILEGES;
+```
 
-# Vérification
+##### Vérification de bon fonctionnement
+```
+# Connexion à la SQL (Compte de service)
 mysql -u nextcloud -padmin;
 
-# Afficher les Bases de données:
+# Afficher les Bases de données
 SHOW DATABASES;
 
 # Afficher les Utilisateurs:
