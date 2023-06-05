@@ -113,7 +113,7 @@ unzip /tmp/Nextcloud.zip -d /var/www/html/;
 ```
 
 #### Permissions
-Apache2 qui est le service Web utilise le compte de service www-data, il faut remettre les bonnes permissions. (Page Blanche sinon) 
+Apache2 qui est le service Web utilise le compte de service `www-data`, il faut remettre les bonnes permissions. (Page Blanche sinon) 
 ```
 chown -R www-data:www-data /var/www/html/;
 ```
