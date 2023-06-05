@@ -117,7 +117,7 @@ unzip /tmp/Nextcloud.zip -d /var/www/html;
 #### B. Permissions
 Apache2 qui est le service Web utilise le compte de service `www-data`, il faut remettre les bonnes permissions. (Page Blanche sinon) 
 ```
-chown -R www-data:www-data /var/www/html/;
+chown -R www-data:www-data /var/www/html;
 ```
 
 #### Début de l'installation
