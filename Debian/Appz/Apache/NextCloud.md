@@ -2,7 +2,7 @@
 ## <p align='center'> Installation de NextCloud sur Debian 11 </p>
 
 ------------------------------------------------------------------------------------------------------------------------------------
-#### Présentation
+### Présentation
 ```
 Debian 11: Bullseye
 ```
@@ -31,13 +31,13 @@ apt update;
 
 ------------------------------------------------------------------------------------------------------------------------------------
 ### PHP
-##### Mise en place du Dépôt PHP
+#### Mise en place du Dépôt PHP
 ```bash
 clear;
 curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg;
 echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list;
 ```
-##### Installation des Packages PHP
+#### Installation des Packages PHP
 ```bash
 clear;
 apt install php                 1>/dev/null;
@@ -56,8 +56,7 @@ apt install -y php-zip          1>/dev/null;
 
 ------------------------------------------------------------------------------------------------------------------------------------
 #### Base De Donnée
-
-##### Installation de MariaDB
+#### Installation de MariaDB
 Le mot de passe du compte Root de la base de donnée est contenu dans la variable `PASSWORD_DB` soit par défaut `admin`.
 ```bash
 clear;
@@ -65,8 +64,7 @@ PASSWORD_DB=admin
 apt install -y mariadb-server 1>/dev/null;
 (echo ""; echo "y"; echo "y"; echo "$PASSWORD_DB"; echo "$PASSWORD_DB"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
 ```
-
-##### Création de la Base De Donnée
+#### Création de la Base De Donnée
 Le nom de la Base de donnée est `website`, l'identifiant est `nextcloud` et le mot de passe est `admin`.
 ```sql
 # Connexion à la SQL:
@@ -86,8 +84,7 @@ CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'admin';
 GRANT ALL PRIVILEGES ON website.* TO 'nextcloud'@'localhost';
 FLUSH PRIVILEGES;
 ```
-
-##### Vérification de bon fonctionnement
+#### Vérification de bon fonctionnement
 ```
 # Connexion à la SQL (Compte de service)
 mysql -u nextcloud -padmin;
@@ -101,7 +98,7 @@ SELECT User FROM mysql.user;
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------
-#### Installation d'Apache2
+### Installation d'Apache2
 ```bash
 clear;
 apt install -y apache2 1>/dev/null;
@@ -109,7 +106,7 @@ apt install -y apache2 1>/dev/null;
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------
-#### Téléchargement du site Nextcloud
+### Téléchargement du site Nextcloud
 ```bash
 wget https://download.nextcloud.com/server/releases/latest.zip -O /tmp/Nextcloud.zip;
 unzip /tmp/Nextcloud.zip -d /var/www/html/;
