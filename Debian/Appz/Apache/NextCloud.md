@@ -17,6 +17,7 @@ apt upgrade -y;
 ```bash
 clear;
 apt install -y ca-certificates apt-transport-https software-properties-common curl wget 1>/dev/null;
+apt update
 ```
 
 
