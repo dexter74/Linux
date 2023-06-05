@@ -1,4 +1,4 @@
-### Installation des Guest Additions
+### VirtualBox 7.X
 ```
 # Root Requis: su -
 apt install -y linux-headers-$(uname -r);
