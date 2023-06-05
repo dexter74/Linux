@@ -3,11 +3,15 @@
 
 ### Installation des dépendances
 Le package des Guest additions dans le dépôt officiel n'est pas à jour.
-```
-#
+```bash
+clear;
 apt install -y linux-headers-amd64;#
-apt install -y build-essential dkms;
+#apt install -y build-essential dkms;
+```
 
+### Installer les Guests Additions
+```bash
+clear;
 mount /sr0 /media/cdrom0;
 cd /media/cdrom0;
 sh *.run;
