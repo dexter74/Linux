@@ -6,11 +6,11 @@
 **L**inux **A**pache **M**ysql et **P**HP
 
 ```bash
-apt install -y apache2
-apt install -y mariadb-server
-apt install -y php
-apt install curl;
-apt install unzip;
+apt install -y apache2;
+apt install -y curl;
+apt install -y mariadb-server;
+apt install -y php;
+apt install -y unzip;
 ```
 
 ```bash
