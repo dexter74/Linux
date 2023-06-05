@@ -1,5 +1,5 @@
 ### VirtualBox 7.X
-Le package des Guest additions dans le dépôt officiel est pas à jour.
+Le package des Guest additions dans le dépôt officiel n'est pas à jour.
 
 ```
 # Root Requis: su -
