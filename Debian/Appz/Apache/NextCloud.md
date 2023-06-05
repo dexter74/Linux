@@ -86,7 +86,7 @@ GRANT ALL PRIVILEGES ON website.* TO 'nextcloud'@'localhost';
 FLUSH PRIVILEGES;
 ```
 #### Vérification de bon fonctionnement
-```
+```sql
 # Connexion à la SQL (Compte de service)
 mysql -u nextcloud -padmin;
 
