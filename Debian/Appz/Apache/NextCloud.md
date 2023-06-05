@@ -57,7 +57,7 @@ apt install -y php-zip          1>/dev/null;
 #### Base De Donnée
 
 ##### Installation de MariaDB
-Le mot de passe du compte Root de la base de donnée est contenu dans la variable `PASSWORD_DB`soit par défaut `admin`.
+Le mot de passe du compte Root de la base de donnée est contenu dans la variable `PASSWORD_DB` soit par défaut `admin`.
 ```bash
 clear;
 PASSWORD_DB=admin
