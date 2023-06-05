@@ -15,15 +15,17 @@ apt upgrade -y;
 #### Utilitaires
 ```bash
 clear;
-apt install -y ca-certificates apt-transport-https software-properties-common curl wget 1>/dev/null;
+apt install -y ca-certificates apt-transport-https software-properties-common curl wget unzip 1>/dev/null;
 apt update;
 ```
 
-#### PHP 8.1
+
+#### MariaDb
 ```bash
 clear;
-curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg;
-echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list;
+PASSWORD_DB=admin
+apt install -y mariadb-server 1>/dev/null;
+(echo ""; echo "y"; echo "y"; echo "$PASSWORD_DB"; echo "$PASSWORD_DB"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
 ```
 
 #### Apache2
@@ -32,23 +34,21 @@ clear;
 apt install -y apache2 1>/dev/null;
 ```
 
-#### MariaDb
-```bash
-clear;
-PASSWORD_DB=admin
-
-apt install -y mariadb;
-(echo ""; echo "y"; echo "y"; echo "$PASSWORD_DB"; echo "$PASSWORD_DB"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
-
-```
-
-
 #### Installation de Nextcloud
 ```bash
 wget https://download.nextcloud.com/server/releases/latest.zip -O /tmp/Nextcloud.zip;
 unzip /tmp/Nextcloud.zip -d /var/www/html/;
 chown -R www-data:www-data /var/www/html/;
 ```
+
+
+#### PHP 8.1
+```bash
+clear;
+curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg;
+echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list;
+```
+
 
 
 #### Installation PHP 8.1 (Inclus Modules)
