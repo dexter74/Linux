@@ -19,8 +19,28 @@ apt install -y ca-certificates apt-transport-https software-properties-common cu
 apt update;
 ```
 
+#### Installation PHP 8 (Inclus Modules)
+```bash
+clear;
+curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg;
+echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list;
 
-#### MariaDb
+apt install php                 1>/dev/null;
+apt install libapache2-mod-php  1>/dev/null;
+apt install -y php-curl         1>/dev/null;
+apt install -y php-gd           1>/dev/null;
+apt install -y php-mbstring     1>/dev/null;
+apt install -y php-mysql        1>/dev/null;
+apt install -y php-xml          1>/dev/null;
+apt install -y php-zip          1>/dev/null;
+
+# php -m;
+# apt search php | grep -i XXX;
+```
+
+
+#### MariaDB
+Le mot de passe du compte Root de la base de donnée est contenu dans la variable `PASSWORD_DB`soit par défaut `admin`.
 ```bash
 clear;
 PASSWORD_DB=admin
@@ -39,32 +59,4 @@ apt install -y apache2 1>/dev/null;
 wget https://download.nextcloud.com/server/releases/latest.zip -O /tmp/Nextcloud.zip;
 unzip /tmp/Nextcloud.zip -d /var/www/html/;
 chown -R www-data:www-data /var/www/html/;
-```
-
-
-#### PHP 8.1
-```bash
-clear;
-curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg;
-echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list;
-```
-
-
-#### Installation PHP 8.1 (Inclus Modules)
-```bash
-apt install php                1>/dev/null;
-apt install libapache2-mod-php 1>/dev/null
-
-php -m;
-apt search php | grep -i 
-apt install -y php-curl;
-apt install -y php-gd;
-apt install -y php-mbstring;
-apt install -y php-mysql;
-apt install -y php-xml;
-apt install -y php-zip;
-
-systemctl restart apache2;
-
-
 ```
