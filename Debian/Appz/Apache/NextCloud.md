@@ -1,11 +1,13 @@
 #### Information Système
 ```
-Debian 11: BUSTER
+Debian 11: Bullseye
 ```
 
-#### Dépôt
+#### Dépôt BookWorm
 ```
-echo "deb http://ftp.de.debian.org/debian bookworm main " > /etc/apt/sources.list.d/bookworm.list
+sed -i -e 's/bullseye/bookworm/g' /etc/apt/sources.list;
+apt update;
+apt upgrade -y;
 ```
 
 
