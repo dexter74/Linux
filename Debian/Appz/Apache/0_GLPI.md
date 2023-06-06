@@ -14,7 +14,7 @@ Utilisateur Système:
 
 Utilisateur BDD:
  - Identifiant    : GLPI
- - Mot de passe   : GLPI
+ - Mot de passe   : admin
  - Base de Donnée : GLPI
 ```
 <br />
