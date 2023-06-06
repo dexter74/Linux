@@ -15,9 +15,17 @@ Il indique la marche à suivre pour l'installation d'Apache, MariaDB, PHP et ses
 Les `paquets requis` pour `NextCloud` requiert le dépôt `BookWorm` car les modules PHP pour nextcloud sont absent de Bullseye.
 ```
 clear;
+
+# Commenté la ligne CDROM
 sed -i -e 's/^deb cdrom/#deb cdrom/g' /etc/apt/sources.list;
+
+# Remplacer bullseye par bookworm
 sed -i -e 's/bullseye/bookworm/g'     /etc/apt/sources.list;
+
+# Mise à jour liste des paquets
 apt update;
+
+# Upgrade des paquets
 apt upgrade -y;
 ```
 
