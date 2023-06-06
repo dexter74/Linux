@@ -142,12 +142,12 @@ A ce stade, on à crée la base de donnée, l'utilisateur avec son mot de passe.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## <p align='center'> Choisir la Version de GLPI </p>
 
-### GLPI 9.5.X
+#### GLPI 10.0.7
 ```bash
-FILE="https://github.com/glpi-project/glpi/releases/download/9.5.12/glpi-9.5.12.tgz"
-wget "$FILE"  -O /tmp/glpi-9.5.12.tgz;
+FILE="https://github.com/glpi-project/glpi/releases/download/10.0.7/glpi-10.0.7.tgz
+wget "$FILE" -O /tmp/glpi-10.0.7.tgz;
 rm -r /var/www/html/glpi 2>/dev/null;
-tar -xvf /tmp/glpi-9.5.12.tgz -C /var/www/html;
+tar -xvf  /tmp/glpi-10.0.7.tgz -C /var/www/html;
 ```
 
 ### GLPI 10.0.6
@@ -156,6 +156,14 @@ FILE="https://github.com/glpi-project/glpi/releases/download/10.0.6/glpi-10.0.6.
 wget "$FILE" -O /tmp/glpi-10.0.6.tgz;
 rm -r /var/www/html/glpi 2>/dev/null;
 tar -xvf  /tmp/glpi-10.0.6.tgz -C /var/www/html;
+```
+
+### GLPI 9.5.X
+```bash
+FILE="https://github.com/glpi-project/glpi/releases/download/9.5.12/glpi-9.5.12.tgz"
+wget "$FILE"  -O /tmp/glpi-9.5.12.tgz;
+rm -r /var/www/html/glpi 2>/dev/null;
+tar -xvf /tmp/glpi-9.5.12.tgz -C /var/www/html;
 ```
 
 ### Permission
