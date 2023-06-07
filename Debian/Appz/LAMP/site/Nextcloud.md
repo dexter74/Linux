@@ -44,7 +44,14 @@ echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.
 apt update;
 ```
 
-#### B. Installation des Packages PHP
+#### B. Switch PHP7 vers 8.
+```
+a2dismod php*;
+a2enmod php8.2;
+systemctl restart apache2;
+```
+
+#### C. Installation des Packages PHP
 ```bash
 clear;
 apt install php                 1>/dev/null;
