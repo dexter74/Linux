@@ -96,7 +96,7 @@ mv $WWW/phpMyAdmin-$VERSION-all-languages/ $WWW/phpmyadmin;
 
 ### Dépendances:
 ```bash
-apt install php-mysqli;
+apt install php-mysqli 1>/dev/null;
 ```
 
 ### Relance du service Apache
