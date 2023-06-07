@@ -77,12 +77,15 @@ CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'mypassword';
 # Editier les permissions
 GRANT ALL PRIVILEGES ON website.* TO 'nextcloud'@'localhost';
 FLUSH PRIVILEGES;
+
+# Quitter la connexion
+exit;
 ```
 
 #### C. Vérification de l'accès à la Base De Donnée
 ```sql
 # Connexion à la SQL (Compte de service)
-mysql -u nextcloud -padmin;
+mysql -u nextcloud -pmypassword;
 
 # Afficher les Bases de données
 SHOW DATABASES;
