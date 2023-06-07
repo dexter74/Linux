@@ -7,8 +7,22 @@
 <br />
 
 ```
-sed -i -e 's/^deb cdrom/#deb cdrom/g' /etc/apt/sources.list
+clear;
+
+# Commenté la ligne CDROM
+sed -i -e 's/^deb cdrom/#deb cdrom/g' /etc/apt/sources.list;
+
+# Remplacer bullseye par bookworm
+sed -i -e 's/bullseye/bookworm/g'     /etc/apt/sources.list;
+
+# Mise à jour liste des paquets
+apt update;
+
+# Upgrade des paquets
+apt upgrade -y;
 ```
+
+
 --------------------------------------------------------------------------------------------------------------------------------
 ## II. Installation des Paquets de base
 ```bash
