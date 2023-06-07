@@ -133,7 +133,8 @@ nano /etc/apache2/sites-enabled/000-default.conf;
 ```
 
 ```
-systemctl restart apache2
+a2enmod rewrite;
+systemctl restart apache2;
 ```
 
 <br />
