@@ -155,12 +155,29 @@ Administration > plugins > Marketplace
   > Coller la clé
 ```
 
-##### C. Agent Inventory
+##### C. Les plugins
 ```
 Administration > plugins > marketplace
  > GLPI Inventory
- > 1er fois: Télécharge
- > 2nd fois: Install
+  > 1er fois  : Télécharge
+  > 2nd fois  : Installer
+  > 3ème fois : Activer
+```
+
+
+##### D. Configurer le Plugin
+```
+Administration > plugins > marketplace
+ > GLPI Inventory
+  > Configuration générale
+   > SSL seulement pour l'agent: Oui (Défaut: NON)
+
+  > Modules des agents
+   > WakeOnLan                           : ON
+   > Inventaire ordinateur               : ON
+   > Inventaire distant des hôtes VMware : ON
+   > Inventaire réseau (SNMP)            : ON
+   > Découverte réseau                   : ON
 ```
 <br />
 
