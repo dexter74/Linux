@@ -59,11 +59,13 @@ DROP USER IF EXISTS 'GLPI'@'localhost';
 ```
 
 ### Création de la BDD
+La base de donnée se nomme `GLPI`
 ```bash
 CREATE DATABASE IF NOT EXISTS GLPI;
 ```
 
 ### Création de l'utilisateur
+L'identifiant est `GLPI` et le mot de passe est `admin`
 ```bash
 CREATE USER 'GLPI'@'localhost' IDENTIFIED BY 'admin';
 ```
