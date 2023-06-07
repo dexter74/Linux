@@ -7,25 +7,7 @@
 
 ------------------------------------------------------------------------------------------------------------------------------------
 ### I. Installation des Pre-requis
-#### A. Dépôt BookWorm
-Les `paquets requis` pour `NextCloud` requiert le dépôt `BookWorm` car les modules PHP pour nextcloud sont absent de Bullseye.
-```
-clear;
-
-# Commenté la ligne CDROM
-sed -i -e 's/^deb cdrom/#deb cdrom/g' /etc/apt/sources.list;
-
-# Remplacer bullseye par bookworm
-sed -i -e 's/bullseye/bookworm/g'     /etc/apt/sources.list;
-
-# Mise à jour liste des paquets
-apt update;
-
-# Upgrade des paquets
-apt upgrade -y;
-```
-
-#### B. Utilitaires
+#### A. Utilitaires
 Utilitaires indispensables sur la distribution Linux.
 ```bash
 clear;
