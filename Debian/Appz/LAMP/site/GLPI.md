@@ -1,26 +1,6 @@
 --------------------------------------------------------------------------------------------------------------------------------------------
 ## <p align='center'> Guide de Déploiement de GLPI sous Debian </p>
 
---------------------------------------------------------------------------------------------------------------------------------------------
-#### A. Dépôt BookWorm
-GLPI requiert des `modules` pour `PHP` qui sont absent du référentiel `Bullseye`, il faut utiliser `BookWorm`.
-
-```
-clear;
-
-# Commenté la ligne CDROM
-sed -i -e 's/^deb cdrom/#deb cdrom/g' /etc/apt/sources.list;
-
-# Remplacer bullseye par bookworm
-sed -i -e 's/bullseye/bookworm/g'     /etc/apt/sources.list;
-
-# Mise à jour liste des paquets
-apt update;
-
-# Upgrade des paquets
-apt upgrade -y;
-```
-
 ### A. Télécharger GLPI
 ```bash
 clear
