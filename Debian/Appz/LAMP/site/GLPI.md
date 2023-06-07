@@ -155,22 +155,18 @@ nano /etc/apache2/sites-enabled/000-default.conf;
 a2enmod rewrite;
 systemctl restart apache2;
 ```
---------------------------------------------------------------------------------------------------------------------------------------------
-## IV. AGENT INVENTORY
-### Télécharger l'Agent Inventory
-```bash
-https://github.com/glpi-project/glpi-agent/releases
-```
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 ## VI. Guide d'utilisation
-
+### A. Définir les mots de passes des comptes par défaut
 ```
 Administration > Utilisateurs > <Nom d'utilisateur>
- > Changer les mots de passe des comptes glpi, post-only, tech et normal .
+ > Changer les mots de passe des comptes glpi, post-only, tech et normal.
  > Jeton : Identifiant Unique
+```
 
-
+### B. Mettre en service le MarketPlace
+```
 Administration > plugins > marketplace
  > [Nouvelle Onglet] S'enregistrer sur GLPI Network
  > Cliquer sur Connexion (En haut à droite)
@@ -181,4 +177,12 @@ Administration > plugins > marketplace
  [GLPI]
   > Renseignez votre clé d'enregistrement dans la configuration
   > Coller la clé
+```
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+## X. AGENT INVENTORY
+### Télécharger l'Agent Inventory
+```bash
+https://github.com/glpi-project/glpi-agent/releases
 ```
