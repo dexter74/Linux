@@ -37,8 +37,9 @@ apt install -y php-bz2 php-ldap php-mbstring php-symfony-polyfill-ctype php-zip;
 systemctl restart apache2;
 ```
 
-
 ### G. Vérification (Prérequis, Sécurité)
 ```bash
 /var/www/html/glpi/bin/console glpi:system:check_requirements;
 ```
+
+--------------------------------------------------------------------------------------------------------------------------------------------
