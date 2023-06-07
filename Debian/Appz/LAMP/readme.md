@@ -5,6 +5,18 @@
 ## I. Présentation
 **L**inux **A**pache **M**ysql et **P**HP
 <br />
+```bash
+clear;
+
+# Commenté la ligne CDROM
+sed -i -e 's/^deb cdrom/#deb cdrom/g' /etc/apt/sources.list;
+
+# Mise à jour liste des paquets
+apt update;
+
+# Upgrade des paquets
+apt upgrade -y;
+```
 
 --------------------------------------------------------------------------------------------------------------------------------
 ## II. Installation des Paquets de base
