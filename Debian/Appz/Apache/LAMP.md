@@ -61,3 +61,8 @@ nano /etc/apache2/sites-enabled/000-default.conf;
     DirectoryIndex index.html index.php
 </IfModule>
 ```
+
+**Modifier la racine du Site**
+```
+DocumentRoot /var/www/html
+```
