@@ -23,7 +23,6 @@ apt install -y apache2 1>/dev/null;
 ```
 <br />
 
-
 --------------------------------------------------------------------------------------------------------------------------------
 ### IV. MariaDB
 ```bash
@@ -34,6 +33,7 @@ apt install -y mariadb-server 1>/dev/null;
 (echo ""; echo "y"; echo "y"; echo "$PASSWORD_DB"; echo "$PASS_ROOT_SQL"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
 ```
 <br />
+
 --------------------------------------------------------------------------------------------------------------------------------
 ## V. PHP
 #### A. PHP 7
