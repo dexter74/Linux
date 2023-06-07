@@ -1,25 +1,39 @@
+### Connexion SQL:
 ```sql
-# Connexion SQL:
 mysql -u root -padmin
+```
 
-# Autoriser Accès
+### Autoriser Accès
+```sql
 ALTER USER 'root'@'localhost' IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');
+```
 
-# Création du BDD
+### Création du BDD
+```sql
 CREATE DATABASE IF NOT EXISTS STUDITEST;
+```
 
-# Se connecter dans la BDD
+#### Se connecter dans la BDD
+```sql
 use STUDITEST;
+```
 
-# Création d'une Table
+### Création d'une Table
+```sql
 create table test (msg text);
+```
 
-# Insertion de contenu
+### Insertion de contenu
+```sql
 insert into test values ('coucou');
+```
 
-# Afficher Contenu
+### Afficher Contenu
+```sql
 select * from test;
+```
 
-# Quitter la SQL:
+### Quitter la SQL:
+```sql
 exit;
 ```
