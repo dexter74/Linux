@@ -70,5 +70,5 @@ apt install -y php;
 ### C. Lister Modules
 ```
 clear;
-apt list --installed | grep php-;
+apt list --installed | grep php;
 ```
