@@ -6,24 +6,6 @@
 **L**inux **A**pache **M**ysql et **P**HP
 <br />
 
-Passage au source de Bookworm car certains module php sont absent de bullseye.
-```
-clear;
-
-# Commenté la ligne CDROM
-sed -i -e 's/^deb cdrom/#deb cdrom/g' /etc/apt/sources.list;
-
-# Remplacer bullseye par bookworm
-sed -i -e 's/bullseye/bookworm/g'     /etc/apt/sources.list;
-
-# Mise à jour liste des paquets
-apt update;
-
-# Upgrade des paquets
-apt upgrade -y;
-```
-
-
 --------------------------------------------------------------------------------------------------------------------------------
 ## II. Installation des Paquets de base
 ```bash
@@ -95,6 +77,26 @@ unzip /tmp/phpMyAdmin.zip -d $WWW
 
 # Renommage du Dossier
 mv $WWW/phpMyAdmin-$VERSION-all-languages/  $WWW/phpmyadmin;
+```
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+## VII. Optionnel (PHP 8)
+Passage au source de Bookworm car certains module php sont absent de bullseye.
+```
+clear;
+
+# Commenté la ligne CDROM
+sed -i -e 's/^deb cdrom/#deb cdrom/g' /etc/apt/sources.list;
+
+# Remplacer bullseye par bookworm
+sed -i -e 's/bullseye/bookworm/g'     /etc/apt/sources.list;
+
+# Mise à jour liste des paquets
+apt update;
+
+# Upgrade des paquets
+apt upgrade -y;
 ```
 
 
