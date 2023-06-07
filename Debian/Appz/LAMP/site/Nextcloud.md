@@ -46,7 +46,11 @@ apt install -y php-zip          1>/dev/null;
 #### C. Switch PHP 7 vers PHP 8.
 ```bash
 clear;
+
+# Désactiver PHP
 /usr/sbin/a2dismod php*;
+
+# Activation de PHP 8.2
 /usr/sbin/a2enmod php8.2;
 ```
 
