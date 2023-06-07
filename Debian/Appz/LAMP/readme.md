@@ -62,7 +62,7 @@ echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.
 apt install -y php;
 ```
 
-### C. Lister Modules
+### C. Connaitre la version de PHP et de ses Modules
 ```
 clear;
 apt list --installed | grep php;
