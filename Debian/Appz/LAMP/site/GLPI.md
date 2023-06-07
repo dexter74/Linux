@@ -180,7 +180,8 @@ Administration > plugins > marketplace
    > Découverte réseau                   : ON
    
   [Bandeau Horizontal]
-  >
+  > Déployer
+   > Gestions des paquets
 ```
 <br />
 
