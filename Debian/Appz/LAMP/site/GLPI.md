@@ -112,6 +112,17 @@ Le fichier install.php doit être renommé ou Supprimé
 rm /var/www/html/glpi/install/install.php;
 ```
 
+#### C. Déplacer GLPI
+```bash
+mv /var/www/html/glpi/* /var/www/html/;
+```
+#### D. Définir index.php en priorité
+```bash
+echo "<IfModule dir_module>
+    DirectoryIndex index.php index.html 
+</IfModule>" >> /etc/apache2/sites-enabled/000-default.conf;
+```
+
 <br />
 
 --------------------------------------------------------------------------------------------------------------------------------------------
