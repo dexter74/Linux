@@ -1,13 +1,15 @@
 --------------------------------------------------------------------------------------------------------------------------------
 # <p align='center'> Guide d'installation d'un serveur LAMP </p>
 
-  --------------------------------------------------------------------------------------------------------------------------------
-## I. Présentation
+--------------------------------------------------------------------------------------------------------------------------------
+### I. Présentation
 **L**inux **A**pache **M**ysql et **P**HP
 <br />
+--------------------------------------------------------------------------------------------------------------------------------
+### I. Configuration de la VM
+#### A. APT
 ```bash
 clear;
-
 # Commenté la ligne CDROM
 sed -i -e 's/^deb cdrom/#deb cdrom/g' /etc/apt/sources.list;
 
@@ -18,8 +20,25 @@ apt update 1>/dev/null;
 apt upgrade -y 1>/dev/null;
 ```
 
+#### B. Configuration des interfaces réseaux
+L'interface réseau s'appelle `ens18`.
+
+```bash
+# Démarrage Automatique
+auto ens18
+
+# Déconnectable à chaud
+allow-hotplug ens18
+
+# Configuration de l'interface en static
+iface ens18 inet static
+ address    192.168.0.50
+ netmask    255.255.255.0
+ nameserver 192.168.0.1
+```
+
 --------------------------------------------------------------------------------------------------------------------------------
-## II. Installation des Paquets de base
+### III. Paquets de base
 ```bash
 clear;
 apt install -y curl  1>/dev/null;
@@ -29,7 +48,7 @@ apt install -y wget  1>/dev/null;
 <br />
 
 --------------------------------------------------------------------------------------------------------------------------------
-## III. Apache
+### IV. Apache
 ```bash
 clear;
 apt install -y apache2 libapache2-mod-php 1>/dev/null;
@@ -37,37 +56,28 @@ apt install -y apache2 libapache2-mod-php 1>/dev/null;
 <br />
 
 --------------------------------------------------------------------------------------------------------------------------------
-## IV. MariaDB
-### A. Installation
+### V. MariaDB
+#### A. Installation
 ```bash
 clear;
 PASS_ROOT_SQL=admin
-
 apt install -y mariadb-server 1>/dev/null;
 (echo ""; echo "y"; echo "y"; echo "$PASSWORD_DB"; echo "$PASS_ROOT_SQL"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
 ```
-
-### B. Autoriser l'authentification mysql_native_password
+#### B. Autoriser l'authentification mysql_native_password
 Permettra à PHPMYADMIN d'accèder à la base de donnée depuis le compte root.
 ```
 mysql -u root -padmin -e "ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
 ```
-
-
 <br />
 
-
-
 --------------------------------------------------------------------------------------------------------------------------------
-## V. PHP
+## VI. PHP
 #### B. PHP 7
 ```bash
 clear;
 apt install -y php 1>/dev/null;
 ```
-
-
-
 ### C. Connaitre la version de PHP et de ses Modules
 ```
 clear;
@@ -77,7 +87,6 @@ apt list --installed | grep php;
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## VI. Gestionnaire de la Base De Donnée
-
 ### PHPMyAdmin
 ```bash
 clear;
