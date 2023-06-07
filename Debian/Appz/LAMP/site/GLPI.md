@@ -151,35 +151,51 @@ C:\Users\marc>nslookup glpi.local
 Réponse ne faisant pas autorité :
 Nom        : glpi.local
 Address    : 192.168.0.5
+```
 
+###### Création de la configuration du site glpi.local
+```
+nano /etc/apache2/sites-available/glpi.local.conf;
 ```
 ```
-echo "<VirtualHost *:80>
- # Email Admin
-   ServerAdmin teste74@hotmail.fr
- 
- # Nom de la machine
+<VirtualHost *:80>
+  # Email Admin
+  ServerAdmin teste74@hotmail.fr
+  # Nom de la machine
   ServerName debian.lan
+  # URL du site
+  ServerAlias glpi.local
 
- # URL du site
- ServerAlias glpi.local
+  # Racine du Site
+  DocumentRoot /var/www/html/glpi/public
 
- # Racine du Site
- DocumentRoot /var/www/html/glpi
-
- # Chargement page dans ordre
- <IfModule dir_module>
+  # Chargement page dans ordre
+  <IfModule dir_module>
    DirectoryIndex index.php index.html
- </IfModule>
+  </IfModule>
 
- # Log
- ErrorLog ${APACHE_LOG_DIR}/error.log
- CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>" >  /etc/apache2/sites-available/glpi.local.conf;/usr/sbin/a2ensite glpi.local.conf; systemctl restart apache2;
+  # Log
+  ErrorLog /error.log
+  CustomLog /access.log combined
 
+ # Alias "/glpi" "/var/www/html/glpi/public"
+  <Directory /var/www/html/glpi/public>
+   Require all granted
+   RewriteEngine On
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteRule ^(.*)$ index.php [QSA,L]
+  </Directory>
+</VirtualHost>
 ```
 
-
+###### Activation du site
+```
+/usr/sbin/a2ensite glpi.local.conf;
+```
+###### Relance du site
+```
+systemctl restart apache2;
+```
 <br />
 
 
