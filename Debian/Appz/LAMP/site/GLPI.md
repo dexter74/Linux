@@ -3,7 +3,8 @@
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 #### A. Dépôt BookWorm
-Les `paquets requis` pour `GLPI` requiert le dépôt `BookWorm` car les modules PHP pour nextcloud sont absent de Bullseye.
+GLPI requiert des `modules` pour `PHP` qui sont absent du référentiel `Bullseye`, il faut utiliser `BookWorm`.
+
 ```
 clear;
 
