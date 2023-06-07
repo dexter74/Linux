@@ -13,7 +13,6 @@ wget https://github.com/glpi-project/glpi/releases/download/$VERSION/glpi-$VERSI
 ### B. Extraire GLPI
 ```bash
 cd /tmp/;
-tar xvf glpi.tgz -C /var/www/html;
 tar -xf /tmp/glpi.tgz  -C /var/www/html;
 ```
 
