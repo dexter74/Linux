@@ -61,14 +61,6 @@ mysql -u root -padmin -e "ALTER USER root@localhost IDENTIFIED VIA mysql_native_
 
 --------------------------------------------------------------------------------------------------------------------------------
 ## V. PHP
-#### A. PHP 8 (Sans passer sous BookWorm)
-```bash
-clear;
-curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg;
-echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list; apt update 1>/dev/null;
-apt install -y php 1>/dev/null;
-```
-
 #### B. PHP 7
 ```bash
 apt install -y php 1>/dev/null;
