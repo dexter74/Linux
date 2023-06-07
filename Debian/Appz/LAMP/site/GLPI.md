@@ -140,8 +140,16 @@ Administration > Utilisateurs > <Nom d'utilisateur>
  > Changer les mots de passe des comptes glpi, post-only, tech et normal.
  > Jeton : Identifiant Unique
 ```
+##### B. Mes préférences
+```
+Mon Pseudo > Mes préférences > Personnalisation
+ > Mise en page	
+  > Horizontl
+```
 
-##### B. Mettre en service le MarketPlace
+ 
+ 
+##### C. Mettre en service le MarketPlace
 ```
 Administration > plugins > Marketplace
  > [Nouvelle Onglet] S'enregistrer sur GLPI Network
@@ -155,7 +163,7 @@ Administration > plugins > Marketplace
   > Coller la clé
 ```
 
-##### C. Installer des plugins
+##### D. Installer des plugins
 ```
 Administration > plugins > marketplace
  > GLPI Inventory
