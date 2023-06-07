@@ -44,6 +44,7 @@ systemctl restart apache2;
 #### II. Base De Donnée
 ##### A. Gestion de la Base De Donnée
 ```bash
+clear;
 
 # Suppression de la BDD et USER
 mysql -u root -padmin -e "DROP DATABASE IF EXISTS GLPI;DROP USER IF EXISTS 'GLPI'@'localhost';"
