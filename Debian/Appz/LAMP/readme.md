@@ -61,6 +61,7 @@ mysql -u root -padmin -e "ALTER USER root@localhost IDENTIFIED VIA mysql_native_
 ## V. PHP
 #### B. PHP 7
 ```bash
+clear;
 apt install -y php 1>/dev/null;
 ```
 
