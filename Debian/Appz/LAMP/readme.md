@@ -85,7 +85,7 @@ VERSION=5.2.1
 WWW=/var/www/html
 
 # Téléchargement de PHPMYADMIN
-wget https://files.phpmyadmin.net/phpMyAdmin/$VERSION/phpMyAdmin-$VERSION-all-languages.zip -O /tmp/phpMyAdmin.zip;
+wget https://files.phpmyadmin.net/phpMyAdmin/$VERSION/phpMyAdmin-$VERSION-all-languages.zip -O /tmp/phpMyAdmin.zip 2>/dev/null;
 
 # Extraction du site dans le dossier Web
 unzip /tmp/phpMyAdmin.zip -d $WWW 1>/dev/null;
