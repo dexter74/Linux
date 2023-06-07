@@ -12,7 +12,7 @@ clear;
 sed -i -e 's/^deb cdrom/#deb cdrom/g' /etc/apt/sources.list;
 
 # Mise à jour liste des paquets
-apt update;
+apt update 1>/dev/null;
 
 # Upgrade des paquets
 apt upgrade -y 1>/dev/null;
