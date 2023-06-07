@@ -41,7 +41,7 @@ apt install -y mariadb-server 1>/dev/null;
 apt install -y php 1>/dev/null;
 ```
 
-#### B. PHP8
+#### B. PHP 8 (Sans passer sous BookWorm)
 ```bash
 clear;
 curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg;
