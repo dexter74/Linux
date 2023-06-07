@@ -114,8 +114,31 @@ rm /var/www/html/glpi/install/install.php;
 
 #### B. 
 ```
+nano /etc/apache2/sites-enabled/000-default.conf
+<VirtualHost *:80>
+        #ServerName debian.lan
+        DocumentRoot /var/www/html/glpi/public
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
 
+        <Directory /var/www/html/glpi/public>
+                Require all granted
+                RewriteEngine On
+                RewriteCond %{REQUEST_FILENAME} !-f
+                RewriteRule ^(.*)$ index.php [QSA,L]
+        </Directory>
+
+</VirtualHost>
 ```
+
+
+
+
+
+
+
+
+
 
 
 
@@ -130,7 +153,6 @@ La configuration suivante permet de définir index.php en chargement par défaut
 ```bash
 nano /etc/apache2/sites-enabled/000-default.conf;
 ```
-
 ```
 # Après la ligne DocumentRoot /var/www/html
 <IfModule dir_module>
