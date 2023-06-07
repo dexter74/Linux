@@ -21,8 +21,12 @@ chown -R www-data:www-data /var/www/html
 ```
 
 ### D. Modules PHP
+Les modules sont pas tous compatibles PHP 8.
 ```bash
-apt install php-db 1>/dev/null;
+apt install -y php-common 1>/dev/null;
+apt install -y php-curl;
+apt install -y php-intl;
+apt install -y php-gd;
 ```
 
 ### E. Relance du service Apache
