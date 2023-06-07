@@ -169,15 +169,18 @@ Administration > plugins > marketplace
 ```
 Administration > plugins > marketplace
  > GLPI Inventory
+  [Bandeau Vertical]
   > Configuration générale
    > SSL seulement pour l'agent: Oui (Défaut: NON)
-
   > Modules des agents
    > WakeOnLan                           : ON
    > Inventaire ordinateur               : ON
    > Inventaire distant des hôtes VMware : ON
    > Inventaire réseau (SNMP)            : ON
    > Découverte réseau                   : ON
+   
+  [Bandeau Horizontal]
+  >
 ```
 <br />
 
