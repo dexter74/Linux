@@ -112,23 +112,20 @@ Le fichier install.php doit être renommé ou Supprimé
 rm /var/www/html/glpi/install/install.php;
 ```
 
-#### B. 
+#### B. Configurer le Serveur Web ([DOC](https://glpi-install.readthedocs.io/fr/latest/prerequisites.html#webserver-configuration))
 ```
-nano /etc/apache2/sites-enabled/000-default.conf
-<VirtualHost *:80>
+echo"<VirtualHost *:80>
         #ServerName debian.lan
         DocumentRoot /var/www/html/glpi/public
         ErrorLog ${APACHE_LOG_DIR}/error.log
         CustomLog ${APACHE_LOG_DIR}/access.log combined
-
         <Directory /var/www/html/glpi/public>
                 Require all granted
                 RewriteEngine On
                 RewriteCond %{REQUEST_FILENAME} !-f
                 RewriteRule ^(.*)$ index.php [QSA,L]
         </Directory>
-
-</VirtualHost>
+</VirtualHost>" > /etc/apache2/sites-enabled/000-default.conf
 ```
 
 
