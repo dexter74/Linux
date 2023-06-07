@@ -6,6 +6,9 @@
 **L**inux **A**pache **M**ysql et **P**HP
 <br />
 
+```
+sed -i -e 's/^deb cdrom/#deb cdrom/g' /etc/apt/sources.list
+```
 --------------------------------------------------------------------------------------------------------------------------------
 ## II. Installation des Paquets de base
 ```bash
