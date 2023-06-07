@@ -120,7 +120,7 @@ nano /etc/apache2/sites-enabled/000-default.conf; systemctl restart apache2;
         </IfModule>
 
         # Alias
-        Alias "/glpi" "/var/www/glpi/public"
+        Alias "/glpi" "/var/www/html/glpi/public"
 
         # Log
         ErrorLog ${APACHE_LOG_DIR}/error.log
