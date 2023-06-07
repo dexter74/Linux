@@ -40,9 +40,7 @@ chown -R www-data:www-data /var/www/html
 
 Les extensions suivantes sont installées : fileinfo, json.
 Les extensions suivantes sont manquantes : dom, simplexml.
-l'extension curl est absente.	
-l'extension gd est absente.	
-l'extension intl est absente.
+
 
 ### D. Changer de Distribution (Bookworm)
 
