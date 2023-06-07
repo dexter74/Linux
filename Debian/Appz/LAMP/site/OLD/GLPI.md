@@ -197,6 +197,9 @@ La version 9.5.X requiert:
 - zip
 ```
 
+Les extensions suivantes sont installées : ctype, iconv, sodium.
+Les extensions suivantes ne sont pas présentes : mbstring.
+
 #### Exemple de module
 ```bash
 apt install -y php-apcu apcupsd;
