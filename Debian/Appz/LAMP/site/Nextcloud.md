@@ -48,7 +48,6 @@ apt update;
 ```
 a2dismod php*;
 a2enmod php8.2;
-systemctl restart apache2;
 ```
 
 #### C. Installation des Packages PHP
@@ -62,6 +61,8 @@ apt install -y php-mbstring     1>/dev/null;
 apt install -y php-mysql        1>/dev/null;
 apt install -y php-xml          1>/dev/null;
 apt install -y php-zip          1>/dev/null;
+
+systemctl restart apache2;
 
 # php -m;
 # apt search php | grep -i XXX;
