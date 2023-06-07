@@ -120,4 +120,10 @@ systemctl restart apache2;
 #### E. Début de l'installation
 ```
 http://<IP du serveur>/nextcloud
+
+# Utilisateur de la Base de donnée  : nextcloud
+# Mot de passe de la Base de donnée : mypassword
+# Nom de la Base de donnée          : website
+# Hôte de la Base de donnée         : localhost
+
 ```
