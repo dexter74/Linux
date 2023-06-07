@@ -6,7 +6,7 @@
 **L**inux **A**pache **M**ysql et **P**HP
 <br />
 --------------------------------------------------------------------------------------------------------------------------------
-### I. Configuration de la VM
+### I. Configuration de l'environnement
 #### A. APT
 ```bash
 clear;
