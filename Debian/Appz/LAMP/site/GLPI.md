@@ -155,7 +155,7 @@ Administration > plugins > Marketplace
   > Coller la clé
 ```
 
-##### C. Les plugins
+##### C. Installer des plugins
 ```
 Administration > plugins > marketplace
  > GLPI Inventory
