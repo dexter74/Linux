@@ -64,40 +64,28 @@ systemctl restart apache2;
 #### A. Création de La Base De Donnée
 Le nom de la Base de donnée est `website`, l'identifiant est `nextcloud` et le mot de passe est `mypassword`.
 ```sql
-# Connexion à la SQL:
-mysql -u root -padmin;
-
+clear;
 # Purge (Database et User)
-DROP DATABASE IF EXISTS website;
-DROP USER IF EXISTS 'nextcloud'@'localhost';
+mysql -u root -padmin -e "DROP DATABASE IF EXISTS website; DROP USER IF EXISTS 'nextcloud'@'localhost';"
 
 # Création de la Base De Donnée
-CREATE DATABASE IF NOT EXISTS website;
+mysql -u root -padmin -e "CREATE DATABASE IF NOT EXISTS website;"
 
 # Création de l'utilisateur
-CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'mypassword';
+mysql -u root -padmin -e "CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'mypassword';"
 
-# Editier les permissions
-GRANT ALL PRIVILEGES ON website.* TO 'nextcloud'@'localhost';
-FLUSH PRIVILEGES;
+# Editer les permissions
+mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON website.* TO 'nextcloud'@'localhost';FLUSH PRIVILEGES;"
 
-# Quitter la connexion
-exit;
+# Vérification
+mysql -u root -padmin -e "SELECT User FROM mysql.user;"
+mysql -u root -padmin -e "SHOW DATABASES;"
+
 ```
 
 #### C. Vérification de l'accès à la Base De Donnée
 ```sql
-# Connexion à la SQL (Compte de service)
-mysql -u nextcloud -pmypassword;
-
-# Afficher les Bases de données
-SHOW DATABASES;
-
-# Afficher les Utilisateurs:
-SELECT User FROM mysql.user;
-
-# Quitter la connexion
-exit;
+mysql -u nextcloud -pmypassword -e "SHOW DATABASES;"
 ```
 <br />
 
