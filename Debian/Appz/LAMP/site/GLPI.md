@@ -2,6 +2,24 @@
 ## <p align='center'> Guide de Déploiement de GLPI sous Debian </p>
 
 --------------------------------------------------------------------------------------------------------------------------------------------
+#### A. Dépôt BookWorm
+Les `paquets requis` pour `GLPI` requiert le dépôt `BookWorm` car les modules PHP pour nextcloud sont absent de Bullseye.
+```
+clear;
+
+# Commenté la ligne CDROM
+sed -i -e 's/^deb cdrom/#deb cdrom/g' /etc/apt/sources.list;
+
+# Remplacer bullseye par bookworm
+sed -i -e 's/bullseye/bookworm/g'     /etc/apt/sources.list;
+
+# Mise à jour liste des paquets
+apt update;
+
+# Upgrade des paquets
+apt upgrade -y;
+```
+
 ### A. Télécharger GLPI
 ```bash
 clear
@@ -20,16 +38,25 @@ tar xvf glpi.tgz -C /var/www/html;
 chown -R www-data:www-data /var/www/html
 ```
 
-### D. Modules PHP
+Les extensions suivantes sont installées : fileinfo, json.
+Les extensions suivantes sont manquantes : dom, simplexml.
+l'extension curl est absente.	
+l'extension gd est absente.	
+l'extension intl est absente.
+
+### D. Changer de Distribution (Bookworm)
+
+
+### E. Modules PHP
 Les modules sont pas tous compatibles PHP 8.
 ```bash
-apt install -y php-common 1>/dev/null;
+apt install -y php-mysqli;
 apt install -y php-curl;
-apt install -y php-intl;
 apt install -y php-gd;
+apt install -y php-intl;
 ```
 
-### E. Relance du service Apache
+### F. Relance du service Apache
 ```
 systemctl restart apache2;
 ```
