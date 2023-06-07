@@ -26,13 +26,7 @@ echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.
 apt update;
 ```
 
-#### B. Switch PHP7 vers 8.
-```
-a2dismod php*;
-a2enmod php8.2;
-```
-
-#### C. Installation des Packages PHP
+#### B. Installation des Packages PHP
 ```bash
 clear;
 apt install php                 1>/dev/null;
@@ -44,11 +38,25 @@ apt install -y php-mysql        1>/dev/null;
 apt install -y php-xml          1>/dev/null;
 apt install -y php-zip          1>/dev/null;
 
-systemctl restart apache2;
+
 
 # php -m;
 # apt search php | grep -i XXX;
 ```
+
+#### C. Switch PHP7 vers 8.
+```
+a2dismod php*;
+a2enmod php8.2;
+```
+
+
+#### D. Relance d'Apache
+```bash
+clear;
+systemctl restart apache2;
+```
+
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------
