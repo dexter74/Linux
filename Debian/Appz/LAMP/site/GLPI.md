@@ -4,6 +4,7 @@
 --------------------------------------------------------------------------------------------------------------------------------------------
 ### A. Télécharger GLPI
 ```bash
+clear
 VERSION=10.0.7
 wget https://github.com/glpi-project/glpi/releases/download/$VERSION/glpi-$VERSION.tgz -O /tmp/glpi.tgz 2>/dev/null;
 ```
