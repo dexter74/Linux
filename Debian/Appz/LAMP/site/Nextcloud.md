@@ -46,8 +46,8 @@ apt install -y php-zip          1>/dev/null;
 #### C. Switch PHP 7 vers PHP 8.
 ```
 clear;
-a2dismod php*;
-a2enmod php8.2;
+/usr/sbin/a2dismod php*;
+/usr/sbin/a2enmod php8.2;
 ```
 
 
@@ -80,7 +80,6 @@ mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON website.* TO 'nextcloud'@'loca
 # Vérification
 mysql -u root -padmin -e "SELECT User FROM mysql.user;"
 mysql -u root -padmin -e "SHOW DATABASES;"
-
 ```
 
 #### C. Vérification de l'accès à la Base De Donnée
@@ -105,13 +104,7 @@ clear;
 chown -R www-data:www-data /var/www/html;
 ```
 
-#### C. Relance du service Apache2
-```
-clear;
-systemctl restart apache2;
-```
-
-#### D. Début de l'installation
+#### C. Début de l'installation
 ```
 # Accéder à l'URL de NextCloud      : http://<IP du serveur>/nextcloud
 # Utilisateur de la Base de donnée  : nextcloud
