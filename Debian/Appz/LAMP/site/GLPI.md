@@ -116,11 +116,24 @@ rm /var/www/html/glpi/install/install.php;
 ```bash
 mv /var/www/html/glpi/* /var/www/html/;
 ```
-#### D. Définir index.php en priorité
+#### D. Modifier la page par défaut d'Apache
+Pour mettre la page index.php en priorité  apache, il faut éditer la configuration du site actif.
+
+La configuration suivante permet de définir index.php en chargement par défaut puis si il y a pas de page index.php de charger index.html.
+
 ```bash
-echo "<IfModule dir_module>
-    DirectoryIndex index.php index.html 
-</IfModule>" >> /etc/apache2/sites-enabled/000-default.conf;
+nano /etc/apache2/sites-enabled/000-default.conf;
+```
+
+```
+# Après la ligne DocumentRoot /var/www/html
+<IfModule dir_module>
+ DirectoryIndex index.php index.html
+</IfModule>
+```
+
+```
+systemctl restart apache2
 ```
 
 <br />
