@@ -48,39 +48,34 @@ systemctl restart apache2;
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 ## II. Base De Donnée
-### A. Connexion à la Base de Donnée
+### A. Purge Database et User
 ```bash
-mysql -u root -padmin;
-```
-
-### B. Purge Database et User
-```bash
-DROP DATABASE IF EXISTS GLPI;
-DROP USER IF EXISTS 'GLPI'@'localhost';
+mysql -u root -padmin -e "DROP DATABASE IF EXISTS GLPI;DROP USER IF EXISTS 'GLPI'@'localhost';"
 ```
 
 ### C. Création de la BDD
 La base de donnée se nomme `GLPI`
 ```bash
-CREATE DATABASE IF NOT EXISTS GLPI;
+mysql -u root -padmin -e "CREATE DATABASE IF NOT EXISTS GLPI;"
 ```
 
 ### D. Création de l'utilisateur
 L'identifiant est `GLPI` et le mot de passe est `admin`
 ```bash
-CREATE USER 'GLPI'@'localhost' IDENTIFIED BY 'admin';
+mysql -u root -padmin -e "CREATE USER 'GLPI'@'localhost' IDENTIFIED BY 'admin';"
 ```
 
 ### E. Edition des permissions
 ```bash
-GRANT ALL PRIVILEGES ON GLPI.* TO 'GLPI'@'localhost';
+mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON GLPI.* TO 'GLPI'@'localhost';"
 ```
 
 ### F. Fuseau Horaire
 ```
 # mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -padmin -u root mysql
-GRANT SELECT ON `mysql`.`time_zone_name` TO 'GLPI'@'localhost';
-FLUSH PRIVILEGES;
+# GRANT SELECT ON `mysql`.`time_zone_name` TO 'GLPI'@'localhost';
+# FLUSH PRIVILEGES;
+mysql -u root -padmin -e "GRANT SELECT ON mysql.time_zone_name TO 'GLPI'@'localhost';"
 ```
 
 ### G. Déconnexion MYSQL
