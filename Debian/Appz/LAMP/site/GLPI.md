@@ -19,3 +19,13 @@ tar xvf glpi.tgz -C /var/www/html;
 ```bash
 chown -R www-data:www-data /var/www/html
 ```
+
+### D. Modules PHP
+```bash
+apt install php-db 1>/dev/null;
+```
+
+### E. Relance du service Apache
+```
+systemctl restart apache2;
+```
