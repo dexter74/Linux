@@ -20,6 +20,7 @@ apt install -y curl;
 apt install -y mariadb-server;
 apt install -y php;
 apt install -y unzip;
+apt install -y wget;
 ```
 
 --------------------------------------------------------------------------------------------------------------------------------
