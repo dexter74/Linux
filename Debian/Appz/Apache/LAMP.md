@@ -5,6 +5,8 @@
 #### Présentation
 **L**inux **A**pache **M**ysql et **P**HP
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#### Installation des Paquets
 ```bash
 apt install -y apache2;
 apt install -y curl;
@@ -13,10 +15,31 @@ apt install -y php;
 apt install -y unzip;
 ```
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#### Configurer MariaDB
 ```bash
 (echo ""; echo "y"; echo "y"; echo "$PASSWORD_DB"; echo "admin"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
 ```
 
+
+**Editer le Site Actif**
+```
+nano /etc/apache2/sites-enabled/000-default.conf;
+```
+
+**Modifier la racine du Site**
+```
+DocumentRoot /var/www/html
+```
+
+**Page par défaut à charger**
+```
+<IfModule dir_module>
+    DirectoryIndex index.html index.php
+</IfModule>
+```
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ```bash
 wget https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-all-languages.zip -O /tmp/phpMyAdmin-5.2.1-all-languages.zip;
 unzip /tmp/phpMyAdmin-5.2.1-all-languages.zip -d /var/www/html
@@ -50,21 +73,5 @@ select * from test;
 exit;
 ```
 
-**Editer le Site Actif**
-```
-nano /etc/apache2/sites-enabled/000-default.conf;
-```
-
-**Modifier la racine du Site**
-```
-DocumentRoot /var/www/html
-```
-
-**Page par défaut à charger**
-```
-<IfModule dir_module>
-    DirectoryIndex index.html index.php
-</IfModule>
-```
 
 
