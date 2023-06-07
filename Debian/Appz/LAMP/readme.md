@@ -28,8 +28,7 @@ clear;
 PASS_ROOT_SQL=admin
 
 apt install -y mariadb-server 1>/dev/null;
-(echo ""; echo "y"; echo "y"; echo "$PASSWORD_DB"; echo "$PASS_ROOT_SQL"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation > /root/mariadb_install.log;
-```
+(echo ""; echo "y"; echo "y"; echo "$PASSWORD_DB"; echo "$PASS_ROOT_SQL"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation
 <br />
 
 ### C. PHP
