@@ -167,7 +167,7 @@ Administration > Utilisateurs > <Nom d'utilisateur>
 
 ### B. Mettre en service le MarketPlace
 ```
-Administration > plugins > marketplace
+Administration > plugins > Marketplace
  > [Nouvelle Onglet] S'enregistrer sur GLPI Network
  > Cliquer sur Connexion (En haut à droite)
  > Se connecter
@@ -179,9 +179,17 @@ Administration > plugins > marketplace
   > Coller la clé
 ```
 
+### C. Agent Inventory
+```
+Administration > plugins > marketplace
+ > GLPI Inventory
+ > 1er fois: Télécharge
+ > 2nd fois: Install
+```
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-## X. AGENT INVENTORY
+## X. AGENT INVENTORY (Client)
 ### Télécharger l'Agent Inventory
 ```bash
 https://github.com/glpi-project/glpi-agent/releases
