@@ -19,26 +19,17 @@ tar xvf glpi.tgz -C /var/www/html;
 chown -R www-data:www-data /var/www/html;
 ```
 
-Les extensions suivantes sont installées : fileinfo, json.
-Les extensions suivantes sont manquantes : dom, simplexml.
-
-
 ### D. Changer de Distribution (Bookworm)
 
 
 ### E. Modules PHP
 Les modules sont pas tous compatibles PHP 8.
 ```bash
-apt install -y php-bz2;
-apt install -y php-curl;
-apt install -y php-gd;
-apt install -y php-intl;
-apt install -y php-ldap;
-apt install -y php-mbstring;
-apt install -y php-mysqli;
-apt install -y php-simplexml;
-apt install -y php-symfony-polyfill-ctype;
-apt install -y php-zip;
+# Indispensable:
+apt install -y php-curl php-gd php-intl php-mysqli php-simplexml 1>/dev/null;
+
+# Optionnel:
+apt install -y php-bz2 php-ldap php-mbstring php-symfony-polyfill-ctype php-zip;
 ```
 
 ### F. Relance du service Apache
