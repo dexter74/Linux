@@ -104,10 +104,8 @@ Dans le but d'avoir plus d'erreur sur le Dashboard de GLPI, il faut configurer l
 ```bash
 nano /etc/apache2/sites-enabled/000-default.conf; systemctl restart apache2;
 ```
-
 ```
 <VirtualHost *:80>
-
         # Nom du serveur (/etc/hosts)
         ServerName debian.lan
         
@@ -136,6 +134,32 @@ nano /etc/apache2/sites-enabled/000-default.conf; systemctl restart apache2;
 
 </VirtualHost>
 ```
+
+#### D. URL Personnaliser
+```
+<VirtualHost *:80>
+  # Email Admin
+  ServerAdmin teste74@hotmail.fr
+  # Nom de la machine
+  ServerName debian.lan
+  # URL du site
+  ServerAlias glpi.local
+  # Racine du Site
+  DocumentRoot /var/www/html/glpi
+
+ # Chargement page dans ordre
+ <IfModule dir_module>
+  DirectoryIndex index.php index.html
+ </IfModule>
+
+ # Log
+ ErrorLog ${APACHE_LOG_DIR}/error.log
+ CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+```
+
+
 <br />
 
 
