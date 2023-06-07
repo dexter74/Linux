@@ -45,6 +45,7 @@ apt install -y php-zip          1>/dev/null;
 
 #### C. Switch PHP 7 vers PHP 8.
 ```
+clear;
 a2dismod php*;
 a2enmod php8.2;
 ```
@@ -92,6 +93,7 @@ mysql -u nextcloud -pmypassword -e "SHOW DATABASES;"
 ### V. Nextcloud
 #### A. Téléchargement de Nextcloud
 ```bash
+clear;
 wget https://download.nextcloud.com/server/releases/latest.zip -O /tmp/Nextcloud.zip;
 unzip /tmp/Nextcloud.zip -d /var/www/html;
 ```
@@ -99,17 +101,19 @@ unzip /tmp/Nextcloud.zip -d /var/www/html;
 #### B. Permissions (Apache)
 Apache2 qui est le service Web utilise le compte de service `www-data`, il faut remettre les bonnes permissions. (Page Blanche sinon) 
 ```
+clear;
 chown -R www-data:www-data /var/www/html;
 ```
 
 #### C. Relance du service Apache2
 ```
+clear;
 systemctl restart apache2;
 ```
 
 #### D. Début de l'installation
 ```
-http://<IP du serveur>/nextcloud
+# Accéder à l'URL de NextCloud      : http://<IP du serveur>/nextcloud
 # Utilisateur de la Base de donnée  : nextcloud
 # Mot de passe de la Base de donnée : mypassword
 # Nom de la Base de donnée          : website
