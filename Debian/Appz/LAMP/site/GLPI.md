@@ -107,6 +107,10 @@ echo "<VirtualHost *:80>
         ServerName debian.lan
         # Dossier Web Public
         DocumentRoot /var/www/html/glpi/public
+        <IfModule dir_module>
+        DirectoryIndex index.php index.html
+        </IfModule>
+        Alias "/glpi" "/var/www/glpi/public"
         # Log
         ErrorLog ${APACHE_LOG_DIR}/error.log
         CustomLog ${APACHE_LOG_DIR}/access.log combined
