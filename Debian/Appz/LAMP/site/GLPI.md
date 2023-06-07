@@ -124,5 +124,5 @@ https://github.com/glpi-project/glpi-agent/releases
 --------------------------------------------------------------------------------------------------------------------------------------------
 ## VI. Guide d'utilisation
 ```
-Changer les mots de passe des comptes
+Changer les mots de passe des comptes. (Administration > Utilisateurs > <Nom d'utilisateur> 
 ```
