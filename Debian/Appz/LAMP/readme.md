@@ -99,6 +99,14 @@ mv $WWW/phpMyAdmin-$VERSION-all-languages/ $WWW/phpmyadmin;
 apt install php-mysqli 1>/dev/null;
 ```
 
+### php.ini
+#### Augmenter le nombre de requête
+Pour permettre une sauvegarde de la Base de donnée, il faut augmenter le nombre de requête autorisé.
+```
+sed -i -e 's/\;max_input_vars = 1000/max_input_vars = 10000/g' /etc/php/7.4/apache2/php.ini
+```
+
+
 ### Relance du service Apache
 ```bash
 systemctl restart apache2;
