@@ -59,7 +59,7 @@ apt install -y php-zip          1>/dev/null;
 ------------------------------------------------------------------------------------------------------------------------------------
 ### IV. Base De Donnée
 #### A. Création de La Base De Donnée
-Le nom de la Base de donnée est `website`, l'identifiant est `nextcloud` et le mot de passe est `admin`.
+Le nom de la Base de donnée est `website`, l'identifiant est `nextcloud` et le mot de passe est `mypassword`.
 ```sql
 # Connexion à la SQL:
 mysql -u root -padmin;
@@ -72,7 +72,7 @@ DROP USER IF EXISTS 'nextcloud'@'localhost';
 CREATE DATABASE IF NOT EXISTS website;
 
 # Création de l'utilisateur
-CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'admin';
+CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'mypassword';
 
 # Editier les permissions
 GRANT ALL PRIVILEGES ON website.* TO 'nextcloud'@'localhost';
