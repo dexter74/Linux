@@ -92,6 +92,9 @@ SHOW DATABASES;
 
 # Afficher les Utilisateurs:
 SELECT User FROM mysql.user;
+
+# Quitter la connexion
+exit;
 ```
 <br />
 
