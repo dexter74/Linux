@@ -49,3 +49,15 @@ select * from test;
 # Quitter la SQL:
 exit;
 ```
+
+**Editer le Site Actif**
+```
+nano /etc/apache2/sites-enabled/000-default.conf;
+```
+
+**Page par défaut à charger**
+```
+<IfModule dir_module>
+    DirectoryIndex index.html index.php
+</IfModule>
+```
