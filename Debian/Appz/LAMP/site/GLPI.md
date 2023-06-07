@@ -94,11 +94,15 @@ Le fichier install.php doit être renommé ou Supprimé
 rm /var/www/html/glpi/install/install.php;
 ```
 
-##### B. Configurer le Serveur Web ([DOC](https://glpi-install.readthedocs.io/fr/latest/prerequisites.html#webserver-configuration))
-Dans le but d'avoir plus d'erreur sur le Dashboard de GLPI, il faut configurer le site apache. (Chemin modifier par rapport à la doc)
-
+##### B. Activer le Module Rewrite
 ```
-echo"VirtualHost *:80>
+/usr/sbin/a2enmod rewrite;
+```
+
+##### C. Configurer le Serveur Web ([DOC](https://glpi-install.readthedocs.io/fr/latest/prerequisites.html#webserver-configuration))
+Dans le but d'avoir plus d'erreur sur le Dashboard de GLPI, il faut configurer le site apache. (Chemin modifier par rapport à la doc)
+```
+echo "<VirtualHost *:80>
         # Nom du serveur (/etc/hosts)
         ServerName debian.lan
         # Dossier Web Public
@@ -110,10 +114,10 @@ echo"VirtualHost *:80>
         <Directory /var/www/html/glpi/public>
                 Require all granted
                 RewriteEngine On
-                RewriteCond %{REQUEST_FILENAME} !-f
+                RewriteCond %{REQUEST_FILENAME} '!-f'
                 RewriteRule ^(.*)$ index.php [QSA,L]
         </Directory>
-</VirtualHost>" > /etc/apache2/sites-enabled/000-default.conf
+</VirtualHost>" > /etc/apache2/sites-enabled/000-default.conf; systemctl restart apache2;
 ```
 <br />
 
@@ -130,7 +134,7 @@ Administration > Utilisateurs > <Nom d'utilisateur>
 ```
 Mon Pseudo > Mes préférences > Personnalisation
  > Mise en page	
-  > Horizontl
+  > Horizontal
 ```
 
  
@@ -203,6 +207,6 @@ nano /etc/apache2/sites-enabled/000-default.conf;
 </IfModule>
 ```
 ```
-a2enmod rewrite;
+
 systemctl restart apache2;
 ```
