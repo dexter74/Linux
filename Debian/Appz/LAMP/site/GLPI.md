@@ -175,7 +175,7 @@ echo "<VirtualHost *:80>
  # Log
  ErrorLog ${APACHE_LOG_DIR}/error.log
  CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>" >  /etc/apache2/sites-available/marc.conf;/usr/sbin/a2ensite marc.conf; systemctl restart apache2;
+</VirtualHost>" >  /etc/apache2/sites-available/glpi.local.conf;/usr/sbin/a2ensite glpi.local.conf; systemctl restart apache2;
 
 ```
 
