@@ -56,17 +56,6 @@ apt install -y php-intl;
 apt install -y php-simplexml;
 ```
 
-apt install -y php-apcu apcupsd;
-apt install -y php-bz2;
-apt install -y php-curl;
-apt install -y php-gd;
-apt install -y php-intl;
-apt install -y php-ldap;
-apt install -y php-mbstring;
-apt install -y php-mysqli;
-apt install -y php-simplexml;
-apt install -y php-xmlrpc;
-apt install -y php-zip;
 
 ### F. Relance du service Apache
 ```
