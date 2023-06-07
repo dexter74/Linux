@@ -135,14 +135,14 @@ echo"VirtualHost *:80>
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 ## VI. Guide d'utilisation
-### A. Définir les mots de passes des comptes par défaut
+#### A. Définir les mots de passes des comptes par défaut
 ```
 Administration > Utilisateurs > <Nom d'utilisateur>
  > Changer les mots de passe des comptes glpi, post-only, tech et normal.
  > Jeton : Identifiant Unique
 ```
 
-### B. Mettre en service le MarketPlace
+#### B. Mettre en service le MarketPlace
 ```
 Administration > plugins > Marketplace
  > [Nouvelle Onglet] S'enregistrer sur GLPI Network
@@ -156,7 +156,7 @@ Administration > plugins > Marketplace
   > Coller la clé
 ```
 
-### C. Agent Inventory
+#### C. Agent Inventory
 ```
 Administration > plugins > marketplace
  > GLPI Inventory
@@ -167,13 +167,13 @@ Administration > plugins > marketplace
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 ## VII. AGENT INVENTORY (Client)
-### Télécharger l'Agent Inventory
+#### Télécharger l'Agent Inventory
 ```bash
 https://github.com/glpi-project/glpi-agent/releases
 ```
 
 
-<br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 --------------------------------------------------------------------------------------------------------------------------------------------
 #### X. Modifier la page par défaut d'Apache
 Pour mettre la page index.php en priorité  apache, il faut éditer la configuration du site actif.
