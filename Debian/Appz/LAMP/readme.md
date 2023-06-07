@@ -49,8 +49,9 @@ apt install -y mariadb-server 1>/dev/null;
 
 ### B. Autoriser l'authentification mysql_native_password
 ```
-mysql -u root -padmin
-ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD("admin");
+mysql -u root -padmin -e "ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
+# mysql -u root -padmin;
+# ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD("admin");
 ```
 
 
