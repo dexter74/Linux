@@ -21,7 +21,6 @@ chown -R www-data:www-data /var/www/html;
 ```
 
 ##### D. Modules PHP
-Les modules sont pas tous compatibles PHP 8.
 ```bash
 # Indispensable:
 apt install -y php-curl php-gd php-intl php-mysqli php-simplexml 1>/dev/null;
