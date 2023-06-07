@@ -48,6 +48,7 @@ apt install -y mariadb-server 1>/dev/null;
 ```
 
 ### B. Autoriser l'authentification mysql_native_password
+Permettra à PHPMYADMIN d'accèder à la base de donnée depuis le compte root.
 ```
 mysql -u root -padmin -e "ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
 ```
