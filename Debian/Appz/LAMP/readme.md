@@ -24,19 +24,30 @@ apt upgrade -y 1>/dev/null;
 L'interface réseau s'appelle `ens18`.
 
 ```bash
-# Démarrage Automatique
+echo "#########################################################
+# Interface de bouclage #
+#########################
+auto lo
+iface lo inet loopback
+
+#########################################################
+# Interface ens18 #
+###################
 auto ens18
-
-# Déconnectable à chaud
 allow-hotplug ens18
-
-# Configuration de l'interface en static
 iface ens18 inet static
- address    192.168.0.50
- netmask    255.255.255.0
- nameserver 192.168.0.1
-```
+ address        192.168.0.50
+ netmask        255.255.255.0
+ gateway        192.168.0.1
+ dns-nameserver 192.168.0.1
+ dns-domain     LAN" >  /etc/network/interfaces
 
+systemctl restart networking;
+```
+#### B. Relance du service Networking
+```bash
+systemctl restart networking;
+```
 --------------------------------------------------------------------------------------------------------------------------------
 ### III. Paquets de base
 ```bash
