@@ -133,28 +133,8 @@ echo"VirtualHost *:80>
         </Directory>
 </VirtualHost>" > /etc/apache2/sites-enabled/000-default.conf
 ```
+<br />
 
-
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
---------------------------------------------------------------------------------------------------------------------------------------------
-#### X. Modifier la page par défaut d'Apache
-Pour mettre la page index.php en priorité  apache, il faut éditer la configuration du site actif.
-
-La configuration suivante permet de définir index.php en chargement par défaut puis si il y a pas de page index.php de charger index.html.
-
-```bash
-nano /etc/apache2/sites-enabled/000-default.conf;
-```
-```
-# Après la ligne DocumentRoot
-<IfModule dir_module>
- DirectoryIndex index.php index.html
-</IfModule>
-```
-```
-a2enmod rewrite;
-systemctl restart apache2;
-```
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 ## VI. Guide d'utilisation
@@ -186,11 +166,35 @@ Administration > plugins > marketplace
  > 1er fois: Télécharge
  > 2nd fois: Install
 ```
-
+<br />
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-## X. AGENT INVENTORY (Client)
+## VII. AGENT INVENTORY (Client)
 ### Télécharger l'Agent Inventory
 ```bash
 https://github.com/glpi-project/glpi-agent/releases
 ```
+
+
+<br /><br /><br /><br /><br /><br /><br /><br />
+--------------------------------------------------------------------------------------------------------------------------------------------
+#### X. Modifier la page par défaut d'Apache
+Pour mettre la page index.php en priorité  apache, il faut éditer la configuration du site actif.
+
+La configuration suivante permet de définir index.php en chargement par défaut puis si il y a pas de page index.php de charger index.html.
+
+```bash
+nano /etc/apache2/sites-enabled/000-default.conf;
+```
+```
+# Après la ligne DocumentRoot
+<IfModule dir_module>
+ DirectoryIndex index.php index.html
+</IfModule>
+```
+```
+a2enmod rewrite;
+systemctl restart apache2;
+```
+
+
