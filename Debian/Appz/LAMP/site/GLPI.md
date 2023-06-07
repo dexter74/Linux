@@ -1,6 +1,8 @@
 --------------------------------------------------------------------------------------------------------------------------------------------
-## <p align='center'> Guide de Déploiement de GLPI sous Debian </p>
+# <p align='center'> Guide de Déploiement de GLPI sous Debian </p>
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+## I Préparation Environnement
 ### A. Télécharger GLPI
 ```bash
 clear
@@ -41,5 +43,44 @@ systemctl restart apache2;
 ```bash
 /var/www/html/glpi/bin/console glpi:system:check_requirements;
 ```
+<br />
 
 --------------------------------------------------------------------------------------------------------------------------------------------
+## II. Base De Donnée
+### Connexion à la Base de Donnée
+```bash
+mysql -u root -padmin;
+```
+
+### Purge Database et User
+```bash
+DROP DATABASE IF EXISTS GLPI;
+DROP USER IF EXISTS 'GLPI'@'localhost';
+```
+
+### Création de la BDD
+```bash
+CREATE DATABASE IF NOT EXISTS GLPI;
+```
+
+### Création de l'utilisateur
+```bash
+CREATE USER 'GLPI'@'localhost' IDENTIFIED BY 'admin';
+```
+
+### Edition des permissions
+```bash
+GRANT ALL PRIVILEGES ON GLPI.* TO 'GLPI'@'localhost';
+```
+
+### Fuseau Horaire
+```
+# mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -padmin -u root mysql
+GRANT SELECT ON `mysql`.`time_zone_name` TO 'GLPI'@'localhost';
+FLUSH PRIVILEGES;
+```
+
+### Déconnexion MYSQL
+```bash
+quit;
+```
