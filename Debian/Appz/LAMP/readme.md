@@ -37,7 +37,8 @@ apt install -y apache2 1>/dev/null;
 <br />
 
 --------------------------------------------------------------------------------------------------------------------------------
-### IV. MariaDB
+## IV. MariaDB
+### A. Installation
 ```bash
 clear;
 PASS_ROOT_SQL=admin
@@ -45,7 +46,17 @@ PASS_ROOT_SQL=admin
 apt install -y mariadb-server 1>/dev/null;
 (echo ""; echo "y"; echo "y"; echo "$PASSWORD_DB"; echo "$PASS_ROOT_SQL"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
 ```
+
+### B. Autoriser l'authentification mysql_native_password
+```
+mysql -u root -padmin
+ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD("admin");
+```
+
+
 <br />
+
+
 
 --------------------------------------------------------------------------------------------------------------------------------
 ## V. PHP
@@ -93,13 +104,10 @@ mv $WWW/phpMyAdmin-$VERSION-all-languages/  $WWW/phpmyadmin;
 apt install php-mysqli;
 ```
 
-
-
 ### Relance du service Apache
 ```bash
 systemctl restart apache2;
 ```
-
 
 
 
