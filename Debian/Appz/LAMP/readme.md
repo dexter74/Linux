@@ -40,6 +40,7 @@ apt install -y mariadb-server 1>/dev/null;
 ```bash
 apt list --installed | grep php;
 apt remove --purge php-*;
+apt remove --purge php;
 apt install -y php;
 ```
 #### B. PHP8
