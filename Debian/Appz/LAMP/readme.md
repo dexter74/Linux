@@ -15,7 +15,7 @@ sed -i -e 's/^deb cdrom/#deb cdrom/g' /etc/apt/sources.list;
 apt update;
 
 # Upgrade des paquets
-apt upgrade -y;
+apt upgrade -y 1>/dev/null;
 ```
 
 --------------------------------------------------------------------------------------------------------------------------------
