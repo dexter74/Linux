@@ -2,7 +2,7 @@
 # <p align='center'> Guide de Déploiement de GLPI sous Debian </p>
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-## I Préparation Environnement
+## I. Préparation Environnement
 ### A. Télécharger GLPI
 ```bash
 clear
@@ -48,49 +48,50 @@ systemctl restart apache2;
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 ## II. Base De Donnée
-### Connexion à la Base de Donnée
+### A. Connexion à la Base de Donnée
 ```bash
 mysql -u root -padmin;
 ```
 
-### Purge Database et User
+### B. Purge Database et User
 ```bash
 DROP DATABASE IF EXISTS GLPI;
 DROP USER IF EXISTS 'GLPI'@'localhost';
 ```
 
-### Création de la BDD
+### C. Création de la BDD
 La base de donnée se nomme `GLPI`
 ```bash
 CREATE DATABASE IF NOT EXISTS GLPI;
 ```
 
-### Création de l'utilisateur
+### D. Création de l'utilisateur
 L'identifiant est `GLPI` et le mot de passe est `admin`
 ```bash
 CREATE USER 'GLPI'@'localhost' IDENTIFIED BY 'admin';
 ```
 
-### Edition des permissions
+### E. Edition des permissions
 ```bash
 GRANT ALL PRIVILEGES ON GLPI.* TO 'GLPI'@'localhost';
 ```
 
-### Fuseau Horaire
+### F. Fuseau Horaire
 ```
 # mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -padmin -u root mysql
 GRANT SELECT ON `mysql`.`time_zone_name` TO 'GLPI'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
-### Déconnexion MYSQL
+### G. Déconnexion MYSQL
 ```bash
 quit;
 ```
+<br />
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 ## III. Installation du site
-### Installation du site
+### A. Installation du site
 ```
 clear;
 LANGUE=fr_FR
@@ -109,3 +110,14 @@ PASSDB=admin
 --db-password=$PASSDB \
 --force;
 ```
+
+#### B. Sécurité
+Le fichier install.php doit être renommé ou Supprimé
+```bash
+rm /var/www/html/glpi/install/install.php;
+```
+
+<br />
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+## IV. AGENT INVENTORY
