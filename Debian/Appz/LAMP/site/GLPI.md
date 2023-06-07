@@ -49,15 +49,25 @@ Les extensions suivantes sont manquantes : dom, simplexml.
 ### E. Modules PHP
 Les modules sont pas tous compatibles PHP 8.
 ```bash
-apt install -y php-mysqli;
+apt install -y php-bz2;
 apt install -y php-curl;
 apt install -y php-gd;
 apt install -y php-intl;
+apt install -y php-ldap;
+apt install -y php-mbstring;
+apt install -y php-mysqli;
 apt install -y php-simplexml;
+apt install -y php-symfony-polyfill-ctype;
+apt install -y php-zip;
 ```
-
 
 ### F. Relance du service Apache
 ```
 systemctl restart apache2;
+```
+
+
+### G. Vérification (Prérequis, Sécurité)
+```bash
+/var/www/html/glpi/bin/console glpi:system:check_requirements;
 ```
