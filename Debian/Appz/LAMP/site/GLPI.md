@@ -113,13 +113,18 @@ rm /var/www/html/glpi/install/install.php;
 ```
 
 #### B. Configurer le Serveur Web ([DOC](https://glpi-install.readthedocs.io/fr/latest/prerequisites.html#webserver-configuration))
-Dans le but d'avoir plus d'erreur sur le Dashboard de GLPI, il faut configurer le site apache.
+Dans le but d'avoir plus d'erreur sur le Dashboard de GLPI, il faut configurer le site apache. (Chemin modifier par rapport à la doc)
+
 ```
-echo"<VirtualHost *:80>
-        #ServerName debian.lan
+echo"VirtualHost *:80>
+        # Nom du serveur (/etc/hosts)
+        ServerName debian.lan
+        # Dossier Web Public
         DocumentRoot /var/www/html/glpi/public
+        # Log
         ErrorLog ${APACHE_LOG_DIR}/error.log
         CustomLog ${APACHE_LOG_DIR}/access.log combined
+        # Repertoire
         <Directory /var/www/html/glpi/public>
                 Require all granted
                 RewriteEngine On
