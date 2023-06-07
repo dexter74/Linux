@@ -41,11 +41,9 @@ apt install -y mariadb-server 1>/dev/null;
 ## V. PHP
 #### A. PHP 7
 ```bash
-apt list --installed | grep php;
-apt remove --purge php-*;
-apt remove --purge php;
-apt install -y php;
+apt install -y php 1>/dev/null;
 ```
+
 #### B. PHP8
 ```bash
 clear;
@@ -54,3 +52,8 @@ echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.
 apt install -y php;
 ```
 
+### C. Lister Modules
+```
+clear;
+apt list --installed | grep php-;
+```
