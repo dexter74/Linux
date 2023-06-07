@@ -96,10 +96,10 @@ WWW=/var/www/html
 wget https://files.phpmyadmin.net/phpMyAdmin/$VERSION/phpMyAdmin-$VERSION-all-languages.zip -O /tmp/phpMyAdmin.zip;
 
 # Extraction du site dans le dossier Web
-unzip /tmp/phpMyAdmin.zip -d $WWW
+unzip /tmp/phpMyAdmin.zip -d $WWW 1>/dev/null;
 
 # Renommage du Dossier
-mv $WWW/phpMyAdmin-$VERSION-all-languages/  $WWW/phpmyadmin;
+mv $WWW/phpMyAdmin-$VERSION-all-languages/ $WWW/phpmyadmin;
 ```
 
 ### Dépendances:
