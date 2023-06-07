@@ -6,6 +6,7 @@
 **L**inux **A**pache **M**ysql et **P**HP
 <br />
 
+Passage au source de Bookworm car certains module php sont absent de bullseye.
 ```
 clear;
 
