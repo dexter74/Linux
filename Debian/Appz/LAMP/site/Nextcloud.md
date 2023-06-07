@@ -43,7 +43,7 @@ apt install -y php-zip          1>/dev/null;
 # apt search php | grep -i XXX;
 ```
 
-#### C. Switch PHP7 vers 8.
+#### C. Switch PHP 7 vers PHP 8.
 ```
 a2dismod php*;
 a2enmod php8.2;
