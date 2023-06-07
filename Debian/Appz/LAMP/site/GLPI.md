@@ -106,31 +106,31 @@ nano /etc/apache2/sites-enabled/000-default.conf; systemctl restart apache2;
 ```
 ```
 <VirtualHost *:80>
-        # Nom du serveur (/etc/hosts)
-        ServerName debian.lan
+ # Nom du serveur (/etc/hosts)
+ ServerName debian.lan
+
+ # Dossier Web Public
+ DocumentRoot /var/www/html/glpi/public
         
-        # Dossier Web Public
-        DocumentRoot /var/www/html/glpi/public
-        
-        # Fichier à charger par défaut (ordre)
-        <IfModule dir_module>
-        DirectoryIndex index.php index.html
-        </IfModule>
+ # Fichier à charger par défaut (ordre)
+ <IfModule dir_module>
+   DirectoryIndex index.php index.html
+ </IfModule>
 
-        # Alias
-        Alias "/glpi" "/var/www/html/glpi/public"
+ # Alias
+ Alias "/glpi" "/var/www/html/glpi/public"
 
-        # Log
-        ErrorLog ${APACHE_LOG_DIR}/error.log
-        CustomLog ${APACHE_LOG_DIR}/access.log combined
+ # Log
+ ErrorLog ${APACHE_LOG_DIR}/error.log
+ CustomLog ${APACHE_LOG_DIR}/access.log combined
 
-        # Repertoire
-        <Directory /var/www/html/glpi/public>
-                Require all granted
-                RewriteEngine On
-                RewriteCond %{REQUEST_FILENAME} !-f
-                RewriteRule ^(.*)$ index.php [QSA,L]
-        </Directory>
+ # Repertoire
+ <Directory /var/www/html/glpi/public>
+   Require all granted
+   RewriteEngine On
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteRule ^(.*)$ index.php [QSA,L]
+ </Directory>
 
 </VirtualHost>
 ```
@@ -155,18 +155,21 @@ Address    : 192.168.0.5
 ```
 ```
 echo "<VirtualHost *:80>
-  # Email Admin
-  ServerAdmin teste74@hotmail.fr
-  # Nom de la machine
+ # Email Admin
+   ServerAdmin teste74@hotmail.fr
+ 
+ # Nom de la machine
   ServerName debian.lan
-  # URL du site
-  ServerAlias glpi.local
-  # Racine du Site
-  DocumentRoot /var/www/html/glpi
+
+ # URL du site
+ ServerAlias glpi.local
+
+ # Racine du Site
+ DocumentRoot /var/www/html/glpi
 
  # Chargement page dans ordre
  <IfModule dir_module>
-  DirectoryIndex index.php index.html
+   DirectoryIndex index.php index.html
  </IfModule>
 
  # Log
