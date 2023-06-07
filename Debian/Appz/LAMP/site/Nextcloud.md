@@ -65,6 +65,7 @@ systemctl restart apache2;
 Le nom de la Base de donnée est `website`, l'identifiant est `nextcloud` et le mot de passe est `mypassword`.
 ```sql
 clear;
+
 # Purge (Database et User)
 mysql -u root -padmin -e "DROP DATABASE IF EXISTS website; DROP USER IF EXISTS 'nextcloud'@'localhost';"
 
