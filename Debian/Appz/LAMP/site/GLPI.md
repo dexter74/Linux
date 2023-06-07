@@ -106,17 +106,55 @@ PASSDB=admin
 --force;
 ```
 
-#### B. Sécurité
+--------------------------------------------------------------------------------------------------------------------------------------------
+## IV. Configuration du site Apache
+#### A. Install.php
 Le fichier install.php doit être renommé ou Supprimé
 ```bash
 rm /var/www/html/glpi/install/install.php;
 ```
 
-#### C. Déplacer GLPI
-```bash
-mv /var/www/html/glpi/* /var/www/html/;
+#### B. Déplacer config dans Public
 ```
-#### D. Modifier la page par défaut d'Apache
+# Configuration GLPI
+mkdir /etc/glpi/;
+cp -r /var/www/html/glpi/config /etc/glpi/
+
+# 
+mkdir -p /var/lib/glpi/;
+cp -r /var/www/html/glpi/files/* /var/lib/glpi/
+
+mkdir -p /var/log/glpi/
+
+echo "<?php
+define('GLPI_CONFIG_DIR', '/etc/glpi/');
+if (file_exists(GLPI_CONFIG_DIR . '/local_define.php')) {
+   require_once GLPI_CONFIG_DIR . '/local_define.php';
+}" > /var/www/html/glpi/inc/downstream.php
+
+
+echo "<?php
+define('GLPI_VAR_DIR', '/var/lib/glpi');
+define('GLPI_LOG_DIR', '/var/log/glpi');" > /etc/glpi/local_define.php
+
+
+echo '<IfModule mod_authz_core.c>
+    Require local
+</IfModule>
+<IfModule !mod_authz_core.c>
+    order deny, allow
+    deny from all
+    allow from 127.0.0.1
+    allow from ::1
+</IfModule>
+ErrorDocument 403 "<p><b>Restricted area.</b><br />Only local access allowed.<br />Check your configuration or contact your administrator.</p>"' > /var/www/html/glpi/install/.htaccess
+
+
+
+
+
+
+#### X. Modifier la page par défaut d'Apache
 Pour mettre la page index.php en priorité  apache, il faut éditer la configuration du site actif.
 
 La configuration suivante permet de définir index.php en chargement par défaut puis si il y a pas de page index.php de charger index.html.
@@ -137,7 +175,13 @@ a2enmod rewrite;
 systemctl restart apache2;
 ```
 
-<br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+
+
+
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 ## IV. AGENT INVENTORY
