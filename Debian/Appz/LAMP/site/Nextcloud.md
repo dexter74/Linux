@@ -117,7 +117,7 @@ chown -R www-data:www-data /var/www/html;
 systemctl restart apache2;
 ```
 
-#### E. Début de l'installation
+#### D. Début de l'installation
 ```
 http://<IP du serveur>/nextcloud
 
@@ -125,5 +125,4 @@ http://<IP du serveur>/nextcloud
 # Mot de passe de la Base de donnée : mypassword
 # Nom de la Base de donnée          : website
 # Hôte de la Base de donnée         : localhost
-
 ```
