@@ -135,17 +135,6 @@ echo"VirtualHost *:80>
 ```
 
 
-
-
-
-
-
-
-
-
-
-
-
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 --------------------------------------------------------------------------------------------------------------------------------------------
 #### X. Modifier la page par défaut d'Apache
@@ -157,12 +146,11 @@ La configuration suivante permet de définir index.php en chargement par défaut
 nano /etc/apache2/sites-enabled/000-default.conf;
 ```
 ```
-# Après la ligne DocumentRoot /var/www/html
+# Après la ligne DocumentRoot
 <IfModule dir_module>
  DirectoryIndex index.php index.html
 </IfModule>
 ```
-
 ```
 a2enmod rewrite;
 systemctl restart apache2;
@@ -176,8 +164,21 @@ https://github.com/glpi-project/glpi-agent/releases
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 ## VI. Guide d'utilisation
+
 ```
 Administration > Utilisateurs > <Nom d'utilisateur>
  > Changer les mots de passe des comptes glpi, post-only, tech et normal .
  > Jeton : Identifiant Unique
+
+
+Administration > plugins > marketplace
+ > [Nouvelle Onglet] S'enregistrer sur GLPI Network
+ > Cliquer sur Connexion (En haut à droite)
+ > Se connecter
+ > Cliquer sur Enregistrement à Gauche
+ > Copier la Clé
+ 
+ [GLPI]
+  > Renseignez votre clé d'enregistrement dans la configuration
+  > Coller la clé
 ```
