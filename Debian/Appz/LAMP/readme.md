@@ -71,10 +71,6 @@ apt list --installed | grep php;
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## VI. Gestionnaire de la Base De Donnée
-### Dépendances:
-```bash
-apt install php-mysqli;
-```
 
 ### PHPMyAdmin
 ```bash
@@ -91,6 +87,20 @@ unzip /tmp/phpMyAdmin.zip -d $WWW
 # Renommage du Dossier
 mv $WWW/phpMyAdmin-$VERSION-all-languages/  $WWW/phpmyadmin;
 ```
+
+### Dépendances:
+```bash
+apt install php-mysqli;
+```
+
+
+
+### Relance du service Apache
+```bash
+systemctl restart apache2;
+```
+
+
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------
@@ -111,5 +121,6 @@ apt update;
 # Upgrade des paquets
 apt upgrade -y;
 ```
+
 
 
