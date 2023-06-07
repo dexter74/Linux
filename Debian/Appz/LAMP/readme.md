@@ -13,11 +13,13 @@ apt install -y curl  1>/dev/null;
 apt install -y unzip 1>/dev/null;
 apt install -y wget  1>/dev/null;
 ```
+<br />
 
 ### A. Apache
 ```bash
 apt install -y apache2 1>/dev/null;
 ```
+<br />
 
 ### B. MariaDB
 ```bash
@@ -27,7 +29,7 @@ PASS_ROOT_SQL=admin
 apt install -y mariadb-server 1>/dev/null;
 (echo ""; echo "y"; echo "y"; echo "$PASSWORD_DB"; echo "$PASS_ROOT_SQL"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation > /root/mariadb_install.log;
 ```
-
+<br />
 
 ### C. PHP
 #### PHP 7
