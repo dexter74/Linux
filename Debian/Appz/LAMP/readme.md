@@ -14,14 +14,14 @@ apt install -y curl  1>/dev/null;
 apt install -y unzip 1>/dev/null;
 apt install -y wget  1>/dev/null;
 ```
-<br />
 
-### A. Apache
+--------------------------------------------------------------------------------------------------------------------------------
+## III. Apache
 ```bash
 apt install -y apache2 1>/dev/null;
 ```
-<br />
 
+--------------------------------------------------------------------------------------------------------------------------------
 ### B. MariaDB
 ```bash
 clear;
@@ -30,14 +30,14 @@ PASS_ROOT_SQL=admin
 apt install -y mariadb-server 1>/dev/null;
 (echo ""; echo "y"; echo "y"; echo "$PASSWORD_DB"; echo "$PASS_ROOT_SQL"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
 ```
-<br />
 
-### C. PHP
-#### PHP 7
+--------------------------------------------------------------------------------------------------------------------------------
+## IV. PHP
+#### A. PHP 7
 ```bash
 apt install -y php;
 ```
-#### PHP8
+#### B. PHP8
 ```bash
 clear;
 curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg;
