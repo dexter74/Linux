@@ -167,7 +167,7 @@ Administration > plugins > Marketplace
 ```
 Administration > plugins > marketplace
  > GLPI Inventory
-  > 1er fois  : Télécharge
+  > 1er fois  : Téléchargement
   > 2nd fois  : Installer
   > 3ème fois : Activer
 ```
