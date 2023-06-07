@@ -14,7 +14,7 @@ wget https://github.com/glpi-project/glpi/releases/download/$VERSION/glpi-$VERSI
 ```bash
 cd /tmp/;
 tar xvf glpi.tgz -C /var/www/html;
-tar -xvf /tmp/glpi.tgz  -C /var/www/html;
+tar -xf /tmp/glpi.tgz  -C /var/www/html;
 ```
 
 ### C. Permission
@@ -32,7 +32,7 @@ Les modules sont pas tous compatibles PHP 8.
 apt install -y php-curl php-gd php-intl php-mysqli php-simplexml 1>/dev/null;
 
 # Optionnel:
-apt install -y php-bz2 php-ldap php-mbstring php-symfony-polyfill-ctype php-zip;
+apt install -y php-bz2 php-ldap php-mbstring php-symfony-polyfill-ctype php-zip 1>/dev/null;
 ```
 
 ### F. Relance du service Apache
