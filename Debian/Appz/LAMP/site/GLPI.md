@@ -14,6 +14,7 @@ wget https://github.com/glpi-project/glpi/releases/download/$VERSION/glpi-$VERSI
 ```bash
 cd /tmp/;
 tar xvf glpi.tgz -C /var/www/html;
+tar -xvf /tmp/glpi.tgz  -C /var/www/html;
 ```
 
 ### C. Permission
@@ -85,4 +86,26 @@ FLUSH PRIVILEGES;
 ### Déconnexion MYSQL
 ```bash
 quit;
+```
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+## III. Installation du site
+### Installation du site
+```
+clear;
+LANGUE=fr_FR
+HOST=localhost
+DATABSE=GLPI
+USERNAMEDB=GLPI
+PASSDB=admin
+
+/var/www/html/glpi/bin/console db:install \
+--reconfigure \
+--default-language=$LANGUE \
+--db-host=$HOST \
+--db-port=3306 \
+--db-name=$DATABSE \
+--db-user=$USERNAMEDB \
+--db-password=$PASSDB \
+--force;
 ```
