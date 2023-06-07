@@ -16,7 +16,7 @@ tar xvf glpi.tgz -C /var/www/html;
 
 ### C. Permission
 ```bash
-chown -R www-data:www-data /var/www/html
+chown -R www-data:www-data /var/www/html;
 ```
 
 Les extensions suivantes sont installées : fileinfo, json.
