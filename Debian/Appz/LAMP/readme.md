@@ -11,21 +11,23 @@
 #### Installation des Paquets de base
 ```bash
 clear;
-apt install -y curl;
-apt install -y unzip;
-apt install -y wget;
+apt install -y curl  1>/dev/null;
+apt install -y unzip 1>/dev/null;
+apt install -y wget  1>/dev/null;
 ```
 
 #### Apache
 ```bash
-apt install -y apache2;
+apt install -y apache2 1>/dev/null;
 ```
 
 #### MariaDB
 ```bash
-apt install -y mariadb-server;
+clear;
+PASS_ROOT_SQL=admin
 
-(echo ""; echo "y"; echo "y"; echo "$PASSWORD_DB"; echo "admin"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
+apt install -y mariadb-server 1>/dev/null;
+(echo ""; echo "y"; echo "y"; echo "$PASSWORD_DB"; echo "$PASS_ROOT_SQL"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation > /root/mariadb_install.log;
 ```
 
 #### Dépôt PHP 8
