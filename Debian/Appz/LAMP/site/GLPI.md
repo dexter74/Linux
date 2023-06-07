@@ -121,3 +121,7 @@ rm /var/www/html/glpi/install/install.php;
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 ## IV. AGENT INVENTORY
+### Télécharger l'Agent Inventory
+```bash
+https://github.com/glpi-project/glpi-agent/releases
+```
