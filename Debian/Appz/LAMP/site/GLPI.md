@@ -135,9 +135,26 @@ nano /etc/apache2/sites-enabled/000-default.conf; systemctl restart apache2;
 </VirtualHost>
 ```
 
-#### D. URL Personnaliser
+#### D. URL Personnaliser (glpi.local)
+Pour permettre d'avoir une URL personnalisée, il faut que le DNS est une entrée DNS vers la machine et qu'elle soit résolvable.
+
+###### Vérification Résolution DNS
 ```
-<VirtualHost *:80>
+# La machine 192.168.0.5 dispose des services
+# ADGuardHome est un service DNS (Création de redirection *.local vers Machine local)
+# Nginx Proxy Manager
+
+C:\Users\marc>nslookup glpi.local
+ > Serveur : LXC.Docker.lan
+ > Address : 192.168.0.5
+
+Réponse ne faisant pas autorité :
+Nom        : glpi.local
+Address    : 192.168.0.5
+
+```
+```
+echo "<VirtualHost *:80>
   # Email Admin
   ServerAdmin teste74@hotmail.fr
   # Nom de la machine
@@ -155,7 +172,7 @@ nano /etc/apache2/sites-enabled/000-default.conf; systemctl restart apache2;
  # Log
  ErrorLog ${APACHE_LOG_DIR}/error.log
  CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
+</VirtualHost>" >  /etc/apache2/sites-available/marc.conf;/usr/sbin/a2ensite marc.conf; systemctl restart apache2;
 
 ```
 
