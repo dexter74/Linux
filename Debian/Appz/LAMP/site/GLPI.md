@@ -30,12 +30,12 @@ apt install -y php-curl php-gd php-intl php-mysqli php-simplexml 1>/dev/null;
 apt install -y php-bz2 php-ldap php-mbstring php-symfony-polyfill-ctype php-zip 1>/dev/null;
 ```
 
-### E. Relance du service Apache
+#### E. Relance du service Apache
 ```
 systemctl restart apache2;
 ```
 
-### F. Vérification (Prérequis, Sécurité)
+#### F. Vérification (Prérequis, Sécurité)
 ```bash
 /var/www/html/glpi/bin/console glpi:system:check_requirements;
 ```
