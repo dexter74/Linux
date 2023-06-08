@@ -30,7 +30,7 @@ rsync -e ssh -avz /root/rsync/ root@192.168.0.50:/root/rsync;
 sshpass -p admin rsync -e ssh -avz /root/rsync/ root@192.168.0.5:/root/rsync;
 ```
 
-#### Plannifié une sauvegarde (https://crontab.guru/)
+#### Plannifié une sauvegarde ([AIDE à la planif de Cron](https://crontab.guru/))
 ```
 crontab -e;systemctl restart cron;
 */1 * * * * sshpass -p admin rsync -e ssh -avz /root/rsync/ root@192.168.0.5:/root/rsync;
