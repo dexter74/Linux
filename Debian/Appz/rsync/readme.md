@@ -57,7 +57,7 @@ crontab -l;
 # Editer les Tâches plannifiés:
 crontab -e;
 
-# Lancement de la synchronisation
+# Lancement de la synchronisation (Tout les minutes) 
 */1 * * * * sshpass -p admin rsync -e ssh -avz /root/rsync/ root@192.168.0.5:/root/rsync > /var/log/rsync.log;
 
 # Relancer le service
