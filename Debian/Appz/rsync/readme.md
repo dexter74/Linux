@@ -66,3 +66,27 @@ systemctl restart cron;
 # Surveille log
 tail -f /var/log/rsync.log;
 ```
+
+#### H. Script (start.sh)
+```
+#!/bin/bash
+
+#################################################################
+# Information:                                                  #
+# - Sauvegarde d'un dossier local vers serveur distant via SSH  #
+#################################################################
+
+# Local
+SOURCE=/root/rsync/
+LOG=/var/log/rsync.log
+
+# SSH
+SSH_SERV=192.168.0.X
+SSH_USER=root
+SSH_PASS=admin
+DESTINATION=/root/rsync/
+
+echo "Lancement de rsync"
+sshpass -p $SSH_PASS rsync -e ssh -avz $SOURCE $SSH_USER@$SSH_SERV:$DESTINATION > $LOG;
+echo "Processus rsync terminé"
+```
