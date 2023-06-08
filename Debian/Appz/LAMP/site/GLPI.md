@@ -274,3 +274,8 @@ Administration > plugins > marketplace
 ```bash
 https://github.com/glpi-project/glpi-agent/releases
 ```
+
+##### Inventorier Materiel
+```
+http://192.168.0.50/glpi/marketplace/glpiinventory
+```
