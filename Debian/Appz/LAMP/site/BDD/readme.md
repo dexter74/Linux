@@ -1,5 +1,5 @@
 ### Fichiers
-- GLPI.sql.gz : 
+- **GLPI.sql.gz**
  > GLPI 10.0.7
  >
  > Pass: admin
