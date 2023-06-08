@@ -24,7 +24,7 @@ mkdir /root/rsync;
 touch /root/rsync/monfichier;
 ```
 
-#### Réalisation d'une sauvegarde (Local, Distant
+#### E. Réalisation d'une sauvegarde (Local, Distant
 ```
 # Local
 rsync -avz /root/rsync /tmp/;
@@ -34,7 +34,7 @@ rsync -avz /root/rsync root@192.168.0.5:/root/rsync;
 sshpass -p admin rsync -e ssh -avz /root/rsync/ root@192.168.0.5:/root/rsync > /var/log/rsync.log;
 ```
 
-#### Réaliser de la restauration
+#### F. Réaliser de la restauration
 ```
 # Local
 rsync -avz /tmp/rsync /root/;
@@ -46,7 +46,7 @@ rsync -e ssh -avz /root/rsync/ root@192.168.0.50:/root/rsync;
 sshpass -p admin rsync -e ssh -avz /root/rsync/ root@192.168.0.50:/root/rsync > /var/log/rsync.log;
 ```
 
-#### Plannifié une sauvegarde ([AIDE à la planif de Cron](https://crontab.guru/))
+#### G. Plannifié une sauvegarde ([AIDE à la planif de Cron](https://crontab.guru/))
 ```
 # Supprimer toute les tâches
 crontab -r;
