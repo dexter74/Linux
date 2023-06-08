@@ -17,7 +17,13 @@ FILE=https://github.com/fusioninventory/fusioninventory-for-glpi/releases/downlo
 wget $FILE -O /tmp/fusioninventory-10.0.6+1.1.tar.bz2
 tar -xvf /tmp/fusioninventory-10.0.6+1.1.tar.bz2 -C /var/www/html/glpi/plugins;
 chown -R www-data:www-data /var/www/html/glpi/plugins;
+
+# Correctif
+sed -i -e "s/10.0.7/10.0.8/g" /var/www/html/glpi/plugins/fusioninventory/setup.php
 ```
+
+
+
 <br />
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
