@@ -201,22 +201,30 @@ systemctl restart apache2;
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 #### VI. Guide d'utilisation
-##### A. Définir les mots de passes des comptes par défaut
-```
-Administration > Utilisateurs > <Nom d'utilisateur>
- > Changer les mots de passe des comptes glpi, post-only, tech et normal.
- > Jeton : Identifiant Unique
-```
-##### B. Mes préférences
+##### X. Mes préférences
 ```
 Mon Pseudo > Mes préférences > Personnalisation
  > Mise en page	
   > Horizontal
 ```
+##### X. Configurer le serveur
+```
+Configuration >  Générale
+ [Configuration générale]
+  > URL de l'application: http://glpi.local
+ [API]
+  > URL de l'API	: http://glpi.local/api
+```
+
+##### X. Définir les mots de passes des comptes par défaut
+```
+Administration > Utilisateurs > <Nom d'utilisateur>
+ > Changer les mots de passe des comptes glpi, post-only, tech et normal.
+ > Jeton : Identifiant Unique
+```
 
  
- 
-##### C. Mettre en service le MarketPlace
+##### X. Mettre en service le MarketPlace
 ```
 Administration > plugins > Marketplace
  > [Nouvelle Onglet] S'enregistrer sur GLPI Network
@@ -230,7 +238,7 @@ Administration > plugins > Marketplace
   > Coller la clé
 ```
 
-##### D. Installer des plugins
+##### X. Installer des plugins
 ```
 Administration > plugins > marketplace
  > GLPI Inventory
@@ -240,7 +248,7 @@ Administration > plugins > marketplace
 ```
 
 
-##### D. Configurer le Plugin
+##### X. Configurer le Plugin
 ```
 Administration > plugins > marketplace
  > GLPI Inventory
@@ -265,25 +273,4 @@ Administration > plugins > marketplace
 ##### Télécharger l'Agent Inventory
 ```bash
 https://github.com/glpi-project/glpi-agent/releases
-```
-
-
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
---------------------------------------------------------------------------------------------------------------------------------------------
-#### X. Modifier la page par défaut d'Apache
-Pour mettre la page index.php en priorité  apache, il faut éditer la configuration du site actif.
-
-La configuration suivante permet de définir index.php en chargement par défaut puis si il y a pas de page index.php de charger index.html.
-```bash
-nano /etc/apache2/sites-enabled/000-default.conf;
-```
-```
-# Après la ligne DocumentRoot
-<IfModule dir_module>
- DirectoryIndex index.php index.html
-</IfModule>
-```
-```
-
-systemctl restart apache2;
 ```
