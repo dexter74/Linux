@@ -32,6 +32,21 @@ sshpass -p admin rsync -e ssh -avz /root/rsync/ root@192.168.0.5:/root/rsync;
 
 #### Plannifié une sauvegarde ([AIDE à la planif de Cron](https://crontab.guru/))
 ```
-crontab -e;systemctl restart cron;
-*/1 * * * * sshpass -p admin rsync -e ssh -avz /root/rsync/ root@192.168.0.5:/root/rsync > /var/log/rsync.log
+clear;
+
+# Supprimer toute les tâches
+crontab -r;
+
+# Vérifier les tâches
+crontab -l;
+
+# Créer une tâche
+crontab -e;
+*/1 * * * * sshpass -p admin rsync -e ssh -avz /root/rsync/ root@192.168.0.5:/root/rsync > /var/log/rsync.log;
+
+# Relancer le service
+systemctl restart cron;
+
+# Surveille log
+tail -f /var/log/rsync.log;
 ```
