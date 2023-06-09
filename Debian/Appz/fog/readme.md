@@ -9,6 +9,17 @@ Login: fog
 Passw: password
 ```
 
+#### SQL
+```
+cat /var/www/fog//lib/fog/config.class.php | grep "DATABASE_TYPE\|DATABASE_HOST\|DATABASE_NAME\|DATABASE_USERNAME\|DATABASE_PASSWORD" | cut -d "'" -f 4
+
+Ligne 1: Type SQL
+Ligne 2: Host SQL
+Ligne 3: Nom de la Base de donnée
+Ligne 4: Identifiant SQL
+Ligne 5: Mot de passe
+```
+
 #### Guide d'installation via un script FOG
 ```bash
 # Nettoyage de la console
