@@ -112,6 +112,7 @@ clear;
 chown -R www-data:www-data /var/www/html;
 ```
 
+
 #### C. Début de l'installation
 ```
 # Accéder à l'URL de NextCloud      : http://<IP du serveur>/nextcloud
@@ -119,9 +120,12 @@ chown -R www-data:www-data /var/www/html;
 # Mot de passe de la Base de donnée : mypassword
 # Nom de la Base de donnée          : website
 # Hôte de la Base de donnée         : localhost
+
+Si à la fin l'URL est KO, revenir juste en arrière et c'est terminé.
 ```
 
-#### D. LDAP
+
+#### D. Authentification par Active Directory (LDAP)
 ```
 Active Directory
  - Affichage > Fonctions avancés (Permet de récupérer le distinguishedName)
@@ -153,8 +157,24 @@ Nextcloud:
   Sa afficher le nombre de groupe à droite du bouton . (Exemple: 3 groupes trouvés)
 
  - Avatar > Utilisateurs
-
 ```
 
-Si à la fin l'URL est KO, revenir juste en arrière et c'est terminé.
+
+#### E. Gestion des données LDAP
+```
+Avatar
+ > Paramètres 
+ > Utilisateurs
+ > Paramètres (En bas à gauche)
+ > Cocher "Afficher l'origine du Compte"
+ 
+Dans la colonne "Nom d'affichage" il y a le nom d'utilisateur et on voit une Numéro (Exemple: marc 2B414487-7824-46EC-9F15-261FB9BF415C)
+Ceci est le dossier de l'utilisateur dans le dossier /var/www/html/nextcloud/data
+
+Pour mon utilisateur marc : /var/www/html/nextcloud/data/2B414487-7824-46EC-9F15-261FB9BF415C
+```
+
+![image](https://github.com/dexter74/Linux/assets/35907/aefe3edc-d746-4337-a028-41fe9afdd1bb)
+
+
 
