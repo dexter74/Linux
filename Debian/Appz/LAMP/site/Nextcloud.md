@@ -126,6 +126,9 @@ Si à la fin l'URL est KO, revenir juste en arrière et c'est terminé.
 
 
 #### D. Authentification par Active Directory (LDAP)
+
+/!\ Si le compte de service venait à ne plus marcher, Nextcloud ne marchera plus !
+
 ```
 Active Directory
  - Affichage > Fonctions avancés (Permet de récupérer le distinguishedName)
@@ -155,9 +158,9 @@ Nextcloud:
   Puis cliquer sur la flèche
   Cliquer sur le bouton "Vérifier les paramètres et compter les groupes"
   Sa afficher le nombre de groupe à droite du bouton . (Exemple: 3 groupes trouvés)
-
  - Avatar > Utilisateurs
 ```
+
 
 
 #### E. Gestion des données LDAP
