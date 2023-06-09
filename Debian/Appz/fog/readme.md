@@ -55,25 +55,48 @@ cd fogproject-*;
 # Déplacement dans bin
 cd bin;
 
-# Désinstallation
-./installfog.sh --uninstall
+# Purge
+rm -rf /var/www/fog      2>/dev/null;
+rm -rf /var/www/html/fog 2>/dev/null;
+rm -rf /opt/fog          2>/dev/null;
+rm -rf /tftpboot         2>/dev/null;
+rm -rf /images           2>/dev/null;
 
 # Lancement de l'installation
-(echo "2"; echo "N"; echo "N"; echo "N"; echo "N";  echo "N"; echo "Y"; echo "N"; echo "N"; echo "Y"; echo "Y"; echo "y"; echo "$PASSWORD_ROOT_SQL") | ./installfog.sh;
+(echo "2"; echo "N"; echo "N"; echo "N"; echo "N"; echo "N"; echo "Y"; echo "N"; echo "N"; echo "Y"; echo "Y"; echo "admin"; echo "") |./installfog.sh;
 
-re you sure you wish to continue (Y/N) y
 
-#Choice                                                                : 2
-#What type of installation would you like to do [N/s (Normal/Storage)] ? N
-#Would you like to change the default network interface from ens18     ? N
-#Would you like to setup a router address for the DHCP server [Y/n]    ? N
-#Would you like DHCP to handle DNS [Y/n]                               ? N
-#Would you like to use the FOG server for DHCP service                 ? N
-#You like to install the additional language packs                     ? Y
-#Would you like to enable secure HTTPS on your FOG server              ? N
-#Would you like to change it                                           ? N
-#Are you ok with sending this information                              ? Y
-#Are you sure you wish to continue                                     ? Y
-# Password SQL root                                                    : admin
+# Q01] Choice                                                                : 2
+# Q02] What type of installation would you like to do [N/s (Normal/Storage)] ? N
+# Q03] Would you like to change the default network interface from ens18     ? N
+# Q04] Would you like to setup a router address for the DHCP server [Y/n]    ? N
+# Q05] Would you like DHCP to handle DNS [Y/n]                               ? N
+# Q06] Would you like to use the FOG server for DHCP service                 ? N
+# Q07] You like to install the additional language packs                     ? Y
+# Q08] Would you like to enable secure HTTPS on your FOG server              ? N
+# Q09] Would you like to change it                                           ? N
+# Q10] Are you ok with sending this information                              ? Y
+# Q11] Are you sure you wish to continue                                     ? Y
+# Q12] Password SQL root                                                     : admin
+# Q13] Press [Enter] key when database is updated/installed.                 : Entré
+
+# /tmp/fogproject-1.5.10/bin/error_logs/fog_error_1.5.10.log
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! The installer was not able to run all the way to the end as   !!
+!! something has caused it to fail. The following few lines are  !!
+!! from the error log file which might help us figure out what's !!
+!! wrong. Please add this information when reporting an error.   !!
+!! As well you might want to take a look at the full error log   !!
+!! in /tmp/fogproject-1.5.10/bin/error_logs/fog_error_1.5.10.log !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+             --> ERROR: Module php does not exist
+             └─33497 php-fpm: pool www
+
+juin 09 23:26:42 fog systemd[1]: Starting The PHP 7.4 FastCGI Process Manager...
+juin 09 23:26:42 fog systemd[1]: Started The PHP 7.4 FastCGI Process Manager.
+ERROR 1146 (42S02) at line 1: Table 'fog.globalSettings' doesn't exist
+
 ```
 
