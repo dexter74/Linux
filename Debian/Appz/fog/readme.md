@@ -67,7 +67,7 @@ rm -rf /tftpboot                                      2>/dev/null;
 rm -rf /images                                        2>/dev/null;
 
 # Lancement de l'installation
-(echo "2"; echo "N"; echo "N"; echo "N"; echo "N"; echo "N"; echo "Y"; echo "N"; echo "N"; echo "Y"; echo "Y"; echo "admin"; echo "") | ./installfog.sh 1>/dev/null;
+(echo "2"; echo "N"; echo "N"; echo "N"; echo "N"; echo "N"; echo "Y"; echo "N"; echo "N"; echo "Y"; echo "Y"; echo "admin") | ./installfog.sh
 
 
 
