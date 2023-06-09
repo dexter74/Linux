@@ -2,6 +2,13 @@
 # <p align='center'>Guide d'installation de FOG sur une machine Debian </p>
 
 ----------------------------------------------------------------------------------------------------------------------------
+
+#### Panel Web
+```
+Login: fog
+Passw: password
+```
+
 #### Guide d'installation via un script FOG
 ```bash
 # Nettoyage de la console
