@@ -97,7 +97,7 @@ PASSWORD_DB=admin
 ```
 
 ### Connexion à la Base de Donnée
-```bash
+```sql
 mysql -u root -padmin;
 ```
 
@@ -108,28 +108,28 @@ mysql -u root -padmin -e "DROP USER IF EXISTS 'GLPI'@'localhost';"
 ```
 
 ### Création de la BDD
-```bash
+```sql
 mysql -u root -padmin -e "CREATE DATABASE IF NOT EXISTS GLPI;"
 ```
 
 ### Création de l'utilisateur
-```bash
+```sql
 mysql -u root -padmin -e "CREATE USER 'GLPI'@'localhost' IDENTIFIED BY 'admin';"
 ```
 
 ### Edition des permissions
-```bash
+```sql
 mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON GLPI.* TO 'GLPI'@'localhost';"
 ```
 
 ### Fuseau Horaire
-```
+```sql
 mysql -u root -padmin -e "GRANT SELECT ON mysql.time_zone_name TO 'GLPI'@'localhost';"
 ```
 
-### Déconnexion MYSQL
-```bash
-quit;
+# Permettre l'accès à la SQL depuis PHPMYADMIN: (MDP: GLPI)
+```sql
+mysql -u root -padmin -e "ALTER USER GLPI@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('GLPI');"
 ```
 
 
