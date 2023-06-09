@@ -2,13 +2,14 @@
 # <p align='center'>Guide d'installation de FOG sur une machine Debian </p>
 
 ----------------------------------------------------------------------------------------------------------------------------
-
 #### Panel Web
 ```
 Login: fog
 Passw: password
 ```
+<br />
 
+----------------------------------------------------------------------------------------------------------------------------
 #### SQL
 ```
 cat /var/www/fog//lib/fog/config.class.php | grep "DATABASE_TYPE\|DATABASE_HOST\|DATABASE_NAME\|DATABASE_USERNAME\|DATABASE_PASSWORD" | cut -d "'" -f 4
@@ -25,7 +26,7 @@ ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('a
 exit;
 ```
 
-#### Guide d'installation via un script FOG
+#### Guide d'installation via
 ```bash
 # Nettoyage de la console
 clear;
@@ -73,5 +74,13 @@ rm -rf /images                                        2>/dev/null;
 
 # Package: apt install -y apache2 bc build-essential cpp curl g++ gawk gcc genisoimage gettext git gzip htmldoc isolinux lftp libapache2-mod-php libc6 libcurl4 liblzma-dev m4 mariadb-client mariadb-server net-tools nfs-kernel-server openssh-server php php-bcmath php-cli php-curl php-fpm php-gd php-intl php-json php-ldap php-mbstring php-mysql php-mysqlnd tar tftpd-hpa tftp-hpa unzip vsftpd wget zlib1g
 ```
+<br />
 
+----------------------------------------------------------------------------------------------------------------------------
+#### Windows Serveur
+```
+DHCP > <Nom du Serveur> > IPv4 > Etendue > Options Etendue
+Configurer les options
+Options 66: <IP Serveur FOG>
+Options 67: undionly.kpxe
 
