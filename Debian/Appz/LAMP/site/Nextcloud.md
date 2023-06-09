@@ -121,5 +121,31 @@ chown -R www-data:www-data /var/www/html;
 # Hôte de la Base de donnée         : localhost
 ```
 
+#### D. LDAP
+```
+Active Directory
+ - Affichage > Fonctions avancés (Permet de récupérer le distinguishedName)
+ - Crée un compte utilisateur "LDAP" (Sans permission) et définir le mot de passe avec aucune expiration.
+ - Editer l'utilisateur > Éditeurs d'attributs
+ - Chercher la ligne "distinguishedName" puis double clique sur la valeur
+ - Copier la valeur (Bloc Note)
+
+Nextcloud:
+ - Avatar > Applications > Packs d'application > LDAP user and group backend (Installé et Activation)
+ - Avatar > Panels d'administrations > Integration LDAP/AD (Descendre un peu)
+ 
+ [Integration LDAP/AD]
+ > Hôte: Adresse IP du serveur AD
+ > Port: 189 (TCP/UDP) ou cliquer sur "Détecter le port"
+ > DN utilisateur: Coller la valeur mis dans le bloc Note . (Exemple: CN=ldap,CN=Users,DC=LAN,DC=LOCAL)
+ > Mot de passe: Taper le mot de passe du compte LDAP
+ > Ne pas cocher la case ""Évite les requêtes LDAP automatiques ..."
+ > Cliquer sur Détecter le DN de base"
+   > Message : Configuration OK
+ > Cliquer sur Continuer
+ > Attributs: 
+  Cocher la case "Adresse électronique LDAP/AD :" si vous avez une serveur Exchange
+```
+
 Si à la fin l'URL est KO, revenir juste en arrière et c'est terminé.
 
