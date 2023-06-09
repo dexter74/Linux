@@ -145,6 +145,10 @@ Nextcloud:
  > Cliquer sur Continuer
  > Attributs: 
   Cocher la case "Adresse électronique LDAP/AD :" si vous avez une serveur Exchange
+
+ > Groups:
+  Sélectionner vos Groupes que vous autoriser à s'authentifier sur Nextcloud
+  Puis cliquer sur la flèche
 ```
 
 Si à la fin l'URL est KO, revenir juste en arrière et c'est terminé.
