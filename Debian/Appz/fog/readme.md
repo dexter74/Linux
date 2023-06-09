@@ -20,8 +20,9 @@ Ligne 4: Identifiant SQL
 Ligne 5: Mot de passe
 
 Autoriser PHPMYADMIN:
-mysql -u root -padmin -e "ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
-
+mysql -u root -p
+ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');
+exit;
 ```
 
 #### Guide d'installation via un script FOG
