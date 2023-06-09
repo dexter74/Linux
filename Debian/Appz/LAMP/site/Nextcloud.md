@@ -13,6 +13,7 @@ Utilitaires indispensables sur la distribution Linux.
 clear;
 apt install -y ca-certificates apt-transport-https software-properties-common curl wget unzip 1>/dev/null;
 apt update;
+apt upgrade -y;
 ```
 <br />
 
