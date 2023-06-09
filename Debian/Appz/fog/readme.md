@@ -20,9 +20,8 @@ Ligne 4: Identifiant SQL
 Ligne 5: Mot de passe
 
 Autoriser PHPMYADMIN:
-PASSWORD=tmKU584T6gx@IZokzIAQ
-mysql -u fogmaster -p$PASSWORD
-mysql -u root -e "ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
+mysql -u root -padmin -e "ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
+
 ```
 
 #### Guide d'installation via un script FOG
@@ -54,6 +53,8 @@ cd fogproject-*;
 cd bin;
 
 # Purge
+mysql -u root -padmin -e "DROP DATABASE IF EXISTS fog; DROP USER IF EXISTS 'fogstorage'@'%'; DROP USER IF EXISTS 'fogmaster'@'localhost';"
+
 rm -rf /var/www/fog      2>/dev/null;
 rm -rf /var/www/html/fog 2>/dev/null;
 rm -rf /opt/fog          2>/dev/null;
