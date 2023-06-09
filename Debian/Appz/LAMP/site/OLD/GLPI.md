@@ -127,7 +127,7 @@ mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON GLPI.* TO 'GLPI'@'localhost';"
 mysql -u root -padmin -e "GRANT SELECT ON mysql.time_zone_name TO 'GLPI'@'localhost';"
 ```
 
-# Permettre l'accès à la SQL depuis PHPMYADMIN: (MDP: GLPI)
+### Permettre l'accès à la SQL depuis PHPMYADMIN: (MDP: GLPI)
 ```sql
 mysql -u root -padmin -e "ALTER USER GLPI@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('GLPI');"
 ```
