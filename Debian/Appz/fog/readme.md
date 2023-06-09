@@ -44,7 +44,7 @@ cd /tmp;
 rm -rf /tmp/fogproject* 2>/dev/null;
 
 # Téléchargement
-wget $FOG/$RELEASE -O fogproject.tar.gz;
+wget $FOG/$RELEASE -O fogproject.tar.gz 2>/dev/null;
 
 # Extraction du fichier
 tar -xf fogproject.tar.gz;
