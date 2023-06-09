@@ -32,24 +32,23 @@ exit;
 clear;
 
 # Variable d'environnement
-FOG=https://github.com/FOGProject/fogproject/archive
-RELEASE=1.5.10.tar.gz
+FOG=https://github.com/FOGProject/fogproject/archive/master.tar.gz
 PASSWORD_ROOT_SQL=admin
 
 # Dossier TMP
 cd /tmp;
 
 # Purge (Silent Mode)
-rm -rf /tmp/fogproject* 2>/dev/null;
+rm -rf /tmp/fog* 2>/dev/null;
 
 # Téléchargement
-wget $FOG/$RELEASE -O fogproject.tar.gz 2>/dev/null;
+wget $FOG 2>/dev/null;
 
 # Extraction du fichier
-tar -xf fogproject.tar.gz;
+tar -xf master.tar.gz;
 
 # Déplacement dans le dosssier Fog
-cd fogproject-*;
+cd fogproject-master;
 
 # Déplacement dans bin
 cd bin;
@@ -73,6 +72,7 @@ rm -rf /images                                        2>/dev/null;
 
 
 # Package: apt install -y apache2 bc build-essential cpp curl g++ gawk gcc genisoimage gettext git gzip htmldoc isolinux lftp libapache2-mod-php libc6 libcurl4 liblzma-dev m4 mariadb-client mariadb-server net-tools nfs-kernel-server openssh-server php php-bcmath php-cli php-curl php-fpm php-gd php-intl php-json php-ldap php-mbstring php-mysql php-mysqlnd tar tftpd-hpa tftp-hpa unzip vsftpd wget zlib1g
+
 ```
 <br />
 
