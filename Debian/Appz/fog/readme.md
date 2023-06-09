@@ -31,5 +31,18 @@ cd fogproject-*;
 cd bin;
 
 # Lancement de l'installation
-(echo "2"; echo "N"; echo "N"; echo "Y"; echo "";  echo "Y"; echo ""; echo "Y"; echo "Y"; echo "n"; echo "n"; echo "y"; echo "$PASSWORD_ROOT_SQL") | ./installfog.sh;
+Choice                                                                : 2
+What type of installation would you like to do [N/s (Normal/Storage)] ? N
+Would you like to change the default network interface from ens18     ? N
+Would you like to setup a router address for the DHCP server [Y/n]    ? N
+Would you like DHCP to handle DNS [Y/n]                               ? N
+Would you like to use the FOG server for DHCP service                 ? N
+Uou like to install the additional language packs                     ? Y
+Would you like to enable secure HTTPS on your FOG server              ? N
+Would you like to change it                                           ? N
+Are you ok with sending this information                              ? Y
+Are you sure you wish to continue                                     ? Y
+
+(echo "2"; echo "N"; echo "N"; echo "N"; echo "N";  echo "N"; echo "Y"; echo "N"; echo "N"; echo "Y"; echo "Y"; echo "y"; echo "$PASSWORD_ROOT_SQL") | ./installfog.sh;
 ```
+
