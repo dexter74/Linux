@@ -77,9 +77,11 @@ Erreur :
 Démarrer en PXE puis il faut choisir le menu d'inscription de la machine
 Sous FOG
  > Images > Create New Image
+  > Ceci permet de créer un groupe pour la capture
 
  > Hosts > List All Hosts
   > Cliquer sur l'icône Capture
+   > Host Image: Choisir le "groupe".
   > Cliquer sur l'icône Deploy
 ```
 ----------------------------------------------------------------------------------------------------------------------------
