@@ -19,7 +19,7 @@ Ligne 3: Nom de la Base de donnée
 Ligne 4: Identifiant SQL
 Ligne 5: Mot de passe
 
-Autoriser PHPMYADMIN:
+Autoriser PHPMYADMIN: (La SQL à pas de mot de passe par défaut, on définit comme mdp : admin)
 mysql -u root -p
 ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');
 exit;
