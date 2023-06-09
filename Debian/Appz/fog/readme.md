@@ -40,7 +40,7 @@ cd bin;
 #Would you like to setup a router address for the DHCP server [Y/n]    ? N
 #Would you like DHCP to handle DNS [Y/n]                               ? N
 #Would you like to use the FOG server for DHCP service                 ? N
-#Uou like to install the additional language packs                     ? Y
+#You like to install the additional language packs                     ? Y
 #Would you like to enable secure HTTPS on your FOG server              ? N
 #Would you like to change it                                           ? N
 #Are you ok with sending this information                              ? Y
