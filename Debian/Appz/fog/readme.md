@@ -73,9 +73,10 @@ Erreur :
 ![image](https://github.com/dexter74/Linux/assets/35907/c6f06ec4-f058-40ef-a6f7-eafe9739c9c7)
 
 
+----------------------------------------------------------------------------------------------------------------------------
+```
 # Package: apt install -y apache2 bc build-essential cpp curl g++ gawk gcc genisoimage gettext git gzip htmldoc isolinux lftp libapache2-mod-php libc6 libcurl4 liblzma-dev m4 mariadb-client mariadb-server net-tools nfs-kernel-server openssh-server php php-bcmath php-cli php-curl php-fpm php-gd php-intl php-json php-ldap php-mbstring php-mysql php-mysqlnd tar tftpd-hpa tftp-hpa unzip vsftpd wget zlib1g
 
-# Purge (SQL et Fichier)
 ./installfog.sh --uninstall
 mysql -u root -padmin -e "DROP DATABASE IF EXISTS fog; DROP USER IF EXISTS 'fogstorage'@'%'; DROP USER IF EXISTS 'fogmaster'@'localhost';"
 rm -rf /etc/apache2/sites-enabled/001-fog*            2>/dev/null;
