@@ -23,8 +23,6 @@ Autoriser PHPMYADMIN:
 PASSWORD=tmKU584T6gx@IZokzIAQ
 mysql -u fogmaster -p$PASSWORD
 mysql -u root -e "ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
-
-
 ```
 
 #### Guide d'installation via un script FOG
@@ -93,10 +91,11 @@ rm -rf /images           2>/dev/null;
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
              --> ERROR: Module php does not exist
              └─33497 php-fpm: pool www
-
 juin 09 23:26:42 fog systemd[1]: Starting The PHP 7.4 FastCGI Process Manager...
 juin 09 23:26:42 fog systemd[1]: Started The PHP 7.4 FastCGI Process Manager.
 ERROR 1146 (42S02) at line 1: Table 'fog.globalSettings' doesn't exist
 
+# Package
+apt install -y apache2 bc build-essential cpp curl g++ gawk gcc genisoimage gettext git gzip htmldoc isolinux lftp libapache2-mod-php libc6 libcurl4 liblzma-dev m4 mariadb-client mariadb-server net-tools nfs-kernel-server openssh-server php php-bcmath php-cli php-curl php-fpm php-gd php-intl php-json php-ldap php-mbstring php-mysql php-mysqlnd tar tftpd-hpa tftp-hpa unzip vsftpd wget zlib1g
 ```
 
