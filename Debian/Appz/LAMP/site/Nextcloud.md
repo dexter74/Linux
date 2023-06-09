@@ -99,7 +99,7 @@ mysql -u nextcloud -pmypassword -e "SHOW DATABASES;"
 #### A. Téléchargement de Nextcloud
 ```bash
 clear;
-wget https://download.nextcloud.com/server/releases/latest.zip -O /tmp/Nextcloud.zip;
+wget https://download.nextcloud.com/server/releases/latest.zip -O /tmp/Nextcloud.zip 2>/dev/null;
 unzip /tmp/Nextcloud.zip -d /var/www/html;
 ```
 
