@@ -103,30 +103,28 @@ mysql -u root -padmin;
 
 ### Purge Database et User
 ```bash
-DROP DATABASE IF EXISTS GLPI;
-DROP USER IF EXISTS 'GLPI'@'localhost';
+mysql -u root -padmin -e "DROP DATABASE IF EXISTS GLPI;"
+mysql -u root -padmin -e "DROP USER IF EXISTS 'GLPI'@'localhost';"
 ```
 
 ### Création de la BDD
 ```bash
-CREATE DATABASE IF NOT EXISTS GLPI;
+mysql -u root -padmin -e "CREATE DATABASE IF NOT EXISTS GLPI;"
 ```
 
 ### Création de l'utilisateur
 ```bash
-CREATE USER 'GLPI'@'localhost' IDENTIFIED BY 'admin';
+mysql -u root -padmin -e "CREATE USER 'GLPI'@'localhost' IDENTIFIED BY 'admin';"
 ```
 
 ### Edition des permissions
 ```bash
-GRANT ALL PRIVILEGES ON GLPI.* TO 'GLPI'@'localhost';
+mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON GLPI.* TO 'GLPI'@'localhost';"
 ```
 
 ### Fuseau Horaire
 ```
-# mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -padmin -u root mysql
-GRANT SELECT ON `mysql`.`time_zone_name` TO 'GLPI'@'localhost';
-FLUSH PRIVILEGES;
+mysql -u root -padmin -e "GRANT SELECT ON mysql.time_zone_name TO 'GLPI'@'localhost';"
 ```
 
 ### Déconnexion MYSQL
