@@ -2,6 +2,13 @@
 ## <p align='center'> Machine Virtuelle avec Carte-Graphique </p>
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+#### BIOS:
+```
+Adresse 4G: OFF
+```
+
+
 #### Maintenance
 ```
 nano /etc/modprobe.d/vfio.conf;
