@@ -63,7 +63,6 @@ Options 66: <IP Serveur FOG>
 Options 67: undionly.kpxe
 ```
 
-
 #### Windows
 ```
 Désactiver le démarrage rapide !
@@ -73,6 +72,16 @@ Erreur :
 ![image](https://github.com/dexter74/Linux/assets/35907/c6f06ec4-f058-40ef-a6f7-eafe9739c9c7)
 
 
+#### Sauvegarde / Restauration
+```
+Démarrer en PXE puis il faut choisir le menu d'inscription de la machine
+Sous FOG
+ > Images > Create New Image
+
+ > Hosts > List All Hosts
+  > Cliquer sur l'icône Capture
+  > Cliquer sur l'icône Deploy
+```
 ----------------------------------------------------------------------------------------------------------------------------
 ```
 # Package: apt install -y apache2 bc build-essential cpp curl g++ gawk gcc genisoimage gettext git gzip htmldoc isolinux lftp libapache2-mod-php libc6 libcurl4 liblzma-dev m4 mariadb-client mariadb-server net-tools nfs-kernel-server openssh-server php php-bcmath php-cli php-curl php-fpm php-gd php-intl php-json php-ldap php-mbstring php-mysql php-mysqlnd tar tftpd-hpa tftp-hpa unzip vsftpd wget zlib1g
