@@ -27,6 +27,7 @@ exit;
 ```
 
 #### Guide d'installation via
+Lors de l'étape `* Press [Enter] key when database is updated/installed.`, il faut procéder à l'installation sur la page Web de Fog, puis valider dans la console .
 ```bash
 # Nettoyage de la console
 clear;
