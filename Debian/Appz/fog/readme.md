@@ -65,7 +65,11 @@ Options 67: undionly.kpxe
 
 #### Windows
 ```
-Désactiver le démarrage rapide !
+Désactiver le démarrage rapide.
+Panneau de configuration > Options d’alimentation > Choisir l'action des boutons d'alimentation
+Débloquer les boutons : Modifier les paramètres actuellement non disponible
+Décocher la case Acitver le démarrage rapide.
+Redémarrer en PXE.
 ```
 
 Erreur :
