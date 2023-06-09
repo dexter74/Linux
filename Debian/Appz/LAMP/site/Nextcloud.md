@@ -149,6 +149,11 @@ Nextcloud:
  > Groups:
   Sélectionner vos Groupes que vous autoriser à s'authentifier sur Nextcloud
   Puis cliquer sur la flèche
+  Cliquer sur le bouton "Vérifier les paramètres et compter les groupes"
+  Sa afficher le nombre de groupe à droite du bouton . (Exemple: 3 groupes trouvés)
+
+ - Avatar > Utilisateurs
+
 ```
 
 Si à la fin l'URL est KO, revenir juste en arrière et c'est terminé.
