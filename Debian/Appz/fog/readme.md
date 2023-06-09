@@ -55,9 +55,13 @@ cd fogproject-*;
 # Déplacement dans bin
 cd bin;
 
+# Désinstallation
+./installfog.sh --uninstall
+
 # Lancement de l'installation
 (echo "2"; echo "N"; echo "N"; echo "N"; echo "N";  echo "N"; echo "Y"; echo "N"; echo "N"; echo "Y"; echo "Y"; echo "y"; echo "$PASSWORD_ROOT_SQL") | ./installfog.sh;
 
+re you sure you wish to continue (Y/N) y
 
 #Choice                                                                : 2
 #What type of installation would you like to do [N/s (Normal/Storage)] ? N
@@ -70,5 +74,6 @@ cd bin;
 #Would you like to change it                                           ? N
 #Are you ok with sending this information                              ? Y
 #Are you sure you wish to continue                                     ? Y
+# Password SQL root                                                    : admin
 ```
 
