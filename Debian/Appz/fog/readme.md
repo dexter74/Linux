@@ -18,6 +18,13 @@ Ligne 2: Host SQL
 Ligne 3: Nom de la Base de donnée
 Ligne 4: Identifiant SQL
 Ligne 5: Mot de passe
+
+Autoriser PHPMYADMIN:
+PASSWORD=tmKU584T6gx@IZokzIAQ
+mysql -u fogmaster -p$PASSWORD
+mysql -u root -e "ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
+
+
 ```
 
 #### Guide d'installation via un script FOG
