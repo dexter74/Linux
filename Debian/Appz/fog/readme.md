@@ -53,6 +53,7 @@ cd fogproject-*;
 cd bin;
 
 # Purge (SQL et Fichier)
+./installfog.sh --uninstall
 mysql -u root -padmin -e "DROP DATABASE IF EXISTS fog; DROP USER IF EXISTS 'fogstorage'@'%'; DROP USER IF EXISTS 'fogmaster'@'localhost';"
 rm -rf /etc/apache2/sites-enabled/001-fog*            2>/dev/null;
 rm -rf /etc/apache2/sites-available/001-fog.*         2>/dev/null;
@@ -68,7 +69,7 @@ rm -rf /images                                        2>/dev/null;
 
 
 # Lancement de l'installation
-(echo "2"; echo "N"; echo "N"; echo "N"; echo "N"; echo "N"; echo "Y"; echo "N"; echo "N"; echo "Y"; echo "Y"; echo "admin"; echo "") |./installfog.sh;
+(echo "2"; echo "N"; echo "N"; echo "N"; echo "N"; echo "N"; echo "Y"; echo "N"; echo "N"; echo "Y"; echo "Y"; echo "admin"; echo "") | ./installfog.sh 1>/dev/null;
 
 
 # Q01] Choice                                                                : 2
