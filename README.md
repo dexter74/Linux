@@ -1,4 +1,4 @@
 # Linux
 ```
-echo "marc ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/marc
+echo "marc ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/admin
 ```
