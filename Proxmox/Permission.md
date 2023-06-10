@@ -1,3 +1,7 @@
+### Utilisateurs
+![image](https://github.com/dexter74/Linux/assets/35907/1f687853-17fe-43d5-a6c1-5a2c38cad3ee)
+
+
 | Groupe             | Description du Groupe
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | Administrator      | A tous les privilèges                                                                                                                           |
@@ -14,6 +18,3 @@
 | PVEAuditor	       | Accès en lecture seule                                                                                                                          |
 | NoAccess	         | Aucun Accès                                                                                                                                     |
 
-
-Utilisateurs:
-![image](https://github.com/dexter74/Linux/assets/35907/e7cd7536-87fc-4200-afe8-4af70801629c)
