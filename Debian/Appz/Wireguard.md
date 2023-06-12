@@ -87,21 +87,7 @@ AllowedIPs = 192.168.2.3/32
 
 [Peer]
 PublicKey = UaMiX5Pk26GSG0dON74qQIRcIdIKgmIcNG3+4f+WP38=
-AllowedIPs = 192.168.2.4/32
-Client 1
-IP Address	192.168.2.2/24
-Listen Port	51820
-Private Key	cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
-Public Key	GqYCPBrwBj1v7f4S7HfX4zkG6hZfgZsCjLPDJq4zxQg=
-[Interface]
-Address = 192.168.2.2/24
-ListenPort = 51820
-PrivateKey = cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
-
-[Peer]
-PublicKey = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
-AllowedIPs = 0.0.0.0/0, ::/0
-Endpoint = proxmox74.ddns.net:51820" > /etc/wireguard/wg0.conf;
+AllowedIPs = 192.168.2.4/32" > /etc/wireguard/wg0.conf;
 ````
 
 #### Permission de fichier
