@@ -73,12 +73,14 @@ L'interface qui permet l'accès internet est `ens18`, l'adresse réseau de Wireg
 Par conséquent pour les règles IPTABLES ont indiques bien le nom de l'interface sinon sa marchera pas .
 
 ```bash
+INTERFACE=eth0
+
 echo "[Interface]
 Address = 10.0.0.1/24
 ListenPort = 51820
 PrivateKey = OCpejhwDHLLuOXyhmxv9MU+s4FWM8ZEsUs0pyvrqZEA=
-PostUp   = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o ens18 -j MASQUERADE
-PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o ens18 -j MASQUERADE
+PostUp   = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o $INTERFACE -j MASQUERADE
+PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o $INTERFACE -j MASQUERADE
 
 [Peer]
 PublicKey = GqYCPBrwBj1v7f4S7HfX4zkG6hZfgZsCjLPDJq4zxQg=
