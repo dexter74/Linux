@@ -64,30 +64,13 @@ systemctl disable --now wg-quick@wg0;
 
 #### Clé Publique et Privée
 ```bash
-echo "cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=" > /etc/wireguard/privatekey;
-echo "GqYCPBrwBj1v7f4S7HfX4zkG6hZfgZsCjLPDJq4zxQg=" > /etc/wireguard/publickey;
+echo "" > /etc/wireguard/privatekey;
+echo "" > /etc/wireguard/publickey;
 ```
 
 #### Configuration du Serveur
 ```bash
-echo "[Interface]
-Address = 192.168.2.1/24
-ListenPort = 51820
-PrivateKey = OCpejhwDHLLuOXyhmxv9MU+s4FWM8ZEsUs0pyvrqZEA=
-PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
-
-[Peer]
-PublicKey = GqYCPBrwBj1v7f4S7HfX4zkG6hZfgZsCjLPDJq4zxQg=
-AllowedIPs = 192.168.2.2/32
-
-[Peer]
-PublicKey = 7epVMA/arEQhIqeukMAyWPyqgjIRcMbUSbQCM06zNw8=
-AllowedIPs = 192.168.2.3/32
-
-[Peer]
-PublicKey = UaMiX5Pk26GSG0dON74qQIRcIdIKgmIcNG3+4f+WP38=
-AllowedIPs = 192.168.2.4/32" > /etc/wireguard/wg0.conf;
+echo "" > /etc/wireguard/wg0.conf;
 ````
 
 #### Permission de fichier
@@ -104,10 +87,7 @@ systemctl restart wg-quick@wg0;
 ```bash
 wg;
 ```
-
 <br />
-
-
 
 ------------------------------------------------------------------------------------------------------------------------
 #### Clients
@@ -118,7 +98,7 @@ systemctl restart wg-quick@wg0.service`
 ###### Client 1
 ```
 [Interface]
-Address     = 192.168.2.2/24
+Address    = 192.168.2.2/24
 ListenPort = 51820
 PrivateKey = cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
 MTU        = 1500
