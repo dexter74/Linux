@@ -64,43 +64,13 @@ systemctl disable --now wg-quick@wg0;
 
 #### Clé Publique et Privée
 ```bash
-echo "OCpejhwDHLLuOXyhmxv9MU+s4FWM8ZEsUs0pyvrqZEA=" > /etc/wireguard/privatekey;
-echo "zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=" > /etc/wireguard/publickey;
+echo "" > /etc/wireguard/privatekey;
+echo "" > /etc/wireguard/publickey;
 ```
 
 #### Configuration du Serveur
-L'interface qui permet l'accès internet est `ens18`, l'adresse réseau de Wireguard est `10.0.0.1/24` et son point d'accès est l'adresse IP du serveur `192.168.0.20` sur le port `51820` en UDP.
-Par conséquent pour les règles IPTABLES ont indiques bien le nom de l'interface sinon sa marchera pas .
-
 ```bash
-INTERFACE=eth0
-
-echo "[Interface]
-Address = 10.0.0.1/24
-ListenPort = 51820
-PrivateKey = OCpejhwDHLLuOXyhmxv9MU+s4FWM8ZEsUs0pyvrqZEA=
-PostUp   = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o $INTERFACE -j MASQUERADE
-PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o $INTERFACE -j MASQUERADE
-
-[Peer]
-PublicKey = GqYCPBrwBj1v7f4S7HfX4zkG6hZfgZsCjLPDJq4zxQg=
-AllowedIPs = 10.0.0.2/32
-
-[Peer]
-PublicKey = 7epVMA/arEQhIqeukMAyWPyqgjIRcMbUSbQCM06zNw8=
-AllowedIPs = 10.0.0.3/32
-
-[Peer]
-PublicKey = UaMiX5Pk26GSG0dON74qQIRcIdIKgmIcNG3+4f+WP38=
-AllowedIPs = 10.0.0.4/32
-
-[Peer]
-PublicKey = KkiC/yLZTztDJ76sAhY+2ytS9+i8B4yWTLXqKUT2TDQ=
-AllowedIPs = 10.0.0.5/32
-
-[Peer]
-PublicKey = E8TqxuDqvhdxTRWQUD67sRSUwShLon8/zX/12ow2bDU=
-AllowedIPs = 10.0.0.6/32" > /etc/wireguard/wg0.conf;
+echo "" > /etc/wireguard/wg0.conf;
 ````
 
 #### Permission de fichier
@@ -124,89 +94,11 @@ wg;
 
 ------------------------------------------------------------------------------------------------------------------------
 #### Clients
-Si on utilise la Directive `DNS =` dans la zone `[interface]`, il faut sur Linux resolvconf et autoriser le réseau 192.168.0.0/24 (Windows) et 192.168.0.0/16 (Linux).
-
 `clear;
 nano /etc/wireguard/wg0.conf;
 systemctl restart wg-quick@wg0.service`
 
 ###### Client 1
 ```
-# Privatekey : cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
-# PublicKey  : GqYCPBrwBj1v7f4S7HfX4zkG6hZfgZsCjLPDJq4zxQg=
-
-[Interface]
-Address    = 10.0.0.2/24
-ListenPort = 51820
-PrivateKey = cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
-
-[Peer]
-PublicKey  = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
-AllowedIPs = 0.0.0.0/0, ::/0
-Endpoint   = 192.168.0.20:51820
 ```
-
-```
-[Interface]
-PrivateKey = cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
-ListenPort = 51820
-Address = 10.0.0.2/24
-DNS = 192.168.0.1
-
-[Peer]
-PublicKey = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
-AllowedIPs = 192.168.0.0/24, 0.0.0.0/0, ::/0
-Endpoint = asustor74.ddns.net:51820
-````
-
-
-###### Client 2
-```
-# Privatekey : eM3IgPYevDoxvgh3cJjM2sQca6HWDVeL1N4Y7XDInnE=
-# PublicKey  : 7epVMA/arEQhIqeukMAyWPyqgjIRcMbUSbQCM06zNw8=
-
-[Interface]
-Address    = 10.0.0.3/24
-ListenPort = 51820
-PrivateKey = eM3IgPYevDoxvgh3cJjM2sQca6HWDVeL1N4Y7XDInnE=
-
-[Peer]
-PublicKey  = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
-AllowedIPs = 192.168.0.0/24, 0.0.0.0/0, ::/0
-Endpoint   = 192.168.0.20:51820
-```
-
-
-###### Client 3
-```
-# Privatekey :EMmWLWmR7miu34PWajdZ4vKr2hxKb0sCPx4EOf3wnnM=
-# PublicKey  : UaMiX5Pk26GSG0dON74qQIRcIdIKgmIcNG3+4f+WP38=
-
-[Interface]
-Address    = 10.0.0.4/24
-ListenPort = 51820
-PrivateKey = EMmWLWmR7miu34PWajdZ4vKr2hxKb0sCPx4EOf3wnnM=
-
-[Peer]
-PublicKey  = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
-AllowedIPs = 0.0.0.0/0, ::/0
-Endpoint   = 192.168.0.20:51820
-```
-
-###### Client 4
-```
-# Privatekey : KAPUCv3ZCdfIWtCtQsJI8fk7XuXnz4knXsa4rrOtb2w=
-# PublicKey  : KkiC/yLZTztDJ76sAhY+2ytS9+i8B4yWTLXqKUT2TDQ=
-
-[Interface]
-Address    = 10.0.0.5/24
-ListenPort = 51820
-PrivateKey = KAPUCv3ZCdfIWtCtQsJI8fk7XuXnz4knXsa4rrOtb2w=
-
-[Peer]
-PublicKey  = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
-AllowedIPs = 0.0.0.0/0, ::/0
-Endpoint   = 192.168.0.20:51820
-```
-
 
