@@ -18,8 +18,6 @@ https://www.wireguardconfig.com
 - Use Pre-Shared Keys : Envoie de clé d'authentification avant l'authentification (Augmente la sécurité)
 ```
 
-![image](https://user-images.githubusercontent.com/35907/235902601-6a678645-ff75-4d08-9262-607764b620a8.png)
-
 Seed:
 ```
 lORM1DSdwfzsA4NskzgwOOrsz9flKMzWpwJJrzQY8YIfjiDId46Ry8S80Lbve+Fg5OzhJcaQ6nHHx8hoyo1Y27OLIe1Z7BMCn+H2g2b5zbK7kuCwSJa7uBNZH7DEPboQT/ZlxKWzoeLwIuTnXCoV3+ihEzBVbpskWmCCM6bsnHJcw9zeZpujueV8SBm3BgFLVwbHBq8yurGoZxZnqqaPNwHkR03bqhY/6gQvwTM9JvNuu0sEyuzq/OUQmp4tcz+3M/E47DrIro/TDdrdsTFzQgLY6AWgPbU5B1OSDB7LwPJNbWFVMYCHAfOM9CaMOBot4utO3cGeX+G3jYGkB6pvAA==
@@ -64,13 +62,35 @@ systemctl disable --now wg-quick@wg0;
 
 #### Clé Publique et Privée
 ```bash
-echo "" > /etc/wireguard/privatekey;
-echo "" > /etc/wireguard/publickey;
+echo "OCpejhwDHLLuOXyhmxv9MU+s4FWM8ZEsUs0pyvrqZEA=" > /etc/wireguard/privatekey;
+echo "zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=" > /etc/wireguard/publickey;
 ```
 
 #### Configuration du Serveur
 ```bash
-echo "" > /etc/wireguard/wg0.conf;
+# Private :	OCpejhwDHLLuOXyhmxv9MU+s4FWM8ZEsUs0pyvrqZEA=
+# Public  :	zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
+
+echo "[Interface]
+Address    = 192.168.2.1/24
+ListenPort = 51820
+PrivateKey = OCpejhwDHLLuOXyhmxv9MU+s4FWM8ZEsUs0pyvrqZEA=
+
+#Pare-feu
+PostUp     = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+PostDown   = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+
+[Peer]
+PublicKey  = GqYCPBrwBj1v7f4S7HfX4zkG6hZfgZsCjLPDJq4zxQg=
+AllowedIPs = 192.168.2.2/32
+
+[Peer]
+PublicKey  = 7epVMA/arEQhIqeukMAyWPyqgjIRcMbUSbQCM06zNw8=
+AllowedIPs = 192.168.2.3/32
+
+[Peer]
+PublicKey  = UaMiX5Pk26GSG0dON74qQIRcIdIKgmIcNG3+4f+WP38=
+AllowedIPs = 192.168.2.4/32" > /etc/wireguard/wg0.conf;
 ````
 
 #### Permission de fichier
@@ -107,6 +127,5 @@ MTU        = 1500
 PublicKey  = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
 AllowedIPs = 0.0.0.0/0, ::/0
 Endpoint   = proxmox74.ddns.net:51820
-
 ```
 
