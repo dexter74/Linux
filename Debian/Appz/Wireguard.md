@@ -64,8 +64,8 @@ systemctl disable --now wg-quick@wg0;
 
 #### Clé Publique et Privée
 ```bash
-echo "" > /etc/wireguard/privatekey;
-echo "" > /etc/wireguard/publickey;
+echo "cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=" > /etc/wireguard/privatekey;
+echo "GqYCPBrwBj1v7f4S7HfX4zkG6hZfgZsCjLPDJq4zxQg=" > /etc/wireguard/publickey;
 ```
 
 #### Configuration du Serveur
@@ -118,13 +118,13 @@ systemctl restart wg-quick@wg0.service`
 ###### Client 1
 ```
 [Interface]
-Address = 10.0.0.2/24
+Address    = 10.0.0.2/24
 ListenPort = 51820
 PrivateKey = cCedBWuep+QdedyUeYHZNKEa/OfGp8r2+p89dkDJN20=
 
 [Peer]
-PublicKey = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
+PublicKey  = zj9mJKH4r8CL0dQz+DqGxPiZvdO7zvAuE/ztFwOhBUQ=
 AllowedIPs = 0.0.0.0/0, ::/0
-Endpoint = proxmox74.ddns.net:51820
+Endpoint   = proxmox74.ddns.net:51820
 ```
 
