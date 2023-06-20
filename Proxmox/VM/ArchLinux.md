@@ -389,6 +389,7 @@ runuser -l $USERNAME -c 'yay -Sy --noconfirm wd719x-firmware'       1>/dev/null 
 runuser -l $USERNAME -c 'yay -Sy --noconfirm aic94xx-firmware'      1>/dev/null 2>/dev/null;
 runuser -l $USERNAME -c 'yay -Sy --noconfirm upd72020x-fw'          1>/dev/null 2>/dev/null;
 runuser -l $USERNAME -c 'yay -Sy --noconfirm adduser'               1>/dev/null 2>/dev/null;
+runuser -l $USERNAME -c 'yay -Sy --noconfirm mugshot'               1>/dev/null 2>/dev/null;
 runuser -l $USERNAME -c 'yay -Sy --noconfirm xfce4-panel-profiles'  1>/dev/null 2>/dev/null;
 ```
 
