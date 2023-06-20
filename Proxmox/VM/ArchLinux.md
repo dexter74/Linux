@@ -140,7 +140,7 @@ pacman -Sy --noconfirm archlinux-keyring 1>/dev/null;
 ```
 
 #### Installation des paquets sur le LiveCD
-```
+```bash
 pacman -Sy --noconfirm git              1>/dev/null;
 ```
 
