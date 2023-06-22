@@ -184,10 +184,15 @@ ping –f –l 1420 www.yahoo.fr
 Lors du choix "Source" il faut choisir Tout si on accéde sur un réseau autre que le WAN de pfsense.
 ![image](https://user-images.githubusercontent.com/35907/236339693-fa31fef5-d22b-4450-b87b-42ad2c006401.png)
 
+###### Autoriser Flux
+![image](https://github.com/dexter74/Linux/assets/35907/9afe7d3c-d6f9-44c9-812c-8ca6456398ef)
+
+
 ###### Wireguard
 ![image](https://user-images.githubusercontent.com/35907/236339772-8f69c96a-30f5-4166-bffa-03e1e901b393.png)
 
 <br />
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 ### VII. Connexion depuis le client
