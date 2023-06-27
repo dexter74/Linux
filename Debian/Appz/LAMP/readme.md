@@ -134,3 +134,9 @@ sed -i -e 's/\;max_input_vars = 1000/max_input_vars = 10000/g' /etc/php/$PHP_VER
 ```bash
 systemctl restart apache2;
 ```
+
+### Afficher informations sur la BDD (User et BDD)
+```
+mysql -u root -padmin -e "SELECT User FROM mysql.user;"
+mysql -u root -padmin -e "SHOW DATABASES;"
+```
