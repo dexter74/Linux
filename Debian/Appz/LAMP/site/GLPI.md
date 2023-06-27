@@ -93,19 +93,19 @@ PASSDB=admin
 ```
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-#### IV. Configuration du site Apache (Experimantl
+#### IV. Configuration du site Apache
 ##### A. Install.php
 Le fichier install.php doit être renommé ou Supprimé
 ```bash
 rm /var/www/html/glpi/install/install.php;
 ```
 
-##### B. Activer le Module Rewrite
+##### B. Activer le Module Rewrite (Expérimental)
 ```
 /usr/sbin/a2enmod rewrite;
 ```
 
-##### C. Configurer le Serveur Web ([DOC](https://glpi-install.readthedocs.io/fr/latest/prerequisites.html#webserver-configuration))
+##### C. Configurer le Serveur Web ([DOC](https://glpi-install.readthedocs.io/fr/latest/prerequisites.html#webserver-configuration))  (Expérimental)
 Dans le but d'avoir plus d'erreur sur le Dashboard de GLPI, il faut configurer le site apache. (Chemin modifier par rapport à la doc)
 ```bash
 nano /etc/apache2/sites-enabled/000-default.conf; systemctl restart apache2;
