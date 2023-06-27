@@ -123,7 +123,10 @@ apt install php-mysqli 1>/dev/null;
 #### Augmenter le nombre de requête
 Pour permettre une sauvegarde de la Base de donnée, il faut augmenter le nombre de requête autorisé.
 ```
-sed -i -e 's/\;max_input_vars = 1000/max_input_vars = 10000/g' /etc/php/7.4/apache2/php.ini
+clear;
+
+PHP_VERSION=7.4
+sed -i -e 's/\;max_input_vars = 1000/max_input_vars = 10000/g' /etc/php/$PHP_VERSION/apache2/php.ini
 ```
 
 
