@@ -94,10 +94,11 @@ cat /etc/fusioninventory/agent.cfg.old >  /etc/fusioninventory/agent.cfg;
 #### Relancer les services
 Relance du serveur Web, Cron, MariaDB (BDD) et de l'agent Fusion Inventory;
 ```bash
-systemctl enable --now apache2;
-systemctl enable --now cron;
-systemctl enable --now mariadb;
-systemctl enable --now fusioninventory-agent.service;
+systemctl restart apache2;
+systemctl restart cron;
+systemctl restart mariadb;
+systemctl restart fusioninventory-agent.service;
+# systemctl enable --now fusioninventory-agent.service;
 ```
 
 #### URL Linux
