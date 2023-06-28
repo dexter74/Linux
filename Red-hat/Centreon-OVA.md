@@ -2,7 +2,7 @@
 ## <p align='center'> .: Installation de Centreon via le fichier OVA sous Virtualbox :. </p>
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### Installation de Centreon ([https://docs.centreon.com/fr/docs/installation/installation-of-a-central-server/using-virtual-machines/](Doc))
+### Installation de Centreon ([DOCUMENTATION](https://docs.centreon.com/fr/docs/installation/installation-of-a-central-server/using-virtual-machines))
 #### Se connecter en root
 ```
 Identifiant: root
