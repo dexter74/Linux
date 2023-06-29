@@ -18,6 +18,7 @@ mysql -u root -padmin -e "ALTER USER root@localhost IDENTIFIED VIA mysql_native_
 ```
 
 ## III. Gestion de la Base de Donnée
+Création d'une Base de donnée `SITE`, puis un compte de service. (Identifiant: `USER` et mot de passe `password`)
 ```sql
 clear;
 
