@@ -276,14 +276,22 @@ Administration > plugins > marketplace
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 #### VII. AGENT INVENTORY (Client)
-##### Télécharger l'Agent Inventory
+
+#### 
+
+##### Télécharger le plugin Agent Inventory
 ```bash
 # Télécharger l'agent Inventory
 https://github.com/glpi-project/glpi-agent/releases
 
 # Installation
 http://192.168.0.50/glpi/marketplace/glpiinventory
+
+# Agent Natif:
+http://192.168.0.50/glpi/front/inventory.php
 ```
+
+
 
 ##### Inventorier le PC
 ```bash
