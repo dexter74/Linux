@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# <p align='center'> .: Installation de Centreon sur Debian (En cours de test :.</p>
+# <p align='center'> .: Installation de Centreon sur Debian (En cours de test) :.</p>
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## I. Installation de Centreon [DOCUMENTATION](https://docs.centreon.com/fr/docs/installation/installation-of-a-central-server/using-packages/)
