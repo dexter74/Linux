@@ -208,17 +208,20 @@ http://192.168.0.10:62354/
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 #### IV. Configuration du site Apache
-Cette configuration est pour mon environnement personnel !
-##### B. Activer le Module Rewrite (Expérimental)
+##### B. Activer le Module Rewrite (Opérationnel)
 ```
 /usr/sbin/a2enmod rewrite;
 ```
 
-##### C. Configurer le Serveur Web ([DOC](https://glpi-install.readthedocs.io/fr/latest/prerequisites.html#webserver-configuration))  (Expérimental)
+##### C. Configurer le Serveur Web ([DOC](https://glpi-install.readthedocs.io/fr/latest/prerequisites.html#webserver-configuration)) (Opérationnel)
 Dans le but d'avoir plus d'erreur sur le Dashboard de GLPI, il faut configurer le site apache. (Chemin modifier par rapport à la doc)
 ```bash
+clear;
+mv /etc/apache2/sites-enabled/000-default.conf /etc/apache2/sites-enabled/000-default.conf.old;
 nano /etc/apache2/sites-enabled/000-default.conf; systemctl restart apache2;
 ```
+
+**000-default.conf**
 ```
 <VirtualHost *:80>
  # Nom du serveur (/etc/hosts)
