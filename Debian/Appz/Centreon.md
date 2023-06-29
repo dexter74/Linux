@@ -3,6 +3,11 @@
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## II. Configuration de la machine Debian
+#### A. Définir un nom de machine
+```bash
+hostnamectl set-hostname centreon-central
+```
+
 
 <br /> 
 
@@ -46,4 +51,18 @@ apt install -y centreon;
 systemctl daemon-reload;
 systemctl restart mariadb;
 ```
+
+#### G. Définir le fuseau horaire de Centreon
+```bash
+echo "date.timezone = Europe/Paris" >> /etc/php/8.1/mods-available/centreon.ini;
+```
+
+#### H. Relance du service PHP
+```bash
+systemctl restart php8.1-fpm;
+```
+
+
+
+
 
