@@ -71,7 +71,7 @@ mysql -u centreon -padmin -e "SHOW DATABASES;"
 <br /> 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## II.  ([Guide](https://docs.centreon.com/fr/docs/installation/installation-of-a-central-server/using-packages/) | [Securisation](https://docs.centreon.com/fr/docs/administration/secure-platform/#activer-firewalld) )
+## II. Installation des packages pourCentreon ([Guide](https://docs.centreon.com/fr/docs/installation/installation-of-a-central-server/using-packages/) | [Securisation](https://docs.centreon.com/fr/docs/administration/secure-platform/#activer-firewalld) )
 
 
 #### X. Dépôt Sury APT pour PHP 8.1
@@ -116,3 +116,15 @@ systemctl restart php8.1-fpm;
 clear;
 systemctl enable php8.1-fpm apache2 centreon cbd centengine gorgoned centreontrapd snmpd snmptrapd
 ```
+
+<br /> 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## III. Procédure d'installation Web
+
+![image](https://github.com/dexter74/Linux/assets/35907/c53ba252-015d-4803-821b-ec1db8703631)
+
+![image](https://github.com/dexter74/Linux/assets/35907/83890216-dbf6-4034-a447-511b5e71345b)
+
+![image](https://github.com/dexter74/Linux/assets/35907/38201eae-3014-483f-b7ac-1a6a6f710482)
+
