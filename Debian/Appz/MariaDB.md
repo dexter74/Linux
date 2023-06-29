@@ -16,3 +16,24 @@ Permettra à PHPMYADMIN d'accèder à la base de donnée depuis le compte root.
 clear;
 mysql -u root -padmin -e "ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
 ```
+
+## III. Gestion de la Base de Donnée
+```
+clear;
+
+# Suppression de la BDD et USER
+mysql -u root -padmin -e "DROP DATABASE IF EXISTS SITE;DROP USER IF EXISTS 'USER'@'localhost';"
+
+# Création de la BDD
+mysql -u root -padmin -e "CREATE DATABASE IF NOT EXISTS SITE;"
+
+# Création de l'utilisateur
+mysql -u root -padmin -e "CREATE USER 'USER'@'localhost' IDENTIFIED BY 'password';"
+
+# Permission de la BDD pour le compte
+mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON SITE.* TO 'USER'@'localhost';"
+
+
+# Permettre l'authentification pour GLPI
+mysql -u root -padmin -e "ALTER USER USER@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('password');"
+```
