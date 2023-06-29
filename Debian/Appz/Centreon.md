@@ -33,24 +33,26 @@ apt install -y mariadb-server 1>/dev/null;
 ```
 
 #### X. Base de donnée
-Création d'une Base de donnée `SITE`, puis un compte de service. (Identifiant: `USER` et mot de passe `password`)
+Création d'une Base de donnée `centreon`, puis un compte de service. (Identifiant: `centreon` et mot de passe `admin`)
 ```sql
 clear;
 
 # Suppression de la BDD et USER
-mysql -u root -padmin -e "DROP DATABASE IF EXISTS SITE;DROP USER IF EXISTS 'USER'@'localhost';"
+mysql -u root -padmin -e "DROP DATABASE IF EXISTS centreon; DROP DATABASE IF EXISTS centreon_storage;DROP USER IF EXISTS 'centreon'@'localhost';"
 
 # Création de la BDD
-mysql -u root -padmin -e "CREATE DATABASE IF NOT EXISTS SITE;"
+mysql -u root -padmin -e "CREATE DATABASE IF NOT EXISTS centreon;CREATE DATABASE IF NOT EXISTS centreon_storage;"
+
 
 # Création de l'utilisateur
-mysql -u root -padmin -e "CREATE USER 'USER'@'localhost' IDENTIFIED BY 'password';"
+mysql -u root -padmin -e "CREATE USER 'centreon'@'localhost' IDENTIFIED BY 'admin';"
 
 # Permission de la BDD pour le compte
-mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON SITE.* TO 'USER'@'localhost';"
+mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON centreon.* TO 'centreon'@'localhost';"
+mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON centreon_storage.* TO 'centreon'@'localhost';"
 
 # Permettre l'authentification pour GLPI
-mysql -u root -padmin -e "ALTER USER USER@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('password');"
+mysql -u root -padmin -e "ALTER USER centreon@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
 ```
 
 
