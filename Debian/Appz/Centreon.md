@@ -32,12 +32,28 @@ apt install -y mariadb-server 1>/dev/null;
 (echo ""; echo "y"; echo "y"; echo "$PASSWORD_DB"; echo "$PASS_ROOT_SQL"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
 ```
 
-#### X. Dépôt Sury APT pour PHP 8.1
-```bash
-echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/sury-php.list;
-wget -O- https://packages.sury.org/php/apt.gpg | gpg --dearmor | tee /etc/apt/trusted.gpg.d/php.gpg  > /dev/null 2>&1;
-apt update 1>/dev/null;
+#### X. Base de donnée
+Création d'une Base de donnée `SITE`, puis un compte de service. (Identifiant: `USER` et mot de passe `password`)
+```sql
+clear;
+
+# Suppression de la BDD et USER
+mysql -u root -padmin -e "DROP DATABASE IF EXISTS SITE;DROP USER IF EXISTS 'USER'@'localhost';"
+
+# Création de la BDD
+mysql -u root -padmin -e "CREATE DATABASE IF NOT EXISTS SITE;"
+
+# Création de l'utilisateur
+mysql -u root -padmin -e "CREATE USER 'USER'@'localhost' IDENTIFIED BY 'password';"
+
+# Permission de la BDD pour le compte
+mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON SITE.* TO 'USER'@'localhost';"
+
+# Permettre l'authentification pour GLPI
+mysql -u root -padmin -e "ALTER USER USER@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('password');"
 ```
+
+
 
 <br /> 
 
@@ -45,7 +61,12 @@ apt update 1>/dev/null;
 ## II.  ([Guide](https://docs.centreon.com/fr/docs/installation/installation-of-a-central-server/using-packages/) | [Securisation](https://docs.centreon.com/fr/docs/administration/secure-platform/#activer-firewalld) )
 
 
-
+#### X. Dépôt Sury APT pour PHP 8.1
+```bash
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/sury-php.list;
+wget -O- https://packages.sury.org/php/apt.gpg | gpg --dearmor | tee /etc/apt/trusted.gpg.d/php.gpg  > /dev/null 2>&1;
+apt update 1>/dev/null;
+```
 
 #### E. Dépôt Centreon 23.04
 ```bash
