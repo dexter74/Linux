@@ -41,7 +41,10 @@ mysql -u root -padmin -e "ALTER USER USER@localhost IDENTIFIED VIA mysql_native_
 
 ## IV. Vérification
 ```sql
-mysql -u root -padmin -e "SELECT User FROM mysql.user;"
-mysql -u root -padmin -e "SHOW DATABASES;"
+clear;
+# DBB et SQL :
+mysql -u root -padmin -e "SELECT User FROM mysql.user; SHOW DATABASES;"
+
+# Liste des SQL gérer par le compte USER:
 mysql -u USER -ppassword -e "SHOW DATABASES;"
 ```
