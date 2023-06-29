@@ -3,7 +3,8 @@
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## I. Préparation de l'environnement Linux
-#### A. Définir un nom de machine
+
+#### X. Définir un nom de machine
 ```bash
 clear;
 hostnamectl set-hostname centreon-central
@@ -21,20 +22,22 @@ clear;
 apt install -y  apt-transport-https ca-certificates curl gnupg2 lsb-release software-properties-common wget 1>/dev/null;
 ```
 
+#### X. Installation de MariaDB
+```bash
+clear;
+curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | bash -s -- --os-type=debian --os-version=11 --mariadb-server-version="mariadb-10.5";
+
+PASS_ROOT_SQL=admin
+apt install -y mariadb-server 1>/dev/null;
+(echo ""; echo "y"; echo "y"; echo "$PASSWORD_DB"; echo "$PASS_ROOT_SQL"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
+```
+
 #### X. Dépôt Sury APT pour PHP 8.1
 ```bash
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/sury-php.list;
 wget -O- https://packages.sury.org/php/apt.gpg | gpg --dearmor | tee /etc/apt/trusted.gpg.d/php.gpg  > /dev/null 2>&1;
 apt update 1>/dev/null;
 ```
-
-
-#### X. Dépôt MariaDB
-```bash
-clear;
-curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | bash -s -- --os-type=debian --os-version=11 --mariadb-server-version="mariadb-10.5";
-```
-
 
 <br /> 
 
