@@ -247,14 +247,21 @@ Administration > plugins > Marketplace
 ##### X. Installer des plugins
 ```
 Administration > plugins > marketplace
- > GLPI Inventory
+ > XXXXX
   > 1er fois  : Téléchargement
   > 2nd fois  : Installer
   > 3ème fois : Activer
 ```
 
+##### X. Configurer l'inventaire Natif de GLPI
+```
+Administration > Inventaire
+ > Activer l'inventaire: OUI
+ > Créer un ordinateur pour les machines virtuelles	: OUI 
+```
 
-##### X. Configurer le Plugin
+
+##### X. Configurer les Plugins
 ```
 Administration > plugins > marketplace
  > GLPI Inventory
