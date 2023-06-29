@@ -2,41 +2,47 @@
 # <p align='center'> .: Installation de Centreon sur Debian (En cours de test) :.</p>
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## II. Configuration de la machine Debian
+## I. Préparation de l'environnement Linux
 #### A. Définir un nom de machine
 ```bash
 clear;
 hostnamectl set-hostname centreon-central
 ```
 
-<br /> 
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## II. Installation de Centreon ([Guide](https://docs.centreon.com/fr/docs/installation/installation-of-a-central-server/using-packages/) | [Securisation](https://docs.centreon.com/fr/docs/administration/secure-platform/#activer-firewalld) )
-#### A. Mise à jour du système
+#### X. Mise à jour du système
 ```bash
 apt update     1>/dev/null;
 apt upgrade -y 1>/dev/null;
 ```
 
-#### B. Installation des outils
+#### X. Installation des outils
 ```bash
 clear;
-apt install -y lsb-release ca-certificates apt-transport-https software-properties-common wget gnupg2 1>/dev/null;
+apt install -y  apt-transport-https ca-certificates curl gnupg2 lsb-release software-properties-common wget 1>/dev/null;
 ```
 
-#### C. Dépôt Sury APT pour PHP 8.1
+#### X. Dépôt Sury APT pour PHP 8.1
 ```bash
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/sury-php.list;
 wget -O- https://packages.sury.org/php/apt.gpg | gpg --dearmor | tee /etc/apt/trusted.gpg.d/php.gpg  > /dev/null 2>&1;
 apt update 1>/dev/null;
 ```
 
-#### D. Dépôt MariaDB
+
+#### X. Dépôt MariaDB
 ```bash
 clear;
-curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash -s -- --os-type=debian --os-version=11 --mariadb-server-version="mariadb-10.5";
+curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | bash -s -- --os-type=debian --os-version=11 --mariadb-server-version="mariadb-10.5";
 ```
+
+
+<br /> 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## II.  ([Guide](https://docs.centreon.com/fr/docs/installation/installation-of-a-central-server/using-packages/) | [Securisation](https://docs.centreon.com/fr/docs/administration/secure-platform/#activer-firewalld) )
+
+
+
 
 #### E. Dépôt Centreon 23.04
 ```bash
