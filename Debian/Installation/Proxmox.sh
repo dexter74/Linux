@@ -26,6 +26,7 @@ sudo adduser $MONUSER sudo;
 ###################################################################################################################
 # Dépôts #
 ##########
+cp /etc/apt/sources.list /etc/apt/sources.list.old;
 echo "deb     http://ftp.fr.debian.org/debian/           bullseye main non-free
 deb-src http://ftp.fr.debian.org/debian/           bullseye main
 deb     http://security.debian.org/debian-security bullseye-security main contrib
