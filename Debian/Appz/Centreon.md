@@ -7,7 +7,7 @@
 #### X. Définir un nom de machine
 ```bash
 clear;
-hostnamectl set-hostname centreon-central
+hostnamectl set-hostname centreon-central;
 ```
 
 #### X. Mise à jour du système
