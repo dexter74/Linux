@@ -2,7 +2,12 @@
 # <p align='center'> .: Installation de Centreon sur Debian (En cours de test) :.</p>
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## I. Installation de Centreon [DOCUMENTATION](https://docs.centreon.com/fr/docs/installation/installation-of-a-central-server/using-packages/)
+## II. Configuration de la machine Debian
+
+<br /> 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## II. Installation de Centreon [DOCUMENTATION](https://docs.centreon.com/fr/docs/installation/installation-of-a-central-server/using-packages/)
 #### A. Mise à jour du système
 ```bash
 apt update     1>/dev/null;
