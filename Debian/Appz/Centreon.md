@@ -27,7 +27,7 @@ Répondre à toutes les questions par Y sauf à "Disallow root login remotely".
 
 ```bash
 clear;
-curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | bash -s -- --os-type=debian --os-version=11 --mariadb-server-version="mariadb-10.5";
+curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | bash -s -- --os-type=debian --os-version=11 --mariadb-server-version="mariadb-10.5" 1>/dev/null;
 
 PASS_ROOT_SQL=admin
 apt install -y mariadb-server 1>/dev/null;
@@ -56,7 +56,6 @@ mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON centreon_storage.* TO 'centreo
 # Permettre l'authentification pour GLPI
 mysql -u root -padmin -e "ALTER USER centreon@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
 
-
 # Vérification
 mysql -u root -padmin -e "SELECT User FROM mysql.user; SHOW DATABASES;"
 mysql -u centreon -padmin -e "SHOW DATABASES;"
@@ -82,7 +81,6 @@ apt update 1>/dev/null;
 clear;
 echo "deb https://packages.centreon.com/apt-standard-23.04-stable/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/centreon.list;
 echo "deb https://packages.centreon.com/apt-plugins-stable/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/centreon-plugins.list;
-
 wget -O- https://apt-key.centreon.com | gpg --dearmor | tee /etc/apt/trusted.gpg.d/centreon.gpg > /dev/null 2>&1;
 apt update 1>/dev/null;
 ```
