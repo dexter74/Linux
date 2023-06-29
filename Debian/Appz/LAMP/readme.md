@@ -99,10 +99,14 @@ apt list --installed | grep php;
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## VI. Gestionnaire de la Base De Donnée
 ### PHPMyAdmin
+
 ```bash
 clear;
 VERSION=5.2.1
 WWW=/var/www/html
+
+# Dépendance:
+apt install php-mysqli 1>/dev/null;
 
 # Téléchargement de PHPMYADMIN
 wget https://files.phpmyadmin.net/phpMyAdmin/$VERSION/phpMyAdmin-$VERSION-all-languages.zip -O /tmp/phpMyAdmin.zip 2>/dev/null;
@@ -114,10 +118,6 @@ unzip /tmp/phpMyAdmin.zip -d $WWW 1>/dev/null;
 mv $WWW/phpMyAdmin-$VERSION-all-languages/ $WWW/phpmyadmin;
 ```
 
-### Dépendances:
-```bash
-apt install php-mysqli 1>/dev/null;
-```
 
 ### php.ini
 #### Augmenter le nombre de requête
