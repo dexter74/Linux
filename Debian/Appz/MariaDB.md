@@ -3,6 +3,7 @@
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## I. Installation
+Répondre à toutes les questions par Y sauf à "Disallow root login remotely".
 ```bash
 clear;
 PASS_ROOT_SQL=admin
