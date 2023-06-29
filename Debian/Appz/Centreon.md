@@ -8,7 +8,6 @@
 hostnamectl set-hostname centreon-central
 ```
 
-
 <br /> 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -31,7 +30,7 @@ wget -O- https://packages.sury.org/php/apt.gpg | gpg --dearmor | tee /etc/apt/tr
 apt update 1>/dev/null;
 ```
 
-#### D. MariaDB
+#### D. Dépôt MariaDB
 ```bash
 curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash -s -- --os-type=debian --os-version=11 --mariadb-server-version="mariadb-10.5";
 ```
@@ -61,6 +60,14 @@ echo "date.timezone = Europe/Paris" >> /etc/php/8.1/mods-available/centreon.ini;
 ```bash
 systemctl restart php8.1-fpm;
 ```
+
+#### I. Activation des services linux
+```bash
+systemctl enable php8.1-fpm apache2 centreon cbd centengine gorgoned centreontrapd snmpd snmptrapd
+```
+
+
+
 
 
 
