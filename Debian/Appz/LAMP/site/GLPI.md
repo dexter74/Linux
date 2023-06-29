@@ -293,6 +293,10 @@ http://192.168.0.50/glpi/front/inventory.php
 
 # URL pour l'Agent si on utilise un plugin:
 http://192.168.0.50/glpi/marketplace/glpiinventory
+
+# Client Leger: Editer agent.cfg
+# server = http://192.168.0.50/glpi/front/inventory.php
+# Lancer le fichier glpi-agent.bat en administrateur pour inventorier
 ```
 
 ##### Inventorier le PC
