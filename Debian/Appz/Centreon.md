@@ -51,7 +51,6 @@ mysql -u root -padmin -e "DROP DATABASE IF EXISTS centreon; DROP DATABASE IF EXI
 # Création de la BDD
 mysql -u root -padmin -e "CREATE DATABASE IF NOT EXISTS centreon;CREATE DATABASE IF NOT EXISTS centreon_storage;"
 
-
 # Création de l'utilisateur
 mysql -u root -padmin -e "CREATE USER 'centreon'@'localhost' IDENTIFIED BY 'admin';"
 
@@ -77,6 +76,7 @@ mysql -u centreon -padmin -e "SHOW DATABASES;"
 
 #### X. Dépôt Sury APT pour PHP 8.1
 ```bash
+clear;
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/sury-php.list;
 wget -O- https://packages.sury.org/php/apt.gpg | gpg --dearmor | tee /etc/apt/trusted.gpg.d/php.gpg  > /dev/null 2>&1;
 apt update 1>/dev/null;
