@@ -17,6 +17,7 @@ hostnamectl set-hostname centreon-central;
 
 #### X. Mise à jour du système
 ```bash
+clear;
 apt update     1>/dev/null;
 apt upgrade -y 1>/dev/null;
 ```
