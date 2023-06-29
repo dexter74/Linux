@@ -31,7 +31,7 @@ curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | bash -s -- --os-t
 
 PASS_ROOT_SQL=admin
 apt install -y mariadb-server 1>/dev/null;
-(echo ""; echo "y"; echo "y"; echo "$PASSWORD_DB"; echo "$PASS_ROOT_SQL"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
+(echo ""; echo "y"; echo "y"; echo "$PASS_ROOT_SQL"; echo "$PASS_ROOT_SQL"; echo "y"; echo "n"; echo "y"; echo "y") | mysql_secure_installation;
 ```
 
 #### X. Base de donnée
