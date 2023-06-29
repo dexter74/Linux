@@ -11,7 +11,7 @@ hostnamectl set-hostname centreon-central
 <br /> 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## II. Installation de Centreon [Guide](https://docs.centreon.com/fr/docs/installation/installation-of-a-central-server/using-packages/ | [Securisation](https://docs.centreon.com/fr/docs/administration/secure-platform/#activer-firewalld))
+## II. Installation de Centreon [Guide](https://docs.centreon.com/fr/docs/installation/installation-of-a-central-server/using-packages/) | [Securisation](https://docs.centreon.com/fr/docs/administration/secure-platform/#activer-firewalld) )
 #### A. Mise à jour du système
 ```bash
 apt update     1>/dev/null;
