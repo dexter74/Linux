@@ -3,6 +3,11 @@
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## I. Préparation de l'environnement Linux
+#### X. Sources.list
+```
+clear;
+sed -i -e "s/^deb cdrom/#deb cdrom/g" /etc/apt/sources.list
+```
 
 #### X. Définir un nom de machine
 ```bash
