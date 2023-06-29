@@ -53,6 +53,11 @@ mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON centreon_storage.* TO 'centreo
 
 # Permettre l'authentification pour GLPI
 mysql -u root -padmin -e "ALTER USER centreon@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
+
+
+# Vérification
+mysql -u root -padmin -e "SELECT User FROM mysql.user; SHOW DATABASES;"
+mysql -u centreon -padmin -e "SHOW DATABASES;"
 ```
 
 
