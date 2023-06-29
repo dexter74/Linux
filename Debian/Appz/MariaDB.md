@@ -18,7 +18,7 @@ mysql -u root -padmin -e "ALTER USER root@localhost IDENTIFIED VIA mysql_native_
 ```
 
 ## III. Gestion de la Base de Donnée
-```
+```sql
 clear;
 
 # Suppression de la BDD et USER
@@ -33,7 +33,14 @@ mysql -u root -padmin -e "CREATE USER 'USER'@'localhost' IDENTIFIED BY 'password
 # Permission de la BDD pour le compte
 mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON SITE.* TO 'USER'@'localhost';"
 
-
 # Permettre l'authentification pour GLPI
 mysql -u root -padmin -e "ALTER USER USER@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('password');"
+```
+
+
+## IV. Vérification
+```sql
+mysql -u root -padmin -e "SELECT User FROM mysql.user;"
+mysql -u root -padmin -e "SHOW DATABASES;"
+mysql -u USER -ppassword -e "SHOW DATABASES;"
 ```
