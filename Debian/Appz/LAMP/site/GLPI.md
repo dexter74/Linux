@@ -92,119 +92,11 @@ PASSDB=admin
 --force;
 ```
 
-##### B. Supprimer e fichier Install.php
+##### B. Supprimer le fichier Install.php
 Le fichier install.php doit être renommé ou Supprimé
 ```bash
 rm /var/www/html/glpi/install/install.php;
 ```
-
---------------------------------------------------------------------------------------------------------------------------------------------
-#### VI. Guide d'utilisation
-##### X. Mes préférences
-```
-Mon Pseudo > Mes préférences > Personnalisation
- > Mise en page	
-  > Horizontal
-```
-##### X. Configurer le serveur
-```
-Configuration >  Générale
- [Configuration générale]
-  > URL de l'application: http://glpi.local
- [API]
-  > URL de l'API	: http://glpi.local/api
-```
-
-##### X. Définir les mots de passes des comptes par défaut
-```
-Administration > Utilisateurs > <Nom d'utilisateur>
- > Changer les mots de passe des comptes glpi, post-only, tech et normal.
- > Jeton : Identifiant Unique
-```
-
- 
-##### X. Configurer l'inventaire Natif de GLPI
-```
-Administration > Inventaire
- > Activer l'inventaire: OUI
- > Créer un ordinateur pour les machines virtuelles	: OUI 
-```
-
-##### X. Mettre en service le MarketPlace
-```
-Administration > plugins > Marketplace
- > [Nouvelle Onglet] S'enregistrer sur GLPI Network
- > Cliquer sur Connexion (En haut à droite)
- > Se connecter
- > Cliquer sur Enregistrement à Gauche
- > Copier la Clé
- 
- [GLPI]
-  > Renseignez votre clé d'enregistrement dans la configuration
-  > Coller la clé
-```
-
-##### X. Installer des plugins
-```
-Administration > plugins > marketplace
- > XXXXX
-  > 1er fois  : Téléchargement
-  > 2nd fois  : Installer
-  > 3ème fois : Activer
-```
-
-##### X. Configurer le Plugin GLPI Inventory (Expérimental)
-```
-Administration > plugins > marketplace
- > GLPI Inventory
-  [Bandeau Vertical]
-  > Configuration générale
-   > SSL seulement pour l'agent: Oui (Défaut: NON)
-  > Modules des agents
-   > WakeOnLan                           : ON
-   > Inventaire ordinateur               : ON
-   > Inventaire distant des hôtes VMware : ON
-   > Inventaire réseau (SNMP)            : ON
-   > Découverte réseau                   : ON
-   
-  [Bandeau Horizontal]
-  > Déployer
-   > Gestions des paquets
-```
-<br />
-
---------------------------------------------------------------------------------------------------------------------------------------------
-#### VII. AGENT INVENTORY (Client)
-
-##### Télécharger le plugin Agent Inventory
-```bash
-# Télécharger l'agent Inventory
-https://github.com/glpi-project/glpi-agent/releases
-
-#  URL pour l'Agent si on utilise l'Agent GLPI en Natif:
-http://192.168.0.50/glpi/front/inventory.php
-
-# URL pour l'Agent si on utilise un plugin:
-http://192.168.0.50/glpi/marketplace/glpiinventory
-
-# Client Leger: Editer agent.cfg
-# server = http://192.168.0.50/glpi/front/inventory.php
-# Lancer le fichier glpi-agent.bat en administrateur pour inventorier
-```
-
-##### Inventorier le PC
-```bash
-http://192.168.0.10:62354/
-```
-
-
-
-
-
-
-
-
-
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 #### IV. Configuration du site Apache
@@ -315,3 +207,112 @@ nano /etc/apache2/sites-available/glpi.local.conf;
 systemctl restart apache2;
 ```
 <br />
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+#### VI. Guide d'utilisation
+##### X. Mes préférences
+```
+Mon Pseudo > Mes préférences > Personnalisation
+ > Mise en page	
+  > Horizontal
+```
+##### X. Configurer le serveur
+```
+Configuration >  Générale
+ [Configuration générale]
+  > URL de l'application: http://glpi.local
+ [API]
+  > URL de l'API	: http://glpi.local/api
+```
+
+##### X. Définir les mots de passes des comptes par défaut
+```
+Administration > Utilisateurs > <Nom d'utilisateur>
+ > Changer les mots de passe des comptes glpi, post-only, tech et normal.
+ > Jeton : Identifiant Unique
+```
+ 
+##### X. Configurer l'inventaire Natif de GLPI
+```
+Administration > Inventaire
+ > Activer l'inventaire: OUI
+ > Créer un ordinateur pour les machines virtuelles	: OUI 
+```
+
+##### X. Mettre en service le MarketPlace
+```
+Administration > plugins > Marketplace
+ > [Nouvelle Onglet] S'enregistrer sur GLPI Network
+ > Cliquer sur Connexion (En haut à droite)
+ > Se connecter
+ > Cliquer sur Enregistrement à Gauche
+ > Copier la Clé
+ 
+ [GLPI]
+  > Renseignez votre clé d'enregistrement dans la configuration
+  > Coller la clé
+```
+
+##### X. Installer des plugins
+```
+Administration > plugins > marketplace
+ > XXXXX
+  > 1er fois  : Téléchargement
+  > 2nd fois  : Installer
+  > 3ème fois : Activer
+```
+
+##### X. Configurer le Plugin GLPI Inventory (Expérimental)
+```
+Administration > plugins > marketplace
+ > GLPI Inventory
+  [Bandeau Vertical]
+  > Configuration générale
+   > SSL seulement pour l'agent: Oui (Défaut: NON)
+  > Modules des agents
+   > WakeOnLan                           : ON
+   > Inventaire ordinateur               : ON
+   > Inventaire distant des hôtes VMware : ON
+   > Inventaire réseau (SNMP)            : ON
+   > Découverte réseau                   : ON
+   
+  [Bandeau Horizontal]
+  > Déployer
+   > Gestions des paquets
+```
+<br />
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+#### VII. AGENT INVENTORY (Client)
+
+##### Télécharger le plugin Agent Inventory
+```bash
+# Télécharger l'agent Inventory
+https://github.com/glpi-project/glpi-agent/releases
+
+#  URL pour l'Agent si on utilise l'Agent GLPI en Natif:
+http://192.168.0.50/glpi/front/inventory.php
+
+# URL pour l'Agent si on utilise un plugin:
+http://192.168.0.50/glpi/marketplace/glpiinventory
+
+# Client Leger: Editer agent.cfg
+# server = http://192.168.0.50/glpi/front/inventory.php
+# Lancer le fichier glpi-agent.bat en administrateur pour inventorier
+```
+
+##### Inventorier le PC
+```bash
+http://192.168.0.10:62354/
+```
+
+
+
+
+
+
+
+
+
+
+
