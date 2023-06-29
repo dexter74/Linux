@@ -1,4 +1,5 @@
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<p align='center'> [Installation de Centreon sur Debian](https://docs.centreon.com/fr/docs/installation/installation-of-a-central-server/using-packages/) </p>p>
+<p align='center'> Installation de Centreon sur Debian </p>
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+I. [DOCUMENTATION](https://docs.centreon.com/fr/docs/installation/installation-of-a-central-server/using-packages/)
