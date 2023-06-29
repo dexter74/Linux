@@ -23,6 +23,8 @@ apt install -y  apt-transport-https ca-certificates curl gnupg2 lsb-release soft
 ```
 
 #### X. Installation de MariaDB
+Répondre à toutes les questions par Y sauf à "Disallow root login remotely".
+
 ```bash
 clear;
 curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | bash -s -- --os-type=debian --os-version=11 --mariadb-server-version="mariadb-10.5";
