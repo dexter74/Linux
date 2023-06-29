@@ -35,7 +35,7 @@ apt install -y mariadb-server 1>/dev/null;
 ```
 
 #### X. Base de donnée
-Création d'une Base de donnée `centreon`, puis un compte de service. (Identifiant: `centreon` et mot de passe `admin`)
+Création de plusieurs base de donnée (`centreon` et `centreon_storage`) avec un compte de service. (Identifiant: `centreon` et mot de passe `admin`)
 ```sql
 clear;
 
