@@ -230,6 +230,13 @@ Administration > Utilisateurs > <Nom d'utilisateur>
 ```
 
  
+##### X. Configurer l'inventaire Natif de GLPI
+```
+Administration > Inventaire
+ > Activer l'inventaire: OUI
+ > Créer un ordinateur pour les machines virtuelles	: OUI 
+```
+
 ##### X. Mettre en service le MarketPlace
 ```
 Administration > plugins > Marketplace
@@ -253,15 +260,7 @@ Administration > plugins > marketplace
   > 3ème fois : Activer
 ```
 
-##### X. Configurer l'inventaire Natif de GLPI
-```
-Administration > Inventaire
- > Activer l'inventaire: OUI
- > Créer un ordinateur pour les machines virtuelles	: OUI 
-```
-
-
-##### X. Configurer les Plugins
+##### X. Configurer le Plugin GLPI Inventory (Expérimental)
 ```
 Administration > plugins > marketplace
  > GLPI Inventory
@@ -284,21 +283,17 @@ Administration > plugins > marketplace
 --------------------------------------------------------------------------------------------------------------------------------------------
 #### VII. AGENT INVENTORY (Client)
 
-#### 
-
 ##### Télécharger le plugin Agent Inventory
 ```bash
 # Télécharger l'agent Inventory
 https://github.com/glpi-project/glpi-agent/releases
 
-# Installation
-http://192.168.0.50/glpi/marketplace/glpiinventory
-
-# Agent Natif:
+#  URL pour l'Agent si on utilise l'Agent GLPI en Natif:
 http://192.168.0.50/glpi/front/inventory.php
+
+# URL pour l'Agent si on utilise un plugin:
+http://192.168.0.50/glpi/marketplace/glpiinventory
 ```
-
-
 
 ##### Inventorier le PC
 ```bash
