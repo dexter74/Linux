@@ -2,7 +2,7 @@
 ## <p align='center'> Pfsense - Alias pour mon réseau local </p>
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#### Alias Ports
+#### Alias de type Ports
 ```
 Nom: LAN_TCP
 Description: Ports TCP ouverts côté LAN
