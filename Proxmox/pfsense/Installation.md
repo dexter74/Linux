@@ -14,6 +14,7 @@ Par défaut Proxmox ponte l'interface physique sur le pont `vmbr0` et sur ce pon
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### II. Création des interfaces réseaux (LAN, DMZ)
+
 Les interfaces crées serviront pour les différents zone pfsense.
 
 Cliquer sur `Créer` puis `Linux Bridge` puis remplisser les champs `IPV4/CIDR` puis `créer` puis `Appliquer la configuration`.
@@ -49,15 +50,16 @@ L'interface net2 est relié à vmbr2 (LAN2)
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### X. Installation de Pfsense
-#### I. 
+#### I. Accéder au panel Web depuis le WAN (LABS uniquement)
+Pour accéder au panel d'administration de pfsense, il suffit d'aller dans la console puis de choisir le choix `8) shell` puis de taper `pfctl -d` (Le caratère `-` sous le clavier Qwerty est ` )` )
 
-```
-Système > Gestionnaire de paquets > Paquets disponibles
-```
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## X. Affectations des interfaces
+## X. Divers
+```
+Système > Gestionnaire de paquets > Paquets disponibles
+```
 Les interfaces sous pfsense se nomment `em0` (Bridge), `em1` (LAN), `em2` (LAN2).
 
 Le réseau `em0` est `192.168.0.X`  conformément à la création du pont `vmbr0`.
