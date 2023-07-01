@@ -4,7 +4,7 @@
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### 2. Alias de type Ports
+### 2. Alias ports
 ```
 Nom        : LAN_TCP
 Description: Ports TCP ouverts côté LAN
@@ -25,11 +25,23 @@ Port(s)    :
 8006 Proxmox
 8097 Jellyfin
 8191 Flaresolverr
-9000 PORTAINER
+9000  Portainer
 ```
 
 ```
-Nom         : 
-Description : Ports TCP ouverts côté 
+Nom         : WAN_TCP
+Description : Ports TCP ouverts côté WAN
 Port(s)     :
+22 SSH
+80 HTTP 
+81 Nginx Reverse Proxy
+389 LDAP
+3389 MS-RDP
+```
+
+```
+Nom         : WAN_UDP
+Description : Ports UDP ouverts côté WAN
+Port(s)     :
+51820 Wireguard
 ```
