@@ -4,11 +4,9 @@
 
 #### Alias de type Ports
 ```
-Nom: LAN_TCP
+Nom        : LAN_TCP
 Description: Ports TCP ouverts côté LAN
-
-Port(s):
-
+Port(s)    :
 53 DNS
 80 HTTP
 81 Nginx Reverse Proxy
@@ -26,4 +24,10 @@ Port(s):
 8097 Jellyfin
 8191 Flaresolverr
 9000 PORTAINER
+```
+
+```
+Nom         : 
+Description : Ports TCP ouverts côté 
+Port(s)     :
 ```
