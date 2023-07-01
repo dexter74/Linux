@@ -33,3 +33,9 @@
 | SIP           | 5060        | XXX  | XXXXXXXXX    |
 | Wireguard     | 5120        | UDP  | VPN          |
 | Parsec        | 8000 - 8010 | UDP  | Cloud Gaming |
+
+
+```` 
+Tu peux dire que les ports 67 et 68 sont aussi utilisés pour le BOOTP
+
+```` 
