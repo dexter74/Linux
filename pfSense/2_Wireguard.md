@@ -196,7 +196,9 @@ Lors du choix "Source" il faut choisir Tout si on accéde sur un réseau autre q
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 ### VII. Connexion depuis le client
-J'autorise les réseaux `192.168.0.0/24` et `192.168.1.0/24` car je souhaites accéder à ses réseaux.
+J'autorise les réseaux `192.168.0.0/24` et `192.168.1.0/24` car je souhaites accéder à ses réseaux. Le terme `EndPoint` est l'adresse du serveur.
+
+Dans mon exemple je fais une connexion au VPN en local, mais il faudra indiquer l'IP Publique (IPV4) ou un DDYNS (Domaine qui pointe vers l'IP Publique)
 ```
 [Interface]
 PrivateKey = SFqEF+d/4BvIRmfqYDRbJppRDoOcA60ZaztAJaEHfl4=
@@ -211,6 +213,8 @@ AllowedIPs   = 0.0.0.0/0
 AllowedIPs   = 192.168.1.0/24
 AllowedIPs   = 192.168.0.0/24
 Endpoint     = 192.168.0.5:51820
+#Endpoint    = wireguard.ddns.net:51820
+
 ```
 
 ##### Etat de Wireguard
