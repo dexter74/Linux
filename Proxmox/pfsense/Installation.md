@@ -37,15 +37,17 @@ Voici le résultat après la création de plusieurs ponts:
 ## III. La machine virtuelle Pfsense
 Après la création de la machine virtuelle pfsense, il suffit d'ajouter des carte-réseaux avec comme modèle `E1000`.
 
-<p align="center">
-   <img src="https://github.com/dexter74/Linux/assets/35907/58faba21-275a-41e7-b90b-20ea6de9fbab)">
-</p>
-
 L'interface net0 est relié à vmbr0 (Bridge)
 
 L'interface net1 est relié à vmbr1 (LAN)
 
 L'interface net2 est relié à vmbr2 (LAN2)
+
+
+<p align="center">
+   <img src="https://github.com/dexter74/Linux/assets/35907/58faba21-275a-41e7-b90b-20ea6de9fbab)">
+</p>
+
 
 <br />
 
