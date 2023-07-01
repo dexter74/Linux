@@ -14,9 +14,9 @@ kbdcontrol -l /usr/share/syscons/keymaps/fr.iso.kbd
 
 # Script:
 ```echo "kbdcontrol -l /usr/share/syscons/keymaps/fr.iso.kbd " > fr.sh
-echo "pfctl -d" > off.sh 
-echo "pfctl -e" on.sh 
-chmod 644 *.sh
+echo "pfctl -d" > firewall_off.sh;
+echo "pfctl -e" > firewall_on.sh;
+chmod 644 *.sh;
 ```
 
 # Qemu-Agent: ([Promox](https://forum.netgate.com/topic/162083/pfsense-vm-on-proxmox-qemu-agent-installation))
