@@ -72,7 +72,9 @@ Block bogon networks
 Il faudra retaper la commande de désactivation du Pare-feu
 Aller dans `Firewall` > `Rules` > `WAN` > `ADD`.
 
-![image](https://github.com/dexter74/Linux/assets/35907/6521e252-7569-4721-b687-ab7b3b8472dd)
+
+![image](https://github.com/dexter74/Linux/assets/35907/be9b3f54-2b94-4adb-9f4f-973d3584c450)
+
 
 <br /><br /><br />
 
