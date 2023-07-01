@@ -58,3 +58,9 @@ Le réseau `em2` est `192.168.20.X` conformément à la création du pont `vmbr2
 <p align="center">
    <img src="https://github.com/dexter74/Linux/assets/35907/b2138f3a-f0da-4227-be57-82db695be0fa">
 </p>
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## V. Configuration du Pare-feu Pfsense
+### 
+Système> Gestionnaire de paquets > Paquets disponibles
