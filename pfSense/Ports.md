@@ -21,6 +21,7 @@
 | NetBios       | 137         | XXX  | XXXXXXXXX    |
 | NetBios       | 138         | XXX  | XXXXXXXXX    |
 | NetBios       | 139         | XXX  | XXXXXXXXX    |
+| IMAP          | 143         | XXX  | XXXXXXXXX    |
 | SNMP          | 161, 162    | XXX  | XXXXXXXXX    |
 | LDAP          | 389         | XXX  | XXXXXXXXX    |
 | HTTPS         | 443         | TCP  | Web sécurisé |
