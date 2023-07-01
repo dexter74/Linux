@@ -47,7 +47,6 @@ L'interface net2 est relié à vmbr2 (LAN2)
    <img src="https://github.com/dexter74/Linux/assets/35907/58faba21-275a-41e7-b90b-20ea6de9fbab)">
 </p>
 
-
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -68,6 +67,8 @@ Décocher les 2 cases: (En bas de la page)
 Block bogon networks
 `
 
+<br />
+
 #### II. Création d'une règle de Pare-feu (LABS Uniquement)
 Il faudra retaper la commande de désactivation du Pare-feu.
 
@@ -77,14 +78,6 @@ Puis aller dans le menu `Firewall` > `Rules` > `WAN` > `ADD` et appliquer la con
 
 
 <br /><br /><br />
-
-
-
-
-
-
-
-
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## X. Divers
