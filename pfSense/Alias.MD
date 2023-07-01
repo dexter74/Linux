@@ -17,9 +17,9 @@ IP  : 192.168.20.1
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### 2. Alias ports
 ```
-Nom        : LAN_TCP
-Description: Ports TCP ouverts côté LAN
-Port(s)    :
+Nom         : LAN_TCP
+Description : Ports TCP ouverts côté LAN
+Port(s)     :
 
 53 DNS
 80 HTTP
@@ -41,9 +41,9 @@ Port(s)    :
 ```
 
 ```
-Nom         : WAN_TCP
-Description : Ports TCP ouverts côté WAN
-Port(s)     :
+Nom          : WAN_TCP
+Description  : Ports TCP ouverts côté WAN
+Port(s)      :
 
 22 SSH
 80 HTTP 
@@ -53,9 +53,9 @@ Port(s)     :
 ```
 
 ```
-Nom         : WAN_UDP
-Description : Ports UDP ouverts côté WAN
-Port(s)     :
+Nom          : WAN_UDP
+Description  : Ports UDP ouverts côté WAN
+Port(s)      :
 
 51820 Wireguard
 ```
