@@ -13,8 +13,7 @@ Pfsense:
 
 ### II. Installation du Paquet
 ```
-Système > Gestionnaire de paquets > Paquets disponibles
-Wireguard
+Système > Gestionnaire de paquets > Paquets disponibles > Wireguard
 ```
 <br />
 
