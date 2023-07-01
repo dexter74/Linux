@@ -49,13 +49,11 @@ L'interface net2 est relié à vmbr2 (LAN2)
 ## IV. Affectations des interfaces
 Les interfaces sous pfsense se nomment `em0` (Bridge), `em1` (LAN), `em2` (LAN2).
 
-Le réseau `em0` est `192.168.0.X`  conformément à la création du pont vmbr0.
+Le réseau `em0` est `192.168.0.X`  conformément à la création du pont `vmbr0`.
 
-Le réseau `em1` est `192.168.10.X` conformément à la création du pont vmbr1.
+Le réseau `em1` est `192.168.10.X` conformément à la création du pont `vmbr1`.
 
-Le réseau `em2` est `192.168.20.X` conformément à la création du pont vmbr2.
-
-
+Le réseau `em2` est `192.168.20.X` conformément à la création du pont `vmbr2`.
 
 <p align="center">
    <img src="https://github.com/dexter74/Linux/assets/35907/b2138f3a-f0da-4227-be57-82db695be0fa">
