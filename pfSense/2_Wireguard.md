@@ -196,7 +196,7 @@ Lors du choix "Source" il faut choisir Tout si on accéde sur un réseau autre q
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 ### VII. Connexion depuis le client
-J'autorise les réseaux `192.168.0.0/24` et `192.168.1.0/24` car j'utilise ses réseaux
+J'autorise les réseaux `192.168.0.0/24` et `192.168.1.0/24` car je souhaites accéder à ses réseaux.
 ```
 [Interface]
 PrivateKey = SFqEF+d/4BvIRmfqYDRbJppRDoOcA60ZaztAJaEHfl4=
