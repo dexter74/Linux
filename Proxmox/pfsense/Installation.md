@@ -62,14 +62,25 @@ Puis de taper la commande `pfctl -d`. (Le caratère `-` correspond à `)` )
 
 Lors de la première connexion de pfsense il lance le processus d'installation, on le fera plus tard.
 
+
+
+
 #### II. Création d'une règle de Pare-feu (LABS Uniquement)
-Aller dans `Firewall` > `Rules` > `WAN`.
+Aller dans `Firewall` > `Rules` > `WAN` > `ADD`.
 
-Ensuite cliquer sur `ADD` puis `Save` puis `Apply Changes` ce qui ouvre tous les ports du Pare-feu.
+![image](https://github.com/dexter74/Linux/assets/35907/6521e252-7569-4721-b687-ab7b3b8472dd)
 
-Retourner dans la console de pfsense puis taper `reboot`.
+
 
 <br /><br /><br />
+
+
+
+
+
+
+
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## X. Divers
