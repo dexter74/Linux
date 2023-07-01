@@ -17,6 +17,7 @@
 | TFTP          | 69          | XXX  | XXXXXXXXX    |
 | HTTP          | 80          | TCP  | Web          |
 | Kerberos      | 88          | XXX  | XXXXXXXXX    |
+| POP3          | 110         | XXX  | XXXXXXXXX    |
 | NTP           | 123         | XXX  | XXXXXXXXX    |
 | NetBios       | 137         | XXX  | XXXXXXXXX    |
 | NetBios       | 138         | XXX  | XXXXXXXXX    |
