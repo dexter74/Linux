@@ -1,8 +1,10 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# <p align='center'>.: Mise en place d'un Pare-feu Pfsense sous Proxmox :.<p>
+## <p align='center'>.: Mise en place d'un Pare-feu Pfsense sous Proxmox :.<p>
+
+## <p align='center'> EN cours de Rédaction :.<p>
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## I. Présentation de Proxmox
+### I. Présentation de Proxmox
 Par défaut Proxmox ponte l'interface physique sur le pont `vmbr0` et sur ce pont (`vmbr0`) on défini la configuration réseau.
 <p align="center">
    <img src="https://github.com/dexter74/Linux/assets/35907/cf7cca38-ef06-4641-aed9-dad773960bf6">
@@ -11,7 +13,7 @@ Par défaut Proxmox ponte l'interface physique sur le pont `vmbr0` et sur ce pon
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## II. Création des interfaces réseaux (LAN, DMZ)
+### II. Création des interfaces réseaux (LAN, DMZ)
 Les interfaces crées serviront pour les différents zone pfsense.
 
 Cliquer sur `Créer` puis `Linux Bridge` puis remplisser les champs `IPV4/CIDR` puis `créer` puis `Appliquer la configuration`.
@@ -46,8 +48,8 @@ L'interface net2 est relié à vmbr2 (LAN2)
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## X. Installation de Pfsense
-### I. 
+### X. Installation de Pfsense
+#### I. 
 
 ```
 Système > Gestionnaire de paquets > Paquets disponibles
