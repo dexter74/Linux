@@ -69,9 +69,9 @@ Block bogon networks
 `
 
 #### II. Création d'une règle de Pare-feu (LABS Uniquement)
-Il faudra retaper la commande de désactivation du Pare-feu
-Aller dans `Firewall` > `Rules` > `WAN` > `ADD`.
+Il faudra retaper la commande de désactivation du Pare-feu.
 
+Puis aller dans le menu `Firewall` > `Rules` > `WAN` > `ADD` et appliquer la configuration réseau suivante.
 
 ![image](https://github.com/dexter74/Linux/assets/35907/be9b3f54-2b94-4adb-9f4f-973d3584c450)
 
