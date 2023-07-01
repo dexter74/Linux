@@ -7,7 +7,7 @@
 | SMTP          | 25          | XXX  | XXXXXXXXX    |
 | Time Protocol | 37          | XXX  | XXXXXXXXX    |
 | WHOIS         | 43          | XXX  | [OUTIL](https://learn.microsoft.com/en-us/sysinternals/downloads/whois) |
-| DNS           | 53          | XXX  | XXXXXXXXX    |
+| DNS           | 53, 5353    | XXX  | XXXXXXXXX    |
 | DHCP          | 67          | UDP  | Serveur      |
 | DHCP          | 68          | UDP  | Client       |
 | TFTP          | 69          | XXX  | XXXXXXXXX    |
