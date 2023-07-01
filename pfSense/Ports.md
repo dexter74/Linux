@@ -28,3 +28,4 @@
 | RDP           | 3389        | TCP  | XXXXXXXXX    |
 | SIP           | 5060        | XXX  | XXXXXXXXX    |
 | Wireguard     | 5120        | UDP  | VPN          |
+| Parsec        | 8000 - 8010 | UDP  | Cloud Gaming |
