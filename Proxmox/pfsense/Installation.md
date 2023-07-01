@@ -53,7 +53,9 @@ L'interface net2 est relié à vmbr2 (LAN2)
 #### I. Accéder au panel Web depuis le WAN (LABS uniquement)
 Pour accéder au panel d'administration de pfsense, il faut désactiver le Pare-feu depuis la console.
 
-Ensuite de choisir le menu `8) shell` puis de taper la commande `pfctl -d` qui désactive le pare-feu. (Le caratère `-` sous le clavier Qwerty est ` )` ) 
+Ensuite de choisir le menu `8) shell` .
+
+Puis de taper la commande `pfctl -d`. (Le caratère `-` correspond à `)` ) 
 
 Lors de la première connexion de pfsense il lance le processus d'installation, on le fera plus tard.
 
