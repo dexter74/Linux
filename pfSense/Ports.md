@@ -27,3 +27,4 @@
 | OpenVPN       | 1154        | XXX  | XXXXXXXXX   |
 | RDP           | 3389        | XXX  | XXXXXXXXX   |
 | SIP           | 5060        | XXX  | XXXXXXXXX   |
+| Wireguard     | 5120        | UDP  | VPN         |
