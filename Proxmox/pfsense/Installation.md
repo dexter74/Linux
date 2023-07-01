@@ -43,7 +43,6 @@ L'interface net1 est relié à vmbr1 (LAN)
 
 L'interface net2 est relié à vmbr2 (LAN2)
 
-
 <p align="center">
    <img src="https://github.com/dexter74/Linux/assets/35907/58faba21-275a-41e7-b90b-20ea6de9fbab)">
 </p>
@@ -62,15 +61,18 @@ Puis de taper la commande `pfctl -d`. (Le caratère `-` correspond à `)` )
 
 Lors de la première connexion de pfsense il lance le processus d'installation, on le fera plus tard.
 
+Aller dans `Interfaces` > `Interface Assignments` > `WAN`
 
-
+Décocher les 2 cases: (En bas de la page)
+`Block private networks and loopback addresses
+Block bogon networks
+`
 
 #### II. Création d'une règle de Pare-feu (LABS Uniquement)
+Il faudra retaper la commande de désactivation du Pare-feu
 Aller dans `Firewall` > `Rules` > `WAN` > `ADD`.
 
 ![image](https://github.com/dexter74/Linux/assets/35907/6521e252-7569-4721-b687-ab7b3b8472dd)
-
-
 
 <br /><br /><br />
 
