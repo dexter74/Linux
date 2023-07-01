@@ -24,7 +24,7 @@
 | SFTP          | 115         | XXX  | XXXXXXXXX    |
 | NTP           | 123         | XXX  | XXXXXXXXX    |
 | RSYNC         | 873         | XXX  | XXXXXXXXX    |
-| OpenVPN       | 1154        | XXX  | XXXXXXXXX    |
+| OpenVPN       | 1194        | XXX  | XXXXXXXXX    |
 | RDP           | 3389        | TCP  | XXXXXXXXX    |
 | SIP           | 5060        | XXX  | XXXXXXXXX    |
 | Wireguard     | 5120        | UDP  | VPN          |
