@@ -24,12 +24,12 @@ Exemple de configuration du pont vmbr1:
    <img src="https://github.com/dexter74/Linux/assets/35907/5737edd3-4e5e-46b5-944e-a36840b7759a">
 </p>
 
+Le pont `vmbr0` est l'équivalent du `Bridge` sous les hyperviseurs `Virtualbox et VMWare`.
+
 Voici le résultat après la création de plusieurs ponts:
 <p align="center">
    <img src="https://github.com/dexter74/Linux/assets/35907/725fb2ef-3670-407d-9794-b2abab21d753">
 </p>
-
-Le pont `vmbr0` est l'équivalent du `Bridge` sous les hyperviseurs `Virtualbox et VMWare`.
 
 <br />
 
@@ -47,6 +47,7 @@ L'interface net1 est relié à vmbr1 (LAN)
 
 L'interface net2 est relié à vmbr2 (LAN2)
 
+<br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### X. Installation de Pfsense
@@ -66,7 +67,7 @@ Ensuite cliquer sur `ADD` puis `Save` puis `Apply Changes` ce qui ouvre tous les
 
 Retourner dans la console de pfsense puis taper `reboot`.
 
-<br />
+<br /><br /><br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## X. Divers
