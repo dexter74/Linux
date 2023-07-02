@@ -14,7 +14,7 @@ Adresse 4G: OFF
 nano /etc/modprobe.d/vfio.conf;
 ```
 ```
-nano /etc/modprobe.d/blacklist.conf;
+nano /etc/modprobe.d/pve-blacklist.conf;
 ```
 
 
@@ -87,9 +87,9 @@ Le Blacklistage permet d'interdire les pilotes à se charger à son lancement. (
 Dans mon cas le GPU utilise `AMDGPU`.
 ```bash
 echo "# GPU AMD"                >  /etc/modprobe.d/pve-blacklist.conf;
-echo "blacklist ati"            >> /etc/modprobe.d/pve-blacklist.conf;
-echo "blacklist amdgpu"         >> /etc/modprobe.d/pve-blacklist.conf;
-echo "blacklist radeon"         >> /etc/modprobe.d/pve-blacklist.conf;
+echo "#blacklist ati"           >> /etc/modprobe.d/pve-blacklist.conf;
+echo "#blacklist amdgpu"        >> /etc/modprobe.d/pve-blacklist.conf;
+echo "#blacklist radeon"        >> /etc/modprobe.d/pve-blacklist.conf;
 echo "#"                        >> /etc/modprobe.d/pve-blacklist.conf;
 echo "# GPU Nvidia"             >> /etc/modprobe.d/pve-blacklist.conf;
 echo "#blacklist nouveau"       >> /etc/modprobe.d/pve-blacklist.conf;
@@ -108,16 +108,16 @@ echo "#blacklist xpad"          >> /etc/modprobe.d/pve-blacklist.conf;
 ```bash
 echo "#"                        >> /etc/modprobe.d/pve-blacklist.conf;
 echo "# BCM4352"                >> /etc/modprobe.d/pve-blacklist.conf;
-echo "blacklist wl"             >> /etc/modprobe.d/pve-blacklist.conf;
-echo "blacklist bcma"           >> /etc/modprobe.d/pve-blacklist.conf;
+echo "#blacklist wl"            >> /etc/modprobe.d/pve-blacklist.conf;
+echo "#blacklist bcma"          >> /etc/modprobe.d/pve-blacklist.conf;
 ```
 
 ##### Ryzen 5700G:
 ```bash
 echo "#"                        >> /etc/modprobe.d/pve-blacklist.conf;
 echo "# Ryzen 5700g"            >> /etc/modprobe.d/pve-blacklist.conf;
-echo "blacklist ccp"            >> /etc/modprobe.d/pve-blacklist.conf;
-echo "blacklist xhci_hcd"       >> /etc/modprobe.d/pve-blacklist.conf;
+echo "#blacklist ccp"           >> /etc/modprobe.d/pve-blacklist.conf;
+echo "#blacklist xhci_hcd"      >> /etc/modprobe.d/pve-blacklist.conf;
 ```
 
 ### Attacher GPU au module VFIO
