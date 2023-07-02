@@ -109,9 +109,8 @@ systemctl restart pveproxy.service;
 #### Dépôt (Grauit) 
 ```
 sed -i -e 's/pve-enterprise/pve-no-subscription/g' /etc/apt/sources.list.d/pve-enterprise.list;
-sed -i -e 's/http/https/g' /etc/apt/sources.list.d/pve-enterprise.list;
+sed -i -e 's/^deb http/deb https/g' /etc/apt/sources.list.d/pve-enterprise.list;
 sed -i -e 's/enterprise/download/g' /etc/apt/sources.list.d/pve-enterprise.list;
-
 ```
 <br />
 
