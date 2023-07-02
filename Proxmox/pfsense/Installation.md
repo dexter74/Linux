@@ -62,10 +62,7 @@ Lors de la première connexion de pfsense il lance le processus d'installation, 
 
 Aller dans `Interfaces` > `Interface Assignments` > `WAN`
 
-Décocher les 2 cases: (En bas de la page)
-`Block private networks and loopback addresses
-Block bogon networks
-`
+Décocher les 2 cases:  `Block private networks and loopback addresses` et `Block bogon networks`
 
 <br />
 
@@ -98,4 +95,3 @@ Le réseau `em2` est `192.168.20.X` conformément à la création du pont `vmbr2
 <p align="center">
    <img src="https://github.com/dexter74/Linux/assets/35907/b2138f3a-f0da-4227-be57-82db695be0fa">
 </p>
-
