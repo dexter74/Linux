@@ -110,12 +110,12 @@ reboot;
 # Intel
 export GPU0='00:02.0'
 echo 1 > /sys/bus/pci/devices/0000\:"${GPU0}"/rom
-cat /sys/bus/pci/devices/0000\:"${GPU0}"/rom > /usr/share/qemu/gpu-"$(date +%Y%m%dT%H%m%S)".rom
+cat /sys/bus/pci/devices/0000\:"${GPU0}"/rom > /usr/share/kvm/gpu-"$(date +%Y%m%dT%H%m%S)".rom
 echo 0 > /sys/bus/pci/devices/0000\:"${GPU0}"/rom
 
 # Nvidia
 export GPU1='03:00.0'
 echo 1 > /sys/bus/pci/devices/0000\:"${GPU1}"/rom
-cat /sys/bus/pci/devices/0000\:"${GPU1}"/rom > /usr/share/qemu/gpu-"$(date +%Y%m%dT%H%m%S)".rom
+cat /sys/bus/pci/devices/0000\:"${GPU1}"/rom > /usr/share/kvm/gpu-"$(date +%Y%m%dT%H%m%S)".rom
 echo 0 > /sys/bus/pci/devices/0000\:"${GPU1}"/rom
 ```
