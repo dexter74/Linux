@@ -24,6 +24,9 @@ find /sys/kernel/iommu_groups/ -type l | sort -n;
 # /sys/kernel/iommu_groups/14/devices/0000:03:00.0
 # /sys/kernel/iommu_groups/13/devices/0000:02:00.0
 
+# Autre:
+for d in /sys/kernel/iommu_groups/*/devices/*; do n=${d#*/iommu_groups/*}; n=${n%%/*}; printf 'IOMMU group %s ' "$n"; lspci -nns "${d##*/}"; done
+
 uname -r;
 # 6.2.16-3-pve
 ```
@@ -58,8 +61,6 @@ vfio_pci" > /etc/modules;
 echo "options vfio_iommu_type1 allow_unsafe_interrupts=1" > /etc/modprobe.d/iommu_unsafe_interrupts.conf;
 echo "options kvm ignore_msrs=1" > /etc/modprobe.d/kvm.conf;
 ```
-
-
 
 ### Blacklist
 Le Blacklistage permet d'interdire les pilotes à se charger à son lancement. (Liste non exhaustive)
