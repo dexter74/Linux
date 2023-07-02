@@ -87,6 +87,9 @@ clear;
 echo "###########################################################
 # Nvidia: GeForce 930M
 # options vfio-pci ids=10de:1346 disable_vga=1
+###########################################################
+# Intel Corporation HD Graphics 620
+# options vfio-pci  ids=8086:5916 disable_vga=1 
 ###########################################################" > /etc/modprobe.d/vfio.conf;
 nano /etc/modprobe.d/vfio.conf;
 ```
