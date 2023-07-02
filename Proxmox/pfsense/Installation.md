@@ -71,7 +71,7 @@ Il faudra retaper la commande de désactivation du Pare-feu.
 
 Puis aller dans le menu `Firewall` > `Rules` > `WAN` > `ADD` .
 
-La règle `pointe vers le pare-feu` sur le port `443` et `autorise explicitement` le réseau `192.168.0.0/24`
+La règle `pointe vers le pare-feu` sur le port `443` et `autorise explicitement` le réseau `192.168.0.0/24` à y accéder.
 
 ![image](https://github.com/dexter74/Linux/assets/35907/be9b3f54-2b94-4adb-9f4f-973d3584c450)
 
