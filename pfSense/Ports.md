@@ -31,6 +31,7 @@
 | NTP           | 123         | XXX  | XXXXXXXXX    |
 | RSYNC         | 873         | XXX  | XXXXXXXXX    |
 | OpenVPN       | 1194        | XXX  | XXXXXXXXX    |
+| SQL           | 3306        | TCP  | XXXXXXXXX    |
 | RDP           | 3389        | TCP  | XXXXXXXXX    |
 | SIP           | 5060        | XXX  | XXXXXXXXX    |
 | Wireguard     | 51820       | UDP  | VPN          |
