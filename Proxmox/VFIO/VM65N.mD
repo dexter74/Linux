@@ -93,10 +93,10 @@ Dans l'exemple suivant, plusieurs référence de GPU son présent.
 ```bash
 clear;
 echo "###########################################################
-# Intel Corporation HD Graphics 620
+# Intel Corporation HD Graphics 620 (Sortie Video)
 # options vfio-pci  ids=8086:5916 disable_vga=1
 ###########################################################
-# Nvidia: GeForce 930M (Sortie Video)
+# Nvidia: GeForce 930M
 # options vfio-pci ids=10de:1346
 ###########################################################" > /etc/modprobe.d/vfio.conf;
 nano /etc/modprobe.d/vfio.conf;
