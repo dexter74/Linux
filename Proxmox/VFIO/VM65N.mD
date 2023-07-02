@@ -13,12 +13,15 @@ nano /etc/default/grub;
 
 ### Relever les informations
 ```
-lspci -nn -k | grep "NVIDIA\|3D\|VGA" -A3 | grep -v "modules\|Subsystem\|DeviceName\|--";
+lspci -nn -k | grep "NVIDIA\|3D\|VGA\|Audio" -A3 | grep -v "modules\|Subsystem\|DeviceName\|--";
 # 00:02.0 VGA compatible controller [0300]: Intel Corporation HD Graphics 620 [8086:5916] (rev 02)
 # Kernel driver in use: i915
 
 # 03:00.0 3D controller [0302]: NVIDIA Corporation GM108M [GeForce 930M] [10de:1346] (rev a2)
 # Kernel driver in use: nouveau
+
+# 00:1f.3 Audio device [0403]: Intel Corporation Sunrise Point-LP HD Audio [8086:9d71] (rev 21)
+
 
 find /sys/kernel/iommu_groups/ -type l | sort -n;
 # /sys/kernel/iommu_groups/14/devices/0000:03:00.0
