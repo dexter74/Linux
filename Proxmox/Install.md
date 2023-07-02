@@ -111,6 +111,9 @@ systemctl restart pveproxy.service;
 sed -i -e 's/pve-enterprise/pve-no-subscription/g' /etc/apt/sources.list.d/pve-enterprise.list;
 sed -i -e 's/^deb http/deb https/g' /etc/apt/sources.list.d/pve-enterprise.list;
 sed -i -e 's/enterprise/download/g' /etc/apt/sources.list.d/pve-enterprise.list;
+
+# wget https://enterprise.proxmox.com/debian/proxmox-release-bullseye.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-buster.gpg;
+# apt install ca-certificates
 ```
 <br />
 
