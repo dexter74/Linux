@@ -25,7 +25,7 @@ Dongle HDMI sur la sortie Vidéo du GPU.
 
 ### Relever les informations
 ```
-lspci -nn -k | grep VGA -A3 | grep "VGA\|driver"
+lspci -nn -k | grep VGA -A3 | grep "VGA\|driver\|3D"
 # 0b:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Navi 22 [1002:73df] (rev c1)
 # Kernel driver in use: amdgpu
 
