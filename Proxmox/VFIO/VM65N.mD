@@ -4,10 +4,9 @@
 
 #### Maintenance
 ```
-nano /etc/modprobe.d/vfio.conf;
-```
-```
 nano /etc/modprobe.d/pve-blacklist.conf;
+nano /etc/modprobe.d/vfio.conf;
+nano /etc/default/grub;
 ```
 
 
