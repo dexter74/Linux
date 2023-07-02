@@ -62,7 +62,7 @@ Le kernel de ma machine est `6.2.9.1` par conséquent le module doit être prés
 #### Activer IOMMU:
 ```bash
 # modprobe.blacklist=amdgpu
-# libata.noacpi=1 pour la machine vm65n
+# intel_iommu=on libata.noacpi=1 pour la machine vm65n
 sed -i -e 's/quiet/quiet amd_iommu=on initcall_blacklist=sysfb_init/g' /etc/default/grub;
 nano /etc/default/grub;
 ```
