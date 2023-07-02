@@ -97,23 +97,27 @@ echo "#blacklist nvidia"        >> /etc/modprobe.d/pve-blacklist.conf;
 echo "#blacklist nvidiafb"      >> /etc/modprobe.d/pve-blacklist.conf;
 echo "#blacklist snd_hda_intel" >> /etc/modprobe.d/pve-blacklist.conf;
 echo "#"                        >> /etc/modprobe.d/pve-blacklist.conf;
+echo "# GPU Intel"              >> /etc/modprobe.d/pve-blacklist.conf;
 echo "#blacklist i915"          >> /etc/modprobe.d/pve-blacklist.conf;
 echo "#"                        >> /etc/modprobe.d/pve-blacklist.conf;
 echo "# Manette Xbox"           >> /etc/modprobe.d/pve-blacklist.conf;
 echo "#blacklist xpad"          >> /etc/modprobe.d/pve-blacklist.conf;
-
 ```
 
 ##### BCM4352 802.11ac Wireless Network Adapter
 ```bash
-echo "blacklist wl"            >> /etc/modprobe.d/pve-blacklist.conf;
-echo "blacklist bcma"          >> /etc/modprobe.d/pve-blacklist.conf;
+echo "#"                        >> /etc/modprobe.d/pve-blacklist.conf;
+echo "# BCM4352"                >> /etc/modprobe.d/pve-blacklist.conf;
+echo "blacklist wl"             >> /etc/modprobe.d/pve-blacklist.conf;
+echo "blacklist bcma"           >> /etc/modprobe.d/pve-blacklist.conf;
 ```
 
 ##### Ryzen 5700G:
 ```bash
-echo "blacklist ccp"           >> /etc/modprobe.d/pve-blacklist.conf;
-echo "blacklist xhci_hcd"      >> /etc/modprobe.d/pve-blacklist.conf;
+echo "#"                        >> /etc/modprobe.d/pve-blacklist.conf;
+echo "# Ryzen 5700g"            >> /etc/modprobe.d/pve-blacklist.conf;
+echo "blacklist ccp"            >> /etc/modprobe.d/pve-blacklist.conf;
+echo "blacklist xhci_hcd"       >> /etc/modprobe.d/pve-blacklist.conf;
 ```
 
 ### Attacher GPU au module VFIO
