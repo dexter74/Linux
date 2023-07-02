@@ -97,8 +97,11 @@ echo "#blacklist nvidia"        >> /etc/modprobe.d/pve-blacklist.conf;
 echo "#blacklist nvidiafb"      >> /etc/modprobe.d/pve-blacklist.conf;
 echo "#blacklist snd_hda_intel" >> /etc/modprobe.d/pve-blacklist.conf;
 echo "#"                        >> /etc/modprobe.d/pve-blacklist.conf;
+echo "#blacklist i915"          >> /etc/modprobe.d/pve-blacklist.conf;
+echo "#"                        >> /etc/modprobe.d/pve-blacklist.conf;
 echo "# Manette Xbox"           >> /etc/modprobe.d/pve-blacklist.conf;
 echo "#blacklist xpad"          >> /etc/modprobe.d/pve-blacklist.conf;
+
 ```
 
 ##### BCM4352 802.11ac Wireless Network Adapter
