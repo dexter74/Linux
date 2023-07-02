@@ -12,21 +12,18 @@ nano /etc/default/grub;
 
 ### Relever les informations
 ```
-lspci -nn -k | grep "NVIDIA" -A3 | grep -v modules
-03:00.0 3D controller [0302]: NVIDIA Corporation GM108M [GeForce 930M] [10de:1346] (rev a2)
-	Subsystem: ASUSTeK Computer Inc. GM108M [GeForce 930M] [1043:86b8]
-	Kernel driver in use: nouveau
-
-
-lspci -s 03: -k -nn | grep -i "audio\|vga\|3D" -A2 | grep -iv "sub\|--"
+lspci -nn -k | grep "NVIDIA\|3D\|VGA" -A3 | grep -v "modules\|Subsystem\|DeviceName\|--";
+# 00:02.0 VGA compatible controller [0300]: Intel Corporation HD Graphics 620 [8086:5916] (rev 02)
+# Kernel driver in use: i915
 
 # 03:00.0 3D controller [0302]: NVIDIA Corporation GM108M [GeForce 930M] [10de:1346] (rev a2)
-#	Kernel driver in use: nouveau
+# Kernel driver in use: nouveau
 
 find /sys/kernel/iommu_groups/ -type l | sort -n;
-# sys/kernel/iommu_groups/14/devices/0000:03:00.0
+# /sys/kernel/iommu_groups/14/devices/0000:03:00.0
+# /sys/kernel/iommu_groups/13/devices/0000:02:00.0
 
-uname -r
+uname -r;
 # 6.2.16-3-pve
 ```
 
