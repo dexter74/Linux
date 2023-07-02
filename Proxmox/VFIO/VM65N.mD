@@ -48,3 +48,60 @@ Le kernel de ma machine est `6.2.16-3` par conséquent le module doit être pré
 sed -i -e 's/\"quiet\"/\"quiet intel_iommu=on libata.noacpi=1 initcall_blacklist=sysfb_init\"/g' /etc/default/grub;
 nano /etc/default/grub;
 ```
+
+### Activer Modules
+Le module `vfio_virqfd` est absent du kernel. (Voir plus haut)
+```bash
+echo "vfio
+vfio_iommu_type1
+vfio_pci" > /etc/modules;
+```
+
+### KVM
+```bash
+echo "options vfio_iommu_type1 allow_unsafe_interrupts=1" > /etc/modprobe.d/iommu_unsafe_interrupts.conf;
+echo "options kvm ignore_msrs=1" > /etc/modprobe.d/kvm.conf;
+```
+
+
+
+### Blacklist
+Le Blacklistage permet d'interdire les pilotes à se charger à son lancement. (Liste non exhaustive)
+
+Dans mon cas le GPU utilise `AMDGPU`.
+```bash
+echo "# GPU Nvidia"             >> /etc/modprobe.d/pve-blacklist.conf;
+echo "#blacklist nouveau"       >> /etc/modprobe.d/pve-blacklist.conf;
+echo "#blacklist nvidia"        >> /etc/modprobe.d/pve-blacklist.conf;
+echo "#blacklist nvidiafb"      >> /etc/modprobe.d/pve-blacklist.conf;
+echo "#blacklist snd_hda_intel" >> /etc/modprobe.d/pve-blacklist.conf;
+echo "#"                        >> /etc/modprobe.d/pve-blacklist.conf;
+echo "# GPU Intel"              >> /etc/modprobe.d/pve-blacklist.conf;
+echo "#blacklist i915"          >> /etc/modprobe.d/pve-blacklist.conf;
+echo "#"                        >> /etc/modprobe.d/pve-blacklist.conf;
+echo "# Manette Xbox"           >> /etc/modprobe.d/pve-blacklist.conf;
+echo "#blacklist xpad"          >> /etc/modprobe.d/pve-blacklist.conf;
+nano /etc/modprobe.d/pve-blacklist.conf;
+```
+
+
+### Attacher GPU au module VFIO
+Dans l'exemple suivant, plusieurs référence de GPU son présent.
+```bash
+clear;
+echo "###########################################################
+# Nvidia: GeForce 930M
+# options vfio-pci ids=10de:1346 disable_vga=1
+###########################################################" > /etc/modprobe.d/vfio.conf;
+nano /etc/modprobe.d/vfio.conf;
+```
+
+
+#### Mettre à jour Grub
+Grub qui est le gestionnaire de démarrage, les commandes suivantes permettent de mettre à jour le démarrage.
+````bash
+update-initramfs -u;
+update-grub;
+update-grub2;
+reboot;
+````
