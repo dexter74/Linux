@@ -105,6 +105,11 @@ systemctl restart pveproxy.service;
 
 # /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
 ```
+
+#### Dépôt (Grauit) 
+```
+sed -i -e 's/pve-enterprise/pve-no-subscription/g' /etc/apt/sources.list.d/pve-enterprise.list
+```
 <br />
 
 --------------------------------------------------------------------------------
