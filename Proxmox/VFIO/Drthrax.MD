@@ -2,12 +2,10 @@
 ## <p align='center'> Machine Virtuelle avec Carte-Graphique </p>
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
 #### BIOS:
 ```
 Adresse 4G: OFF
 ```
-
 
 #### Maintenance
 ```
@@ -58,7 +56,6 @@ Le kernel de ma machine est `6.2.9.1` par conséquent le module doit être prés
 ```
 
 
-
 #### Activer IOMMU:
 ```bash
 # modprobe.blacklist=amdgpu
@@ -97,9 +94,6 @@ echo "#blacklist nouveau"       >> /etc/modprobe.d/pve-blacklist.conf;
 echo "#blacklist nvidia"        >> /etc/modprobe.d/pve-blacklist.conf;
 echo "#blacklist nvidiafb"      >> /etc/modprobe.d/pve-blacklist.conf;
 echo "#blacklist snd_hda_intel" >> /etc/modprobe.d/pve-blacklist.conf;
-echo "#"                        >> /etc/modprobe.d/pve-blacklist.conf;
-echo "# GPU Intel"              >> /etc/modprobe.d/pve-blacklist.conf;
-echo "#blacklist i915"          >> /etc/modprobe.d/pve-blacklist.conf;
 echo "#"                        >> /etc/modprobe.d/pve-blacklist.conf;
 echo "# Manette Xbox"           >> /etc/modprobe.d/pve-blacklist.conf;
 echo "#blacklist xpad"          >> /etc/modprobe.d/pve-blacklist.conf;
