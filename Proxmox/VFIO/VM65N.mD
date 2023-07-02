@@ -43,9 +43,8 @@ Le kernel de ma machine est `6.2.16-3` par conséquent le module doit être pré
 
 #### Activer IOMMU:
 ```bash
-# modprobe.blacklist=amdgpu
-# intel_iommu=on libata.noacpi=1 pour la machine vm65n
-sed -i -e 's/\"quiet\"/\"quiet intel_iommu=on libata.noacpi=1 initcall_blacklist=sysfb_init\"/g' /etc/default/grub;
+# libata.noacpi=1 : Correctif erreur ACPI
+sed -i -e 's/\"quiet\"/\"quiet libata.noacpi=1 intel_iommu=on initcall_blacklist=sysfb_init\"/g' /etc/default/grub;
 nano /etc/default/grub;
 ```
 
