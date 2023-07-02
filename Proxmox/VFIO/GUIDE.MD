@@ -29,7 +29,7 @@ lspci -nn -k | grep "VGA\|3D" -A3 | grep -v modules
 # 0b:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Navi 22 [1002:73df] (rev c1)
 # Kernel driver in use: amdgpu
 
-lspci -s 0b: -k -nn | grep -i "audio\|vga" -A2 | grep -iv "sub\|--"
+lspci -s 0b: -k -nn | grep -i "audio\|vga\|3D" -A2 | grep -iv "sub\|--"
 # 0b:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Navi 22 [1002:73df] (rev c1)
 # Kernel driver in use: amdgpu
 # 0b:00.1 Audio device [0403]: Advanced Micro Devices, Inc. [AMD/ATI] Device [1002:ab28]
