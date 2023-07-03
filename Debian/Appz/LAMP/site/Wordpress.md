@@ -75,14 +75,45 @@ cat /etc/apache2/apache2.conf.old > /etc/apache2/apache2.conf;
 systemctl restart apache2;
 ```
 
+#### X. Edition du fichier config Apache
+```
+nano /etc/apache2/apache2.conf;
+
+<Directory />
+        Options FollowSymLinks
+        AllowOverride None
+        Require all denied
+</Directory>
+
+<Directory /usr/share>
+        AllowOverride None
+        Require all granted
+</Directory>
+
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+</Directory>
+
+
+<Directory /var/www/wordpress>
+        AllowOverride all
+</Directory>
+```
+
 #### X. Création du htaccess
 Autoriser uniquement le réseau `192.168.0.0/24` à accéder au site Wordpress.
 ```bash
-echo "Order Deny,Allow
-Allow from 192.168.0.0/255.255.255.0
-Deny from all" > /var/www/html/wordpress/.htaccess
+echo "order deny,allow
+deny from all
+allow from 192.168.0.0/255.255.255.0" > /var/www/html/wordpress/.htaccess;
 ```
 
+#### X. Rétablir les Permissions
+```bash
+chown -R www-data:www-data /var/www/html/wordpress;
+```
 
 
 <br />
