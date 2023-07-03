@@ -1,24 +1,11 @@
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# <p align='center'> Installation de Wordpress </p>
+# <p align='center'>.: Installation de Wordpress :.</p>
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### X. Installation de Wordpress
-#### X. Téléchargement du Site
-```
-wget https://fr.wordpress.org/latest-fr_FR.zip -O /tmp/latest-fr_FR.zip;
-unzip /tmp/latest-fr_FR.zip -d /var/www/html;
-rm /tmp/latest-fr_FR.zip
-```
-
-#### X. Rétablir les Permissions
-```
-chown -R www-data:www-data /var/www/html/wordpress;
-```
-
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### X. Base De Donnée
-#### X. Création de La Base De Donnée
+### X. Création de La Base De Donnée
 Le nom de la Base de donnée est `wordpressdb`, l'identifiant est `wordpress` et le mot de passe est `mypassword`.
+
 ```sql
 clear;
 
@@ -45,6 +32,21 @@ mysql -u wordpress -pmypassword -e "SHOW DATABASES;"
 ```
 <br />
 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### X. Installation de Wordpress
+#### X. Téléchargement du Site
+```bash
+wget https://fr.wordpress.org/latest-fr_FR.zip -O /tmp/latest-fr_FR.zip;
+unzip /tmp/latest-fr_FR.zip -d /var/www/html;
+rm /tmp/latest-fr_FR.zip
+```
+
+#### X. Rétablir les Permissions
+```bash
+chown -R www-data:www-data /var/www/html/wordpress;
+```
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### X. Méthode 1: Sécurisation de Wordpress par filtra IP
 #### X. Création du htaccess
@@ -56,27 +58,28 @@ Deny from all" > /var/www/html/wordpress/.htaccess
 ```
 
 ### X. Sauvegarde du fichier de base d'Apache
-```
+```bash
 cp /etc/apache2/apache2.conf /etc/apache2/apache2.conf.old;
 ```
 
 #### X. Restauration de la configuration Apache
-```
+```bash
 cat /etc/apache2/apache2.conf.old > /etc/apache2/apache2.conf;
 systemctl restart apache2;
 ```
 
 #### X. Activation du htaccess
-```
+```bash
 sed -i -e 's/AllowOverride None/AllowOverride ALL/g' /etc/apache2/apache2.conf;
 ```
+
 #### X. htaccess pour le dossier Wordpress
-```
+```bash
 sed -i -e 's/Directory \/var\/www\//Directory \/var\/www\/html\/wordpress\//g' /etc/apache2/apache2.conf;
 ```
 
 #### X. Relance du service Apache2
-```
+```bash
 systemctl restart apache2;
 ```
 
