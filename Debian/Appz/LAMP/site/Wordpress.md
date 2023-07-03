@@ -27,6 +27,6 @@ mysql -u root -padmin -e "SHOW DATABASES;"
 
 #### C. Vérification de l'accès à la Base De Donnée
 ```sql
-mysql -u wordpressdb -pmypassword -e "SHOW DATABASES;"
+mysql -u wordpress -pmypassword -e "SHOW DATABASES;"
 ```
 <br />
