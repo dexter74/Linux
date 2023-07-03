@@ -77,7 +77,7 @@ systemctl restart apache2;
 
 #### X. Edition du fichier config Apache
 ```
-nano /etc/apache2/apache2.conf;
+nano /etc/apache2/apache2.conf; systemctl restart apache2;
 
 <Directory />
         Options FollowSymLinks
