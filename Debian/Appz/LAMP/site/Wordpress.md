@@ -84,8 +84,8 @@ systemctl restart apache2;
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### X. Méthode 2: Plugin Wordpress (A voir)
 ```
+Restricted Site Access : Ce plugin force l'authentification pour protéger le site. (Liste blanche par IP pour éviter l'authentification)
 Intranet and Extranet with O365 Login
-Restricted Site Access
 ```
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
