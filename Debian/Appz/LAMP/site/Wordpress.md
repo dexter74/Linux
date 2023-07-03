@@ -43,3 +43,16 @@ mysql -u root -padmin -e "SHOW DATABASES;"
 mysql -u wordpress -pmypassword -e "SHOW DATABASES;"
 ```
 <br />
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### X. Sécurisation de Wordpress
+#### A. Htaccess
+```
+sed -i -e 's/AllowOverride None/AllowOverride ALL/g' /etc/apache2/apache2.conf;
+service apache2 restart;
+
+echo "order deny, allow
+deny from all
+allow from 192.168.0.0/255.255.255.0" >  /var/www/html/.htaccess;
+```
+
