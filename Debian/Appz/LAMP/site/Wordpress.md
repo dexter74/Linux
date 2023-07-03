@@ -63,13 +63,6 @@ Adresses IP sans restriction: 192.168.0.0/24
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### X. Méthode X: Sécurisation de Wordpress par filtra IP (Expérimental)
-#### X. Création du htaccess
-Autoriser uniquement le réseau `192.168.0.0/24` à accéder au site Wordpress.
-```bash
-echo "Order Deny,Allow
-Allow from 192.168.0.0/255.255.255.0
-Deny from all" > /var/www/html/wordpress/.htaccess
-```
 
 ### X. Sauvegarde du fichier de base d'Apache
 ```bash
@@ -90,6 +83,14 @@ sed -i -e 's/AllowOverride None/AllowOverride ALL/g' /etc/apache2/apache2.conf; 
 #### X. htaccess pour le dossier Wordpress
 ```bash
 sed -i -e 's/Directory \/var\/www\//Directory \/var\/www\/html\/wordpress\//g' /etc/apache2/apache2.conf; systemctl restart apache2;
+```
+
+#### X. Création du htaccess
+Autoriser uniquement le réseau `192.168.0.0/24` à accéder au site Wordpress.
+```bash
+echo "Order Deny,Allow
+Allow from 192.168.0.0/255.255.255.0
+Deny from all" > /var/www/html/wordpress/.htaccess
 ```
 
 <br />
