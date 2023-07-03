@@ -44,7 +44,7 @@ Port(s)     :
 Nom         : LAN_UDP
 Description : Ports UDP ouverts côté LAN
 Port(s)     :
-53
+53 DNS
 ```
 
 
