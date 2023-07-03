@@ -2,6 +2,8 @@
 ## <p align='center'> Pfsense - Alias pour mon réseau local </p>
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Pour le réseau `LAN`, il faudra choisir `LAN net` pour la source. 
+
 ### 1. Alias IP
 ```
 Nom : WAN_PARE_FEU
@@ -66,3 +68,5 @@ Description  : Ports UDP ouverts côté WAN
 Port(s)      :
 51820 Wireguard
 ```
+
+
