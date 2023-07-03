@@ -7,12 +7,12 @@
 ```
 wget https://fr.wordpress.org/latest-fr_FR.zip -O /tmp/latest-fr_FR.zip;
 unzip /tmp/latest-fr_FR.zip -d /var/www/html;
-rm 
+rm /tmp/latest-fr_FR.zip
 ```
 
-#### X. Permission
+#### X. Rétablir les Permissions
 ```
-chown -R www-data:www-data /var/www/html;
+chown -R www-data:www-data /var/www/html/wordpress;
 ```
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -71,11 +71,8 @@ sed -i -e 's/Directory \/var\/www\//Directory \/var\/www\/wordpress\//g' /etc/ap
 systemctl restart apache2;
 ```
 
-
-
-
-
-
-cat /etc/apache2/apache2.conf.old > /etc/apache2/apache2.conf;
+#### E. Restauration de la configuration Apache
 ```
-
+cat /etc/apache2/apache2.conf.old > /etc/apache2/apache2.conf;
+systemctl restart apache2;
+```
