@@ -84,18 +84,14 @@ systemctl restart apache2;
 
 #### X. Activation du htaccess
 ```bash
-sed -i -e 's/AllowOverride None/AllowOverride ALL/g' /etc/apache2/apache2.conf;
+sed -i -e 's/AllowOverride None/AllowOverride ALL/g' /etc/apache2/apache2.conf; systemctl restart apache2;
 ```
 
 #### X. htaccess pour le dossier Wordpress
 ```bash
-sed -i -e 's/Directory \/var\/www\//Directory \/var\/www\/html\/wordpress\//g' /etc/apache2/apache2.conf;
+sed -i -e 's/Directory \/var\/www\//Directory \/var\/www\/html\/wordpress\//g' /etc/apache2/apache2.conf; systemctl restart apache2;
 ```
 
-#### X. Relance du service Apache2
-```bash
-systemctl restart apache2;
-```
 <br />
 
 
