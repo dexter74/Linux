@@ -23,6 +23,7 @@ Nom         : LAN_TCP
 Description : Ports TCP ouverts côté LAN
 Port(s)     :
 
+22 SSH
 53 DNS
 80 HTTP
 81 Nginx Reverse Proxy
