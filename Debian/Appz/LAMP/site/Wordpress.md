@@ -113,7 +113,7 @@ chown -R www-data:www-data /var/www/html/wordpress;
 All-In-One Intranet
 bbPress
 BuddyPress
-Active Directory Integration / LDAP Integration
+Active Directory Integration / LDAP Integration : Permet l'authentification dans une active directory, requiert le paquet php-ldap puis relancer apache2.
 WP Basic Authentication   :
 WP htaccess Editor        : Editeur dans Wordpress du HTACCESS
 ```
