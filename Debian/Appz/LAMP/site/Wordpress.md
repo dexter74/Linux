@@ -52,7 +52,7 @@ Autoriser uniquement le réseau `192.168.0.0/24` à accéder au site Wordpress.
 ```bash
 echo "Order Deny,Allow
 Allow from 192.168.0.0/255.255.255.0
-Deny from all" > /var/www/html/.htaccess
+Deny from all" > /var/www/html/wordpress/.htaccess
 ```
 
 #### B. Activation du htaccess
