@@ -41,6 +41,14 @@ Port(s)     :
 ```
 
 ```
+Nom         : LAN_UDP
+Description : Ports UDP ouverts côté LAN
+Port(s)     :
+53
+```
+
+
+```
 Nom          : WAN_TCP
 Description  : Ports TCP ouverts côté WAN
 Port(s)      :
@@ -56,6 +64,5 @@ Port(s)      :
 Nom          : WAN_UDP
 Description  : Ports UDP ouverts côté WAN
 Port(s)      :
-
 51820 Wireguard
 ```
