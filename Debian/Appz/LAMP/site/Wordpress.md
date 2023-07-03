@@ -72,7 +72,7 @@ sed -i -e 's/AllowOverride None/AllowOverride ALL/g' /etc/apache2/apache2.conf;
 ```
 #### X. htaccess pour le dossier Wordpress
 ```
-sed -i -e 's/Directory \/var\/www\//Directory \/var\/www\/wordpress\//g' /etc/apache2/apache2.conf;
+sed -i -e 's/Directory \/var\/www\//Directory \/var\/www\/html\/wordpress\//g' /etc/apache2/apache2.conf;
 ```
 
 #### X. Relance du service Apache2
