@@ -9,7 +9,7 @@ apt install -y avahi;
 
 #### Trouver les serveurs de partage
 ```
-findsmb
+findsmb;
 ```
 
 
