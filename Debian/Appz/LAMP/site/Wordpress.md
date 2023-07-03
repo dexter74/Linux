@@ -47,7 +47,7 @@ mysql -u wordpress -pmypassword -e "SHOW DATABASES;"
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### X. Sécurisation de Wordpress
-#### A. Création du htaccess
+#### X. Création du htaccess
 Autoriser uniquement le réseau `192.168.0.0/24` à accéder au site Wordpress.
 ```bash
 echo "Order Deny,Allow
@@ -55,24 +55,28 @@ Allow from 192.168.0.0/255.255.255.0
 Deny from all" > /var/www/html/wordpress/.htaccess
 ```
 
-#### B. Activation du htaccess
+### X. Sauvegarde du fichier de base d'Apache
 ```
-# Sauvegarde du fichier de base d'Apache
 cp /etc/apache2/apache2.conf /etc/apache2/apache2.conf.old;
-sed -i -e 's/AllowOverride None/AllowOverride ALL/g' /etc/apache2/apache2.conf;
-```
-#### C. htaccess pour le dossier Wordpress
-```
-sed -i -e 's/Directory \/var\/www\//Directory \/var\/www\/wordpress\//g' /etc/apache2/apache2.conf;
 ```
 
-#### D. Relance du service Apache2
-```
-systemctl restart apache2;
-```
-
-#### E. Restauration de la configuration Apache
+#### X. Restauration de la configuration Apache
 ```
 cat /etc/apache2/apache2.conf.old > /etc/apache2/apache2.conf;
 systemctl restart apache2;
 ```
+
+#### X. Activation du htaccess
+```
+sed -i -e 's/AllowOverride None/AllowOverride ALL/g' /etc/apache2/apache2.conf;
+```
+#### X. htaccess pour le dossier Wordpress
+```
+sed -i -e 's/Directory \/var\/www\//Directory \/var\/www\/wordpress\//g' /etc/apache2/apache2.conf;
+```
+
+#### X. Relance du service Apache2
+```
+systemctl restart apache2;
+```
+
