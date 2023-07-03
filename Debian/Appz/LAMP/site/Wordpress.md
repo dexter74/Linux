@@ -48,7 +48,21 @@ chown -R www-data:www-data /var/www/html/wordpress;
 ```
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### X. Méthode 1: Sécurisation de Wordpress par filtra IP
+### X. Méthode 2: Plugin Wordpress (A voir)
+Les plugins suivants force l'authentification lorsqu'on souhaite consulter Wordpress. Il existe une possibilité d'ajouter des IP ayant pas besoin de s'authentifier
+#### X. Restricted Site Access
+```
+Adresses IP sans restriction: 192.168.0.0/24
+```
+ 
+#### X. Intranet and Extranet with O365 Login
+```
+```
+
+<br />
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### X. Méthode X: Sécurisation de Wordpress par filtra IP (Expérimental)
 #### X. Création du htaccess
 Autoriser uniquement le réseau `192.168.0.0/24` à accéder au site Wordpress.
 ```bash
@@ -85,19 +99,6 @@ systemctl restart apache2;
 <br />
 
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### X. Méthode 2: Plugin Wordpress (A voir)
-Les plugins suivants force l'authentification lorsqu'on souhaite consulter Wordpress. Il existe une possibilité d'ajouter des IP ayant pas besoin de s'authentifier
-#### X. Restricted Site Access
-```
-Adresses IP sans restriction: 192.168.0.0/24
-```
- 
-#### X. Intranet and Extranet with O365 Login
-```
-```
-
-<br />
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### X. Liste de plugins:
