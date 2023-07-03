@@ -83,10 +83,14 @@ systemctl restart apache2;
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### X. Méthode 2: Plugin Wordpress (A voir)
+Les plugins suivants force l'authentification lorsqu'on souhaite consulter Wordpress. Il existe une possibilité d'ajouter des IP ayant pas besoin de s'authentifier
+#### X. Restricted Site Access
 ```
-Restricted Site Access : Ce plugin force l'authentification pour protéger le site. (Liste blanche par IP pour éviter l'authentification)
-Intranet and Extranet with O365 Login
+Adresses IP sans restriction: 192.168.0.0/24
 ```
+ 
+#### X. Intranet and Extranet with O365 Login
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### X. Liste de plugins:
