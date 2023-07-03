@@ -80,3 +80,9 @@ sed -i -e 's/Directory \/var\/www\//Directory \/var\/www\/html\/wordpress\//g' /
 systemctl restart apache2;
 ```
 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### X. Méthode 2: Plugin Wordpress (A voir)
+```
+Restricted Site Access
+```
