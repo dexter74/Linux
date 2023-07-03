@@ -75,31 +75,15 @@ cat /etc/apache2/apache2.conf.old > /etc/apache2/apache2.conf;
 systemctl restart apache2;
 ```
 
-#### X. Edition du fichier config Apache
+#### X. Activer le htacess dans Wordpress
 ```
-nano /etc/apache2/apache2.conf; systemctl restart apache2;
+# Remplacer la ligne 172 (none en all)
+sed -i '172s/None/all/' /etc/apache2/apache2.conf;
 
-<Directory />
-        Options FollowSymLinks
-        AllowOverride None
-        Require all denied
-</Directory>
-
-<Directory /usr/share>
-        AllowOverride None
-        Require all granted
-</Directory>
-
-<Directory /var/www/>
-        Options Indexes FollowSymLinks
-        AllowOverride All
-        Require all granted
-</Directory>
-
-
-<Directory /var/www/wordpress>
-        AllowOverride all
-</Directory>
+# Insérer des lignes à partir de ligne 175
+echo "<Directory /var/www/wordpress/>
+AllowOverride all
+</Directory>" >> /etc/apache2/apache2.conf; systemctl restart apache2;
 ```
 
 #### X. Création du htaccess
