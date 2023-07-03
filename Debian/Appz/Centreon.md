@@ -114,7 +114,7 @@ systemctl restart php8.1-fpm;
 #### I. Activation des services linux
 ```bash
 clear;
-systemctl enable php8.1-fpm apache2 centreon cbd centengine gorgoned centreontrapd snmpd snmptrapd
+systemctl enable php8.1-fpm apache2 centreon cbd centengine gorgoned centreontrapd snmpd snmptrapd;
 ```
 
 <br /> 
