@@ -84,5 +84,6 @@ systemctl restart apache2;
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### X. Méthode 2: Plugin Wordpress (A voir)
 ```
+Intranet and Extranet with O365 Login
 Restricted Site Access
 ```
