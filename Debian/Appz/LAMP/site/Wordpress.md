@@ -91,7 +91,8 @@ Autoriser uniquement le réseau `192.168.0.0/24` à accéder au site Wordpress.
 ```bash
 echo "order deny,allow
 deny from all
-allow from 192.168.0.0/255.255.255.0" > /var/www/html/wordpress/.htaccess;
+allow from 192.168.0.0/255.255.255.0
+php_value upload_max_filesize 256M" > /var/www/html/wordpress/.htaccess;
 ```
 
 Note: Sa autoriser le pare-feu et donc les Machines des Zones LAN.
