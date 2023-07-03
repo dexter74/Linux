@@ -113,5 +113,6 @@ chown -R www-data:www-data /var/www/html/wordpress;
 All-In-One Intranet
 bbPress
 BuddyPress
-WP Htaccess Editor : Editeur dans Wordpress du HTACCESS
+WP Basic Authentication   :
+WP htaccess Editor        : Editeur dans Wordpress du HTACCESS
 ```
