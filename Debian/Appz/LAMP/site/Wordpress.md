@@ -46,7 +46,7 @@ mysql -u wordpress -pmypassword -e "SHOW DATABASES;"
 <br />
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### X. Sécurisation de Wordpress
+### X. Méthode 1: Sécurisation de Wordpress par filtra IP
 #### X. Création du htaccess
 Autoriser uniquement le réseau `192.168.0.0/24` à accéder au site Wordpress.
 ```bash
