@@ -87,3 +87,11 @@ systemctl restart apache2;
 Intranet and Extranet with O365 Login
 Restricted Site Access
 ```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### X. Liste de plugins:
+```
+All-In-One Intranet
+bbPress
+BuddyPress
+```
