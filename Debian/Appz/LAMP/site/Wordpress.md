@@ -2,6 +2,19 @@
 # <p align='center'> Installation de Wordpress </p>
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### X. Installation de Wordpress
+#### X. Téléchargement du Site
+```
+wget https://fr.wordpress.org/latest-fr_FR.zip -O /tmp/latest-fr_FR.zip;
+unzip /tmp/latest-fr_FR.zip -d /var/www/html;
+```
+
+#### X. Permission
+```
+chown -R www-data:www-data /var/www/html;
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### X. Base De Donnée
 #### X. Création de La Base De Donnée
 Le nom de la Base de donnée est `wordpressdb`, l'identifiant est `wordpress` et le mot de passe est `mypassword`.
