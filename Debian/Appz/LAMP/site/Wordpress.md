@@ -94,6 +94,8 @@ deny from all
 allow from 192.168.0.0/255.255.255.0" > /var/www/html/wordpress/.htaccess;
 ```
 
+Note: Sa autoriser le pare-feu et donc les Machines des Zones LAN.
+
 #### X. Rétablir les Permissions
 ```bash
 chown -R www-data:www-data /var/www/html/wordpress;
