@@ -40,7 +40,7 @@ Port(s)     :
 8006 Proxmox
 8097 Jellyfin
 8191 Flaresolverr
-9000  Portainer
+9000 Portainer
 ```
 
 ```
