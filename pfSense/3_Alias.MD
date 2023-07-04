@@ -72,9 +72,12 @@ Port(s)      :
 51820 Wireguard
 ```
 
-
+## Règle WAN:
 ![image](https://github.com/dexter74/Linux/assets/35907/4e6cbe48-75d2-4e4e-a8ed-4cc6f9cbc9b1)
 
+<br />
+
+## Règle LAN:
 
 ![image](https://github.com/dexter74/Linux/assets/35907/a094e2e7-c23a-4f18-8d6f-d4a190fd7608)
 
