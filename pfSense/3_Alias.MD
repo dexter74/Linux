@@ -73,11 +73,20 @@ Port(s)      :
 ```
 
 ## Règle WAN:
+J'ai crée 1 règle pour les ports TCP et 1 règle pour les ports TCP pour permettre le franchissement via ses ports et protocoles dédiées.
+
+J'autorise le ping entre le WAN et le LAN uniquement. (192.168.0.0/24 vers 192.168.10.0/24)
+
 ![image](https://github.com/dexter74/Linux/assets/35907/4e6cbe48-75d2-4e4e-a8ed-4cc6f9cbc9b1)
 
 <br />
 
 ## Règle LAN:
+J'ai crée 1 règle pour les ports TCP et 1 règle pour les ports TCP pour permettre le franchissement via ses ports et protocoles dédiées.
+
+Tout le reste est bloqué
+
+J'autorise le ping depuis le LAN.
 
 ![image](https://github.com/dexter74/Linux/assets/35907/a094e2e7-c23a-4f18-8d6f-d4a190fd7608)
 
