@@ -298,6 +298,7 @@ http://192.168.0.50/glpi/marketplace/glpiinventory
 
 # Client Leger: Editer agent.cfg
 # server = http://192.168.0.50/glpi/front/inventory.php
+# Check :  http://192.168.0.50/glpi/front/agent.php
 # Lancer le fichier glpi-agent.bat en administrateur pour inventorier
 ```
 
