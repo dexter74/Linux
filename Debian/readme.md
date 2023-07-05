@@ -1,3 +1,8 @@
+#### Debian 11 ISO
+```
+https://cdimage.debian.org/cdimage/archive/11.7.0/amd64/iso-dvd/
+```
+
 #### Langue
 ```
 localectl set-x11-keymap fr pc105 fr terminate:ctrl_alt_bksp;
