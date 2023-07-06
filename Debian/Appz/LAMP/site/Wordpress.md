@@ -89,12 +89,17 @@ AllowOverride all
 ```
 
 #### X. Création du htaccess
-Autoriser uniquement le réseau `192.168.0.0/24` à accéder au site Wordpress.
+Autoriser uniquement le réseau `192.168.0.0/24` à accéder au site Wordpress. (Configuration de la mémoire-vive et upload Max)
 ```bash
 echo "order deny,allow
 deny from all
 allow from 192.168.0.0/255.255.255.0
-php_value upload_max_filesize 256M" > /var/www/html/wordpress/.htaccess;
+php_value upload_max_filesize 256M
+php_value post_max_size 256M
+php_value memory_limit 128M
+php_value max_execution_time 300
+php_value max_input_time 300
+" > /var/www/html/wordpress/.htaccess;
 ```
 
 Note: Sa autoriser le pare-feu et donc les Machines des Zones LAN.
