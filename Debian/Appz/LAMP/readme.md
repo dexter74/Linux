@@ -78,7 +78,7 @@ apt install -y apache2 libapache2-mod-php 1>/dev/null;
 clear;
 PASS_ROOT_SQL=admin
 apt install -y mariadb-server 1>/dev/null;
-(echo ""; echo "y"; echo "y"; echo "$PASSWORD_DB"; echo "$PASS_ROOT_SQL"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
+(echo ""; echo "y"; echo "y"; echo "$PASS_ROOT_SQL"; echo "$PASS_ROOT_SQL"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation;
 ```
 #### B. Autoriser l'authentification mysql_native_password
 Permettra à PHPMYADMIN d'accèder à la base de donnée depuis le compte root.
