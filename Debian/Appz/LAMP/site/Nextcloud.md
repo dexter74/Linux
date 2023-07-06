@@ -181,8 +181,10 @@ Pour mon utilisateur marc : /var/www/html/nextcloud/data/2B414487-7824-46EC-9F15
 
 ![image](https://github.com/dexter74/Linux/assets/35907/aefe3edc-d746-4337-a028-41fe9afdd1bb)
 
+#### X.
+sed -i -e 's/^output_buffering \=/\; output_buffering \=/g' /etc/php/8.2/apache2/php.ini;
 
-#### F. Correctif Erreur
+#### X. Correctif Erreur (FIX URL)
 ![image](https://github.com/dexter74/Linux/assets/35907/9d0fa705-7d63-4def-a313-71f0881f9dbb)
 ```
 cp /var/www/html/nextcloud/config/config.php /var/www/html/nextcloud/config/config.php.old
@@ -190,3 +192,5 @@ nano /var/www/html/nextcloud/config/config.php
 L'adresse IP n'est plus celle de la machine.
 Sous 0 => 'X.X.X.X', ajouter : 1=> '0.0.0.0',
 ```
+
+
