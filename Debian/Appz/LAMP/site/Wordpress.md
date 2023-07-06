@@ -120,8 +120,11 @@ WP htaccess Editor        : Editeur dans Wordpress du HTACCESS
 ```
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### X. Modules Complémentaires
+### X. Installation des Modules
 ```bash
+apt install -y php-dom;
+apt install -y php-zip;
 apt install -y php-imagick;
+apt install -y php-intl;
 systemctl restart apache2;
 ```
