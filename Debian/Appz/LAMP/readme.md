@@ -142,7 +142,9 @@ mysql -u root -padmin -e "SHOW DATABASES;"
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------
-## VII. Mise en place du HTTPS (Expérimental)
+## VII. Mise en place du HTTPS
+Pour permettre l'accès en HTTPS, il faut générer un certificat SSL puis configurer Apache pour qu'il charge ce certificat.
+
 ### X. Installation de OpenSSL
 Le paquet OpenSSL permet la génération de certificat de sécurité.
 ```bash
