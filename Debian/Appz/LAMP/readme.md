@@ -129,7 +129,9 @@ Pour permettre une sauvegarde de la Base de donnée, il faut augmenter le nombre
 ```nash
 clear;
 PHP_VERSION=7.4
-sed -i -e 's/\;max_input_vars = 1000/max_input_vars = 10000/g' /etc/php/$PHP_VERSION/apache2/php.ini
+sed -i -e 's/\;max_input_vars = 1000/max_input_vars = 10000/g' /etc/php/$PHP_VERSION/apache2/php.ini;
+sed -i -e 's/upload_max_filesize \= 2M/upload_max_filesize \= 8M/'  /etc/php/$PHP_VERSION/apache2/php.ini;
+post_max_size = 8M
 ```
 
 ### Relance du service Apache
