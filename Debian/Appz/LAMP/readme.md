@@ -157,10 +157,24 @@ openssl genrsa 4096 > /etc/apache2/ssl/web01.key;
 ```
 
 #### X. Création du Virtual Host
-```
-nano /etc/apache2/sites-available/default-ssl.conf
+```bash
 \/etc\/ssl\/private\/ssl-cert-snakeoil.key
 \/etc\/ssl\/certs\/ssl-cert-snakeoil.pem
 sed -i -e 's/\/etc\/ssl\/private\/ssl-cert-snakeoil.key/\/etc\/apache2\/ssl\/web01.key/g' /etc/apache2/sites-available/default-ssl.conf;
 sed -i -e 's/\/etc\/ssl\/certs\/ssl-cert-snakeoil.pem/\/etc\/apache2\/ssl\/web01.pem/g'   /etc/apache2/sites-available/default-ssl.conf;
+```
+
+#### X. Activation des modules SSL
+```bash
+a2enmod ssl
+```
+
+#### X. Activation du site default-ssl.conf
+```bash
+a2ensite default-ssl
+```
+
+#### X. Relance du service Apache
+```bash
+systemctl reload apache2
 ```
