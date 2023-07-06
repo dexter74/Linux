@@ -169,17 +169,32 @@ sed -i -e 's/\/etc\/ssl\/private\/ssl-cert-snakeoil.key/\/etc\/apache2\/ssl\/web
 sed -i -e 's/\/etc\/ssl\/certs\/ssl-cert-snakeoil.pem/\/etc\/apache2\/ssl\/web01.pem/g'   /etc/apache2/sites-available/default-ssl.conf;
 ```
 
-#### X. Activation des modules SSL
+#### X. Activation des modules
 ```bash
-a2enmod ssl
+a2enmod headers;
+a2enmod ssl;
 ```
+
+
+#### X.Prise en charge du Header
+Ajouter après `<VirtualHost _default_:443>` les lignes suivantes:
+```
+nano /etc/apache2/sites-enabled/default-ssl.conf
+
+    <IfModule mod_headers.c>
+            Header always set Strict-Transport-Security "max-age=15552000; >
+    </IfModule>
+```
+
 
 #### X. Activation du site default-ssl.conf
 ```bash
-a2ensite default-ssl
+a2ensite default-ssl;
 ```
 
 #### X. Relance du service Apache
 ```bash
 systemctl reload apache2
 ```
+
+
