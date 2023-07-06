@@ -25,7 +25,6 @@ apt upgrade -y 1>/dev/null;
 
 #### B. Configuration des interfaces réseaux
 L'interface réseau s'appelle `ens18`.
-
 ```bash
 echo "#########################################################
 # Interface de bouclage #
@@ -80,7 +79,7 @@ apt install -y mariadb-server 1>/dev/null;
 ```
 #### B. Autoriser l'authentification mysql_native_password
 Permettra à PHPMYADMIN d'accèder à la base de donnée depuis le compte root.
-```
+```bash
 mysql -u root -padmin -e "ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
 ```
 <br />
@@ -93,7 +92,7 @@ clear;
 apt install -y php 1>/dev/null;
 ```
 ### C. Connaitre la version de PHP et de ses Modules
-```
+```bash
 clear;
 apt list --installed | grep php;
 ```
@@ -102,7 +101,6 @@ apt list --installed | grep php;
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## VI. Gestionnaire de la Base De Donnée
 ### PHPMyAdmin
-
 ```bash
 clear;
 VERSION=5.2.1
@@ -125,9 +123,8 @@ mv $WWW/phpMyAdmin-$VERSION-all-languages/ $WWW/phpmyadmin;
 ### php.ini
 #### Augmenter le nombre de requête
 Pour permettre une sauvegarde de la Base de donnée, il faut augmenter le nombre de requête autorisé.
-```
+```nash
 clear;
-
 PHP_VERSION=7.4
 sed -i -e 's/\;max_input_vars = 1000/max_input_vars = 10000/g' /etc/php/$PHP_VERSION/apache2/php.ini
 ```
@@ -139,7 +136,7 @@ systemctl restart apache2;
 ```
 
 ### Afficher informations sur la BDD (User et BDD)
-```
+```bash
 mysql -u root -padmin -e "SELECT User FROM mysql.user;"
 mysql -u root -padmin -e "SHOW DATABASES;"
 ```
