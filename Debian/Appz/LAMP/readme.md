@@ -120,15 +120,14 @@ mv $WWW/phpMyAdmin-$VERSION-all-languages/ $WWW/phpmyadmin;
 ```
 
 
-### php.ini
-#### Augmenter le nombre de requête
+#### X. Configuration de php.ini
+### Augmenter le nombre de requête
 Pour permettre une sauvegarde de la Base de donnée, il faut augmenter le nombre de requête autorisé.
 ```nash
 clear;
 PHP_VERSION=7.4
 sed -i -e 's/\;max_input_vars = 1000/max_input_vars = 10000/g' /etc/php/$PHP_VERSION/apache2/php.ini
 ```
-
 
 ### Relance du service Apache
 ```bash
@@ -139,4 +138,29 @@ systemctl restart apache2;
 ```bash
 mysql -u root -padmin -e "SELECT User FROM mysql.user;"
 mysql -u root -padmin -e "SHOW DATABASES;"
+```
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+## VII. Mise en place du HTTPS (Expérimental)
+### X. Installation de OpenSSL
+Le paquet OpenSSL permet la génération de certificat de sécurité.
+```bash
+apt install -y openssl;
+```
+
+#### X Création du Certificat SSL
+```bash
+mkdir /etc/apache2/ssl;
+openssl genrsa 4096 > /etc/apache2/ssl/web01.key;
+(echo "FR"; echo "France"; echo "Haute-Savoie"; echo "Personnel"; echo "Personnel"; echo "Debian.lan"; echo ""; ) | openssl req -new -key /etc/apache2/ssl/web01.key -x509 -days 365 -out /etc/apache2/ssl/web01.pem;
+```
+
+#### X. Création du Virtual Host
+```
+nano /etc/apache2/sites-available/default-ssl.conf
+\/etc\/ssl\/private\/ssl-cert-snakeoil.key
+\/etc\/ssl\/certs\/ssl-cert-snakeoil.pem
+sed -i -e 's/\/etc\/ssl\/private\/ssl-cert-snakeoil.key/\/etc\/apache2\/ssl\/web01.key/g' /etc/apache2/sites-available/default-ssl.conf;
+sed -i -e 's/\/etc\/ssl\/certs\/ssl-cert-snakeoil.pem/\/etc\/apache2\/ssl\/web01.pem/g'   /etc/apache2/sites-available/default-ssl.conf;
 ```
