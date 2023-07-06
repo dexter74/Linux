@@ -61,7 +61,7 @@ Adresses IP sans restriction: 192.168.0.1/24
 <br />
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### X. Méthode X: Sécurisation de Wordpress par filtra IP (Expérimental)
+### X. Méthode X: Sécurisation de Wordpress par filtrage IP (Expérimental)
 
 ### X. Sauvegarde du fichier de base d'Apache
 ```bash
