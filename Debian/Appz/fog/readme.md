@@ -49,7 +49,7 @@ cd /tmp/fogproject-master/bin;
 #### SQL
 ```
 clear;
-cat /var/www/fog//lib/fog/config.class.php | grep "DATABASE_TYPE\|DATABASE_HOST\|DATABASE_NAME\|DATABASE_USERNAME\|DATABASE_PASSWORD";
+cat /var/www/fog/lib/fog/config.class.php | grep "DATABASE_TYPE\|DATABASE_HOST\|DATABASE_NAME\|DATABASE_USERNAME\|DATABASE_PASSWORD";
 ```
 
 <br />
