@@ -4,6 +4,9 @@
 Protection:
 https://wiki.debian.org/fr/Apache/mod_evasive
 
+Note:
+https://www.infotrucs.fr/configurer-des-sites-web-avec-apache2-sous-debian-9/
+
 --------------------------------------------------------------------------------------------------------------------------------
 ### I. Présentation
 **L**inux **A**pache **M**ysql et **P**HP
