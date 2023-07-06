@@ -112,6 +112,7 @@ chown -R www-data:www-data /var/www/html/wordpress;
 <br />
 
 #### X. Installation du site
+Aller sur http://X.X.X.X/wordpress
 ```bash
 Nom de la base de données      : wordpressdb
 Identifiant                    : wordpress
