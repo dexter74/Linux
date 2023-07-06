@@ -41,7 +41,6 @@ apt install -y php-mysql          1>/dev/null;
 apt install -y php-xml            1>/dev/null;
 apt install -y php-zip            1>/dev/null;
 
-
 # php -m;
 # apt search php | grep -i XXX;
 ```
@@ -57,8 +56,12 @@ clear;
 /usr/sbin/a2enmod php8.2;
 ```
 
+# Activation du Module ldap
+```bash
+/usr/sbin/a2enmod ldap;
+```
 
-#### D. Relance d'Apache
+#### E. Relance d'Apache
 ```bash
 clear;
 systemctl restart apache2;
