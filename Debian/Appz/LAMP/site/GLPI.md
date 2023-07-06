@@ -319,6 +319,7 @@ C:\Program Files\GLPI-Agent\logs\glpi-agent.log
 https://github.com/glpi-project/glpi-agentmonitor/
 ```
 
+![image](https://github.com/dexter74/Linux/assets/35907/6584ca84-c8b3-4496-aa2e-c99163bebc28)
 
 
 
