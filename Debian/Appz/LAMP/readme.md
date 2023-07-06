@@ -158,8 +158,6 @@ openssl genrsa 4096 > /etc/apache2/ssl/web01.key;
 
 #### X. Création du Virtual Host
 ```bash
-\/etc\/ssl\/private\/ssl-cert-snakeoil.key
-\/etc\/ssl\/certs\/ssl-cert-snakeoil.pem
 sed -i -e 's/\/etc\/ssl\/private\/ssl-cert-snakeoil.key/\/etc\/apache2\/ssl\/web01.key/g' /etc/apache2/sites-available/default-ssl.conf;
 sed -i -e 's/\/etc\/ssl\/certs\/ssl-cert-snakeoil.pem/\/etc\/apache2\/ssl\/web01.pem/g'   /etc/apache2/sites-available/default-ssl.conf;
 ```
