@@ -184,6 +184,21 @@ Pour mon utilisateur marc : /var/www/html/nextcloud/data/2B414487-7824-46EC-9F15
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------
+#### X. Activation du module Header
+```bash
+a2enmod headers;
+```
+
+#### X.Prise en charge du Header pour le HTTPS
+Ajouter après `<VirtualHost _default_:443>` les lignes suivantes:
+```
+nano /etc/apache2/sites-enabled/default-ssl.conf;
+    <IfModule mod_headers.c>
+            Header always set Strict-Transport-Security "max-age=15552000; >
+    </IfModule>
+```
+
+------------------------------------------------------------------------------------------------------------------------------------
 #### X. Configurer PHP 8.2
 ```
 PHP_VERSION=8.2
@@ -198,7 +213,6 @@ systemctl restart apache2;
 sed -i '172s/None/all/' /etc/apache2/apache2.conf; systemctl restart apache2;
 ```
 
-
 #### X. Correctif Erreur (FIX URL)
 ![image](https://github.com/dexter74/Linux/assets/35907/9d0fa705-7d63-4def-a313-71f0881f9dbb)
 ```
@@ -207,5 +221,4 @@ nano /var/www/html/nextcloud/config/config.php
 L'adresse IP n'est plus celle de la machine.
 Sous 0 => 'X.X.X.X', ajouter : 1=> '0.0.0.0',
 ```
-
 
