@@ -46,6 +46,9 @@ rm /tmp/latest-fr_FR.zip
 chown -R www-data:www-data /var/www/html/wordpress;
 ```
 
+
+[Extranet](https://www.tubbydev.com/2015/06/faire-un-extranet-intranet-avec-wordpress.html?fbclid=IwAR1s2c2K3M588OnnHqewrT1Baml5ZjrjpySKqlyu1VHmJZwLfXNL-QmpWWQ)
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### X. Méthode 2: Plugin Wordpress (A voir)
 Les plugins suivants force l'authentification lorsqu'on souhaite consulter Wordpress. Il existe une possibilité d'ajouter des IP ayant pas besoin de s'authentifier.
