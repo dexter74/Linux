@@ -32,7 +32,6 @@ mysql -u wordpress -pmypassword -e "SHOW DATABASES;"
 ```
 <br />
 
-
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### X. Installation de Wordpress
 #### X. Téléchargement du Site
@@ -55,7 +54,7 @@ Les plugins suivants force l'authentification lorsqu'on souhaite consulter Wordp
 Adresses IP sans restriction: 192.168.0.1/24
 ```
  
-#### X. Intranet and Extranet with O365 Login
+#### X. Intranet and Extranet with O365 Login ????
 ```
 ```
 
@@ -102,7 +101,6 @@ Note: Sa autoriser le pare-feu et donc les Machines des Zones LAN.
 chown -R www-data:www-data /var/www/html/wordpress;
 ```
 
-
 <br />
 
 
@@ -116,4 +114,11 @@ BuddyPress
 Active Directory Integration / LDAP Integration : Permet l'authentification dans une active directory, requiert le paquet php-ldap puis relancer apache2.
 WP Basic Authentication   :
 WP htaccess Editor        : Editeur dans Wordpress du HTACCESS
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### X. Modules Complémentaires
+```
+apt install -y php-imagick;
+systemctl restart apache2;
 ```
