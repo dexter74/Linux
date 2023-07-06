@@ -181,8 +181,17 @@ Pour mon utilisateur marc : /var/www/html/nextcloud/data/2B414487-7824-46EC-9F15
 
 ![image](https://github.com/dexter74/Linux/assets/35907/aefe3edc-d746-4337-a028-41fe9afdd1bb)
 
-#### X.
-sed -i -e 's/^output_buffering \=/\; output_buffering \=/g' /etc/php/8.2/apache2/php.ini;
+<br />
+
+------------------------------------------------------------------------------------------------------------------------------------
+#### X. Configurer PHP 8.2
+```
+PHP_VERSION=8.2
+sed -i -e 's/^output_buffering \=/\; output_buffering \=/g' /etc/php/$PHP_VERSION/apache2/php.ini;
+sed -i -e 's/memory_limit \= 128M/memory_limit \= 512M/g' /etc/php/$PHP_VERSION/apache2/php.ini;
+
+systemctl restart apache2;
+```
 
 #### X. Correctif Erreur (FIX URL)
 ![image](https://github.com/dexter74/Linux/assets/35907/9d0fa705-7d63-4def-a313-71f0881f9dbb)
