@@ -171,7 +171,6 @@ sed -i -e 's/\/etc\/ssl\/certs\/ssl-cert-snakeoil.pem/\/etc\/apache2\/ssl\/web01
 
 #### X. Activation des modules
 ```bash
-a2enmod headers;
 a2enmod ssl;
 ```
 
@@ -194,5 +193,3 @@ a2ensite default-ssl;
 ```bash
 systemctl reload apache2;
 ```
-
-
