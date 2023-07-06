@@ -33,14 +33,15 @@ clear;
 apt install -y libapache2-mod-php 1>/dev/null;
 apt install -y php                1>/dev/null;
 apt install -y php-ldap           1>/dev/null;
+apt install -y php-bcmath         1>/dev/null;
 apt install -y php-curl           1>/dev/null;
 apt install -y php-gd             1>/dev/null;
+apt install -y php-gmp            1>/dev/null;
 apt install -y php-intl           1>/dev/null;
 apt install -y php-mbstring       1>/dev/null;
 apt install -y php-mysql          1>/dev/null;
 apt install -y php-xml            1>/dev/null;
 apt install -y php-zip            1>/dev/null;
-
 # php -m;
 # apt search php | grep -i XXX;
 ```
