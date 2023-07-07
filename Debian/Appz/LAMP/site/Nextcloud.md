@@ -186,7 +186,7 @@ Pour mon utilisateur marc : /var/www/html/nextcloud/data/2B414487-7824-46EC-9F15
 ------------------------------------------------------------------------------------------------------------------------------------
 #### X. Activation du module Header
 ```bash
-a2enmod headers;
+/usr/sbin/a2enmod headers;
 ```
 
 #### X.Prise en charge du Header pour le HTTPS
