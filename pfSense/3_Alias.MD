@@ -72,6 +72,26 @@ Port(s)      :
 51820 Wireguard
 ```
 
+```
+Nom          : Wireguard_UDP
+Description  : Ports UDP ouverts côté Wireguard
+Port(s)      :
+53 DNS
+```
+
+```
+Nom          : Wireguard_TCP
+Description  : Ports TCP ouverts côté Wireguard
+Port(s)      :
+53 DNS
+80 HTTP
+443 HTTPS
+```
+
+
+
+
+
 ## Règle WAN:
 J'ai crée 1 règle pour les ports TCP et 1 règle pour les ports TCP pour permettre le franchissement via ses ports et protocoles dédiées.
 
