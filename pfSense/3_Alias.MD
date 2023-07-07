@@ -112,9 +112,9 @@ J'autorise le ping entre le WAN et le LAN uniquement. (192.168.0.0/24 vers 192.1
 
 - 1 règle pour les ports TCP pour permettre le franchissements.
 
-- 
+- ICMP Bloqué !
 
-![image](https://github.com/dexter74/Linux/assets/35907/a094e2e7-c23a-4f18-8d6f-d4a190fd7608)
+![image](https://github.com/dexter74/Linux/assets/35907/5c51a659-0e76-450b-ae1f-fe8a02157756)
 
 
 <br />
