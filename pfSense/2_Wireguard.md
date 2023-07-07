@@ -213,7 +213,6 @@ AllowedIPs   = 192.168.1.0/24
 AllowedIPs   = 192.168.0.0/24
 Endpoint     = 192.168.0.5:51820
 #Endpoint    = wireguard.ddns.net:51820
-
 ```
 
 ##### Etat de Wireguard
