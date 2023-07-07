@@ -4,6 +4,9 @@
 Protection:
 https://wiki.debian.org/fr/Apache/mod_evasive
 
+Reverse Proxy:
+https://perhonen.fr/blog/2015/05/un-reverse-proxy-apache-avec-mod_proxy-1713
+
 Note:
 https://www.infotrucs.fr/configurer-des-sites-web-avec-apache2-sous-debian-9/
 
