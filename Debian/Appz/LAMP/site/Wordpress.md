@@ -77,7 +77,7 @@ cat /etc/apache2/apache2.conf.old > /etc/apache2/apache2.conf;
 systemctl restart apache2;
 ```
 
-#### X. Activer le htacess dans Wordpress
+#### X. Activer le htaccess dans Wordpress
 ```
 # Remplacer la ligne 172 (none en all)
 sed -i '172s/None/all/' /etc/apache2/apache2.conf;
