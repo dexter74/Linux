@@ -109,8 +109,7 @@ Port(s)      :
 
 - Une règle qui autorise les ports UDP.
 
-![image](https://github.com/dexter74/Linux/assets/35907/cddd933f-c0b1-46d8-92a2-56f0b51dd211)
-
+![image](https://github.com/dexter74/Linux/assets/35907/63bf4ab9-2aa1-4851-8663-0579c2f169e7)
 
 <br />
 
