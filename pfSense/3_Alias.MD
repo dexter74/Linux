@@ -83,11 +83,17 @@ Port(s)      :
 Nom          : Wireguard_TCP
 Description  : Ports TCP ouverts côté Wireguard
 Port(s)      :
+22 SSH
 53 DNS
 80 HTTP
 443 HTTPS
+1110 qBitTorrent
+3272 ADGuardHome WebUI
+7777 BitWarden
+8006 Proxmox
+8097 Jellyfin
+9000 Portainer
 ```
-
 
 
 
