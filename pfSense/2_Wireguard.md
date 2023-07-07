@@ -125,10 +125,13 @@ VPN > Wireguard > Tunnels >  Add Tunnels
 ![image](https://user-images.githubusercontent.com/35907/236337098-b1524720-6256-424d-90e7-cb119c3231bd.png)
 
 ##### B. Client
+Indiquer Dans le champs "Allow IPS" une IP dans le réseau `192.168.20.X/32` (/32 = 2 IP = 1 Serveur et 1 Client)
 ```
 VPN > Wireguard > Peers >  Add Peers
 ```
-![image](https://user-images.githubusercontent.com/35907/236337732-9e1b7a0d-897e-40d6-8e84-a203c47dcb8a.png)
+![image](https://github.com/dexter74/Linux/assets/35907/8073c3ba-c7cc-4647-90dd-31054772749a)
+
+
 
 ##### Activation du Serveur
 ```
@@ -144,6 +147,7 @@ VPN > WireGuard > Paramètres
 On peut voir le réseau est actif car il est blanc et pas gris.
 
 ![image](https://user-images.githubusercontent.com/35907/236338291-3962556b-d3c0-452a-a968-0cecfc93626f.png)
+
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
