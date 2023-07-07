@@ -204,14 +204,14 @@ J'autorise les réseaux `192.168.0.0/24` et `192.168.1.0/24` car je souhaites ac
 Dans mon exemple je fais une connexion au VPN en local, mais il faudra indiquer l'IP Publique (IPV4) ou un DDYNS (Domaine qui pointe vers l'IP Publique)
 ```
 [Interface]
-PrivateKey = SFqEF+d/4BvIRmfqYDRbJppRDoOcA60ZaztAJaEHfl4=
-Address    = 192.168.20.2/32
+PrivateKey = <Clé Privée du client>
+Address    = 192.168.20.X/32
 DNS        = 192.168.20.1
 MTU        = 1500
 
 [Peer]
-PublicKey    = PIgbMLozKsxhLYMvGn87sBFLzOHL8bM341J+lZw1UCw=
-PresharedKey = h6dyEycgxcgjlzf84mxK/GtLzyUT5xVcKqmxVPlNznY=
+PublicKey    = <Clé Public du serveur>
+PresharedKey = <Clé Preshared du client>
 AllowedIPs   = 0.0.0.0/0
 AllowedIPs   = 192.168.1.0/24
 AllowedIPs   = 192.168.0.0/24
