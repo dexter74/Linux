@@ -99,11 +99,18 @@ Port(s)      :
 
 
 ## Règle WAN:
-J'ai crée 1 règle pour les ports TCP et 1 règle pour les ports TCP pour permettre le franchissement via ses ports et protocoles dédiées.
+- Une règle pour accéder au panel Web du Pare-feu. (Port 444) -  (Mauvaise pratique)
 
-J'autorise le ping entre le WAN et le LAN uniquement. (192.168.0.0/24 vers 192.168.10.0/24)
+- Une règle qui autorise le ping du WAN vers le Pare-Feu. (Mauvaise pratique)
 
-![image](https://github.com/dexter74/Linux/assets/35907/4e6cbe48-75d2-4e4e-a8ed-4cc6f9cbc9b1)
+- Une règle qui autorise le ping du WAN vers les machines du LAN. (Mauvaise pratique)
+
+- Une règle qui autorise les ports TCP.
+
+- Une règle qui autorise les ports UDP.
+
+![image](https://github.com/dexter74/Linux/assets/35907/cddd933f-c0b1-46d8-92a2-56f0b51dd211)
+
 
 <br />
 
