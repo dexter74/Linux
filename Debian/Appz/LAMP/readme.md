@@ -113,8 +113,8 @@ VERSION=5.2.1
 WWW=/var/www/html
 
 # Dépendances:
-apt install php-mysqli  1>/dev/null;
-apt install php-imagick 1>/dev/null;
+apt install -y php-mysqli  1>/dev/null;
+apt install -y php-imagick 1>/dev/null;
 
 # Téléchargement de PHPMYADMIN
 wget https://files.phpmyadmin.net/phpMyAdmin/$VERSION/phpMyAdmin-$VERSION-all-languages.zip -O /tmp/phpMyAdmin.zip 2>/dev/null;
