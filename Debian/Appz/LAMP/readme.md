@@ -174,7 +174,7 @@ sed -i -e 's/\/etc\/ssl\/certs\/ssl-cert-snakeoil.pem/\/etc\/apache2\/ssl\/web01
 
 #### X. Activation des modules
 ```bash
-a2enmod ssl;
+/usr/sbin/a2enmod ssl;
 ```
 
 #### X.Prise en charge du Header
