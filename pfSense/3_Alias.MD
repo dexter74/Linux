@@ -99,7 +99,7 @@ Port(s)      :
 
 
 ## Règle WAN:
-- Une règle pour accéder au panel Web du Pare-feu. (Port 444) -  (Mauvaise pratique)
+- Une règle pour accéder au panel Web (444*) du Pare-feu. -  (Mauvaise pratique)
 
 - Une règle qui autorise le ping du WAN vers le Pare-Feu. (Mauvaise pratique)
 
@@ -110,6 +110,8 @@ Port(s)      :
 - Une règle qui autorise les ports UDP.
 
 ![image](https://github.com/dexter74/Linux/assets/35907/63bf4ab9-2aa1-4851-8663-0579c2f169e7)
+
+Le port 80 / 443 est le port par défaut du panel, je l'ai modifié en 444.
 
 <br />
 
