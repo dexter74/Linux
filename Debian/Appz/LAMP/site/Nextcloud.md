@@ -1,4 +1,4 @@
-------------------------------------------------------------------------------------------------------------------------------------
+e------------------------------------------------------------------------------------------------------------------------------------
 ## <p align='center'> Installation de NextCloud sur Debian 11 (PHP 8 Requis)</p>
 
 <br /> 
@@ -217,9 +217,10 @@ sed -i '172s/None/all/' /etc/apache2/apache2.conf; systemctl restart apache2;
 ![image](https://github.com/dexter74/Linux/assets/35907/9d0fa705-7d63-4def-a313-71f0881f9dbb)
 ```
 cp /var/www/html/nextcloud/config/config.php /var/www/html/nextcloud/config/config.php.old
-nano /var/www/html/nextcloud/config/config.php
+nano /var/www/html/nextcloud/config/config.php;
 L'adresse IP n'est plus celle de la machine.
 Sous 0 => 'X.X.X.X', ajouter : 1=> '0.0.0.0',
+Ceci permet de faire écouter Nextcloud à toute les interfaces !
 ```
 
 #### X. Problème rencontré lors de l'installation
