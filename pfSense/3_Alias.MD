@@ -129,4 +129,4 @@ Le port 80 / 443 est le port par défaut du panel, je l'ai modifié en 444.
 
 ## Règle Wireguard:
 
-![image](https://github.com/dexter74/Linux/assets/35907/805d8f53-1630-4c0b-b51d-e6da9ad0550d)
+![image](https://github.com/dexter74/Linux/assets/35907/4725fdc1-c0c4-4242-8163-0bca401f2af0)
