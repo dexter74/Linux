@@ -180,7 +180,7 @@ a2enmod ssl;
 #### X.Prise en charge du Header
 Ajouter après `<VirtualHost _default_:443>` les lignes suivantes:
 ```
-nano /etc/apache2/sites-enabled/default-ssl.conf;
+nano /etc/apache2/sites-available/default-ssl.conf;
     <IfModule mod_headers.c>
             Header always set Strict-Transport-Security "max-age=15552000; >
     </IfModule>
@@ -189,7 +189,7 @@ nano /etc/apache2/sites-enabled/default-ssl.conf;
 
 #### X. Activation du site default-ssl.conf
 ```bash
-a2ensite default-ssl;
+/usr/sbin/a2ensite default-ssl;
 ```
 
 #### X. Relance du service Apache
