@@ -117,3 +117,6 @@ J'autorise le ping depuis le LAN.
 ![image](https://github.com/dexter74/Linux/assets/35907/a094e2e7-c23a-4f18-8d6f-d4a190fd7608)
 
 
+<br />
+
+## Règle Wireguard:
