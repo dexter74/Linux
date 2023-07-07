@@ -108,11 +108,11 @@ J'autorise le ping entre le WAN et le LAN uniquement. (192.168.0.0/24 vers 192.1
 <br />
 
 ## Règle LAN:
-J'ai crée 1 règle pour les ports TCP et 1 règle pour les ports TCP pour permettre le franchissement via ses ports et protocoles dédiées.
+- 1 règle pour les ports TCP
 
-Tout le reste est bloqué
+- 1 règle pour les ports TCP pour permettre le franchissements.
 
-J'autorise le ping depuis le LAN.
+- 
 
 ![image](https://github.com/dexter74/Linux/assets/35907/a094e2e7-c23a-4f18-8d6f-d4a190fd7608)
 
@@ -120,3 +120,5 @@ J'autorise le ping depuis le LAN.
 <br />
 
 ## Règle Wireguard:
+
+![image](https://github.com/dexter74/Linux/assets/35907/805d8f53-1630-4c0b-b51d-e6da9ad0550d)
