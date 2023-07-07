@@ -222,3 +222,8 @@ L'adresse IP n'est plus celle de la machine.
 Sous 0 => 'X.X.X.X', ajouter : 1=> '0.0.0.0',
 ```
 
+#### X. Problème rencontré lors de l'installation
+```
+Si à l'installation de Nextcloud, la page indique des modules manquants il faut faire apt install php-<nom du module> et la console affiche qu'il demande un texte en explicite donc se sera apt install php8.2-<module php>
+Puis il faudra relancer le service apache.
+```
