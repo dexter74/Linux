@@ -188,6 +188,7 @@ ping –f –l 1420 www.yahoo.fr
 ### VI. Pare-Feu
 ###### WAN
 Lors du choix "Source" il faut choisir Tout si on accéde sur un réseau autre que le WAN de pfsense.
+
 ![image](https://user-images.githubusercontent.com/35907/236339693-fa31fef5-d22b-4450-b87b-42ad2c006401.png)
 
 ###### Autoriser Flux
@@ -203,7 +204,8 @@ Lors du choix "Source" il faut choisir Tout si on accéde sur un réseau autre q
 ### VII. Connexion depuis le client
 J'autorise les réseaux `192.168.0.0/24` et `192.168.1.0/24` car je souhaites accéder à ses réseaux. Le terme `EndPoint` est l'adresse du serveur.
 
-Dans mon exemple je fais une connexion au VPN en local, mais il faudra indiquer l'IP Publique (IPV4) ou un DDYNS (Domaine qui pointe vers l'IP Publique)
+Pour la valeur `Address` indiquer l'adresse IP qui été déclarer dans la configuration du Client dans pfsense.
+
 ```
 [Interface]
 PrivateKey = <Clé Privée du client>
