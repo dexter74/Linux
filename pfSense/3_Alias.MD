@@ -96,6 +96,18 @@ Port(s)      :
 9000 Portainer
 ```
 
+```
+Nom         : LAN_UDP_APPZ
+Description : Ports UDP ouverts côté LAN
+Port(s)     :
+50000:50005 Discord
+```
+
+```
+Nom         : LAN_TCP_APPZ
+Description : Ports TCP ouverts côté LAN
+Port(s)     :
+```
 
 
 
