@@ -190,9 +190,10 @@ Lors du choix "Source" il faut choisir Tout si on accéde sur un réseau autre q
 ###### Autoriser Flux
 ![image](https://github.com/dexter74/Linux/assets/35907/9afe7d3c-d6f9-44c9-812c-8ca6456398ef)
 
-
 ###### Wireguard
 ![image](https://user-images.githubusercontent.com/35907/236339772-8f69c96a-30f5-4166-bffa-03e1e901b393.png)
+
+![image](https://github.com/dexter74/Linux/assets/35907/27e75667-e2ca-490d-9d04-493276d19e70)
 
 <br />
 
