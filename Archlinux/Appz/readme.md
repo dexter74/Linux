@@ -1,5 +1,6 @@
 #### Logiciels à voir
 Rustdesk
+btrfs assistant
 
 #### Guide d'utilisation
 0. [Serveur d'affichage](https://github.com/dexter74/Linux/blob/main/Archlinux/Appz/Serveur_Affichage/Xorg.md)
