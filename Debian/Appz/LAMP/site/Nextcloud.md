@@ -149,9 +149,9 @@ Nextcloud:
  > Hôte: Adresse IP du serveur AD
  > Port: 189 (TCP/UDP) ou cliquer sur "Détecter le port"
  > DN utilisateur: Coller la valeur mis dans le bloc Note . (Exemple: CN=ldap,CN=Users,DC=LAN,DC=LOCAL)
- > Mot de passe: Taper le mot de passe du compte LDAP
+ > Mot de passe: Taper le mot de passe du compte LDAP puis cliquer sur le bouton "Sauvegarder les informations d'identifications" (Important)
  > Ne pas cocher la case ""Évite les requêtes LDAP automatiques ..."
- > Cliquer sur Détecter le DN de base"
+ > Cliquer sur Détecter le DN de base", normalement ce champs ce complète automatiquement. (En cas de problème: Vérifier le mdp du compte, le champs mot de passe et d'avoir cliquer sur le bouton expliquer ci dessus)
    > Message : Configuration OK
  > Cliquer sur Continuer
  > Attributs: 
