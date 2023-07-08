@@ -37,6 +37,7 @@ Port(s)     :
 1110 qBitTorrent
 1111 Jackett
 1112 Radarr
+1688 KMS Windows
 3306 MySQL
 3272 ADGuardHome WebUI
 7777 BitWarden
