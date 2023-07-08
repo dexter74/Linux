@@ -59,9 +59,10 @@ Description  : Ports TCP ouverts côté WAN
 Port(s)      :
 
 22 SSH
-80 HTTP 
+80 HTTP
 81 Nginx Reverse Proxy
 389 LDAP
+443 HTTPS
 3389 MS-RDP
 ```
 
