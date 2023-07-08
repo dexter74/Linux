@@ -116,6 +116,17 @@ sed -i -e 's/enterprise/download/g' /etc/apt/sources.list.d/pve-enterprise.list;
 ```
 <br />
 
+
+### WakeOkLna
+```
+# Récupérer l'adresse Mac:
+ip add show vmbr0 | grep ether | cut -d "r" -f 2 | cut -d " " -f 2;
+
+# Aller dans le Noeud puis sur Systèmes puis Options
+# Editer "Adresse MAC pour le Wake-On-LAN"  (04:d9:f5:82:2c:96)
+```
+
+
 --------------------------------------------------------------------------------
 
 #### [Serveur Samba](https://github.com/dexter74/Linux/blob/main/Proxmox/samba.md)
