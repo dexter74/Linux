@@ -119,11 +119,14 @@ sed -i -e 's/enterprise/download/g' /etc/apt/sources.list.d/pve-enterprise.list;
 
 ### WakeOkLna
 ```
+# Activer le WakeOnLan dans Le bios
+
 # Récupérer l'adresse Mac:
 ip add show vmbr0 | grep ether | cut -d "r" -f 2 | cut -d " " -f 2;
 
 # Aller dans le Noeud puis sur Systèmes puis Options
 # Editer "Adresse MAC pour le Wake-On-LAN"  (04:d9:f5:82:2c:96)
+# Réveiller: Juste faire clique droit sur le Noeud puis WakeOnLan
 ```
 
 
