@@ -101,12 +101,14 @@ Nom         : LAN_UDP_APPZ
 Description : Ports UDP ouverts côté LAN
 Port(s)     :
 50000:50020 Discord
+27000:27100 Steam Plateforme
 ```
 
 ```
 Nom         : LAN_TCP_APPZ
 Description : Ports TCP ouverts côté LAN
 Port(s)     :
+27000:27100 Steam Plateforme
 ```
 
 
