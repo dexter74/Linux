@@ -100,7 +100,7 @@ Port(s)      :
 Nom         : LAN_UDP_APPZ
 Description : Ports UDP ouverts côté LAN
 Port(s)     :
-50000:50005 Discord
+50000:50020 Discord
 ```
 
 ```
