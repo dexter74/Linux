@@ -172,7 +172,9 @@ On peut voir le réseau est actif car il est blanc et pas gris.
 
 ![image](https://user-images.githubusercontent.com/35907/236339386-caff331c-85c4-4a90-8b1d-cc3328968e06.png)
 
-La valeur `MTU` peut être défini à `1420` pour éviter des problème de taille de paquet. Du côté Client faudra indiquer la valeur `MTU = 1420`
+La valeur `MTU` peut être défini à `1420` pour éviter des problème de taille de paquet. 
+
+Du côté Client faudra indiquer la valeur `MTU = 1420`
 
 CMD:
 ```batch
