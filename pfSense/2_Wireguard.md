@@ -131,6 +131,9 @@ VPN > Wireguard > Peers >  Add Peers
 ```
 ![image](https://github.com/dexter74/Linux/assets/35907/8073c3ba-c7cc-4647-90dd-31054772749a)
 
+![image](https://github.com/dexter74/Linux/assets/35907/4b0f85bc-cf83-4bcd-a2b4-3f2f273286b8)
+
+
 
 
 ##### Activation du Serveur
@@ -192,8 +195,6 @@ Lors du choix "Source" il faut choisir Tout si on accéde sur un réseau autre q
 
 ###### Wireguard
 ![image](https://user-images.githubusercontent.com/35907/236339772-8f69c96a-30f5-4166-bffa-03e1e901b393.png)
-
-![image](https://github.com/dexter74/Linux/assets/35907/27e75667-e2ca-490d-9d04-493276d19e70)
 
 <br />
 
