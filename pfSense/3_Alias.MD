@@ -2,10 +2,6 @@
 ## <p align='center'> Pfsense - Alias pour mon réseau local </p>
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-137
-138
-445
-
 Pour le réseau `LAN`, il faudra choisir `LAN net` pour la source. 
 
 ### 1. Alias IP
@@ -33,6 +29,7 @@ Port(s)     :
 81 Nginx Reverse Proxy
 90 FreshRSS
 443 HTTPS
+445 Samba
 1005 Dozzle
 1110 qBitTorrent
 1111 Jackett
