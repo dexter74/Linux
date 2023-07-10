@@ -8,7 +8,9 @@ Storage :
 
 #### Information sur le système d'exploitation
 ```
-Debian 11
+Nom de la Distribution: Debian
+Nom de la Release : Bullseye
+Numéro de Release : 11.7
 ```
 
 #### Information sur la configuration Réseau
