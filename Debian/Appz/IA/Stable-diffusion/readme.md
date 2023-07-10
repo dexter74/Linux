@@ -90,7 +90,7 @@ create mask    = 0700
 directory mask = 0700
 guest ok       = no
 
-[SYSTEM]
+[System]
 comment        = Acces au dossier root
 path           = /
 browseable     = yes
@@ -100,13 +100,21 @@ valid users    = marc
 force user     = root
 guest ok       = no
 
-#[homes]
-#   comment = Home Directories
-#   browseable = no
-#   read only = yes
-#   create mask = 0700
-#   directory mask = 0700
-#   valid users = %S" >  /etc/samba/smb.conf;
+
+#[NomdemonPartage]
+#comment 	= Mon commentaire
+#path		= /chemin
+#browseable 	= yes | no (Partage Visible ou cacher)
+#writable 	= yes | no 
+#write list     = # Si writable absent
+
+#read only 	= yes | no
+#valid users 	= USER1, USER2, @groupe12000 %S  (Utilisateurs, Groupe ou Services autorisés)
+#force user	= utilisateur de substitution
+#create mask 	= 0700 (Conseiller) | 0755 (déconseiller)
+#directory mask	= 0700 (Conseiller) | 0755 (déconseiller)			
+#guest ok	= no | yes (Permet aux clients de se connecter au répertoire partagé sans fournir de mot de passe.)
+" >  /etc/samba/smb.conf;
 
 systemctl restart smbd;
 ```
