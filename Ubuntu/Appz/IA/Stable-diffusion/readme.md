@@ -188,7 +188,7 @@ git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git $HOME/stab
 cd $HOME/stable-diffusion;
 python3 -m venv venv --system-site-packages;
 source venv/bin/activate;
-pip install -r requirements.txt;
+pip install -r requirements.txt 2> $HOME/error.log;
 ```
 
 
@@ -199,5 +199,5 @@ pip install -r requirements.txt;
 mkdir $HOME/stable-diffusion/models/Lora
 sed -i -e 's/\#export COMMANDLINE_ARGS\=\"\"/export COMMANDLINE_ARGS\=\"--skip-torch-cuda-test --precision full --no-half --listen \"/g' $HOME/stable-diffusion/webui-user.sh;
 sed -i '/^export COMMANDLINE_ARGS=*/a export PYTORCH_HIP_ALLOC_CONF="garbage_collection_threshold:0.6,max_split_size_mb:128\"' $HOME/stable-diffusion/webui-user.sh;
-sed -i '/^export PYTORCH_HIP_ALLOC_CONF\=.*/a export PYTORCH_CUDA_ALLOC_CONF\=\"garbage_collection_threshold\:0.6,max_split_size_mb:128\"' $HOME/stable-diffusion/webui-user.sh 2> $HOME/error.log;
+sed -i '/^export PYTORCH_HIP_ALLOC_CONF\=.*/a export PYTORCH_CUDA_ALLOC_CONF\=\"garbage_collection_threshold\:0.6,max_split_size_mb:128\"' $HOME/stable-diffusion/webui-user.sh;
 ```
