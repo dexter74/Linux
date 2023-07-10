@@ -1,2 +1,1 @@
-
-https://raw.githubusercontent.com/christgau/wsdd
+https://github.com/christgau/wsdd
