@@ -8,13 +8,13 @@
 #### Sujet
 ```
 (anthropomorphized: 0.1)
-femme
-homme
-robot
-animal
+femme,
+homme,
+robot,
+animal,
 furry,
 poilu,
-fourrure
+fourrure,
 ```
 
 #### Arrière-plan
