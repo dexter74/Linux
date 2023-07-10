@@ -55,23 +55,25 @@ apt install -y sudo;
 ```
 
 #### Sudoers L'utilisateur
-```
+```bash
+clear;
 echo "marc ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/admin;
 ```
 
 
-#### Samba
-```
+#### Création de l'utilisateur Samba
+```bash
 clear;
-smbpasswd -a marc;
+(echo "admin"; echo "admin") | smbpasswd -a marc;
 smbpasswd -e marc;
 systemctl restart smbd;
+```
 
-cp /etc/samba/smb.conf /etc/samba/smb.conf.old;
-nano /etc/samba/smb.conf;
-systemctl restart smbd;
+#### Configuration de Samba
+```bash
+clear;
 
-client min protocol = NT1
+echo "client min protocol = NT1
 client max protocol = SMB3
 
 ###################################
@@ -104,5 +106,7 @@ guest ok       = no
 #   read only = yes
 #   create mask = 0700
 #   directory mask = 0700
-#   valid users = %S
+#   valid users = %S" >  /etc/samba/smb.conf;
+
+systemctl restart smbd;
 ```
