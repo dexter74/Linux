@@ -48,7 +48,6 @@ apt upgrade -y 1>/dev/null;
 
 #### Packages
 ```bash
-apt install -y avahi;
 apt install -y samba;
 apt install -y samba-common;
 apt install -y smbclient;
