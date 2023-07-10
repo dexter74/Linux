@@ -95,6 +95,7 @@ apt upgrade -y 1>/dev/null;
 ```bash
 apt install -y curl;
 apt install -y git;
+apt install -y pip;
 apt install -y python3-dev;
 apt install -y samba;
 apt install -y samba-common;
