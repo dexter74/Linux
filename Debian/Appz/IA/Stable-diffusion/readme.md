@@ -13,6 +13,11 @@ Nom de la Release : Bullseye
 Numéro de Release : 11.7
 ```
 
+#### MotD
+```
+echo "" > /etc/motd;
+```
+
 #### Information sur la configuration Réseau
 ```bash
 echo "# The loopback network interface
