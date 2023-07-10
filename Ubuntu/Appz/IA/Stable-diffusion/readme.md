@@ -96,6 +96,7 @@ apt install -y git          1>/dev/null;
 apt install -y pip          1>/dev/null;
 apt install -y python3-dev  1>/dev/null;
 apt install -y python3-venv 1>/dev/null;
+apt install -y radeontop    1>/dev/null;
 apt install -y samba        1>/dev/null;
 apt install -y samba-common 1>/dev/null;
 apt install -y smbclient    1>/dev/null;
