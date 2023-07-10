@@ -37,6 +37,8 @@ echo "" > /etc/motd;
 
 #### Information sur la configuration Réseau
 ```bash
+clear;
+
 NIC=enp6s18
 echo "# The loopback network interface
 auto lo
