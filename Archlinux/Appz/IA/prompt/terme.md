@@ -8,8 +8,8 @@
 #### Sujet
 ```
 (anthropomorphized: 0.1)
-femme,
-homme,
+femme, femelle
+homme, mâle
 robot,
 animal,
 furry,
