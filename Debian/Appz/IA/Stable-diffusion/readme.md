@@ -93,12 +93,14 @@ apt upgrade -y 1>/dev/null;
 
 #### Packages
 ```bash
+apt install -y curl;
 apt install -y git;
+apt install -y python3-dev;
 apt install -y samba;
 apt install -y samba-common;
 apt install -y smbclient;
 apt install -y sudo;
-
+apt install -y unzip;
 ```
 
 #### Sudoers L'utilisateur
@@ -172,3 +174,12 @@ apt update;
 apt install wsdd;
 systemctl enable --now wsdd;
 ```
+
+
+#### Stable-Diffusion
+```bash
+clear;
+wget https://github.com/cmdr2/stable-diffusion-ui/releases/download/v2.5.24/Easy-Diffusion-Linux.zip;
+unzip Easy-Diffusion-Linux.zip;
+cd easy-diffusion;
+bash start.sh;
