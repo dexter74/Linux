@@ -48,7 +48,7 @@ iface ens18 inet static
  address 192.168.0.60
  netmask 255.255.255.0
  gateway 192.168.0.1
- dns-nameserver 192.168.0.1" >  /etc/network/interfaces
+ dns-nameserver 192.168.0.1" >  /etc/network/interfaces; systemctl restart networking;
 ```
 
 #### Information sur le nom de la machine
