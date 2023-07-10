@@ -89,15 +89,15 @@ apt upgrade -y 1>/dev/null;
 
 #### Packages
 ```bash
-apt install -y curl;
-apt install -y git;
-apt install -y pip;
-apt install -y python3-dev;
-apt install -y samba;
-apt install -y samba-common;
-apt install -y smbclient;
-apt install -y sudo;
-apt install -y unzip;
+apt install -y curl         1>/dev/null;
+apt install -y git          1>/dev/null;
+apt install -y pip          1>/dev/null;
+apt install -y python3-dev  1>/dev/null;
+apt install -y samba        1>/dev/null;
+apt install -y samba-common 1>/dev/null;
+apt install -y smbclient    1>/dev/null;
+apt install -y sudo         1>/dev/null;
+apt install -y unzip        1>/dev/null;
 ```
 
 #### Sudoers L'utilisateur
