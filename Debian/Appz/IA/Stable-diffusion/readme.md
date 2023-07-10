@@ -53,8 +53,12 @@ iface ens18 inet static
 
 #### Information sur le nom de la machine
 ```bash
+clear;
+
+##########################
 MACHINE=StableDiffusion
 Domain=lan
+##########################
 
 echo "$MACHINE" > /etc/hostname
 
