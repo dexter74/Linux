@@ -176,7 +176,7 @@ source /etc/os-release;
 echo "deb [signed-by=/usr/share/keyrings/wsdd.gpg] https://pkg.ltec.ch/public/ ${UBUNTU_CODENAME:-${VERSION_CODENAME:-UNKNOWN}} main" > /etc/apt/sources.list.d/wsdd.list;
 apt update;
 apt install wsdd;
-systemctl enable --now wsdd
+systemctl enable --now wsdd;
 ```
 
 #### Stable-Diffusion
