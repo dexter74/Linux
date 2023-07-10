@@ -101,6 +101,9 @@ apt install -y samba-common 1>/dev/null;
 apt install -y smbclient    1>/dev/null;
 apt install -y sudo         1>/dev/null;
 apt install -y unzip        1>/dev/null;
+
+# Proxmox:
+apt install -y qemu-guest-agent 1>/dev/null;
 ```
 
 #### Sudoers L'utilisateur
