@@ -186,4 +186,5 @@ cd easy-diffusion;
 bash start.sh;
 
 # Dependances: 	libgl1
+# /home/marc/easy-diffusion/scripts/on_sd_start.sh 
 ```
