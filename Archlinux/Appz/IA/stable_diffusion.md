@@ -105,8 +105,7 @@ systemctl enable  sdwebui.service;
 # https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Optimizations
 # --skip-python-version-check
 # --skip-torch-cuda-test
-#  --share
- #  --listen
+#  --listen => Ecoute sur 0.0.0.0
 # --medvram
 # --opt-split-attention 
 # --precision full
