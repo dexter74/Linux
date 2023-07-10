@@ -4,6 +4,7 @@ clear;
 sudo pacman -Sy --noconfirm python-pip;
 sudo pacman -Sy --noconfirm python-pytorch-opt-rocm; # AVX2 (CPU)
 git clone https://aur.archlinux.org/python-torchvision-rocm.git;
+
 cd python-torchvision-rocm;
 makepkg -si --noconfirm;
 ```
