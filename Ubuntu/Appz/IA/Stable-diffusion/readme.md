@@ -37,14 +37,15 @@ echo "" > /etc/motd;
 
 #### Information sur la configuration Réseau
 ```bash
+NIC=enp6s18
 echo "# The loopback network interface
 auto lo
 iface lo inet loopback
 
 # The primary network interface
-auto ens18
-allow-hotplug ens18
-iface ens18 inet static
+auto $NIC
+allow-hotplug $NIC
+iface $NIC inet static
  address 192.168.0.60
  netmask 255.255.255.0
  gateway 192.168.0.1
