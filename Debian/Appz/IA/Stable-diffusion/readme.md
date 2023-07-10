@@ -93,10 +93,12 @@ apt upgrade -y 1>/dev/null;
 
 #### Packages
 ```bash
+apt install -y git;
 apt install -y samba;
 apt install -y samba-common;
 apt install -y smbclient;
 apt install -y sudo;
+
 ```
 
 #### Sudoers L'utilisateur
@@ -168,6 +170,5 @@ source /etc/os-release;
 echo "deb [signed-by=/usr/share/keyrings/wsdd.gpg] https://pkg.ltec.ch/public/ ${UBUNTU_CODENAME:-${VERSION_CODENAME:-UNKNOWN}} main" > /etc/apt/sources.list.d/wsdd.list;
 apt update;
 apt install wsdd;
-
 systemctl enable --now wsdd;
 ```
