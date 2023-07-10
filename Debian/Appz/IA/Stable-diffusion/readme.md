@@ -13,7 +13,16 @@ Nom de la Release : Bullseye
 Numéro de Release : 11.7
 ```
 
-#### MotD
+#### Information sur le partitionnement
+```
+Partition 1: EFI
+Partition 2: LVM
+ > /         SYSTEM 
+ > /home     HOME
+ > /srv      StableDiffusion
+```
+
+#### Motd
 ```
 echo "" > /etc/motd;
 ```
