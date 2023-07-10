@@ -15,6 +15,7 @@ Numéro de Release : 11.7
 
 #### Information sur le partitionnement
 | Partition | Format |
+| --------- | ------ |
 | 1         | EFI    |
 | 2         | LVM    |
 
