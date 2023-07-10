@@ -14,13 +14,19 @@ Numéro de Release : 11.7
 ```
 
 #### Information sur le partitionnement
-```
-Partition 1: EFI
-Partition 2: LVM
- > /         SYSTEM 
- > /home     HOME
- > /srv      StableDiffusion
-```
+| Partition | Format |
+| 1         | EFI    |
+| 2         | LVM    |
+
+#### Informatino sur le LVM
+| VP   | VG   | VL        | Format | Taille | 
+| ---- | ---- | --------- | ------ | ------ |
+| sda  | vg0  | Swap      | Swap   |  8 Go  |
+| sda  | vg0  | System    | Swap   | 20 Go  |
+| sda  | vg0  | Home      | Swap   | 10 Go  |
+| sda  | vg0  | Data      | Swap   | 30 Go  |
+| sda  | vg0  | TimeShift | Swap   | 60 Go  |
+
 
 #### Motd
 ```
