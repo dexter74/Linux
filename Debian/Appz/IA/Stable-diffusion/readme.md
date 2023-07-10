@@ -30,7 +30,8 @@ Numéro de Release : 11.7
 
 
 #### Motd
-```
+```bash
+clear;
 echo "" > /etc/motd;
 ```
 
