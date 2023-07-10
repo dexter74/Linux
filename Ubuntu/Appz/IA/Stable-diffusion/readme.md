@@ -173,4 +173,12 @@ systemctl enable --now wsdd;
 #### Stable-Diffusion
 ```bash
 clear;
+clear;
+cd $HOME;
+rm -rf HOME/stable-diffusion 2>/dev/null;
+git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git $HOME/stable-diffusion;
+cd $HOME/stable-diffusion;
+python3 -m venv venv --system-site-packages;
+source venv/bin/activate;
+pip install -r requirements.txt;
 ```
