@@ -104,6 +104,7 @@ apt install -y unzip        1>/dev/null;
 
 # Proxmox:
 apt install -y qemu-guest-agent 1>/dev/null;
+systemctl enable --now qemu-guest-agent.service 1>/dev/null;
 ```
 
 #### Sudoers L'utilisateur
