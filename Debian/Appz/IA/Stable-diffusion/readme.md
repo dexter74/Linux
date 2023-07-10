@@ -180,11 +180,4 @@ systemctl enable --now wsdd;
 #### Stable-Diffusion
 ```bash
 clear;
-wget https://github.com/cmdr2/stable-diffusion-ui/releases/download/v2.5.24/Easy-Diffusion-Linux.zip;
-unzip Easy-Diffusion-Linux.zip;
-cd easy-diffusion;
-bash start.sh;
-
-# Dependances: 	libgl1
-# /home/marc/easy-diffusion/scripts/on_sd_start.sh 
 ```
