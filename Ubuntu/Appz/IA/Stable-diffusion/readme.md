@@ -82,17 +82,20 @@ echo "" > /etc/apt/sources.list;
 
 #### Mise à jour
 ```bash
-apt update;
+clear;
+apt update 1>/dev/null;
 apt upgrade -y 1>/dev/null;
 ```
 
 
 #### Packages
 ```bash
+clear;
 apt install -y curl         1>/dev/null;
 apt install -y git          1>/dev/null;
 apt install -y pip          1>/dev/null;
 apt install -y python3-dev  1>/dev/null;
+apt install -y python3-venv 1>/dev/null;
 apt install -y samba        1>/dev/null;
 apt install -y samba-common 1>/dev/null;
 apt install -y smbclient    1>/dev/null;
@@ -162,20 +165,18 @@ guest ok       = no
 #guest ok	= no | yes (Permet aux clients de se connecter au répertoire partagé sans fournir de mot de passe.)" >  /etc/samba/smb.conf; systemctl restart smbd;
 ```
 
-#### Installation de WSDD
+#### Installation de WSDD (/etc/wsdd.conf)
 ```bash
 wget -O- https://pkg.ltec.ch/public/conf/ltec-ag.gpg.key | gpg --dearmour > /usr/share/keyrings/wsdd.gpg;
 source /etc/os-release;
 echo "deb [signed-by=/usr/share/keyrings/wsdd.gpg] https://pkg.ltec.ch/public/ ${UBUNTU_CODENAME:-${VERSION_CODENAME:-UNKNOWN}} main" > /etc/apt/sources.list.d/wsdd.list;
 apt update;
 apt install wsdd;
-systemctl enable --now wsdd;
+systemctl enable --now wsdd
 ```
-
 
 #### Stable-Diffusion
 ```bash
-clear;
 clear;
 cd $HOME;
 rm -rf HOME/stable-diffusion 2>/dev/null;
