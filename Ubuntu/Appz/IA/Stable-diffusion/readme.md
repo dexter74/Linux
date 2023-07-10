@@ -8,9 +8,9 @@ Storage :
 
 #### Information sur le système d'exploitation
 ```
-Nom de la Distribution: Debian
-Nom de la Release : Bullseye
-Numéro de Release : 11.7
+Nom de la Distribution: Ubunyu
+Nom de la Release : XXXX
+Numéro de Release : XXXX
 ```
 
 #### Information sur le partitionnement
