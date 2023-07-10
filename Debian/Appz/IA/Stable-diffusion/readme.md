@@ -27,6 +27,23 @@ iface ens18 inet static
  dns-nameserver 192.168.0.1" >  /etc/network/interfaces
 ```
 
+#### Information sur le nom de la machine
+```bash
+MACHINE=StableDiffusion
+Domain=lan
+
+echo "$MACHINE" > /etc/hostname
+
+echo "#### IPV4
+127.0.0.1       localhost
+127.0.1.1       $MACHINE.lan  $MACHINE
+
+#### IPV6
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters" > /etc/hosts
+```
+
 #### Sourceslist
 ```bash
 echo "deb     http://ftp.fr.debian.org/debian/           bullseye main non-free
