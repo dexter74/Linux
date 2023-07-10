@@ -206,3 +206,5 @@ cd $HOME/stable-diffusion;
 sh webui.sh;
 radeontop -c;
 ```
+
+[ArchLinux](https://github.com/dexter74/Linux/blob/main/Archlinux/Appz/IA/stable_diffusion.md)
