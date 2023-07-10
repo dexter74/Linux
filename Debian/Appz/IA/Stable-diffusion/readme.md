@@ -64,8 +64,9 @@ echo "marc ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/admin;
 #### Création de l'utilisateur Samba
 ```bash
 clear;
-(echo "admin"; echo "admin") | smbpasswd -a marc;
-smbpasswd -e marc;
+smbpasswd -x marc 1>/dev/null 2>/dev/null;
+(echo "admin"; echo "admin") | smbpasswd -a marc 1>/dev/null;
+smbpasswd -e marc 1>/dev/null;
 systemctl restart smbd;
 ```
 
@@ -113,8 +114,5 @@ guest ok       = no
 #force user	= utilisateur de substitution
 #create mask 	= 0700 (Conseiller) | 0755 (déconseiller)
 #directory mask	= 0700 (Conseiller) | 0755 (déconseiller)			
-#guest ok	= no | yes (Permet aux clients de se connecter au répertoire partagé sans fournir de mot de passe.)
-" >  /etc/samba/smb.conf;
-
-systemctl restart smbd;
+#guest ok	= no | yes (Permet aux clients de se connecter au répertoire partagé sans fournir de mot de passe.)" >  /etc/samba/smb.conf; systemctl restart smbd;
 ```
