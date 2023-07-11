@@ -8,7 +8,7 @@ Storage :
 
 #### Information sur le système d'exploitation
 ```
-Nom de la Distribution: Ubunyu
+Nom de la Distribution: Ubuntu
 Nom de la Release : XXXX
 Numéro de Release : XXXX
 ```
