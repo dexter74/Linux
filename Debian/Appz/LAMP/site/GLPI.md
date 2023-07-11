@@ -91,6 +91,14 @@ PASSDB=admin
 --db-user=$USERNAMEDB \
 --db-password=$PASSDB \
 --force;
+
+
+# Modifier l'URL du Site (Localhost vers l'ip de la machine. (Ex: http://192.168.0.10)
+# mysql -u root -padmin;
+# USE GLPI;
+# UPDATE `glpi_configs` SET `value` = 'http://192.168.0.10' WHERE `glpi_configs`.`id` = 38;
+# exit;
+
 ```
 
 ##### B. Réponse des questions
