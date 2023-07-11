@@ -75,6 +75,7 @@ mysql -u root -padmin -e "ALTER USER GLPI@localhost IDENTIFIED VIA mysql_native_
 ##### A. Installation du site
 ```
 clear;
+
 LANGUE=fr_FR
 HOST=localhost
 DATABSE=GLPI
@@ -91,6 +92,16 @@ PASSDB=admin
 --db-password=$PASSDB \
 --force;
 ```
+
+##### B. Réponse des questions
+La première question est la confirmation de l'installation.
+
+La seconde question l'envoi des statistiques du site GLPI vers la "société GLPI".
+
+![image](https://github.com/dexter74/Linux/assets/35907/e6b16ec2-1626-437a-95a1-af231ac42a7d)
+
+
+
 
 ##### B. Supprimer le fichier Install.php
 Le fichier install.php doit être renommé ou Supprimé
