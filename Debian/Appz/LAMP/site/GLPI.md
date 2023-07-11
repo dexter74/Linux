@@ -4,6 +4,13 @@
 
 !!!! A mettre à jour par rapport à ce tutorial: https://neptunet.fr/install-glpi10/
 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+### Préparation de l'environnement
+Il faut appliquer la fiche LAMP avant d'installer GLPI.
+
+
+
 --------------------------------------------------------------------------------------------------------------------------------------------
 ### I. Préparation Environnement
 ##### A. Télécharger GLPI
