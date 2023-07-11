@@ -91,14 +91,6 @@ PASSDB=admin
 --db-user=$USERNAMEDB \
 --db-password=$PASSDB \
 --force;
-
-
-# Modifier l'URL du Site (Localhost vers l'ip de la machine. (Ex: http://192.168.0.10)
-# mysql -u root -padmin;
-# USE GLPI;
-# UPDATE `glpi_configs` SET `value` = 'http://192.168.0.10' WHERE `glpi_configs`.`id` = 38;
-# exit;
-
 ```
 
 ##### B. Réponse des questions
@@ -110,12 +102,21 @@ La seconde question l'envoi des statistiques du site GLPI vers la "société GLP
 
 
 
-
-##### B. Supprimer le fichier Install.php
+##### C. Supprimer le fichier Install.php
 Le fichier install.php doit être renommé ou Supprimé
 ```bash
 rm /var/www/html/glpi/install/install.php;
 ```
+
+##### D. Editer l'URL de GLPI (Facultatif)
+Par défaut l'URL est sur http://localhost, il faut modifier l'URL. La commande suivante modifie la valeur d'une table.
+
+Le serveur à comme adresse 192.168.0.10
+```sql
+mysql -u GLPI -padmin -e "USE GLPI; UPDATE glpi_configs SET value = 'http://192.168..10' WHERE glpi_configs.id = 38;"
+```
+
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 #### IV. Configuration du site Apache
