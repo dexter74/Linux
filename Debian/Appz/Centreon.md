@@ -102,7 +102,7 @@ En cas de problème de type:
 
 ![image](https://github.com/dexter74/Linux/assets/35907/a111b1d7-8f42-43c6-97e8-eb5e02c3b692)
 
-Taper la commande apt `install -f` puis relancer les commandes précédentes.
+Taper la commande `apt install -f` puis relancer les commandes précédentes.
 
 #### G. Définir le fuseau horaire de Centreon
 ```bash
