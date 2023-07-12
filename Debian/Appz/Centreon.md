@@ -133,7 +133,7 @@ systemctl enable php8.1-fpm apache2 centreon cbd centengine gorgoned centreontra
 ## IV. Divers
 ### A. Définir une IP Statique
 ```
-nano /etc/sysconfig/network-scripts/ifcfg-eth0
+nano /etc/sysconfig/network-scripts/ifcfg-eth0;
 ```
 
 ```
@@ -146,4 +146,9 @@ GATEWAY=
 NETMASK=
 DNS1=X.X.X.X
 DNS2=X.X.X.X
+```
+
+
+```
+systemctl restart networking;
 ```
