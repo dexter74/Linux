@@ -128,27 +128,3 @@ systemctl enable php8.1-fpm apache2 centreon cbd centengine gorgoned centreontra
 
 ![image](https://github.com/dexter74/Linux/assets/35907/38201eae-3014-483f-b7ac-1a6a6f710482)
 
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## IV. Divers
-### A. Définir une IP Statique
-```
-nano /etc/sysconfig/network-scripts/ifcfg-eth0;
-```
-
-```
-# DHCP en static
-BOOTPROTO=static
-
-# Définir IP Statique
-IPADDR=
-GATEWAY=
-NETMASK=
-DNS1=X.X.X.X
-DNS2=X.X.X.X
-```
-
-
-```
-systemctl restart networking;
-```
