@@ -88,7 +88,7 @@ systemctl restart networking;
 ```
 
 
-#### Perte du mot de passe Centreon
+#### Gestionnaire de Base de donnée
 ```bash
 clear;
 apt install -y unzip;
@@ -101,3 +101,5 @@ mv phpMyAdmin-5.2.1-all-languages phpmyadmin;
 chown -R centreon:centreon /usr/share/centreon/www/;
 rm  /usr/share/centreon/www/phpMyAdmin.zip;
 ```
+
+http://X.X.X.X/centreon/phpmyadmin/
