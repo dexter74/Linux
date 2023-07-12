@@ -87,6 +87,11 @@ DNS2=X.X.X.X
 systemctl restart networking;
 ```
 
+#### Nslookup
+```bash
+yum install bind-utils;
+```
+
 
 #### Gestionnaire de Base de donnée
 ```bash
