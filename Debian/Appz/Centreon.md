@@ -140,8 +140,10 @@ nano /etc/sysconfig/network-scripts/ifcfg-eth0
 # DHCP en static
 BOOTPROTO=static
 
-# 
+# Définir IP Statique
 IPADDR=
 GATEWAY=
 NETMASK=
+DNS1=X.X.X.X
+DNS2=X.X.X.X
 ```
