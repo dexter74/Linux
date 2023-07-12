@@ -83,8 +83,21 @@ DNS1=X.X.X.X
 DNS2=X.X.X.X
 ```
 
-
 ```
 systemctl restart networking;
 ```
 
+
+#### Perte du mot de passe Centreon
+```bash
+clear;
+apt install -y unzip;
+
+VERSION=5.2.1
+cd /usr/share/centreon/www/;
+wget https://files.phpmyadmin.net/phpMyAdmin/$VERSION/phpMyAdmin-$VERSION-all-languages.zip -O  /usr/share/centreon/www/phpMyAdmin.zip;
+unzip /usr/share/centreon/www/phpMyAdmin.zip;
+mv phpMyAdmin-5.2.1-all-languages phpmyadmin;
+chown -R centreon:centreon /usr/share/centreon/www/;
+rm  /usr/share/centreon/www/phpMyAdmin.zip;
+```
