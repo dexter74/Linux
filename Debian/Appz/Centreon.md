@@ -133,3 +133,7 @@ systemctl enable php8.1-fpm apache2 centreon cbd centengine gorgoned centreontra
 
 ![image](https://github.com/dexter74/Linux/assets/35907/38201eae-3014-483f-b7ac-1a6a6f710482)
 
+
+```
+Identifiant  : root / centreon
+Mot de passe : admin 
