@@ -5,8 +5,8 @@
 ### Installation de Centreon ([DOCUMENTATION](https://docs.centreon.com/fr/docs/installation/installation-of-a-central-server/using-virtual-machines))
 #### Se connecter en root
 ```
-Identifiant: root
-Mot de passe: centreon
+Identifiant  : root
+Mot de passe : centreon
 ```
 #### Changer le Fuseau Horaire (Europe/Paris)
 ```bash
