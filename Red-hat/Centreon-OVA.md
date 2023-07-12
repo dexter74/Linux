@@ -96,7 +96,7 @@ yum install wget;
 
 VERSION=5.2.1
 cd /usr/share/centreon/www/;
-wget https://files.phpmyadmin.net/phpMyAdmin/$VERSION/phpMyAdmin-$VERSION-all-languages.zip -O  /usr/share/centreon/www/phpMyAdmin.zip;
+wget https://files.phpmyadmin.net/phpMyAdmin/$VERSION/phpMyAdmin-$VERSION-all-languages.zip -O /usr/share/centreon/www/phpMyAdmin.zip;
 unzip /usr/share/centreon/www/phpMyAdmin.zip;
 mv phpMyAdmin-5.2.1-all-languages phpmyadmin;
 chown -R centreon:centreon /usr/share/centreon/www/;
