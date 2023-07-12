@@ -91,7 +91,7 @@ systemctl restart networking;
 #### Gestionnaire de Base de donnée
 ```bash
 clear;
-apt install -y unzip;
+yum install unzip;
 
 VERSION=5.2.1
 cd /usr/share/centreon/www/;
