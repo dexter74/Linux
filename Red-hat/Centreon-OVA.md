@@ -56,3 +56,35 @@ Mot de passe : Centreon!123
 
 Attention au mot de passe. (C en majuscule et ! avant 123)
 ```
+
+
+
+#### Récupérer le nom de l'interface
+```
+ip add
+```
+![image](https://github.com/dexter74/Linux/assets/35907/ceae8889-089d-41b1-8677-114a587e55c7)
+
+
+#### Edition du fichier de configuration de l'interface. (ens18)
+```
+nano /etc/sysconfig/network-scripts/ifcfg-ens18;
+```
+
+```
+# DHCP en static
+BOOTPROTO=static
+
+# Définir IP Statique
+IPADDR=
+GATEWAY=
+NETMASK=
+DNS1=X.X.X.X
+DNS2=X.X.X.X
+```
+
+
+```
+systemctl restart networking;
+```
+
