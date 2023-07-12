@@ -92,6 +92,7 @@ systemctl restart networking;
 ```bash
 clear;
 yum install unzip;
+yum install wget;
 
 VERSION=5.2.1
 cd /usr/share/centreon/www/;
