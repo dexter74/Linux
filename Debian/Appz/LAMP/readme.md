@@ -30,7 +30,7 @@ apt update 1>/dev/null;
 # Upgrade des paquets
 apt upgrade -y 1>/dev/null;
 
-# Paquet indispensable pour networkink
+# Paquet indispensable pour le service Networking
 apt install -y ifupdown2;
 ```
 
