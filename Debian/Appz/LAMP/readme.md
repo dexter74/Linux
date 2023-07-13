@@ -58,13 +58,13 @@ iface $NET inet static
  netmask        255.255.255.0
  gateway        192.168.0.1
  dns-nameserver 192.168.0.1
- dns-domain     LAN" >  /etc/network/interfaces
-systemctl restart networking;
+ dns-domain     LAN" >  /etc/network/interfaces;
 
 # systemctl disable --now NetworkManager;
 ```
 #### B. Relance du service Networking
 ```bash
+clear;
 systemctl restart networking;
 ```
 --------------------------------------------------------------------------------------------------------------------------------
@@ -150,11 +150,13 @@ sed -i -e 's/upload_max_filesize \= 2M/upload_max_filesize \= 8M/'  /etc/php/$PH
 
 ### Relance du service Apache
 ```bash
+clear;
 systemctl restart apache2;
 ```
 
 ### Afficher informations sur la BDD (User et BDD)
 ```bash
+clear;
 mysql -u root -padmin -e "SELECT User FROM mysql.user;"
 mysql -u root -padmin -e "SHOW DATABASES;"
 ```
@@ -168,11 +170,13 @@ Pour permettre l'accès en HTTPS, il faut générer un certificat SSL puis confi
 ### X. Installation de OpenSSL
 Le paquet OpenSSL permet la génération de certificat de sécurité.
 ```bash
+clear;
 apt install -y openssl;
 ```
 
 #### X Création du Certificat SSL
 ```bash
+clear;
 mkdir /etc/apache2/ssl;
 openssl genrsa 4096 > /etc/apache2/ssl/web01.key;
 (echo "FR"; echo "France"; echo "Haute-Savoie"; echo "Personnel"; echo "Personnel"; echo "Debian.lan"; echo ""; ) | openssl req -new -key /etc/apache2/ssl/web01.key -x509 -days 365 -out /etc/apache2/ssl/web01.pem;
@@ -180,19 +184,25 @@ openssl genrsa 4096 > /etc/apache2/ssl/web01.key;
 
 #### X. Création du Virtual Host
 ```bash
+clear;
 sed -i -e 's/\/etc\/ssl\/private\/ssl-cert-snakeoil.key/\/etc\/apache2\/ssl\/web01.key/g' /etc/apache2/sites-available/default-ssl.conf;
 sed -i -e 's/\/etc\/ssl\/certs\/ssl-cert-snakeoil.pem/\/etc\/apache2\/ssl\/web01.pem/g'   /etc/apache2/sites-available/default-ssl.conf;
 ```
 
 #### X. Activation des modules
 ```bash
+clear;
 /usr/sbin/a2enmod ssl;
 ```
 
 #### X.Prise en charge du Header
 Ajouter après `<VirtualHost _default_:443>` les lignes suivantes:
 ```
+clear;
 nano /etc/apache2/sites-available/default-ssl.conf;
+```
+
+```
     <IfModule mod_headers.c>
             Header always set Strict-Transport-Security "max-age=15552000; >
     </IfModule>
