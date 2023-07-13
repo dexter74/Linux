@@ -59,8 +59,9 @@ iface $NET inet static
  gateway        192.168.0.1
  dns-nameserver 192.168.0.1
  dns-domain     LAN" >  /etc/network/interfaces
-
 systemctl restart networking;
+
+# systemctl disable --now NetworkManager;
 ```
 #### B. Relance du service Networking
 ```bash
