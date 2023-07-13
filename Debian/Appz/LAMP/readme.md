@@ -41,7 +41,6 @@ clear;
 
 NET=ens18
 
-
 echo "#########################################################
 # Interface de bouclage #
 #########################
@@ -138,7 +137,7 @@ mv "$WWW/phpMyAdmin-$VERSION-all-languages/" "$WWW/phpmyadmin";
 ```
 
 
-#### X. Configuration de php.ini
+### Configuration de php.ini
 ### Augmenter le nombre de requête
 Pour permettre une sauvegarde de la Base de donnée, il faut augmenter le nombre de requête autorisé.
 ```nash
@@ -146,6 +145,11 @@ clear;
 PHP_VERSION=7.4
 sed -i -e 's/\;max_input_vars = 1000/max_input_vars = 10000/g' /etc/php/$PHP_VERSION/apache2/php.ini;
 sed -i -e 's/upload_max_filesize \= 2M/upload_max_filesize \= 8M/'  /etc/php/$PHP_VERSION/apache2/php.ini;
+```
+
+### Permissions 
+```bash
+chown -R www-data:www-data /var/www/html;
 ```
 
 ### Relance du service Apache
