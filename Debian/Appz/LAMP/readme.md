@@ -37,6 +37,11 @@ apt install -y ifupdown2;
 #### B. Configuration des interfaces réseaux
 L'interface réseau s'appelle `ens18`.
 ```bash
+clear;
+
+NET=ens18
+
+
 echo "#########################################################
 # Interface de bouclage #
 #########################
@@ -46,9 +51,9 @@ iface lo inet loopback
 #########################################################
 # Interface ens18 #
 ###################
-auto ens18
-allow-hotplug ens18
-iface ens18 inet static
+auto $NET
+allow-hotplug $NET
+iface $NET inet static
  address        192.168.0.50
  netmask        255.255.255.0
  gateway        192.168.0.1
