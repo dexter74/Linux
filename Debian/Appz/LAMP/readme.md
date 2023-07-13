@@ -29,6 +29,9 @@ apt update 1>/dev/null;
 
 # Upgrade des paquets
 apt upgrade -y 1>/dev/null;
+
+# Paquet indispensable pour networkink
+apt install -y ifupdown2;
 ```
 
 #### B. Configuration des interfaces réseaux
