@@ -148,9 +148,10 @@ mysql -u root -padmin -e "SELECT User FROM mysql.user;"
 mysql -u root -padmin -e "SHOW DATABASES;"
 ```
 
+<br />
 
 ---------------------------------------------------------------------------------------------------------------------------------------
-## VII. Mise en place du HTTPS
+## VII. Mise en place du HTTPS (Optionnel)
 Pour permettre l'accès en HTTPS, il faut générer un certificat SSL puis configurer Apache pour qu'il charge ce certificat.
 
 ### X. Installation de OpenSSL
